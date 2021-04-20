@@ -1,5 +1,7 @@
 @use 'base';
 
 body {
+  font-family: base.$font-stack;
   background-color: base.$site-color-dark;
+  color: base.$site-color-light;
 }
