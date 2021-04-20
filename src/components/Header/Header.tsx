@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
+import tcLogo from '../../assets/toastercat.png';
+import './Header.scss';
 
 export default function Header() {
   return (
     <header className="header">
-      <h1>
-        <Link to="/">ToasterCat</Link>
-      </h1>
+      <Link to="/" className="header-main-link">
+        <div className="header-icon">
+          <img src={tcLogo} alt="toastercat-logo" />
+          <h1>ToasterCat</h1>
+        </div>
+      </Link>
       <nav>
         <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>

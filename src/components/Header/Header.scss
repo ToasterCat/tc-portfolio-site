@@ -1,0 +1,54 @@
+@use '../../base';
+
+header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 3rem;
+}
+
+header {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  nav {
+    font-size: 20px;
+    a {
+      text-decoration: none;
+      color: base.$site-color-light;
+      padding: 0rem 1rem;
+      transition-duration: base.$transition-duration;
+    }
+
+    a:visited {
+      color: base.$site-color-light;
+    }
+
+    a:hover {
+      color: base.$site-color-gray;
+      transition-duration: base.$transition-duration;
+    }
+  }
+}
+
+.header-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-main-link {
+  text-decoration: none;
+  color: base.$site-color-light;
+  padding: 0rem 1rem;
+  transition-duration: base.$transition-duration;
+}
