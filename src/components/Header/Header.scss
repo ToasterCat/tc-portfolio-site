@@ -52,3 +52,35 @@ header {
   padding: 0rem 1rem;
   transition-duration: base.$transition-duration;
 }
+
+/* ANIMATION */
+
+@keyframes flying {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 5px;
+    top: 0px;
+  }
+  50% {
+    left: 0px;
+    top: 0px;
+  }
+  75% {
+    left: 5px;
+    top: 0px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.header-img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: flying 4s infinite;
+}

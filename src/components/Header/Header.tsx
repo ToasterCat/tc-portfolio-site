@@ -7,7 +7,7 @@ export default function Header() {
     <header className="header">
       <Link to="/" className="header-main-link">
         <div className="header-icon">
-          <img src={tcLogo} alt="toastercat-logo" />
+          <img src={tcLogo} alt="toastercat-logo" className="header-img" />
           <h1>ToasterCat</h1>
         </div>
       </Link>
