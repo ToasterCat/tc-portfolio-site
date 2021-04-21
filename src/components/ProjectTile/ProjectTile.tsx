@@ -1,6 +1,6 @@
 import React from 'react';
 import tcLogo from '../../assets/toastercat.png';
-import { Project } from '../../project.model';
+import { Project } from '../../types/project.model';
 
 export interface ProjectTileProps {
   project: Project;

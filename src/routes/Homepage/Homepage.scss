@@ -1,0 +1,45 @@
+@use '../../base';
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: base.$site-color-gray;
+  padding: 10vh 20vh 10vh 20vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-right: 5vh;
+  color: base.$site-color-dark;
+  h2 {
+    font-size: 40px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section img {
+  width: 200px;
+  height: 200px;
+  padding-left: 30px;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

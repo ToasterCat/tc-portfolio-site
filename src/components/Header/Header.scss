@@ -2,11 +2,12 @@
 
 header {
   height: 100px;
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 0rem 3rem;
+  background-color: base.$site-color-dark;
 }
 
 header {
@@ -21,6 +22,9 @@ header {
 
   nav {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+
     a {
       text-decoration: none;
       color: base.$site-color-light;
@@ -39,6 +43,11 @@ header {
   }
 }
 
+.sticky {
+  position: sticky;
+  top: 0px;
+}
+
 .header-icon {
   display: flex;
   flex-direction: row;
@@ -53,7 +62,7 @@ header {
   transition-duration: base.$transition-duration;
 }
 
-/* ANIMATION */
+/* HEADER ANIMATION */
 
 @keyframes flying {
   0% {
