@@ -1,11 +1,13 @@
 @use '../../base';
 
+/* HERO SECTION */
+
 .hero-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: base.$site-color-gray;
+  background-color: base.$site-color-light;
   padding: 10vh 20vh 10vh 20vh;
 }
 
@@ -14,14 +16,14 @@
   flex-direction: column;
   max-width: 500px;
   margin-right: 5vh;
-  color: base.$site-color-dark;
+  color: base.$color-dark;
   h2 {
-    font-size: 40px;
+    font-size: base.$large-heading;
     margin: 0;
   }
 
   p {
-    font-size: 20px;
+    font-size: base.$large-p;
   }
 }
 
@@ -42,4 +44,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+/* SERVICES SECTION */
+
+.tile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: base.$color-off-white;
+  color: base.$color-dark;
+
+  h2 {
+    font-size: base.$large-heading;
+  }
 }

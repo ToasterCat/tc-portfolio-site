@@ -2,6 +2,7 @@ import React from 'react';
 import tcLogo from '../../assets/toastercat.png';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import ProjectTile from '../../components/ProjectTile/ProjectTile';
+import TileSection from '../../components/TileSection/TileSection';
 import PROJECTS from '../../PROJECTS';
 import './Homepage.scss';
 
@@ -23,9 +24,7 @@ export default function Homepage() {
           <img src={tcLogo} alt="toaster-cat-logo" />
         </div>
       </section>
-      <section className="services-section">
-        <h3>Services</h3>
-      </section>
+      <TileSection heading={'Services'} buttons={['button1']} />
       <section className="projects">
         <h2>Projects</h2>
         {PROJECTS.map((project) => (
