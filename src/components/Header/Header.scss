@@ -22,17 +22,17 @@ header {
 
     a {
       text-decoration: none;
-      color: base.$site-color-light;
+      color: base.$color-light;
       padding: 0rem 1rem;
       transition-duration: base.$transition-duration;
     }
 
     a:visited {
-      color: base.$site-color-light;
+      color: base.$color-light;
     }
 
     a:hover {
-      color: base.$site-color-gray;
+      color: base.$color-red;
       transition-duration: base.$transition-duration;
     }
   }
@@ -52,7 +52,7 @@ header {
 
 .header-main-link {
   text-decoration: none;
-  color: base.$site-color-light;
+  color: base.$color-light;
   padding: 0rem 1rem;
   transition-duration: base.$transition-duration;
 }

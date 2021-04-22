@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import tcLogo from '../../assets/toastercat.png';
 import './Header.scss';
 
 export default function Header() {
@@ -7,7 +6,13 @@ export default function Header() {
     <header className="header">
       <Link to="/" className="header-main-link">
         <div className="header-icon">
-          <img src={tcLogo} alt="toastercat-logo" className="header-img" />
+          <img
+            src={
+              'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png'
+            }
+            alt="toastercat-logo"
+            className="header-img"
+          />
           <h1>ToasterCat</h1>
         </div>
       </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import tcLogo from '../../assets/toastercat.png';
+
 import ContactForm from '../../components/ContactForm/ContactForm';
 import ProjectTile from '../../components/ProjectTile/ProjectTile';
 import TileSection from '../../components/TileSection/TileSection';
@@ -11,7 +11,7 @@ export default function Homepage() {
     <React.Fragment>
       <section className="hero-section">
         <div className="hero-content">
-          <h2>HERO HEADING</h2>
+          <h2>We help you build stuff more good.</h2>
           <p>
             You really think you can fly that thing? I was part of something
             special. Forget the fat lady! You're obsessed with the fat lady!
@@ -21,10 +21,15 @@ export default function Homepage() {
           </p>
         </div>
         <div className="hero-image">
-          <img src={tcLogo} alt="toaster-cat-logo" />
+          <img
+            src={
+              'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png'
+            }
+            alt="toaster-cat-logo"
+          />
         </div>
       </section>
-      <TileSection heading={'Services'} buttons={['button1']} />
+      <TileSection heading={'Consulting Services'} buttons={['button1']} />
       <section className="projects">
         <h2>Projects</h2>
         {PROJECTS.map((project) => (
