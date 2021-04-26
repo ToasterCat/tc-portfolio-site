@@ -1,41 +1,34 @@
 import React from 'react';
 
 import ContactForm from '../../components/ContactForm/ContactForm';
-import ProjectTile from '../../components/ProjectTile/ProjectTile';
-import TileSection from '../../components/TileSection/TileSection';
-import PROJECTS from '../../PROJECTS';
+import HeroSection from '../../containers/HeroSection/HeroSection';
+import TileSection from '../../containers/TileSection/TileSection';
 import './Homepage.scss';
+import ProjectSection from '../../containers/ProjectSection/ProjectSection';
 
 export default function Homepage() {
   return (
     <React.Fragment>
-      <section className="hero-section">
-        <div className="hero-content">
-          <h2>We help you build stuff more good.</h2>
-          <p>
-            You really think you can fly that thing? I was part of something
-            special. Forget the fat lady! You're obsessed with the fat lady!
-            Drive us out of here! Hey, take a look at the earthlings. Goodbye!
-            Just my luck, no ice. Must go faster. This thing comes fully loaded.
-            AM/FM radio, reclining bucket seats, and... power windows.
-          </p>
-        </div>
-        <div className="hero-image">
-          <img
-            src={
-              'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png'
-            }
-            alt="toaster-cat-logo"
-          />
-        </div>
-      </section>
-      <TileSection heading={'Consulting Services'} buttons={['button1']} />
-      <section className="projects">
-        <h2>Projects</h2>
-        {PROJECTS.map((project) => (
-          <ProjectTile project={project} />
-        ))}
-      </section>
+      <HeroSection
+        classPrefix={'hero1'}
+        heading={'We help you build stuff more good.'}
+        content={`God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. Checkmate... Yes, Yes, without the oops! Checkmate... You know what? It is beets. I've crashed into a beet truck. They're using our own satellites against us. And the clock is ticking.`}
+        img={{
+          source:
+            'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png',
+          alt: 'toaster-cat-logo',
+          position: 'right',
+        }}
+      />
+      <TileSection
+        heading={'Consulting Services'}
+        buttons={[
+          'Software Consultation',
+          'Custom Web Design & Hosting',
+          'Game Development',
+        ]}
+      />
+      <ProjectSection />
       <section className="homepage-contact">
         <ContactForm />
       </section>

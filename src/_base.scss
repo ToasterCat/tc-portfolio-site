@@ -13,3 +13,16 @@ $large-heading: 40px;
 $large-p: 20px;
 
 $transition-duration: 500ms;
+
+/* ANIMATION */
+
+@mixin animation-mixin($name, $start, $end) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $start;
+    }
+    100% {
+      opacity: $end;
+    }
+  }
+}

@@ -1,17 +1,19 @@
 @use '../../base';
+@include base.animation-mixin(fadeIn, 0, 1);
 
 /* HERO SECTION */
 
-.hero-section {
+.hero1-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   background-color: base.$site-color-light;
   padding: 10vh 20vh 10vh 20vh;
+  animation: fadeIn 1.5s ease-in;
 }
 
-.hero-content {
+.hero1-content {
   display: flex;
   flex-direction: column;
   max-width: 500px;
@@ -27,14 +29,14 @@
   }
 }
 
-.hero-image {
+.hero1-image {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.hero-section img {
+.hero1-section img {
   width: 200px;
   height: 200px;
   padding-left: 30px;
