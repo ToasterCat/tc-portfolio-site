@@ -9,8 +9,8 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: base.$site-color-light;
-  padding: 10vh 20vh 10vh 20vh;
   animation: fadeIn 1.5s ease-in;
+  height: 475px;
 }
 
 .hero1-content {
@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: base.$color-off-white;
+  background-color: base.$color-almost-black;
   color: base.$color-light;
 
   h2 {

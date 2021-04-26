@@ -1,8 +1,9 @@
 import React from 'react';
+import './TileSection.scss';
 
 interface TileSectionProps {
   heading: string;
-  buttons: string[];
+  tiles: string[];
   onClick?: () => void;
 }
 
@@ -10,11 +11,11 @@ export default function TileSection(props: TileSectionProps) {
   return (
     <section className="tile-section">
       <h2>{props.heading}</h2>
-      <div className="buttons-group">
-        {props.buttons.map((button) => {
+      <div className="tile-group">
+        {props.tiles.map((tile) => {
           return (
-            <div className="button">
-              <p>{button}</p>
+            <div className="tile">
+              <p>{tile}</p>
             </div>
           );
         })}

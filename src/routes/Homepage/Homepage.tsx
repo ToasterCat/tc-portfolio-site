@@ -22,7 +22,7 @@ export default function Homepage() {
       />
       <TileSection
         heading={'Consulting Services'}
-        buttons={[
+        tiles={[
           'Software Consultation',
           'Custom Web Design & Hosting',
           'Game Development',
