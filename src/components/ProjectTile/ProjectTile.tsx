@@ -1,6 +1,7 @@
 import React from 'react';
 import tcLogo from '../../assets/toastercat.png';
 import { Project } from '../../types/project.model';
+import './ProjectTile.scss';
 
 export interface ProjectTileProps {
   project: Project;
