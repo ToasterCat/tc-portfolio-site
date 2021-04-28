@@ -4,23 +4,15 @@ export default function About() {
   return (
     <React.Fragment>
       <section className="about-section">
-        <h2>Mission Statement</h2>
+        <h2>About ToasterCat Studios</h2>
         <p>
-          Forget the fat lady! You're obsessed with the fat lady! Drive us out
-          of here! Yeah, but John, if The Pirates of the Caribbean breaks down,
-          the pirates don’t eat the tourists. Hey, you know how I'm, like,
-          always trying to save the planet? Here's my chance. Do you have any
-          idea how long it takes those cups to decompose. You really think you
-          can fly that thing? You're a very talented young man, with your own
-          clever thoughts and ideas. Do you need a manager? This thing comes
-          fully loaded. AM/FM radio, reclining bucket seats, and... power
-          windows. Yes, Yes, without the oops! You're a very talented young man,
-          with your own clever thoughts and ideas. Do you need a manager? We
-          gotta burn the rain forest, dump toxic waste, pollute the air, and rip
-          up the OZONE! 'Cause maybe if we screw up this planet enough, they
-          won't want it anymore!
+          ToasterCat Studios is a free-range, ethically-sourced research center, makerspace, recording studio, and mad science laboratory based out of the American Pacific Northwest. It was founded by its owner and operator, Dirk Hortensius, to provide engineering and logistical resources to local makers and artists alike.
+        </p>
+        <p>
+          As these modern times require multi-disciplinary expertise and an ever-increasingly diverse toolbox of specializations, services offered by ToasterCat Studios range across the digital and physical realms. Software design, hardware prototyping, product development, business consultation, and even audio/video production resources are made available to empower innovation and progress at the individual level. If the vision is mad enough, we want to talk shop.
         </p>
       </section>
+      
       <section className="about-services">
         <h2>What We Do</h2>
         <ul className="services-list">
