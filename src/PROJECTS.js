@@ -6,7 +6,7 @@ const PROJECTS = [
       description: `Media Blog hosted and maintained by `,
       links: [
         {
-          label: 'Crude Mirror',
+          label: 'Live Site',
           target: 'https://www.crude-mirror.com',
           bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
         },
@@ -20,7 +20,7 @@ const PROJECTS = [
       description: `“Bullet Hell” game for Android published to Amazon Appstore.`,
       links: [
         {
-          label: 'Pixel Hell Amazon Listing',
+          label: 'Amazon Listing',
           target: ' https://www.amazon.com/dp/B00DPLJIOU',
           bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
         },

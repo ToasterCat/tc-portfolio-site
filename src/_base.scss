@@ -1,5 +1,7 @@
 $font-stack: 'Lato', sans-serif;
 
+/* COLORS */
+
 $site-color-dark: #202124;
 $site-color-gray: #c9d2d8;
 $site-color-light: #2c2f33;
@@ -10,17 +12,20 @@ $color-almost-black: #23272a;
 $color-orange: #e95420;
 $color-red: #d72c2c;
 
+/* DESKTOP SIZING */
+
 $large-heading: 40px;
 $small-heading: 30px;
 $large-p: 20px;
+
+/* MOBILE SIZING */
 
 $mobile-large-heading: 30px;
 $mobile-small-heading: 20px;
 $mobile-large-p: 15px;
 
-$transition-duration: 500ms;
-
 /* ANIMATION */
+$transition-duration: 500ms;
 
 @mixin animation-mixin($name, $start, $end) {
   @keyframes #{$name} {
