@@ -84,7 +84,6 @@ export default function About() {
           <li>Wherever you are! We travel on case-by-case basis</li>
         </ul>
       </section>
-
       <ContactInfoBar />
     </React.Fragment>
   );
