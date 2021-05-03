@@ -1,7 +1,8 @@
 import React from 'react';
-import ProjectTile from '../../components/ProjectTile/ProjectTile';
+import ProjectTileLarge from '../../components/ProjectTileLarge/ProjectTileLarge';
 import { Link } from 'react-scroll';
 import PROJECTS from '../../PROJECTS';
+import './ProjectsPage.scss';
 
 export default function ProjectsPage() {
   return (
@@ -21,19 +22,19 @@ export default function ProjectsPage() {
         <h2 id="proj-web" className="anchor">
           Web Dev projects
         </h2>
-        <ProjectTile project={PROJECTS[0]} />
+        <ProjectTileLarge project={PROJECTS[0]} />
       </section>
       <section className="proj-section">
         <h2 className="anchor" id="proj-game">
           Game Dev projects
         </h2>
-        <ProjectTile project={PROJECTS[1]} />
+        <ProjectTileLarge project={PROJECTS[1]} />
       </section>
       <section className="proj-section">
         <h2 className="anchor" id="proj-audio">
           Audio Projects
         </h2>
-        <ProjectTile project={PROJECTS[2]} />
+        <ProjectTileLarge project={PROJECTS[2]} />
       </section>
     </React.Fragment>
   );

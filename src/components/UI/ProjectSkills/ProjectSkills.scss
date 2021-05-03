@@ -1,0 +1,56 @@
+@media all and (max-width: 800px) {
+  .project-skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-skills-heading {
+    font-size: 24px;
+  }
+
+  .project-tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 5% 0% 3% 0%;
+  }
+
+  .skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 3% 0%;
+    flex-basis: 33%;
+  }
+
+  .project-tech-icons img {
+    max-width: 50%;
+    border-radius: 5px;
+  }
+}
+@media all and (min-width: 800px) {
+  .project-skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-skills-heading {
+    font-size: 30px;
+  }
+
+  .project-tech-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .project-tech-icons img {
+    width: 70px;
+    padding: 20px 30px;
+    border-radius: 5px;
+  }
+}

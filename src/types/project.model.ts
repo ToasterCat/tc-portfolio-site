@@ -7,6 +7,7 @@ export interface ProjectDetails {
   name: string;
   description: string;
   links: ProjectLinks[];
+  skills?: string[];
 }
 
 export interface ProjectLinks {

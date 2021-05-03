@@ -1,0 +1,23 @@
+@use '../../base';
+
+.project-anchors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3rem 0rem;
+}
+
+.project-tile-container {
+  padding: 5rem 0rem;
+  background-color: base.$color-almost-black;
+}
+
+.anchor {
+  text-align: center;
+  background-color: base.$site-color-light;
+  padding: 1rem 0rem;
+  position: sticky;
+  top: 0;
+  margin: 0;
+}

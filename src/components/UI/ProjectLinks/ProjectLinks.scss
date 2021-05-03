@@ -1,0 +1,40 @@
+@media all and (max-width: 800px) {
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-links-heading {
+    font-size: 24px;
+  }
+
+  .project-links-buttons {
+    padding-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-links-heading {
+    font-size: 30px;
+  }
+
+  .project-links-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+}

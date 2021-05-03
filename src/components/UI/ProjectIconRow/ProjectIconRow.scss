@@ -1,0 +1,35 @@
+@media all and (max-width: 800px) {
+  .project-details-row img {
+    max-width: 70px;
+  }
+
+  .project-details-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-details-row h2 {
+    margin: 0px 0px 0px 20px;
+    font-size: 35px;
+  }
+}
+@media all and (min-width: 800px) {
+  .project-details-row img {
+    max-width: 100px;
+  }
+
+  .project-details-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .project-details-row h2 {
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-size: 62px;
+  }
+}
