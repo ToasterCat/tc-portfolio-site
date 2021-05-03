@@ -6,7 +6,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0rem 1rem;
+    background-color: base.$color-almost-black;
+    padding: 1rem;
 
     h2 {
       font-size: base.$mobile-large-heading;
@@ -76,6 +77,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 475px;
+    background-color: base.$color-almost-black;
 
     h2 {
       font-size: base.$large-heading;
