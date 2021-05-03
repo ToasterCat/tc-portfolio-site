@@ -2,7 +2,6 @@ import { Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Homepage from '../../routes/Homepage/Homepage';
 import About from '../../routes/About/About';
 import ProjectsPage from '../../routes/Projects/ProjectsPage';
@@ -15,6 +14,7 @@ function App() {
   const isMobileDevice = useMediaQuery({
     query: '(max-device-width: 767px)',
   });
+
   return (
     <div className="App">
       {isBigScreen && <Header />}
@@ -45,7 +45,6 @@ function App() {
         <Route exact path="/blog" component={ComingSoon} />
         <Route exact path="/store" component={ComingSoon} />
       </main>
-      <Footer />
     </div>
   );
 }
