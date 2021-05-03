@@ -14,7 +14,7 @@ export default function ProjectTile(props: ProjectTileProps) {
         <div className="project-details">
           <h4>{props.project.projectDetails.name}</h4>
           <p>{props.project.projectDetails.description}</p>
-          <div className="project-links">
+          <div className="project-tile-links">
             {props.project.projectDetails.links.map((link) => {
               return <a href={link.target}>{link.label}</a>;
             })}

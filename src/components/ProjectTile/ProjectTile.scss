@@ -15,13 +15,15 @@
   justify-content: center;
   border-radius: 5px;
   width: 700px;
-  height: 230px;
+  height: 250px;
   padding: 1rem;
   margin: 1rem;
   transition: all 0.5s ease; /* back to normal */
 
   p {
     width: 400px;
+    padding: 2rem 0rem;
+    margin: 0;
   }
 }
 
@@ -36,13 +38,10 @@
   flex-direction: column;
   justify-content: center;
   width: 30rem;
+  padding: 1rem 0rem;
 
   h4 {
     margin: 0;
-  }
-
-  p {
-    padding: 1rem 0rem;
   }
 }
 
@@ -50,7 +49,7 @@
   width: 10rem;
 }
 
-.project-links {
+.project-tile-links {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
