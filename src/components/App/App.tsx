@@ -5,6 +5,7 @@ import Homepage from '../../routes/Homepage/Homepage';
 import About from '../../routes/About/About';
 import ProjectsPage from '../../routes/Projects/ProjectsPage';
 import ContactPage from '../../routes/Contact/ContactPage';
+import ComingSoon from '../../routes/ComingSoon/ComingSoon';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/projects" component={ProjectsPage} />
         <Route exact path="/contact" component={ContactPage} />
+        <Route exact path="/blog" component={ComingSoon} />
+        <Route exact path="/store" component={ComingSoon} />
       </main>
       <Footer />
     </div>

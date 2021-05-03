@@ -60,12 +60,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 150px;
+    height: 50px;
+    margin-right: 1rem;
     text-align: center;
     background-color: base.$site-color-dark;
     color: white;
     text-decoration: none;
-    width: 150px;
-    height: 50px;
     transition: all 0.4s ease;
   }
 
