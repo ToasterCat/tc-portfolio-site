@@ -1,7 +1,24 @@
 @use '../../../base';
 
 @media all and (max-width: 800px) {
+  .external-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: base.$color-light;
+    color: base.$color-almost-black;
+    font-size: base.$mobile-large-p;
+    transition: all 0.4s ease;
+    padding: 0rem 1rem;
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+  }
 }
+
 @media all and (min-width: 800px) {
   .external-button {
     display: flex;

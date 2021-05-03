@@ -1,19 +1,42 @@
 @use '../../base';
 
-.projects-section {
-  display: flex;
-  flex-direction: column;
-  padding: 100px 0px;
-  background-color: base.$site-color-light;
+@media all and (max-width: 800px) {
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-color: base.$site-color-light;
 
-  h2 {
-    text-align: center;
-    font-size: base.$large-heading;
+    h2 {
+      text-align: center;
+      font-size: base.$mobile-large-heading;
+    }
+  }
+
+  .projects-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.projects-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+@media all and (min-width: 800px) {
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0px;
+    background-color: base.$site-color-light;
+
+    h2 {
+      text-align: center;
+      font-size: base.$large-heading;
+    }
+  }
+
+  .projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 }

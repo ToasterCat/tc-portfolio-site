@@ -8,10 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: base.$site-color-light;
     animation: fadeIn 1.5s ease-in;
-    height: 475px;
+    height: 300px;
 
     img {
       display: none;
@@ -21,13 +21,12 @@
   .hero1-content {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin-right: 5vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+
     color: base.$color-light;
-    h2 {
-      font-size: base.$mobile-large-heading;
-      margin: 0;
-    }
 
     p {
       font-size: base.$mobile-large-p;
@@ -61,10 +60,6 @@
     align-items: center;
     background-color: base.$color-almost-black;
     color: base.$color-light;
-
-    h2 {
-      font-size: base.$large-heading;
-    }
   }
 }
 
