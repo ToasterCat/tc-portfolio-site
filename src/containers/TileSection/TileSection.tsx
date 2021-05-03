@@ -20,6 +20,7 @@ export default function TileSection(props: TileSectionProps) {
       });
     }
   };
+
   const generateLinkTiles = () => {
     if (props.areLinks) {
       return props.tiles.map((tile: any) => {
