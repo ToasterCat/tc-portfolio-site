@@ -5,25 +5,29 @@ ReactJS/Node application used to power https://www.toastercat-studios.com/
 # Architecture
 
 ## Language
-TypeScript / CSS
+
+TypeScript / SASS
 
 ## Hosting
+
 Node Server hosting provided by Vercel - https://vercel.com/toastercat/tc-portfolio-site/deployments
 
 Root Domain (No DNS) - https://tc-portfolio-site.vercel.app/
 
 ## License
+
 [GNU GPLv3](https://opensource.org/licenses/GPL-3.0)
 
 # Project Details
 
 ## Primary Author(s)
-* [Jake Elizondo](https://github.com/jakeelizondo) - Development Lead
-* [Dirk Hortensius](https://github.com/Dirker27) - Content Lead
+
+- [Jake Elizondo](https://github.com/jakeelizondo) - Development Lead
+- [Dirk Hortensius](https://github.com/Dirker27) - Content Lead
 
 ## Project Board
-[Jira](https://toastercatstudios.atlassian.net/jira/software/projects/HOME/boards/2)
 
+[Jira](https://toastercatstudios.atlassian.net/jira/software/projects/HOME/boards/2)
 
 # ReactApp Setup + Run (inherited)
 

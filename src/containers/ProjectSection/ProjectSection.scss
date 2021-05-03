@@ -1,0 +1,19 @@
+@use '../../base';
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px;
+  background-color: base.$site-color-light;
+
+  h2 {
+    text-align: center;
+    font-size: base.$large-heading;
+  }
+}
+
+.projects-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

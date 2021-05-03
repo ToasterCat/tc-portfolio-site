@@ -7,24 +7,28 @@
 }
 
 .project-tile {
-  background-color: base.$color-light;
+  background-color: base.$color-light-gray;
   color: base.$color-almost-black;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  width: 700px;
+  height: 230px;
   padding: 1rem;
   margin: 1rem;
   transition: all 0.5s ease; /* back to normal */
+
+  p {
+    width: 400px;
+  }
 }
 
 .project-tile:hover {
   transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-  box-shadow: 8px 10px 10px rgba(39, 44, 49, 0.07),
-    1px 6px 12px rgba(39, 44, 49, 0.04);
+  box-shadow: 8px 10px 10px base.$color-red, 1px 6px 12px base.$color-red;
   transition: all 0.4s ease; /* zoom in */
-  cursor: pointer;
 }
 
 .project-details {
@@ -32,8 +36,44 @@
   flex-direction: column;
   justify-content: center;
   width: 30rem;
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    padding: 1rem 0rem;
+  }
 }
 
 .project-img img {
   width: 10rem;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: base.$site-color-dark;
+    color: white;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    transition: all 0.4s ease;
+  }
+
+  a:hover {
+    background-color: base.$color-red;
+    color: base.$color-light;
+    border-radius: 5px;
+    transition: all 0.4s ease; /* zoom in */
+    cursor: pointer;
+  }
 }

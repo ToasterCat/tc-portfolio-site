@@ -12,7 +12,7 @@ export default function ProjectTile(props: ProjectTileProps) {
     <div className="project-tile-container">
       <div className="project-tile">
         <div className="project-details">
-          <p>{props.project.projectDetails.name}</p>
+          <h4>{props.project.projectDetails.name}</h4>
           <p>{props.project.projectDetails.description}</p>
           <div className="project-links">
             {props.project.projectDetails.links.map((link) => {

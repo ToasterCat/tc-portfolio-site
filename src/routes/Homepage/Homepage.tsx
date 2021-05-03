@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ContactForm from '../../components/ContactForm/ContactForm';
 import HeroSection from '../../containers/HeroSection/HeroSection';
 import TileSection from '../../containers/TileSection/TileSection';
 import './Homepage.scss';
 import ProjectSection from '../../containers/ProjectSection/ProjectSection';
+import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
 export default function Homepage() {
   return (
@@ -29,9 +29,7 @@ export default function Homepage() {
         ]}
       />
       <ProjectSection />
-      <section className="homepage-contact">
-        <ContactForm />
-      </section>
+      <ContactInfoBar />
     </React.Fragment>
   );
 }
