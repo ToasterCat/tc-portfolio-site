@@ -24,6 +24,16 @@ const PROJECTS = [
           target: ' https://www.amazon.com/dp/B00DPLJIOU',
           bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
         },
+        {
+          label: 'Amazon Listing',
+          target: ' https://www.amazon.com/dp/B00DPLJIOU',
+          bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
+        },
+        {
+          label: 'Amazon Listing',
+          target: ' https://www.amazon.com/dp/B00DPLJIOU',
+          bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
+        },
       ],
     },
   },

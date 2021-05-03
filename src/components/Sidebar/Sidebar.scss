@@ -24,7 +24,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: base.$color-almost-black;
+  background: base.$color-light;
 }
 
 /*
@@ -67,7 +67,7 @@
 /* Individual item */
 .bm-item {
   display: inline-block;
-  color: #38003c;
+  color: base.$color-light;
   margin-bottom: 10px;
   font-weight: 500;
   text-align: left;
@@ -85,9 +85,9 @@ a.menu-item {
 }
 
 .bm-menu a {
-  color: base.$color-almost-black;
+  color: base.$color-light;
 }
 
 .bm-menu a:visited {
-  color: base.$color-almost-black;
+  color: base.$color-light;
 }

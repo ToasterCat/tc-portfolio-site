@@ -21,7 +21,7 @@ body {
 footer {
   height: 50px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -29,4 +29,31 @@ footer {
   padding: 20px 0px;
   color: white;
   text-align: center;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: base.$color-red;
+  }
+
+  a:visited {
+    color: base.$color-red;
+  }
 }
