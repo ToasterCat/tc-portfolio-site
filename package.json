@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-burger-menu": "^2.8.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6"
   }

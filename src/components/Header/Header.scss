@@ -1,60 +1,101 @@
 @use '../../base';
 
-header {
-  height: 80px;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0rem 3rem;
-  background-color: base.$site-color-dark;
-}
-
-header {
-  h1 {
+@media all and (max-width: 800px) {
+  header {
+    height: 50px;
     margin: 0;
-  }
-
-  nav {
-    font-size: 20px;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0rem 3rem;
+    background-color: base.$site-color-dark;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0px;
+  }
+
+  .header-icon {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-
-    a {
-      text-decoration: none;
-      color: base.$color-light;
-      padding: 0rem 1rem;
-      transition-duration: base.$transition-duration;
+    padding-left: 10px;
+    background-color: base.$site-color-dark;
+    h1 {
+      margin-left: 10px;
+      font-size: base.$mobile-large-heading;
     }
+  }
 
-    a:visited {
-      color: base.$color-light;
-    }
-
-    a:hover {
-      color: base.$color-red;
-      transition-duration: base.$transition-duration;
-    }
+  .header-main-link {
+    display: flex;
+    text-decoration: none;
+    color: base.$color-light;
+    padding: 0rem 1rem;
+    transition-duration: base.$transition-duration;
   }
 }
 
-.sticky {
-  position: sticky;
-  top: 0px;
-}
+@media all and (min-width: 800px) {
+  header {
+    height: 80px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    background-color: base.$site-color-dark;
+  }
 
-.header-icon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
+  header {
+    h1 {
+      margin: 0;
+    }
 
-.header-main-link {
-  text-decoration: none;
-  color: base.$color-light;
-  padding: 0rem 1rem;
-  transition-duration: base.$transition-duration;
+    nav {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: base.$color-light;
+        padding: 0rem 1rem;
+        transition-duration: base.$transition-duration;
+      }
+
+      a:visited {
+        color: base.$color-light;
+      }
+
+      a:hover {
+        color: base.$color-red;
+        transition-duration: base.$transition-duration;
+      }
+    }
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0px;
+  }
+
+  .header-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .header-main-link {
+    text-decoration: none;
+    color: base.$color-light;
+    padding: 0rem 1rem;
+    transition-duration: base.$transition-duration;
+  }
 }
 
 /* HEADER ANIMATION */

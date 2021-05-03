@@ -1,63 +1,132 @@
 @use '../../base';
 @include base.animation-mixin(fadeIn, 0, 1);
 
-/* HERO SECTION */
+@media all and (max-width: 800px) {
+  /* HERO SECTION */
 
-.hero1-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: base.$site-color-light;
-  animation: fadeIn 1.5s ease-in;
-  height: 475px;
-}
+  .hero1-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: base.$site-color-light;
+    animation: fadeIn 1.5s ease-in;
+    height: 475px;
 
-.hero1-content {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin-right: 5vh;
-  color: base.$color-light;
-  h2 {
-    font-size: base.$large-heading;
-    margin: 0;
+    img {
+      display: none;
+    }
   }
 
-  p {
-    font-size: base.$large-p;
+  .hero1-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-right: 5vh;
+    color: base.$color-light;
+    h2 {
+      font-size: base.$mobile-large-heading;
+      margin: 0;
+    }
+
+    p {
+      font-size: base.$mobile-large-p;
+    }
+  }
+
+  .hero1-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero1-section img {
+    width: 200px;
+    height: 200px;
+    padding-left: 30px;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* SERVICES SECTION */
+
+  .tile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: base.$color-almost-black;
+    color: base.$color-light;
+
+    h2 {
+      font-size: base.$large-heading;
+    }
   }
 }
 
-.hero1-image {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
+@media all and (min-width: 800px) {
+  /* HERO SECTION */
 
-.hero1-section img {
-  width: 200px;
-  height: 200px;
-  padding-left: 30px;
-}
+  .hero1-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: base.$site-color-light;
+    animation: fadeIn 1.5s ease-in;
+    height: 475px;
+  }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+  .hero1-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-right: 5vh;
+    color: base.$color-light;
+    h2 {
+      font-size: base.$large-heading;
+      margin: 0;
+    }
 
-/* SERVICES SECTION */
+    p {
+      font-size: base.$large-p;
+    }
+  }
 
-.tile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: base.$color-almost-black;
-  color: base.$color-light;
+  .hero1-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-  h2 {
-    font-size: base.$large-heading;
+  .hero1-section img {
+    width: 200px;
+    height: 200px;
+    padding-left: 30px;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* SERVICES SECTION */
+
+  .tile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: base.$color-almost-black;
+    color: base.$color-light;
+
+    h2 {
+      font-size: base.$large-heading;
+    }
   }
 }
