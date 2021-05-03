@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: space-evenly;
   height: 475px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .tile-group {
@@ -17,11 +21,24 @@
 }
 
 .tile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   background-color: base.$color-light;
   color: base.$color-almost-black;
   font-size: base.$large-p;
   transition: all 0.4s ease;
   padding: 0rem 1rem;
+  text-decoration: none;
+  width: 200px;
+  height: 65px;
+
+  p {
+    margin: 0;
+  }
 }
 
 .tile:hover {

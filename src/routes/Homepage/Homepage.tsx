@@ -21,11 +21,12 @@ export default function Homepage() {
         }}
       />
       <TileSection
+        areLinks
         heading={'Consulting Services'}
         tiles={[
-          'Software Consultation',
-          'Custom Web Design & Hosting',
-          'Game Development',
+          { label: 'Software Consultation', url: '/about' },
+          { label: 'Custom Web Design & Hosting', url: '/projects#proj-web' },
+          { label: 'Game Development', url: '/projects#proj-game' },
         ]}
       />
       <ProjectSection />
