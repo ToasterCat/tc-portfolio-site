@@ -14,6 +14,7 @@ function App() {
   const isMobileDevice = useMediaQuery({
     query: '(max-device-width: 767px)',
   });
+
   return (
     <div className="App">
       {isBigScreen && <Header />}
