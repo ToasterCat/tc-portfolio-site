@@ -1,0 +1,25 @@
+@use '../../base';
+
+.contact-section {
+  background-color: base.$color-almost-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 475px;
+}
+
+.contact-button-group {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: base.$large-heading;
+  margin-bottom: 40px;
+  padding: 0% 3%;
+}

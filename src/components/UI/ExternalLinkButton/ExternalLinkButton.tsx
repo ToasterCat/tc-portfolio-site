@@ -1,4 +1,5 @@
 import React from 'react';
+import './ExternalLinkButton.scss';
 
 interface ExternalLinkButtonProps {
   linkTo: string;
@@ -7,13 +8,18 @@ interface ExternalLinkButtonProps {
 
 export default function ExternalLinkButton(props: ExternalLinkButtonProps) {
   return (
-    <button className="external-button">
+    <>
       {props.linkTo && (
-        <a href={props.linkTo} target="_blank" rel="noopener noreferrer">
+        <a
+          className="external-button"
+          href={props.linkTo}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {props.text}
         </a>
       )}
       {!props.linkTo && props.text}
-    </button>
+    </>
   );
 }
