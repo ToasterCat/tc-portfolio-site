@@ -27,54 +27,58 @@ export default function About() {
 
       <section className="about-services">
         <h2>What We Do</h2>
+
+        <p>
+          ToasterCat blah blah blah
+        </p>
+
         <ul className="services-list">
           <li>
-            <h4>Custom Web Design and Hosting</h4>
+            <h3>Custom Web Design and Hosting</h3>
             <p>
-              Do you have any idea how long it takes those cups to decompose.
-              Hey, take a look at the earthlings. Goodbye! Yeah, but your
-              scientists were so preoccupied with whether or not they could,
-              they didn't stop to think if they should. Just my luck, no ice.
+              Have an idea for a website? Don't know whether you should code it
+              all yourself or just let another service handle it for you? We'll
+              help you get online and establish your presence so you can get
+              back to working on what matters.
             </p>
             <a href="/projects#proj-web">Learn More</a>
           </li>
           <li>
-            <h4>Game Development</h4>
+            <h3>Game Development</h3>
             <p>
-              Do you have any idea how long it takes those cups to decompose.
-              Hey, take a look at the earthlings. Goodbye! Yeah, but your
-              scientists were so preoccupied with whether or not they could,
-              they didn't stop to think if they should. Just my luck, no ice.
+              With over a decade of experience building games from the ground-up,
+              we know just how hard it is to make something fun. We want to help
+              you realize your vision without running into the same pitfalls we've
+              seen time and time again.
+            </p>
+            <p>
+              <i>(hint: no one is good at netcode)</i>
             </p>
             <a href="/projects#proj-game">Learn More</a>
           </li>
           <li>
-            <h4>Audio Production / Engineering</h4>
+            <h3>Audio Production // Recording Studio</h3>
             <p>
-              Do you have any idea how long it takes those cups to decompose.
-              Hey, take a look at the earthlings. Goodbye! Yeah, but your
-              scientists were so preoccupied with whether or not they could,
-              they didn't stop to think if they should. Just my luck, no ice.
+              From music to vlogging to games, everyone needs good audio.
+            </p>
+            <p>
+              Located in the musical pacific northwest, ToasterCat Recording Studios
+              provides equipment and experience for blossoming artists and makers
+              alike to create professional audio assets at an accessible hourly rate.
             </p>
             <a href="/projects#proj-audio">Learn More</a>
           </li>
           <li>
-            <h4>Makerspace / Recording Studio</h4>
+            <h3>Private Consultation</h3>
             <p>
-              Do you have any idea how long it takes those cups to decompose.
-              Hey, take a look at the earthlings. Goodbye! Yeah, but your
-              scientists were so preoccupied with whether or not they could,
-              they didn't stop to think if they should. Just my luck, no ice.
+              Sometimes our expertise is required for more specialized use cases
+              and technologies. We would love to hear about your "crazy" ideas
+              and critique your technical approach from behind the NDA'd veil.
             </p>
-          </li>
-          <li>
-            <h4>Consultation</h4>
             <p>
-              Do you have any idea how long it takes those cups to decompose.
-              Hey, take a look at the earthlings. Goodbye! Yeah, but your
-              scientists were so preoccupied with whether or not they could,
-              they didn't stop to think if they should. Just my luck, no ice.
+              From apps to doomsday devices - let's see what we can do for you.
             </p>
+            <a href="/contact">Reach Out</a>
           </li>
         </ul>
         <h2>Where We Do It</h2>
