@@ -5,7 +5,9 @@ const PROJECTS = [
       name: 'Crude Mirror Media',
       description: `Media Blog written and edited by the Hortensius brothers on an SEO Ad Revenue model.`,
       skills: [
-
+        "Wordpress",
+        "AdSense",
+        "GSuite"
       ],
       links: [
         {
@@ -22,7 +24,7 @@ const PROJECTS = [
       name: 'PixHell [Android]',
       description: `“Bullet Hell” game for Android published to Amazon Appstore.`,
       skills: [
-          "Android"
+        "Android"
       ],
       links: [
         {
@@ -36,8 +38,12 @@ const PROJECTS = [
   {
     id: 3,
     projectDetails: {
-      name: 'Star Wars: Wraith Squadron [Unity]',
+      name: 'Star Wars: Wraith Squadron',
       description: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
+      skills: [
+        "Unity",
+        "Unreal"
+      ],
       links: [
         {
           label: 'GitHub',
@@ -51,10 +57,13 @@ const PROJECTS = [
     projectDetails: {
       name: 'Octopus Attacks Shark!!',
       description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
+      skills: [
+        "Reaper"
+      ],
       links: [
         {
           label: 'Bandcamp',
-          target: 'https://octopus-attacks-shark.bandcamp.com/'
+          target: 'https://octopus-attacks-shark.bandcamp.com/track/cor-o-ners-demo-2'
         },
         {
           label: 'Facebook',
@@ -72,6 +81,9 @@ const PROJECTS = [
     projectDetails: {
       name: 'Ugliest Man Alive [U.M.A.]',
       description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
+      skills: [
+        "Reaper"
+      ],
       links: [
         {
           label: 'Bandcamp',

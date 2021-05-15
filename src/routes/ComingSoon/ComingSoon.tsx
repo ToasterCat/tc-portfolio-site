@@ -1,4 +1,4 @@
-import hammerIcon from '../../assets/hammer.png.png';
+import hammerIcon from '../../assets/hammer.png';
 import './ComingSoon.scss';
 
 export default function ComingSoon() {
