@@ -1,10 +1,11 @@
 import { ProjectTileProps } from '../ProjectTile/ProjectTile';
 import ProjectIconRow from '../UI/ProjectIconRow/ProjectIconRow';
-import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
 import ProjectLinks from '../UI/ProjectLinks/ProjectLinks';
+import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
+import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
 import tcLogo from '../../assets/toastercat.png';
 import './ProjectTileLarge.scss';
-import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
+
 
 export default function ProjectTileLarge(props: ProjectTileProps) {
   return (

@@ -1,4 +1,5 @@
 import tcLogo from '../../../assets/toastercat.png';
+import cmLogo from '../../../assets/crude-mirror.png';
 
 interface ProjectIconRowProps {
   styleClass?: string;
@@ -12,7 +13,7 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
     <div
       className={props.styleClass ? props.styleClass : 'project-details-row'}
     >
-      <img src={tcLogo} alt="project-icon" />
+      <img src={cmLogo} alt="project-icon" />
       <h2>{props.projName}</h2>
     </div>
   );

@@ -7,6 +7,7 @@ import './ProjectsPage.scss';
 export default function ProjectsPage() {
   return (
     <React.Fragment>
+
       <div className="project-anchors">
         <h2>ToasterCat Projects</h2>
         <div className="project-anchors-links">
@@ -21,23 +22,26 @@ export default function ProjectsPage() {
           </Link>
         </div>
       </div>
+
       <section className="proj-section">
         <h2 id="proj-web" className="anchor">
-          Web Dev projects
+          Web Development
         </h2>
         <ProjectTileLarge project={PROJECTS[0]} />
       </section>
       <section className="proj-section">
         <h2 className="anchor" id="proj-game">
-          Game Dev projects
+          Game Development
         </h2>
         <ProjectTileLarge project={PROJECTS[1]} />
+        <ProjectTileLarge project={PROJECTS[2]} />
       </section>
       <section className="proj-section">
         <h2 className="anchor" id="proj-audio">
-          Audio Projects
+          Audio Production and Recording
         </h2>
-        <ProjectTileLarge project={PROJECTS[2]} />
+        <ProjectTileLarge project={PROJECTS[3]} />
+        <ProjectTileLarge project={PROJECTS[4]} />
       </section>
     </React.Fragment>
   );

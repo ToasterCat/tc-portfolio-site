@@ -13,5 +13,5 @@ export interface ProjectDetails {
 export interface ProjectLinks {
   label: string;
   target: string;
-  bgImgSrc: string;
+  bgImgSrc?: string;
 }
