@@ -13,7 +13,7 @@ export default function Header() {
             alt="toastercat-logo"
             className="header-img"
           />
-          <h1>ToasterCat</h1>
+          <h1>ToasterCat Studios</h1>
         </div>
       </Link>
       <nav>

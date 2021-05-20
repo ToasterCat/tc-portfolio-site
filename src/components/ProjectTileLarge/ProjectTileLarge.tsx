@@ -21,10 +21,10 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           content={props.project.projectDetails.description}
         />
         <ProjectSkills
-          iconNames={
+          skills={
             props.project.projectDetails.skills
               ? props.project.projectDetails.skills
-              : ['1', '2', '3']
+              : []
           }
           styleClass={'project-section-skills'}
         />

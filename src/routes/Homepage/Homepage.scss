@@ -1,6 +1,9 @@
 @use '../../base';
 @include base.animation-mixin(fadeIn, 0, 1);
 
+/*
+ * Mobile / Vertical
+ */
 @media all and (max-width: 800px) {
   /* HERO SECTION */
 
@@ -33,6 +36,10 @@
     }
   }
 
+  .hero1-quote {
+    display: none;
+  }
+
   .hero1-image {
     display: flex;
     flex-direction: row;
@@ -63,6 +70,10 @@
   }
 }
 
+
+/*
+ * Desktop / Horizontal
+ */
 @media all and (min-width: 800px) {
   /* HERO SECTION */
 
@@ -76,12 +87,39 @@
     height: 475px;
   }
 
+  .hero1-quote {
+    min-width: 400px;
+    background-color: base.$color-almost-black;
+    color: base.$color-light;
+    margin-right: 0px;
+
+    h2 {
+      font-size: base.$large-heading;
+      font-style: italic;
+    }
+
+    h3 {
+      color: base.$site-color-gray;
+      font-size: base.$small-heading;
+      font-style: italic;
+      margin-left: 20px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      padding: 5px;
+    }
+
+    p {
+      font-size: base.$large-p;
+    }
+  }
+
   .hero1-content {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 800px;
     margin-right: 5vh;
     color: base.$color-light;
+
     h2 {
       font-size: base.$large-heading;
       margin: 0;

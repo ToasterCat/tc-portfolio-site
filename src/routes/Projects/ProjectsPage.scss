@@ -1,5 +1,8 @@
 @use '../../base';
 
+/**
+ * Mobile / Vertical
+ */
 @media all and (max-width: 800px) {
   .proj-section {
     display: flex;
@@ -50,7 +53,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: base.$site-color-light;
+    background-color: base.$color-black;
     height: 50px;
     padding: 1rem 0rem;
     position: sticky;
@@ -60,6 +63,10 @@
   }
 }
 
+
+/**
+ * Desktop / Horizontal
+ */
 @media all and (min-width: 800px) {
   .proj-section {
     display: flex;
@@ -116,7 +123,7 @@
 
   .anchor {
     text-align: center;
-    background-color: base.$site-color-light;
+    background-color: base.$color-black;
     padding: 1rem 0rem;
     position: sticky;
     top: 0;

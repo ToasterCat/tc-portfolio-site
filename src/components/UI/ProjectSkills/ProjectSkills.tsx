@@ -12,26 +12,50 @@ import wordpressLogo from '../../../assets/wordpressLogo.png';
 import './ProjectSkills.scss';
 
 const skillsIcons = {
-  "AdSense": adsenseLogo,
-  "Android": androidLogo,
-  "GSuite": gsuiteLogo,
-  "Reaper": reaperLogo,
-  "Unity": unityLogo,
-  "Unreal": unrealLogo,
-  "Wordpress": wordpressLogo
+  AdSense: adsenseLogo,
+  Android: androidLogo,
+  GSuite: gsuiteLogo,
+  Reaper: reaperLogo,
+  Unity: unityLogo,
+  Unreal: unrealLogo,
+  Wordpress: wordpressLogo
 };
 
+function skillIconMap(skillName: string) {
+  switch (skillName) {
+    case "AdSense":
+      return skillsIcons.AdSense;
+    case "Android":
+      return skillsIcons.Android;
+    case "GSuite":
+      return skillsIcons.GSuite;
+    case "Reaper":
+      return skillsIcons.Reaper;
+    case "Unity":
+      return skillsIcons.Unity;
+    case "Unreal":
+      return skillsIcons.Unreal;
+    case "WordPress":
+      return skillsIcons.Wordpress;
+    default:
+      return tcLogo;
+  }
+}
+
 interface ProjectSkillsProps {
-  iconNames: string[];
+  skills: string[];
   styleClass?: string;
 }
 
 export default function ProjectSkills(props: ProjectSkillsProps) {
   const getSkillsIcons = () => {
-    let icons = props.iconNames.map((icon) => {
+    if (props.skills.length < 1) {
+      return null;
+    }
+    let icons = props.skills.map((skill) => {
       return (
         <div className="skill-icon">
-          <img key={icon} src={skillsIcons[icon]} alt={icon} />
+          <img key={skill} src={skillIconMap(skill)} alt={skill} />
         </div>
       );
     });
