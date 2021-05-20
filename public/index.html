@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <!--
+    DOCUMENT HEAD
+    -->
   <head>
     <meta charset="utf-8" />
+
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <title>ToasterCat Studios</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Software consultancy offering a variety of services including software development, web development, game development, and more"
-    />
+    <meta name="description" content="Software consultancy offering a variety of services including software development, web development, game development, and more."/>
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -16,11 +21,29 @@
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     />
-    <title>ToasterCat Studios</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WF7R9G1GR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4WF7R9G1GR');
+    </script>
+
   </head>
+
+  <!--
+    DOCUMENT BODY
+    -->
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- ReactApp container -->
     <div id="root"></div>
+
+    <!-- TODO: [HOME-26] Migrate footer to React component -->
     <footer>
       <div>Copyright @2021 ToasterCat Studios</div>
       <div class="footer-contact">
@@ -34,5 +57,6 @@
         </div>
       </div>
     </footer>
+
   </body>
 </html>
