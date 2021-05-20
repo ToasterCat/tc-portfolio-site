@@ -1,6 +1,10 @@
+/**
+ * Mobile / Vertical
+ */
 @media all and (max-width: 800px) {
   .project-details-row img {
     max-width: 70px;
+    display:none;
   }
 
   .project-details-row {
@@ -15,6 +19,10 @@
     font-size: 35px;
   }
 }
+
+/**
+ * Desktop / Horizontal
+ */
 @media all and (min-width: 800px) {
   .project-details-row img {
     max-width: 100px;

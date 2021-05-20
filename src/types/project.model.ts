@@ -4,6 +4,7 @@ export interface Project {
 }
 
 export interface ProjectDetails {
+  alias: string;
   name: string;
   description: string;
   links: ProjectLinks[];

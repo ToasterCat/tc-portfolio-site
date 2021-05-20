@@ -3,8 +3,26 @@ import ProjectIconRow from '../UI/ProjectIconRow/ProjectIconRow';
 import ProjectLinks from '../UI/ProjectLinks/ProjectLinks';
 import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
 import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
-import tcLogo from '../../assets/toastercat.png';
+
+import crudeMirrorThumbnail from '../../assets/crude-mirror.png';
+import toasterCatThumbnail from '../../assets/toastercat.png';
+
 import './ProjectTileLarge.scss';
+
+const projectThumbnail = {
+  CrudeMirror: crudeMirrorThumbnail,
+  ToasterCat: toasterCatThumbnail
+};
+
+function projectThumbnailMap(projectAlias: string) {
+  switch (projectAlias) {
+    case "CrudeMirror":
+      return projectThumbnail.CrudeMirror;
+    case"ToasterCat":
+    default:
+      return toasterCatThumbnail;
+  }
+}
 
 
 export default function ProjectTileLarge(props: ProjectTileProps) {
@@ -12,6 +30,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
     <div className="project-tile-large">
       <section className="project-tile-large-content">
         <ProjectIconRow
+          projAlias={props.project.projectDetails.alias}
           projName={props.project.projectDetails.name}
           styleClass={'project-tile-large-icons'}
         />
@@ -34,7 +53,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         />
       </section>
       <div className="project-tile-large-screenshot">
-        <img src={tcLogo} alt="project-screenshot" />
+        <img src={projectThumbnailMap(props.project.projectDetails.alias)} alt="project-screenshot" />
       </div>
     </div>
   );

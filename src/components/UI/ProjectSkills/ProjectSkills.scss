@@ -1,3 +1,6 @@
+/**
+ * Mobile / Vertical
+ */
 @media all and (max-width: 800px) {
   .project-skills {
     display: flex;
@@ -13,7 +16,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    max-width: 100px;
+    max-height: 70px;
     padding: 5% 0% 3% 0%;
   }
 
@@ -31,6 +35,10 @@
     border-radius: 5px;
   }
 }
+
+/**
+ * Desktop / Horizontal
+ */
 @media all and (min-width: 800px) {
   .project-skills {
     display: flex;
@@ -45,6 +53,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-width: 150px;
+    max-height: 70px;
     justify-content: flex-start;
   }
 

@@ -2,6 +2,7 @@ const PROJECTS = [
   {
     id: 1,
     projectDetails: {
+      alias: 'CrudeMirror',
       name: 'Crude Mirror Media',
       description: `Media Blog written and edited by the Hortensius brothers on an SEO Ad Revenue model.`,
       skills: [
@@ -21,6 +22,7 @@ const PROJECTS = [
   {
     id: 2,
     projectDetails: {
+      alias:"PixHell",
       name: 'PixHell [Android]',
       description: `“Bullet Hell” game for Android published to Amazon Appstore.`,
       skills: [
@@ -38,6 +40,7 @@ const PROJECTS = [
   {
     id: 3,
     projectDetails: {
+      alias: 'WraithSquadron',
       name: 'Star Wars: Wraith Squadron',
       description: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
       skills: [
@@ -55,6 +58,7 @@ const PROJECTS = [
   {
     id: 4,
     projectDetails: {
+      alias: 'OctoShark',
       name: 'Octopus Attacks Shark!!',
       description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
       skills: [
@@ -79,6 +83,7 @@ const PROJECTS = [
   {
     id: 4,
     projectDetails: {
+      alias: 'UMA',
       name: 'Ugliest Man Alive [U.M.A.]',
       description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
       skills: [
