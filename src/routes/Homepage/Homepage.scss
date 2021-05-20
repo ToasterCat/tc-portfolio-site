@@ -36,6 +36,7 @@
     }
   }
 
+  // TODO: Disable the quote from a better
   .hero1-quote {
     display: none;
   }
@@ -104,6 +105,15 @@
       font-style: italic;
       margin-left: 20px;
       margin-top: 2px;
+      margin-bottom: 2px;
+      padding: 5px;
+    }
+
+    h4 {
+      color: base.$site-color-gray;
+      font-style: italic;
+      margin-left: 20px;
+      margin-top: 0px;
       margin-bottom: 2px;
       padding: 5px;
     }
