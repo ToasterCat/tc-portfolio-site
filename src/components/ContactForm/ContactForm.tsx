@@ -9,7 +9,7 @@ export default function ContactForm() {
 
         <form
           className="form-group"
-          action="https://formspree.io/f/xyybpylb"
+          action="https://formspree.io/f/mzbyrpnd"
           method="POST"
         >
           <div className="contact-form-field">
