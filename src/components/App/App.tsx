@@ -2,6 +2,7 @@ import { Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Homepage from '../../routes/Homepage/Homepage';
 import About from '../../routes/About/About';
 import ProjectsPage from '../../routes/Projects/ProjectsPage';
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+
       {isBigScreen && <Header />}
       {isMobileDevice && (
         <>
@@ -37,6 +39,7 @@ function App() {
           </div>
         </>
       )}
+      
       <main>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/about" component={About} />
@@ -45,6 +48,8 @@ function App() {
         <Route exact path="/blog" component={ComingSoon} />
         <Route exact path="/store" component={ComingSoon} />
       </main>
+
+      <Footer />
     </div>
   );
 }
