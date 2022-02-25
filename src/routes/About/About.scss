@@ -1,13 +1,35 @@
 @use '../../base';
 
-@media all and (max-width: 800px) {
+/**
+ * Mobile / Vertical
+ */
+@media all and (max-width: 50rem) {
   .about-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+
     background-color: base.$color-almost-black;
+    background-image: url("../../assets/background/uma-kitty-gold.jpg");
+    background-size: cover;
+    background-position: center;
+
+    animation: fadeIn 1.5s ease-in;
+  }
+
+  .about-blurb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
+
+    width: 30rem;
+
+    background-color: base.$color-black-transparent;
+    border-radius: 1rem;
 
     h2 {
       font-size: base.$mobile-large-heading;
@@ -60,7 +82,7 @@
     align-items: center;
     text-align: center;
     background-color: base.$site-color-light;
-    max-width: 40rem;
+    width: 30rem;
     padding: 1rem;
     margin: 2rem 0rem;
     border-radius: 5px;
@@ -71,14 +93,36 @@
   }
 }
 
-@media all and (min-width: 800px) {
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: 50rem) {
   .about-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 475px;
+
+    height: 50rem;
+
     background-color: base.$color-almost-black;
+    background-image: url("../../assets/background/oas-setlist.jpg");
+    background-size: cover;
+    background-position: center;
+
+    animation: fadeIn 1.5s ease-in;
+  }
+
+  .about-blurb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    padding: 1rem;
+
+    background-color: base.$color-black-transparent;
+    border-radius: 1rem;
 
     h2 {
       font-size: base.$large-heading;
@@ -86,7 +130,6 @@
 
     p {
       text-align: center;
-      width: 60rem;
       font-size: base.$large-p;
     }
   }

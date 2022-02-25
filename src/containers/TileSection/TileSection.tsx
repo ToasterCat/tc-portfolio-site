@@ -6,6 +6,7 @@ interface TileSectionProps {
   tiles: string[] | {}[];
   onClick?: () => void;
   areLinks: boolean;
+  background?: string;
 }
 
 export default function TileSection(props: TileSectionProps) {
@@ -36,7 +37,10 @@ export default function TileSection(props: TileSectionProps) {
   };
 
   return (
-    <section className="tile-section">
+    <section className="tile-section"
+      style={{
+        backgroundImage: 'url(' + props.background + ')'
+      }}>
       <h2>{props.heading}</h2>
       <div className="tile-group">
         {props.areLinks ? generateLinkTiles() : generateTiles()}

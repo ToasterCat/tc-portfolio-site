@@ -5,6 +5,7 @@
  * Mobile / Vertical
  */
 @media all and (max-width: 800px) {
+  
   /* HERO SECTION */
 
   .hero1-section {
@@ -27,7 +28,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: 300px;
+
+    max-width: 20rem;
+    padding: 1rem;
+
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 1rem;
 
     color: base.$color-light;
 
@@ -36,7 +42,6 @@
     }
   }
 
-  // TODO: Disable the quote from a better
   .hero1-quote {
     display: none;
   }
@@ -49,9 +54,9 @@
   }
 
   .hero1-section img {
-    width: 200px;
-    height: 200px;
-    padding-left: 30px;
+    max-width: 20rem;
+    max-height: 20rem;
+    padding-left: 2rem;
   }
 
   .projects {
@@ -76,6 +81,7 @@
  * Desktop / Horizontal
  */
 @media all and (min-width: 800px) {
+  
   /* HERO SECTION */
 
   .hero1-section {
@@ -85,14 +91,17 @@
     justify-content: space-evenly;
     background-color: base.$site-color-light;
     animation: fadeIn 1.5s ease-in;
-    height: 475px;
+    height: 50rem;
   }
 
   .hero1-quote {
-    min-width: 400px;
-    background-color: base.$color-almost-black;
+    min-width: 30rem;
+    background-color: base.$color-black-transparent;
     color: base.$color-light;
     margin-right: 0px;
+
+    border-left: 2px base.$color-light solid;
+    animation: fadeIn 2s ease-in;
 
     h2 {
       font-size: base.$large-heading;
@@ -126,9 +135,13 @@
   .hero1-content {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 50rem;
     margin-right: 5vh;
     color: base.$color-light;
+
+    padding: 3rem;
+    background-color: base.$color-black-transparent;
+    border-radius: 1rem;
 
     h2 {
       font-size: base.$large-heading;
@@ -148,18 +161,18 @@
   }
 
   .hero1-section img {
-    width: 200px;
-    height: 200px;
-    padding-left: 30px;
+    max-width: 30rem;
+    max-height: 40rem;
+    padding-left: 2rem;
   }
+
+  /* SERVICES SECTION */
 
   .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-
-  /* SERVICES SECTION */
 
   .tile-section {
     display: flex;

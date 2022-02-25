@@ -6,31 +6,29 @@ export default function About() {
   return (
     <React.Fragment>
       <section className="about-section">
-        <h2>About ToasterCat Studios</h2>
-        <p>
-          ToasterCat Studios is a free-range, ethically-sourced research center,
-          makerspace, recording studio, and mad science laboratory based out of
-          the American Pacific Northwest. It was founded by its owner and
-          operator, Dirk Hortensius, to provide engineering and logistical
-          resources to local makers and artists alike.
-        </p>
-        <p>
-          As these modern times require multi-disciplinary expertise and an
-          ever-increasingly diverse toolbox of specializations, services offered
-          by ToasterCat Studios range across the digital and physical realms.
-          Software design, hardware prototyping, product development, business
-          consultation, and even audio/video production resources are made
-          available to empower innovation and progress at the individual level.
-          If the vision is mad enough, we want to talk shop.
-        </p>
+        <div className="about-blurb">
+          <h2>About ToasterCat Studios</h2>
+          <p>
+            ToasterCat Studios is a free-range, ethically-sourced research center,
+            makerspace, recording studio, and mad science laboratory based out of
+            the American Pacific Northwest. It was founded by its owner and
+            operator, Dirk Hortensius, to provide engineering and logistical
+            resources to local makers and artists alike.
+          </p>
+          <p>
+             As these modern times require multi-disciplinary expertise and an
+            ever-increasingly diverse toolbox of specializations, services offered
+            by ToasterCat Studios range across the digital and physical realms.
+            Software design, hardware prototyping, product development, business
+            consultation, and even audio/video production resources are made
+            available to empower innovation and progress at the individual level.
+            If the vision is mad enough, we want to talk shop.
+          </p>
+        </div>
       </section>
 
       <section className="about-services">
         <h2>What We Do</h2>
-
-        <p>
-          ToasterCat blah blah blah
-        </p>
 
         <ul className="services-list">
           <li>

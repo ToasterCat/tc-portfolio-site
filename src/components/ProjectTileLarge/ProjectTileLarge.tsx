@@ -4,26 +4,7 @@ import ProjectLinks from '../UI/ProjectLinks/ProjectLinks';
 import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
 import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
 
-import crudeMirrorThumbnail from '../../assets/crude-mirror.png';
-import toasterCatThumbnail from '../../assets/toastercat.png';
-
 import './ProjectTileLarge.scss';
-
-const projectThumbnail = {
-  CrudeMirror: crudeMirrorThumbnail,
-  ToasterCat: toasterCatThumbnail
-};
-
-function projectThumbnailMap(projectAlias: string) {
-  switch (projectAlias) {
-    case "CrudeMirror":
-      return projectThumbnail.CrudeMirror;
-    case"ToasterCat":
-    default:
-      return toasterCatThumbnail;
-  }
-}
-
 
 export default function ProjectTileLarge(props: ProjectTileProps) {
   return (
@@ -53,7 +34,9 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         />
       </section>
       <div className="project-tile-large-screenshot">
-        <img src={projectThumbnailMap(props.project.projectDetails.alias)} alt="project-screenshot" />
+        <img 
+          src={props.project.projectDetails.thumbnailImage?.source}
+          alt={props.project.projectDetails.thumbnailImage?.alt} />
       </div>
     </div>
   );

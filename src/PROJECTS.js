@@ -14,10 +14,18 @@ const PROJECTS = [
         {
           label: 'Live Site',
           target: 'https://www.crude-mirror.com',
-          bgImgSrc: '../../assets/toastercat.png',
+          bgImgSrc: '../../assets/crude-mirror.png',
         },
       ],
-    },
+      thumbnailImage: {
+        source: '../../assets/crude-mirror.png',
+        alt: 'Crude-Mirror Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/crude-mirror.png',
+        alt: 'Crude-Mirror Logo'
+      }
+    }
   },
   {
     id: 2,
@@ -35,7 +43,15 @@ const PROJECTS = [
           bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
         }
       ],
-    },
+      thumbnailImage: {
+        source: './assets/reaperLogo.png',
+        alt: 'PixHell Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/toastercat.png',
+        alt: 'Crude-Mirror Logo'
+      }
+    }
   },
   {
     id: 3,
@@ -53,7 +69,15 @@ const PROJECTS = [
           target: 'https://github.com/Dirker27/WraithSquadron',
         }
       ],
-    },
+      thumbnailImage: {
+        source: 'url(../../assets/wordpressLogo.png)',
+        alt: 'Wraith Squadron Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/toastercat.png',
+        alt: 'Crude-Mirror Logo'
+      }
+    }
   },
   {
     id: 4,
@@ -78,7 +102,15 @@ const PROJECTS = [
           target: 'https://www.sonicbids.com/band/octopus-attacks-shark/'
         }
       ],
-    },
+      thumbnailImage: {
+        source: '../../assets/unityLogo.png',
+        alt: 'OAS Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/background/oas-fullband-redblue.png',
+        alt: 'OAS Band'
+      }
+    }
   },
   {
     id: 4,
@@ -103,8 +135,65 @@ const PROJECTS = [
           target: 'https://www.sonicbids.com/band/ugliest-man-alive/'
         }
       ],
-    },
+      thumbnailImage: {
+        source: '../../../assets/unrealLogo.png',
+        alt: 'UMA Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/background/uma-kitty-gold.png',
+        alt: 'UMA Band'
+      }
+    }
   },
+  {
+    id: 5,
+    projectDetails: {
+      alias: 'Moxel',
+      name: 'Moxel Hooks',
+      description: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
+      skills: [
+        "Cura",
+        "Fusion360",
+        "Ender3"
+      ],
+      links: [
+        {
+          label: 'Buy Now (Client Site)',
+          target: 'https://www.crude-mirror.com'
+        },
+      ],
+      thumbnailImage: {
+        source: '../../assets/tc-3d.png',
+        alt: 'Moxel Hook'
+      },
+      backgroundImage: {
+        source: '../../assets/moxel-gloria.jpg',
+        alt: 'Moxel Hook Slicing Render'
+      }
+    }
+  },
+  {
+    id: 6,
+    projectDetails: {
+      alias: 'GECKO',
+      name: 'The Lizzie',
+      description: `Custom blaster commissioned by client for CyberPunk 2077 cosplay. Fully operational spring-loaded blaster compatible with Worker(TM) magazines and darts.`,
+      skills: [
+        "Cura",
+        "Fusion360",
+        "Ender3"
+      ],
+      links: [],
+      thumbnailImage: {
+        source: '../../assets/tc-3d.png',
+        alt: 'TC Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/lizzie.jpg',
+        alt: 'Lizzie Assembly'
+      }
+    }
+  }
 ];
 
 export default PROJECTS;

@@ -1,11 +1,14 @@
 import React from 'react';
 import SectionHeading from '../../components/UI/SectionHeading/SectionHeading';
 import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalLinkButton';
+
 import './ContactSection.scss';
+import { convertCompilerOptionsFromJson } from 'typescript';
 
 export default function ContactInfoBar() {
   return (
     <section className="contact-section">
+      
       <SectionHeading
         heading={`Let's Connect`}
         styleClass={'contact-heading'}

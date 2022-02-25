@@ -1,5 +1,4 @@
 import React from 'react';
-import tcLogo from '../../assets/toastercat.png';
 import { Project } from '../../types/project.model';
 import './ProjectTile.scss';
 
@@ -8,9 +7,12 @@ export interface ProjectTileProps {
 }
 
 export default function ProjectTile(props: ProjectTileProps) {
+
   return (
     <div className="project-tile-container">
+      
       <div className="project-tile">
+        
         <div className="project-details">
           <h4>{props.project.projectDetails.name}</h4>
           <p>{props.project.projectDetails.description}</p>
@@ -20,10 +22,15 @@ export default function ProjectTile(props: ProjectTileProps) {
             })}
           </div>
         </div>
+        
         <div className="project-img">
-          <img src={tcLogo} alt="project-screenshot" />
+          <img 
+            src={props.project.projectDetails.thumbnailImage?.source} 
+            alt={props.project.projectDetails.thumbnailImage?.alt} />
         </div>
+      
       </div>
+
     </div>
   );
 }

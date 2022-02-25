@@ -1,6 +1,9 @@
 @use '../../base';
 
-@media all and (max-width: 800px) {
+/**
+ * Mobile / Vertical
+ */
+@media all and (max-width: 50rem) {
   .project-tile-large {
     display: flex;
     flex-direction: row;
@@ -9,6 +12,8 @@
     margin: 2rem 1.5rem;
     padding: 1.5rem;
     background-color: base.$site-color-light;
+
+    width: 30rem;
   }
 
   .project-tile-large-heading {
@@ -35,7 +40,7 @@
   }
 
   .project-tile-large-content {
-    max-width: 100%;
+    width: 30rem;
     height: auto;
   }
 
@@ -48,14 +53,20 @@
   }
 }
 
-@media all and (min-width: 800px) {
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: 50rem) {
   .project-tile-large {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: left;
+
+    width: 46rem;
     margin: 5rem;
     padding: 3rem;
+    
     background-color: base.$site-color-light;
   }
 
@@ -84,9 +95,7 @@
   }
 
   .project-tile-large-content {
-    max-width: 100%;
-    height: auto;
-    margin-right: 50px;
+    width: 30rem;
   }
 
   .project-tile-large-content p {
@@ -98,6 +107,8 @@
   }
 
   .project-tile-large-screenshot {
+    width: 10rem;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -105,7 +116,6 @@
   }
 
   .project-tile-large-screenshot img {
-    height: auto;
-    max-width: 100%;
+    max-width: 10rem;
   }
 }

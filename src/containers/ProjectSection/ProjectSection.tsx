@@ -6,10 +6,11 @@ import './ProjectSection.scss';
 export default function ProjectSection() {
   return (
     <section className="projects-section">
-      <h2>Projects</h2>
+      <h2>Active Projects</h2>
       <div className="projects-container">
         {PROJECTS.map((project) => (
-          <ProjectTile project={project} />
+          <ProjectTile 
+            project={project}/>
         ))}
       </div>
     </section>

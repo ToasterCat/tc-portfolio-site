@@ -10,10 +10,23 @@
     align-items: center;
   }
 
+  .project-heading {
+    background-image: url("../../assets/background/production.jpg");
+    background-size: cover;
+    background-position: center;
+
+    padding: 2rem;
+
+    animation: fadeIn 1.5s ease-in;
+  }
+
   .project-anchors {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background-color: base.$color-black-transparent;
+    border-radius: 1rem;
 
     h2 {
       font-size: base.$mobile-large-heading;
@@ -74,10 +87,23 @@
     align-items: center;
   }
 
+  .project-heading {
+    background-image: url("../../assets/background/pedalboard.jpg");
+    background-size: cover;
+    background-position: center;
+
+    padding: 2rem;
+
+    animation: fadeIn 1.5s ease-in;
+  }
+
   .project-anchors {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background-color: base.$color-black-transparent;
+    border-radius: 1rem;
 
     h2 {
       font-size: base.$large-heading;

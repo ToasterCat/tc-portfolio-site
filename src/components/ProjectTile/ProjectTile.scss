@@ -1,24 +1,31 @@
 @use '../../base';
 
-@media all and (max-width: 800px) {
+/**
+ * Mobile / Vertical
+ */
+@media all and (max-width: 50rem) {
   .project-tile-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 0rem;
+
+    width: 40rem;
   }
 
   .project-tile {
-    background-color: base.$color-light-gray;
-    color: base.$color-light;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    width: 300px;
-    height: 300px;
+
+    width: 30rem;
+
+    border-radius: 5px;  
     padding: 1rem;
+    background-color: base.$color-light-gray;
+    color: base.$color-light;
+    
     transition: all 0.5s ease; /* back to normal */
 
     p {
@@ -67,7 +74,10 @@
   }
 }
 
-@media all and (min-width: 800px) {
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: 50rem) {
   .project-tile-container {
     display: flex;
     justify-content: center;
@@ -75,13 +85,15 @@
   }
 
   .project-tile {
-    background-color: base.$color-light-gray;
-    color: base.$color-light;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    background-color: base.$color-light-gray;
+    color: base.$color-light;
     border-radius: 5px;
+
     width: 700px;
     height: 250px;
     padding: 1rem;

@@ -11,7 +11,11 @@ interface HeroSectionProps {
   heading: string;
   detail?: string;
   classPrefix?: string;
-  img: {
+  backgroundImage?: {
+    source: string;
+    // STUB: Configurable Background Effects (zoom, scroll, distort, etc)
+  };
+  logoImage: {
     source: string;
     alt: string;
     position: 'left' | 'right';
@@ -22,7 +26,7 @@ export default function HeroSection(props: HeroSectionProps) {
   const imgLeftContent = (
     <>
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>
-        <img src={props.img.source} alt={props.img.alt} />
+        <img src={props.logoImage.source} alt={props.logoImage.alt} />
       </div>
 
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-content`}>
@@ -54,14 +58,19 @@ export default function HeroSection(props: HeroSectionProps) {
       </div>
       
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>
-        <img src={props.img.source} alt={props.img.alt} />
+        <img src={props.logoImage.source} alt={props.logoImage.alt} />
       </div>
     </>
   );
 
   return (
-    <section className={`${props.classPrefix ? props.classPrefix : 'hero'}-section`}>
-      {props.img.position === 'left' ? imgLeftContent : imgRightContent}
+    <section className={`${props.classPrefix ? props.classPrefix : 'hero'}-section`}
+      style={{
+        backgroundImage: 'url(' + props.backgroundImage?.source + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
+      {props.logoImage.position === 'left' ? imgLeftContent : imgRightContent}
     </section>
   );
 }

@@ -9,10 +9,16 @@ export interface ProjectDetails {
   description: string;
   links: ProjectLinks[];
   skills?: string[];
+  thumbnailImage?: ProjectImage;
+  backgroundImage?: ProjectImage;
 }
 
 export interface ProjectLinks {
   label: string;
   target: string;
-  bgImgSrc?: string;
+}
+
+export interface ProjectImage {
+  source: string;
+  alt?: string;
 }
