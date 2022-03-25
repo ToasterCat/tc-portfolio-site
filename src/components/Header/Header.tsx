@@ -17,10 +17,8 @@ export default function Header() {
         </div>
       </Link>
       <nav>
-        <Link to="/projects">Projects</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/store">Store</Link>
+        <Link to="/">Home</Link>
+        <Link to="/projects">Portfolio</Link>
         <Link to="/contact">Contact</Link>
       </nav>
     </header>

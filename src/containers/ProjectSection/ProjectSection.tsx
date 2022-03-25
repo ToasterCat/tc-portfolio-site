@@ -3,10 +3,10 @@ import ProjectTile from '../../components/ProjectTile/ProjectTile';
 import PROJECTS from '../../PROJECTS';
 import './ProjectSection.scss';
 
-export function ActiveProjectSection() {
+export function ProjectSection() {
   return (
     <section className="projects-section">
-      <h2>Active Projects</h2>
+      <h2>Recent Works</h2>
       <div className="projects-container">
 
         <ProjectTile project={PROJECTS["crudeMirror"]}/>
