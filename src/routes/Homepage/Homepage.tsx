@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeroSection from '../../containers/HeroSection/HeroSection';
 import TileSection from '../../containers/TileSection/TileSection';
-import ProjectSection from '../../containers/ProjectSection/ProjectSection';
+import { ActiveProjectSection } from '../../containers/ProjectSection/ProjectSection';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
 import tcLogo from '../../assets/tc-3d.png';
@@ -39,11 +39,11 @@ export default function Homepage() {
           { label: 'Web Design', url: '/projects#proj-web' },
           { label: 'Audio Production', url: '/projects#proj-game' },
           { label: 'Consultation', url: '/projects#proj-consult' },
-          { label: 'Prototyping', url: '/projects#proj-prototype' }
+          { label: 'Prototyping', url: '/projects#proj-proto' }
         ]}
       />
       
-      <ProjectSection />
+      <ActiveProjectSection />
       
       <ContactInfoBar />
     

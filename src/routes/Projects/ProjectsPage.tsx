@@ -23,6 +23,9 @@ export default function ProjectsPage() {
             <Link to="proj-audio" smooth={true}>
               Audio Production
             </Link>
+            <Link to="proj-proto" smooth={true}>
+              Rapid Prototyping
+            </Link>
           </div>
 
         </div>
@@ -33,31 +36,35 @@ export default function ProjectsPage() {
         <h2 id="proj-web" className="anchor">
           Web Development
         </h2>
-        <ProjectTileLarge project={PROJECTS[0]} />
+        <ProjectTileLarge project={PROJECTS["crudeMirror"]} />
+        <ProjectTileLarge project={PROJECTS["strongarm"]} />
+        <ProjectTileLarge project={PROJECTS["oasWebsite"]} />
+        <ProjectTileLarge project={PROJECTS["umaWebsite"]} />
       </section>
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-game">
           Game Development
         </h2>
-        <ProjectTileLarge project={PROJECTS[1]} />
-        <ProjectTileLarge project={PROJECTS[2]} />
+        <ProjectTileLarge project={PROJECTS["pixHell"]} />
+        <ProjectTileLarge project={PROJECTS["wraithSquadron"]} />
       </section>
       
       <section className="proj-section">
         <h2 className="anchor" id="proj-audio">
           Audio Production and Recording
         </h2>
-        <ProjectTileLarge project={PROJECTS[3]} />
-        <ProjectTileLarge project={PROJECTS[4]} />
+        <ProjectTileLarge project={PROJECTS["oasBand"]} />
+        <ProjectTileLarge project={PROJECTS["umaBand"]} />
       </section>
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-proto">
           Rapid Digital + Physical Prototyping
         </h2>
-        <ProjectTileLarge project={PROJECTS[5]} />
-        <ProjectTileLarge project={PROJECTS[6]} />
+        <ProjectTileLarge project={PROJECTS["tcPrints"]} />
+        <ProjectTileLarge project={PROJECTS["moxel"]} />
+        <ProjectTileLarge project={PROJECTS["gecko"]} />
       </section>
     </React.Fragment>
   );

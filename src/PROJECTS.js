@@ -1,6 +1,6 @@
-const PROJECTS = [
-  {
-    id: 1,
+const PROJECTS = {
+
+  crudeMirror: {
     projectDetails: {
       alias: 'CrudeMirror',
       name: 'Crude Mirror Media',
@@ -27,10 +27,102 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 2,
+
+  strongarm: {
     projectDetails: {
-      alias:"PixHell",
+      alias: 'Strongarm',
+      name: 'Strongarm Digital Marketing (Website)',
+      description: `Custom website development and hosting for client.`,
+      skills: [
+        "HTML",
+        "CSS",
+        "S3"
+      ],
+      links: [],
+      thumbnailImage: {
+        source: '../../assets/tc-3d.png',
+        alt: 'TC Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/lizzie.jpg',
+        alt: 'Lizzie Assembly'
+      }
+    }
+  },
+
+  oasWebsite: {
+    projectDetails: {
+      alias: 'OctoShark-Website',
+      name: 'Band Website: Octopus Attacks Shark!!',
+      description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
+      skills: [
+        "HTML",
+        "CSS",
+        "S3"
+      ],
+      links: [
+        {
+          label: 'Bandcamp',
+          target: 'https://octopus-attacks-shark.bandcamp.com/track/cor-o-ners-demo-2'
+        },
+        {
+          label: 'Facebook',
+          target: 'https://www.facebook.com/OctopusAttacksShark'
+        },
+        {
+          label: 'Sonicbids (Booking)',
+          target: 'https://www.sonicbids.com/band/octopus-attacks-shark/'
+        }
+      ],
+      thumbnailImage: {
+        source: '../../assets/unityLogo.png',
+        alt: 'OAS Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/background/oas-fullband-redblue.png',
+        alt: 'OAS Band'
+      }
+    }
+  },
+
+  umaWebsite: {
+    projectDetails: {
+      alias: 'UMA',
+      name: 'Band Website: Ugliest Man Alive [U.M.A.]',
+      description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
+      skills: [
+        "Squarespace",
+        "Photoshop",
+        "Premiere"
+      ],
+      links: [
+        {
+          label: 'Bandcamp',
+          target: 'https://ugliest-man-alive.bandcamp.com/'
+        },
+        {
+          label: 'Facebook',
+          target: 'https://www.facebook.com/UgliestManAlive'
+        },
+        {
+          label: 'Sonicbids (Booking)',
+          target: 'https://www.sonicbids.com/band/ugliest-man-alive/'
+        }
+      ],
+      thumbnailImage: {
+        source: '../../../assets/unrealLogo.png',
+        alt: 'UMA Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/background/uma-kitty-gold.png',
+        alt: 'UMA Band'
+      }
+    }
+  },
+
+  pixHell: {
+    projectDetails: {
+      alias: 'PixHell',
       name: 'PixHell [Android]',
       description: `“Bullet Hell” game for Android published to Amazon Appstore.`,
       skills: [
@@ -53,8 +145,8 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 3,
+
+  wraithSquadron: {
     projectDetails: {
       alias: 'WraithSquadron',
       name: 'Star Wars: Wraith Squadron',
@@ -79,8 +171,8 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 4,
+
+  oasBand: {
     projectDetails: {
       alias: 'OctoShark',
       name: 'Octopus Attacks Shark!!',
@@ -112,8 +204,8 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 4,
+
+  umaBand: {
     projectDetails: {
       alias: 'UMA',
       name: 'Ugliest Man Alive [U.M.A.]',
@@ -145,8 +237,8 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 5,
+
+  moxel: {
     projectDetails: {
       alias: 'Moxel',
       name: 'Moxel Hooks',
@@ -172,8 +264,8 @@ const PROJECTS = [
       }
     }
   },
-  {
-    id: 6,
+
+  gecko: {
     projectDetails: {
       alias: 'GECKO',
       name: 'The Lizzie',
@@ -193,7 +285,29 @@ const PROJECTS = [
         alt: 'Lizzie Assembly'
       }
     }
+  },
+
+  tcPrints: {
+    projectDetails: {
+      alias: 'TCPrints',
+      name: 'ToasterCat Printing Shop',
+      description: ``,
+      skills: [
+        "Cura",
+        "Fusion360",
+        "Ender3"
+      ],
+      links: [],
+      thumbnailImage: {
+        source: '../../assets/tc-3d.png',
+        alt: 'TC Logo'
+      },
+      backgroundImage: {
+        source: '../../assets/lizzie.jpg',
+        alt: 'Lizzie Assembly'
+      }
+    }
   }
-];
+};
 
 export default PROJECTS;
