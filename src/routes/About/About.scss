@@ -12,9 +12,10 @@
     padding: 2rem;
 
     background-color: base.$color-almost-black;
-    background-image: url("../../assets/background/uma-kitty-gold.jpg");
+    background-image: url("../../assets/background/pedalboard.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 
     animation: fadeIn 1.5s ease-in;
   }
@@ -26,7 +27,7 @@
     justify-content: center;
     padding: 1rem;
 
-    width: 30rem;
+    width: 25rem;
 
     background-color: base.$color-black-transparent;
     border-radius: 1rem;
@@ -53,11 +54,26 @@
   }
 
   .services-list {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    width: 100%;
+    padding: 0;
+
+    background-image: url("../../assets/background/uma-kitty-gold.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
     list-style-type: none;
-    padding: 0rem 1rem;
   }
 
   .services-list a {
+    width: 7rem;
+    height: 3rem;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,8 +87,6 @@
     padding: 0rem 1rem;
     text-decoration: none;
     text-align: center;
-    width: 100px;
-    height: 50px;
   }
 
   .services-list li {
@@ -82,9 +96,9 @@
     align-items: center;
     text-align: center;
     background-color: base.$site-color-light;
-    width: 30rem;
+    width: 25rem;
     padding: 1rem;
-    margin: 2rem 0rem;
+    margin: 1rem;
     border-radius: 5px;
 
     h4 {
@@ -106,9 +120,10 @@
     height: 50rem;
 
     background-color: base.$color-almost-black;
-    background-image: url("../../assets/background/oas-setlist.jpg");
+    background-image: url("../../assets/background/pedalboard.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 
     animation: fadeIn 1.5s ease-in;
   }
@@ -151,7 +166,19 @@
   }
 
   .services-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
+
+    width: 100%;
+    padding: 0;
+
+    background-image: url("../../assets/background/uma-kitty-gold.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   .services-list a {
@@ -203,8 +230,8 @@
 
   .services-list li:hover {
     transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    -webkit-box-shadow: 9px 9px 0px -2px base.$color-red;
-    box-shadow: 9px 9px 0px -2px base.$color-red;
+    -webkit-box-shadow: 9px 9px 0px -2px base.$color-red-dark;
+    box-shadow: 9px 9px 0px -2px base.$color-red-dark;
     transition: all 0.4s ease; /* zoom in */
   }
 }

@@ -19,11 +19,11 @@
     align-items: center;
     justify-content: center;
 
-    width: 30rem;
+    width: 25rem;
 
     border-radius: 5px;  
     padding: 1rem;
-    background-color: base.$color-light-gray;
+    background-color: base.$site-color-light;
     color: base.$color-light;
     
     transition: all 0.5s ease; /* back to normal */
@@ -58,13 +58,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
     a {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      width: 150px;
-      height: 50px;
+      width: 7rem;
+      height: 3rem;
       margin-right: 1rem;
       text-align: center;
       background-color: base.$site-color-dark;
@@ -90,12 +91,12 @@
     align-items: center;
     justify-content: center;
 
-    background-color: base.$color-light-gray;
+    background-color: base.$site-color-light;
     color: base.$color-light;
     border-radius: 5px;
 
-    width: 700px;
-    height: 250px;
+    width: 40rem;
+    height: 30rem;
     padding: 1rem;
     margin: 1rem;
     transition: all 0.5s ease; /* back to normal */

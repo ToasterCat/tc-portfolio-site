@@ -68,7 +68,8 @@ export default function HeroSection(props: HeroSectionProps) {
       style={{
         backgroundImage: 'url(' + props.backgroundImage?.source + ')',
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}>
       {props.logoImage.position === 'left' ? imgLeftContent : imgRightContent}
     </section>

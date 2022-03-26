@@ -1,11 +1,14 @@
 @use '../../base';
 
+/**
+ * Mobile / Vertical
+ */
 @media all and (max-width: 800px) {
   .projects-section {
     display: flex;
     flex-direction: column;
     padding: 0px;
-    background-color: base.$site-color-light;
+    background-color: base.$color-almost-black;
 
     h2 {
       text-align: center;
@@ -21,12 +24,15 @@
   }
 }
 
+/**
+ * Desktop / Horizontal
+ */
 @media all and (min-width: 800px) {
   .projects-section {
     display: flex;
     flex-direction: column;
     padding: 100px 0px;
-    background-color: base.$site-color-light;
+    background-color: base.$color-almost-black;
 
     h2 {
       text-align: center;
