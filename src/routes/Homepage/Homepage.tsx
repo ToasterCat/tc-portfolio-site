@@ -9,6 +9,11 @@ import tcLogo from '../../assets/tc-3d.png';
 import heroBackground from '../../assets/background/chess-alt.png';
 
 import './Homepage.scss';
+//import './desktop.module.scss';
+//import './mobile.module.scss';
+import about from './about.module.scss';
+import locations from './locations.module.scss';
+import services from './services.module.scss';
 
 export default function Homepage() {
   return (
@@ -44,8 +49,8 @@ export default function Homepage() {
         ]}
       />
 
-      <section className="about-section">
-        <div className="about-blurb">
+      <section className={about.aboutSection}>
+        <div className={about.aboutBlurb}>
           <h2>About ToasterCat Studios</h2>
           <p>
             ToasterCat Studios is a free-range, ethically-sourced research center,
@@ -66,10 +71,10 @@ export default function Homepage() {
         </div>
       </section>
 
-      <section className="about-services">
+      <section className={about.aboutServices}>
         <h2>What We Do</h2>
 
-        <ul className="services-list">
+        <ul className={about.servicesList}>
           <li>
             <h3>Private Consultation</h3>
             <p>
@@ -118,7 +123,7 @@ export default function Homepage() {
         </ul>
       
         <h2>Where We Do It</h2>
-        <ul className="services-list">
+        <ul className={locations.locationsList}>
           <li>Greater Seattle Metro</li>
           <li>Virtually via web conferencing</li>
           <li>Wherever you are! We travel on case-by-case basis</li>
