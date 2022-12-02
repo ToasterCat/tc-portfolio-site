@@ -9,8 +9,6 @@ import tcLogo from '../../assets/tc-3d.png';
 import heroBackground from '../../assets/background/chess-alt.png';
 
 import './Homepage.scss';
-//import './desktop.module.scss';
-//import './mobile.module.scss';
 import about from './about.module.scss';
 import locations from './locations.module.scss';
 import services from './services.module.scss';
@@ -121,12 +119,13 @@ export default function Homepage() {
             <a href="/projects#proj-audio">Portfolio</a>
           </li>
         </ul>
-      
+      </section>
+
+      <section className={locations.locationSection}>      
         <h2>Where We Do It</h2>
         <ul className={locations.locationsList}>
-          <li>Greater Seattle Metro</li>
-          <li>Virtually via web conferencing</li>
-          <li>Wherever you are! We travel on case-by-case basis</li>
+          <li>Seattle, WA</li>
+          <li>Remote</li>
         </ul>
       </section>
 

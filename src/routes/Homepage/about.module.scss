@@ -9,7 +9,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
 
     background-color: base.$color-almost-black;
     background-image: url("../../assets/background/pedalboard.jpg");
@@ -25,9 +24,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    margin: 1rem;
+    padding: 0rem;
 
-    width: 25rem;
+    width: 90%;
 
     background-color: base.$color-black-transparent;
     border-radius: 1rem;
@@ -38,7 +38,10 @@
     }
 
     p {
-      text-align: center;
+      text-align: justify;
+      font-size: base.$small-p;
+
+      margin: 1rem;
     }
   }
 
@@ -96,8 +99,8 @@
     align-items: center;
     text-align: center;
     background-color: base.$site-color-light;
-    width: 25rem;
-    padding: 1rem;
+    width: 90%;
+    padding: 0rem;
     margin: 1rem;
     border-radius: 5px;
 

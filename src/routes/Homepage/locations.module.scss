@@ -4,6 +4,20 @@
  * Mobile / Vertical
  */
 @media all and (max-width: 50rem) {
+
+  .locationSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    animation: fadeIn 1.5s ease-in;
+      
+    h2 {
+        border-bottom: 3px solid base.$color-almost-black;
+    }
+  }
+
   .locationsList {
     display:flex;
     flex-direction: column;
@@ -13,12 +27,17 @@
     width: 100%;
     padding: 0;
 
-    background-image: url("../../assets/background/uma-kitty-alt.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 
     list-style-type: none;
+
+    background-color: base.$color-almost-black;
+    background-image: url("../../assets/background/uma-kitty-alt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   .locationsList a {
@@ -47,7 +66,7 @@
     align-items: center;
     text-align: center;
     background-color: base.$site-color-light;
-    width: 25rem;
+    width: 5rem;
     padding: 1rem;
     margin: 1rem;
     border-radius: 5px;
@@ -63,7 +82,7 @@
  */
 @media all and (min-width: 50rem) {
 
-  .aboutServices {
+  .locationSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,12 +90,14 @@
 
     h2 {
       font-size: base.$large-heading;
+      border-bottom: 2px solid base.$color-almost-black;
     }
 
     p {
       text-align: center;
       font-size: base.$large-p;
     }
+
   }
 
   .locationsList {
