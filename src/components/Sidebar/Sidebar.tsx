@@ -20,19 +20,9 @@ const Sidebar = () => {
         <Link
           className={'menu-item'}
           onClick={() => handleCloseMenu()}
-          to={'/projects'}
+          to={'/'}
         >
-          Projects
-        </Link>
-      </div>
-      <br />
-      <div>
-        <Link
-          className={'menu-item'}
-          onClick={() => handleCloseMenu()}
-          to={'/about'}
-        >
-          About
+          Home
         </Link>
       </div>
 
@@ -41,21 +31,12 @@ const Sidebar = () => {
         <Link
           className={'menu-item'}
           onClick={() => handleCloseMenu()}
-          to={'/blog'}
+          to={'/projects'}
         >
-          Blog
+          Projects
         </Link>
       </div>
-      <br />
-      <div>
-        <Link
-          className={'menu-item'}
-          onClick={() => handleCloseMenu()}
-          to={'/store'}
-        >
-          Store
-        </Link>
-      </div>
+
       <br />
       <div>
         <Link
