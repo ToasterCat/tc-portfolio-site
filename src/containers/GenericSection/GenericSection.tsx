@@ -1,17 +1,17 @@
 import React from 'react';
 
-import './HeroSection.scss';
+import './GenericSection.scss';
 
-interface HeroQuote {
+interface GenericSubSection {
   content: string;
   src: string;
   sub?: string;
 }
 
-interface HeroSectionProps {
-  quote?: HeroQuote;
+interface GenericSectionProps {
   heading: string;
   detail?: string;
+  subsection?: GenericSubSection;
   classPrefix?: string;
   backgroundImage?: {
     source: string;
@@ -24,19 +24,19 @@ interface HeroSectionProps {
   };
 }
 
-export default function HeroSection(props: HeroSectionProps) {
+export default function GenericSection(props: GenericSectionProps) {
   const imgLeftContent = (
     <>
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>
+      <div className={`${props.classPrefix ? props.classPrefix : 'generic'}-image`}>
         <img src={props.logoImage.source} alt={props.logoImage.alt} />
       </div>
 
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-content`}>
+      <div className={`${props.classPrefix ? props.classPrefix : 'generic'}-content`}>
 
-        <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-quote`}>
-          <h2>{props.quote?.content}</h2>
-          <h3>{props.quote?.src}</h3>
-          <h4>{props.quote?.sub}</h4>
+        <div className={`${props.classPrefix ? props.classPrefix : 'generic'}-sub`}>
+          <h2>{props.subsection?.content}</h2>
+          <h3>{props.subsection?.src}</h3>
+          <h4>{props.subsection?.sub}</h4>
         </div>
 
         <p>{props.heading}</p>
@@ -49,10 +49,10 @@ export default function HeroSection(props: HeroSectionProps) {
     <>
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-content`}>
 
-        <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-quote`}>
-          <h2>{props.quote?.content}</h2>
-          <h3>{props.quote?.src}</h3>
-          <h4>{props.quote?.sub}</h4>
+        <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-subsection`}>
+          <h2>{props.subsection?.content}</h2>
+          <h3>{props.subsection?.src}</h3>
+          <h4>{props.subsection?.sub}</h4>
         </div>
         
         <p>{props.heading}</p>

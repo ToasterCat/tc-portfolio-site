@@ -1,25 +1,31 @@
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import tcLogo from '../../assets/toastercat-cropped.png';
+import { getAllJSDocTagsOfKind } from 'typescript';
 
-export default function Header() {
+interface HeaderProps {
+  isMobileDevice: boolean;
+}
+
+export default function Header(props:HeaderProps) {
   return (
     <header className="header">
       <Link to="/" className="header-main-link">
-        <div className="header-icon">
+        <div className="header-brand">
           <img
-            src={
-              'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png'
-            }
             alt="toastercat-logo"
-            className="header-img"
+            className="header-brand-img"
+            src={tcLogo}
           />
           <h1>ToasterCat Studios</h1>
         </div>
       </Link>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/projects">Portfolio</Link>
-        <Link to="/contact">Contact</Link>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/projects">Portfolio</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
       </nav>
     </header>
   );

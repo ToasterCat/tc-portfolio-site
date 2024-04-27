@@ -20,16 +20,17 @@
   }
 
   .aboutBlurb {
+    width: 15rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
-    padding: 0rem;
+    margin: 1rem 0rem;
+    padding: .5rem;
 
-    width: 90%;
-
-    background-color: base.$color-black-transparent;
+    background-color: base.$site-color-section;
+    backdrop-filter: base.$site-filter-section;
     border-radius: 1rem;
 
     h2 {
@@ -39,7 +40,7 @@
 
     p {
       text-align: justify;
-      font-size: base.$small-p;
+      font-size: base.$mobile-small-p;
 
       margin: 1rem;
     }
@@ -98,11 +99,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: base.$site-color-light;
-    width: 90%;
-    padding: 0rem;
+
+    width: 15rem;
+    padding: .5rem;
     margin: 1rem;
+
     border-radius: 5px;
+    background-color: base.$site-color-section;
+    backdrop-filter: grayscale(50%) blur(5px);
+    border-radius: .5rem;
 
     h4 {
       font-size: base.$mobile-large-p;
@@ -139,7 +144,8 @@
     width: 40rem;
     padding: 1rem;
 
-    background-color: base.$color-black-transparent;
+    background-color: base.$site-color-section;
+    backdrop-filter: grayscale(50%) blur(5px);
     border-radius: 1rem;
 
     h2 {
@@ -213,16 +219,20 @@
   }
 
   .servicesList li {
+    width: base.$desktop-min-section-width;
+    padding: 1rem;
+    margin: 2rem 0rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: base.$site-color-light;
-    max-width: 40rem;
-    padding: 1rem;
-    margin: 2rem 0rem;
-    border-radius: 5px;
+
+    background-color: base.$site-color-section;
+    backdrop-filter: grayscale(50%) blur(5px);
+    border-radius: 1rem;
+
     font-size: base.$large-p;
     transition: all 0.4s ease; /* zoom in */
 

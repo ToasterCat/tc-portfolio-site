@@ -10,34 +10,17 @@ import ComingSoon from '../../routes/ComingSoon/ComingSoon';
 import Sidebar from '../Sidebar/Sidebar';
 
 function App() {
-  const isBigScreen = useMediaQuery({ query: '(min-device-width: 767px)' });
+  const isBigScreen = useMediaQuery({ query: '(min-device-width: 50rem)' });
   const isMobileDevice = useMediaQuery({
-    query: '(max-device-width: 767px)',
+    query: '(max-device-width: 50rem)',
   });
 
   return (
     <div className="App">
 
-      {isBigScreen && <Header />}
-      {isMobileDevice && (
-        <>
-          <div className="header-icon">
-            <Link to="/" className="header-main-link">
-              <img
-                src={
-                  'https://res.cloudinary.com/dyz6qaw5e/image/upload/v1619030102/toastercat/toastercat_qlm38x.png'
-                }
-                alt="toastercat-logo"
-                className="header-img"
-              />
-              <h1>ToasterCat</h1>
-            </Link>{' '}
-          </div>
-          <div>
-            <Sidebar />
-          </div>
-        </>
-      )}
+      <Header
+        isMobileDevice={isMobileDevice} />
+      <Sidebar />
       
       <main>
         <Route exact path="/" component={Homepage} />

@@ -1,19 +1,123 @@
-$font-stack: 'Lato', sans-serif;
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-MediumItalic.ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Thin.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Black.ttf");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("./assets/fonts/RobotoSlab-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT-Sans";
+  src: url("./assets/fonts/PTSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans";
+  src: url("./assets/fonts/PTSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans";
+  src: url("./assets/fonts/PTSans-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans";
+  src: url("./assets/fonts/PTSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Mono";
+  src: url("./assets/fonts/PTMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-body: 'PT-Sans';
+$font-heading: 'PT-Mono';
 
 /* COLORS */
-
-$site-color-dark: #202124;
-$site-color-gray: #c9d2d8;
-$site-color-light: #2c2f33;
 $color-dark: #333;
 $color-light: #fff;
 $color-light-gray: #636363;
 $color-almost-black: #23272a;
+$color-discord-black: #202124;
 $color-black: #111111;
+$color-black-transparent: rgba(0,0,0,0.75);
+$color-black-light-transparent: rgba(16,16,16,0.4);
 $color-orange: #e95420;
 $color-red: #d72c2c;
 $color-red-dark: #630b0b;
-$color-black-transparent: rgba(0,0,0,0.75);
+
+/* 'kitty' pallete */
+$color-cocoa-brown: #2D1D1C;
+$color-olive-green: #BAB55A;
+$color-spicy-mix: #93614B;
+$color-cutty-sark: #566E6C;
+
+/* SITE COLOR PALLETTE */
+$site-color-base: $color-spicy-mix;
+$site-color-primary: $color-olive-green;
+$site-color-accent: $color-cutty-sark;
+
+$site-color-dark: $color-discord-black;
+$site-color-dark-alt: $color-almost-black;
+$site-color-gray: #c9d2d8;
+$site-color-light: #2c2f33;
+
+$site-color-section: $color-black-transparent;
+$site-filter-section: grayscale(50%) blur(5px);
 
 /* DESKTOP SIZING */
 
@@ -21,12 +125,15 @@ $large-heading: 2rem;
 $small-heading: 1.5rem;
 $large-p: 1rem;
 $small-p: 0.8rem;
+$desktop-min-section-width: 30rem;
 
 /* MOBILE SIZING */
 
-$mobile-large-heading: 30px;
-$mobile-small-heading: 20px;
-$mobile-large-p: 15px;
+$mobile-large-heading: 2rem;
+$mobile-small-heading: 1.1rem;
+$mobile-large-p: 1rem;
+$mobile-small-p: 0.8rem;
+$mobile-min-section-width: 15rem;
 
 /* ANIMATION */
 $transition-duration: 500ms;

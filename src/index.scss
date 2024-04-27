@@ -1,7 +1,9 @@
 @use 'base';
 
 body {
-  font-family: base.$font-stack;
+  font-family: base.$font-body;
+  font-weight: normal;
+
   display: flex;
   flex-direction: column;
   background-color: base.$site-color-dark;
@@ -16,4 +18,32 @@ body {
 
 #root {
   flex: 1 0 auto;
+}
+
+h1 {
+  font-family: base.$font-heading;
+}
+h2 {
+  font-family: base.$font-heading;
+}
+h3 {
+  font-family: base.$font-heading;
+}
+
+/**
+ * MOBILE / VERTICAL
+ */
+@media all and (max-width: 50rem) {
+  section {
+    min-width: 15rem;
+  }
+}
+
+/**
+ * DESKTOP / HORIZONTAL
+ */
+@media all and (min-width: 50rem) {
+  section {
+    min-width: 30rem;
+  }
 }

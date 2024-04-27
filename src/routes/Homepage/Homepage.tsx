@@ -7,6 +7,7 @@ import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
 import tcLogo from '../../assets/tc-3d.png';
 import heroBackground from '../../assets/background/chess-alt.png';
+//import heroBackground from '../../assets/background/uma-kitty-gold.jpg';
 
 import './Homepage.scss';
 import about from './about.module.scss';
@@ -20,7 +21,7 @@ export default function Homepage() {
       <HeroSection
         classPrefix={'hero1'}
         quote={{
-          content: `"We help you make stuff more good."`,
+          content: `"Let's build better, together."`,
           src: `- Dirk Hortensius`,
           sub: `Founder, ToasterCat Studios LLC`
         }}
@@ -49,7 +50,7 @@ export default function Homepage() {
 
       <section className={about.aboutSection}>
         <div className={about.aboutBlurb}>
-          <h2>About ToasterCat Studios</h2>
+          <h2>About ToasterCat</h2>
           <p>
             ToasterCat Studios is a free-range, ethically-sourced research center,
             makerspace, recording studio, and mad science laboratory based out of

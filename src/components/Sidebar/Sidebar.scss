@@ -1,12 +1,36 @@
 @use '../../base';
 
+/**
+ * MOBILE / VERTICAL
+ */
+ @media all and (min-width: 50rem) {
+  .hamburger-header-links {
+    display: block;
+  }
+  .bm-burger-button {
+    display: none;
+  }
+}
+
+/**
+ * DESKTOP / HORIZONTAL
+ */
+@media all and (min-width: 50rem) {
+  .hamburger-header-links {
+    display: none;
+  }
+  .bm-burger-button {
+    display: none;
+  }
+}
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  right: 20px;
-  top: 30px;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: .5rem;
+  top: .5rem;
 }
 
 /* Color/shape of burger icon bars */
@@ -38,7 +62,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: base.$color-light-gray;
+  background: base.$site-color-dark;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }

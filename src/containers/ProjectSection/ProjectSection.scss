@@ -3,7 +3,7 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: 50rem) {
   .projects-section {
     display: flex;
     flex-direction: column;
@@ -21,13 +21,15 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+
+    width: base.$mobile-min-section-width;
   }
 }
 
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: 50rem) {
   .projects-section {
     display: flex;
     flex-direction: column;
@@ -44,5 +46,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
+    width: base.$desktop-min-section-width;
   }
 }

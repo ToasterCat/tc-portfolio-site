@@ -5,74 +5,11 @@
  * Mobile / Vertical
  */
 @media all and (max-width: 800px) {
-  
-  /* HERO SECTION */
-
-  .hero1-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: base.$site-color-light;
-    animation: fadeIn 1.5s ease-in;
-    height: 300px;
-
-    img {
-      display: none;
-    }
-  }
-
-  .hero1-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    max-width: 20rem;
-    padding: 1rem;
-
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 1rem;
-
-    color: base.$color-light;
-
-    p {
-      font-size: base.$mobile-large-p;
-    }
-  }
-
-  .hero1-quote {
-    display: none;
-  }
-
-  .hero1-image {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero1-section img {
-    max-width: 20rem;
-    max-height: 20rem;
-    padding-left: 2rem;
-  }
 
   .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-  }
-
-  /* SERVICES SECTION */
-
-  .tile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: base.$color-almost-black;
-    color: base.$color-light;
   }
 }
 
@@ -81,90 +18,6 @@
  * Desktop / Horizontal
  */
 @media all and (min-width: 800px) {
-  
-  /* HERO SECTION */
-
-  .hero1-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: base.$site-color-light;
-    animation: fadeIn 1.5s ease-in;
-    height: 50rem;
-  }
-
-  .hero1-quote {
-    min-width: 30rem;
-    background-color: base.$color-black-transparent;
-    color: base.$color-light;
-    margin-right: 0px;
-
-    border-left: 2px base.$color-light solid;
-    animation: fadeIn 2s ease-in;
-
-    h2 {
-      font-size: base.$large-heading;
-      font-style: italic;
-    }
-
-    h3 {
-      color: base.$site-color-gray;
-      font-size: base.$small-heading;
-      font-style: italic;
-      margin-left: 20px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      padding: 5px;
-    }
-
-    h4 {
-      color: base.$site-color-gray;
-      font-style: italic;
-      margin-left: 20px;
-      margin-top: 0px;
-      margin-bottom: 2px;
-      padding: 5px;
-    }
-
-    p {
-      font-size: base.$large-p;
-    }
-  }
-
-  .hero1-content {
-    display: flex;
-    flex-direction: column;
-    max-width: 50rem;
-    margin-right: 5vh;
-    color: base.$color-light;
-
-    padding: 3rem;
-    background-color: base.$color-black-transparent;
-    border-radius: 1rem;
-
-    h2 {
-      font-size: base.$large-heading;
-      margin: 0;
-    }
-
-    p {
-      font-size: base.$large-p;
-    }
-  }
-
-  .hero1-image {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero1-section img {
-    max-width: 30rem;
-    max-height: 40rem;
-    padding-left: 2rem;
-  }
 
   /* SERVICES SECTION */
 
