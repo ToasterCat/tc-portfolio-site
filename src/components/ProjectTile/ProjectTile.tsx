@@ -1,17 +1,42 @@
 import React from 'react';
-import { Project } from '../../types/project.model';
+import { Project, ProjectImage } from '../../types/project.model';
 import './ProjectTile.scss';
+
+import { ASSET_MANIFEST } from '../../assets/AssetMap';
 
 export interface ProjectTileProps {
   project: Project;
 }
+export interface ProjectImageProps {
+  image?: ProjectImage;
+}
+
+function ProjectThumbnailImage(props: ProjectImageProps) {
+  let thumbImageSrc = props.image ? props.image?.source : "default";
+  return (
+      <div className="project-img">
+        <img 
+          src={ASSET_MANIFEST.get(thumbImageSrc)} 
+          alt={props.image?.alt} />
+      </div>
+  )
+}
 
 export default function ProjectTile(props: ProjectTileProps) {
+  let bgd = props.project.projectDetails.backgroundImage
+    ? ASSET_MANIFEST.get(props.project.projectDetails.backgroundImage?.source)
+    : ASSET_MANIFEST.get("default");
 
   return (
     <div className="project-tile-container">
       
-      <div className="project-tile">
+      <div className="project-tile"
+        style={{
+          backgroundImage: `url(${bgd})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}>
         
         <div className="project-details">
           <h4>{props.project.projectDetails.name}</h4>
@@ -23,11 +48,9 @@ export default function ProjectTile(props: ProjectTileProps) {
           </div>
         </div>
         
-        <div className="project-img">
-          <img 
-            src={props.project.projectDetails.thumbnailImage?.source} 
-            alt={props.project.projectDetails.thumbnailImage?.alt} />
-        </div>
+        <ProjectThumbnailImage
+          image={props.project.projectDetails.thumbnailImage}
+        />
       
       </div>
 

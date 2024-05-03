@@ -1,5 +1,69 @@
 const PROJECTS = {
 
+
+  outsideAgitators: {
+    projectDetails: {
+      alias: 'OutsideAgitators',
+      name: 'Outside Agitators',
+      description: `Recording and Audio Engineering for debut LP by local Seattle band Octopus Attacks Shark!!`,
+      skills: [
+        "Reaper",
+        "Shopify"
+      ],
+      links: [
+        {
+          label: 'Official Band Site',
+          target: 'https://www.octopus-attacks-shark.com/pages/music.html'
+        },
+        {
+          label: 'Spotify',
+          target: 'https://open.spotify.com/album/2vzvr74t2aGSgBoR3Twlwf'
+        },
+        {
+          label: 'YouTube Music',
+          target: 'https://music.apple.com/us/album/killing-floor/1743129721?i=1743129725'
+        }
+      ],
+      thumbnailImage: {
+        source: 'oas-logo',
+        alt: 'OAS Band Logo'
+      },
+      backgroundImage: {
+        source: 'oas-outside-agitators',
+        alt: 'Outside Agitators Album Art'
+      }
+    }
+  },
+
+
+  fossArmory: {
+    projectDetails: {
+      alias: 'FossArmory',
+      name: 'FOSS Armory',
+      description: `Third-Person Shooter and Showcase for Additive Manufactured Firearms.`,
+      skills: [
+        "Unity",
+        "Fusion 360",
+        "AWS"
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          target: 'https://github.com/Dirker27/FossArmory'
+        }
+      ],
+      thumbnailImage: {
+        source: 'tc-logo',
+        alt: 'ToasterCat Logo'
+      },
+      backgroundImage: {
+        source: 'foss-background',
+        alt: 'FOSS Armory'
+      }
+    }
+  },
+
+
   crudeMirror: {
     projectDetails: {
       alias: 'CrudeMirror',
@@ -13,47 +77,54 @@ const PROJECTS = {
       links: [
         {
           label: 'Live Site',
-          target: 'https://www.crude-mirror.com',
-          bgImgSrc: '../../assets/crude-mirror.png',
+          target: 'https://www.crude-mirror.com'
         },
       ],
       thumbnailImage: {
-        source: '../../assets/crude-mirror.png',
+        source: 'crude-mirror-logo',
         alt: 'Crude-Mirror Logo'
       },
       backgroundImage: {
-        source: '../../assets/crude-mirror.png',
-        alt: 'Crude-Mirror Logo'
+        source: 'crude-mirror-full',
+        alt: 'Crude-Mirror Banner'
       }
     }
   },
 
+
   strongarm: {
     projectDetails: {
       alias: 'Strongarm',
-      name: 'Strongarm Digital Marketing (Website)',
+      name: 'Strongarm Digital Marketing',
       description: `Custom website development and hosting for client.`,
       skills: [
         "HTML",
         "CSS",
         "S3"
       ],
-      links: [],
+      links: [
+        {
+          label: 'Live Site',
+          target: 'https://www.strongarmdigitalmarketing.com',
+          bgImgSrc: 'strongarm-logo',
+        }
+      ],
       thumbnailImage: {
-        source: '../../assets/tc-3d.png',
-        alt: 'TC Logo'
+        source: 'strongarm-logo',
+        alt: 'Strongarm Logo'
       },
       backgroundImage: {
-        source: '../../assets/lizzie.jpg',
-        alt: 'Lizzie Assembly'
+        source: 'strongarm-background',
+        alt: 'Strongarm Site'
       }
     }
   },
 
+
   oasWebsite: {
     projectDetails: {
       alias: 'OctoShark-Website',
-      name: 'Band Website: Octopus Attacks Shark!!',
+      name: 'Octopus Attacks Shark!!',
       description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
       skills: [
         "HTML",
@@ -75,21 +146,22 @@ const PROJECTS = {
         }
       ],
       thumbnailImage: {
-        source: '../../assets/unityLogo.png',
+        source: 'oas-site-title',
         alt: 'OAS Logo'
       },
       backgroundImage: {
-        source: '../../assets/background/oas-fullband-redblue.png',
+        source: 'oas-background',
         alt: 'OAS Band'
       }
     }
   },
 
+
   umaWebsite: {
     projectDetails: {
-      alias: 'UMA',
-      name: 'Band Website: Ugliest Man Alive [U.M.A.]',
-      description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
+      alias: 'UMA-Website',
+      name: 'Ugliest Man Alive [U.M.A]',
+      description: `Simple porfolio website for local post-metal act, "Ugliest Man Alive [U.M.A]"`,
       skills: [
         "Squarespace",
         "Photoshop",
@@ -97,54 +169,51 @@ const PROJECTS = {
       ],
       links: [
         {
-          label: 'Bandcamp',
-          target: 'https://ugliest-man-alive.bandcamp.com/'
-        },
-        {
-          label: 'Facebook',
-          target: 'https://www.facebook.com/UgliestManAlive'
-        },
-        {
-          label: 'Sonicbids (Booking)',
-          target: 'https://www.sonicbids.com/band/ugliest-man-alive/'
+          label: 'Live Site',
+          target: 'https://ugliest-man-alive.com/'
         }
       ],
       thumbnailImage: {
-        source: '../../../assets/unrealLogo.png',
+        source: 'uma-logo',
         alt: 'UMA Logo'
       },
       backgroundImage: {
-        source: '../../assets/background/uma-kitty-gold.png',
+        source: 'uma-background',
         alt: 'UMA Band'
       }
     }
   },
 
+
   pixHell: {
     projectDetails: {
       alias: 'PixHell',
-      name: 'PixHell [Android]',
-      description: `“Bullet Hell” game for Android published to Amazon Appstore.`,
+      name: 'PixHell',
+      description: `“Bullet Hell” game for Android. Built entirely in native Android using custom controllers for both rendering and motion control interpolation.`,
       skills: [
         "Android"
       ],
       links: [
         {
           label: 'Amazon Listing',
-          target: ' https://www.amazon.com/dp/B00DPLJIOU',
-          bgImgSrc: 'https://jeffsum.com/images/jeff_1.jpg',
+          target: ' https://www.amazon.com/dp/B00DPLJIOU'
+        },
+        {
+          label: 'GitHub',
+          target: 'https://github.com/bmaxwell921/PixelHellProd/tree/master'
         }
       ],
       thumbnailImage: {
-        source: './assets/reaperLogo.png',
+        source: 'pixhell-logo',
         alt: 'PixHell Logo'
       },
       backgroundImage: {
-        source: '../../assets/toastercat.png',
-        alt: 'Crude-Mirror Logo'
+        source: 'pixhell-background',
+        alt: 'PixHell'
       }
     }
   },
+
 
   wraithSquadron: {
     projectDetails: {
@@ -162,15 +231,42 @@ const PROJECTS = {
         }
       ],
       thumbnailImage: {
-        source: 'url(../../assets/wordpressLogo.png)',
-        alt: 'Wraith Squadron Logo'
+        source: 'tc-logo',
+        alt: 'ToasterCat Logo'
       },
       backgroundImage: {
-        source: '../../assets/toastercat.png',
-        alt: 'Crude-Mirror Logo'
+        source: 'wraith-background',
+        alt: 'Wraith Squadron'
       }
     }
   },
+
+
+  chickMagnet: {
+    projectDetails: {
+      alias: 'ChickMagnet',
+      name: 'Chick Magnet',
+      description: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
+      skills: [
+        "Android"
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          target: ' https://github.com/edeesis/Chick-Magnet'
+        }
+      ],
+      thumbnailImage: {
+        source: 'tc-logo',
+        alt: 'ToasterCat Logo'
+      },
+      backgroundImage: {
+        source: 'chick-magnet-flyer',
+        alt: 'Chick Magnet Flyer'
+      }
+    }
+  },
+
 
   oasBand: {
     projectDetails: {
@@ -182,38 +278,43 @@ const PROJECTS = {
       ],
       links: [
         {
+          label: 'Official Site',
+          target: 'https://www.octopus-attacks-shark.com/'
+        },
+        {
           label: 'Bandcamp',
           target: 'https://octopus-attacks-shark.bandcamp.com/track/cor-o-ners-demo-2'
         },
         {
           label: 'Facebook',
           target: 'https://www.facebook.com/OctopusAttacksShark'
-        },
-        {
-          label: 'Sonicbids (Booking)',
-          target: 'https://www.sonicbids.com/band/octopus-attacks-shark/'
         }
       ],
       thumbnailImage: {
-        source: '../../assets/unityLogo.png',
+        source: 'oas-logo',
         alt: 'OAS Logo'
       },
       backgroundImage: {
-        source: '../../assets/background/oas-fullband-redblue.png',
+        source: 'oas-background',
         alt: 'OAS Band'
       }
     }
   },
 
+
   umaBand: {
     projectDetails: {
       alias: 'UMA',
-      name: 'Ugliest Man Alive [U.M.A.]',
+      name: 'Ugliest Man Alive [U.M.A]',
       description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
       skills: [
         "Reaper"
       ],
       links: [
+        {
+          label: 'Official Website',
+          target: 'https://ugliest-man-alive.com'
+        },
         {
           label: 'Bandcamp',
           target: 'https://ugliest-man-alive.bandcamp.com/'
@@ -221,22 +322,19 @@ const PROJECTS = {
         {
           label: 'Facebook',
           target: 'https://www.facebook.com/UgliestManAlive'
-        },
-        {
-          label: 'Sonicbids (Booking)',
-          target: 'https://www.sonicbids.com/band/ugliest-man-alive/'
         }
       ],
       thumbnailImage: {
-        source: '../../../assets/unrealLogo.png',
+        source: 'uma-logo',
         alt: 'UMA Logo'
       },
       backgroundImage: {
-        source: '../../assets/background/uma-kitty-gold.png',
+        source: 'tcstudio-background',
         alt: 'UMA Band'
       }
     }
   },
+
 
   moxel: {
     projectDetails: {
@@ -248,22 +346,18 @@ const PROJECTS = {
         "Fusion360",
         "Ender3"
       ],
-      links: [
-        {
-          label: 'Buy Now (Client Site)',
-          target: 'https://www.crude-mirror.com'
-        },
-      ],
+      links: [ ],
       thumbnailImage: {
-        source: '../../assets/tc-3d.png',
-        alt: 'Moxel Hook'
+        source: 'tc-logo',
+        alt: 'TC Logo'
       },
       backgroundImage: {
-        source: '../../assets/moxel-gloria.jpg',
+        source: 'moxel-background',
         alt: 'Moxel Hook Slicing Render'
       }
     }
   },
+
 
   gecko: {
     projectDetails: {
@@ -277,20 +371,21 @@ const PROJECTS = {
       ],
       links: [],
       thumbnailImage: {
-        source: '../../assets/tc-3d.png',
+        source: 'tc-logo',
         alt: 'TC Logo'
       },
       backgroundImage: {
-        source: '../../assets/lizzie.jpg',
+        source: 'lizzie-profile',
         alt: 'Lizzie Assembly'
       }
     }
   },
 
+
   tcPrints: {
     projectDetails: {
       alias: 'TCPrints',
-      name: 'ToasterCat Printing Shop',
+      name: 'ToasterCat Print Shop',
       description: ``,
       skills: [
         "Cura",
@@ -299,12 +394,12 @@ const PROJECTS = {
       ],
       links: [],
       thumbnailImage: {
-        source: '../../assets/tc-3d.png',
+        source: 'tc-logo',
         alt: 'TC Logo'
       },
       backgroundImage: {
-        source: '../../assets/lizzie.jpg',
-        alt: 'Lizzie Assembly'
+        source: 'tcprint-background',
+        alt: 'TC Print Shop'
       }
     }
   }

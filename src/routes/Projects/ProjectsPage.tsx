@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
       <section className="proj-section">
         <h2 id="proj-web" className="anchor">
-          Web Development
+          Web Development by ToasterCat
         </h2>
         <ProjectTileLarge project={PROJECTS["crudeMirror"]} />
         <ProjectTileLarge project={PROJECTS["strongarm"]} />
@@ -44,27 +44,29 @@ export default function ProjectsPage() {
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-game">
-          Game Development
+          Game Development by ToasterCat
         </h2>
+        <ProjectTileLarge project={PROJECTS["fossArmory"]} />
         <ProjectTileLarge project={PROJECTS["pixHell"]} />
         <ProjectTileLarge project={PROJECTS["wraithSquadron"]} />
+        <ProjectTileLarge project={PROJECTS["chickMagnet"]} />
       </section>
       
       <section className="proj-section">
         <h2 className="anchor" id="proj-audio">
-          Audio Production and Recording
+          Audio Production and Recording by ToasterCat
         </h2>
-        <ProjectTileLarge project={PROJECTS["oasBand"]} />
+        <ProjectTileLarge project={PROJECTS["outsideAgitators"]} />
         <ProjectTileLarge project={PROJECTS["umaBand"]} />
       </section>
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-proto">
-          Rapid Digital + Physical Prototyping
+          Rapid Prototyping by ToasterCat
         </h2>
-        <ProjectTileLarge project={PROJECTS["tcPrints"]} />
         <ProjectTileLarge project={PROJECTS["moxel"]} />
         <ProjectTileLarge project={PROJECTS["gecko"]} />
+        <ProjectTileLarge project={PROJECTS["tcPrints"]} />
       </section>
     </React.Fragment>
   );

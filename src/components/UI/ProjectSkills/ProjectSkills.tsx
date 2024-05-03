@@ -1,24 +1,19 @@
 import SectionHeading from '../SectionHeading/SectionHeading';
 
-import tcLogo from '../../../assets/toastercat.png';
-import adsenseLogo from "../../../assets/adsenseLogo.png";
-import androidLogo from "../../../assets/androidLogo.png";
-import gsuiteLogo from "../../../assets/gsuiteLogo.png";
-import reaperLogo from "../../../assets/reaperLogo.png";
-import unityLogo from '../../../assets/unityLogo.png';
-import unrealLogo from '../../../assets/unrealLogo.png';
-import wordpressLogo from '../../../assets/wordpressLogo.png';
+import { ASSET_MANIFEST } from '../../../assets/AssetMap';
 
 import './ProjectSkills.scss';
 
 const skillsIcons = {
-  AdSense: adsenseLogo,
-  Android: androidLogo,
-  GSuite: gsuiteLogo,
-  Reaper: reaperLogo,
-  Unity: unityLogo,
-  Unreal: unrealLogo,
-  Wordpress: wordpressLogo
+  AdSense: ASSET_MANIFEST.get('logo-adsense'),
+  Android: ASSET_MANIFEST.get('logo-android'),
+  GSuite: ASSET_MANIFEST.get('logo-gsuite'),
+  Reaper: ASSET_MANIFEST.get('logo-reaper'),
+  Unity: ASSET_MANIFEST.get('logo-unity'),
+  Unreal: ASSET_MANIFEST.get('logo-unreal'),
+  Wordpress: ASSET_MANIFEST.get('logo-wordpress'),
+
+  Unset: ASSET_MANIFEST.get('default')
 };
 
 function skillIconMap(skillName: string) {
@@ -38,7 +33,7 @@ function skillIconMap(skillName: string) {
     case "WordPress":
       return skillsIcons.Wordpress;
     default:
-      return tcLogo;
+      return skillsIcons.Unset;
   }
 }
 

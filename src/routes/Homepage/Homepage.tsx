@@ -22,8 +22,8 @@ export default function Homepage() {
         classPrefix={'hero1'}
         quote={{
           content: `"Let's build better, together."`,
-          src: `- Dirk Hortensius`,
-          sub: `Founder, ToasterCat Studios LLC`
+          src: `- ToasterCat Studios`,
+          sub: ``
         }}
         heading={`We're makers who love what makers make, so we want to help makers make them.`}
         detail={`ToasterCat Studios (LLC) is a multidisciplinary engineering and consulting firm that aims to empower local makers realize their vision. From professional High-TPS scalable microservices to robotics, prototyping, and even A/V production - we want to work with you to make your 'crazy' science projects a reality. Bring on the doomsday devices, we want to build three.`}

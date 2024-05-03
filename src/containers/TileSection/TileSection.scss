@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 25rem;
+    padding: 2rem 0rem;
 
     background-size: cover;
     background-position: center;
@@ -31,7 +31,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 10px;
   }
 
   .tile {
@@ -44,8 +43,7 @@
     background-color: base.$color-light;
     color: base.$color-almost-black;
     font-size: base.$mobile-large-p;
-    margin: 10px 0px;
-    padding: 0rem 1rem;
+    margin: 2rem;
     text-decoration: none;
     width: 150px;
     height: 45px;
@@ -100,7 +98,6 @@
     font-size: base.$large-p;
     font-weight: bold;
     transition: all 0.4s ease;
-    padding: 0rem 1rem;
     text-decoration: none;
     width: 200px;
     height: 65px;

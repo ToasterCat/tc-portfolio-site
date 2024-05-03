@@ -1,5 +1,17 @@
 @use '../../base';
 
+.projects-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.projects-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
 /**
  * Mobile / Vertical
  */
@@ -7,7 +19,6 @@
   .projects-section {
     display: flex;
     flex-direction: column;
-    padding: 0px;
     background-color: base.$color-almost-black;
 
     h2 {
@@ -18,11 +29,11 @@
 
   .projects-container {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    width: base.$mobile-min-section-width;
+    width: 100%;
   }
 }
 
@@ -33,7 +44,6 @@
   .projects-section {
     display: flex;
     flex-direction: column;
-    padding: 100px 0px;
     background-color: base.$color-almost-black;
 
     h2 {
@@ -46,7 +56,5 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-
-    width: base.$desktop-min-section-width;
   }
 }

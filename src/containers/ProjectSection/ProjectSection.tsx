@@ -9,9 +9,9 @@ export function ProjectSection() {
       <h2>Recent Works</h2>
       <div className="projects-container">
 
-        <ProjectTile project={PROJECTS["crudeMirror"]}/>
+        <ProjectTile project={PROJECTS["outsideAgitators"]}/>
 
-        <ProjectTile project={PROJECTS["tcPrints"]}/>
+        <ProjectTile project={PROJECTS["fossArmory"]}/>
 
       </div>
     </section>
