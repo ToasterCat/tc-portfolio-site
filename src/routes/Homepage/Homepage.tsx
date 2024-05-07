@@ -54,12 +54,11 @@ export default function Homepage() {
           <p>
             ToasterCat Studios is a free-range, ethically-sourced research center,
             makerspace, recording studio, and mad science laboratory based out of
-            the American Pacific Northwest. It was founded by its owner and
-            operator, Dirk Hortensius, to provide engineering and logistical
-            resources to local makers and artists alike.
+            the American Pacific Northwest. ToasterCat was founded in 2020 to provide
+            engineering and logistical resources to local makers and artists alike.
           </p>
           <p>
-             As these modern times require multi-disciplinary expertise and an
+            As these modern times require multi-disciplinary expertise and an
             ever-increasingly diverse toolbox of specializations, services offered
             by ToasterCat Studios range across the digital and physical realms.
             Software design, hardware prototyping, product development, business

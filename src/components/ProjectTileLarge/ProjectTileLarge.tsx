@@ -25,13 +25,13 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
     : ASSET_MANIFEST.get("default");
 
   return (
-    <div className="project-tile-large"
-        style={{
-        backgroundImage: `url(${bgd})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}>
+    <div className="project-tile-large" >
+      <div className="project-tile-large-background" style={{
+      backgroundImage: `url(${bgd})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }}></div>
       <section className="project-tile-large-content">        
         <ProjectIconRow
           projAlias={props.project.projectDetails.alias}
@@ -39,6 +39,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           styleClass={'project-tile-large-icons'}
           thumbnailImage={props.project.projectDetails.thumbnailImage}
         />
+        <section>
         <SmallContentSection
           heading={'Project Description'}
           styleClass={'project-tile-large-description'}
@@ -56,10 +57,8 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           links={props.project.projectDetails.links}
           styleClass={'project-tile-large-links'}
         />
+        </section>
       </section>
-      <ProjectScreenshot
-        image={props.project.projectDetails.thumbnailImage}
-      />
     </div>
   );
 }

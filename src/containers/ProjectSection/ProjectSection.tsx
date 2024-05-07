@@ -13,6 +13,10 @@ export function ProjectSection() {
 
         <ProjectTile project={PROJECTS["fossArmory"]}/>
 
+        <ProjectTile project={PROJECTS["crudeMirror"]}/>
+
+        <ProjectTile project={PROJECTS["strongarm"]}/>
+
       </div>
     </section>
   );

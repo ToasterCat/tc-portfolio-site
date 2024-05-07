@@ -30,13 +30,10 @@ export default function ProjectTile(props: ProjectTileProps) {
   return (
     <div className="project-tile-container">
       
-      <div className="project-tile"
-        style={{
-          backgroundImage: `url(${bgd})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}>
+      <div className="project-tile">
+        <div className="project-background" 
+          style={{backgroundImage: `url(${bgd})`}}>
+        </div>
         
         <div className="project-details">
           <h4>{props.project.projectDetails.name}</h4>
@@ -51,7 +48,6 @@ export default function ProjectTile(props: ProjectTileProps) {
         <ProjectThumbnailImage
           image={props.project.projectDetails.thumbnailImage}
         />
-      
       </div>
 
     </div>
