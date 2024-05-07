@@ -39,7 +39,6 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           styleClass={'project-tile-large-icons'}
           thumbnailImage={props.project.projectDetails.thumbnailImage}
         />
-        <section>
         <SmallContentSection
           heading={'Project Description'}
           styleClass={'project-tile-large-description'}
@@ -57,7 +56,6 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           links={props.project.projectDetails.links}
           styleClass={'project-tile-large-links'}
         />
-        </section>
       </section>
     </div>
   );
