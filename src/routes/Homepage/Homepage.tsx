@@ -37,6 +37,8 @@ export default function Homepage() {
         }}
       />
 
+      <ProjectSection />
+
       <TileSection
         areLinks
         heading={'Client Services'}
@@ -128,8 +130,6 @@ export default function Homepage() {
           <li>Remote</li>
         </ul>
       </section>
-
-      <ProjectSection />
       
       <ContactInfoBar />
     

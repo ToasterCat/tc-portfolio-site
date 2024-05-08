@@ -27,11 +27,12 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
   return (
     <div className="project-tile-large" >
       <div className="project-tile-large-background" style={{
-      backgroundImage: `url(${bgd})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
-    }}></div>
+        backgroundImage: `url(${bgd})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}></div>
+
       <ProjectIconRow
         projAlias={props.project.projectDetails.alias}
         projName={props.project.projectDetails.name}
