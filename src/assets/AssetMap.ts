@@ -2,17 +2,17 @@ import chess3D from './chess.jpg';
 
 import toasterCatCropped from './toastercat-cropped.png';
 import toasterCatLegacyLogo from './ToasterCat-2011.png';
-import toasterCatLogo from './tc-3d.png';
+import toasterCatLogo from './tc-3d-medium.png';
 
-import adSenseLogo from './logos/external/adsenseLogo.png';
-import androidLogo from './logos/external/androidLogo.png';
+import adSenseLogo from './logos/external/adsenseLogo-small.png';
+import androidLogo from './logos/external/androidLogo-small.png';
 import gSuiteLogo from './logos/external/gSuiteLogo.png';
 import reaperLogo from './logos/external/reaperLogo.png';
 import unityLogo from './logos/external/unityLogo.png';
-import unrealLogo from './logos/external/unrealLogo.png';
+import unrealLogo from './logos/external/unrealLogo-small.png';
 import wordpressLogo from './logos/external/wordpressLogo.png';
 
-import crudeMirrorLogo from './gallery/CrudeMirror/SiteLogo.png';
+import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
 import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.png';
 
@@ -23,18 +23,20 @@ import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
 
 import oasLogo from './gallery/OAS/oas-logo.gif';
-import oasSiteTitle from './gallery/OAS/OAS-Title_1000.png';
+import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
 import oasBackground from './background/oas-fullband-red_scaled.png';
 import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.png';
 
-import umaBand from './gallery/UMA/9starFilledUMA.png';
+import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
 import umaMachineGod from './gallery/UMA/MGS1.gif';
 
-import chickMagnetFlyer from './gallery/ChickMagnet/flyer.jpeg';
+import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
+import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
+
+import chickMagnetFlyer from './gallery/ChickMagnet/flyer_scaled.jpeg';
 import lizzieProfile from './gallery/Lizzie/LizzieHand_scaled.jpg';
 import fossArmoryBackground from './gallery/FOSS/TargetRange.png';
-import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
 import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
 import tcStudioBackground from './gallery/TC-Recording/StudioGuitars_scaled.jpg';
 import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
@@ -79,6 +81,7 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["chick-magnet-flyer", chickMagnetFlyer],
     ["lizzie-profile", lizzieProfile],
     ["foss-background", fossArmoryBackground],
+    ["wraith-logo", wraithSquadronLogo],
     ["wraith-background", wraithSquadronBackground],
     ["tcprint-background", tcPrintBackground],
     ["tcstudio-background", tcStudioBackground],

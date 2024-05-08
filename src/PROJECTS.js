@@ -231,8 +231,8 @@ const PROJECTS = {
         }
       ],
       thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Logo'
+        source: 'wraith-logo',
+        alt: 'Wraith Squadron Logo'
       },
       backgroundImage: {
         source: 'wraith-background',
