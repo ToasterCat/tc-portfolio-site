@@ -25,7 +25,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
     : ASSET_MANIFEST.get("default");
 
   return (
-    <div className="project-tile-large" >
+    <div className="project-tile-large" id={"project-" + props.project.projectDetails.alias} >
       <div className="project-tile-large-background" style={{
         backgroundImage: `url(${bgd})`,
         backgroundSize: 'cover',

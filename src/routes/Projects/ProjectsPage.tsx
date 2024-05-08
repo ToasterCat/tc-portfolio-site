@@ -8,14 +8,16 @@ import { ProjectTileProps } from '../../components/ProjectTile/ProjectTile';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 
 function MiniProject(props: ProjectTileProps) {
-  let bgd = props.project.projectDetails.thumbnailImage
+  let icon = props.project.projectDetails.thumbnailImage
     ? ASSET_MANIFEST.get(props.project.projectDetails.thumbnailImage?.source)
     : ASSET_MANIFEST.get("default");
+
+  let target = "project-" + props.project.projectDetails.alias
   return (
     <div className="project-tile-mini">
-      <a href="#proj-audio">
-        <img src={bgd} className='proj-mini-thumb'/>
-      </a>
+      <Link to={target} smooth={true}>
+        <img src={icon} className='proj-mini-thumb'/>
+      </Link>
     </div>
   );
 }
@@ -28,7 +30,7 @@ export default function ProjectsPage() {
 
         <div className="project-anchors">
 
-          <h2>ToasterCat Projects</h2>
+          <h2>ToasterCat Project Portfolio</h2>
           <div className="project-anchors-links">
             <Link to="proj-web" smooth={true}>
               Web Development
@@ -49,10 +51,11 @@ export default function ProjectsPage() {
 
 
       <section className="proj-section">
+        <div className="anchor-beard"></div>
         <h2 id="proj-web" className="anchor">
             Web Development
         </h2>
-        <div className="anchor-wrapper">
+        <div className="anchor-beard">
           <div className="project-mini-container">
               <MiniProject project={PROJECTS["crudeMirror"]} />
               <MiniProject project={PROJECTS["strongarm"]} />
@@ -68,10 +71,11 @@ export default function ProjectsPage() {
       </section>
 
       <section className="proj-section">
+        <div className="anchor-beard"></div>
         <h2 className="anchor" id="proj-game">
           Game Development
         </h2>
-        <div className="anchor-wrapper">
+        <div className="anchor-beard">
           <div className="project-mini-container">
               <MiniProject project={PROJECTS["fossArmory"]} />
               <MiniProject project={PROJECTS["pixHell"]} />
@@ -86,17 +90,32 @@ export default function ProjectsPage() {
       </section>
       
       <section className="proj-section">
+        <div className="anchor-beard"></div>
         <h2 className="anchor" id="proj-audio">
           Audio Production
         </h2>
+        <div className="anchor-beard">
+          <div className="project-mini-container">
+            <MiniProject project={PROJECTS["outsideAgitators"]} />
+            <MiniProject project={PROJECTS["umaBand"]} />
+          </div>
+        </div>
         <ProjectTileLarge project={PROJECTS["outsideAgitators"]} />
         <ProjectTileLarge project={PROJECTS["umaBand"]} />
       </section>
 
       <section className="proj-section">
+      <div className="anchor-beard"></div>
         <h2 className="anchor" id="proj-proto">
           Rapid Prototyping
         </h2>
+        <div className="anchor-beard">
+          <div className="project-mini-container">
+            <MiniProject project={PROJECTS["moxel"]} />
+            <MiniProject project={PROJECTS["gecko"]} />
+            <MiniProject project={PROJECTS["tcPrints"]} />
+          </div>
+        </div>
         <ProjectTileLarge project={PROJECTS["moxel"]} />
         <ProjectTileLarge project={PROJECTS["gecko"]} />
         <ProjectTileLarge project={PROJECTS["tcPrints"]} />

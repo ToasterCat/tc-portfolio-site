@@ -1,16 +1,39 @@
 @use '../../base';
 
+.project-anchors-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    color: base.$color-light;
+    
+    font-family: base.$font-heading;
+    background-color: base.$color-black;
+    border: 1px solid base.$site-color-dark-alt;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
 .anchor {
   filter: none;
   z-index: 99;
 }
 
-.anchor-wrapper {
-  position: absolute;
-
+.anchor-beard {
   width: 100%;
-  height: 15rem;
-  background-color: base.$color-black;
+  min-height: 20rem;
+  background-color: base.$site-color-dark;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-mini-container {
@@ -22,6 +45,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
@@ -30,39 +54,22 @@
   flex-direction: row;
   justify-content: center;
 
-  width: 8rem;
-  height: 8rem;
+  transition: all 0.4s ease; /* zoom in */
 
-  margin: 1rem; 
+  border: 1px solid base.$site-color-dark-alt;
+  border-radius: .2rem;
 
   a {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
-    width: 7rem;
-    height: 7rem;
+    width: 100%;
+    height: 100%;
     color: base.$color-light;
     
-    background-color: base.$site-color-dark-alt;
   }
-}
-
-.project-tile-mini:hover {
-  transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-  -webkit-box-shadow: 9px 9px 0px -2px base.$color-red-dark;
-  box-shadow: 9px 9px 0px -2px base.$color-red-dark;
-  transition: all 0.4s ease; /* zoom in */
-
-  img {
-    transform: translate3D(0, -1px, 0) scale(1.075);
-    filter: drop-shadow(.5rem .75rem .5rem base.$color-black);
-    transition: all 0.4s ease; /* zoom in */
-  }
-}
-
-.proj-mini-thumb {
-  width: 5rem;
 }
 
 /**
@@ -84,6 +91,8 @@
     padding: 2rem;
 
     animation: fadeIn 1.5s ease-in;
+
+    height: 100vh;
   }
 
   .project-anchors {
@@ -102,27 +111,17 @@
   }
 
   .project-anchors-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 2rem 0rem;
 
     a {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      background-color: base.$color-light;
-      color: base.$color-almost-black;
       font-size: base.$mobile-large-p;
-      margin: 0.5rem 0rem;
-      padding: 0rem 1rem;
+
       text-decoration: none;
       text-align: center;
-      width: 150px;
+      width: 15rem;
       height: 65px;
+      margin: 1rem 0;
+      border-radius: .2rem;
     }
   }
 
@@ -132,13 +131,26 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: base.$color-black;
+    background-color: base.$site-color-dark;
     height: 50px;
     padding: .3rem 0rem;
     position: sticky;
     top: 0;
     margin: 0;
     width: 100%;
+  }
+
+  .project-tile-mini {
+  
+    width: 5rem;
+    height: 5rem;
+  
+    margin: 1rem; 
+  
+    img {
+      width: 4rem;
+      opacity: 70%;
+    }
   }
 }
 
@@ -161,6 +173,8 @@
     background-attachment: fixed;
 
     padding: 2rem;
+
+    min-height: 100vh;
 
     animation: fadeIn 1.5s ease-in;
   }
@@ -188,14 +202,6 @@
     padding: 5rem 0rem;
 
     a {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      background-color: base.$color-light;
-      color: base.$color-almost-black;
       font-size: base.$large-p;
       transition: all 0.4s ease;
       padding: 0rem 1rem;
@@ -207,7 +213,7 @@
 
     a:hover {
       transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-      background-color: base.$color-red;
+      background-color: base.$color-red-dark;
       color: base.$color-light;
       border-radius: 5px;
       transition: all 0.4s ease; /* zoom in */
@@ -217,11 +223,60 @@
 
   .anchor {
     text-align: center;
-    background-color: base.$color-black;
+    background-color: base.$site-color-dark;
     padding: 1rem 0rem;
     position: sticky;
     top: 0;
     margin: 0;
     width: 100%;
+  }
+
+  .project-tile-mini {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+  
+    width: 7rem;
+    height: 7rem;
+  
+    margin: 1rem; 
+  
+    transition: all 0.4s ease; /* zoom in */
+  
+    border: 1px solid base.$site-color-dark-alt;
+    border-radius: .2rem;
+  
+    a {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  
+      width: 100%;
+      height: 100%;
+      color: base.$color-light;
+      
+    }
+  
+    img {
+      width: 5rem;
+      opacity: 50%;
+    }
+  }
+  
+  .project-tile-mini:hover {
+    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
+    -webkit-box-shadow: 9px 9px 0px -2px base.$color-red-dark;
+    box-shadow: 9px 9px 0px -2px base.$color-red-dark;
+    transition: all 0.4s ease; /* zoom in */
+
+    cursor: pointer;
+  
+    img {
+      transform: translate3D(0, -1px, 0) scale(1.075);
+      filter: drop-shadow(.5rem .75rem .5rem base.$color-black);
+      opacity: 100%;
+      transition: all 0.4s ease; /* zoom in */
+    }
   }
 }
