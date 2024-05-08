@@ -4,6 +4,7 @@ import './ExternalLinkButton.scss';
 interface ExternalLinkButtonProps {
   linkTo: string;
   text: string;
+  image?: string;
 }
 
 export default function ExternalLinkButton(props: ExternalLinkButtonProps) {

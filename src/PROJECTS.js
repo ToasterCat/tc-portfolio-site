@@ -4,7 +4,7 @@ const PROJECTS = {
   outsideAgitators: {
     projectDetails: {
       alias: 'OutsideAgitators',
-      name: '"Outside Agitators" by Octopus Attacks Shark!!',
+      name: 'Outside Agitators',
       description: `Recording and Audio Engineering for debut LP by local Seattle band Octopus Attacks Shark!!`,
       skills: [
         "Reaper",

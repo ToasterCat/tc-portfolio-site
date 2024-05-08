@@ -12,10 +12,6 @@
     justify-content: center;
   
     animation: fadeIn 1.5s ease-in;
-      
-    h2 {
-        border-bottom: 3px solid base.$color-almost-black;
-    }
   }
 
   .locationsList {
@@ -91,7 +87,6 @@
 
     h2 {
       font-size: base.$large-heading;
-      border-bottom: 2px solid base.$color-almost-black;
     }
 
     p {
@@ -109,7 +104,7 @@
     list-style-type: none;
 
     width: 100%;
-    min-height: 50vh;
+    min-height: 75vh;
     padding: 0;
 
     background-image: url("../../assets/background/uma-kitty-alt.jpg");

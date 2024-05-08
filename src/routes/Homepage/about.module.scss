@@ -10,6 +10,8 @@
     align-items: center;
     justify-content: center;
 
+    min-height: 110vh;
+
     background-color: base.$color-almost-black;
     background-image: url("../../assets/background/pedalboard.jpg");
     background-size: cover;
@@ -125,7 +127,7 @@
     align-items: center;
     justify-content: center;
 
-    height: 50rem;
+    min-height: 110vh;
 
     background-color: base.$color-almost-black;
     background-image: url("../../assets/background/pedalboard.jpg");

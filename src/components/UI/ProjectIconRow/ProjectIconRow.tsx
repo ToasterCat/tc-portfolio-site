@@ -25,8 +25,8 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
     <div
       className={props.styleClass ? props.styleClass : 'project-details-row'}
     >
-      <h2>{props.projName}</h2>
       <img src={bgd} alt="project-icon" />      
+      <h2>{"\\> " + props.projName}</h2>
     </div>
   );
 }

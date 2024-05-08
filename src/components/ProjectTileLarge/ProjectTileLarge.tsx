@@ -32,13 +32,14 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
     }}></div>
+      <ProjectIconRow
+        projAlias={props.project.projectDetails.alias}
+        projName={props.project.projectDetails.name}
+        styleClass={'project-tile-large-icons'}
+        thumbnailImage={props.project.projectDetails.thumbnailImage}
+      />
       <section className="project-tile-large-content">        
-        <ProjectIconRow
-          projAlias={props.project.projectDetails.alias}
-          projName={props.project.projectDetails.name}
-          styleClass={'project-tile-large-icons'}
-          thumbnailImage={props.project.projectDetails.thumbnailImage}
-        />
+        
         <SmallContentSection
           heading={'Project Description'}
           styleClass={'project-tile-large-description'}

@@ -1,6 +1,21 @@
 @use '../../base';
 
-@media all and (max-width: 800px) {
+input {
+  color: base.$color-light;
+  background-color: base.$color-black-light-transparent;
+  border: none;
+}
+
+textarea {
+  color: base.$color-light;
+  background-color: base.$color-black-light-transparent;
+  border: none;
+}
+
+/**
+ * Mobile / Vertical
+ */
+@media all and (max-width: 50rem) {
   .contact-form-section {
     display: flex;
     padding: 5% 0% 2% 0%;
@@ -99,7 +114,11 @@
   }
 }
 
-@media all and (min-width: 800px) {
+
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: 50rem) {
   .contact-form-section {
     display: flex;
     padding: 5% 0% 2% 0%;

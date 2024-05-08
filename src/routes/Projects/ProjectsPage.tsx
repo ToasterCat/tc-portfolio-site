@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
       <section className="proj-section">
         <h2 id="proj-web" className="anchor">
-          Web Development by ToasterCat
+          Web Development
         </h2>
         <ProjectTileLarge project={PROJECTS["crudeMirror"]} />
         <ProjectTileLarge project={PROJECTS["strongarm"]} />
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-game">
-          Game Development by ToasterCat
+          Game Development
         </h2>
         <ProjectTileLarge project={PROJECTS["fossArmory"]} />
         <ProjectTileLarge project={PROJECTS["pixHell"]} />
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
       
       <section className="proj-section">
         <h2 className="anchor" id="proj-audio">
-          Audio Production and Recording by ToasterCat
+          Audio Production
         </h2>
         <ProjectTileLarge project={PROJECTS["outsideAgitators"]} />
         <ProjectTileLarge project={PROJECTS["umaBand"]} />
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
 
       <section className="proj-section">
         <h2 className="anchor" id="proj-proto">
-          Rapid Prototyping by ToasterCat
+          Rapid Prototyping
         </h2>
         <ProjectTileLarge project={PROJECTS["moxel"]} />
         <ProjectTileLarge project={PROJECTS["gecko"]} />

@@ -1,5 +1,10 @@
 @use '../../base';
 
+.anchor {
+  filter: none;
+  z-index: 99;
+}
+
 /**
  * Mobile / Vertical
  */
@@ -69,7 +74,7 @@
     text-align: center;
     background-color: base.$color-black;
     height: 50px;
-    padding: 1rem 0rem;
+    padding: .3rem 0rem;
     position: sticky;
     top: 0;
     margin: 0;

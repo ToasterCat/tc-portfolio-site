@@ -31,23 +31,32 @@ export default function ProjectTile(props: ProjectTileProps) {
     <div className="project-tile-container">
       
       <div className="project-tile">
+        
         <div className="project-background" 
           style={{backgroundImage: `url(${bgd})`}}>
         </div>
         
         <div className="project-details">
+
           <h4>{props.project.projectDetails.name}</h4>
-          <p>{props.project.projectDetails.description}</p>
-          <div className="project-tile-links">
-            {props.project.projectDetails.links.map((link) => {
-              return <a href={link.target}>{link.label}</a>;
-            })}
+          <div className="project-info">
+            <ProjectThumbnailImage
+              image={props.project.projectDetails.thumbnailImage}
+            />
+
+            <div className="project-blurb">
+              <p>{props.project.projectDetails.description}</p>
+              <div className="project-tile-links">
+                {props.project.projectDetails.links.map((link) => {
+                  return <a href={link.target}>{link.label}</a>;
+                })}
+              </div>
+            </div>
+            
           </div>
+
         </div>
-        
-        <ProjectThumbnailImage
-          image={props.project.projectDetails.thumbnailImage}
-        />
+      
       </div>
 
     </div>

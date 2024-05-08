@@ -22,12 +22,19 @@ body {
 
 h1 {
   font-family: base.$font-heading;
+  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);  
 }
 h2 {
   font-family: base.$font-heading;
+  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
 }
 h3 {
   font-family: base.$font-heading;
+  filter: drop-shadow(.2rem .3rem .1rem base.$color-black);
+}
+h4 {
+  font-family: base.$font-heading;
+  filter: drop-shadow(.2rem .3rem .1rem base.$color-black);
 }
 
 /**
