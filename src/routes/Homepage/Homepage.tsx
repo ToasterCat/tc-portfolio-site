@@ -6,7 +6,7 @@ import { ProjectSection } from '../../containers/ProjectSection/ProjectSection';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
 import tcLogo from '../../assets/tc-3d.png';
-import heroBackground from '../../assets/background/chess-alt.png';
+import heroBackground from '../../assets/background/chess-alt_scaled.png';
 //import heroBackground from '../../assets/background/uma-kitty-gold.jpg';
 
 import './Homepage.scss';

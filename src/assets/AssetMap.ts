@@ -17,27 +17,27 @@ import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
 import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.png';
 
 import strongarmLogo from './gallery/StrongArm/logo-strongarm.png';
-import strongarmBackground from './gallery/StrongArm/hero.png';
+import strongarmBackground from './gallery/StrongArm/hero_scaled.png';
 
 import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
 
 import oasLogo from './gallery/OAS/oas-logo.gif';
 import oasSiteTitle from './gallery/OAS/OAS-Title_1000.png';
-import oasBackground from './background/oas-fullband-red.png';
+import oasBackground from './background/oas-fullband-red_scaled.png';
 import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.png';
 
 import umaBand from './gallery/UMA/9starFilledUMA.png';
-import umaBackground from './gallery/UMA/Baby-reverse.png';
+import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
 import umaMachineGod from './gallery/UMA/MGS1.gif';
 
 import chickMagnetFlyer from './gallery/ChickMagnet/flyer.jpeg';
-import lizzieProfile from './gallery/Lizzie/LizzieHand.jpg';
+import lizzieProfile from './gallery/Lizzie/LizzieHand_scaled.jpg';
 import fossArmoryBackground from './gallery/FOSS/TargetRange.png';
 import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
-import tcPrintBackground from './gallery/TC-Print/PrinterAngle.jpg';
-import tcStudioBackground from './gallery/TC-Recording/StudioGuitarBodies.jpg';
-import moxelBackground from './gallery/Moxel/moxel-gloria.jpg';
+import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
+import tcStudioBackground from './gallery/TC-Recording/StudioGuitars_scaled.jpg';
+import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
 
 let ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
