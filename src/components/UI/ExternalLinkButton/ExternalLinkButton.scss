@@ -1,40 +1,47 @@
 @use '../../../base';
 
+.external-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: base.$color-black;
+  color: base.$color-light;
+  font-size: base.$mobile-large-p;
+  font-family: base.$font-heading;
+  border: 1px solid base.$site-color-dark-alt;
+  border-radius: .2rem;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
 @media all and (max-width: 800px) {
   .external-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$mobile-large-p;
-    transition: all 0.4s ease;
     padding: 0rem 1rem;
-    text-decoration: none;
-    width: 100px;
-    height: 50px;
+    margin: .5rem;
+    width: 12.5rem;
+    height: 4rem;
+
+    img {
+      width: 2rem;
+      margin-right: .5rem;
+    }
   }
 }
 
 @media all and (min-width: 800px) {
   .external-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$large-p;
-    transition: all 0.4s ease;
     padding: 0rem 1rem;
-    text-decoration: none;
-    width: 150px;
-    height: 65px;
+    margin: 1rem;
+    width: 12.5rem;
+    height: 4rem;
+
+    img {
+      width: 2rem;
+      margin-right: .5rem;
+    }
   }
 
   .external-button:hover {

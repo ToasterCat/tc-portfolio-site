@@ -11,6 +11,13 @@ import reaperLogo from './logos/external/reaperLogo.png';
 import unityLogo from './logos/external/unityLogo.png';
 import unrealLogo from './logos/external/unrealLogo-small.png';
 import wordpressLogo from './logos/external/wordpressLogo.png';
+import githubLogo from './logos/external/githubLogo-small.png';
+import soundcloudLogo from './logos/external/soundcloudLogo-small.png';
+import spotifyLogo from './logos/external/spotify-logo-small.png';
+import iTunesLogo from './logos/external/itunes-logo.png';
+import amazonMusicLogo from './logos/external/amazon-music-logo-small.png';
+import bandcampLogo from './logos/external/bandcampLogo-small.png';
+import genericWebsiteLogo from './logos/external/www-logo-small.png';
 
 import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
@@ -22,7 +29,7 @@ import strongarmBackground from './gallery/StrongArm/hero_scaled.png';
 import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
 
-import oasLogo from './gallery/OAS/oas-logo.gif';
+import oasLogo from './gallery/OAS/OAS-logo.png';
 import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
 import oasBackground from './background/oas-fullband-red_scaled.png';
 import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.png';
@@ -50,6 +57,7 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["tc-legacy-logo", toasterCatLegacyLogo],
 
     //- external logos
+    ["logo-website", genericWebsiteLogo],
     ["logo-adsense", adSenseLogo],
     ["logo-android", androidLogo],
     ["logo-gsuite", gSuiteLogo],
@@ -57,6 +65,12 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["logo-unity", unityLogo],
     ["logo-unreal", unrealLogo],
     ["logo-wordpress", wordpressLogo],
+    ["logo-github", githubLogo],
+    ["logo-soundcloud", soundcloudLogo],
+    ["logo-amazon-music", amazonMusicLogo],
+    ["logo-spotify", spotifyLogo],
+    ["logo-bandcamp", bandcampLogo],
+    ["logo-iTunes", iTunesLogo],
 
     //- project-specific
     ["crude-mirror-logo", crudeMirrorLogo],

@@ -3,25 +3,30 @@ const PROJECTS = {
 
   outsideAgitators: {
     projectDetails: {
-      alias: 'OutsideAgitators',
+      alias: 'outsideAgitators',
       name: 'Outside Agitators',
-      description: `Recording and Audio Engineering for debut LP by local Seattle band Octopus Attacks Shark!!`,
+      showcase: 'Audio',
+      brief: `Debut LP by local Seattle band Octopus Attacks Shark!!`,
+      description: '',
       skills: [
         "Reaper",
         "Shopify"
       ],
       links: [
         {
-          label: 'Official Band Site',
-          target: 'https://www.octopus-attacks-shark.com/pages/music.html'
+          label: 'Official Website',
+          target: 'https://www.octopus-attacks-shark.com/pages/music.html',
+          icon: 'oas-logo'
         },
         {
           label: 'Spotify',
-          target: 'https://open.spotify.com/album/2vzvr74t2aGSgBoR3Twlwf'
+          target: 'https://open.spotify.com/album/2vzvr74t2aGSgBoR3Twlwf',
+          icon: 'logo-spotify'
         },
         {
-          label: 'YouTube Music',
-          target: 'https://music.apple.com/us/album/killing-floor/1743129721?i=1743129725'
+          label: 'iTunes',
+          target: 'https://music.apple.com/us/album/killing-floor/1743129721?i=1743129725',
+          icon: 'logo-iTunes'
         }
       ],
       thumbnailImage: {
@@ -31,6 +36,10 @@ const PROJECTS = {
       backgroundImage: {
         source: 'oas-outside-agitators',
         alt: 'Outside Agitators Album Art'
+      },
+      detailImage: {
+        source: 'oas-site-title',
+        alt: 'OAS Band Title'
       }
     }
   },
@@ -38,18 +47,21 @@ const PROJECTS = {
 
   fossArmory: {
     projectDetails: {
-      alias: 'FossArmory',
+      alias: 'fossArmory',
       name: 'FOSS Armory',
+      showcase: 'Game Dev',
+      brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
       description: `Third-Person Shooter and Showcase for Additive Manufactured Firearms.`,
       skills: [
         "Unity",
         "Fusion 360",
-        "AWS"
+        "AWS Gamelift"
       ],
       links: [
         {
           label: 'GitHub',
-          target: 'https://github.com/Dirker27/FossArmory'
+          target: 'https://github.com/Dirker27/FossArmory',
+          icon: 'logo-github'
         }
       ],
       thumbnailImage: {
@@ -57,6 +69,10 @@ const PROJECTS = {
         alt: 'ToasterCat Logo'
       },
       backgroundImage: {
+        source: 'foss-background',
+        alt: 'FOSS Armory'
+      },
+      detailImage: {
         source: 'foss-background',
         alt: 'FOSS Armory'
       }
@@ -68,16 +84,19 @@ const PROJECTS = {
     projectDetails: {
       alias: 'CrudeMirror',
       name: 'Crude Mirror Media',
+      showcase: 'Business Development',
+      brief: ``,
       description: `Media Blog written and edited by the Hortensius brothers on an SEO Ad Revenue model.`,
       skills: [
-        "Wordpress",
+        "WordPress",
         "AdSense",
         "GSuite"
       ],
       links: [
         {
           label: 'Live Site',
-          target: 'https://www.crude-mirror.com'
+          target: 'https://www.crude-mirror.com',
+          icon: 'logo-website'
         },
       ],
       thumbnailImage: {
@@ -86,6 +105,10 @@ const PROJECTS = {
       },
       backgroundImage: {
         source: 'crude-mirror-background',
+        alt: 'Crude-Mirror Banner'
+      },
+      detailImage: {
+        source: 'crude-mirror-full',
         alt: 'Crude-Mirror Banner'
       }
     }
@@ -96,6 +119,8 @@ const PROJECTS = {
     projectDetails: {
       alias: 'Strongarm',
       name: 'Strongarm Digital Marketing',
+      showcase: 'Web Development',
+      brief: `Debut LP by local Seattle band Octopus Attacks Shark!!`,
       description: `Custom website development and hosting for client.`,
       skills: [
         "HTML",
@@ -106,7 +131,7 @@ const PROJECTS = {
         {
           label: 'Live Site',
           target: 'https://www.strongarmdigitalmarketing.com',
-          bgImgSrc: 'strongarm-logo',
+          icon: 'logo-website'
         }
       ],
       thumbnailImage: {
@@ -123,9 +148,11 @@ const PROJECTS = {
 
   oasWebsite: {
     projectDetails: {
-      alias: 'OctoShark-Website',
+      alias: 'oasWebsite',
       name: 'Octopus Attacks Shark!!',
-      description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
+      showcase: 'Web Development',
+      brief: `E-Commerce and custom portfolio for local punk act - "Octopus Attacks Shark!!"`,
+      description: ``,
       skills: [
         "HTML",
         "CSS",
@@ -133,16 +160,14 @@ const PROJECTS = {
       ],
       links: [
         {
-          label: 'Bandcamp',
-          target: 'https://octopus-attacks-shark.bandcamp.com/track/cor-o-ners-demo-2'
+          label: 'OAS Portfolio',
+          target: 'https://www.octopus-attacks-shark.com',
+          icon: 'oas-logo'
         },
         {
-          label: 'Facebook',
-          target: 'https://www.facebook.com/OctopusAttacksShark'
-        },
-        {
-          label: 'Sonicbids (Booking)',
-          target: 'https://www.sonicbids.com/band/octopus-attacks-shark/'
+          label: 'OAS Store',
+          target: 'https://merch.octopus-attacks-shark.com',
+          icon: 'oas-logo'
         }
       ],
       thumbnailImage: {
@@ -159,9 +184,11 @@ const PROJECTS = {
 
   umaWebsite: {
     projectDetails: {
-      alias: 'UMA-Website',
+      alias: 'umaWebsite',
       name: 'Ugliest Man Alive [U.M.A]',
-      description: `Simple porfolio website for local post-metal act, "Ugliest Man Alive [U.M.A]"`,
+      showcase: 'Web Development',
+      brief: `Custom portfolio site for local post-metal act - Ugliest Man Alive [U.M.A]`,
+      description: ``,
       skills: [
         "Squarespace",
         "Photoshop",
@@ -169,8 +196,9 @@ const PROJECTS = {
       ],
       links: [
         {
-          label: 'Live Site',
-          target: 'https://ugliest-man-alive.com/'
+          label: 'UMA Portfolio',
+          target: 'https://ugliest-man-alive.com/',
+          icon: 'logo-website'
         }
       ],
       thumbnailImage: {
@@ -180,6 +208,10 @@ const PROJECTS = {
       backgroundImage: {
         source: 'uma-background',
         alt: 'UMA Band'
+      },
+      detailImage: {
+        source: 'uma-machine-god',
+        alt: 'UMA MachineGod//Suicide'
       }
     }
   },
@@ -187,8 +219,10 @@ const PROJECTS = {
 
   pixHell: {
     projectDetails: {
-      alias: 'PixHell',
+      alias: 'pixHell',
       name: 'PixHell',
+      showcase: 'Web Development',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `“Bullet Hell” game for Android. Built entirely in native Android using custom controllers for both rendering and motion control interpolation.`,
       skills: [
         "Android"
@@ -200,7 +234,8 @@ const PROJECTS = {
         },
         {
           label: 'GitHub',
-          target: 'https://github.com/bmaxwell921/PixelHellProd/tree/master'
+          target: 'https://github.com/bmaxwell921/PixelHellProd/tree/master',
+          icon: 'logo-github'
         }
       ],
       thumbnailImage: {
@@ -217,8 +252,10 @@ const PROJECTS = {
 
   wraithSquadron: {
     projectDetails: {
-      alias: 'WraithSquadron',
+      alias: 'wraithSquadron',
       name: 'Star Wars: Wraith Squadron',
+      showcase: 'Game Development',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
       skills: [
         "Unity",
@@ -228,6 +265,7 @@ const PROJECTS = {
         {
           label: 'GitHub',
           target: 'https://github.com/Dirker27/WraithSquadron',
+          icon: 'logo-github'
         }
       ],
       thumbnailImage: {
@@ -246,6 +284,8 @@ const PROJECTS = {
     projectDetails: {
       alias: 'ChickMagnet',
       name: 'Chick Magnet',
+      showcase: 'Game Development',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
       skills: [
         "Android"
@@ -253,7 +293,8 @@ const PROJECTS = {
       links: [
         {
           label: 'GitHub',
-          target: ' https://github.com/edeesis/Chick-Magnet'
+          target: ' https://github.com/edeesis/Chick-Magnet',
+          icon: 'logo-github'
         }
       ],
       thumbnailImage: {
@@ -268,44 +309,12 @@ const PROJECTS = {
   },
 
 
-  oasBand: {
-    projectDetails: {
-      alias: 'OctoShark',
-      name: 'Octopus Attacks Shark!!',
-      description: `Progressive Industrial Stoner Sludge Blues based out of Seattle, WA.`,
-      skills: [
-        "Reaper"
-      ],
-      links: [
-        {
-          label: 'Official Site',
-          target: 'https://www.octopus-attacks-shark.com/'
-        },
-        {
-          label: 'Bandcamp',
-          target: 'https://octopus-attacks-shark.bandcamp.com/track/cor-o-ners-demo-2'
-        },
-        {
-          label: 'Facebook',
-          target: 'https://www.facebook.com/OctopusAttacksShark'
-        }
-      ],
-      thumbnailImage: {
-        source: 'oas-logo',
-        alt: 'OAS Logo'
-      },
-      backgroundImage: {
-        source: 'oas-background',
-        alt: 'OAS Band'
-      }
-    }
-  },
-
-
-  umaBand: {
+  umaAlbum: {
     projectDetails: {
       alias: 'UMA',
       name: 'Ugliest Man Alive [U.M.A]',
+      showcase: 'Audio',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
       skills: [
         "Reaper"
@@ -313,15 +322,18 @@ const PROJECTS = {
       links: [
         {
           label: 'Official Website',
-          target: 'https://ugliest-man-alive.com'
+          target: 'https://ugliest-man-alive.com',
+          icon: 'uma-logo'
         },
         {
           label: 'Bandcamp',
-          target: 'https://ugliest-man-alive.bandcamp.com/'
+          target: 'https://ugliest-man-alive.bandcamp.com/',
+          icon: 'logo-bandcamp'
         },
         {
-          label: 'Facebook',
-          target: 'https://www.facebook.com/UgliestManAlive'
+          label: 'Soundcloud',
+          target: 'https://www.facebook.com/UgliestManAlive',
+          icon: 'logo-soundcloud'
         }
       ],
       thumbnailImage: {
@@ -331,6 +343,10 @@ const PROJECTS = {
       backgroundImage: {
         source: 'tcstudio-background',
         alt: 'UMA Band'
+      },
+      detailImage: {
+        source: 'uma-machine-god',
+        alt: 'UMA MachineGod//Suicide'
       }
     }
   },
@@ -340,6 +356,8 @@ const PROJECTS = {
     projectDetails: {
       alias: 'Moxel',
       name: 'Moxel Hooks',
+      showcase: 'Web Development',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
       skills: [
         "Cura",
@@ -359,11 +377,13 @@ const PROJECTS = {
   },
 
 
-  gecko: {
+  lizzie: {
     projectDetails: {
-      alias: 'GECKO',
+      alias: 'lizzie',
       name: 'The Lizzie',
-      description: `Custom blaster commissioned by client for CyberPunk 2077 cosplay. Fully operational spring-loaded blaster compatible with Worker(TM) magazines and darts.`,
+      showcase: '3D Printing',
+      brief: `Custom operational Nerf(TM) blaster comissioned for Cyberpunk 2077 cosplay.`,
+      description: `Fully operational spring-loaded blaster compatible with Worker(TM) magazines and darts.`,
       skills: [
         "Cura",
         "Fusion360",
@@ -386,6 +406,8 @@ const PROJECTS = {
     projectDetails: {
       alias: 'TCPrints',
       name: 'ToasterCat Print Shop',
+      showcase: '3D Printing',
+      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: ``,
       skills: [
         "Cura",

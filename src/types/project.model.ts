@@ -5,16 +5,20 @@ export interface Project {
 export interface ProjectDetails {
   alias: string;
   name: string;
+  brief: string;
+  showcase: string;
   description: string;
   links: ProjectLinks[];
   skills?: string[];
   thumbnailImage?: ProjectImage;
   backgroundImage?: ProjectImage;
+  detailImage?: ProjectImage;
 }
 
 export interface ProjectLinks {
   label: string;
   target: string;
+  icon?: string;
 }
 
 export interface ProjectImage {
