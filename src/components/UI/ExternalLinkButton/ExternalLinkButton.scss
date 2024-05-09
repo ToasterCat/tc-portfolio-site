@@ -3,7 +3,7 @@
 .external-button {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
 
@@ -11,42 +11,46 @@
   color: base.$color-light;
   font-size: base.$mobile-large-p;
   font-family: base.$font-heading;
-  border: 1px solid base.$site-color-dark-alt;
+  border: 1px solid base.$site-color-light;
   border-radius: .2rem;
   transition: all 0.4s ease;
   text-decoration: none;
 }
 
+.external-button-label {
+  width: 100%;
+  text-align: center;
+}
+
 @media all and (max-width: 800px) {
   .external-button {
-    padding: 0rem 1rem;
     margin: .5rem;
-    width: 12.5rem;
-    height: 4rem;
+    width: 10rem;
+    height: 3rem;
 
     img {
-      width: 2rem;
-      margin-right: .5rem;
+      width: 1.5rem;
+      margin: .75rem;
     }
   }
 }
 
 @media all and (min-width: 800px) {
   .external-button {
-    padding: 0rem 1rem;
     margin: 1rem;
-    width: 12.5rem;
+    width: 13rem;
     height: 4rem;
+    padding: 0rem .75rem;
 
     img {
-      width: 2rem;
+      width: 1.8rem;
       margin-right: .5rem;
     }
   }
 
   .external-button:hover {
     transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    background-color: base.$color-red;
+    background-color: base.$color-red-dark;
     color: base.$color-light;
     border-radius: 5px;
     transition: all 0.4s ease; /* zoom in */

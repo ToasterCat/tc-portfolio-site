@@ -9,14 +9,15 @@ import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import './ProjectTileLarge.scss';
 
 function ProjectScreenshot(props: ProjectImageProps) {
-  let imageSrc = props.image ? props.image?.source : "default";
-  return (
-      <div className="project-tile-large-screenshot">
-        <img 
-          src={ASSET_MANIFEST.get(imageSrc)} 
-          alt={props.image?.alt} />
-      </div>
-  )
+  return props.image
+    ? (
+          <div className="project-tile-large-screenshot">
+            <img 
+              src={ASSET_MANIFEST.get(props.image?.source)} 
+              alt={props.image?.alt} />
+          </div>
+      )
+    : (<></>);
 }
 
 export default function ProjectTileLarge(props: ProjectTileProps) {
@@ -39,25 +40,40 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         styleClass={'project-tile-large-icons'}
         thumbnailImage={props.project.projectDetails.thumbnailImage}
       />
-      <section className="project-tile-large-content">        
+      <section className="project-tile-large-content">     
         
-        <SmallContentSection
-          heading={'Project Description'}
-          styleClass={'project-tile-large-description'}
-          content={props.project.projectDetails.description}
-        />
-        <ProjectSkills
-          skills={
-            props.project.projectDetails.skills
-              ? props.project.projectDetails.skills
-              : []
-          }
-          styleClass={'project-section-skills'}
-        />
-        <ProjectLinks
-          links={props.project.projectDetails.links}
-          styleClass={'project-tile-large-links'}
-        />
+        <div className="project-tile-large-blurb">
+          <SmallContentSection
+            heading={''}
+            styleClass={'project-tile-large-brief'}
+            content={props.project.projectDetails.brief}
+          />
+          <SmallContentSection
+            heading={''}
+            styleClass={'project-tile-large-description'}
+            content={props.project.projectDetails.description}
+          />
+        </div>
+
+        <div className="project-tile-large-detail-row">
+          <div className="project-tile-large-details">
+            <ProjectSkills
+              skills={
+                props.project.projectDetails.skills
+                  ? props.project.projectDetails.skills
+                  : []
+              }
+              styleClass={'project-section-skills'}
+            />
+            <ProjectLinks
+              links={props.project.projectDetails.links}
+              styleClass={'project-tile-large-links'}
+            />
+          </div>
+
+          <ProjectScreenshot image={props.project.projectDetails.detailImage}/> 
+        </div>
+
       </section>
     </div>
   );

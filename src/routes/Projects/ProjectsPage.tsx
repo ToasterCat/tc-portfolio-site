@@ -97,11 +97,11 @@ export default function ProjectsPage() {
         <div className="anchor-beard">
           <div className="project-mini-container">
             <MiniProject project={PROJECTS["outsideAgitators"]} />
-            <MiniProject project={PROJECTS["umaBand"]} />
+            <MiniProject project={PROJECTS["umaAlbum"]} />
           </div>
         </div>
         <ProjectTileLarge project={PROJECTS["outsideAgitators"]} />
-        <ProjectTileLarge project={PROJECTS["umaBand"]} />
+        <ProjectTileLarge project={PROJECTS["umaAlbum"]} />
       </section>
 
       <section className="proj-section">
@@ -112,12 +112,12 @@ export default function ProjectsPage() {
         <div className="anchor-beard">
           <div className="project-mini-container">
             <MiniProject project={PROJECTS["moxel"]} />
-            <MiniProject project={PROJECTS["gecko"]} />
+            <MiniProject project={PROJECTS["lizzie"]} />
             <MiniProject project={PROJECTS["tcPrints"]} />
           </div>
         </div>
         <ProjectTileLarge project={PROJECTS["moxel"]} />
-        <ProjectTileLarge project={PROJECTS["gecko"]} />
+        <ProjectTileLarge project={PROJECTS["lizzie"]} />
         <ProjectTileLarge project={PROJECTS["tcPrints"]} />
       </section>
     </React.Fragment>

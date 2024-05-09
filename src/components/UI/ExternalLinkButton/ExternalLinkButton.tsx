@@ -17,10 +17,6 @@ function LinkIcon(props: ExternalLinkButtonProps) {
 }
 
 export default function ExternalLinkButton(props: ExternalLinkButtonProps) {
-  let icon = props.icon
-    ? ASSET_MANIFEST.get(props.icon)
-    : '';
-
   return (
     <>
       {props.linkTo && (
@@ -32,7 +28,7 @@ export default function ExternalLinkButton(props: ExternalLinkButtonProps) {
           color={props.color}
         >
           <LinkIcon linkTo={props.linkTo} text={props.text} icon={props.icon} color={props.color}/>
-          {props.text}
+          <div className="external-button-label">{props.text}</div>
         </a>
       )}
       {!props.linkTo && props.text}

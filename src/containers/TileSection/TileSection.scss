@@ -1,5 +1,14 @@
 @use '../../base';
 
+.tile {
+  font-family: base.$font-heading;
+  color: base.$color-light;
+  border: 1px solid base.$site-color-dark-alt;
+  border-radius: .2rem;
+  filter: drop-shadow(.1rem .2rem .2rem base.$color-black);
+  background-color: base.$color-black;
+}
+
 /**
  * MOBILE / VERTICAL
  */
@@ -37,10 +46,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$mobile-large-p;
     margin: 2rem;
     text-decoration: none;
     width: 150px;
@@ -90,11 +95,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$large-p;
-    font-weight: bold;
     transition: all 0.4s ease;
     text-decoration: none;
     width: 200px;
@@ -109,7 +109,7 @@
     transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
     box-shadow: 8px 10px 10px rgba(39, 44, 49, 0.07),
       1px 6px 12px rgba(39, 44, 49, 0.04);
-    background-color: base.$color-red;
+    background-color: base.$color-red-dark;
     color: base.$color-light;
     border-radius: 5px;
     transition: all 0.4s ease; /* zoom in */

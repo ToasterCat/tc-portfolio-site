@@ -3,13 +3,13 @@
 .project-tile-large-icons {
   background-color: base.$color-black;
   margin: 0;
+  z-index: 9;
 }
 
 .project-tile-large-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: -1;
 }
 
 .project-tile-large {
@@ -17,6 +17,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.project-tile-large-details {
+  background-color: base.$color-black-light-transparent;
 }
 
 .project-tile-large-background {
@@ -29,11 +33,11 @@
   width: 100%;
   height: 100%;
 
-  -webkit-filter: blur(5px) grayscale(80%) opacity(70%);
-  -moz-filter: blur(5px) grayscale(80%) opacity(70%);
-  -o-filter: blur(5px) grayscale(80%) opacity(70%);
-  -ms-filter: blur(5px) grayscale(80%) opacity(70%);
-  filter: blur(5px) grayscale(80%) opacity(70%);
+  -webkit-filter: grayscale(80%) opacity(70%);
+  -moz-filter: grayscale(80%) opacity(70%);
+  -o-filter: grayscale(80%) opacity(70%);
+  -ms-filter: grayscale(80%) opacity(70%);
+  filter: grayscale(80%) opacity(70%);
 }
 
 
@@ -86,8 +90,19 @@
     font-size: base.$mobile-small-heading;
   }
 
+  .project-tile-large-detail-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .project-tile-large-screenshot {
-    display: none;
+    display: block;
+    filter: drop-shadow(.3rem .5rem .3rem base.$color-black);
+
+    img {
+      width: 20rem;
+    }
   }
 }
 
@@ -99,7 +114,7 @@
     align-items: center;
 
     width: 85%;
-    min-height: 50rem;
+    min-height: 110vh;
   }
 
   .project-tile-large-heading {
@@ -146,9 +161,13 @@
     font-size: base.$small-heading;
   }
 
-  .project-tile-large-screenshot {
-    width: 10rem;
+  .project-tile-large-detail-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .project-tile-large-screenshot {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -156,6 +175,7 @@
   }
 
   .project-tile-large-screenshot img {
-    max-width: 10rem;
+    max-width: 20rem;
+    filter: drop-shadow(.3rem .5rem .4rem base.$color-black);
   }
 }

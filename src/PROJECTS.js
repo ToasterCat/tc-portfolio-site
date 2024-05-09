@@ -49,7 +49,7 @@ const PROJECTS = {
     projectDetails: {
       alias: 'fossArmory',
       name: 'FOSS Armory',
-      showcase: 'Game Dev',
+      showcase: 'Game Development',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
       description: `Third-Person Shooter and Showcase for Additive Manufactured Firearms.`,
       skills: [
@@ -160,12 +160,12 @@ const PROJECTS = {
       ],
       links: [
         {
-          label: 'OAS Portfolio',
+          label: 'Portfolio',
           target: 'https://www.octopus-attacks-shark.com',
           icon: 'oas-logo'
         },
         {
-          label: 'OAS Store',
+          label: 'Store',
           target: 'https://merch.octopus-attacks-shark.com',
           icon: 'oas-logo'
         }
