@@ -19,8 +19,20 @@
   justify-content: flex-start;
 }
 
+.project-tile-large-blurb {
+  background-color: base.$color-black-light-transparent;
+  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
+  border-radius: .2rem;
+  margin: .2rem;
+  padding: .2rem;
+}
+
 .project-tile-large-details {
   background-color: base.$color-black-light-transparent;
+  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
+  border-radius: .2rem;
+  margin: .2rem;
+  padding: .2rem;
 }
 
 .project-tile-large-background {

@@ -6,8 +6,8 @@ const PROJECTS = {
       alias: 'outsideAgitators',
       name: 'Outside Agitators',
       showcase: 'Audio',
-      brief: `Debut LP by local Seattle band Octopus Attacks Shark!!`,
-      description: '',
+      brief: `Debut LP by local Seattle act "Octopus Attacks Shark!!"`,
+      description: 'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino. Tracked guitars, vocals, and additional overlays. Mixed band-provided samples for interludes and layered vocals.',
       skills: [
         "Reaper",
         "Shopify"

@@ -75,7 +75,7 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: 50rem) {
   .proj-section {
     display: flex;
     flex-direction: column;
@@ -158,7 +158,7 @@
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: 50rem) {
   .proj-section {
     display: flex;
     flex-direction: column;
@@ -256,13 +256,11 @@
       width: 100%;
       height: 100%;
       color: base.$color-light;
-      
     }
   
     img {
       width: 5rem;
-      opacity: 50%;
-      filter: drop-shadow(.1rem .2rem .2rem base.$color-black);
+      filter: drop-shadow(.1rem .2rem .2rem base.$color-black) grayscale(50%) opacity(50%);
     }
   }
   
