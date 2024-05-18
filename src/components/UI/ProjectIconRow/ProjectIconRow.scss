@@ -1,7 +1,7 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: 50rem) {
   .project-details-row img {
     max-width: 70px;
     display:none;
@@ -23,7 +23,7 @@
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: 50rem) {
   .project-details-row img {
     max-width: 100px;
   }

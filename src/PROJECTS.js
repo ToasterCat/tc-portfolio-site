@@ -1,6 +1,5 @@
 const PROJECTS = {
 
-
   outsideAgitators: {
     projectDetails: {
       alias: 'outsideAgitators',
@@ -8,6 +7,10 @@ const PROJECTS = {
       showcase: 'Audio',
       brief: `Debut LP by local Seattle act "Octopus Attacks Shark!!"`,
       description: 'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino. Tracked guitars, vocals, and additional overlays. Mixed band-provided samples for interludes and layered vocals.',
+      descriptionBullets: [
+        "Tracked guitars, vocals, and additional overlays.",
+        "Mixed band-provided samples for interludes and layered vocals."
+      ],
       skills: [
         "Reaper",
         "Shopify"
@@ -51,11 +54,11 @@ const PROJECTS = {
       name: 'FOSS Armory',
       showcase: 'Game Development',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
-      description: `Third-Person Shooter and Showcase for Additive Manufactured Firearms.`,
+      description: `Inspired by the Defense Distributed movement, "FOSS Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809<, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
       skills: [
         "Unity",
-        "Fusion 360",
-        "AWS Gamelift"
+        "Fusion360",
+        "GameLift"
       ],
       links: [
         {
@@ -85,8 +88,8 @@ const PROJECTS = {
       alias: 'CrudeMirror',
       name: 'Crude Mirror Media',
       showcase: 'Business Development',
-      brief: ``,
-      description: `Media Blog written and edited by the Hortensius brothers on an SEO Ad Revenue model.`,
+      brief: `"A Poorly Edited Editorial" - Multimedia pop culture blog powered by an SEO Ad Revenue model.`,
+      description: `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
       skills: [
         "WordPress",
         "AdSense",
@@ -120,12 +123,14 @@ const PROJECTS = {
       alias: 'Strongarm',
       name: 'Strongarm Digital Marketing',
       showcase: 'Web Development',
-      brief: `Debut LP by local Seattle band Octopus Attacks Shark!!`,
-      description: `Custom website development and hosting for client.`,
+      brief: `Business portfolio and web presence for a local digital marketing provider specializing in SEO and market segment presence.`,
+      description: `A simple responsive website launched with custom CSS and JS elements using minimal-cost architecture ($0.12/mo) matching strict client specifications for layout, copy, and look-and-feel.`,
       skills: [
         "HTML",
         "CSS",
-        "S3"
+        "S3",
+        "Route53",
+        "CloudFront"
       ],
       links: [
         {
@@ -151,12 +156,15 @@ const PROJECTS = {
       alias: 'oasWebsite',
       name: 'Octopus Attacks Shark!!',
       showcase: 'Web Development',
-      brief: `E-Commerce and custom portfolio for local punk act - "Octopus Attacks Shark!!"`,
-      description: ``,
+      brief: `E-Commerce font-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
+      description: `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
       skills: [
         "HTML",
         "CSS",
-        "S3"
+        "S3",
+        "Route53",
+        "CloudFront",
+        "Shopify"
       ],
       links: [
         {
@@ -188,7 +196,7 @@ const PROJECTS = {
       name: 'Ugliest Man Alive [U.M.A]',
       showcase: 'Web Development',
       brief: `Custom portfolio site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: ``,
+      description: `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
       skills: [
         "Squarespace",
         "Photoshop",
@@ -221,11 +229,12 @@ const PROJECTS = {
     projectDetails: {
       alias: 'pixHell',
       name: 'PixHell',
-      showcase: 'Web Development',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: `“Bullet Hell” game for Android. Built entirely in native Android using custom controllers for both rendering and motion control interpolation.`,
+      showcase: 'Game Development',
+      brief: `A rogue-like bullet hell game for Android using custom motion controlls and procedural enemy generation.`,
+      description: `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
       skills: [
-        "Android"
+        "Android",
+        "Reaper"
       ],
       links: [
         {
@@ -244,6 +253,10 @@ const PROJECTS = {
       },
       backgroundImage: {
         source: 'pixhell-background',
+        alt: 'PixHell'
+      },
+      detailImage: {
+        source: 'pixhell-screenshot',
         alt: 'PixHell'
       }
     }
@@ -285,10 +298,14 @@ const PROJECTS = {
       alias: 'ChickMagnet',
       name: 'Chick Magnet',
       showcase: 'Game Development',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
+      brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
+      description: `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
       skills: [
-        "Android"
+        "Unity",
+        "Fusion360",
+        "Maya",
+        "Photoshop",
+        "Reaper"
       ],
       links: [
         {
@@ -311,11 +328,11 @@ const PROJECTS = {
 
   umaAlbum: {
     projectDetails: {
-      alias: 'UMA',
-      name: 'Ugliest Man Alive [U.M.A]',
+      alias: 'umaAlbum',
+      name: 'Of Man and Nature',
       showcase: 'Audio',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: `Experimental Ambient Post-Metal based out of Seattle, WA.`,
+      brief: `Debut LP for local Seattle post-metal act "Ugliest Man Alive [U.M.A]".`,
+      description: `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
       skills: [
         "Reaper"
       ],
@@ -357,8 +374,8 @@ const PROJECTS = {
       alias: 'Moxel',
       name: 'Moxel Hooks',
       showcase: 'Web Development',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
+      brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
+      description: ``,
       skills: [
         "Cura",
         "Fusion360",
@@ -382,8 +399,8 @@ const PROJECTS = {
       alias: 'lizzie',
       name: 'The Lizzie',
       showcase: '3D Printing',
-      brief: `Custom operational Nerf(TM) blaster comissioned for Cyberpunk 2077 cosplay.`,
-      description: `Fully operational spring-loaded blaster compatible with Worker(TM) magazines and darts.`,
+      brief: `Custom operational Nerf(TM) blaster comissioned compatible with Worker(TM) magazines and darts.`,
+      description: ``,
       skills: [
         "Cura",
         "Fusion360",
@@ -407,7 +424,7 @@ const PROJECTS = {
       alias: 'TCPrints',
       name: 'ToasterCat Print Shop',
       showcase: '3D Printing',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
+      brief: `E-Commerce platform dedicated to the distribution of custom and licensed 3D printed products to a global audience.`,
       description: ``,
       skills: [
         "Cura",
@@ -422,6 +439,10 @@ const PROJECTS = {
       backgroundImage: {
         source: 'tcprint-background',
         alt: 'TC Print Shop'
+      },
+      detailImage: {
+        source: 'tcprint-product',
+        alt: 'TC Print Product Rotation'
       }
     }
   }

@@ -8,6 +8,8 @@ export interface ProjectDetails {
   brief: string;
   showcase: string;
   description: string;
+  descriptionBullets?: string[];
+  testimonial?: string;
   links: ProjectLinks[];
   skills?: string[];
   thumbnailImage?: ProjectImage;

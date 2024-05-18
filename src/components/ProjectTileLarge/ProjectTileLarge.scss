@@ -52,6 +52,10 @@
   filter: grayscale(80%) opacity(70%);
 }
 
+.project-tile-large-screenshot {
+  filter: opacity(75%) grayscale(50%) drop-shadow(.3rem .5rem .4rem base.$color-black);
+}
+
 
 /**
  * Mobile / Vertical
@@ -110,7 +114,6 @@
 
   .project-tile-large-screenshot {
     display: block;
-    filter: drop-shadow(.3rem .5rem .3rem base.$color-black);
 
     img {
       width: 20rem;
@@ -188,6 +191,5 @@
 
   .project-tile-large-screenshot img {
     max-width: 20rem;
-    filter: drop-shadow(.3rem .5rem .4rem base.$color-black);
   }
 }

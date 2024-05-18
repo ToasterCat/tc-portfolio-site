@@ -1,7 +1,7 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: 50rem) {
   .project-skills {
     display: flex;
     flex-direction: column;
@@ -16,9 +16,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    max-width: 100px;
-    max-height: 70px;
-    padding: 5% 0% 3% 0%;
   }
 
   .skill-icon {
@@ -39,7 +36,7 @@
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: 50rem) {
   .project-skills {
     display: flex;
     flex-direction: column;
@@ -51,10 +48,9 @@
 
   .project-tech-icons {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    max-width: 150px;
-    max-height: 70px;
     justify-content: flex-start;
   }
 

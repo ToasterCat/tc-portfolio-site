@@ -12,7 +12,7 @@ export default function ProjectLinks(props: ProjectLinksProps) {
   return (
     <div className={props.styleClass ? props.styleClass : 'project-links'}>
       <SectionHeading
-        heading={'Project Links'}
+        heading={'Links'}
         styleClass={'project-links-heading'}
       />
       <div className="project-links-buttons">

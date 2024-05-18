@@ -28,6 +28,8 @@ import strongarmBackground from './gallery/StrongArm/hero_scaled.png';
 
 import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
+import pixhellPromotional from './gallery/PixHell/Promotional.png';
+import pixhellScreenshot from './gallery/PixHell/Screenshot_Game0.png';
 
 import oasLogo from './gallery/OAS/OAS-logo.png';
 import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
@@ -41,10 +43,12 @@ import umaMachineGod from './gallery/UMA/MGS1.gif';
 import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
 import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
 
+import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
+import tcProductDetail from './gallery/TC-Print/TC-Product-Rotation.gif';
+
 import chickMagnetFlyer from './gallery/ChickMagnet/flyer_scaled.jpeg';
 import lizzieProfile from './gallery/Lizzie/LizzieHand_scaled.jpg';
 import fossArmoryBackground from './gallery/FOSS/TargetRange.png';
-import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
 import tcStudioBackground from './gallery/TC-Recording/StudioGuitars_scaled.jpg';
 import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
 
@@ -78,7 +82,8 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["crude-mirror-full", crudeMirrorFull],
 
     ["pixhell-logo", pixhellLogo],
-    ["pixhell-background", pixhellBackground],
+    ["pixhell-background", pixhellPromotional],
+    ["pixhell-screenshot", pixhellScreenshot],
 
     ["strongarm-logo", strongarmLogo],
     ["strongarm-background", strongarmBackground],
@@ -91,6 +96,8 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["uma-logo", umaBand],
     ["uma-background", umaBackground],
     ["uma-machine-god", umaMachineGod],
+
+    ["tcprint-product", tcProductDetail],
 
     ["chick-magnet-flyer", chickMagnetFlyer],
     ["lizzie-profile", lizzieProfile],

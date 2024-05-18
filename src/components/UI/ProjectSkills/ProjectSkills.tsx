@@ -61,7 +61,7 @@ export default function ProjectSkills(props: ProjectSkillsProps) {
   return (
     <div className={props.styleClass ? props.styleClass : 'project-skills'}>
       <SectionHeading
-        heading={'Project Technologies'}
+        heading={'Core Technologies'}
         styleClass={'project-skills-heading'}
       />
       <div className="project-tech-icons">{icons}</div>
