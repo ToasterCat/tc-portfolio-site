@@ -5,7 +5,6 @@ import { ASSET_MANIFEST } from '../../../assets/AssetMap';
 import './ProjectSkills.scss';
 
 const skillsIcons = {
-  AdSense: ASSET_MANIFEST.get('logo-adsense'),
   Android: ASSET_MANIFEST.get('logo-android'),
   GSuite: ASSET_MANIFEST.get('logo-gsuite'),
   Reaper: ASSET_MANIFEST.get('logo-reaper'),
@@ -19,22 +18,141 @@ const skillsIcons = {
 function skillIconMap(skillName: string) {
   switch (skillName) {
     case "AdSense":
-      return skillsIcons.AdSense;
+      return {
+        icon: ASSET_MANIFEST.get('logo-adsense'),
+        label: "Google AdSense"
+      };
+    case "Amazon":
+      return {
+        icon: ASSET_MANIFEST.get('logo-amazon'),
+        label: "Amazon Seller"
+      };
+    case "AmazonCoins":
+      return {
+        icon: ASSET_MANIFEST.get('logo-amazon-coins'),
+        label: "Amazon Coins"
+      };
     case "Android":
-      return skillsIcons.Android;
+      return {
+        icon: ASSET_MANIFEST.get('logo-android'),
+        label: "Android"
+      };
+    case "CloudFront":
+      return {
+        icon: ASSET_MANIFEST.get('logo-cloudfront'),
+        label: "AWS CloudFront"
+      };
+    case "CSS":
+      return {
+        icon: ASSET_MANIFEST.get('logo-css'),
+        label: "CSS 3"
+      };
+    case "Cura":
+      return {
+        icon: ASSET_MANIFEST.get('logo-cura'),
+        label: "Cura Slicer"
+      };
+    case "Ebay":
+      return {
+        icon: ASSET_MANIFEST.get('logo-ebay'),
+        label: "Ebay Seller"
+      };
+    case "Fusion360":
+      return {
+        icon: ASSET_MANIFEST.get('logo-fusion'),
+        label: "Fusion 360"
+      };
+    case "FDM":
+      return {
+        icon: ASSET_MANIFEST.get('logo-fdm'),
+        label: "FDM 3D Printing"
+      };
+    case "GameLift":
+      return {
+        icon: ASSET_MANIFEST.get('logo-gamelift'),
+        label: "AWS GameLift"
+      };
     case "GSuite":
-      return skillsIcons.GSuite;
+      return {
+        icon: ASSET_MANIFEST.get('logo-gsuite'),
+        label: "Google GSuite"
+      };
+    case "HTML":
+      return {
+        icon: ASSET_MANIFEST.get('logo-html'),
+        label: "HTML 5"
+      };
+    case "Lightsail":
+      return {
+        icon: ASSET_MANIFEST.get('logo-lightsail'),
+        label: "AWS Lightsail"
+      };
+    case "Maya":
+      return {
+        icon: ASSET_MANIFEST.get('logo-maya'),
+        label: "Maya"
+      };
+    case "Photoshop":
+      return {
+        icon: ASSET_MANIFEST.get('logo-photoshop'),
+        label: "Adobe Photoshop"
+      };
+    case "Premiere":
+      return {
+        icon: ASSET_MANIFEST.get('logo-premiere'),
+        label: "Adobe Premiere"
+      };
     case "Reaper":
-      return skillsIcons.Reaper;
+      return {
+        icon: ASSET_MANIFEST.get('logo-reaper'),
+        label: "Reaper"
+      };
+    case "Route53":
+      return {
+        icon: ASSET_MANIFEST.get('logo-route53'),
+        label: "AWS Route 53"
+      };
+    case "Shopify":
+      return {
+        icon: ASSET_MANIFEST.get('logo-shopify'),
+        label: "Shopify"
+      };
+    case "Squarespace":
+      return {
+        icon: ASSET_MANIFEST.get('logo-squarespace'),
+        label: "Squarespace"
+      };
+    case "S3":
+      return {
+        icon: ASSET_MANIFEST.get('logo-s3'),
+        label: "AWS S3"
+      };
     case "Unity":
-      return skillsIcons.Unity;
+      return {
+        icon: ASSET_MANIFEST.get('logo-unity'),
+        label: "Unity Engine"
+      };
     case "Unreal":
-      return skillsIcons.Unreal;
+      return {
+        icon: ASSET_MANIFEST.get('logo-unreal'),
+        label: "Unreal Engine"
+      };
     case "WordPress":
-      return skillsIcons.Wordpress;
+      return {
+        icon: ASSET_MANIFEST.get('logo-wordpress'),
+        label: "WordPress"
+      };
     default:
-      return skillsIcons.Unset;
+      return {
+        icon: ASSET_MANIFEST.get('default'),
+        label: "ToasterCat"
+      };
   }
+}
+
+interface ProjectSkillDisplay {
+  icon: string;
+  label: string;
 }
 
 interface ProjectSkillsProps {
@@ -48,9 +166,11 @@ export default function ProjectSkills(props: ProjectSkillsProps) {
       return null;
     }
     let icons = props.skills.map((skill) => {
+      let s = skillIconMap(skill);
       return (
         <div className="skill-icon">
-          <img key={skill} src={skillIconMap(skill)} alt={skill} />
+          <img key={skill} src={s.icon} alt={s.label} />
+          <h5>{s.label}</h5>
         </div>
       );
     });

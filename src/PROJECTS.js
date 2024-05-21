@@ -54,7 +54,7 @@ const PROJECTS = {
       name: 'FOSS Armory',
       showcase: 'Game Development',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
-      description: `Inspired by the Defense Distributed movement, "FOSS Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809<, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+      description: `Inspired by the Defense Distributed movement, "FOSS Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
       skills: [
         "Unity",
         "Fusion360",
@@ -68,8 +68,8 @@ const PROJECTS = {
         }
       ],
       thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Logo'
+        source: 'logo-defense-distributed',
+        alt: 'Defense Distributed Logo'
       },
       backgroundImage: {
         source: 'foss-background',
@@ -93,7 +93,8 @@ const PROJECTS = {
       skills: [
         "WordPress",
         "AdSense",
-        "GSuite"
+        "GSuite",
+        "Lightsail"
       ],
       links: [
         {
@@ -111,8 +112,8 @@ const PROJECTS = {
         alt: 'Crude-Mirror Banner'
       },
       detailImage: {
-        source: 'crude-mirror-full',
-        alt: 'Crude-Mirror Banner'
+        source: 'crude-mirror-site-screenshot',
+        alt: 'Crude-Mirror Site'
       }
     }
   },
@@ -145,6 +146,10 @@ const PROJECTS = {
       },
       backgroundImage: {
         source: 'strongarm-background',
+        alt: 'Strongarm Site'
+      },
+      detailImage: {
+        source: 'strongarm-site-screenshot',
         alt: 'Strongarm Site'
       }
     }
@@ -185,6 +190,10 @@ const PROJECTS = {
       backgroundImage: {
         source: 'oas-background',
         alt: 'OAS Band'
+      },
+      detailImage: {
+        source: 'oas-site-screenshot',
+        alt: 'OAS Site'
       }
     }
   },
@@ -195,7 +204,7 @@ const PROJECTS = {
       alias: 'umaWebsite',
       name: 'Ugliest Man Alive [U.M.A]',
       showcase: 'Web Development',
-      brief: `Custom portfolio site for local post-metal act - Ugliest Man Alive [U.M.A]`,
+      brief: `Custom portfolio site and brand press pack for local post-metal act - Ugliest Man Alive [U.M.A]`,
       description: `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
       skills: [
         "Squarespace",
@@ -234,12 +243,19 @@ const PROJECTS = {
       description: `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
       skills: [
         "Android",
+        "AmazonCoins",
         "Reaper"
       ],
       links: [
         {
-          label: 'Amazon Listing',
-          target: ' https://www.amazon.com/dp/B00DPLJIOU'
+          label: 'Appstore',
+          target: ' https://www.amazon.com/dp/B00DPLJIOU',
+          icon: 'logo-amazon'
+        },
+        {
+          label: 'itch.io',
+          target: '#',
+          icon: 'logo-itch-io'
         },
         {
           label: 'GitHub',
@@ -256,7 +272,7 @@ const PROJECTS = {
         alt: 'PixHell'
       },
       detailImage: {
-        source: 'pixhell-screenshot',
+        source: 'pixhell-flyer',
         alt: 'PixHell'
       }
     }
@@ -268,13 +284,18 @@ const PROJECTS = {
       alias: 'wraithSquadron',
       name: 'Star Wars: Wraith Squadron',
       showcase: 'Game Development',
-      brief: `Portfolio and E-Commerce site for local post-metal act - Ugliest Man Alive [U.M.A]`,
-      description: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
+      brief: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
+      description: ``,
       skills: [
         "Unity",
         "Unreal"
       ],
       links: [
+        {
+          label: 'itch.io',
+          target: '#',
+          icon: 'logo-itch-io'
+        },
         {
           label: 'GitHub',
           target: 'https://github.com/Dirker27/WraithSquadron',
@@ -309,14 +330,19 @@ const PROJECTS = {
       ],
       links: [
         {
+          label: 'itch.io',
+          target: '#',
+          icon: 'logo-itch-io'
+        },
+        {
           label: 'GitHub',
-          target: ' https://github.com/edeesis/Chick-Magnet',
+          target: 'https://github.com/edeesis/Chick-Magnet',
           icon: 'logo-github'
         }
       ],
       thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Logo'
+        source: 'chick-magnet-logo',
+        alt: 'Chick Magnet Logo'
       },
       backgroundImage: {
         source: 'chick-magnet-flyer',
@@ -349,7 +375,7 @@ const PROJECTS = {
         },
         {
           label: 'Soundcloud',
-          target: 'https://www.facebook.com/UgliestManAlive',
+          target: 'https://soundcloud.com/ugliest-man-alive/sets/of-man-and-nature',
           icon: 'logo-soundcloud'
         }
       ],
@@ -362,8 +388,8 @@ const PROJECTS = {
         alt: 'UMA Band'
       },
       detailImage: {
-        source: 'uma-machine-god',
-        alt: 'UMA MachineGod//Suicide'
+        source: 'uma-redacted',
+        alt: 'UMA [redacted]'
       }
     }
   },
@@ -377,18 +403,38 @@ const PROJECTS = {
       brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
       description: ``,
       skills: [
+        "FDM",
         "Cura",
-        "Fusion360",
-        "Ender3"
+        "Fusion360"
       ],
-      links: [ ],
+      links: [
+        {
+          label: 'Store',
+          target: '#',
+          icon: 'logo-website'
+        },
+        {
+          label: 'Ebay',
+          target: '#',
+          icon: 'logo-ebay'
+        },
+        {
+          label: 'Amazon',
+          target: '#',
+          icon: 'logo-amazon'
+        }
+      ],
       thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'TC Logo'
+        source: 'moxel-logo',
+        alt: 'Moxel Logo'
       },
       backgroundImage: {
         source: 'moxel-background',
         alt: 'Moxel Hook Slicing Render'
+      },
+      detailImage: {
+        source: 'moxel-logo-text',
+        alt: 'Moxel LLC'
       }
     }
   },
@@ -402,18 +448,38 @@ const PROJECTS = {
       brief: `Custom operational Nerf(TM) blaster comissioned compatible with Worker(TM) magazines and darts.`,
       description: ``,
       skills: [
+        "FDM",
         "Cura",
-        "Fusion360",
-        "Ender3"
+        "Fusion360"
       ],
-      links: [],
+      links: [
+        {
+          label: 'Store',
+          target: '#',
+          icon: 'logo-website'
+        },
+        {
+          label: 'Ebay',
+          target: '#',
+          icon: 'logo-ebay'
+        },
+        {
+          label: 'Amazon',
+          target: '#',
+          icon: 'logo-amazon'
+        }
+      ],
       thumbnailImage: {
-        source: 'tc-logo',
+        source: 'logo-nerf',
         alt: 'TC Logo'
       },
       backgroundImage: {
         source: 'lizzie-profile',
         alt: 'Lizzie Assembly'
+      },
+      detailImage: {
+        source: 'lizzie-tinker',
+        alt: 'Lizzie Model'
       }
     }
   },
@@ -427,11 +493,30 @@ const PROJECTS = {
       brief: `E-Commerce platform dedicated to the distribution of custom and licensed 3D printed products to a global audience.`,
       description: ``,
       skills: [
+        "FDM",
         "Cura",
         "Fusion360",
-        "Ender3"
+        "Shopify",
+        "Ebay",
+        "Amazon"
       ],
-      links: [],
+      links: [
+        {
+          label: 'Store',
+          target: '#',
+          icon: 'logo-website'
+        },
+        {
+          label: 'Ebay',
+          target: '#',
+          icon: 'logo-ebay'
+        },
+        {
+          label: 'Amazon',
+          target: '#',
+          icon: 'logo-amazon'
+        }
+      ],
       thumbnailImage: {
         source: 'tc-logo',
         alt: 'TC Logo'
