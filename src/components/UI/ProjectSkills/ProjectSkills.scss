@@ -1,128 +1,149 @@
 @use '../../../base';
 
+/**
+ * Detail sub-heading.
+ *
+ * The second sanctioned use of the monospace face: a small label naming a
+ * block of technical detail. Sentence case, not tracked-out caps - the face
+ * and the colour are enough of a signal on their own.
+ */
+.project-skills-heading {
+  font-family: base.$font-mono;
+  font-size: base.$type-meta;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: base.$color-meta-dim;
+
+  margin: 0 0 base.$space-3 0;
+  padding-bottom: base.$space-2;
+  border-bottom: 1px solid rgba(125, 122, 60, 0.35);
+
+  text-align: left;
+}
+
+.project-skills {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Left-aligned, and a grid rather than a wrapping flex row.
+ *
+ * Fixed tracks mean a tile expands *inside its own cell* on hover. A flex row
+ * would have had to re-measure and could push a sibling onto the next line
+ * mid-transition; here the row count never changes. `justify-items: start`
+ * keeps collapsed tiles at their natural width instead of filling the cell.
+ */
+.project-tech-icons {
+  display: grid;
+  justify-items: start;
+  align-items: start;
+  gap: base.$space-2;
+}
+
+/**
+ * Skill tile: icon and label on one row.
+ *
+ * The label used to be `font-size: 0` until hover, which never fired on
+ * touch. It is always visible on mobile now, and expands from the icon on
+ * desktop hover so a dense row stays scannable.
+ */
 .skill-icon {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  //flex: 1;
-  flex-direction: column;
-  //flex-basis: 33%;
-}
+  max-width: 100%;
+  min-width: 0;
 
-/**
- * Mobile / Vertical
- */
-@media all and (max-width: 50rem) {
-  .project-skills {
-    display: flex;
-    flex-direction: column;
+  border: 1px solid base.$site-color-dark-alt;
+  border-radius: base.$radius;
+  background-color: base.$color-black;
+
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  img {
+    display: block;
+    flex: none;
+    object-fit: contain;
+    border-radius: base.$radius-sm;
   }
 
-  .project-skills-heading {
-    font-size: 24px;
-  }
+  h5 {
+    margin: 0;
+    font-family: base.$font-mono;
+    font-weight: normal;
+    color: base.$color-meta;
 
-  .project-tech-icons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .skill-icon {
-    width: 4rem;
-    height: 5rem;
-    //border: 1px solid base.$color-light-gray;
-    border-radius: .5rem;
-    margin: .5rem;
-  }
-
-  .project-tech-icons img {
-    max-width: 3rem;
-    max-height: 3rem;
-    border-radius: 5px;
-    filter: grayscale(25%);
-  }
-
-  .skill-icon h5 {
-    margin: .5rem 0 0 0;
-    font-family: base.$font-heading;
-    font-weight: 100;
-    font-size: xx-small;
-    text-align: center;
+    /* Never wrap to a second line; truncate if a label outgrows its cell. */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 /**
- * Desktop / Horizontal
+ * Mobile / Vertical - labels always visible.
  */
-@media all and (min-width: 50rem) {
-  .project-skills {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project-skills-heading {
-    font-size: 30px;
-  }
-
+@media all and (max-width: base.$bp) {
+  /* Labels are always open here, so tracks are sized to hold a full label. */
   .project-tech-icons {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
   }
 
   .skill-icon {
-    width: 5rem;
-    height: 7rem;
-    //border: 1px solid base.$color-light-gray;
-    border-radius: .5rem;
-    margin: .5rem;
-
-    transition: all 0.4s ease;
-
-    h5 {
-      margin: .25rem 0 0 0;
-      font-family: base.$font-heading;
-      font-weight: 100;
-      text-align: center;
-      text-wrap: nowrap;
-
-      font-size: 0;
-      opacity: 0%;
-      transition: all 0.4s ease;
-    }
+    padding: base.$space-2;
+    gap: base.$space-2;
 
     img {
-      max-width: 3rem;
-      max-height: 3rem;
-      border-radius: 5px;
-  
-      filter: grayscale(70%) drop-shadow(.2rem .3rem .2rem base.$color-black);
-  
-      transition: all 0.4s ease;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    h5 {
+      font-size: base.$type-meta-sm;
+    }
+  }
+}
+
+/**
+ * Desktop / Horizontal - label expands out of the tile on hover.
+ */
+@media all and (min-width: base.$bp) {
+  /* Two tracks: the detail column runs ~35rem, so each cell clears the
+   * widest label ("FDM 3D Printing") with room to spare when expanded. */
+  .project-tech-icons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-icon {
+    padding: base.$space-2;
+
+    img {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    h5 {
+      font-size: base.$type-meta-sm;
+
+      max-width: 0;
+      margin-left: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-width 0.35s ease, opacity 0.25s ease, margin-left 0.35s ease;
     }
   }
 
-  .skill-icon:hover {
+  .skill-icon:hover,
+  .skill-icon:focus-within {
+    border-color: base.$color-meta-dim;
+    background-color: base.$site-color-dark-alt;
+    cursor: default;
 
     h5 {
-      font-size: x-small;
-      opacity: 100%;
-      transition: all 0.4s ease;
-      text-wrap: nowrap;
+      max-width: 14rem;
+      margin-left: base.$space-2;
+      opacity: 1;
     }
-
-    img {
-      //background-color: base.$color-red-dark;
-      max-width: 4rem;
-      max-height: 4rem;
-      padding: .5rem;
-      filter: grayscale(10%) drop-shadow(1rem 2rem 2rem base.$color-black);
-    }
-
-    transition: all 0.4s ease;
   }
 }

@@ -1,18 +1,11 @@
-import toasterCatLogo from '../../../assets/toastercat.png';
-import crudeMirrorLogo from '../../../assets/crude-mirror.png';
-
 import { ProjectImage } from '../../../types/project.model';
 import { ASSET_MANIFEST } from '../../../assets/AssetMap';
-
-const projectIcons = {
-  CrudeMirror: crudeMirrorLogo,
-  ToasterCat: toasterCatLogo
-};
 
 interface ProjectIconRowProps {
   styleClass?: string;
   projAlias: string;
   projName: string;
+  showcase?: string;
   thumbnailImage?: ProjectImage;
 }
 
@@ -25,8 +18,28 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
     <div
       className={props.styleClass ? props.styleClass : 'project-details-row'}
     >
-      <img src={bgd} alt="project-icon" />      
-      <h2>{"\\> " + props.projName}</h2>
+      {/* Inner rail keeps the title on the same left edge as the prose
+          column below, instead of hugging the viewport. */}
+      <div className="project-icon-row-inner">
+        <img src={bgd} alt={props.thumbnailImage?.alt ?? `${props.projName} logo`} />
+
+        <div className="project-icon-row-title">
+          {/* The prompt is the monospace device at its smallest: one mark
+              that says "technical" without tipping the name into mono. */}
+          <h2>
+            <span className="meta project-icon-row-prompt" aria-hidden="true">
+              {'\\>'}
+            </span>
+            {props.projName}
+          </h2>
+          {props.showcase && (
+            <span className="meta project-icon-row-discipline">
+              <span className="meta-dim" aria-hidden="true">#</span>
+              {props.showcase.toLowerCase().replace(/\s+/g, '-')}
+            </span>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

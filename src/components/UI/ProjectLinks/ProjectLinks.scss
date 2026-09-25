@@ -1,12 +1,29 @@
-@media all and (max-width: 800px) {
+@use '../../../base';
+
+/**
+ * Detail sub-heading.
+ *
+ * The second sanctioned use of the monospace face: a small label naming a
+ * block of technical detail. Sentence case, not tracked-out caps - the face
+ * and the colour are enough of a signal on their own.
+ */
+.project-links-heading {
+  font-family: base.$font-mono;
+  font-size: base.$type-meta;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: base.$color-meta-dim;
+
+  margin: 0 0 base.$space-3 0;
+  padding-bottom: base.$space-2;
+  border-bottom: 1px solid rgba(125, 122, 60, 0.35);
+}
+
+@media all and (max-width: base.$bp) {
   .project-links {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .project-links-heading {
-    font-size: 24px;
   }
 
   .project-links-buttons {
@@ -19,15 +36,11 @@
   }
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: base.$bp) {
   .project-links {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .project-links-heading {
-    font-size: 30px;
   }
 
   .project-links-buttons {

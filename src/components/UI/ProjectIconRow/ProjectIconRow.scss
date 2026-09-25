@@ -1,7 +1,9 @@
+@use '../../../base';
+
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 50rem) {
+@media all and (max-width: base.$bp) {
   .project-details-row img {
     max-width: 70px;
     display:none;
@@ -23,7 +25,7 @@
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 50rem) {
+@media all and (min-width: base.$bp) {
   .project-details-row img {
     max-width: 100px;
   }

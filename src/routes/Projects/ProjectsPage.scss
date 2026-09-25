@@ -1,33 +1,117 @@
 @use '../../base';
 
-.project-anchors-links {
+/**
+ * PORTFOLIO
+ *
+ * The page's job is range-at-a-glance, so the discipline rail is now a
+ * monospace index rather than four button-shaped links, and the masthead no
+ * longer eats a full viewport before any work appears.
+ */
+
+.project-heading {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.project-heading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 33, 36, 0.80) 0%,
+    rgba(32, 33, 36, 0.94) 100%
+  );
+  pointer-events: none;
+}
+
+.project-anchors {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
 
-  a {
-    color: base.$color-light;
-    
-    font-family: base.$font-heading;
-    background-color: base.$color-black;
-    border: 1px solid base.$site-color-dark-alt;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  h2 {
+    margin: 0 0 base.$space-3 0;
+    text-wrap: balance;
   }
 }
 
+/* The masthead is left-aligned, so this sub does not inherit the centring
+ * that `.section-head` applies on the homepage bands. */
+.project-anchors-sub {
+  margin: 0 0 base.$space-6 0;
+  max-width: base.$measure;
+  text-align: left;
+}
+
+/* The discipline rail: monospace, because it is an index, not a menu. */
+.project-anchors-links {
+  display: flex;
+  flex-flow: row wrap;
+  gap: base.$space-3 base.$space-6;
+
+  a {
+    font-family: base.$font-mono;
+    font-size: base.$type-meta;
+    color: base.$color-meta;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding-bottom: base.$space-1;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+    border-bottom-color: base.$color-signal;
+  }
+}
+
+/* Project title inside the sticky bar - sized to the bar, not to the page. */
+.project-tile-large-icons h2 {
+  font-size: base.$type-h4;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Sticky discipline marker travelling with the section it names. */
 .anchor {
-  z-index: 99;
+  position: sticky;
+  z-index: 8;
+  margin: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  font-family: base.$font-mono;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  color: base.$color-meta;
+  background-color: base.$color-black;
+  border-bottom: 1px solid base.$color-meta-dim;
   filter: none;
 }
 
+.proj-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Thumbnail index for the section - the scan layer above the deep tiles. */
 .anchor-beard {
   width: 100%;
-  min-height: 20rem;
   background-color: base.$site-color-dark;
 
   display: flex;
@@ -37,245 +121,104 @@
 }
 
 .project-mini-container {
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 100%;
-
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  gap: base.$space-4;
 }
 
 .project-tile-mini {
-  display:flex;
-  flex-direction: row;
+  display: flex;
   justify-content: center;
+  align-items: center;
 
-  transition: all 0.4s ease; /* zoom in */
-
-  border: 1px solid base.$color-light;
-  border-radius: .2rem;
-  filter: drop-shadow(.1rem .2rem .2rem base.$color-black);
+  border: 1px solid base.$color-light-gray;
+  border-radius: base.$radius;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 
   a {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 100%;
     color: base.$color-light;
+    cursor: pointer;
+  }
+
+  img {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.project-tile-mini:hover,
+.project-tile-mini:focus-within {
+  border-color: base.$color-signal;
+  transform: translate3D(0, -2px, 0);
+
+  img {
+    opacity: 1;
   }
 }
 
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 50rem) {
-  .proj-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
+@media all and (max-width: base.$bp) {
   .project-heading {
     background-image: url("../../assets/background/production.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
-    padding: 2rem;
-
-    animation: fadeIn 1.5s ease-in;
-
-    height: 100vh;
-  }
-
-  .project-anchors {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-color: base.$color-black-transparent;
-    border-radius: 1rem;
-
-    h2 {
-      font-size: base.$mobile-large-heading;
-      margin: 3rem 0rem 0rem 0rem;
-      text-align: center;
-    }
-  }
-
-  .project-anchors-links {
-    padding: 2rem 0rem;
-
-    a {
-      font-size: base.$mobile-large-p;
-
-      text-decoration: none;
-      text-align: center;
-      width: 15rem;
-      height: 65px;
-      margin: 1rem 0;
-      border-radius: .2rem;
-    }
+    min-height: 18rem;
+    padding: base.$space-6 base.$space-4;
   }
 
   .anchor {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: base.$site-color-dark;
-    height: 50px;
-    padding: .3rem 0rem;
-    position: sticky;
-    top: 0;
-    margin: 0;
-    width: 100%;
+    top: 3rem;
+    height: 2.25rem;
+    padding: 0 base.$space-4;
+    font-size: base.$type-meta-m;
+  }
+
+  .anchor-beard {
+    padding: base.$space-4 base.$space-4 base.$space-5 base.$space-4;
   }
 
   .project-tile-mini {
-  
-    width: 5rem;
-    height: 5rem;
-  
-    margin: 1rem; 
-  
-    img {
-      width: 4rem;
-      opacity: 70%;
-    }
+    width: 3.25rem;
+    height: 3.25rem;
+
+    img { width: 2.25rem; }
   }
 }
-
 
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 50rem) {
-  .proj-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
+@media all and (min-width: base.$bp) {
   .project-heading {
     background-image: url("../../assets/background/pedalboard_scaled.jpg");
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
-
-    padding: 2rem;
-
-    min-height: 100vh;
-
-    animation: fadeIn 1.5s ease-in;
-  }
-
-  .project-anchors {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-color: base.$color-black-transparent;
-    border-radius: 1rem;
-
-    h2 {
-      font-size: base.$large-heading;
-      margin: 5rem 0rem 0rem 0rem;
-      text-align: center;
-    }
-  }
-
-  .project-anchors-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 5rem 0rem;
-
-    a {
-      font-size: base.$large-p;
-      transition: all 0.4s ease;
-      padding: 0rem 1rem;
-      text-decoration: none;
-      text-align: center;
-      width: 150px;
-      height: 65px;
-    }
-
-    a:hover {
-      transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-      background-color: base.$color-red-dark;
-      color: base.$color-light;
-      border-radius: 5px;
-      transition: all 0.4s ease; /* zoom in */
-      cursor: pointer;
-    }
+    min-height: 26rem;
+    padding: base.$space-8 base.$space-7;
   }
 
   .anchor {
-    text-align: center;
-    background-color: base.$site-color-dark;
-    padding: 1rem 0rem;
-    position: sticky;
-    top: 0;
-    margin: 0;
-    width: 100%;
+    top: 4rem;
+    height: 2.75rem;
+    padding: 0 base.$space-6;
+    font-size: base.$type-meta;
+  }
+
+  .anchor-beard {
+    padding: base.$space-5 base.$space-6 base.$space-6 base.$space-6;
   }
 
   .project-tile-mini {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-  
-    width: 7rem;
-    height: 7rem;
-  
-    margin: 1rem; 
-  
-    transition: all 0.4s ease; /* zoom in */
-  
-    border: 1px solid base.$color-light-gray;
-    border-radius: .2rem;
-    filter: drop-shadow(.1rem .2rem .2rem base.$color-black);
-  
-    a {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-  
-      width: 100%;
-      height: 100%;
-      color: base.$color-light;
-    }
-  
-    img {
-      width: 5rem;
-      filter: drop-shadow(.1rem .2rem .2rem base.$color-black) grayscale(50%) opacity(50%);
-    }
-  }
-  
-  .project-tile-mini:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    filter: drop-shadow(.3rem .5rem .5rem base.$color-black);
-    transition: all 0.4s ease; /* zoom in */
+    width: 4rem;
+    height: 4rem;
 
-    cursor: pointer;
-  
-    img {
-      transform: translate3D(0, -1px, 0) scale(1.075);
-      filter: drop-shadow(.5rem .75rem .5rem base.$color-black);
-      opacity: 100%;
-      transition: all 0.4s ease; /* zoom in */
-    }
+    img { width: 2.75rem; }
   }
 }

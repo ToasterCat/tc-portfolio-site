@@ -4,7 +4,7 @@
 /*
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: base.$bp) {
 
   .projects {
     display: flex;
@@ -17,7 +17,7 @@
 /*
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: base.$bp) {
 
   /* SERVICES SECTION */
 
@@ -35,7 +35,7 @@
     color: base.$color-light;
 
     h2 {
-      font-size: base.$large-heading;
+      font-size: base.$type-h2;
     }
   }
 }

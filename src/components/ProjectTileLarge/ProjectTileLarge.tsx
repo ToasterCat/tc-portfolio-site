@@ -31,12 +31,13 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         backgroundImage: `url(${bgd})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'scroll'
       }}></div>
 
       <ProjectIconRow
         projAlias={props.project.projectDetails.alias}
         projName={props.project.projectDetails.name}
+        showcase={props.project.projectDetails.showcase}
         styleClass={'project-tile-large-icons'}
         thumbnailImage={props.project.projectDetails.thumbnailImage}
       />

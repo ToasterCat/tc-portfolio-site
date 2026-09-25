@@ -1,4 +1,5 @@
 import React from 'react';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ProjectTileLarge from '../../components/ProjectTileLarge/ProjectTileLarge';
 import TileSection from '../../containers/TileSection/TileSection';
 import { Link } from 'react-scroll';
@@ -23,6 +24,8 @@ function MiniProject(props: ProjectTileProps) {
 }
 
 export default function ProjectsPage() {
+  useDocumentTitle('Portfolio');
+
   return (
     <React.Fragment>
 
@@ -31,6 +34,9 @@ export default function ProjectsPage() {
         <div className="project-anchors">
 
           <h2>ToasterCat Project Portfolio</h2>
+          <p className="section-sub project-anchors-sub">
+            The experiments that survived.
+          </p>
           <div className="project-anchors-links">
             <Link to="proj-web" smooth={true}>
               Web Development

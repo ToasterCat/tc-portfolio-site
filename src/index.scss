@@ -9,6 +9,10 @@ body {
   background-color: base.$site-color-dark;
   color: base.$color-light;
   margin: 0;
+
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -20,26 +24,111 @@ body {
   flex: 1 0 auto;
 }
 
-h1 {
+/**
+ * HEADINGS
+ *
+ * Hierarchy comes from size and weight, not from a second typeface, and not
+ * from the drop-shadow that used to sit on every heading on the site. Type
+ * over photography gets its shadow locally, via `.on-media`.
+ */
+h1, h2, h3, h4 {
   font-family: base.$font-heading;
-  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);  
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0 0 base.$space-4 0;
 }
-h2 {
-  font-family: base.$font-heading;
-  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
+
+.on-media {
+  filter: drop-shadow(0 .15rem .4rem base.$color-black);
 }
-h3 {
-  font-family: base.$font-heading;
-  filter: drop-shadow(.2rem .3rem .1rem base.$color-black);
+
+/**
+ * THE MONOSPACE DEVICE
+ *
+ * Reserved for meta content. See the note in _base.scss before extending it.
+ */
+.meta {
+  font-family: base.$font-mono;
+  font-size: base.$type-meta;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: base.$color-meta;
+  line-height: 1.4;
 }
-h4 {
-  font-family: base.$font-heading;
-  filter: drop-shadow(.2rem .3rem .1rem base.$color-black);
+
+.meta-dim {
+  color: base.$color-meta-dim;
+}
+
+/* Prose columns stay readable: left-aligned, measured, never justified. */
+.prose {
+  max-width: base.$measure;
+  text-align: left;
+}
+
+/**
+ * SECTION RHYTHM
+ *
+ * A shared band + heading treatment. Section headings were previously sized
+ * and spaced per-file, which made the seams between bands read as accidents.
+ * The hairline under the heading is the divider; sections themselves need no
+ * further separator.
+ */
+.section-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section-head {
+  display: block;
+
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto base.$space-7 auto;
+  padding-bottom: base.$space-4;
+
+  text-align: center;
+  border-bottom: 1px solid rgba(186, 181, 90, 0.25);
+
+  h2 {
+    margin: 0;
+    text-wrap: balance;
+  }
+}
+
+/**
+ * Section sub-heading - the studio's voice, not its data.
+ *
+ * Italic sans, matching the hero quote. That split is the whole type system
+ * in one line: italic is an aside in the studio's voice, monospace is a fact.
+ */
+.section-sub {
+  margin: base.$space-3 0 0 0;
+  font-style: italic;
+  color: base.$site-color-gray;
+  text-wrap: balance;
+}
+
+/* The standard card grid. Both content sections hold four items, so this
+ * resolves to a 2x2 on desktop and a single column on mobile. Grid rows
+ * stretch, which is what keeps sibling cards the same height. */
+.card-grid {
+  display: grid;
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
 }
 
 .button {
   color: base.$color-light;
-    
+
   font-family: base.$font-heading;
   background-color: base.$color-black;
   border: 1px solid base.$site-color-dark-alt;
@@ -52,25 +141,75 @@ h4 {
 }
 
 /**
+ * FOCUS
+ *
+ * Previously absent site-wide: keyboard users had no visible position.
+ * Signal red, never the meta olive.
+ */
+:focus-visible {
+  outline: 2px solid base.$color-signal;
+  outline-offset: 3px;
+  border-radius: base.$radius-sm;
+}
+
+/**
  * MOBILE / VERTICAL
  */
-@media all and (max-width: 50rem) {
+@media all and (max-width: base.$bp) {
   section {
     min-width: 15rem;
   }
 
-  .button {
-    
+  .section-band {
+    padding: base.$section-pad-y-m base.$section-pad-x-m;
   }
+
+  .section-head {
+    margin-bottom: base.$space-6;
+  }
+
+  .section-sub { font-size: base.$type-meta-m; }
+
+  .card-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: base.$space-4;
+  }
+
+  h1 { font-size: base.$type-display-m; }
+  h2 { font-size: base.$type-h2-m; }
+  h3 { font-size: base.$type-h3-m; }
+  h4 { font-size: base.$type-h4-m; }
+
+  body { font-size: base.$type-body-m; }
+
+  .meta { font-size: base.$type-meta-m; }
 }
 
 /**
  * DESKTOP / HORIZONTAL
  */
-@media all and (min-width: 50rem) {
+@media all and (min-width: base.$bp) {
   section {
     min-width: 30rem;
   }
+
+  .section-band {
+    padding: base.$section-pad-y base.$section-pad-x;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: base.$space-5;
+  }
+
+  .section-sub { font-size: base.$type-body; }
+
+  h1 { font-size: base.$type-display; }
+  h2 { font-size: base.$type-h2; }
+  h3 { font-size: base.$type-h3; }
+  h4 { font-size: base.$type-h4; }
+
+  body { font-size: base.$type-body; }
 
   .button {
     transition: all 0.4s ease;
@@ -78,8 +217,29 @@ h4 {
   .button:hover {
     background-color: base.$color-red-dark;
     color: base.$color-light;
-    border-radius: 5px;
+    border-radius: base.$radius;
     transition: all 0.4s ease;
     cursor: pointer;
+  }
+}
+
+/**
+ * REDUCED MOTION
+ *
+ * The site runs parallax layers, a looping brand animation, and transform
+ * transitions on most interactive elements. All of it is opt-out now.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  * {
+    background-attachment: scroll !important;
   }
 }

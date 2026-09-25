@@ -31,7 +31,7 @@
   
       background-color: base.$site-color-section;
       backdrop-filter: grayscale(50%) blur(5px);
-      border-radius: 1rem;
+      border-radius: base.$radius-lg;
   
       color: base.$color-light;
   
@@ -123,7 +123,7 @@
   
       padding: 3rem;
       background-color: base.$color-black-transparent;
-      border-radius: 1rem;
+      border-radius: base.$radius-lg;
   
       h2 {
         font-size: base.$large-heading;

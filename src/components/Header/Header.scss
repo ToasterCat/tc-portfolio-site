@@ -3,7 +3,7 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 50rem) {
+@media all and (max-width: base.$bp) {
   header {
     height: 3rem;
     margin: 0;
@@ -11,7 +11,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0rem .3rem;
-    background-color: base.$site-color-dark;
   }
 
   header {
@@ -19,7 +18,7 @@
       padding: 0rem;
       min-width: 14rem;
       h1 {
-        font-size: base.$mobile-small-heading;
+        font-size: base.$type-h4-m;
         padding: 0rem .5rem;
       }
     }
@@ -68,7 +67,7 @@
 /** 
  * Desktop / Horizontal
  */
-@media all and (min-width: 50rem) {
+@media all and (min-width: base.$bp) {
   header {
     height: 4rem;
     margin: 0;
@@ -87,7 +86,7 @@
     }
 
     nav {
-      font-size: 1.3rem;
+      font-size: base.$type-body;
       display: flex;
       align-items: center;
 
@@ -116,7 +115,7 @@
 
   .header-brand {
     h1 {
-      font-size: base.$small-heading;
+      font-size: base.$type-h4;
       margin: 0;
       padding: 0rem 1rem;
     }
@@ -134,6 +133,13 @@
 
 /* BASE */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  background-color: base.$color-black;
+  border-bottom: 1px solid base.$site-color-dark-alt;
+
   transition-duration: base.$transition-duration;
   font-family: base.$font-heading;
 }
@@ -148,8 +154,6 @@
   transition-duration: base.$transition-duration;
 }
 .header-brand {
-  position: sticky;
-  top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -157,31 +161,12 @@
 }
 .header-brand-img {
   position: relative;
-  animation: flying 4s infinite;
   opacity: 90%;
+  transition: transform base.$transition-duration ease, opacity base.$transition-duration ease;
 }
 
-/* BRAND IMAGE ANIMATION */
-
-@keyframes flying {
-  0% {
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    left: 5px;
-    top: 0px;
-  }
-  50% {
-    left: 0px;
-    top: 0px;
-  }
-  75% {
-    left: 5px;
-    top: 0px;
-  }
-  100% {
-    left: 0px;
-    top: 0px;
-  }
+.header-main-link:hover .header-brand-img,
+.header-main-link:focus-visible .header-brand-img {
+  transform: translate3D(3px, 0, 0);
+  opacity: 100%;
 }

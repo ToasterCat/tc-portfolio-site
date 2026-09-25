@@ -3,6 +3,7 @@ import { Project, ProjectImage } from '../../types/project.model';
 import './ProjectTile.scss';
 
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
+import MetaTags from '../UI/MetaTags/MetaTags';
 
 export interface ProjectTileProps {
   project: Project;
@@ -39,6 +40,10 @@ export default function ProjectTile(props: ProjectTileProps) {
         <div className="project-details">
 
           <h4>{props.project.projectDetails.name}</h4>
+          <MetaTags
+            tags={[props.project.projectDetails.showcase]}
+            styleClass={'project-tile-discipline'}
+          />
           <div className="project-info">
             <ProjectThumbnailImage
               image={props.project.projectDetails.thumbnailImage}
@@ -47,9 +52,11 @@ export default function ProjectTile(props: ProjectTileProps) {
             <div className="project-blurb">
               <p>{props.project.projectDetails.brief}</p>
               <div className="project-tile-links">
-                {props.project.projectDetails.links.map((link) => {
-                  return <a href={link.target}>{link.label}</a>;
-                })}
+                {props.project.projectDetails.links.map((link) => (
+                  <a href={link.target} key={link.label}>
+                    {link.label}
+                  </a>
+                ))}
               </div>
             </div>
             

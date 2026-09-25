@@ -12,7 +12,7 @@
   font-size: base.$mobile-large-p;
   font-family: base.$font-heading;
   border: 1px solid base.$site-color-light;
-  border-radius: .2rem;
+  border-radius: base.$radius;
   transition: all 0.4s ease;
   text-decoration: none;
 }
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: base.$bp) {
   .external-button {
     margin: .5rem;
     width: 10rem;
@@ -35,7 +35,7 @@
   }
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: base.$bp) {
   .external-button {
     margin: 1rem;
     width: 13rem;
@@ -52,7 +52,7 @@
     transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
     background-color: base.$color-red-dark;
     color: base.$color-light;
-    border-radius: 5px;
+    border-radius: base.$radius;
     transition: all 0.4s ease; /* zoom in */
     cursor: pointer;
   }

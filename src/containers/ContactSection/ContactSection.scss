@@ -3,13 +3,14 @@
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 800px) {
+@media all and (max-width: base.$bp) {
   .contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 300px;
+    min-height: 20rem;
+    padding: 2rem 0rem;
 
     background-color: base.$site-color-dark;
     background-size: cover;
@@ -30,18 +31,34 @@
     font-size: base.$mobile-large-heading;
     padding: 0% 3%;
   }
+
+  .contact-blurb {
+    max-width: 18rem;
+    margin: 0rem 0rem 1.5rem 0rem;
+    padding: 0% 3%;
+
+    text-align: center;
+    font-size: base.$mobile-small-p;
+  }
+
+  .contact-cta {
+    width: 13rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 800px) {
+@media all and (min-width: base.$bp) {
   .contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 475px;
+    min-height: 24rem;
+    padding: 3rem 0rem;
 
     background-color: base.$site-color-dark;
     background-size: cover;
@@ -60,7 +77,52 @@
   .contact-heading {
     text-align: center;
     font-size: base.$large-heading;
-    margin-bottom: 40px;
+    margin-bottom: 1rem;
     padding: 0% 3%;
   }
+
+  .contact-blurb {
+    max-width: base.$desktop-min-section-width;
+    margin: 0rem 0rem 2rem 0rem;
+    padding: 0% 3%;
+
+    text-align: center;
+    font-size: base.$large-p;
+  }
+
+  .contact-cta {
+    width: 16rem;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-cta:hover {
+    transform: translate3D(0, -1px, 0) scale(1.03);
+    background-color: base.$color-red;
+    border-radius: base.$radius;
+    cursor: pointer;
+  }
+}
+
+/**
+ * Primary call-to-action.
+ *
+ * Deliberately filled, where `.external-button` (LinkedIn / Github) is
+ * outlined - the secondary links sit visually beneath this one.
+ */
+.contact-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: base.$color-red-dark;
+  color: base.$color-light;
+  font-size: base.$large-p;
+  font-family: base.$font-heading;
+  border: 1px solid base.$color-red;
+  border-radius: base.$radius;
+  transition: all 0.4s ease;
+  text-decoration: none;
 }

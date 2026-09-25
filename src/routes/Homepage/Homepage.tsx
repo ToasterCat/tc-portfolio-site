@@ -1,5 +1,7 @@
 import React from 'react';
 
+import useDocumentTitle from '../../hooks/useDocumentTitle';
+
 import HeroSection from '../../containers/HeroSection/HeroSection';
 import TileSection from '../../containers/TileSection/TileSection';
 import { ProjectSection } from '../../containers/ProjectSection/ProjectSection';
@@ -15,18 +17,20 @@ import locations from './locations.module.scss';
 import services from './services.module.scss';
 
 export default function Homepage() {
+  useDocumentTitle();
+
   return (
     <React.Fragment>
 
       <HeroSection
         classPrefix={'hero1'}
         quote={{
-          content: `"Let's build better, together."`,
-          src: `- ToasterCat Studios`,
+          content: `"If it works, it wasn't that crazy."`,
+          src: `— ToasterCat Studios`,
           sub: ``
         }}
-        heading={`We're makers who love what makers make, so we want to help makers make them.`}
-        detail={`ToasterCat Studios (LLC) is a multidisciplinary engineering and consulting firm that aims to empower local makers realize their vision. From professional High-TPS scalable microservices to robotics, prototyping, and even A/V production - we want to work with you to make your 'crazy' science projects a reality. Bring on the doomsday devices, we want to build three.`}
+        heading={`Mad science, made real.`}
+        detail={`Games, websites, records, and hardware — designed, built, and finished under one roof in the Pacific Northwest. Bring us the project everyone else called impractical.`}
         backgroundImage={{
           source: heroBackground
         }}
@@ -50,9 +54,11 @@ export default function Homepage() {
         ]}
       />
 
-      <section className={about.aboutSection}>
+      <section className={`${about.aboutSection} section-band`}>
         <div className={about.aboutBlurb}>
-          <h2>About ToasterCat</h2>
+          <div className="section-head">
+            <h2>About ToasterCat</h2>
+          </div>
           <p>
             ToasterCat Studios is a free-range, ethically-sourced research center,
             makerspace, recording studio, and mad science laboratory based out of
@@ -60,71 +66,67 @@ export default function Homepage() {
             engineering and logistical resources to local makers and artists alike.
           </p>
           <p>
-            As these modern times require multi-disciplinary expertise and an
-            ever-increasingly diverse toolbox of specializations, services offered
-            by ToasterCat Studios range across the digital and physical realms.
-            Software design, hardware prototyping, product development, business
-            consultation, and even audio/video production resources are made
-            available to empower innovation and progress at the individual level.
-            If the vision is mad enough, we want to talk shop.
+            The shop runs a printer fleet, a live room, and whatever hardware the
+            current project demands. Software, hardware, and audio all come out of
+            the same building &mdash; which is the whole point. If the vision is mad
+            enough, we want to talk shop. Still taking work.
           </p>
         </div>
       </section>
 
-      <section className={about.aboutServices}>
-        <h2>What We Do</h2>
+      <section className={`${about.aboutServices} section-band`}>
+        <div className="section-head">
+          <h2>What We&apos;ve Built</h2>
+          <p className="section-sub">Nobody asked for most of this.</p>
+        </div>
 
-        <ul className={about.servicesList}>
+        <ul className={`${about.servicesList} card-grid`}>
           <li>
-            <h3>Private Consultation</h3>
+            <h3>Web</h3>
             <p>
-              Sometimes our expertise is required for more specialized use cases
-              and technologies. We would love to hear about your "crazy" ideas
-              and critique your technical approach from behind the NDA'd veil.
+              Four client sites, from a static storefront for a touring punk act
+              to an ad-revenue media blog with a full analytics suite. Built lean
+              and custom &mdash; one client's site runs on $0.12/month of AWS.
+              No template tax.
             </p>
-            <p>
-              From apps to doomsday devices - let's see what we can do for you.
-            </p>
-            <a href="/contact">Reach Out</a>
+            <a href="/projects#proj-web">See the Work</a>
           </li>
           <li>
-            <h3>Custom Web Development and Hosting</h3>
+            <h3>Games</h3>
             <p>
-              Have an idea for a website? Don't know whether you should code it
-              all yourself or just let another service handle it for you? We'll
-              help you get online and establish your presence so you can get
-              back to working on what matters.
+              Four titles across mobile, PC, and open-source hardware showcases.
+              PixHell shipped in native Android with custom motion controls;
+              Chick Magnet ran custom physics and destructible environments with
+              a team of nine. Both made expo finals.
             </p>
-            <a href="/projects#proj-web">Portfolio</a>
+            <a href="/projects#proj-game">See the Work</a>
           </li>
           <li>
-            <h3>3D Product Design and Fabrication</h3>
+            <h3>Hardware and Prototyping</h3>
             <p>
-              From functional parts to cosplay accessories, ToasterCat Studios is
-              equipped with an ever-growing fleet of 3D printers aimed at making
-              rapid prototyping a reality for your vision. Send us your designs
-              and we'll find a way to get something physical in your hands before
-              you can say "uncanny".
+              An ever-growing printer fleet pointed at whatever you send us &mdash;
+              ergonomic croquet hooks, a working Nerf-compatible blaster, licensed
+              products for retail. Design, slice, print, iterate, ship.
             </p>
-            <a href="/projects#proj-proto">Portfolio</a>
+            <a href="/projects#proj-proto">See the Work</a>
           </li>
           <li>
             <h3>Audio Production // Recording Studio</h3>
             <p>
-              From music to vlogging to games, everyone needs good audio.
+              Two LPs tracked, mixed, and mastered &mdash; one in partnership with
+              Soundhouse Studios alongside Jack Endino and Mike Sebring.
+              Experimental techniques, heavy overlays, and a record cut across four
+              locations when it called for it.
             </p>
-            <p>
-              Located in the musical pacific northwest, ToasterCat Recording Studios
-              provides equipment and experience for blossoming artists and makers
-              alike to create professional audio assets at an accessible hourly rate.
-            </p>
-            <a href="/projects#proj-audio">Portfolio</a>
+            <a href="/projects#proj-audio">See the Work</a>
           </li>
         </ul>
       </section>
 
-      <section className={locations.locationSection}>      
-        <h2>Where We Do It</h2>
+      <section className={`${locations.locationSection} section-band`}>      
+        <div className="section-head">
+          <h2>Where We Do It</h2>
+        </div>
         <ul className={locations.locationsList}>
           <li>Seattle, WA</li>
           <li>Remote</li>

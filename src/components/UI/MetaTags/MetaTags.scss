@@ -1,0 +1,28 @@
+@use '../../../base';
+
+/**
+ * Bare hashtags, not chips.
+ *
+ * A pill/chip treatment would turn these into the same rounded-card unit used
+ * everywhere else on the page and cost them their distinctness. Left bare,
+ * the monospace face and the olive do all the work.
+ */
+.meta-tags {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: base.$space-2 base.$space-4;
+}
+
+.meta-tag {
+  white-space: nowrap;
+}
+
+.meta-tag-hash {
+  color: base.$color-meta-dim;
+  margin-right: 0.1em;
+}

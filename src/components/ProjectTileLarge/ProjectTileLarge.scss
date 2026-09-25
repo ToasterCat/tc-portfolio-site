@@ -1,33 +1,22 @@
 @use '../../base';
 
-.project-tile-large-icons {
-  background-color: base.$color-black;
-  margin: 0;
-  z-index: 9;
-}
-
-.project-tile-large-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/**
+ * PROJECT TILE (LARGE)
+ *
+ * Previously floored at 110vh desktop / 120vh mobile. With thirteen projects
+ * that made the portfolio roughly fourteen screens of scrolling with no way
+ * to compare two pieces of work. Tiles now size to their content and the
+ * rhythm comes from the spacing scale instead of the viewport.
+ */
 
 .project-tile-large {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
+  align-items: center;
 
-.project-tile-large-blurb {
-  background-color: base.$color-black-light-transparent;
-  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
-  border-radius: .2rem;
-}
-
-.project-tile-large-details {
-  background-color: base.$color-black-light-transparent;
-  filter: drop-shadow(.3rem .5rem .2rem base.$color-black);
+  width: 100%;
 }
 
 .project-tile-large-background {
@@ -40,187 +29,205 @@
   width: 100%;
   height: 100%;
 
-  -webkit-filter: grayscale(80%) opacity(70%);
-  -moz-filter: grayscale(80%) opacity(70%);
-  -o-filter: grayscale(80%) opacity(70%);
-  -ms-filter: grayscale(80%) opacity(70%);
-  filter: grayscale(80%) opacity(70%);
+  /* Was grayscale(80%) opacity(70%). Lighter now so the photography reads as
+   * an image rather than grey noise, and the scrim below does the contrast
+   * work that the filter used to do badly. */
+  filter: grayscale(55%);
+  opacity: 0.45;
 }
 
-.project-tile-large-screenshot {
-  img {
-    filter: opacity(70%) grayscale(50%) drop-shadow(.3rem .5rem .4rem base.$color-black);
-    transition: all 0.4s ease;
+/* A single scrim, so type contrast no longer depends on stacking filters. */
+.project-tile-large::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 33, 36, 0.92) 0%,
+    rgba(32, 33, 36, 0.72) 35%,
+    rgba(32, 33, 36, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.project-tile-large-icons {
+  position: sticky;
+  z-index: 9;
+
+  width: 100%;
+  margin: 0;
+
+  background-color: base.$color-black;
+  border-bottom: 1px solid base.$color-meta-dim;
+}
+
+/* Full-bleed bar, content on the prose column's left edge. */
+.project-icon-row-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.project-icon-row-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+
+  h2 {
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: base.$space-2;
   }
 }
 
+/* The prompt mark: monospace at its smallest useful size. */
+.project-icon-row-prompt {
+  color: base.$color-meta-dim;
+  flex: none;
+}
+
+.project-icon-row-discipline {
+  margin-top: base.$space-1;
+}
+
+.project-tile-large-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-tile-large-blurb {
+  max-width: base.$measure;
+}
+
+/* The brief carries the weight; the description is the supporting read. */
+.project-tile-large-brief p {
+  font-size: base.$type-h4;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 base.$space-4 0;
+  text-wrap: pretty;
+}
+
+.project-tile-large-description p {
+  margin: 0;
+  color: base.$site-color-gray;
+  text-wrap: pretty;
+}
+
+.project-section-skills {
+  margin-bottom: base.$space-6;
+}
+
+.project-tile-large-screenshot img {
+  border-radius: base.$radius;
+  filter: drop-shadow(0 .5rem 1.5rem base.$color-black);
+  transition: transform 0.4s ease;
+}
 
 /**
  * Mobile / Vertical
  */
-@media all and (max-width: 50rem) {
+@media all and (max-width: base.$bp) {
   .project-tile-large {
-    justify-content: flex-start;
-    align-items: center;
-
-    width: 100%;
-    min-height: 120vh;
-
-    margin: 0rem 0rem;
-  }
-
-  .project-tile-large-heading {
-    text-align: center;
-    font-size: base.$mobile-large-heading;
-    margin-bottom: 20px;
-    text-decoration: underline;
-  }
-
-  .project-tile-large-blurb {
-    margin: 1rem 0rem;
-    padding: 1rem;
-    border-radius: .5rem;
+    padding-bottom: base.$space-7;
   }
 
   .project-tile-large-icons {
-    position: sticky;
-    top: 59px;
+    top: 3rem; /* clears the mobile header */
+    padding: base.$space-2 0;
+  }
 
-    padding: .4rem 0rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    width: 100%;
+  .project-icon-row-inner {
+    padding: 0 base.$space-4;
+    gap: base.$space-3;
   }
 
   .project-tile-large-icons img {
-    max-width: 3rem;
-    margin-right: .5rem;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    flex: none;
   }
 
   .project-tile-large-content {
-    width: 20rem;
-    min-height: 100vh;
-  }
-
-  .project-tile-large h2 {
-    font-size: base.$mobile-small-heading;
+    width: 100%;
+    max-width: 22rem;
+    padding: base.$space-5 base.$space-4 0 base.$space-4;
   }
 
   .project-tile-large-detail-row {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: base.$space-5;
+    margin-top: base.$space-6;
   }
 
-  .project-tile-large-details {
-    border-radius: .5rem;
-    padding: 1rem;
-  }
-
-  .project-tile-large-screenshot {
-    display: block;
-
-    margin: 2rem 0;
-
-    img {
-      width: 20rem;
-    }
+  .project-tile-large-screenshot img {
+    width: 100%;
   }
 }
 
 /**
  * Desktop / Horizontal
  */
-@media all and (min-width: 50rem) {
+@media all and (min-width: base.$bp) {
   .project-tile-large {
-    align-items: center;
-
-    width: 85%;
-    min-height: 110vh;
-  }
-
-  .project-tile-large-heading {
-    text-align: center;
-    font-size: base.$large-heading;
-    margin-bottom: 20px;
-    text-decoration: underline;
-  }
-
-  .project-tile-large-description p {
-    font-weight: 100;
-    color: base.$color-light;
-  }
-
-  .project-tile-large-blurb {
-    border-radius: .5rem;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding-bottom: base.$space-8;
   }
 
   .project-tile-large-icons {
-    position: sticky;
-    top: 57px;
+    top: 4rem; /* clears the desktop header */
+    padding: base.$space-3 0;
+  }
 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0px 0px;
-    padding: 1rem;
-
-    width: 100%;
+  .project-icon-row-inner {
+    padding: 0 base.$space-6;
+    gap: base.$space-4;
   }
 
   .project-tile-large-icons img {
-    max-width: 7rem;
-    max-height: 4rem;
-
-    margin-right: 1rem;
-  }
-
-  .project-tile-large-details {
-    border-radius: .5rem;
-    padding: 1rem;
+    max-width: 5rem;
+    max-height: 3rem;
+    flex: none;
   }
 
   .project-tile-large-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40rem;
-    min-height: 40rem;
+    width: 100%;
+    max-width: 64rem;
+    padding: base.$space-7 base.$space-6 0 base.$space-6;
   }
 
-  .project-tile-large h2 {
-    font-size: base.$small-heading;
-  }
-
+  /* Prose left, evidence right. */
   .project-tile-large-detail-row {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 1rem;
+    gap: base.$space-7;
+    margin-top: base.$space-7;
+  }
+
+  .project-tile-large-details {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .project-tile-large-screenshot {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 1rem;
+    flex: 0 0 22rem;
   }
 
   .project-tile-large-screenshot img {
-    max-width: 19rem;
-    border-radius: .5rem;
+    width: 100%;
   }
 
   .project-tile-large-screenshot img:hover {
-    filter: opacity(90%) grayscale(20%) drop-shadow(1rem 2rem 3rem base.$color-black);
-    transition: all 0.4s ease;
+    transform: scale(1.02);
   }
 }

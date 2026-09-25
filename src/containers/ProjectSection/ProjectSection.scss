@@ -1,60 +1,11 @@
 @use '../../base';
 
+/**
+ * RECENT WORKS
+ *
+ * Layout comes from the shared `.section-band` / `.section-head` /
+ * `.card-grid` trio in index.scss. Only the band's own colour lives here.
+ */
 .projects-section {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-.projects-container {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-
-/**
- * Mobile / Vertical
- */
-@media all and (max-width: 50rem) {
-  .projects-section {
-    display: flex;
-    flex-direction: column;
-    background-color: base.$color-almost-black;
-
-    h2 {
-      text-align: center;
-      font-size: base.$mobile-large-heading;
-    }
-  }
-
-  .projects-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-  }
-}
-
-/**
- * Desktop / Horizontal
- */
-@media all and (min-width: 50rem) {
-  .projects-section {
-    display: flex;
-    flex-direction: column;
-    background-color: base.$color-almost-black;
-
-    h2 {
-      text-align: center;
-      font-size: base.$large-heading;
-    }
-  }
-
-  .projects-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
+  background-color: base.$color-almost-black;
 }

@@ -3,6 +3,7 @@ import './TileSection.scss';
 
 interface TileSectionProps {
   heading: string;
+  subheading?: string;
   tiles: string[] | {}[];
   onClick?: () => void;
   areLinks: boolean;
@@ -37,11 +38,16 @@ export default function TileSection(props: TileSectionProps) {
   };
 
   return (
-    <section className="tile-section"
+    <section className="tile-section section-band"
       style={{
         backgroundImage: 'url(' + props.background + ')'
       }}>
-      <h2>{props.heading}</h2>
+      <div className="section-head">
+        <h2>{props.heading}</h2>
+        {props.subheading && (
+          <p className="section-sub">{props.subheading}</p>
+        )}
+      </div>
       <div className="tile-group">
         {props.areLinks ? generateLinkTiles() : generateTiles()}
       </div>

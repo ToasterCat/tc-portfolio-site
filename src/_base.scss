@@ -84,8 +84,85 @@
   font-display: swap;
 }
 
+/* ==========================================================================
+ * TYPE ROLES
+ *
+ * Two faces, two jobs. PT-Sans carries everything narrative - hero, headings,
+ * body. PT-Mono is a *device*, not a layer: it marks meta content (#tags,
+ * statuses, disciplines, counts) and nothing else. It only reads as a signal
+ * because it is rare, so resist reaching for it.
+ * ==========================================================================*/
+
 $font-body: 'PT-Sans';
-$font-heading: 'PT-Mono';
+$font-heading: 'PT-Sans';
+$font-mono: 'PT-Mono';
+
+/* Type scale - 1.25 (major third), desktop */
+$type-display: 2.441rem;
+$type-h2:      1.953rem;
+$type-h3:      1.563rem;
+$type-h4:      1.25rem;
+$type-body:    1rem;
+$type-meta:    0.875rem;
+$type-meta-sm: 0.75rem;
+
+/* Type scale - mobile */
+$type-display-m: 1.953rem;
+$type-h2-m:      1.563rem;
+$type-h3-m:      1.25rem;
+$type-h4-m:      1.0625rem;
+$type-body-m:    0.9375rem;
+$type-meta-m:    0.8125rem;
+
+/* Spacing scale */
+$space-1: .25rem;
+$space-2: .5rem;
+$space-3: .75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 3rem;
+$space-8: 4rem;
+$space-9: 6rem;
+
+/* Prose measure - keeps line length under ~75 characters */
+$measure: 34rem;
+
+/* --------------------------------------------------------------------------
+ * RADII
+ *
+ * Was eight different values across thirty-three declarations. Tight and
+ * uniform now: the corner should read as a machined edge, not a soft card.
+ * Large enough to avoid looking brutalist, small enough to stay precise.
+ * --------------------------------------------------------------------------*/
+$radius-sm: 2px;  /* tags, thumbnails, inline marks */
+$radius:    4px;  /* cards, tiles, buttons, images  */
+$radius-lg: 8px;  /* large section panels only      */
+
+/* --------------------------------------------------------------------------
+ * CARD GRID
+ *
+ * One card size drives both "Recent Works" and "What We've Built". Each holds
+ * exactly four items, so the desktop grid is a 2x2 and rows stretch to equal
+ * height rather than each tile sizing to its own copy.
+ * --------------------------------------------------------------------------*/
+$card-min: 20rem;
+$grid-max: 62rem;
+
+/* --------------------------------------------------------------------------
+ * SECTION RHYTHM
+ *
+ * Every homepage band shares this vertical measure, so the seams between
+ * sections read as a beat rather than as arbitrary gaps.
+ * --------------------------------------------------------------------------*/
+$section-pad-y:   $space-9;
+$section-pad-y-m: $space-7;
+$section-pad-x:   $space-6;
+$section-pad-x-m: $space-4;
+
+/* Single breakpoint. Previously split between 50rem and 800px, which agree
+ * only while the root stays at 16px. */
+$bp: 50rem;
 
 /* COLORS */
 $color-dark: #333;
@@ -106,7 +183,14 @@ $color-olive-green: #BAB55A;
 $color-spicy-mix: #93614B;
 $color-cutty-sark: #566E6C;
 
-/* SITE COLOR PALLETTE */
+/* ==========================================================================
+ * SITE COLOR PALLETTE
+ *
+ * Two accents, two jobs, never swapped:
+ *   $color-meta   - the monospace layer. Data, tags, statuses.
+ *   $color-signal - interaction only. Hover, focus, active.
+ * Keeping them separate is what makes an element read as clickable.
+ * ==========================================================================*/
 $site-color-base: $color-spicy-mix;
 $site-color-primary: $color-olive-green;
 $site-color-accent: $color-cutty-sark;
@@ -116,23 +200,35 @@ $site-color-dark-alt: $color-almost-black;
 $site-color-gray: #c9d2d8;
 $site-color-light: #2c2f33;
 
+$color-meta: $color-olive-green;
+$color-meta-dim: #7d7a3c;
+$color-signal: $color-red;
+
 $site-color-section: $color-black-transparent;
 $site-filter-section: grayscale(50%) blur(5px);
 
+/* --------------------------------------------------------------------------
+ * LEGACY SIZING ALIASES
+ *
+ * These names are still referenced in ~20 component stylesheets. Rather than
+ * touch every call site, they now resolve to the modular scale above, so the
+ * two systems cannot drift apart. Prefer the $type-* tokens in new work.
+ * --------------------------------------------------------------------------*/
+
 /* DESKTOP SIZING */
 
-$large-heading: 2rem;
-$small-heading: 1.5rem;
-$large-p: 1rem;
-$small-p: 0.8rem;
+$large-heading: $type-h2;
+$small-heading: $type-h3;
+$large-p: $type-body;
+$small-p: $type-meta;
 $desktop-min-section-width: 30rem;
 
 /* MOBILE SIZING */
 
-$mobile-large-heading: 2rem;
-$mobile-small-heading: 1.1rem;
-$mobile-large-p: 1rem;
-$mobile-small-p: 0.8rem;
+$mobile-large-heading: $type-h2-m;
+$mobile-small-heading: $type-h3-m;
+$mobile-large-p: $type-body-m;
+$mobile-small-p: $type-meta-m;
 $mobile-min-section-width: 15rem;
 
 /* ANIMATION */
