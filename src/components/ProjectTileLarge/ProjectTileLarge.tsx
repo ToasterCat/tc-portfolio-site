@@ -25,7 +25,7 @@ interface ProjectEngagementProps {
   outcome?: string;
 }
 
-/* What we did and how it ended. Carries the weight for work that never
+/* STAR report - what we did and how it ended. Carries the weight for work that never
  * launched and has no screenshot or live link to point at. */
 function ProjectEngagement(props: ProjectEngagementProps) {
   if (!props.role && !props.outcome) {
@@ -67,6 +67,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
       <ProjectIconRow
         projAlias={props.project.projectDetails.alias}
         projName={props.project.projectDetails.name}
+        kind={props.project.projectDetails.kind}
         showcase={props.project.projectDetails.showcase}
         origin={props.project.projectDetails.origin}
         status={props.project.projectDetails.status}

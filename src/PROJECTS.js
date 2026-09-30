@@ -4,20 +4,21 @@ const PROJECTS = {
   blackoutPunk: {
     projectDetails: {
       alias: 'blackout-punk',
-      name: 'PC Game: "BLACK0UT.PUNK"',
+      name: 'BLACK0UT.PUNK',
       showcase: 'Game Development',
+      kind: `PC Game`,
       origin: 'in-house',
       status: 'in-development',
       role: 'Developer & Publishing',
       year: '2024 - Present',
-      outcome: 'active',
+      outcome: '',
       brief: `A "rave-flavored" tactical shooter/strategy experience.`,
       description: 'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
       descriptionBullets: [
       ],
       skills: [
         "Unreal",
-        "GameLift",
+        "AWS-GameLift",
         "Blender",
         "Photoshop"
       ],
@@ -57,8 +58,9 @@ const PROJECTS = {
   clickTune: {
     projectDetails: {
       alias: 'clicktune',
-      name: 'Consulting: "MusiMojii" - ClickTune LLC',
+      name: '"MusiMojii" - ClickTune LLC',
       showcase: 'App Design',
+      kind: `Client Consultation`,
       origin: 'client',
       status: 'shipped',
       role: 'Back-End Architecture Design, Research, and Technical Advisory',
@@ -98,8 +100,9 @@ const PROJECTS = {
   jukeDec: {
     projectDetails: {
       alias: 'jukedec',
-      name: 'Consulting: "JukeDec" - Frigging Glorious LLC',
-      showcase: 'Business Development',
+      name: '"JukeDec" - Frigging Glorious LLC',
+      showcase: 'App Design',
+      kind: `Research & Development`,
       origin: 'client',
       status: 'shipped',
       role: 'Research and Technical Product Design - Back-End and App Integration.',
@@ -129,8 +132,9 @@ const PROJECTS = {
   outsideAgitators: {
     projectDetails: {
       alias: 'outside-agitators',
-      name: 'Album: "Outside Agitators" - Octopus Attacks Shark!!',
+      name: '"Outside Agitators" - Octopus Attacks Shark!!',
       showcase: 'Audio',
+      kind: `Album`,
       origin: 'contributor',
       status: 'shipped',
       role: 'Additional recordings and samples - guitar, vocals, and percussion.',
@@ -181,8 +185,9 @@ const PROJECTS = {
   fossArmory: {
     projectDetails: {
       alias: 'foss-armory',
-      name: 'PC Game: "FOSS Armory"',
+      name: 'FOSS Armory',
       showcase: 'Game Development',
+      kind: `PC Game`,
       origin: 'contributor',
       status: 'archived',
       role: 'Research, 3D Modeling, and Gameplay Integration',
@@ -220,13 +225,14 @@ const PROJECTS = {
   crudeMirror: {
     projectDetails: {
       alias: 'crude-mirror',
-      name: 'Site/Business Launch: "Crude Mirror Media"',
+      name: 'Crude Mirror Media',
       showcase: 'Business Development',
-      origin: 'client',
+      kind: `Media Blog`,
+      origin: 'in-house',
       status: 'live',
       role: 'Cloud Services and Business Infrastructure',
       year: '2021',
-      outcome: '',
+      outcome: 'Site launched in 2021 to produce annual user growth and consistent AdSense impression revenue.',
       brief: `"A Poorly Edited Editorial" - Multimedia pop culture blog powered by an SEO Ad Revenue model.`,
       description: `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
       skills: [
@@ -303,8 +309,9 @@ const PROJECTS = {
   oasWebsite: {
     projectDetails: {
       alias: 'oas-website',
-      name: 'Band Website: "Octopus Attacks Shark!!"',
+      name: '"Octopus Attacks Shark!!"',
       showcase: 'Web Development',
+      kind: `Band Site`,
       origin: 'client',
       status: 'live',
       role: 'Front-End Design and Hosting',
@@ -351,8 +358,9 @@ const PROJECTS = {
   umaWebsite: {
     projectDetails: {
       alias: 'uma-website',
-      name: 'Band Website: "Ugliest Man Alive" [U.M.A]',
+      name: 'Ugliest Man Alive [U.M.A]',
       showcase: 'Web Development',
+      kind: `Band Site`,
       origin: 'client',
       status: 'live',
       role: 'Front-End Design and Hosting',
@@ -391,8 +399,9 @@ const PROJECTS = {
   pixHell: {
     projectDetails: {
       alias: 'pixhell',
-      name: 'Mobile Game: "PixHell"',
+      name: 'PixHell',
       showcase: 'Game Development',
+      kind: `Mobile Game`,
       origin: 'contributor',
       status: 'live',
       role: 'Custom Graphics and User Haptics Engine. Additional custom audio and soundtrack recording.',
@@ -436,13 +445,14 @@ const PROJECTS = {
   wraithSquadron: {
     projectDetails: {
       alias: 'wraith-squadron',
-      name: 'PC Game: "Star Wars: Wraith Squadron"',
+      name: 'Star Wars: Wraith Squadron',
       showcase: 'Game Development',
+      kind: `PC Game`,
       origin: 'in-house',
       status: 'archived',
       role: 'Lead Developer and Producer',
       year: '2014',
-      outcome: 'Project discarded following Disney-Lucas acquisition - lost legal rights to IP.',
+      outcome: `Fan project halted after Disney's acquisition of Lucasfilm.`,
       brief: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
       description: ``,
       skills: [
@@ -472,13 +482,14 @@ const PROJECTS = {
   chickMagnet: {
     projectDetails: {
       alias: 'chick-magnet',
-      name: 'PC Game: "Chick Magnet"',
+      name: 'Chick Magnet',
       showcase: 'Game Development',
+      kind: `PC Game`,
       origin: 'contributor',
       status: 'shipped',
       role: 'Level Design and Gameplay Engineering',
       year: '2014',
-      outcome: 'Project shipped and reviewed as a featured finalist at VT Games Expo 2014',
+      outcome: 'Project shipped and reviewed as a featured finalist at VT Game Expo 2014',
       brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
       description: `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
       skills: [
@@ -510,13 +521,14 @@ const PROJECTS = {
   umaAlbum: {
     projectDetails: {
       alias: 'uma-album',
-      name: 'Album: "Of Man and Nature" - Ugliest Man Alive',
+      name: '"Of Man and Nature" - Ugliest Man Alive',
       showcase: 'Audio',
+      kind: `Album`,
       origin: 'client',
       status: 'live',
-      role: '',
-      year: '',
-      outcome: '',
+      role: 'Audio Engineering, Recording, and Production',
+      year: '2017',
+      outcome: 'Album released to streaming platforms',
       brief: `Debut LP for local Seattle post-metal act "Ugliest Man Alive [U.M.A]".`,
       description: `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
       skills: [
@@ -558,8 +570,9 @@ const PROJECTS = {
   moxel: {
     projectDetails: {
       alias: 'moxel',
-      name: 'Product Prototype: Moxel Hooks',
+      name: 'Moxel Hooks',
       showcase: '3D Printing',
+      kind: 'Prototype',
       origin: 'client',
       status: 'shipped',
       role: '3D Modeling and Industrial Manufacturing',
@@ -595,6 +608,7 @@ const PROJECTS = {
       alias: 'lizzie',
       name: 'Product Prototype: "The Lizzie"',
       showcase: '3D Printing',
+      kind: `Prototype`,
       origin: 'client',
       status: 'shipped',
       role: 'Custom Modeling and Industrial Manufacturing and Assembly',
@@ -606,8 +620,6 @@ const PROJECTS = {
         "FDM",
         "Cura",
         "Fusion360"
-      ],
-      links: [
       ],
       thumbnailImage: {
         source: 'logo-nerf',
@@ -628,15 +640,16 @@ const PROJECTS = {
   tcPrints: {
     projectDetails: {
       alias: 'tc-print-pistol',
-      name: 'Product Design: Custom Pistol Sight Adapters',
+      name: 'Custom Pistol Sight Adapters',
       showcase: '3D Printing',
+      kind: `Product`,
       origin: 'in-house',
       status: 'live',
       role: 'End-to-End Product Design, Manufacturing, and Sales',
       year: '2022',
-      outcome: '',
+      outcome: '400 units sold in first year to 98% positive customer reviews.',
       brief: `Custom sight adapters printed for common pistol models.`,
-      description: ``,
+      description: `TODO: Bar Code #`,
       skills: [
         "FDM",
         "Cura",

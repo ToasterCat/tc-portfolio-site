@@ -5,6 +5,7 @@ export interface Project {
 export interface ProjectDetails {
   alias: string;
   name: string;
+  kind?: string;
   brief: string;
   showcase: string;
   /* Typed as string while PROJECTS stays JS (its literals widen to string).

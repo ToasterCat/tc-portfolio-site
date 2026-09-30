@@ -6,6 +6,7 @@ interface ProjectIconRowProps {
   styleClass?: string;
   projAlias: string;
   projName: string;
+  kind?: string;
   showcase?: string;
   origin?: string;
   status?: string;
@@ -22,19 +23,22 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
     <div
       className={props.styleClass ? props.styleClass : 'project-details-row'}
     >
-      {/* Inner rail keeps the title on the same left edge as the prose
-          column below, instead of hugging the viewport. */}
       <div className="project-icon-row-inner">
         <img src={bgd} alt={props.thumbnailImage?.alt ?? `${props.projName} logo`} />
 
         <div className="project-icon-row-title">
-          {/* The prompt is the monospace device at its smallest: one mark
-              that says "technical" without tipping the name into mono. */}
           <h2>
-            <span className="meta project-icon-row-prompt" aria-hidden="true">
-              {'\\>'}
+            <span className="meta project-icon-row-prefix">
+              {props.kind && (
+                <span className="project-icon-row-kind">
+                  <span className="meta-dim project-icon-row-bracket" aria-hidden="true">[</span>
+                  {props.kind}
+                  <span className="meta-dim project-icon-row-bracket" aria-hidden="true">]</span>
+                </span>
+              )}
+              <span className="meta-dim" aria-hidden="true">{'\\>'}</span>
             </span>
-            {props.projName}
+            <span className="project-icon-row-name">{props.projName}</span>
           </h2>
           <div className="project-icon-row-meta">
             <MetaTags tags={[props.showcase, props.origin, props.status]} />

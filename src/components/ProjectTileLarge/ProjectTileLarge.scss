@@ -2,11 +2,6 @@
 
 /**
  * PROJECT TILE (LARGE)
- *
- * Previously floored at 110vh desktop / 120vh mobile. With thirteen projects
- * that made the portfolio roughly fourteen screens of scrolling with no way
- * to compare two pieces of work. Tiles now size to their content and the
- * rhythm comes from the spacing scale instead of the viewport.
  */
 
 .project-tile-large {
@@ -82,15 +77,35 @@
   h2 {
     margin: 0;
     display: flex;
+    flex-wrap: wrap; /* a long kind pushes the name down, not off-screen */
     align-items: baseline;
-    gap: base.$space-2;
+    column-gap: 0.35em;
   }
-}
 
-/* The prompt mark: monospace at its smallest useful size. */
-.project-icon-row-prompt {
-  color: base.$color-meta-dim;
-  flex: none;
+  h2 .project-icon-row-prefix {
+    flex: none;
+    font-size: 0.85em;
+    white-space: nowrap;
+  }
+
+  h2 .project-icon-row-kind {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    /* A tinted plate lifts the kind off the bar without becoming a
+     * button: same olive as the text, at low alpha. */
+    padding: 0.1em 0.3em;
+    margin-right: 0.2em;
+    border-radius: base.$radius-sm;
+    background-color: rgba(base.$color-meta, 0.14);
+  }
+
+  /* PT-Mono's brackets are drawn to enclose lowercase with descenders, so
+   * beside all-caps they hang ~0.08em low. Lift them onto the caps' centre. */
+  h2 .project-icon-row-bracket {
+    position: relative;
+    top: -0.08em;
+  }
 }
 
 /* discipline / origin / status tags, then the year trailing as plain meta */
