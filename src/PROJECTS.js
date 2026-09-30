@@ -1,10 +1,141 @@
 const PROJECTS = {
 
+
+  blackoutPunk: {
+    projectDetails: {
+      alias: 'blackout-punk',
+      name: 'PC Game: "BLACK0UT.PUNK"',
+      showcase: 'Game Development',
+      origin: 'in-house',
+      status: 'in-development',
+      role: 'Developer & Publishing',
+      year: '2024 - Present',
+      outcome: 'active',
+      brief: `A "rave-flavored" tactical shooter/strategy experience.`,
+      description: 'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
+      descriptionBullets: [
+      ],
+      skills: [
+        "Unreal",
+        "GameLift",
+        "Blender",
+        "Photoshop"
+      ],
+      links: [
+        {
+          label: 'Official Website',
+          target: 'https://blackout-punk.com',
+          icon: 'blackout-punk-icon'
+        },
+        {
+          label: 'Discord',
+          target: 'https://discord.gg/VENmWr635t',
+          icon: 'logo-discord'
+        },
+        {
+          label: 'Patreon',
+          target: 'https://www.patreon.com/cw/ToasterCatStudios',
+          icon: 'logo-patreon'
+        }
+      ],
+      thumbnailImage: {
+        source: 'blackout-punk-icon',
+        alt: 'BLACK0UT.PUNK Icon'
+      },
+      backgroundImage: {
+        source: 'blackout-punk-background',
+        alt: 'BLACK0UT.PUNK Background Grid'
+      },
+      detailImage: {
+        source: 'blackout-punk-detail',
+        alt: 'BLACK0UT.PUNK Gameplay'
+      }
+    }
+  },
+
+  
+  clickTune: {
+    projectDetails: {
+      alias: 'clicktune',
+      name: 'Consulting: "MusiMojii" - ClickTune LLC',
+      showcase: 'App Design',
+      origin: 'client',
+      status: 'shipped',
+      role: 'Back-End Architecture Design, Research, and Technical Advisory',
+      year: 'Q1 2025',
+      outcome: 'shipped',
+      brief: `Research, Development, and Back-End System Design for ClickTune LLC.`,
+      description: 'ClickTune LLC is building an aspiring social media experience where users can share audio clips attached to text messages [US Patent # 12,671,666]. Provided preliminary technical research, rapid prototyping, and back-end design required for patent acceptance.',
+      descriptionBullets: [
+      ],
+      skills: [
+        "AWS-S3",
+        "AWS-DynamoDB",
+        "AWS-CloudFormation",
+        "AWS-CloudFront",
+        "Android",
+        "iOS"
+      ],
+      links: [
+        {
+          label: 'US Patent Office',
+          target: 'https://ppubs.uspto.gov/',
+          icon: 'logo-website'
+        }
+      ],
+      thumbnailImage: {
+        source: 'tc-logo',
+        alt: 'ToasterCat Icon'
+      },
+      detailImage: {
+        source: 'tc-logo',
+        alt: 'ToasterCat Icon'
+      },
+    }
+  },
+
+
+  jukeDec: {
+    projectDetails: {
+      alias: 'jukedec',
+      name: 'Consulting: "JukeDec" - Frigging Glorious LLC',
+      showcase: 'Business Development',
+      origin: 'client',
+      status: 'shipped',
+      role: 'Research and Technical Product Design - Back-End and App Integration.',
+      year: 'Q2 2021',
+      outcome: 'Abandoned by client after provided total technical scope.',
+      brief: `A multi-faceted content distribution and networking platform for musicians, producers, and digital artists.`,
+      description: "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
+      descriptionBullets: [
+      ],
+      skills: [
+        "AWS-S3",
+        "AWS-SWF",
+        "AWS-Dynamo",
+        "AWS-CloudFormation",
+        "Android",
+        "iOS"
+      ],
+      links: [ ],
+      thumbnailImage: {
+        source: 'tc-logo',
+        alt: 'ToasterCat Icon'
+      }
+    }
+  },
+
+
   outsideAgitators: {
     projectDetails: {
-      alias: 'outsideAgitators',
-      name: 'Outside Agitators',
+      alias: 'outside-agitators',
+      name: 'Album: "Outside Agitators" - Octopus Attacks Shark!!',
       showcase: 'Audio',
+      origin: 'contributor',
+      status: 'shipped',
+      role: 'Additional recordings and samples - guitar, vocals, and percussion.',
+      year: '2023',
+      outcome: 'Album released to all major streaming platforms.',
       brief: `Debut LP by local Seattle act "Octopus Attacks Shark!!"`,
       description: 'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino. Tracked guitars, vocals, and additional overlays. Mixed band-provided samples for interludes and layered vocals.',
       descriptionBullets: [
@@ -12,8 +143,7 @@ const PROJECTS = {
         "Mixed band-provided samples for interludes and layered vocals."
       ],
       skills: [
-        "Reaper",
-        "Shopify"
+        "Reaper"
       ],
       links: [
         {
@@ -50,15 +180,19 @@ const PROJECTS = {
 
   fossArmory: {
     projectDetails: {
-      alias: 'fossArmory',
-      name: 'FOSS Armory',
+      alias: 'foss-armory',
+      name: 'PC Game: "FOSS Armory"',
       showcase: 'Game Development',
+      origin: 'contributor',
+      status: 'archived',
+      role: 'Research, 3D Modeling, and Gameplay Integration',
+      year: '2022',
+      outcome: 'Project shelved by client pending additional legal review.',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
-      description: `Inspired by the Defense Distributed movement, "FOSS Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+      description: `Inspired by the Defense Distributed movement, the "Free and Open-Source Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
       skills: [
         "Unity",
-        "Fusion360",
-        "GameLift"
+        "Fusion360"
       ],
       links: [
         {
@@ -85,16 +219,21 @@ const PROJECTS = {
 
   crudeMirror: {
     projectDetails: {
-      alias: 'CrudeMirror',
-      name: 'Crude Mirror Media',
+      alias: 'crude-mirror',
+      name: 'Site/Business Launch: "Crude Mirror Media"',
       showcase: 'Business Development',
+      origin: 'client',
+      status: 'live',
+      role: 'Cloud Services and Business Infrastructure',
+      year: '2021',
+      outcome: '',
       brief: `"A Poorly Edited Editorial" - Multimedia pop culture blog powered by an SEO Ad Revenue model.`,
       description: `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
       skills: [
         "WordPress",
         "AdSense",
         "GSuite",
-        "Lightsail"
+        "AWS-Lightsail"
       ],
       links: [
         {
@@ -122,16 +261,21 @@ const PROJECTS = {
   strongarm: {
     projectDetails: {
       alias: 'Strongarm',
-      name: 'Strongarm Digital Marketing',
+      name: 'Client Lead Site: "Strongarm Digital Marketing"',
       showcase: 'Web Development',
+      origin: 'client',
+      status: 'live',
+      role: 'End-to-End Website Design and Development',
+      year: '2022',
+      outcome: 'Site launched for client, attracting new leads through direct contact forms and indirect search analytics.',
       brief: `Business portfolio and web presence for a local digital marketing provider specializing in SEO and market segment presence.`,
       description: `A simple responsive website launched with custom CSS and JS elements using minimal-cost architecture ($0.12/mo) matching strict client specifications for layout, copy, and look-and-feel.`,
       skills: [
         "HTML",
         "CSS",
-        "S3",
-        "Route53",
-        "CloudFront"
+        "AWS-S3",
+        "AWS-Route53",
+        "AWS-CloudFront"
       ],
       links: [
         {
@@ -158,17 +302,22 @@ const PROJECTS = {
 
   oasWebsite: {
     projectDetails: {
-      alias: 'oasWebsite',
-      name: 'Octopus Attacks Shark!!',
+      alias: 'oas-website',
+      name: 'Band Website: "Octopus Attacks Shark!!"',
       showcase: 'Web Development',
+      origin: 'client',
+      status: 'live',
+      role: 'Front-End Design and Hosting',
+      year: '2022',
+      outcome: 'Site shipped and maintained to promote ticket sales and album release.',
       brief: `E-Commerce font-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
-      description: `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
+      description: `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
       skills: [
         "HTML",
         "CSS",
-        "S3",
-        "Route53",
-        "CloudFront",
+        "AWS-S3",
+        "AWS-Route53",
+        "AWS-CloudFront",
         "Shopify"
       ],
       links: [
@@ -201,10 +350,15 @@ const PROJECTS = {
 
   umaWebsite: {
     projectDetails: {
-      alias: 'umaWebsite',
-      name: 'Ugliest Man Alive [U.M.A]',
+      alias: 'uma-website',
+      name: 'Band Website: "Ugliest Man Alive" [U.M.A]',
       showcase: 'Web Development',
-      brief: `Custom portfolio site and brand press pack for local post-metal act - Ugliest Man Alive [U.M.A]`,
+      origin: 'client',
+      status: 'live',
+      role: 'Front-End Design and Hosting',
+      year: '2021',
+      outcome: 'Site shipped and maintained to promote live events and merchandizing sales.',
+      brief: `Custom portfolio site and brand press pack for local post-metal act - "Ugliest Man Alive" [U.M.A]`,
       description: `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
       skills: [
         "Squarespace",
@@ -236,9 +390,14 @@ const PROJECTS = {
 
   pixHell: {
     projectDetails: {
-      alias: 'pixHell',
-      name: 'PixHell',
+      alias: 'pixhell',
+      name: 'Mobile Game: "PixHell"',
       showcase: 'Game Development',
+      origin: 'contributor',
+      status: 'live',
+      role: 'Custom Graphics and User Haptics Engine. Additional custom audio and soundtrack recording.',
+      year: '2013',
+      outcome: 'Project shipped and available for purchase on Amazon AppStore.',
       brief: `A rogue-like bullet hell game for Android using custom motion controlls and procedural enemy generation.`,
       description: `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
       skills: [
@@ -251,11 +410,6 @@ const PROJECTS = {
           label: 'Appstore',
           target: ' https://www.amazon.com/dp/B00DPLJIOU',
           icon: 'logo-amazon'
-        },
-        {
-          label: 'itch.io',
-          target: '#',
-          icon: 'logo-itch-io'
         },
         {
           label: 'GitHub',
@@ -281,21 +435,22 @@ const PROJECTS = {
 
   wraithSquadron: {
     projectDetails: {
-      alias: 'wraithSquadron',
-      name: 'Star Wars: Wraith Squadron',
+      alias: 'wraith-squadron',
+      name: 'PC Game: "Star Wars: Wraith Squadron"',
       showcase: 'Game Development',
+      origin: 'in-house',
+      status: 'archived',
+      role: 'Lead Developer and Producer',
+      year: '2014',
+      outcome: 'Project discarded following Disney-Lucas acquisition - lost legal rights to IP.',
       brief: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
       description: ``,
       skills: [
         "Unity",
-        "Unreal"
+        "Maya",
+        "Fusion360"
       ],
       links: [
-        {
-          label: 'itch.io',
-          target: '#',
-          icon: 'logo-itch-io'
-        },
         {
           label: 'GitHub',
           target: 'https://github.com/Dirker27/WraithSquadron',
@@ -316,9 +471,14 @@ const PROJECTS = {
 
   chickMagnet: {
     projectDetails: {
-      alias: 'ChickMagnet',
-      name: 'Chick Magnet',
+      alias: 'chick-magnet',
+      name: 'PC Game: "Chick Magnet"',
       showcase: 'Game Development',
+      origin: 'contributor',
+      status: 'shipped',
+      role: 'Level Design and Gameplay Engineering',
+      year: '2014',
+      outcome: 'Project shipped and reviewed as a featured finalist at VT Games Expo 2014',
       brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
       description: `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
       skills: [
@@ -329,11 +489,6 @@ const PROJECTS = {
         "Reaper"
       ],
       links: [
-        {
-          label: 'itch.io',
-          target: '#',
-          icon: 'logo-itch-io'
-        },
         {
           label: 'GitHub',
           target: 'https://github.com/edeesis/Chick-Magnet',
@@ -354,9 +509,14 @@ const PROJECTS = {
 
   umaAlbum: {
     projectDetails: {
-      alias: 'umaAlbum',
-      name: 'Of Man and Nature',
+      alias: 'uma-album',
+      name: 'Album: "Of Man and Nature" - Ugliest Man Alive',
       showcase: 'Audio',
+      origin: 'client',
+      status: 'live',
+      role: '',
+      year: '',
+      outcome: '',
       brief: `Debut LP for local Seattle post-metal act "Ugliest Man Alive [U.M.A]".`,
       description: `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
       skills: [
@@ -397,9 +557,14 @@ const PROJECTS = {
 
   moxel: {
     projectDetails: {
-      alias: 'Moxel',
-      name: 'Moxel Hooks',
-      showcase: 'Web Development',
+      alias: 'moxel',
+      name: 'Product Prototype: Moxel Hooks',
+      showcase: '3D Printing',
+      origin: 'client',
+      status: 'shipped',
+      role: '3D Modeling and Industrial Manufacturing',
+      year: '2022',
+      outcome: 'Prototype models and manufacturing files delivered to client for sale on their private sales platform.',
       brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
       description: ``,
       skills: [
@@ -408,21 +573,6 @@ const PROJECTS = {
         "Fusion360"
       ],
       links: [
-        {
-          label: 'Store',
-          target: '#',
-          icon: 'logo-website'
-        },
-        {
-          label: 'Ebay',
-          target: '#',
-          icon: 'logo-ebay'
-        },
-        {
-          label: 'Amazon',
-          target: '#',
-          icon: 'logo-amazon'
-        }
       ],
       thumbnailImage: {
         source: 'moxel-logo',
@@ -443,8 +593,13 @@ const PROJECTS = {
   lizzie: {
     projectDetails: {
       alias: 'lizzie',
-      name: 'The Lizzie',
+      name: 'Product Prototype: "The Lizzie"',
       showcase: '3D Printing',
+      origin: 'client',
+      status: 'shipped',
+      role: 'Custom Modeling and Industrial Manufacturing and Assembly',
+      year: '2021',
+      outcome: '',
       brief: `Custom operational Nerf(TM) blaster comissioned compatible with Worker(TM) magazines and darts.`,
       description: ``,
       skills: [
@@ -453,21 +608,6 @@ const PROJECTS = {
         "Fusion360"
       ],
       links: [
-        {
-          label: 'Store',
-          target: '#',
-          icon: 'logo-website'
-        },
-        {
-          label: 'Ebay',
-          target: '#',
-          icon: 'logo-ebay'
-        },
-        {
-          label: 'Amazon',
-          target: '#',
-          icon: 'logo-amazon'
-        }
       ],
       thumbnailImage: {
         source: 'logo-nerf',
@@ -487,10 +627,15 @@ const PROJECTS = {
 
   tcPrints: {
     projectDetails: {
-      alias: 'TCPrints',
-      name: 'ToasterCat Print Shop',
+      alias: 'tc-print-pistol',
+      name: 'Product Design: Custom Pistol Sight Adapters',
       showcase: '3D Printing',
-      brief: `E-Commerce platform dedicated to the distribution of custom and licensed 3D printed products to a global audience.`,
+      origin: 'in-house',
+      status: 'live',
+      role: 'End-to-End Product Design, Manufacturing, and Sales',
+      year: '2022',
+      outcome: '',
+      brief: `Custom sight adapters printed for common pistol models.`,
       description: ``,
       skills: [
         "FDM",
@@ -510,11 +655,6 @@ const PROJECTS = {
           label: 'Ebay',
           target: '#',
           icon: 'logo-ebay'
-        },
-        {
-          label: 'Amazon',
-          target: '#',
-          icon: 'logo-amazon'
         }
       ],
       thumbnailImage: {

@@ -20,6 +20,36 @@ function ProjectScreenshot(props: ProjectImageProps) {
     : (<></>);
 }
 
+interface ProjectEngagementProps {
+  role?: string;
+  outcome?: string;
+}
+
+/* What we did and how it ended. Carries the weight for work that never
+ * launched and has no screenshot or live link to point at. */
+function ProjectEngagement(props: ProjectEngagementProps) {
+  if (!props.role && !props.outcome) {
+    return null;
+  }
+
+  return (
+    <dl className="project-tile-large-engagement">
+      {props.role && (
+        <div>
+          <dt className="meta meta-dim">Role</dt>
+          <dd>{props.role}</dd>
+        </div>
+      )}
+      {props.outcome && (
+        <div>
+          <dt className="meta meta-dim">Outcome</dt>
+          <dd>{props.outcome}</dd>
+        </div>
+      )}
+    </dl>
+  );
+}
+
 export default function ProjectTileLarge(props: ProjectTileProps) {
   let bgd = props.project.projectDetails.backgroundImage
     ? ASSET_MANIFEST.get(props.project.projectDetails.backgroundImage?.source)
@@ -38,6 +68,9 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         projAlias={props.project.projectDetails.alias}
         projName={props.project.projectDetails.name}
         showcase={props.project.projectDetails.showcase}
+        origin={props.project.projectDetails.origin}
+        status={props.project.projectDetails.status}
+        year={props.project.projectDetails.year}
         styleClass={'project-tile-large-icons'}
         thumbnailImage={props.project.projectDetails.thumbnailImage}
       />
@@ -53,6 +86,10 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
             heading={''}
             styleClass={'project-tile-large-description'}
             content={props.project.projectDetails.description}
+          />
+          <ProjectEngagement
+            role={props.project.projectDetails.role}
+            outcome={props.project.projectDetails.outcome}
           />
         </div>
 

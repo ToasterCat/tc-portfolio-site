@@ -12,17 +12,20 @@ export function ProjectSection() {
           Half of this shouldn&apos;t exist. All of it works.
         </p>
       </div>
+
+
       <div className="projects-container card-grid">
 
-        <ProjectTile project={PROJECTS["outsideAgitators"]}/>
+        <ProjectTile project={PROJECTS["blackoutPunk"]}/>
 
         <ProjectTile project={PROJECTS["fossArmory"]}/>
 
-        <ProjectTile project={PROJECTS["crudeMirror"]}/>
+        <ProjectTile project={PROJECTS["clickTune"]}/>
 
-        <ProjectTile project={PROJECTS["strongarm"]}/>
+        <ProjectTile project={PROJECTS["outsideAgitators"]}/>
 
       </div>
+
     </section>
   );
 }

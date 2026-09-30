@@ -37,11 +37,33 @@ function skillIconMap(skillName: string) {
         icon: ASSET_MANIFEST.get('logo-android'),
         label: "Android"
       };
-    case "CloudFront":
+
+    case "AWS-CloudFront":
       return {
         icon: ASSET_MANIFEST.get('logo-cloudfront'),
         label: "AWS CloudFront"
       };
+    case "AWS-GameLift":
+      return {
+        icon: ASSET_MANIFEST.get('logo-gamelift'),
+        label: "AWS GameLift"
+      };
+    case "AWS-Lightsail":
+      return {
+        icon: ASSET_MANIFEST.get('logo-lightsail'),
+        label: "AWS Lightsail"
+      };
+    case "AWS-S3":
+      return {
+        icon: ASSET_MANIFEST.get('logo-s3'),
+        label: "AWS S3"
+      };
+    case "AWS-Route53":
+      return {
+        icon: ASSET_MANIFEST.get('logo-route53'),
+        label: "AWS Route 53"
+      };
+
     case "CSS":
       return {
         icon: ASSET_MANIFEST.get('logo-css'),
@@ -67,11 +89,6 @@ function skillIconMap(skillName: string) {
         icon: ASSET_MANIFEST.get('logo-fdm'),
         label: "FDM 3D Printing"
       };
-    case "GameLift":
-      return {
-        icon: ASSET_MANIFEST.get('logo-gamelift'),
-        label: "AWS GameLift"
-      };
     case "GSuite":
       return {
         icon: ASSET_MANIFEST.get('logo-gsuite'),
@@ -81,11 +98,6 @@ function skillIconMap(skillName: string) {
       return {
         icon: ASSET_MANIFEST.get('logo-html'),
         label: "HTML 5"
-      };
-    case "Lightsail":
-      return {
-        icon: ASSET_MANIFEST.get('logo-lightsail'),
-        label: "AWS Lightsail"
       };
     case "Maya":
       return {
@@ -107,11 +119,6 @@ function skillIconMap(skillName: string) {
         icon: ASSET_MANIFEST.get('logo-reaper'),
         label: "Reaper"
       };
-    case "Route53":
-      return {
-        icon: ASSET_MANIFEST.get('logo-route53'),
-        label: "AWS Route 53"
-      };
     case "Shopify":
       return {
         icon: ASSET_MANIFEST.get('logo-shopify'),
@@ -121,11 +128,6 @@ function skillIconMap(skillName: string) {
       return {
         icon: ASSET_MANIFEST.get('logo-squarespace'),
         label: "Squarespace"
-      };
-    case "S3":
-      return {
-        icon: ASSET_MANIFEST.get('logo-s3'),
-        label: "AWS S3"
       };
     case "Unity":
       return {

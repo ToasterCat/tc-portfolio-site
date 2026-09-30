@@ -41,7 +41,6 @@ export default function Homepage() {
         }}
       />
 
-      <ProjectSection />
 
       <TileSection
         areLinks
@@ -53,6 +52,7 @@ export default function Homepage() {
           { label: 'Prototyping', url: '/projects#proj-proto' }
         ]}
       />
+
 
       <section className={`${about.aboutSection} section-band`}>
         <div className={about.aboutBlurb}>
@@ -74,9 +74,16 @@ export default function Homepage() {
         </div>
       </section>
 
+
+      <ProjectSection />
+
+      
+
+      
+
       <section className={`${about.aboutServices} section-band`}>
         <div className="section-head">
-          <h2>What We&apos;ve Built</h2>
+          <h2>What We Build</h2>
           <p className="section-sub">Nobody asked for most of this.</p>
         </div>
 
@@ -125,10 +132,12 @@ export default function Homepage() {
 
       <section className={`${locations.locationSection} section-band`}>      
         <div className="section-head">
-          <h2>Where We Do It</h2>
+          <h2>Where We Work</h2>
         </div>
         <ul className={locations.locationsList}>
           <li>Seattle, WA</li>
+          <li>Portland, OR</li>
+          <li>Vancouver, BC</li>
           <li>Remote</li>
         </ul>
       </section>

@@ -28,6 +28,8 @@ export default function ProjectTile(props: ProjectTileProps) {
     ? ASSET_MANIFEST.get(props.project.projectDetails.backgroundImage?.source)
     : ASSET_MANIFEST.get("default");
 
+  const links = props.project.projectDetails.links;
+
   return (
     <div className="project-tile-container">
       
@@ -51,13 +53,15 @@ export default function ProjectTile(props: ProjectTileProps) {
 
             <div className="project-blurb">
               <p>{props.project.projectDetails.brief}</p>
-              <div className="project-tile-links">
-                {props.project.projectDetails.links.map((link) => (
-                  <a href={link.target} key={link.label}>
-                    {link.label}
-                  </a>
-                ))}
-              </div>
+              {links && links.length > 0 && (
+                <div className="project-tile-links">
+                  {links.map((link) => (
+                    <a href={link.target} key={link.label}>
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
             
           </div>

@@ -5,10 +5,14 @@ import './ProjectLinks.scss';
 
 interface ProjectLinksProps {
   styleClass?: string;
-  links: { target: string; label: string; icon?: string; color?: string; }[];
+  links?: { target: string; label: string; icon?: string; color?: string; }[];
 }
 
 export default function ProjectLinks(props: ProjectLinksProps) {
+  if (!props.links || props.links.length < 1) {
+    return null;
+  }
+
   return (
     <div className={props.styleClass ? props.styleClass : 'project-links'}>
       <SectionHeading

@@ -1,11 +1,15 @@
 import { ProjectImage } from '../../../types/project.model';
 import { ASSET_MANIFEST } from '../../../assets/AssetMap';
+import MetaTags from '../MetaTags/MetaTags';
 
 interface ProjectIconRowProps {
   styleClass?: string;
   projAlias: string;
   projName: string;
   showcase?: string;
+  origin?: string;
+  status?: string;
+  year?: string;
   thumbnailImage?: ProjectImage;
 }
 
@@ -32,12 +36,14 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
             </span>
             {props.projName}
           </h2>
-          {props.showcase && (
-            <span className="meta project-icon-row-discipline">
-              <span className="meta-dim" aria-hidden="true">#</span>
-              {props.showcase.toLowerCase().replace(/\s+/g, '-')}
-            </span>
-          )}
+          <div className="project-icon-row-meta">
+            <MetaTags tags={[props.showcase, props.origin, props.status]} />
+            {props.year && (
+              <span className="meta meta-dim project-icon-row-year">
+                {props.year}
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>

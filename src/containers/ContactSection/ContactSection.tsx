@@ -35,11 +35,23 @@ export default function ContactInfoBar(props: ContactInfoBarProps) {
       <div className="contact-button-group">
         <ExternalLinkButton
           text={'LinkedIn'}
-          linkTo={'https://www.linkedin.com/in/dirk-hortensius/'}
+          linkTo={'https://www.linkedin.com/company/110969321'}
         />
         <ExternalLinkButton
-          text={'Github'}
-          linkTo={'https://github.com/Dirker27'}
+          text={'Facebook'}
+          linkTo={'https://www.facebook.com/ToasterCat.Studios'}
+        />
+        <ExternalLinkButton
+          text={'GitHub'}
+          linkTo={'https://github.com/ToasterCat'}
+        />
+        <ExternalLinkButton
+          text={'Discord'}
+          linkTo={'https://discord.gg/VENmWr635t'}
+        />
+        <ExternalLinkButton
+          text={'Patreon'}
+          linkTo={'https://www.patreon.com/cw/ToasterCatStudios'}
         />
       </div>
     </section>

@@ -38,11 +38,14 @@ export default function ProjectsPage() {
             The experiments that survived.
           </p>
           <div className="project-anchors-links">
+            <Link to="proj-game" smooth={true}>
+              Game Development
+            </Link>
             <Link to="proj-web" smooth={true}>
               Web Development
             </Link>
-            <Link to="proj-game" smooth={true}>
-              Game Development
+            <Link to="proj-consult" smooth={true}>
+              Client Consultation
             </Link>
             <Link to="proj-audio" smooth={true}>
               Audio Production
@@ -53,6 +56,28 @@ export default function ProjectsPage() {
           </div>
 
         </div>
+      </section>
+
+
+      <section className="proj-section">
+        <div className="anchor-beard"></div>
+        <h2 className="anchor" id="proj-game">
+          Game Development
+        </h2>
+        <div className="anchor-beard">
+          <div className="project-mini-container">
+              <MiniProject project={PROJECTS["blackoutPunk"]} />
+              <MiniProject project={PROJECTS["fossArmory"]} />
+              <MiniProject project={PROJECTS["pixHell"]} />
+              <MiniProject project={PROJECTS["wraithSquadron"]} />
+              <MiniProject project={PROJECTS["chickMagnet"]} />
+          </div>
+        </div>
+        <ProjectTileLarge project={PROJECTS["blackoutPunk"]} />
+        <ProjectTileLarge project={PROJECTS["fossArmory"]} />
+        <ProjectTileLarge project={PROJECTS["pixHell"]} />
+        <ProjectTileLarge project={PROJECTS["wraithSquadron"]} />
+        <ProjectTileLarge project={PROJECTS["chickMagnet"]} />
       </section>
 
 
@@ -76,24 +101,22 @@ export default function ProjectsPage() {
         <ProjectTileLarge project={PROJECTS["umaWebsite"]} />
       </section>
 
+      
       <section className="proj-section">
         <div className="anchor-beard"></div>
-        <h2 className="anchor" id="proj-game">
-          Game Development
+        <h2 className="anchor" id="proj-consult">
+          Client Consultation
         </h2>
         <div className="anchor-beard">
           <div className="project-mini-container">
-              <MiniProject project={PROJECTS["fossArmory"]} />
-              <MiniProject project={PROJECTS["pixHell"]} />
-              <MiniProject project={PROJECTS["wraithSquadron"]} />
-              <MiniProject project={PROJECTS["chickMagnet"]} />
+              <MiniProject project={PROJECTS["clickTune"]} />
+              <MiniProject project={PROJECTS["jukeDec"]} />
           </div>
         </div>
-        <ProjectTileLarge project={PROJECTS["fossArmory"]} />
-        <ProjectTileLarge project={PROJECTS["pixHell"]} />
-        <ProjectTileLarge project={PROJECTS["wraithSquadron"]} />
-        <ProjectTileLarge project={PROJECTS["chickMagnet"]} />
+        <ProjectTileLarge project={PROJECTS["clickTune"]} />
+        <ProjectTileLarge project={PROJECTS["jukeDec"]} />
       </section>
+
       
       <section className="proj-section">
         <div className="anchor-beard"></div>

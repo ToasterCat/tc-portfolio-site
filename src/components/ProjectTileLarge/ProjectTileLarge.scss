@@ -93,8 +93,36 @@
   flex: none;
 }
 
-.project-icon-row-discipline {
+/* discipline / origin / status tags, then the year trailing as plain meta */
+.project-icon-row-meta {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: base.$space-2 base.$space-4;
   margin-top: base.$space-1;
+}
+
+.project-icon-row-year {
+  white-space: nowrap;
+}
+
+/* Role / Outcome: label in the meta device, answer in the prose voice. */
+.project-tile-large-engagement {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-3;
+  margin: base.$space-5 0 0 0;
+  padding-left: base.$space-4;
+  border-left: 1px solid base.$color-meta-dim;
+
+  dt {
+    margin-bottom: base.$space-1;
+  }
+
+  dd {
+    margin: 0;
+    text-wrap: pretty;
+  }
 }
 
 .project-tile-large-content {

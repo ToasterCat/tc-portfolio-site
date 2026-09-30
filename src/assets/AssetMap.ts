@@ -39,6 +39,8 @@ import ebayLogo from './logos/external/ebay-logo-small.png';
 import nerfLogo from './logos/external/nerf-logo-medium.png';
 import defenseDistributedLogo from './logos/external/defense-distributed-logo-small.png';
 import itchioLogo from './logos/external/itch-io-logo-small.png';
+import patreonLogo from './logos/external/patreon-logo.png';
+import discordLogo from './logos/external/discord-logo.png';
 
 import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
@@ -85,6 +87,12 @@ import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
 import moxelLogo from './gallery/Moxel/moxel-logo-small.png';
 import moxelLogoText from './gallery/Moxel/moxel-logo-medium.png';
 
+import blackoutPunkIcon from './gallery/BlackoutPunk/BlackoutPunk-Icon_Square.png';
+import blackoutPunkLogo from './gallery/BlackoutPunk/BlackoutPunk-Logo.png';
+import blackoutPunkBackground from './gallery/BlackoutPunk/BP-GridBackground.jpg';
+import blackoutPunkDetail from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
+import blackoutPunkScreenshot from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
+
 let ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
 
@@ -129,6 +137,8 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["logo-nerf", nerfLogo],
     ["logo-defense-distributed", defenseDistributedLogo],
     ["logo-itch-io", itchioLogo],
+    ["logo-patreon", patreonLogo],
+    ["logo-discord", discordLogo],
 
     //- project-specific
     ["crude-mirror-logo", crudeMirrorLogo],
@@ -168,6 +178,12 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["moxel-background", moxelBackground],
     ["moxel-logo", moxelLogo],
     ["moxel-logo-text", moxelLogoText],
+
+    ["blackout-punk-icon", blackoutPunkIcon],
+    ["blackout-punk-logo", blackoutPunkLogo],
+    ["blackout-punk-background", blackoutPunkBackground],
+    ["blackout-punk-detail", blackoutPunkDetail],
+    ["blackout-punk-screenshot", blackoutPunkScreenshot],
 
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],
