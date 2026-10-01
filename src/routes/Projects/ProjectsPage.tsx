@@ -3,7 +3,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ProjectTileLarge from '../../components/ProjectTileLarge/ProjectTileLarge';
 import { Link } from 'react-scroll';
 import Brackets from '../../components/UI/Brackets/Brackets';
-import PROJECTS from '../../PROJECTS';
+import { PROJECT_CATEGORIES, projectsInCategory } from '../../PROJECTS';
 import './ProjectsPage.scss';
 import { ProjectTileProps } from '../../components/ProjectTile/ProjectTile';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
@@ -38,117 +38,44 @@ export default function ProjectsPage() {
             The experiments that survived.
           </p>
           <div className="project-anchors-links">
-            <Link to="proj-game" smooth={true} href={"#proj-game"} className="btn btn--tertiary">
-              <Brackets>Game Development</Brackets>
-            </Link>
-            <Link to="proj-web" smooth={true} href={"#proj-web"} className="btn btn--tertiary">
-              <Brackets>Web Development</Brackets>
-            </Link>
-            <Link to="proj-consult" smooth={true} href={"#proj-consult"} className="btn btn--tertiary">
-              <Brackets>Client Consultation</Brackets>
-            </Link>
-            <Link to="proj-audio" smooth={true} href={"#proj-audio"} className="btn btn--tertiary">
-              <Brackets>Audio Production</Brackets>
-            </Link>
-            <Link to="proj-proto" smooth={true} href={"#proj-proto"} className="btn btn--tertiary">
-              <Brackets>Rapid Prototyping</Brackets>
-            </Link>
+            {PROJECT_CATEGORIES.map((category) => (
+              <Link
+                key={category.key}
+                to={category.anchor}
+                smooth={true}
+                href={'#' + category.anchor}
+                className="btn btn--tertiary"
+              >
+                <Brackets>{category.label}</Brackets>
+              </Link>
+            ))}
           </div>
 
         </div>
       </section>
 
 
-      <section className="proj-section">
-        <div className="anchor-beard"></div>
-        <h2 className="anchor" id="proj-game">
-          Game Development
-        </h2>
-        <div className="anchor-beard">
-          <div className="project-mini-container">
-              <MiniProject project={PROJECTS["blackoutPunk"]} />
-              <MiniProject project={PROJECTS["fossArmory"]} />
-              <MiniProject project={PROJECTS["pixHell"]} />
-              <MiniProject project={PROJECTS["wraithSquadron"]} />
-              <MiniProject project={PROJECTS["chickMagnet"]} />
-          </div>
-        </div>
-        <ProjectTileLarge project={PROJECTS["blackoutPunk"]} />
-        <ProjectTileLarge project={PROJECTS["fossArmory"]} />
-        <ProjectTileLarge project={PROJECTS["pixHell"]} />
-        <ProjectTileLarge project={PROJECTS["wraithSquadron"]} />
-        <ProjectTileLarge project={PROJECTS["chickMagnet"]} />
-      </section>
-
-
-      <section className="proj-section">
-        <div className="anchor-beard"></div>
-        <h2 id="proj-web" className="anchor">
-            Web Development
-        </h2>
-        <div className="anchor-beard">
-          <div className="project-mini-container">
-              <MiniProject project={PROJECTS["crudeMirror"]} />
-              <MiniProject project={PROJECTS["strongarm"]} />
-              <MiniProject project={PROJECTS["oasWebsite"]} />
-              <MiniProject project={PROJECTS["umaWebsite"]} />
-          </div>
-        </div>
-
-        <ProjectTileLarge project={PROJECTS["crudeMirror"]} />
-        <ProjectTileLarge project={PROJECTS["strongarm"]} />
-        <ProjectTileLarge project={PROJECTS["oasWebsite"]} />
-        <ProjectTileLarge project={PROJECTS["umaWebsite"]} />
-      </section>
-
-      
-      <section className="proj-section">
-        <div className="anchor-beard"></div>
-        <h2 className="anchor" id="proj-consult">
-          Client Consultation
-        </h2>
-        <div className="anchor-beard">
-          <div className="project-mini-container">
-              <MiniProject project={PROJECTS["clickTune"]} />
-              <MiniProject project={PROJECTS["jukeDec"]} />
-          </div>
-        </div>
-        <ProjectTileLarge project={PROJECTS["clickTune"]} />
-        <ProjectTileLarge project={PROJECTS["jukeDec"]} />
-      </section>
-
-      
-      <section className="proj-section">
-        <div className="anchor-beard"></div>
-        <h2 className="anchor" id="proj-audio">
-          Audio Production
-        </h2>
-        <div className="anchor-beard">
-          <div className="project-mini-container">
-            <MiniProject project={PROJECTS["outsideAgitators"]} />
-            <MiniProject project={PROJECTS["umaAlbum"]} />
-          </div>
-        </div>
-        <ProjectTileLarge project={PROJECTS["outsideAgitators"]} />
-        <ProjectTileLarge project={PROJECTS["umaAlbum"]} />
-      </section>
-
-      <section className="proj-section">
-      <div className="anchor-beard"></div>
-        <h2 className="anchor" id="proj-proto">
-          Rapid Prototyping
-        </h2>
-        <div className="anchor-beard">
-          <div className="project-mini-container">
-            <MiniProject project={PROJECTS["moxel"]} />
-            <MiniProject project={PROJECTS["lizzie"]} />
-            <MiniProject project={PROJECTS["tcPrints"]} />
-          </div>
-        </div>
-        <ProjectTileLarge project={PROJECTS["moxel"]} />
-        <ProjectTileLarge project={PROJECTS["lizzie"]} />
-        <ProjectTileLarge project={PROJECTS["tcPrints"]} />
-      </section>
+      {PROJECT_CATEGORIES.map((category) => {
+        const projects = projectsInCategory(category.key);
+        return (
+          <section className="proj-section" key={category.key}>
+            <div className="anchor-beard"></div>
+            <h2 className="anchor" id={category.anchor}>
+              {category.label}
+            </h2>
+            <div className="anchor-beard">
+              <div className="project-mini-container">
+                {projects.map((project) => (
+                  <MiniProject project={project} key={project.projectDetails.alias} />
+                ))}
+              </div>
+            </div>
+            {projects.map((project) => (
+              <ProjectTileLarge project={project} key={project.projectDetails.alias} />
+            ))}
+          </section>
+        );
+      })}
     </React.Fragment>
   );
 }

@@ -4,7 +4,7 @@ import { ASSET_MANIFEST } from '../../../assets/AssetMap';
 
 import './ProjectSkills.scss';
 
-function skillIconMap(skillName: string) {
+export function skillIconMap(skillName: string) {
   switch (skillName) {
     case "AdSense":
       return {

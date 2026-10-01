@@ -2,17 +2,27 @@ export interface Project {
   projectDetails: ProjectDetails;
 }
 
+/** How we came to the work: our own, hired for it, or one team among several. */
+export type ProjectOrigin = 'in-house' | 'client' | 'contributor';
+
+export type ProjectStatus = 'in-development' | 'live' | 'shipped' | 'archived' | 'unreleased';
+
+/** Directory bucket - drives grouping today and the /portfolio filters next. */
+export type ProjectCategory = 'game' | 'web' | 'consult' | 'audio' | 'proto';
+
 export interface ProjectDetails {
+  /** URL slug for /portfolio/<alias>: lowercase words joined by hyphens. */
   alias: string;
+  category: ProjectCategory;
+  /** Display order across the whole portfolio, ascending. Gaps are fine. */
+  order: number;
   name: string;
   kind?: string;
   brief: string;
+  /** Discipline label shown as a #tag (e.g. "Game Development"). */
   showcase: string;
-  /* Typed as string while PROJECTS stays JS (its literals widen to string).
-   * origin: 'in-house' | 'client' | 'contributor'
-   * status: 'in-development' | 'live' | 'shipped' | 'archived' | 'unreleased' */
-  origin?: string;
-  status?: string;
+  origin: ProjectOrigin;
+  status: ProjectStatus;
   role?: string;
   year?: string;
   outcome?: string;

@@ -1,9 +1,13 @@
-const PROJECTS = {
+import { Project, ProjectCategory } from './types/project.model';
+
+const PROJECTS: Record<string, Project> = {
 
 
   blackoutPunk: {
     projectDetails: {
       alias: 'blackout-punk',
+      category: 'game',
+      order: 10,
       name: 'BLACK0UT.PUNK',
       showcase: 'Game Development',
       kind: `PC Game`,
@@ -58,6 +62,8 @@ const PROJECTS = {
   clickTune: {
     projectDetails: {
       alias: 'clicktune',
+      category: 'consult',
+      order: 100,
       name: '"MusiMojii" - ClickTune LLC',
       showcase: 'App Design',
       kind: `Client Consultation`,
@@ -100,6 +106,8 @@ const PROJECTS = {
   jukeDec: {
     projectDetails: {
       alias: 'jukedec',
+      category: 'consult',
+      order: 110,
       name: '"JukeDec" - Frigging Glorious LLC',
       showcase: 'App Design',
       kind: `Research & Development`,
@@ -133,6 +141,8 @@ const PROJECTS = {
   outsideAgitators: {
     projectDetails: {
       alias: 'outside-agitators',
+      category: 'audio',
+      order: 120,
       name: '"Outside Agitators" - Octopus Attacks Shark!!',
       showcase: 'Audio',
       kind: `Album`,
@@ -186,6 +196,8 @@ const PROJECTS = {
   fossArmory: {
     projectDetails: {
       alias: 'foss-armory',
+      category: 'game',
+      order: 20,
       name: 'FOSS Armory',
       showcase: 'Game Development',
       kind: `PC Game`,
@@ -226,6 +238,8 @@ const PROJECTS = {
   crudeMirror: {
     projectDetails: {
       alias: 'crude-mirror',
+      category: 'web',
+      order: 60,
       name: 'Crude Mirror Media',
       showcase: 'Business Development',
       kind: `Media Blog`,
@@ -267,7 +281,9 @@ const PROJECTS = {
 
   strongarm: {
     projectDetails: {
-      alias: 'Strongarm',
+      alias: 'strongarm',
+      category: 'web',
+      order: 70,
       name: 'Strongarm Digital Marketing',
       showcase: 'Web Development',
       kind: `Client Lead Site`,
@@ -311,6 +327,8 @@ const PROJECTS = {
   oasWebsite: {
     projectDetails: {
       alias: 'oas-website',
+      category: 'web',
+      order: 80,
       name: 'Octopus Attacks Shark!!',
       showcase: 'Web Development',
       kind: `Band Site`,
@@ -360,6 +378,8 @@ const PROJECTS = {
   umaWebsite: {
     projectDetails: {
       alias: 'uma-website',
+      category: 'web',
+      order: 90,
       name: 'Ugliest Man Alive [U.M.A]',
       showcase: 'Web Development',
       kind: `Band Site`,
@@ -401,6 +421,8 @@ const PROJECTS = {
   pixHell: {
     projectDetails: {
       alias: 'pixhell',
+      category: 'game',
+      order: 30,
       name: 'PixHell',
       showcase: 'Game Development',
       kind: `Mobile Game`,
@@ -419,7 +441,7 @@ const PROJECTS = {
       links: [
         {
           label: 'Appstore',
-          target: ' https://www.amazon.com/dp/B00DPLJIOU',
+          target: 'https://www.amazon.com/dp/B00DPLJIOU',
           icon: 'logo-amazon'
         },
         {
@@ -447,6 +469,8 @@ const PROJECTS = {
   wraithSquadron: {
     projectDetails: {
       alias: 'wraith-squadron',
+      category: 'game',
+      order: 40,
       name: 'Star Wars: Wraith Squadron',
       showcase: 'Game Development',
       kind: `PC Game`,
@@ -484,6 +508,8 @@ const PROJECTS = {
   chickMagnet: {
     projectDetails: {
       alias: 'chick-magnet',
+      category: 'game',
+      order: 50,
       name: 'Chick Magnet',
       showcase: 'Game Development',
       kind: `PC Game`,
@@ -523,6 +549,8 @@ const PROJECTS = {
   umaAlbum: {
     projectDetails: {
       alias: 'uma-album',
+      category: 'audio',
+      order: 130,
       name: '"Of Man and Nature" - Ugliest Man Alive',
       showcase: 'Audio',
       kind: `Album`,
@@ -572,6 +600,8 @@ const PROJECTS = {
   moxel: {
     projectDetails: {
       alias: 'moxel',
+      category: 'proto',
+      order: 140,
       name: 'Moxel Hooks',
       showcase: '3D Printing',
       kind: 'Prototype',
@@ -608,6 +638,8 @@ const PROJECTS = {
   lizzie: {
     projectDetails: {
       alias: 'lizzie',
+      category: 'proto',
+      order: 150,
       name: 'Product Prototype: "The Lizzie"',
       showcase: '3D Printing',
       kind: `Prototype`,
@@ -642,6 +674,8 @@ const PROJECTS = {
   tcPrints: {
     projectDetails: {
       alias: 'tc-print-pistol',
+      category: 'proto',
+      order: 160,
       name: 'Custom Pistol Sight Adapters',
       showcase: '3D Printing',
       kind: `Product`,
@@ -687,5 +721,39 @@ const PROJECTS = {
     }
   }
 };
+
+/* --------------------------------------------------------------------------
+ * Lookups. Pages should ask these rather than hard-code project keys, so
+ * adding a project is a data change only.
+ * ------------------------------------------------------------------------*/
+
+export interface CategoryInfo {
+  key: ProjectCategory;
+  label: string;
+  /** Section anchor on the legacy /projects page (kept for old links). */
+  anchor: string;
+}
+
+/** Categories in display order. */
+export const PROJECT_CATEGORIES: CategoryInfo[] = [
+  { key: 'game', label: 'Game Development', anchor: 'proj-game' },
+  { key: 'web', label: 'Web Development', anchor: 'proj-web' },
+  { key: 'consult', label: 'Client Consultation', anchor: 'proj-consult' },
+  { key: 'audio', label: 'Audio Production', anchor: 'proj-audio' },
+  { key: 'proto', label: 'Rapid Prototyping', anchor: 'proj-proto' },
+];
+
+/** Every project, sorted by `order`. */
+export const PROJECT_LIST: Project[] = Object.values(PROJECTS).sort(
+  (a, b) => a.projectDetails.order - b.projectDetails.order
+);
+
+export function projectsInCategory(category: ProjectCategory): Project[] {
+  return PROJECT_LIST.filter((p) => p.projectDetails.category === category);
+}
+
+export function getProjectByAlias(alias: string): Project | undefined {
+  return PROJECT_LIST.find((p) => p.projectDetails.alias === alias);
+}
 
 export default PROJECTS;
