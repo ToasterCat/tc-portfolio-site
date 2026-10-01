@@ -3,12 +3,12 @@
 /**
  * MOBILE / VERTICAL
  */
- @media all and (min-width: base.$bp) {
+@media all and (max-width: base.$bp) {
   .hamburger-header-links {
     display: block;
   }
   .bm-burger-button {
-    display: none;
+    display: block;
   }
 }
 

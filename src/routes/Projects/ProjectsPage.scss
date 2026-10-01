@@ -89,6 +89,7 @@
   z-index: 8;
   margin: 0;
   width: 100%;
+  box-sizing: border-box; /* full width with side padding, not 100% + padding */
 
   display: flex;
   align-items: center;
@@ -112,6 +113,7 @@
 /* Thumbnail index for the section - the scan layer above the deep tiles. */
 .anchor-beard {
   width: 100%;
+  box-sizing: border-box;
   background-color: base.$site-color-dark;
 
   display: flex;

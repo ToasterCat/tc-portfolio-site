@@ -63,7 +63,8 @@
   flex-direction: row;
   align-items: center;
 
-  width: 100%;
+  /* No `width: 100%`: auto width fills the bar with the padding inside, and
+   * max-width still matches the prose column's so the edges line up. */
   max-width: 64rem;
   margin: 0 auto;
 }
@@ -77,15 +78,32 @@
   h2 {
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* a long kind pushes the name down, not off-screen */
+    flex-wrap: wrap; /* the kind line takes a full row; a long name wraps */
     align-items: baseline;
     column-gap: 0.35em;
   }
 
-  h2 .project-icon-row-prefix {
+  /* Sizes are em of the title, so both lines track the h2 per breakpoint. */
+
+  /* Full-width row above the name; the plate inside stays text-width. */
+  h2 .project-icon-row-kind-line {
+    flex: 0 0 100%;
+    min-width: 0;
+    font-size: 0.6em; /* the plate carries the emphasis, so the type can drop */
+    line-height: 1.6;
+    margin-bottom: 0.15em;
+  }
+
+  h2 .project-icon-row-prompt {
     flex: none;
     font-size: 0.85em;
-    white-space: nowrap;
+  }
+
+  /* Basis 0 keeps a long name on the prompt's line, wrapping within it,
+   * instead of dropping below and stranding the "\>" on its own. */
+  h2 .project-icon-row-name {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   h2 .project-icon-row-kind {
@@ -95,7 +113,6 @@
     /* A tinted plate lifts the kind off the bar without becoming a
      * button: same olive as the text, at low alpha. */
     padding: 0.1em 0.3em;
-    margin-right: 0.2em;
     border-radius: base.$radius-sm;
     background-color: rgba(base.$color-meta, 0.14);
   }
@@ -193,6 +210,13 @@
     gap: base.$space-3;
   }
 
+  /* Long kinds ("[RESEARCH & DEVELOPMENT]") can outgrow a 320px screen;
+   * if they do, the plate wraps with its padding repeated on each line. */
+  .project-icon-row-title h2 .project-icon-row-kind {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
   .project-tile-large-icons img {
     max-width: 2.5rem;
     max-height: 2.5rem;
@@ -201,7 +225,10 @@
 
   .project-tile-large-content {
     width: 100%;
-    max-width: 22rem;
+    /* border-box so the side padding can't push past a 320-375px screen;
+     * max-width grows by that padding (22rem + 2 x 1rem) to keep the column. */
+    box-sizing: border-box;
+    max-width: 24rem;
     padding: base.$space-5 base.$space-4 0 base.$space-4;
   }
 

@@ -27,19 +27,23 @@ export default function ProjectIconRow(props: ProjectIconRowProps) {
         <img src={bgd} alt={props.thumbnailImage?.alt ?? `${props.projName} logo`} />
 
         <div className="project-icon-row-title">
+          
           <h2>
-            <span className="meta project-icon-row-prefix">
-              {props.kind && (
+            {props.kind && (
+              <span className="meta project-icon-row-kind-line meta-dim">
                 <span className="project-icon-row-kind">
                   <span className="meta-dim project-icon-row-bracket" aria-hidden="true">[</span>
                   {props.kind}
                   <span className="meta-dim project-icon-row-bracket" aria-hidden="true">]</span>
                 </span>
-              )}
-              <span className="meta-dim" aria-hidden="true">{'\\>'}</span>
+              </span>
+            )}
+            <span className="meta meta-dim project-icon-row-prompt" aria-hidden="true">
+              {'\\>'}
             </span>
             <span className="project-icon-row-name">{props.projName}</span>
           </h2>
+
           <div className="project-icon-row-meta">
             <MetaTags tags={[props.showcase, props.origin, props.status]} />
             {props.year && (

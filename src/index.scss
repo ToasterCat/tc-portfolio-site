@@ -22,6 +22,9 @@ body {
 
 #root {
   flex: 1 0 auto;
+  /* Flex items default to min-width: auto, which let any wide descendant
+   * stretch the whole page past the viewport. */
+  min-width: 0;
 }
 
 /**
@@ -76,11 +79,13 @@ h1, h2, h3, h4 {
  * The hairline under the heading is the divider; sections themselves need no
  * further separator.
  */
+/* No `width: 100%`: as a block it already fills its container with the
+ * padding inside. With it (content-box), the side padding pushed every band
+ * 2rem past the viewport - the horizontal scroll on phones and desktop. */
 .section-band {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
 .section-head {
@@ -220,6 +225,20 @@ h1, h2, h3, h4 {
     border-radius: base.$radius;
     transition: all 0.4s ease;
     cursor: pointer;
+  }
+}
+
+/**
+ * TOUCH DEVICES
+ *
+ * iOS Safari (and tablets that get the desktop layout) either ignore
+ * `background-attachment: fixed` or render it as one huge, blurry zoom of
+ * the image. Parallax is a pointer-device nicety; touch gets plain scroll.
+ * !important so it also beats the hero's inline style.
+ */
+@media (hover: none), (pointer: coarse) {
+  * {
+    background-attachment: scroll !important;
   }
 }
 

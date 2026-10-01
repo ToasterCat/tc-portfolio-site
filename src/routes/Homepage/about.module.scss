@@ -149,6 +149,10 @@
 @media all and (max-width: base.$bp) {
   .aboutBlurb {
     padding: base.$space-5;
+    /* width: 100% + padding overran narrow phones; count the padding in,
+     * and widen max-width by the same amount so larger phones don't change. */
+    box-sizing: border-box;
+    max-width: calc(#{base.$measure} + 2 * #{base.$space-5});
   }
 
   .servicesList li {

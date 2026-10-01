@@ -267,8 +267,9 @@ const PROJECTS = {
   strongarm: {
     projectDetails: {
       alias: 'Strongarm',
-      name: 'Client Lead Site: "Strongarm Digital Marketing"',
+      name: 'Strongarm Digital Marketing',
       showcase: 'Web Development',
+      kind: `Client Lead Site`,
       origin: 'client',
       status: 'live',
       role: 'End-to-End Website Design and Development',

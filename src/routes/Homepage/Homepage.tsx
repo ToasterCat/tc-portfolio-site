@@ -22,6 +22,7 @@ export default function Homepage() {
   return (
     <React.Fragment>
 
+    {/* ==== HERO / LANDING ===== */}
       <HeroSection
         classPrefix={'hero1'}
         quote={{
@@ -42,18 +43,11 @@ export default function Homepage() {
       />
 
 
-      <TileSection
-        areLinks
-        heading={'Client Services'}
-        tiles={[
-          { label: 'Web Design', url: '/projects#proj-web' },
-          { label: 'Audio Production', url: '/projects#proj-audio' },
-          { label: 'Consultation', url: '/projects#proj-consult' },
-          { label: 'Prototyping', url: '/projects#proj-proto' }
-        ]}
-      />
+    {/* ==== RECENT WORKS ===== */}
+      <ProjectSection />
 
 
+    {/* ==== ABOUT TOASTERCAT ===== */}
       <section className={`${about.aboutSection} section-band`}>
         <div className={about.aboutBlurb}>
           <div className="section-head">
@@ -73,14 +67,21 @@ export default function Homepage() {
           </p>
         </div>
       </section>
-
-
-      <ProjectSection />
-
       
 
-      
+      {/* ==== CLIENT SERVICES ===== */}
+      <TileSection
+        areLinks
+        heading={'Client Services'}
+        tiles={[
+          { label: 'Web Design', url: '/projects#proj-web' },
+          { label: 'Audio Production', url: '/projects#proj-audio' },
+          { label: 'Consultation', url: '/projects#proj-consult' },
+          { label: 'Prototyping', url: '/projects#proj-proto' }
+        ]}
+      />
 
+      {/* ==== SERVICE DETAIL ===== */}
       <section className={`${about.aboutServices} section-band`}>
         <div className="section-head">
           <h2>What We Build</h2>
@@ -130,6 +131,8 @@ export default function Homepage() {
         </ul>
       </section>
 
+
+    {/* ==== LOCATIONS ===== */}
       <section className={`${locations.locationSection} section-band`}>      
         <div className="section-head">
           <h2>Where We Work</h2>

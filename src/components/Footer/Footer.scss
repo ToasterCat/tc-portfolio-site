@@ -26,7 +26,8 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
   
     p {
       margin: 0;
