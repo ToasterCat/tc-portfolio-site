@@ -39,8 +39,8 @@ export default function HeroSection(props: HeroSectionProps) {
           <h4>{props.quote?.sub}</h4>
         </div>
 
-        <p>{props.heading}</p>
-        <p>{props.detail}</p>
+        <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
+        <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
       </div>
     </>
   );
@@ -55,8 +55,8 @@ export default function HeroSection(props: HeroSectionProps) {
           <h4>{props.quote?.sub}</h4>
         </div>
         
-        <p>{props.heading}</p>
-        <p>{props.detail}</p>
+        <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
+        <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
       </div>
       
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>

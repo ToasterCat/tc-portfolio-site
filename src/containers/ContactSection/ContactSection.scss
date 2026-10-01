@@ -8,22 +8,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    min-height: 20rem;
-    padding: 2rem 0rem;
+    justify-content: center;
+    padding: base.$section-pad-y-m 0;
 
     background-color: base.$site-color-dark;
     background-size: cover;
     background-position: center;
     /*background-image: url("../../assets/background/ranier-alt.png");*/
-  }
-
-  .contact-button-group {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-evenly;
   }
 
   .contact-heading {
@@ -56,22 +47,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    min-height: 24rem;
-    padding: 3rem 0rem;
+    justify-content: center;
+    padding: base.$section-pad-y 0;
 
     background-color: base.$site-color-dark;
     background-size: cover;
     background-position: center;
     /*background-image: url("../../assets/background/ranier-alt.png");*/
-  }
-
-  .contact-button-group {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-evenly;
   }
 
   .contact-heading {
@@ -105,10 +87,8 @@
 }
 
 /**
- * Primary call-to-action.
- *
- * Deliberately filled, where `.external-button` (LinkedIn / Github) is
- * outlined - the secondary links sit visually beneath this one.
+ * Primary call-to-action. The secondary links (socials) moved to the footer,
+ * so the band sizes to its content rather than a fixed min-height.
  */
 .contact-cta {
   display: flex;
@@ -125,4 +105,9 @@
   border-radius: base.$radius;
   transition: all 0.4s ease;
   text-decoration: none;
+}
+
+/* On the contact page the CTA is suppressed; don't leave its gap behind. */
+.contact-blurb:last-child {
+  margin-bottom: 0;
 }

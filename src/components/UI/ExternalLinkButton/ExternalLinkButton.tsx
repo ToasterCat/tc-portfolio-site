@@ -1,7 +1,6 @@
 import React from 'react';
 import './ExternalLinkButton.scss';
 import { ASSET_MANIFEST } from '../../../assets/AssetMap';
-import { Link } from 'react-router-dom';
 
 interface ExternalLinkButtonProps {
   linkTo: string;
@@ -12,7 +11,7 @@ interface ExternalLinkButtonProps {
 
 function LinkIcon(props: ExternalLinkButtonProps) {
   return props.icon
-    ? (<><img src={ASSET_MANIFEST.get(props.icon)}></img></>)
+    ? (<><img src={ASSET_MANIFEST.get(props.icon)} alt="" /></>)
     : (<></>)
 }
 

@@ -4,17 +4,6 @@ import { ASSET_MANIFEST } from '../../../assets/AssetMap';
 
 import './ProjectSkills.scss';
 
-const skillsIcons = {
-  Android: ASSET_MANIFEST.get('logo-android'),
-  GSuite: ASSET_MANIFEST.get('logo-gsuite'),
-  Reaper: ASSET_MANIFEST.get('logo-reaper'),
-  Unity: ASSET_MANIFEST.get('logo-unity'),
-  Unreal: ASSET_MANIFEST.get('logo-unreal'),
-  Wordpress: ASSET_MANIFEST.get('logo-wordpress'),
-
-  Unset: ASSET_MANIFEST.get('default')
-};
-
 function skillIconMap(skillName: string) {
   switch (skillName) {
     case "AdSense":
@@ -150,11 +139,6 @@ function skillIconMap(skillName: string) {
         label: "ToasterCat"
       };
   }
-}
-
-interface ProjectSkillDisplay {
-  icon: string;
-  label: string;
 }
 
 interface ProjectSkillsProps {

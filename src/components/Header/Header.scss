@@ -1,172 +1,202 @@
 @use '../../base';
 
 /**
- * Mobile / Vertical
+ * HEADER
+ *
+ * Same visual language as the project title bars: near-black bar, olive
+ * hairline, the monospace `\>` prompt leading the studio name, and `|` bars
+ * framing the current page. Red stays reserved for interaction.
  */
-@media all and (max-width: base.$bp) {
-  header {
-    height: 3rem;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0rem .3rem;
-  }
 
-  header {
-    .header-brand {
-      padding: 0rem;
-      min-width: 14rem;
-      h1 {
-        font-size: base.$type-h4-m;
-        padding: 0rem .5rem;
-      }
-    }
-    .header-brand-img {
-      width: 2rem;
-      max-height: 2rem;
-    }
-
-    .sticky {
-      position: sticky;
-      top: 0px;
-    }
-
-    .nav-links {
-      display: none;
-    }
-    .nav-menu {
-      display: block;
-    }
-
-    nav {
-      font-size: base.$mobile-small-heading;
-      display: flex;
-      align-items: center;
-
-      a {
-        text-decoration: none;
-        color: base.$color-light;
-        padding: 0rem .2rem;
-        transition-duration: base.$transition-duration;
-      }
-
-      a:visited {
-        color: base.$color-light;
-      }
-
-      a:hover {
-        color: base.$color-red;
-        transition-duration: base.$transition-duration;
-      }
-    }
-  }
-}
-
-
-/** 
- * Desktop / Horizontal
- */
-@media all and (min-width: base.$bp) {
-  header {
-    height: 4rem;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0rem 1rem;
-  }
-
-  header {
-    .nav-links {
-      display: block;
-    }
-    .nav-menu {
-      display: none;
-    }
-
-    nav {
-      font-size: base.$type-body;
-      display: flex;
-      align-items: center;
-
-      a {
-        text-decoration: none;
-        color: base.$color-light;
-        padding: 0rem 1rem;
-        transition-duration: base.$transition-duration;
-      }
-
-      a:visited {
-        color: base.$color-light;
-      }
-
-      a:hover {
-        color: base.$color-red;
-        transition-duration: base.$transition-duration;
-      }
-    }
-  }
-
-  .sticky {
-    position: sticky;
-    top: 0px;
-  }
-
-  .header-brand {
-    h1 {
-      font-size: base.$type-h4;
-      margin: 0;
-      padding: 0rem 1rem;
-    }
-  }
-
-  .header-main-link {
-    padding: 0rem 1rem;
-  }
-
-  .header-brand-img {
-    width: 3rem;
-    max-height: 3rem;
-  }
-}
-
-/* BASE */
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
 
-  background-color: base.$color-black;
-  border-bottom: 1px solid base.$site-color-dark-alt;
-
-  transition-duration: base.$transition-duration;
-  font-family: base.$font-heading;
-}
-.header-main-link {
   display: flex;
   flex-direction: row;
-  text-decoration: none;
-  color: base.$color-light;
+  align-items: center;
+  justify-content: space-between;
+
+  height: base.$header-h-m;
+  padding: 0 base.$space-4;
+
+  font-family: base.$font-heading;
+  background-color: base.$color-black;
+  border-bottom: 1px solid base.$color-meta-dim;
+  transition: background-color 0.3s ease;
 }
-.header-main-link:hover {
-  color: base.$color-red;
-  transition-duration: base.$transition-duration;
+
+/* Once content scrolls underneath, let a hint of it through. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header.is-scrolled {
+    background-color: rgba(base.$color-black, 0.78);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: blur(10px) saturate(1.2);
+  }
 }
+
+/* ---- Brand ---------------------------------------------------------- */
+
 .header-brand {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-}
-.header-brand-img {
-  position: relative;
-  opacity: 90%;
-  transition: transform base.$transition-duration ease, opacity base.$transition-duration ease;
+  gap: base.$space-3;
+  min-width: 0;
+
+  color: base.$color-light;
+  text-decoration: none;
 }
 
-.header-main-link:hover .header-brand-img,
-.header-main-link:focus-visible .header-brand-img {
-  transform: translate3D(3px, 0, 0);
-  opacity: 100%;
+.header-brand-mark {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.header-brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition: color base.$transition-duration ease;
+}
+
+/* Same prompt as the project title bars, sized off the name. */
+.header-brand-prompt {
+  font-size: 0.85em;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+.header-brand:hover .header-brand-name,
+.header-brand:focus-visible .header-brand-name {
+  color: base.$color-signal;
+}
+
+/* ---- Nav (desktop) --------------------------------------------------- */
+
+.header-nav {
+  display: none;
+  align-items: center;
+  /* No gap: the reserved `|` bars already space the links apart. */
+}
+
+.header-nav-link {
+  display: inline-flex;
+  align-items: baseline;
+  padding: base.$space-2 base.$space-1;
+
+  color: base.$color-light;
+  text-decoration: none;
+  transition: color base.$transition-duration ease;
+}
+
+.header-nav-link:visited {
+  color: base.$color-light;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus-visible {
+  color: base.$color-signal;
+}
+
+/* `| Portfolio |` frames the current page. The bars always hold their
+ * space (just transparent elsewhere), so nothing shifts between pages. */
+.header-nav-link .header-nav-bar {
+  font-size: 1em; /* full link height; .meta alone would shrink it to a tick */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-nav-bar:first-child {
+  margin-right: 0.3em;
+}
+
+.header-nav-bar:last-child {
+  margin-left: 0.3em;
+}
+
+.header-nav-link.is-active .header-nav-bar {
+  opacity: 1;
+}
+
+/* Outlined until engaged: present without shouting over the nav. */
+.header-cta {
+  margin-left: base.$space-4;
+  padding: base.$space-2 base.$space-4;
+
+  color: base.$color-light;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid base.$color-signal;
+  border-radius: base.$radius;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.header-cta:visited {
+  color: base.$color-light;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background-color: base.$color-signal;
+}
+
+/* ---- Menu toggle (mobile) ------------------------------------------- */
+
+.header-menu-toggle {
+  flex: none;
+  padding: base.$space-2 base.$space-1 base.$space-2 base.$space-2;
+
+  font-size: base.$type-meta-m;
+  letter-spacing: 0.04em;
+  color: base.$color-meta;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.header-menu-toggle:hover,
+.header-menu-toggle:focus-visible {
+  color: base.$color-signal;
+}
+
+/**
+ * Mobile / Vertical
+ */
+@media all and (max-width: base.$bp) {
+  .header-brand-mark {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .header-brand-name {
+    font-size: base.$type-h4-m;
+  }
+}
+
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: base.$bp) {
+  .header {
+    height: base.$header-h;
+    padding: 0 base.$space-6;
+  }
+
+  .header-brand-name {
+    font-size: base.$type-h4;
+  }
+
+  .header-nav {
+    display: flex;
+  }
+
+  .header-menu-toggle {
+    display: none;
+  }
 }

@@ -1,5 +1,3 @@
-import chess3D from './chess.jpg';
-
 import toasterCatCropped from './toastercat-cropped.png';
 import toasterCatLegacyLogo from './ToasterCat-2011.png';
 import toasterCatLogo from './tc-3d-medium.png';
@@ -97,7 +95,6 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
 
     //- TC brand
-    ["site-logo", toasterCatCropped],
     ["tc-logo", toasterCatLogo],
     ["tc-legacy-logo", toasterCatLegacyLogo],
 
@@ -190,7 +187,6 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["wraith-background", wraithSquadronBackground],
     ["tcprint-background", tcPrintBackground],
     ["tcstudio-background", tcStudioBackground],
-    ["chess-3d", chess3D],
 ]);
 
 

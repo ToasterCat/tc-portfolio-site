@@ -1,0 +1,174 @@
+@use '../../base';
+
+/**
+ * MOBILE MENU
+ *
+ * Full-screen overlay. Hidden with visibility (not display) so it can fade,
+ * and so closed links drop out of the tab order without tabIndex juggling.
+ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 30; /* above the sticky header (20) */
+
+  display: flex;
+  flex-direction: column;
+  padding: 0 base.$space-4 base.$space-6 base.$space-4;
+  overflow-y: auto;
+
+  background-color: base.$color-black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0s linear 0s;
+}
+
+/* Mirrors the header bar so opening the menu doesn't shift the brand. */
+.mobile-menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  height: base.$header-h-m;
+  border-bottom: 1px solid base.$color-meta-dim;
+}
+
+.mobile-menu-brand {
+  display: flex;
+}
+
+/* Matches the header's mobile mark so the brand doesn't jump on open. */
+.mobile-menu-mark {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.mobile-menu-close {
+  padding: base.$space-2 base.$space-1 base.$space-2 base.$space-2;
+  font-size: base.$type-meta-m;
+  letter-spacing: 0.04em;
+  color: base.$color-meta;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:focus-visible {
+  color: base.$color-signal;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+  padding: base.$space-7 0 base.$space-6 0;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: baseline;
+  padding: base.$space-2 0;
+
+  font-family: base.$font-heading;
+  font-size: base.$type-h2-m;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: base.$color-light;
+  text-decoration: none;
+}
+
+.mobile-menu-link:visited {
+  color: base.$color-light;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible {
+  color: base.$color-signal;
+}
+
+/* `| Portfolio |` marks the current page, as in the desktop nav. */
+.mobile-menu-link .mobile-menu-bar-mark {
+  display: none;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.mobile-menu-bar-mark:first-child {
+  margin-right: 0.4em;
+}
+
+.mobile-menu-bar-mark:last-child {
+  margin-left: 0.4em;
+}
+
+.mobile-menu-link.is-active .mobile-menu-bar-mark {
+  display: inline;
+}
+
+/* CTA and socials sit low, where a thumb already is. */
+.mobile-menu-foot {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-5;
+  margin-top: auto;
+  padding-top: base.$space-5;
+  border-top: 1px solid base.$site-color-dark-alt;
+}
+
+.mobile-menu-cta {
+  display: block;
+  padding: base.$space-4;
+
+  font-weight: 700;
+  text-align: center;
+  color: base.$color-light;
+  text-decoration: none;
+  /* Outlined like the header CTA; a faint tint at rest since touch has no
+   * hover to announce it. Fills on press. */
+  background-color: rgba(base.$color-signal, 0.12);
+  border: 1px solid base.$color-signal;
+  border-radius: base.$radius;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-cta:visited {
+  color: base.$color-light;
+}
+
+.mobile-menu-cta:hover,
+.mobile-menu-cta:focus-visible,
+.mobile-menu-cta:active {
+  background-color: base.$color-signal;
+}
+
+.mobile-menu-socials {
+  display: flex;
+  flex-flow: row wrap;
+  gap: base.$space-2 base.$space-5;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    color: base.$color-meta;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+  }
+}
+
+/* Desktop never shows it, even if it was left open across a resize. */
+@media all and (min-width: base.$bp) {
+  .mobile-menu {
+    display: none;
+  }
+}

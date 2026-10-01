@@ -14,7 +14,6 @@ import heroBackground from '../../assets/background/chess-alt_scaled.png';
 import './Homepage.scss';
 import about from './about.module.scss';
 import locations from './locations.module.scss';
-import services from './services.module.scss';
 
 export default function Homepage() {
   useDocumentTitle();

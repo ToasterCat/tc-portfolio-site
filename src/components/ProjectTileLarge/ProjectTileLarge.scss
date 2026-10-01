@@ -201,7 +201,7 @@
   }
 
   .project-tile-large-icons {
-    top: 3rem; /* clears the mobile header */
+    top: base.$header-h-m; /* clears the mobile header */
     padding: base.$space-2 0;
   }
 
@@ -253,7 +253,7 @@
   }
 
   .project-tile-large-icons {
-    top: 4rem; /* clears the desktop header */
+    top: base.$header-h; /* clears the desktop header */
     padding: base.$space-3 0;
   }
 

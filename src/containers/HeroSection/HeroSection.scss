@@ -44,8 +44,8 @@
   color: base.$color-light;
   max-width: base.$measure;
 
-  /* The headline. Tight, heavy, and allowed to be the biggest thing here. */
-  p:first-of-type {
+  /* The headline (the page's h1). Tight, heavy, the biggest thing here. */
+  .hero1-headline {
     font-family: base.$font-heading;
     font-weight: 700;
     line-height: 1.05;
@@ -54,7 +54,7 @@
     margin: 0 0 base.$space-4 0;
   }
 
-  p:last-of-type {
+  .hero1-detail {
     color: base.$site-color-gray;
     margin: 0;
     text-wrap: pretty;
@@ -116,8 +116,8 @@
   .hero1-content {
     max-width: 20rem;
 
-    p:first-of-type { font-size: base.$type-display-m; }
-    p:last-of-type  { font-size: base.$type-body-m; }
+    .hero1-headline { font-size: base.$type-display-m; }
+    .hero1-detail   { font-size: base.$type-body-m; }
   }
 }
 
@@ -175,8 +175,8 @@
   .hero1-content {
     flex: 0 1 base.$measure;
 
-    p:first-of-type { font-size: base.$type-display; }
-    p:last-of-type  { font-size: base.$type-body; }
+    .hero1-headline { font-size: base.$type-display; }
+    .hero1-detail   { font-size: base.$type-body; }
   }
 
   .hero1-image img {

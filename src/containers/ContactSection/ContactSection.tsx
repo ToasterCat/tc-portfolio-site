@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionHeading from '../../components/UI/SectionHeading/SectionHeading';
-import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalLinkButton';
 
 import './ContactSection.scss';
 
@@ -31,29 +30,6 @@ export default function ContactInfoBar(props: ContactInfoBarProps) {
           Start a Conversation
         </Link>
       )}
-
-      <div className="contact-button-group">
-        <ExternalLinkButton
-          text={'LinkedIn'}
-          linkTo={'https://www.linkedin.com/company/110969321'}
-        />
-        <ExternalLinkButton
-          text={'Facebook'}
-          linkTo={'https://www.facebook.com/ToasterCat.Studios'}
-        />
-        <ExternalLinkButton
-          text={'GitHub'}
-          linkTo={'https://github.com/ToasterCat'}
-        />
-        <ExternalLinkButton
-          text={'Discord'}
-          linkTo={'https://discord.gg/VENmWr635t'}
-        />
-        <ExternalLinkButton
-          text={'Patreon'}
-          linkTo={'https://www.patreon.com/cw/ToasterCatStudios'}
-        />
-      </div>
     </section>
   );
 }

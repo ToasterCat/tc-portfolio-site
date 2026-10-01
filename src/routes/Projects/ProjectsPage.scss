@@ -37,9 +37,15 @@
   flex-direction: column;
   width: 100%;
 
-  h2 {
+  /* The page's h1, kept at h2 size: the masthead shouldn't outshout the work. */
+  h1 {
     margin: 0 0 base.$space-3 0;
+    font-size: base.$type-h2-m;
     text-wrap: balance;
+
+    @media all and (min-width: base.$bp) {
+      font-size: base.$type-h2;
+    }
   }
 }
 
@@ -177,7 +183,7 @@
   }
 
   .anchor {
-    top: 3rem;
+    top: base.$header-h-m;
     height: 2.25rem;
     padding: 0 base.$space-4;
     font-size: base.$type-meta-m;
@@ -207,7 +213,7 @@
   }
 
   .anchor {
-    top: 4rem;
+    top: base.$header-h;
     height: 2.75rem;
     padding: 0 base.$space-6;
     font-size: base.$type-meta;

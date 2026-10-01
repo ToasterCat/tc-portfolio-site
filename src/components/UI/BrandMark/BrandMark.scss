@@ -1,0 +1,19 @@
+/**
+ * BRAND MARK
+ *
+ * The sprite is a 43x30 pixel-art toastercat. Smoothing it (the browser
+ * default) melts it into a smudge at small sizes, so it is always drawn
+ * nearest-neighbour at a whole-number scale.
+ */
+.brand-mark {
+  display: block;
+  flex: none;
+  image-rendering: pixelated;
+  transition: transform 0.4s ease;
+}
+
+/* The classic hover: a short hop forward, nothing more. */
+.brand-link:hover .brand-mark,
+.brand-link:focus-visible .brand-mark {
+  transform: translate(4px, -2px);
+}

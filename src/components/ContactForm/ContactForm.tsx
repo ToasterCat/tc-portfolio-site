@@ -5,7 +5,7 @@ export default function ContactForm() {
   return (
     <React.Fragment>
       <section className="contact-form-section">
-        <h3 className="contact-form-heading">Contact ToasterCat</h3>
+        <h1 className="contact-form-heading">Contact ToasterCat</h1>
 
         <form
           className="form-group"

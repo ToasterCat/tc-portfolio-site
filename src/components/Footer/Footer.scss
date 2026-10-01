@@ -1,44 +1,180 @@
 @use '../../base';
 
-footer {
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    font-size: 10px;
-    padding: 20px 0px;
-    color: white;
-    text-align: center;
-    background-color: base.$color-black;
+/**
+ * FOOTER
+ *
+ * Bookends the header: same near-black, same olive hairline. Column labels
+ * use the monospace device; links stay in the narrative face.
+ */
+.footer {
+  flex-shrink: 0;
+  padding: base.$space-7 base.$space-4 base.$space-5 base.$space-4;
+
+  font-size: base.$type-meta;
+  color: base.$site-color-gray;
+  background-color: base.$color-black;
+  border-top: 1px solid base.$color-meta-dim;
 }
-  
-.footer-contact {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: base.$space-6 base.$space-5;
+  max-width: 64rem;
+  margin: 0 auto;
 }
-  
-.footer-contact-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-  
-    p {
-      margin: 0;
-    }
-  
-    a {
-      color: base.$color-red;
-    }
-  
-    a:visited {
-      color: base.$color-red;
-    }
+
+.footer-brand {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: base.$space-2;
 }
-  
+
+.footer-brand-link {
+  display: flex;
+  align-items: center;
+  gap: base.$space-3;
+  margin-bottom: base.$space-1;
+
+  color: base.$color-light;
+  text-decoration: none;
+}
+
+.footer-brand-mark {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+}
+
+.footer-brand-name {
+  font-family: base.$font-heading;
+  font-size: base.$type-h4-m;
+  font-weight: 700;
+}
+
+.footer-locations {
+  margin: 0;
+}
+
+.footer-email,
+.footer-email:visited {
+  color: base.$color-light;
+  text-decoration-color: base.$color-meta-dim;
+  text-underline-offset: 0.2em;
+}
+
+.footer-col-heading {
+  margin: 0 0 base.$space-3 0;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-col a,
+.footer-col a:visited {
+  color: base.$color-light;
+  text-decoration: none;
+}
+
+.footer-email:hover,
+.footer-email:focus-visible,
+.footer-col a:hover,
+.footer-col a:focus-visible {
+  color: base.$color-signal;
+}
+
+/* "● taking-commissions" - the dot pulses gently while the shop is open. */
+.footer-status-line {
+  display: flex;
+  align-items: center;
+  gap: base.$space-2;
+  margin: 0;
+  color: base.$color-meta-dim;
+}
+
+.footer-status-line.is-open {
+  color: base.$color-meta;
+}
+
+.footer-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+@keyframes footer-status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(base.$color-meta, 0.5); }
+  50%      { box-shadow: 0 0 0 0.3rem rgba(base.$color-meta, 0); }
+}
+
+.footer-status-line.is-open .footer-status-dot {
+  animation: footer-status-pulse 2.4s ease-in-out infinite;
+}
+
+.footer-base {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: base.$space-3;
+
+  max-width: 64rem;
+  margin: base.$space-7 auto 0 auto;
+  padding-top: base.$space-4;
+  border-top: 1px solid base.$site-color-dark-alt;
+  font-size: base.$type-meta-sm;
+}
+
+.footer-base-brand {
+  display: flex;
+  align-items: center;
+  gap: base.$space-3;
+}
+
+.footer-top {
+  padding: base.$space-1 0;
+  font-size: base.$type-meta-sm;
+  color: base.$color-meta;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.footer-top:hover,
+.footer-top:focus-visible {
+  color: base.$color-signal;
+}
+
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: base.$bp) {
+  .footer {
+    padding: base.$space-8 base.$space-6 base.$space-5 base.$space-6;
+  }
+
+  /* Brand gets the wide first column; three link columns follow. */
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-brand-name {
+    font-size: base.$type-h4;
+  }
+}

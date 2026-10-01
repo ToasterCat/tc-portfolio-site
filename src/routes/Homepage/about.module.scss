@@ -1,5 +1,10 @@
 @use '../../base';
 
+/* CSS modules rename `animation: fadeIn` to a module-local name, so the
+ * global keyframes in Homepage.scss never matched. Defining them here gets
+ * the same local name, and the fade-in actually runs. */
+@include base.animation-mixin(fadeIn, 0, 1);
+
 /**
  * ABOUT + WHAT WE'VE BUILT
  *

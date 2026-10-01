@@ -1,7 +1,6 @@
 import React from 'react';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ProjectTileLarge from '../../components/ProjectTileLarge/ProjectTileLarge';
-import TileSection from '../../containers/TileSection/TileSection';
 import { Link } from 'react-scroll';
 import PROJECTS from '../../PROJECTS';
 import './ProjectsPage.scss';
@@ -17,7 +16,7 @@ function MiniProject(props: ProjectTileProps) {
   return (
     <div className="project-tile-mini">
       <Link to={target} smooth={true}>
-        <img src={icon} className='proj-mini-thumb'/>
+        <img src={icon} className='proj-mini-thumb' alt={props.project.projectDetails.name} />
       </Link>
     </div>
   );
@@ -33,7 +32,7 @@ export default function ProjectsPage() {
 
         <div className="project-anchors">
 
-          <h2>ToasterCat Project Portfolio</h2>
+          <h1>ToasterCat Project Portfolio</h1>
           <p className="section-sub project-anchors-sub">
             The experiments that survived.
           </p>
