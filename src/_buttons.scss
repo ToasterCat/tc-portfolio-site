@@ -1,0 +1,179 @@
+@use 'base';
+
+/* ==========================================================================
+ * BUTTONS
+ *
+ * Three tiers, each with one job. Pick by what the action *is*, not by how
+ * loud you want it:
+ *
+ *   PRIMARY    .btn.btn--primary    Conversion. One per view. Text only.
+ *              Hire Us, Start a Conversation, Submit.
+ *   SECONDARY  .btn.btn--secondary  Content actions. Text + icon.
+ *              Live Site, GitHub, See the Work.
+ *   TERTIARY   .btn.btn--tertiary   Interface commands. PT Mono caps in
+ *              [ BRACKETS ] (render the label with <Brackets>). No box.
+ *              Menu, Close, Reset, Back to top, section jumps.
+ *
+ * Primary and secondary speak in the heading voice; only tertiary uses the
+ * monospace device - it's the one tier that operates the interface itself.
+ * Red is interaction, so it only appears on primary and on hover.
+ * ==========================================================================*/
+
+.btn {
+  box-sizing: border-box; /* so .btn--block's 100% includes the padding */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: base.$space-2;
+  min-height: 2.75rem; /* 44px tap target */
+  padding: 0 base.$space-5;
+
+  font-family: base.$font-heading;
+  font-size: 1rem;
+  font-weight: base.$weight-button;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+
+  color: base.$color-light;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: base.$radius;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.btn:visited {
+  color: base.$color-light;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ---- Sizes --------------------------------------------------------- */
+
+.btn--sm {
+  min-height: 2.25rem;
+  padding: 0 base.$space-4;
+  font-size: 0.9375rem;
+}
+
+.btn--lg {
+  min-height: 3.5rem;
+  padding: 0 base.$space-7;
+  font-size: 1.125rem;
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* ---- Primary: red outline, fills on engagement --------------------- */
+
+.btn--primary {
+  border-color: base.$color-signal;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible,
+.btn--primary:active {
+  background-color: base.$color-signal;
+}
+
+/* Touch has no hover to announce it, so a faint fill at rest. */
+@media (hover: none) {
+  .btn--primary {
+    background-color: rgba(base.$color-signal, 0.12);
+  }
+}
+
+/* ---- Secondary: neutral outline + icon, warms to red on hover ------- */
+
+.btn--secondary {
+  justify-content: flex-start;
+  padding: 0 base.$space-4 0 base.$space-3;
+  background-color: rgba(base.$color-black, 0.55); /* holds up over photos */
+  border-color: rgba(base.$site-color-gray, 0.28);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  color: base.$color-signal;
+  border-color: base.$color-signal;
+}
+
+/* Icon slot: an <img> (brand logos) or a glyph like an arrow. */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Trailing arrow nudges forward on hover. */
+.btn-icon--trailing {
+  transition: transform 0.2s ease;
+}
+
+.btn--secondary:hover .btn-icon--trailing,
+.btn--secondary:focus-visible .btn-icon--trailing {
+  transform: translateX(3px);
+}
+
+/* ---- Tertiary: [ COMMAND ] in the monospace device ----------------- */
+
+.btn--tertiary {
+  gap: 0.15em;
+  min-height: 2.75rem;
+  padding: 0 base.$space-1;
+
+  font-family: base.$font-mono;
+  font-size: base.$type-meta;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: base.$color-meta;
+  border: 0;
+}
+
+.btn--tertiary:visited {
+  color: base.$color-meta;
+}
+
+/* The brackets ease apart on hover - the command "opening". */
+.btn--tertiary:hover,
+.btn--tertiary:focus-visible {
+  gap: 0.45em;
+  color: base.$color-signal;
+}
+
+/* PT Mono's brackets are drawn for lowercase with descenders; beside caps
+ * they hang ~0.08em low. */
+.btn-bracket {
+  position: relative;
+  top: -0.08em;
+  color: base.$color-meta-dim;
+}
+
+/* Current section / page among a row of tertiary commands. */
+.btn--tertiary.is-active {
+  color: base.$color-light;
+}

@@ -19,39 +19,15 @@
   border-bottom: 1px solid rgba(125, 122, 60, 0.35);
 }
 
-@media all and (max-width: base.$bp) {
-  .project-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .project-links-buttons {
-    padding-top: 5%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-  }
+.project-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-@media all and (min-width: base.$bp) {
-  .project-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .project-links-buttons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-
-    a {
-      margin-right: 20px;
-    }
-  }
+/* Secondary buttons size to their label; the row just wraps. */
+.project-links-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: base.$space-3;
 }

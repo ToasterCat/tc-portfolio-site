@@ -58,28 +58,13 @@
 }
 
 /* The discipline rail: monospace, because it is an index, not a menu. */
+/* Section jumps are .btn--tertiary [ COMMANDS ] (_buttons.scss). Pulled
+ * left by the button's own padding so the row lines up with the heading. */
 .project-anchors-links {
   display: flex;
   flex-flow: row wrap;
-  gap: base.$space-3 base.$space-6;
-
-  a {
-    font-family: base.$font-mono;
-    font-size: base.$type-meta;
-    color: base.$color-meta;
-    text-decoration: none;
-    cursor: pointer;
-
-    padding-bottom: base.$space-1;
-    border-bottom: 1px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
-  }
-
-  a:hover,
-  a:focus-visible {
-    color: base.$color-signal;
-    border-bottom-color: base.$color-signal;
-  }
+  gap: 0 base.$space-5;
+  margin-left: -#{base.$space-1};
 }
 
 /* Project title inside the sticky bar - sized to the bar, not to the page. */

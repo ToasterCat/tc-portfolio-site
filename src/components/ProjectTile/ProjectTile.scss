@@ -79,36 +79,13 @@
 }
 
 /* Footer row: same position on every card regardless of blurb length. */
+/* Links are .btn--secondary.btn--sm (_buttons.scss); this is the row only. */
 .project-tile-links {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   gap: base.$space-2;
   margin-top: auto;
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: base.$font-heading;
-    font-size: base.$type-meta;
-    text-decoration: none;
-    color: base.$color-light;
-
-    background-color: base.$color-black;
-    border: 1px solid base.$site-color-dark-alt;
-    border-radius: base.$radius;
-    padding: base.$space-2 base.$space-4;
-
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-  a:hover,
-  a:focus-visible {
-    background-color: base.$color-red-dark;
-    border-color: base.$color-signal;
-  }
 }
 
 .project-img {

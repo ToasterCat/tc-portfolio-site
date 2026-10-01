@@ -143,18 +143,10 @@
   gap: base.$space-3;
 }
 
+/* Look comes from .btn--tertiary; sized down to sit with the small print. */
 .footer-top {
-  padding: base.$space-1 0;
+  min-height: 2.25rem;
   font-size: base.$type-meta-sm;
-  color: base.$color-meta;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.footer-top:hover,
-.footer-top:focus-visible {
-  color: base.$color-signal;
 }
 
 /**

@@ -1,0 +1,40 @@
+/* ==========================================================================
+ * FONTS
+ *
+ * Self-hosted WOFF2 (latin subset, from Google Fonts). Space Grotesk and
+ * DM Sans are variable: one file per style covers every weight we use
+ * (DM Sans also carries an optical-size axis, applied automatically).
+ * All three are SIL Open Font License.
+ *
+ * Kept out of _base.scss on purpose: every component stylesheet @use's
+ * base, and each one would re-emit these rules (18 copies at last count).
+ * Only index.scss loads this file.
+ * ==========================================================================*/
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk-Variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-Variable.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-Italic-Variable.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT Mono";
+  src: url("./assets/fonts/PTMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

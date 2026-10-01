@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import TcMark from '../UI/TcMark/TcMark';
+import Brackets from '../UI/Brackets/Brackets';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { CTA_LINK, NAV_LINKS } from '../../SITE';
 import './Header.scss';
@@ -64,7 +65,7 @@ export default function Header() {
               <span className="meta meta-dim header-nav-bar" aria-hidden="true">|</span>
             </NavLink>
           ))}
-          <Link to={CTA_LINK.to} className="header-cta">
+          <Link to={CTA_LINK.to} className="btn btn--primary btn--sm header-cta">
             {CTA_LINK.label}
           </Link>
         </nav>
@@ -72,14 +73,12 @@ export default function Header() {
         <button
           ref={menuToggle}
           type="button"
-          className="meta header-menu-toggle"
+          className="btn btn--tertiary header-menu-toggle"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen(true)}
         >
-          <span className="meta-dim meta-bracket" aria-hidden="true">[</span>
-          MENU
-          <span className="meta-dim meta-bracket" aria-hidden="true">]</span>
+          <Brackets>Menu</Brackets>
         </button>
       </header>
 

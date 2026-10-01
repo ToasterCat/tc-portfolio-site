@@ -1,234 +1,102 @@
 @use '../../base';
 
-input {
-  color: base.$color-light;
-  background-color: base.$color-black-light-transparent;
-  border: none;
-}
-
-textarea {
-  color: base.$color-light;
-  background-color: base.$color-black-light-transparent;
-  border: none;
-}
-
 /**
- * Mobile / Vertical
+ * CONTACT FORM
+ *
+ * Labels stacked over full-width fields at every size: one column scans
+ * fastest and needs no breakpoint juggling. Fields inherit the body face
+ * (form controls default to the system font otherwise).
  */
-@media all and (max-width: base.$bp) {
-  .contact-form-section {
-    display: flex;
-    padding: 5% 0% 2% 0%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: base.$section-pad-y-m base.$space-4 base.$space-6 base.$space-4;
+}
+
+.contact-form-heading {
+  margin: 0 0 base.$space-6 0;
+  font-size: base.$type-h2-m;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-5;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.contact-form-field,
+.contact-form-field-text-area {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+
+  label {
+    font-family: base.$font-heading;
+    font-size: base.$type-body-m;
+    font-weight: base.$weight-subhead;
   }
 
-  .contact-form-heading {
-    font-size: base.$mobile-large-heading;
-    padding-bottom: 1.5rem;
-    margin: 0;
+  input,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: base.$space-3 base.$space-4;
+
+    font: inherit;
+    color: base.$color-light;
+    background-color: base.$color-black-light-transparent;
+    border: 1px solid rgba(base.$site-color-gray, 0.22);
+    border-radius: base.$radius;
+    transition: border-color 0.2s ease;
   }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(base.$site-color-gray, 0.55);
   }
 
-  .contact-form-field {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0px;
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: base.$color-meta;
   }
 
-  .contact-form-field-text-area {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-
-    textarea {
-      font-family: base.$font-body;
-    }
-  }
-
-  .contact-form-field-text-area label {
-    margin: 20px 0px 10px 0px;
-    font-size: base.$mobile-small-heading;
-  }
-
-  .contact-form-field label {
-    min-width: 150px;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size: base.$mobile-small-heading;
-  }
-
-  .contact-form-field input {
-    margin-left: 10px;
-    font-size: base.$mobile-small-heading;
-  }
-
-  .contact-form-buttons {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100px;
-  }
-
-  .contact-form-submit {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background-color: base.$color-red;
-    color: base.$color-almost-black;
-    font-size: base.$large-p;
-    transition: all 0.4s ease;
-    padding: 0rem 1rem;
-    text-decoration: none;
-    width: 100px;
-    height: 50px;
-    border: none;
-  }
-
-  .contact-form-reset {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$large-p;
-    transition: all 0.4s ease;
-    padding: 0rem 1rem;
-    text-decoration: none;
-    width: 100px;
-    height: 50px;
-    border: none;
+  textarea {
+    min-height: 10rem;
+    resize: vertical;
   }
 }
 
+/* Primary Submit leads; the tertiary [ RESET ] sits beside it, quieter. */
+.contact-form-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: base.$space-3 base.$space-5;
+  margin-top: base.$space-2;
+}
 
 /**
  * Desktop / Horizontal
  */
 @media all and (min-width: base.$bp) {
   .contact-form-section {
-    display: flex;
-    padding: 5% 0% 2% 0%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: base.$section-pad-y base.$space-6 base.$space-7 base.$space-6;
   }
 
   .contact-form-heading {
-    font-size: 50px;
-    padding-bottom: 1.5rem;
-    margin: 0;
+    font-size: base.$type-h2;
   }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .contact-form-field {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 0px;
-  }
-
+  .contact-form-field,
   .contact-form-field-text-area {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-
-    textarea {
-      font-family: base.$font-body;
+    label {
+      font-size: base.$type-body;
     }
-  }
-
-  .contact-form-field-text-area label {
-    margin: 20px 0px 10px 0px;
-    font-size: 20px;
-  }
-
-  .contact-form-field label {
-    min-width: 150px;
-    text-align: left;
-    font-size: 20px;
-  }
-
-  .contact-form-field input {
-    margin-left: 10px;
-    font-size: 20px;
-  }
-
-  .contact-form-buttons {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100px;
-  }
-
-  .contact-form-submit {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background-color: base.$color-red;
-    color: base.$color-light;
-    font-size: base.$large-p;
-    transition: all 0.4s ease;
-    padding: 0rem 1rem;
-    text-decoration: none;
-    width: 150px;
-    height: 50px;
-    border: none;
-  }
-
-  .contact-form-submit:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    background-color: base.$color-red;
-    color: base.$color-almost-black;
-    border-radius: base.$radius;
-    transition: all 0.4s ease; /* zoom in */
-    cursor: pointer;
-  }
-
-  .contact-form-reset:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    background-color: base.$color-red;
-    color: base.$color-light;
-    border-radius: base.$radius;
-    transition: all 0.4s ease; /* zoom in */
-    cursor: pointer;
-  }
-  .contact-form-reset {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background-color: base.$color-light;
-    color: base.$color-almost-black;
-    font-size: base.$large-p;
-    transition: all 0.4s ease;
-    padding: 0rem 1rem;
-    text-decoration: none;
-    width: 150px;
-    height: 50px;
-    border: none;
   }
 }

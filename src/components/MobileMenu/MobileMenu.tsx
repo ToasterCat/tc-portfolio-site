@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import TcMark from '../UI/TcMark/TcMark';
+import Brackets from '../UI/Brackets/Brackets';
 import { CTA_LINK, NAV_LINKS, SOCIAL_LINKS } from '../../SITE';
 import './MobileMenu.scss';
 
@@ -56,12 +57,10 @@ export default function MobileMenu(props: MobileMenuProps) {
         </Link>
         <button
           type="button"
-          className="meta mobile-menu-close"
+          className="btn btn--tertiary mobile-menu-close"
           onClick={onClose}
         >
-          <span className="meta-dim meta-bracket" aria-hidden="true">[</span>
-          CLOSE
-          <span className="meta-dim meta-bracket" aria-hidden="true">]</span>
+          <Brackets>Close</Brackets>
         </button>
       </div>
 
@@ -83,7 +82,7 @@ export default function MobileMenu(props: MobileMenuProps) {
       </nav>
 
       <div className="mobile-menu-foot">
-        <Link to={CTA_LINK.to} className="mobile-menu-cta">
+        <Link to={CTA_LINK.to} className="btn btn--primary btn--lg btn--block">
           {CTA_LINK.label}
         </Link>
         <ul className="meta mobile-menu-socials">

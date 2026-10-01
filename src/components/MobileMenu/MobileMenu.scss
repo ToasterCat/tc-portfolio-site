@@ -48,19 +48,9 @@
   height: 1.75rem;
 }
 
+/* Look comes from .btn--tertiary; align with the header toggle it replaces. */
 .mobile-menu-close {
-  padding: base.$space-2 base.$space-1 base.$space-2 base.$space-2;
-  font-size: base.$type-meta-m;
-  letter-spacing: 0.04em;
-  color: base.$color-meta;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.mobile-menu-close:hover,
-.mobile-menu-close:focus-visible {
-  color: base.$color-signal;
+  margin-right: -#{base.$space-1};
 }
 
 .mobile-menu-nav {
@@ -77,8 +67,8 @@
 
   font-family: base.$font-heading;
   font-size: base.$type-h2-m;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-weight: base.$weight-heading;
+  letter-spacing: base.$tracking-heading;
   color: base.$color-light;
   text-decoration: none;
 }
@@ -119,32 +109,6 @@
   margin-top: auto;
   padding-top: base.$space-5;
   border-top: 1px solid base.$site-color-dark-alt;
-}
-
-.mobile-menu-cta {
-  display: block;
-  padding: base.$space-4;
-
-  font-weight: 700;
-  text-align: center;
-  color: base.$color-light;
-  text-decoration: none;
-  /* Outlined like the header CTA; a faint tint at rest since touch has no
-   * hover to announce it. Fills on press. */
-  background-color: rgba(base.$color-signal, 0.12);
-  border: 1px solid base.$color-signal;
-  border-radius: base.$radius;
-  transition: background-color 0.2s ease;
-}
-
-.mobile-menu-cta:visited {
-  color: base.$color-light;
-}
-
-.mobile-menu-cta:hover,
-.mobile-menu-cta:focus-visible,
-.mobile-menu-cta:active {
-  background-color: base.$color-signal;
 }
 
 .mobile-menu-socials {

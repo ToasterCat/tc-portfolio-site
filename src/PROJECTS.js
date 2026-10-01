@@ -115,7 +115,7 @@ const PROJECTS = {
       skills: [
         "AWS-S3",
         "AWS-SWF",
-        "AWS-Dynamo",
+        "AWS-DynamoDB",
         "AWS-CloudFormation",
         "Android",
         "iOS"
@@ -310,7 +310,7 @@ const PROJECTS = {
   oasWebsite: {
     projectDetails: {
       alias: 'oas-website',
-      name: '"Octopus Attacks Shark!!"',
+      name: 'Octopus Attacks Shark!!',
       showcase: 'Web Development',
       kind: `Band Site`,
       origin: 'client',

@@ -96,7 +96,10 @@ export default function Homepage() {
               and custom &mdash; one client's site runs on $0.12/month of AWS.
               No template tax.
             </p>
-            <a href="/projects#proj-web">See the Work</a>
+            <a className="btn btn--secondary btn--sm" href="/projects#proj-web">
+              See the Work
+              <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
+            </a>
           </li>
           <li>
             <h3>Games</h3>
@@ -106,7 +109,10 @@ export default function Homepage() {
               Chick Magnet ran custom physics and destructible environments with
               a team of nine. Both made expo finals.
             </p>
-            <a href="/projects#proj-game">See the Work</a>
+            <a className="btn btn--secondary btn--sm" href="/projects#proj-game">
+              See the Work
+              <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
+            </a>
           </li>
           <li>
             <h3>Hardware and Prototyping</h3>
@@ -115,7 +121,10 @@ export default function Homepage() {
               ergonomic croquet hooks, a working Nerf-compatible blaster, licensed
               products for retail. Design, slice, print, iterate, ship.
             </p>
-            <a href="/projects#proj-proto">See the Work</a>
+            <a className="btn btn--secondary btn--sm" href="/projects#proj-proto">
+              See the Work
+              <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
+            </a>
           </li>
           <li>
             <h3>Audio Production // Recording Studio</h3>
@@ -125,7 +134,10 @@ export default function Homepage() {
               Experimental techniques, heavy overlays, and a record cut across four
               locations when it called for it.
             </p>
-            <a href="/projects#proj-audio">See the Work</a>
+            <a className="btn btn--secondary btn--sm" href="/projects#proj-audio">
+              See the Work
+              <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
+            </a>
           </li>
         </ul>
       </section>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import BrandMark from '../UI/BrandMark/BrandMark';
 import TcMark from '../UI/TcMark/TcMark';
+import Brackets from '../UI/Brackets/Brackets';
 import {
   AVAILABILITY,
   CONTACT_EMAIL,
@@ -72,9 +73,8 @@ export default function Footer() {
           <BrandMark scale={1} />
           © {year} ToasterCat Studios LLC
         </span>
-        <button type="button" className="meta footer-top" onClick={scrollToTop}>
-          <span className="meta-dim" aria-hidden="true">{'\\>'} </span>
-          back to top
+        <button type="button" className="btn btn--tertiary footer-top" onClick={scrollToTop}>
+          <Brackets>Back to top</Brackets>
         </button>
       </div>
     </footer>

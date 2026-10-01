@@ -58,8 +58,8 @@
   display: flex;
   align-items: baseline;
   gap: 0.35em;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-weight: base.$weight-heading;
+  letter-spacing: base.$tracking-heading;
   white-space: nowrap;
   transition: color base.$transition-duration ease;
 }
@@ -123,46 +123,17 @@
   opacity: 1;
 }
 
-/* Outlined until engaged: present without shouting over the nav. */
+/* Look comes from .btn--primary (_buttons.scss); this is placement only. */
 .header-cta {
   margin-left: base.$space-4;
-  padding: base.$space-2 base.$space-4;
-
-  color: base.$color-light;
-  font-weight: 700;
-  text-decoration: none;
-  background-color: transparent;
-  border: 1px solid base.$color-signal;
-  border-radius: base.$radius;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-
-.header-cta:visited {
-  color: base.$color-light;
-}
-
-.header-cta:hover,
-.header-cta:focus-visible {
-  background-color: base.$color-signal;
 }
 
 /* ---- Menu toggle (mobile) ------------------------------------------- */
 
+/* Look comes from .btn--tertiary; nudge it to the bar's right edge. */
 .header-menu-toggle {
   flex: none;
-  padding: base.$space-2 base.$space-1 base.$space-2 base.$space-2;
-
-  font-size: base.$type-meta-m;
-  letter-spacing: 0.04em;
-  color: base.$color-meta;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.header-menu-toggle:hover,
-.header-menu-toggle:focus-visible {
-  color: base.$color-signal;
+  margin-right: -#{base.$space-1};
 }
 
 /**

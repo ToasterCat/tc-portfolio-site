@@ -27,11 +27,13 @@
 
   }
 
+  /* Link tiles are .btn--tertiary [ COMMANDS ]: a wrapping row, centred. */
   .tile-group {
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     align-items: center;
-    gap: base.$space-3;
+    justify-content: center;
+    gap: base.$space-1 base.$space-4;
     width: 100%;
   }
 
@@ -78,7 +80,7 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    gap: base.$space-4;
+    gap: base.$space-2 base.$space-6;
   }
 
   .tile {

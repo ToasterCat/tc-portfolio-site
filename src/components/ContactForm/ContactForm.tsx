@@ -1,4 +1,5 @@
 import React from 'react';
+import Brackets from '../UI/Brackets/Brackets';
 import './ContactForm.scss';
 
 export default function ContactForm() {
@@ -57,12 +58,12 @@ export default function ContactForm() {
               type="submit"
               name="submit"
               value="Send"
-              className="contact-form-submit"
+              className="btn btn--primary btn--lg"
             >
               Submit
             </button>
-            <button type="reset" className={'contact-form-reset'}>
-              Reset
+            <button type="reset" className="btn btn--tertiary">
+              <Brackets>Reset</Brackets>
             </button>
           </div>
         </form>

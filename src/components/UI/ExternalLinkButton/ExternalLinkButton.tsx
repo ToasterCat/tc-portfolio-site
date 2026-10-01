@@ -1,36 +1,40 @@
-import React from 'react';
-import './ExternalLinkButton.scss';
 import { ASSET_MANIFEST } from '../../../assets/AssetMap';
 
 interface ExternalLinkButtonProps {
   linkTo: string;
   text: string;
   icon?: string;
-  color?: string;
+  size?: 'sm';
 }
 
-function LinkIcon(props: ExternalLinkButtonProps) {
-  return props.icon
-    ? (<><img src={ASSET_MANIFEST.get(props.icon)} alt="" /></>)
-    : (<></>)
-}
-
+/**
+ * Secondary-tier button for an off-site link (see _buttons.scss): label plus
+ * icon. Brand links lead with their logo; anything without one gets a
+ * trailing "↗" so it still reads as leaving the site.
+ */
 export default function ExternalLinkButton(props: ExternalLinkButtonProps) {
+  if (!props.linkTo) {
+    return <>{props.text}</>;
+  }
+
+  const iconSrc = props.icon ? ASSET_MANIFEST.get(props.icon) : undefined;
+
   return (
-    <>
-      {props.linkTo && (
-        <a
-          className="external-button"
-          href={props.linkTo}
-          target={props.linkTo}
-          rel="noopener noreferrer"
-          color={props.color}
-        >
-          <LinkIcon linkTo={props.linkTo} text={props.text} icon={props.icon} color={props.color}/>
-          <div className="external-button-label">{props.text}</div>
-        </a>
+    <a
+      className={`btn btn--secondary ${props.size === 'sm' ? 'btn--sm' : ''}`}
+      href={props.linkTo}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {iconSrc && (
+        <span className="btn-icon" aria-hidden="true">
+          <img src={iconSrc} alt="" />
+        </span>
       )}
-      {!props.linkTo && props.text}
-    </>
+      {props.text}
+      {!iconSrc && (
+        <span className="btn-icon btn-icon--trailing" aria-hidden="true">↗</span>
+      )}
+    </a>
   );
 }

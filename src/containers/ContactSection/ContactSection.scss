@@ -32,11 +32,6 @@
     font-size: base.$mobile-small-p;
   }
 
-  .contact-cta {
-    width: 13rem;
-    height: 3.5rem;
-    margin-bottom: 1rem;
-  }
 }
 
 /**
@@ -71,40 +66,6 @@
     text-align: center;
     font-size: base.$large-p;
   }
-
-  .contact-cta {
-    width: 16rem;
-    height: 4.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .contact-cta:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03);
-    background-color: base.$color-red;
-    border-radius: base.$radius;
-    cursor: pointer;
-  }
-}
-
-/**
- * Primary call-to-action. The secondary links (socials) moved to the footer,
- * so the band sizes to its content rather than a fixed min-height.
- */
-.contact-cta {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-color: base.$color-red-dark;
-  color: base.$color-light;
-  font-size: base.$large-p;
-  font-family: base.$font-heading;
-  border: 1px solid base.$color-red;
-  border-radius: base.$radius;
-  transition: all 0.4s ease;
-  text-decoration: none;
 }
 
 /* On the contact page the CTA is suppressed; don't leave its gap behind. */

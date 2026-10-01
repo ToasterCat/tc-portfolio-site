@@ -1,68 +1,48 @@
-@font-face {
-  font-family: "PT-Sans";
-  src: url("./assets/fonts/PTSans-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "PT-Sans";
-  src: url("./assets/fonts/PTSans-Bold.ttf");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "PT-Sans";
-  src: url("./assets/fonts/PTSans-Italic.ttf");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "PT-Sans";
-  src: url("./assets/fonts/PTSans-BoldItalic.ttf");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "PT-Mono";
-  src: url("./assets/fonts/PTMono-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ==========================================================================
  * TYPE ROLES
  *
- * Two faces, two jobs. PT-Sans carries everything narrative - hero, headings,
- * body. PT-Mono is a *device*, not a layer: it marks meta content (#tags,
- * statuses, disciplines, counts) and nothing else. It only reads as a signal
- * because it is rare, so resist reaching for it.
+ * Three faces, three jobs.
+ *   Space Grotesk - the voice: hero, headings, names, primary/secondary
+ *                   buttons. Technical, slightly odd, confident.
+ *   DM Sans       - the read: body copy, descriptions, form text. Same
+ *                   design lineage as Space Grotesk (Colophon), calmer.
+ *   PT Mono       - a *device*, not a layer: meta content (#tags, statuses,
+ *                   disciplines) and tertiary [ COMMAND ] buttons. It only
+ *                   reads as a signal because it is rare.
  * ==========================================================================*/
 
-$font-body: 'PT-Sans';
-$font-heading: 'PT-Sans';
-$font-mono: 'PT-Mono';
+$font-heading: "Space Grotesk", "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-mono:    "PT Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
-/* Type scale - 1.25 (major third), desktop */
-$type-display: 2.441rem;
-$type-h2:      1.953rem;
-$type-h3:      1.563rem;
-$type-h4:      1.25rem;
-$type-body:    1rem;
-$type-meta:    0.875rem;
-$type-meta-sm: 0.75rem;
+/* Heading weights. Space Grotesk tops out at 700, so display and headings
+ * share it; hierarchy comes from size and tracking. */
+$weight-heading: 700;
+$weight-subhead: 600;
+$weight-button:  600;
 
-/* Type scale - mobile */
-$type-display-m: 1.953rem;
-$type-h2-m:      1.563rem;
-$type-h3-m:      1.25rem;
-$type-h4-m:      1.0625rem;
-$type-body-m:    0.9375rem;
-$type-meta-m:    0.8125rem;
+/* Type scale - desktop: 1.333 (perfect fourth) off a 17px body, with the
+ * display line pushed further so the hero reads as a statement. */
+$type-display: 3.75rem;    /* 60px */
+$type-h2:      2.369rem;   /* 38px */
+$type-h3:      1.777rem;   /* 28px */
+$type-h4:      1.333rem;   /* 21px */
+$type-body:    1.0625rem;  /* 17px */
+$type-meta:    0.875rem;   /* 14px */
+$type-meta-sm: 0.75rem;    /* 12px */
+
+/* Type scale - mobile: 1.25 (major third) off a 16px body. Tighter ratio so
+ * headings don't wrap word-by-word on a 360px screen. */
+$type-display-m: 2.5rem;    /* 40px */
+$type-h2-m:      1.953rem;  /* 31px */
+$type-h3-m:      1.5625rem; /* 25px */
+$type-h4-m:      1.25rem;   /* 20px */
+$type-body-m:    1rem;      /* 16px */
+$type-meta-m:    0.8125rem; /* 13px */
+
+/* Tracking: grotesks want tightening as they grow. */
+$tracking-display: -0.035em;
+$tracking-heading: -0.02em;
 
 /* Spacing scale */
 $space-1: .25rem;

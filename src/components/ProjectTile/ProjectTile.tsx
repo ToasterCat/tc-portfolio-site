@@ -4,6 +4,7 @@ import './ProjectTile.scss';
 
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import MetaTags from '../UI/MetaTags/MetaTags';
+import ExternalLinkButton from '../UI/ExternalLinkButton/ExternalLinkButton';
 
 export interface ProjectTileProps {
   project: Project;
@@ -56,9 +57,13 @@ export default function ProjectTile(props: ProjectTileProps) {
               {links && links.length > 0 && (
                 <div className="project-tile-links">
                   {links.map((link) => (
-                    <a href={link.target} key={link.label}>
-                      {link.label}
-                    </a>
+                    <ExternalLinkButton
+                      key={link.label}
+                      linkTo={link.target}
+                      text={link.label}
+                      icon={link.icon}
+                      size="sm"
+                    />
                   ))}
                 </div>
               )}

@@ -5,7 +5,7 @@ import './ProjectLinks.scss';
 
 interface ProjectLinksProps {
   styleClass?: string;
-  links?: { target: string; label: string; icon?: string; color?: string; }[];
+  links?: { target: string; label: string; icon?: string; }[];
 }
 
 export default function ProjectLinks(props: ProjectLinksProps) {
@@ -21,7 +21,7 @@ export default function ProjectLinks(props: ProjectLinksProps) {
       />
       <div className="project-links-buttons">
         {props.links.map((link) => {
-          return <ExternalLinkButton linkTo={link.target} text={link.label} icon={link.icon} color={link.color} />;
+          return <ExternalLinkButton key={link.label} linkTo={link.target} text={link.label} icon={link.icon} />;
         })}
       </div>
     </div>

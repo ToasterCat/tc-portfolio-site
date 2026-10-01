@@ -1,4 +1,6 @@
 @use 'base';
+@use 'fonts';
+@use 'buttons';
 
 body {
   font-family: base.$font-body;
@@ -10,7 +12,7 @@ body {
   color: base.$color-light;
   margin: 0;
 
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -46,14 +48,14 @@ main {
 /**
  * HEADINGS
  *
- * Hierarchy comes from size and weight, not from a second typeface, and not
- * from the drop-shadow that used to sit on every heading on the site.
+ * Space Grotesk, tightened as it grows. Hierarchy comes from size and
+ * tracking (the face tops out at 700), not from drop-shadows.
  */
 h1, h2, h3, h4 {
   font-family: base.$font-heading;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
+  font-weight: base.$weight-heading;
+  line-height: 1.1;
+  letter-spacing: base.$tracking-heading;
   text-wrap: balance;
   margin: 0 0 base.$space-4 0;
 }
@@ -87,13 +89,6 @@ h1, h2, h3, h4 {
 
 .meta-dim {
   color: base.$color-meta-dim;
-}
-
-/* PT-Mono's brackets are drawn to enclose lowercase with descenders, so
- * beside all-caps labels ("[MENU]") they hang ~0.08em low. */
-.meta-bracket {
-  position: relative;
-  top: -0.08em;
 }
 
 /**
@@ -154,20 +149,6 @@ h1, h2, h3, h4 {
   align-items: stretch;
   list-style: none;
   padding: 0;
-}
-
-.button {
-  color: base.$color-light;
-
-  font-family: base.$font-heading;
-  background-color: base.$color-black;
-  border: 1px solid base.$site-color-dark-alt;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 /**
@@ -241,16 +222,6 @@ h1, h2, h3, h4 {
 
   body { font-size: base.$type-body; }
 
-  .button {
-    transition: all 0.4s ease;
-  }
-  .button:hover {
-    background-color: base.$color-red-dark;
-    color: base.$color-light;
-    border-radius: base.$radius;
-    transition: all 0.4s ease;
-    cursor: pointer;
-  }
 }
 
 /**

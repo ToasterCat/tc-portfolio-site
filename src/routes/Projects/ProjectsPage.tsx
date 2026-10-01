@@ -2,6 +2,7 @@ import React from 'react';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ProjectTileLarge from '../../components/ProjectTileLarge/ProjectTileLarge';
 import { Link } from 'react-scroll';
+import Brackets from '../../components/UI/Brackets/Brackets';
 import PROJECTS from '../../PROJECTS';
 import './ProjectsPage.scss';
 import { ProjectTileProps } from '../../components/ProjectTile/ProjectTile';
@@ -37,20 +38,20 @@ export default function ProjectsPage() {
             The experiments that survived.
           </p>
           <div className="project-anchors-links">
-            <Link to="proj-game" smooth={true}>
-              Game Development
+            <Link to="proj-game" smooth={true} href={"#proj-game"} className="btn btn--tertiary">
+              <Brackets>Game Development</Brackets>
             </Link>
-            <Link to="proj-web" smooth={true}>
-              Web Development
+            <Link to="proj-web" smooth={true} href={"#proj-web"} className="btn btn--tertiary">
+              <Brackets>Web Development</Brackets>
             </Link>
-            <Link to="proj-consult" smooth={true}>
-              Client Consultation
+            <Link to="proj-consult" smooth={true} href={"#proj-consult"} className="btn btn--tertiary">
+              <Brackets>Client Consultation</Brackets>
             </Link>
-            <Link to="proj-audio" smooth={true}>
-              Audio Production
+            <Link to="proj-audio" smooth={true} href={"#proj-audio"} className="btn btn--tertiary">
+              <Brackets>Audio Production</Brackets>
             </Link>
-            <Link to="proj-proto" smooth={true}>
-              Rapid Prototyping
+            <Link to="proj-proto" smooth={true} href={"#proj-proto"} className="btn btn--tertiary">
+              <Brackets>Rapid Prototyping</Brackets>
             </Link>
           </div>
 

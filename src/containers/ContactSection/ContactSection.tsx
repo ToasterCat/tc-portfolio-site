@@ -26,7 +26,7 @@ export default function ContactInfoBar(props: ContactInfoBarProps) {
       </p>
 
       {showCta && (
-        <Link to="/contact" className="contact-cta">
+        <Link to="/contact" className="btn btn--primary btn--lg">
           Start a Conversation
         </Link>
       )}
