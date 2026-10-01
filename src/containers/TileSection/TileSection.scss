@@ -101,7 +101,7 @@
 
   .tile:hover {
     transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    background-color: base.$color-red-dark;
+    background-color: base.$color-signal-fill;
     border-color: base.$color-signal;
     color: base.$color-light;
     transition: all 0.4s ease; /* zoom in */

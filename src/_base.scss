@@ -101,7 +101,9 @@ $header-h-m: 3rem;
 
 /* COLORS */
 $color-dark: #333;
-$color-light: #fff;
+/* Warm off-white, not #fff: pure white on near-black ran 16-19:1 and haloed.
+ * Still 13.2:1 on the page (AAA is 7:1). */
+$color-light: #EDE8DF;
 $color-light-gray: #636363;
 $color-almost-black: #23272a;
 $color-discord-black: #202124;
@@ -125,6 +127,16 @@ $color-cutty-sark: #566E6C;
  *   $color-meta   - the monospace layer. Data, tags, statuses.
  *   $color-signal - interaction only. Hover, focus, active.
  * Keeping them separate is what makes an element read as clickable.
+ *
+ * Signal is the site's primary colour: a vermilion red, split by role
+ * because no single red can be both a line on dark and a fill under text.
+ * Kept saturated (~85%) and nudged warm (hue ~8deg) so it reads as a live
+ * red - lightening toward white instead drifted to salmon-pink. Same family
+ * as the TC logo's dusty brick (#B04848), with more life.
+ *   $color-signal      - lines, hover text, focus rings. Passes AA as text:
+ *                        4.8:1 on the page, 5.6:1 on the header/footer bars.
+ *   $color-signal-fill - the primary button fill, with $color-on-signal
+ *                        labels at 4.8:1.
  * ==========================================================================*/
 $site-color-base: $color-spicy-mix;
 $site-color-primary: $color-olive-green;
@@ -132,12 +144,14 @@ $site-color-accent: $color-cutty-sark;
 
 $site-color-dark: $color-discord-black;
 $site-color-dark-alt: $color-almost-black;
-$site-color-gray: #c9d2d8;
+$site-color-gray: #C4BFB4; /* warm secondary text, 8.8:1 (was a cool #c9d2d8) */
 $site-color-light: #2c2f33;
 
 $color-meta: $color-olive-green;
 $color-meta-dim: #7d7a3c;
-$color-signal: $color-red;
+$color-signal: #F05A3F;
+$color-signal-fill: #C0392B;
+$color-on-signal: #F2F0EB;
 
 $site-color-section: $color-black-transparent;
 $site-filter-section: grayscale(50%) blur(5px);

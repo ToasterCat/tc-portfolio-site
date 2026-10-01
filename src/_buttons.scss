@@ -80,6 +80,8 @@
 
 /* ---- Primary: red outline, fills on engagement --------------------- */
 
+/* Outline in the line red; fill in the deeper fill red, so the label keeps
+ * its contrast (4.8:1) once the button is engaged. */
 .btn--primary {
   border-color: base.$color-signal;
 }
@@ -87,13 +89,15 @@
 .btn--primary:hover,
 .btn--primary:focus-visible,
 .btn--primary:active {
-  background-color: base.$color-signal;
+  color: base.$color-on-signal;
+  background-color: base.$color-signal-fill;
+  border-color: base.$color-signal-fill;
 }
 
 /* Touch has no hover to announce it, so a faint fill at rest. */
 @media (hover: none) {
   .btn--primary {
-    background-color: rgba(base.$color-signal, 0.12);
+    background-color: rgba(base.$color-signal-fill, 0.18);
   }
 }
 

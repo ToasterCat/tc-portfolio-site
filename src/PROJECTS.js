@@ -117,6 +117,7 @@ const PROJECTS = {
         "AWS-SWF",
         "AWS-DynamoDB",
         "AWS-CloudFormation",
+        "AWS-CloudFront",
         "Android",
         "iOS"
       ],
