@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 
@@ -73,10 +74,10 @@ export default function Homepage() {
         areLinks
         heading={'Client Services'}
         tiles={[
-          { label: 'Web Design', url: '/projects#proj-web' },
-          { label: 'Audio Production', url: '/projects#proj-audio' },
-          { label: 'Consultation', url: '/projects#proj-consult' },
-          { label: 'Prototyping', url: '/projects#proj-proto' }
+          { label: 'Web Design', url: '/portfolio#proj-web' },
+          { label: 'Audio Production', url: '/portfolio#proj-audio' },
+          { label: 'Consultation', url: '/portfolio#proj-consult' },
+          { label: 'Prototyping', url: '/portfolio#proj-proto' }
         ]}
       />
 
@@ -96,10 +97,10 @@ export default function Homepage() {
               and custom &mdash; one client's site runs on $0.12/month of AWS.
               No template tax.
             </p>
-            <a className="btn btn--secondary btn--sm" href="/projects#proj-web">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-web">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
-            </a>
+            </Link>
           </li>
           <li>
             <h3>Games</h3>
@@ -109,10 +110,10 @@ export default function Homepage() {
               Chick Magnet ran custom physics and destructible environments with
               a team of nine. Both made expo finals.
             </p>
-            <a className="btn btn--secondary btn--sm" href="/projects#proj-game">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-game">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
-            </a>
+            </Link>
           </li>
           <li>
             <h3>Hardware and Prototyping</h3>
@@ -121,10 +122,10 @@ export default function Homepage() {
               ergonomic croquet hooks, a working Nerf-compatible blaster, licensed
               products for retail. Design, slice, print, iterate, ship.
             </p>
-            <a className="btn btn--secondary btn--sm" href="/projects#proj-proto">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-proto">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
-            </a>
+            </Link>
           </li>
           <li>
             <h3>Audio Production // Recording Studio</h3>
@@ -134,10 +135,10 @@ export default function Homepage() {
               Experimental techniques, heavy overlays, and a record cut across four
               locations when it called for it.
             </p>
-            <a className="btn btn--secondary btn--sm" href="/projects#proj-audio">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-audio">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </section>

@@ -68,7 +68,7 @@ export default function MobileMenu(props: MobileMenuProps) {
         {NAV_LINKS.map((link, i) => (
           <NavLink
             key={link.to}
-            exact
+            exact={link.to === '/'}
             to={link.to}
             innerRef={i === 0 ? firstLink : undefined}
             className="mobile-menu-link"

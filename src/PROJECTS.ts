@@ -730,7 +730,7 @@ const PROJECTS: Record<string, Project> = {
 export interface CategoryInfo {
   key: ProjectCategory;
   label: string;
-  /** Section anchor on the legacy /projects page (kept for old links). */
+  /** Section anchor id on /portfolio (old /projects#anchor links redirect here). */
   anchor: string;
 }
 

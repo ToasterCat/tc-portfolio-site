@@ -55,7 +55,7 @@ export default function Header() {
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
-              exact
+              exact={link.to === '/'}
               to={link.to}
               className="header-nav-link"
               activeClassName="is-active"

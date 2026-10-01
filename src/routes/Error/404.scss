@@ -1,0 +1,46 @@
+@use '../../base';
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: base.$space-3;
+  min-height: 60vh;
+  padding: base.$section-pad-y-m base.$space-4;
+  text-align: center;
+}
+
+/* Spacing is the page's call, not the component's. */
+.not-found-splash {
+  margin-bottom: base.$space-4;
+}
+
+/* The code sits on a tinted plate, same treatment as the [KIND] labels. */
+.not-found-code {
+  margin: 0;
+  padding: 0.2em 0.6em 0.2em 0.8em; /* extra left offsets the trailing tracking */
+  letter-spacing: 0.2em;
+  border-radius: base.$radius-sm;
+  background-color: rgba(base.$color-meta, 0.14);
+}
+
+.not-found-heading {
+  margin: 0;
+  font-size: base.$type-h2-m;
+}
+
+.not-found-detail {
+  margin: 0 0 base.$space-5 0;
+  color: base.$site-color-gray;
+}
+
+@media all and (min-width: base.$bp) {
+  .not-found {
+    padding: base.$section-pad-y base.$space-6;
+  }
+
+  .not-found-heading {
+    font-size: base.$type-h2;
+  }
+}

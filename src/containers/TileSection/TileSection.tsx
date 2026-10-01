@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import './TileSection.scss';
 
@@ -28,9 +29,9 @@ export default function TileSection(props: TileSectionProps) {
     if (props.areLinks) {
       return props.tiles.map((tile: any) => {
         return (
-          <a className="btn btn--tertiary" href={tile.url} key={tile.url}>
+          <Link className="btn btn--tertiary" to={tile.url} key={tile.url}>
             <Brackets>{tile.label}</Brackets>
-          </a>
+          </Link>
         );
       });
     }

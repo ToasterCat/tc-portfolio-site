@@ -1,0 +1,46 @@
+@use '../../../base';
+
+/* Sheet geometry - must match scripts/build-nyan-sprite.py. */
+$frame-w: 87px;
+$frame-h: 40px;
+$frames: 6;
+$frame-ms: 70ms; /* ~14fps, Nyan Cat's GIF cadence */
+
+/**
+ * --scale is a whole number so every art pixel stays a crisp square:
+ * 3x on phones (261x120), 5x on desktop (435x200).
+ */
+.nyan-toaster {
+  --scale: 3;
+
+  width: calc(#{$frame-w} * var(--scale));
+  height: calc(#{$frame-h} * var(--scale));
+
+  background-image: url('../../../assets/toastercat-nyan.png');
+  background-repeat: no-repeat;
+  background-size: calc(#{$frame-w} * #{$frames} * var(--scale)) 100%;
+  background-position: 0 0;
+  image-rendering: pixelated;
+
+  animation: nyan-toaster-run calc(#{$frame-ms} * #{$frames}) steps(#{$frames}) infinite;
+}
+
+@keyframes nyan-toaster-run {
+  to {
+    background-position-x: calc(-1 * #{$frame-w} * #{$frames} * var(--scale));
+  }
+}
+
+/* Responsive default only; a `scale` prop (inline --scale) opts out. */
+@media all and (min-width: base.$bp) {
+  .nyan-toaster:not(.nyan-toaster--fixed) {
+    --scale: 5;
+  }
+}
+
+/* Hold a single frame for people who've asked for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .nyan-toaster {
+    animation: none;
+  }
+}

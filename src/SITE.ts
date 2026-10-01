@@ -10,7 +10,7 @@ export interface SiteLink {
 
 export const NAV_LINKS: SiteLink[] = [
   { label: 'Home', to: '/' },
-  { label: 'Portfolio', to: '/projects' },
+  { label: 'Portfolio', to: '/portfolio' },
   { label: 'Contact', to: '/contact' },
 ];
 
