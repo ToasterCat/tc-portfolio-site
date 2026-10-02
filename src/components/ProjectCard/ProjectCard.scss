@@ -1,0 +1,210 @@
+@use '../../base';
+
+/**
+ * PROJECT CARD
+ *
+ * Cover on top (16:9), text below. One link (the name) stretched over the
+ * whole card; the heroLink button and nothing else rises above it.
+ */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: base.$site-color-dark-alt;
+  border: 1px solid rgba(base.$site-color-gray, 0.14);
+  border-radius: base.$radius;
+  transition: border-color 0.2s ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: base.$color-signal;
+  }
+}
+
+/* ---- Cover ----------------------------------------------------------- */
+
+.project-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: base.$color-black;
+
+  > img:first-child:not(.project-card-logo) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+/* Soft fade into the body so the cover doesn't end on a hard edge. */
+.project-card-cover::after {
+  content: '';
+  position: absolute;
+  inset: 50% 0 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(base.$site-color-dark-alt, 0.85));
+  pointer-events: none;
+}
+
+.project-card-cover--pattern {
+  background:
+    radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px) 0 0 / 14px 14px,
+    base.$color-black;
+}
+
+.project-card:hover .project-card-cover > img:first-child:not(.project-card-logo) {
+  transform: scale(1.04);
+}
+
+/* Logo badge, bottom-left of the cover. */
+.project-card-logo {
+  position: absolute;
+  left: base.$space-4;
+  bottom: base.$space-3;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: base.$space-1;
+  object-fit: contain;
+  background-color: rgba(base.$color-black, 0.75);
+  border: 1px solid rgba(base.$site-color-gray, 0.18);
+  border-radius: base.$radius;
+}
+
+/* ---- Body ------------------------------------------------------------ */
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: base.$space-2;
+  padding: base.$space-4 base.$space-5 base.$space-5;
+}
+
+.project-card-kind {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0.1em 0.4em;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: base.$radius-sm;
+  background-color: rgba(base.$color-meta, 0.14);
+}
+
+.project-card-bracket {
+  position: relative;
+  top: -0.08em;
+}
+
+.project-card-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  margin: 0;
+  font-size: base.$type-h4-m;
+  letter-spacing: base.$tracking-heading;
+}
+
+/* Same lift as the project page: PT Mono's "\" sits low beside caps. */
+.project-card-prompt {
+  flex: none;
+  position: relative;
+  top: -0.2em;
+  font-size: 0.7em;
+  letter-spacing: 0;
+}
+
+.project-card-link {
+  min-width: 0;
+  overflow-wrap: break-word;
+  color: base.$color-light;
+  text-decoration: none;
+
+  &:visited {
+    color: base.$color-light;
+  }
+
+  /* The stretched link: covers the whole card. */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Focus ring on the card, not on a box hugging the title text. */
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.project-card:hover .project-card-link,
+.project-card-link:focus-visible {
+  color: base.$color-signal;
+}
+
+.project-card:has(.project-card-link:focus-visible) {
+  outline: 2px solid base.$color-signal;
+  outline-offset: 3px;
+}
+
+/* Two lines, then an ellipsis: cards stay even in a grid. */
+.project-card-brief {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: base.$site-color-gray;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-wrap: pretty;
+}
+
+.project-card-foot {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: base.$space-1 base.$space-4;
+  margin-top: auto; /* pin to the bottom when cards share a row height */
+  padding-top: base.$space-2;
+}
+
+/* Tags take their own row; year and arrow share the line beneath, so every
+ * card's foot reads the same however the tags wrap. */
+.project-card-foot > .meta-tags {
+  flex-basis: 100%;
+}
+
+.project-card-year {
+  white-space: nowrap;
+}
+
+/* The external button rises above the stretched link: its own target. */
+.project-card-action {
+  position: relative;
+  z-index: 2;
+  margin-top: base.$space-2;
+}
+
+/* Trailing arrow on the tag row: nudges forward on hover, like the
+ * secondary buttons. */
+.project-card-arrow {
+  margin-left: auto;
+  font-family: base.$font-heading;
+  color: base.$color-meta-dim;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.project-card:hover .project-card-arrow {
+  color: base.$color-signal;
+  transform: translateX(4px);
+}
+
+@media all and (min-width: base.$bp) {
+  .project-card-title {
+    font-size: base.$type-h4;
+  }
+}

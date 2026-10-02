@@ -1,8 +1,8 @@
-import React from 'react';
-import ProjectTile from '../../components/ProjectTile/ProjectTile';
-import PROJECTS from '../../PROJECTS';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import { FEATURED_PROJECTS } from '../../PROJECTS';
 import './ProjectSection.scss';
 
+/** Homepage featured works: every project flagged `featured`, in `order`. */
 export function ProjectSection() {
   return (
     <section className="projects-section section-band">
@@ -13,19 +13,13 @@ export function ProjectSection() {
         </p>
       </div>
 
-
-      <div className="projects-container card-grid">
-
-        <ProjectTile project={PROJECTS["blackoutPunk"]}/>
-
-        <ProjectTile project={PROJECTS["fossArmory"]}/>
-
-        <ProjectTile project={PROJECTS["clickTune"]}/>
-
-        <ProjectTile project={PROJECTS["outsideAgitators"]}/>
-
-      </div>
-
+      <ul className="projects-container card-grid">
+        {FEATURED_PROJECTS.map((project) => (
+          <li key={project.projectDetails.alias}>
+            <ProjectCard project={project} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

@@ -29,6 +29,12 @@ describe('aliases (become /portfolio/<alias> URLs)', () => {
   });
 });
 
+describe('homepage selection', () => {
+  test('at least one project is featured', () => {
+    expect(details.some((d) => d.featured)).toBe(true);
+  });
+});
+
 describe('ordering and categories', () => {
   test('order values are unique, so sorting is deterministic', () => {
     const orders = details.map((d) => d.order);

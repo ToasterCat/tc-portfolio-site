@@ -8,8 +8,8 @@ const PROJECTS: Record<string, Project> = {
       alias: 'blackout-punk',
       category: 'game',
       order: 10,
+      featured: true,
       name: 'BLACK0UT.PUNK',
-      showcase: 'Game Development',
       kind: `PC Game`,
       origin: 'in-house',
       status: 'in-development',
@@ -79,13 +79,13 @@ const PROJECTS: Record<string, Project> = {
       alias: 'clicktune',
       category: 'consult',
       order: 100,
+      featured: true,
       name: '"MusiMojii" - ClickTune LLC',
-      showcase: 'App Design',
       kind: `Client Consultation`,
       origin: 'client',
       status: 'shipped',
       role: 'Back-End Architecture Design, Research, and Technical Advisory',
-      year: 'Q1 2025',
+      year: '2025',
       outcome: 'shipped',
       brief: `Research, Development, and Back-End System Design for ClickTune LLC.`,
       body: [
@@ -132,7 +132,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'consult',
       order: 110,
       name: '"JukeDec" - Frigging Glorious LLC',
-      showcase: 'App Design',
       kind: `Research & Development`,
       origin: 'client',
       status: 'shipped',
@@ -179,8 +178,8 @@ const PROJECTS: Record<string, Project> = {
       alias: 'outside-agitators',
       category: 'audio',
       order: 120,
+      featured: true,
       name: '"Outside Agitators" - Octopus Attacks Shark!!',
-      showcase: 'Audio',
       kind: `Album`,
       origin: 'contributor',
       status: 'shipped',
@@ -244,8 +243,8 @@ const PROJECTS: Record<string, Project> = {
       alias: 'foss-armory',
       category: 'game',
       order: 20,
+      featured: true,
       name: 'FOSS Armory',
-      showcase: 'Game Development',
       kind: `PC Game`,
       origin: 'contributor',
       status: 'archived',
@@ -298,7 +297,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'web',
       order: 60,
       name: 'Crude Mirror Media',
-      showcase: 'Business Development',
       kind: `Media Blog`,
       origin: 'in-house',
       status: 'live',
@@ -354,7 +352,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'web',
       order: 70,
       name: 'Strongarm Digital Marketing',
-      showcase: 'Web Development',
       kind: `Client Lead Site`,
       origin: 'client',
       status: 'live',
@@ -411,7 +408,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'web',
       order: 80,
       name: 'Octopus Attacks Shark!!',
-      showcase: 'Web Development',
       kind: `Band Site`,
       origin: 'client',
       status: 'live',
@@ -499,7 +495,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'web',
       order: 90,
       name: 'Ugliest Man Alive [U.M.A]',
-      showcase: 'Web Development',
       kind: `Band Site`,
       origin: 'client',
       status: 'live',
@@ -554,7 +549,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'game',
       order: 30,
       name: 'PixHell',
-      showcase: 'Game Development',
       kind: `Mobile Game`,
       origin: 'contributor',
       status: 'live',
@@ -614,7 +608,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'game',
       order: 40,
       name: 'Star Wars: Wraith Squadron',
-      showcase: 'Game Development',
       kind: `PC Game`,
       origin: 'in-house',
       status: 'archived',
@@ -659,7 +652,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'game',
       order: 50,
       name: 'Chick Magnet',
-      showcase: 'Game Development',
       kind: `PC Game`,
       origin: 'contributor',
       status: 'shipped',
@@ -708,7 +700,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'audio',
       order: 130,
       name: '"Of Man and Nature" - Ugliest Man Alive',
-      showcase: 'Audio',
       kind: `Album`,
       origin: 'client',
       status: 'live',
@@ -772,7 +763,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'proto',
       order: 140,
       name: 'Moxel Hooks',
-      showcase: '3D Printing',
       kind: 'Prototype',
       origin: 'client',
       status: 'shipped',
@@ -820,7 +810,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'proto',
       order: 150,
       name: 'Product Prototype: "The Lizzie"',
-      showcase: '3D Printing',
       kind: `Prototype`,
       origin: 'client',
       status: 'shipped',
@@ -866,7 +855,6 @@ const PROJECTS: Record<string, Project> = {
       category: 'proto',
       order: 160,
       name: 'Custom Pistol Sight Adapters',
-      showcase: '3D Printing',
       kind: `Product`,
       origin: 'in-house',
       status: 'live',
@@ -951,6 +939,14 @@ export const PROJECT_LIST: Project[] = Object.values(PROJECTS).sort(
 
 export function projectsInCategory(category: ProjectCategory): Project[] {
   return PROJECT_LIST.filter((p) => p.projectDetails.category === category);
+}
+
+/** Homepage selection: projects flagged `featured`, in `order`. */
+export const FEATURED_PROJECTS: Project[] = PROJECT_LIST.filter((p) => p.projectDetails.featured);
+
+/** Display label for a category key (also drives the #tag). */
+export function categoryLabel(category: ProjectCategory): string {
+  return PROJECT_CATEGORIES.find((c) => c.key === category)?.label ?? category;
 }
 
 export function getProjectByAlias(alias: string): Project | undefined {

@@ -5,8 +5,13 @@ import { Link } from 'react-scroll';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import { PROJECT_CATEGORIES, projectsInCategory } from '../../PROJECTS';
 import './ProjectsPage.scss';
-import { ProjectTileProps } from '../../components/ProjectTile/ProjectTile';
+import { Project } from '../../types/project.model';
+
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
+
+interface ProjectTileProps {
+  project: Project;
+}
 
 function MiniProject(props: ProjectTileProps) {
   let icon = props.project.projectDetails.thumbnailImage

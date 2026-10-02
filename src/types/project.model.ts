@@ -64,11 +64,11 @@ export interface ProjectDetails {
   category: ProjectCategory;
   /** Display order across the whole portfolio, ascending. Gaps are fine. */
   order: number;
+  /** Show on the homepage's featured works. Order comes from `order`. */
+  featured?: boolean;
   name: string;
   kind?: string;
   brief: string;
-  /** Discipline label shown as a #tag (e.g. "Game Development"). */
-  showcase: string;
   origin: ProjectOrigin;
   status: ProjectStatus;
   role?: string;
@@ -90,6 +90,9 @@ export interface ProjectDetails {
   /** Everything else, listed in the page's Links section. */
   links?: ProjectLinks[];
   skills?: string[];
+  /** Cover for cards (directory, homepage). Falls back to backgroundImage,
+   *  then a pattern. Point it at a small image: cards load many at once. */
+  cardImage?: ProjectImage;
   thumbnailImage?: ProjectImage;
   backgroundImage?: ProjectImage;
 }

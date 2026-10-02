@@ -1,5 +1,5 @@
-import { ProjectTileProps } from '../ProjectTile/ProjectTile';
-import { MediaItem } from '../../types/project.model';
+import { MediaItem, Project } from '../../types/project.model';
+import { categoryLabel } from '../../PROJECTS';
 import { resolveMedia } from '../../media';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import ProjectIconRow from '../UI/ProjectIconRow/ProjectIconRow';
@@ -7,8 +7,11 @@ import ProjectLinks from '../UI/ProjectLinks/ProjectLinks';
 import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
 import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
 
-
 import './ProjectTileLarge.scss';
+
+interface ProjectTileProps {
+  project: Project;
+}
 
 /* Legacy /portfolio tile only (retired with the directory in stage 4):
  * shows the featured media when it's a still image. */
@@ -71,7 +74,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
         projAlias={props.project.projectDetails.alias}
         projName={props.project.projectDetails.name}
         kind={props.project.projectDetails.kind}
-        showcase={props.project.projectDetails.showcase}
+        showcase={categoryLabel(props.project.projectDetails.category)}
         origin={props.project.projectDetails.origin}
         status={props.project.projectDetails.status}
         year={props.project.projectDetails.year}

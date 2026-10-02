@@ -10,7 +10,7 @@ import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../components/UI/ProjectSkills/ProjectSkills';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
-import { getProjectByAlias } from '../../PROJECTS';
+import { categoryLabel, getProjectByAlias } from '../../PROJECTS';
 import MediaFrame from '../../components/UI/Media/MediaFrame';
 import Gallery from '../../components/UI/Media/Gallery';
 import { MediaItem, ProjectDetails } from '../../types/project.model';
@@ -159,7 +159,7 @@ function ProjectHero(props: { details: ProjectDetails }) {
         {/* One line: drifts as a ticker only when it doesn't fit. (Year lives
             in the spec sheet.) */}
         <Ticker className="project-hero-meta">
-          <MetaTags tags={[d.showcase, d.origin, d.status]} />
+          <MetaTags tags={[categoryLabel(d.category), d.origin, d.status]} />
         </Ticker>
       </div>
     </header>
