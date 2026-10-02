@@ -1,0 +1,67 @@
+.ticker {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+}
+
+.ticker-copy {
+  flex: none;
+
+  /* Whatever's inside stays on one line (e.g. MetaTags normally wraps). */
+  > * {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+}
+
+.ticker.is-moving {
+  cursor: pointer;
+
+  /* Soft edges, so the drift reads as passing through rather than chopped. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+
+  .ticker-copy {
+    padding-right: var(--ticker-gap);
+  }
+
+  .ticker-track {
+    animation: ticker-drift var(--ticker-duration) linear infinite;
+  }
+}
+
+.ticker.is-paused .ticker-track,
+.ticker.is-moving:hover .ticker-track,
+.ticker.is-moving:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--ticker-distance))); }
+}
+
+/* Reduced motion: no drift; the line can be swiped instead. */
+@media (prefers-reduced-motion: reduce) {
+  .ticker.is-moving {
+    overflow-x: auto;
+    cursor: auto;
+
+    .ticker-track {
+      animation: none;
+    }
+
+    /* the loop's duplicate copy only exists for the drift */
+    .ticker-copy {
+      padding-right: 0;
+    }
+
+    .ticker-copy + .ticker-copy {
+      display: none;
+    }
+  }
+}

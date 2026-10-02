@@ -1,0 +1,71 @@
+@use '../../../base';
+
+/**
+ * Justified rows. A tile's basis is (ratio x row height) and it grows in
+ * proportion to its ratio, so every tile in a row ends up the same height.
+ * The ::after filler soaks up the last row so its tiles stay at row height
+ * instead of ballooning to fill the line.
+ *
+ * Phones keep justified rows, just shorter: wide shots take a row to
+ * themselves, squares and portraits pair up instead of filling the screen.
+ */
+.gallery {
+  --row-h: 8.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: base.$space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &::after {
+    content: '';
+    flex-grow: 999;
+  }
+}
+
+.gallery-item {
+  flex: var(--ratio) 1 calc(var(--ratio) * var(--row-h));
+  min-width: 0;
+  aspect-ratio: var(--ratio);
+}
+
+.gallery-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background-color: base.$color-black;
+  border: 1px solid rgba(base.$site-color-gray, 0.14);
+  border-radius: base.$radius;
+  transition: border-color 0.2s ease;
+
+  /* Tiles fill their box exactly (cropping is ~0 since the box has the
+   * media's own ratio); the viewer shows the full uncropped media. */
+  .media-frame,
+  .media-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: base.$color-signal;
+  }
+
+  &:hover .media-frame,
+  &:focus-visible .media-frame {
+    transform: scale(1.03);
+  }
+}
+
+@media all and (min-width: base.$bp) {
+  .gallery {
+    --row-h: 15rem;
+  }
+}

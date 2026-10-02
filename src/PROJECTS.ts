@@ -17,8 +17,8 @@ const PROJECTS: Record<string, Project> = {
       year: '2024 - Present',
       outcome: '',
       brief: `A "rave-flavored" tactical shooter/strategy experience.`,
-      description: 'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
-      descriptionBullets: [
+      body: [
+        'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
       ],
       skills: [
         "Unreal",
@@ -26,6 +26,11 @@ const PROJECTS: Record<string, Project> = {
         "Blender",
         "Photoshop"
       ],
+      heroLink: {
+        label: 'Official Website',
+        target: 'https://blackout-punk.com',
+        icon: 'blackout-punk-icon'
+      },
       links: [
         {
           label: 'Official Website',
@@ -51,10 +56,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'blackout-punk-background',
         alt: 'BLACK0UT.PUNK Background Grid'
       },
-      detailImage: {
-        source: 'blackout-punk-detail',
-        alt: 'BLACK0UT.PUNK Gameplay'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'blackout-punk-detail',
+          alt: 'BLACK0UT.PUNK Gameplay',
+          width: 2343,
+          height: 958,
+        },
+        gallery: [
+          { type: 'image', src: 'blackout-punk-detail', alt: 'BLACK0UT.PUNK Gameplay', width: 2343, height: 958 },
+          { type: 'image', src: 'blackout-punk-background', alt: 'BLACK0UT.PUNK Background Grid', width: 2887, height: 1176 },
+          { type: 'image', src: 'blackout-punk-icon', alt: 'BLACK0UT.PUNK Icon', width: 587, height: 587 },
+        ],
+      },
     }
   },
 
@@ -73,8 +88,8 @@ const PROJECTS: Record<string, Project> = {
       year: 'Q1 2025',
       outcome: 'shipped',
       brief: `Research, Development, and Back-End System Design for ClickTune LLC.`,
-      description: 'ClickTune LLC is building an aspiring social media experience where users can share audio clips attached to text messages [US Patent # 12,671,666]. Provided preliminary technical research, rapid prototyping, and back-end design required for patent acceptance.',
-      descriptionBullets: [
+      body: [
+        'ClickTune LLC is building an aspiring social media experience where users can share audio clips attached to text messages [US Patent # 12,671,666]. Provided preliminary technical research, rapid prototyping, and back-end design required for patent acceptance.',
       ],
       skills: [
         "AWS-S3",
@@ -95,9 +110,17 @@ const PROJECTS: Record<string, Project> = {
         source: 'tc-logo',
         alt: 'ToasterCat Icon'
       },
-      detailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Icon'
+      media: {
+        featured: {
+          type: 'image',
+          src: 'tc-logo',
+          alt: 'ToasterCat Icon',
+          width: 501,
+          height: 500,
+        },
+        gallery: [
+          { type: 'image', src: 'tc-logo', alt: 'ToasterCat Icon', width: 501, height: 500 },
+        ],
       },
     }
   },
@@ -114,11 +137,24 @@ const PROJECTS: Record<string, Project> = {
       origin: 'client',
       status: 'shipped',
       role: 'Research and Technical Product Design - Back-End and App Integration.',
-      year: 'Q2 2021',
+      year: '2021',
       outcome: 'Abandoned by client after provided total technical scope.',
       brief: `A multi-faceted content distribution and networking platform for musicians, producers, and digital artists.`,
-      description: "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
-      descriptionBullets: [
+      body: [
+        "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
+      ],
+      media: {
+        gallery: [
+          { type: 'image', src: 'tc-logo', alt: 'ToasterCat Icon', width: 501, height: 500 },
+        ],
+      },
+      testimonials: [
+        {
+          quote: "Dirk from ToasterCat Studios is professional and pragmatic. His systems approach in framing large-scale projects into actionable pathways is truly valuable.",
+          name: "Daniel Kraft",
+          title: "Web Developer, Open Sourcerer",
+          org: "friggingglorio.us"
+        }
       ],
       skills: [
         "AWS-S3",
@@ -152,10 +188,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2023',
       outcome: 'Album released to all major streaming platforms.',
       brief: `Debut LP by local Seattle act "Octopus Attacks Shark!!"`,
-      description: 'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino. Tracked guitars, vocals, and additional overlays. Mixed band-provided samples for interludes and layered vocals.',
-      descriptionBullets: [
-        "Tracked guitars, vocals, and additional overlays.",
-        "Mixed band-provided samples for interludes and layered vocals."
+      body: [
+        'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino.',
+        '- Tracked guitars, vocals, and additional overlays\n- Mixed band-provided samples for interludes and layered vocals',
       ],
       skills: [
         "Reaper"
@@ -185,10 +220,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'oas-outside-agitators',
         alt: 'Outside Agitators Album Art'
       },
-      detailImage: {
-        source: 'oas-site-title',
-        alt: 'OAS Band Title'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'oas-site-title',
+          alt: 'OAS Band Title',
+          width: 417,
+          height: 500,
+        },
+        gallery: [
+          { type: 'image', src: 'oas-site-title', alt: 'OAS Band Title', width: 417, height: 500 },
+          { type: 'image', src: 'oas-outside-agitators', alt: 'Outside Agitators Album Art', width: 1400, height: 1400 },
+          { type: 'image', src: 'oas-logo', alt: 'OAS Band Logo', width: 900, height: 900 },
+        ],
+      },
     }
   },
 
@@ -207,7 +252,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2022',
       outcome: 'Project shelved by client pending additional legal review.',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
-      description: `Inspired by the Defense Distributed movement, the "Free and Open-Source Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+      body: [
+        `Inspired by the Defense Distributed movement, the "Free and Open-Source Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+      ],
       skills: [
         "Unity",
         "Fusion360"
@@ -227,10 +274,19 @@ const PROJECTS: Record<string, Project> = {
         source: 'foss-background',
         alt: 'FOSS Armory'
       },
-      detailImage: {
-        source: 'foss-background',
-        alt: 'FOSS Armory'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'foss-background',
+          alt: 'FOSS Armory',
+          width: 1471,
+          height: 983,
+        },
+        gallery: [
+          { type: 'image', src: 'foss-background', alt: 'FOSS Armory', width: 1471, height: 983 },
+          { type: 'image', src: 'logo-defense-distributed', alt: 'Defense Distributed Logo', width: 340, height: 340 },
+        ],
+      },
     }
   },
 
@@ -249,7 +305,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2021',
       outcome: 'Site launched in 2021 to produce annual user growth and consistent AdSense impression revenue.',
       brief: `"A Poorly Edited Editorial" - Multimedia pop culture blog powered by an SEO Ad Revenue model.`,
-      description: `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
+      body: [
+        `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
+      ],
       skills: [
         "WordPress",
         "AdSense",
@@ -271,10 +329,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'crude-mirror-background',
         alt: 'Crude-Mirror Banner'
       },
-      detailImage: {
-        source: 'crude-mirror-site-screenshot',
-        alt: 'Crude-Mirror Site'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'crude-mirror-site-screenshot',
+          alt: 'Crude-Mirror Site',
+          width: 761,
+          height: 505,
+        },
+        gallery: [
+          { type: 'image', src: 'crude-mirror-site-screenshot', alt: 'Crude-Mirror Site', width: 761, height: 505 },
+          { type: 'image', src: 'crude-mirror-background', alt: 'Crude-Mirror Banner', width: 1024, height: 640 },
+          { type: 'image', src: 'crude-mirror-logo', alt: 'Crude-Mirror Logo', width: 500, height: 500 },
+        ],
+      },
     }
   },
 
@@ -293,7 +361,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2022',
       outcome: 'Site launched for client, attracting new leads through direct contact forms and indirect search analytics.',
       brief: `Business portfolio and web presence for a local digital marketing provider specializing in SEO and market segment presence.`,
-      description: `A simple responsive website launched with custom CSS and JS elements using minimal-cost architecture ($0.12/mo) matching strict client specifications for layout, copy, and look-and-feel.`,
+      body: [
+        `A simple responsive website launched with custom CSS and JS elements using minimal-cost architecture ($0.12/mo) matching strict client specifications for layout, copy, and look-and-feel.`,
+      ],
       skills: [
         "HTML",
         "CSS",
@@ -316,10 +386,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'strongarm-background',
         alt: 'Strongarm Site'
       },
-      detailImage: {
-        source: 'strongarm-site-screenshot',
-        alt: 'Strongarm Site'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'strongarm-site-screenshot',
+          alt: 'Strongarm Site',
+          width: 851,
+          height: 512,
+        },
+        gallery: [
+          { type: 'image', src: 'strongarm-site-screenshot', alt: 'Strongarm Site', width: 851, height: 512 },
+          { type: 'image', src: 'strongarm-background', alt: 'Strongarm Site', width: 1891, height: 900 },
+          { type: 'image', src: 'strongarm-logo', alt: 'Strongarm Logo', width: 483, height: 162 },
+        ],
+      },
     }
   },
 
@@ -338,7 +418,29 @@ const PROJECTS: Record<string, Project> = {
       year: '2022',
       outcome: 'Site shipped and maintained to promote ticket sales and album release.',
       brief: `E-Commerce font-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
-      description: `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
+      body: [
+        `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
+      ],
+      testimonials: [
+        { 
+          quote: "Dirk's a rockstar!",
+          name: "Coyote",
+          title: "Vocals",
+          org: "OAS"
+        },
+        { 
+          quote: "Nice, man",
+          name: "Shiva Shrivastava",
+          title: "Drums",
+          org: "OAS"
+        },
+        { 
+          quote: "Groovy",
+          name: "Scott",
+          title: "Bass",
+          org: "OAS"
+        },
+      ],
       skills: [
         "HTML",
         "CSS",
@@ -347,14 +449,19 @@ const PROJECTS: Record<string, Project> = {
         "AWS-CloudFront",
         "Shopify"
       ],
+      heroLink: {
+          label: 'Band Site',
+          target: 'https://www.octopus-attacks-shark.com',
+          icon: 'oas-logo'
+        },
       links: [
         {
-          label: 'Portfolio',
+          label: 'Portfolio Site',
           target: 'https://www.octopus-attacks-shark.com',
           icon: 'oas-logo'
         },
         {
-          label: 'Store',
+          label: 'Merch Store',
           target: 'https://merch.octopus-attacks-shark.com',
           icon: 'oas-logo'
         }
@@ -367,10 +474,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'oas-background',
         alt: 'OAS Band'
       },
-      detailImage: {
-        source: 'oas-site-screenshot',
-        alt: 'OAS Site'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'oas-site-screenshot',
+          alt: 'OAS Site',
+          width: 755,
+          height: 512,
+        },
+        gallery: [
+          { type: 'image', src: 'oas-site-screenshot', alt: 'OAS Site', width: 755, height: 512 },
+          { type: 'image', src: 'oas-background', alt: 'OAS Band', width: 1600, height: 900 },
+          { type: 'image', src: 'oas-site-title', alt: 'OAS Logo', width: 417, height: 500 },
+        ],
+      },
     }
   },
 
@@ -389,7 +506,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2021',
       outcome: 'Site shipped and maintained to promote live events and merchandizing sales.',
       brief: `Custom portfolio site and brand press pack for local post-metal act - "Ugliest Man Alive" [U.M.A]`,
-      description: `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
+      body: [
+        `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
+      ],
       skills: [
         "Squarespace",
         "Photoshop",
@@ -410,10 +529,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'uma-background',
         alt: 'UMA Band'
       },
-      detailImage: {
-        source: 'uma-machine-god',
-        alt: 'UMA MachineGod//Suicide'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'uma-machine-god',
+          alt: 'UMA MachineGod//Suicide',
+          width: 720,
+          height: 405,
+        },
+        gallery: [
+          { type: 'image', src: 'uma-machine-god', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
+          { type: 'image', src: 'uma-background', alt: 'UMA Band', width: 1910, height: 900 },
+          { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
+        ],
+      },
     }
   },
 
@@ -432,7 +561,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2013',
       outcome: 'Project shipped and available for purchase on Amazon AppStore.',
       brief: `A rogue-like bullet hell game for Android using custom motion controlls and procedural enemy generation.`,
-      description: `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
+      body: [
+        `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
+      ],
       skills: [
         "Android",
         "AmazonCoins",
@@ -458,10 +589,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'pixhell-background',
         alt: 'PixHell'
       },
-      detailImage: {
-        source: 'pixhell-flyer',
-        alt: 'PixHell'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'pixhell-flyer',
+          alt: 'PixHell',
+          width: 1024,
+          height: 500,
+        },
+        gallery: [
+          { type: 'image', src: 'pixhell-flyer', alt: 'PixHell', width: 1024, height: 500 },
+          { type: 'image', src: 'pixhell-background', alt: 'PixHell', width: 1200, height: 1920 },
+          { type: 'image', src: 'pixhell-logo', alt: 'PixHell Logo', width: 100, height: 100 },
+        ],
+      },
     }
   },
 
@@ -480,12 +621,18 @@ const PROJECTS: Record<string, Project> = {
       year: '2014',
       outcome: `Fan project halted after Disney's acquisition of Lucasfilm.`,
       brief: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
-      description: ``,
+      body: [],
       skills: [
         "Unity",
         "Maya",
         "Fusion360"
       ],
+      media: {
+        gallery: [
+          { type: 'image', src: 'wraith-background', alt: 'Wraith Squadron', width: 1684, height: 1040 },
+          { type: 'image', src: 'wraith-logo', alt: 'Wraith Squadron Logo', width: 593, height: 602 },
+        ],
+      },
       links: [
         {
           label: 'GitHub',
@@ -519,7 +666,15 @@ const PROJECTS: Record<string, Project> = {
       year: '2014',
       outcome: 'Project shipped and reviewed as a featured finalist at VT Game Expo 2014',
       brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
-      description: `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
+      body: [
+        `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
+      ],
+      media: {
+        gallery: [
+          { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet Flyer', width: 450, height: 600 },
+          { type: 'image', src: 'chick-magnet-logo', alt: 'Chick Magnet Logo', width: 512, height: 512 },
+        ],
+      },
       skills: [
         "Unity",
         "Fusion360",
@@ -560,7 +715,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2017',
       outcome: 'Album released to streaming platforms',
       brief: `Debut LP for local Seattle post-metal act "Ugliest Man Alive [U.M.A]".`,
-      description: `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
+      body: [
+        `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
+      ],
       skills: [
         "Reaper"
       ],
@@ -589,10 +746,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'tcstudio-background',
         alt: 'UMA Band'
       },
-      detailImage: {
-        source: 'uma-redacted',
-        alt: 'UMA [redacted]'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'uma-redacted',
+          alt: 'UMA [redacted]',
+          width: 1080,
+          height: 608,
+        },
+        gallery: [
+          { type: 'image', src: 'uma-redacted', alt: 'UMA [redacted]', width: 1080, height: 608 },
+          { type: 'image', src: 'tcstudio-background', alt: 'UMA Band', width: 1350, height: 900 },
+          { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
+        ],
+      },
     }
   },
 
@@ -611,7 +778,7 @@ const PROJECTS: Record<string, Project> = {
       year: '2022',
       outcome: 'Prototype models and manufacturing files delivered to client for sale on their private sales platform.',
       brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
-      description: ``,
+      body: [],
       skills: [
         "FDM",
         "Cura",
@@ -627,10 +794,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'moxel-background',
         alt: 'Moxel Hook Slicing Render'
       },
-      detailImage: {
-        source: 'moxel-logo-text',
-        alt: 'Moxel LLC'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'moxel-logo-text',
+          alt: 'Moxel LLC',
+          width: 738,
+          height: 176,
+        },
+        gallery: [
+          { type: 'image', src: 'moxel-logo-text', alt: 'Moxel LLC', width: 738, height: 176 },
+          { type: 'image', src: 'moxel-background', alt: 'Moxel Hook Slicing Render', width: 1200, height: 900 },
+          { type: 'image', src: 'moxel-logo', alt: 'Moxel Logo', width: 183, height: 158 },
+        ],
+      },
     }
   },
 
@@ -649,7 +826,7 @@ const PROJECTS: Record<string, Project> = {
       year: '2021',
       outcome: '',
       brief: `Custom operational Nerf(TM) blaster comissioned compatible with Worker(TM) magazines and darts.`,
-      description: ``,
+      body: [],
       skills: [
         "FDM",
         "Cura",
@@ -663,10 +840,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'lizzie-profile',
         alt: 'Lizzie Assembly'
       },
-      detailImage: {
-        source: 'lizzie-tinker',
-        alt: 'Lizzie Model'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'lizzie-tinker',
+          alt: 'Lizzie Model',
+          width: 5000,
+          height: 3333,
+        },
+        gallery: [
+          { type: 'image', src: 'lizzie-tinker', alt: 'Lizzie Model', width: 5000, height: 3333 },
+          { type: 'image', src: 'lizzie-profile', alt: 'Lizzie Assembly', width: 1350, height: 900 },
+          { type: 'image', src: 'logo-nerf', alt: 'TC Logo', width: 570, height: 291 },
+        ],
+      },
     }
   },
 
@@ -685,7 +872,9 @@ const PROJECTS: Record<string, Project> = {
       year: '2022',
       outcome: '400 units sold in first year to 98% positive customer reviews.',
       brief: `Custom sight adapters printed for common pistol models.`,
-      description: `TODO: Bar Code #`,
+      body: [
+        `TODO: Bar Code #`,
+      ],
       skills: [
         "FDM",
         "Cura",
@@ -714,10 +903,20 @@ const PROJECTS: Record<string, Project> = {
         source: 'tcprint-background',
         alt: 'TC Print Shop'
       },
-      detailImage: {
-        source: 'tcprint-product',
-        alt: 'TC Print Product Rotation'
-      }
+      media: {
+        featured: {
+          type: 'image',
+          src: 'tcprint-product',
+          alt: 'TC Print Product Rotation',
+          width: 5000,
+          height: 3333,
+        },
+        gallery: [
+          { type: 'image', src: 'tcprint-product', alt: 'TC Print Product Rotation', width: 5000, height: 3333 },
+          { type: 'image', src: 'tcprint-background', alt: 'TC Print Shop', width: 1350, height: 900 },
+          { type: 'image', src: 'tc-logo', alt: 'TC Logo', width: 501, height: 500 },
+        ],
+      },
     }
   }
 };

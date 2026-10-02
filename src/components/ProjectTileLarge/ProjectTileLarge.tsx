@@ -1,23 +1,26 @@
-import { ProjectTileProps, ProjectImageProps } from '../ProjectTile/ProjectTile';
+import { ProjectTileProps } from '../ProjectTile/ProjectTile';
+import { MediaItem } from '../../types/project.model';
+import { resolveMedia } from '../../media';
+import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import ProjectIconRow from '../UI/ProjectIconRow/ProjectIconRow';
 import ProjectLinks from '../UI/ProjectLinks/ProjectLinks';
 import ProjectSkills from '../UI/ProjectSkills/ProjectSkills';
 import SmallContentSection from '../UI/SmallContentSection/SmallContentSection';
 
-import { ASSET_MANIFEST } from '../../assets/AssetMap';
 
 import './ProjectTileLarge.scss';
 
-function ProjectScreenshot(props: ProjectImageProps) {
-  return props.image
-    ? (
-          <div className="project-tile-large-screenshot">
-            <img 
-              src={ASSET_MANIFEST.get(props.image?.source)} 
-              alt={props.image?.alt} />
-          </div>
-      )
-    : (<></>);
+/* Legacy /portfolio tile only (retired with the directory in stage 4):
+ * shows the featured media when it's a still image. */
+function ProjectScreenshot(props: { media?: MediaItem }) {
+  if (props.media?.type !== 'image') {
+    return null;
+  }
+  return (
+    <div className="project-tile-large-screenshot">
+      <img src={resolveMedia(props.media.src)} alt={props.media.alt} />
+    </div>
+  );
 }
 
 interface ProjectEngagementProps {
@@ -86,7 +89,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
           <SmallContentSection
             heading={''}
             styleClass={'project-tile-large-description'}
-            content={props.project.projectDetails.description}
+            content={props.project.projectDetails.body.find((p) => !p.startsWith('- ')) ?? ''}
           />
           <ProjectEngagement
             role={props.project.projectDetails.role}
@@ -110,7 +113,7 @@ export default function ProjectTileLarge(props: ProjectTileProps) {
             />
           </div>
 
-          <ProjectScreenshot image={props.project.projectDetails.detailImage}/> 
+          <ProjectScreenshot media={props.project.projectDetails.media?.featured} /> 
         </div>
 
       </section>

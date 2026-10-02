@@ -1,0 +1,86 @@
+@use '../../../base';
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40; /* above header (20) and mobile menu (30) */
+
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background-color: #0a0a0a; /* opaque: no page bleeding through */
+  animation: lightbox-in 0.18s ease-out;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-bar,
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: base.$space-2 base.$space-4;
+}
+
+.lightbox-bar {
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.5);
+}
+
+.lightbox-nav {
+  border-top: 1px solid rgba(base.$color-meta-dim, 0.5);
+}
+
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: base.$space-4;
+  overflow: hidden;
+}
+
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: base.$space-3;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+
+  /* Fit inside the stage at any aspect ratio, never upscaled past source. */
+  .media-frame {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 11rem);
+    object-fit: contain;
+  }
+
+  /* Embeds have no intrinsic size; give them one from the viewport (the
+   * figure shrink-wraps, so a % width would collapse). */
+  .media-embed,
+  .media-embed--idle {
+    width: min(calc(100vw - 2rem), calc((100vh - 11rem) * 16 / 9));
+  }
+}
+
+.lightbox-caption {
+  max-width: 48rem;
+  font-size: base.$type-meta;
+  color: base.$site-color-gray;
+  text-align: center;
+}
+
+@media all and (min-width: base.$bp) {
+  .lightbox-bar,
+  .lightbox-nav {
+    padding: base.$space-2 base.$space-6;
+  }
+
+  .lightbox-stage {
+    padding: base.$space-5 base.$space-7;
+  }
+}

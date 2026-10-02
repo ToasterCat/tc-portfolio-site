@@ -1,0 +1,555 @@
+@use '../../base';
+
+/**
+ * PROJECT PAGE - the per-project "dossier".
+ *
+ * One content rail (64rem, same as the header/footer) carries the breadcrumb,
+ * featured media, columns and back link; the hero and testimonial band run
+ * full-bleed. Monospace stays the meta voice: labels, tags, spec keys.
+ */
+
+$rail: 64rem;
+$spec-w: 18rem;
+
+%rail {
+  width: 100%;
+  max-width: $rail;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: base.$space-4;
+  padding-right: base.$space-4;
+  box-sizing: border-box;
+}
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Breadcrumb ------------------------------------------------------ */
+
+.project-page-crumbs {
+  @extend %rail;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding-top: base.$space-4;
+  padding-bottom: base.$space-4;
+
+  a {
+    color: base.$color-meta;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+  }
+
+  [aria-current] {
+    color: base.$color-light;
+  }
+}
+
+/* ---- Hero ------------------------------------------------------------ */
+
+.project-hero {
+  position: relative;
+  isolation: isolate;
+  background-color: base.$site-color-dark-alt;
+  background-size: cover;
+  background-position: center;
+  border-top: 1px solid base.$color-meta-dim;
+  border-bottom: 1px solid base.$color-meta-dim;
+}
+
+/* The scrim does the contrast work, so any photo can sit behind the type. */
+.project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    rgba(17, 17, 17, 0.94) 0%,
+    rgba(17, 17, 17, 0.82) 55%,
+    rgba(17, 17, 17, 0.6) 100%
+  );
+}
+
+/* No photo: a deliberate dot grid instead of a stretched placeholder (N8). */
+.project-hero--pattern {
+  background-image: radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px);
+  background-size: 14px 14px;
+  background-position: 0 0;
+}
+
+.project-hero--pattern::before {
+  background: linear-gradient(to right, rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.35));
+}
+
+/* [KIND] eyebrow on its own full-width row; below it the logo sits centred
+ * on the title, with brief and hero link in the text column. Phones run the
+ * tag ticker full width; desktop keeps it in the text column too. */
+.project-hero-inner {
+  @extend %rail;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: base.$space-3 base.$space-4;
+  padding-top: base.$space-6;
+  padding-bottom: base.$space-6;
+
+  /* The single hero link is short enough to sit in the text column too. */
+  > .project-hero-brief,
+  > .project-hero-links {
+    grid-column: 2;
+  }
+
+  > .project-hero-kind,
+  > .project-hero-meta {
+    grid-column: 1 / -1;
+  }
+}
+
+.project-hero-inner--no-thumb {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-hero-thumb {
+  align-self: center; /* centred on the title, however many lines it wraps */
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+/* [KIND] on a tinted plate - same treatment as the portfolio title bars. */
+.project-hero-kind {
+  justify-self: start;
+  margin: 0;
+  padding: 0.1em 0.4em;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: base.$radius-sm;
+  background-color: rgba(base.$color-meta, 0.14);
+}
+
+.project-hero-bracket {
+  position: relative;
+  top: -0.08em;
+}
+
+.project-hero-title {
+  align-self: center;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.35em;
+  margin: 0;
+  font-size: base.$type-h2-m;
+  letter-spacing: base.$tracking-display;
+}
+
+/* PT Mono's "\\" dips into the descender, so on the shared baseline the
+ * mark sat ~0.28em (of itself) below the caps' centre. Lift it back. */
+.project-hero-prompt {
+  flex: none;
+  position: relative;
+  top: -0.28em;
+  font-size: 0.6em;
+  letter-spacing: 0;
+}
+
+/* Basis 0 keeps a long name on the prompt's line, wrapping within it,
+ * instead of dropping below and stranding the "\>" on its own. */
+.project-hero-name {
+  flex: 1 1 0;
+  min-width: 0;
+  /* Last resort only: names wrap at spaces, then at dots (<wbr> in the
+   * markup); a single unbreakable word still can't burst a 320px screen. */
+  overflow-wrap: break-word;
+}
+
+.project-hero-brief {
+  max-width: 40rem;
+  margin: 0;
+  font-size: base.$type-body-m; /* a descriptive sentence, not a slogan */
+  font-weight: 400;
+  line-height: 1.5;
+  color: base.$color-light;
+  text-wrap: pretty;
+}
+
+.project-hero-links {
+  display: flex;
+  flex-flow: row wrap;
+  gap: base.$space-3;
+  margin-top: base.$space-2;
+}
+
+/* The tag line (a Ticker): one row, drifting only if it overflows. */
+.project-hero-meta {
+  margin-top: base.$space-1;
+}
+
+/* ---- Featured media -------------------------------------------------- */
+
+.project-featured {
+  @extend %rail;
+  margin-top: base.$space-6;
+  margin-bottom: 0;
+
+  /* Fills the rail when the source is big enough; small art keeps its own
+   * size (--source-w), and tall pieces are capped to the viewport. */
+  .media-frame {
+    width: auto;
+    max-width: min(100%, var(--source-w, 100%));
+    height: auto;
+    max-height: 75vh;
+    margin: 0 auto;
+    border-radius: base.$radius;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.45);
+  }
+
+  .media-embed {
+    border-radius: base.$radius;
+    overflow: hidden;
+  }
+
+  figcaption {
+    margin-top: base.$space-2;
+  }
+}
+
+/* ---- Overview + spec sheet ------------------------------------------- */
+
+.project-page-columns {
+  @extend %rail;
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-6;
+  padding-top: base.$space-6;
+  padding-bottom: base.$space-6;
+}
+
+.project-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-6;
+  min-width: 0;
+}
+
+/* Section labels: the monospace device, small and tracked. */
+.project-page-label {
+  margin: 0 0 base.$space-3 0;
+  padding-bottom: base.$space-2;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: base.$color-meta-dim;
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.45);
+}
+
+.project-page-body {
+  max-width: 40rem;
+  color: base.$site-color-gray;
+
+  p {
+    margin: 0 0 base.$space-4 0;
+    text-wrap: pretty;
+  }
+
+  p:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin: 0 0 base.$space-4 0;
+    padding-left: base.$space-5;
+  }
+
+  li {
+    margin-bottom: base.$space-2;
+  }
+
+  li::marker {
+    color: base.$color-meta;
+  }
+
+  strong {
+    color: base.$color-light;
+  }
+}
+
+/* Links in project copy (body and quotes): off-white with an olive
+ * underline at rest, signal red when engaged. */
+.project-page-body a,
+.project-quote a {
+  color: base.$color-light;
+  text-decoration-color: base.$color-meta-dim;
+  text-underline-offset: 0.2em;
+}
+
+.project-page-body a:hover,
+.project-page-body a:focus-visible,
+.project-quote a:hover,
+.project-quote a:focus-visible {
+  color: base.$color-signal;
+  text-decoration-color: currentColor;
+}
+
+/* The outcome closes the story in the body's own voice: stated plainly,
+ * not as a pull-quote (a loud "shelved" undercuts the work itself). */
+.project-page-outcome p {
+  max-width: 40rem;
+  margin: 0;
+  color: base.$site-color-gray;
+  text-wrap: pretty;
+}
+
+/* ---- Spec sheet ------------------------------------------------------ */
+
+/* Phones read the story first: Overview -> Outcome -> Links -> spec sheet
+ * (an appendix). The aside follows the main column, and inside it the Links
+ * group jumps ahead of the spec list. Desktop restores spec-then-links. */
+.project-spec {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+
+  dl {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: base.$space-4 base.$space-5;
+    border: 1px solid rgba(base.$site-color-gray, 0.16);
+    border-radius: base.$radius;
+    background-color: rgba(base.$color-black, 0.35);
+  }
+}
+
+.project-spec-row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: base.$space-3;
+  padding: base.$space-3 0;
+  border-bottom: 1px solid rgba(base.$site-color-gray, 0.1);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    padding-top: 0.15em;
+    font-size: base.$type-meta-sm;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Same size as the tech list and #tags beside it. */
+  dd {
+    margin: 0;
+    font-size: base.$type-meta;
+    color: base.$color-light;
+    line-height: 1.45;
+  }
+}
+
+.project-spec-tech {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: base.$space-2;
+    font-size: base.$type-meta;
+  }
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    border-radius: base.$radius-sm;
+  }
+}
+
+/* Links: their own group under the spec sheet. Phones wrap them in a row;
+ * desktop stacks them full-width down the details column. */
+.project-spec-links {
+  order: -1;
+  min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
+  margin-bottom: base.$space-6;
+}
+
+.project-spec-links-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: base.$space-3;
+}
+
+/* ---- Gallery ---------------------------------------------------------- */
+
+.project-page-gallery {
+  @extend %rail;
+  min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
+  padding-bottom: base.$space-7;
+}
+
+/* ---- Testimonials: the stand-out band -------------------------------- */
+
+.project-page-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-7;
+  padding: base.$space-7 base.$space-4;
+  background-color: base.$color-black;
+  border-top: 1px solid base.$color-meta-dim;
+  border-bottom: 1px solid base.$color-meta-dim;
+}
+
+.project-quote {
+  position: relative;
+  box-sizing: border-box; /* the hanging-quote padding sits inside the 100% */
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding-left: base.$space-6;
+
+  /* Oversized mark in the signal red, hung outside the text block. */
+  &::before {
+    content: '\201C';
+    position: absolute;
+    left: -0.1em;
+    top: -0.32em;
+    font-family: base.$font-heading;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: base.$color-signal;
+  }
+
+  blockquote {
+    margin: 0;
+  }
+
+  blockquote p {
+    margin: 0 0 base.$space-4 0;
+    font-family: base.$font-heading;
+    font-size: base.$type-h4-m;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: base.$tracking-heading;
+    color: base.$color-light;
+    text-wrap: pretty;
+  }
+
+  figcaption {
+    letter-spacing: 0.04em;
+  }
+}
+
+/* ---- Back + bottom --------------------------------------------------- */
+
+.project-page-back {
+  @extend %rail;
+  padding-top: base.$space-6;
+  padding-bottom: base.$space-6;
+}
+
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: base.$bp) {
+  .project-page-crumbs,
+  .project-hero-inner,
+  .project-featured,
+  .project-page-columns,
+  .project-page-gallery,
+  .project-page-back {
+    padding-left: base.$space-6;
+    padding-right: base.$space-6;
+  }
+
+  .project-hero-inner {
+    align-items: start;
+    gap: base.$space-3 base.$space-6;
+    padding-top: base.$space-8;
+    padding-bottom: base.$space-8;
+
+    > .project-hero-brief,
+    > .project-hero-meta,
+    > .project-hero-links {
+      grid-column: 2;
+    }
+  }
+
+  /* (doubled class to outrank the column-2 rule above, no !important) */
+  .project-hero-inner.project-hero-inner--no-thumb > * {
+    grid-column: 1;
+  }
+
+  .project-hero-thumb {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .project-hero-title {
+    font-size: 3rem;
+  }
+
+  .project-hero-brief {
+    font-size: 1.125rem; /* 18px: a step above the 17px body */
+  }
+
+  /* Prose left, facts right; the facts follow you down the page. */
+  .project-page-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) $spec-w;
+    align-items: start;
+    gap: base.$space-7;
+    padding-top: base.$space-7;
+    padding-bottom: base.$space-7;
+  }
+
+  .project-spec-links-list {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .project-spec-links {
+    order: 0;
+    margin-top: base.$space-5;
+    margin-bottom: 0;
+  }
+
+  .project-spec {
+    position: sticky;
+    top: calc(#{base.$header-h} + #{base.$space-5});
+  }
+
+  .project-page-testimonials {
+    padding: base.$space-8 base.$space-6;
+  }
+
+  .project-quote {
+    padding-left: base.$space-7;
+
+    &::before {
+      font-size: 6rem;
+    }
+
+    blockquote p {
+      font-size: base.$type-h3;
+    }
+  }
+}

@@ -149,6 +149,13 @@
   font-size: base.$type-meta-sm;
 }
 
+/* Phones: the status column is desktop-only flavour; drop it to save a row. */
+@media all and (max-width: base.$bp) {
+  .footer-status {
+    display: none;
+  }
+}
+
 /**
  * Desktop / Horizontal
  */
