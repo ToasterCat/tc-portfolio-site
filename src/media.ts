@@ -38,6 +38,24 @@ export function resolveMedia(ref: MediaRef): string | undefined {
   return MEDIA_BASE + ref.replace(/^\/+/, '');
 }
 
+/**
+ * Bandcamp album player. Ids are numeric; anything else is rejected. Bandcamp
+ * offers only a dark or light theme (custom backgrounds are ignored), so it's
+ * the dark one, with the site's signal red for links.
+ */
+export function bandcampEmbedUrl(id: string): string | undefined {
+  if (!/^\d{5,12}$/.test(id)) {
+    return undefined;
+  }
+  return `https://bandcamp.com/EmbeddedPlayer/album=${id}/size=large/bgcol=333333/linkcol=f05a3f/tracklist=true/artwork=small/`;
+}
+
+/** Player height: 120px header + 33px per track + the list's own padding
+ *  (less than ~30px and Bandcamp shows an inner scrollbar). */
+export function bandcampPlayerHeight(tracks: number) {
+  return 120 + 33 * tracks + 30;
+}
+
 /** YouTube ids are 11 chars of [A-Za-z0-9_-]; anything else is rejected. */
 export function youtubeEmbedUrl(id: string): string | undefined {
   if (!/^[A-Za-z0-9_-]{11}$/.test(id)) {

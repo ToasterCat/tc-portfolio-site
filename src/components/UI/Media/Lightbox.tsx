@@ -105,10 +105,10 @@ export default function Lightbox(props: LightboxProps) {
       {count > 1 && (
         <div className="lightbox-nav">
           <button type="button" className="btn btn--tertiary" onClick={() => go(-1)}>
-            <Brackets>Prev</Brackets>
+            <Brackets>&lt; Prev</Brackets>
           </button>
           <button type="button" className="btn btn--tertiary" onClick={() => go(1)}>
-            <Brackets>Next</Brackets>
+            <Brackets>Next &gt;</Brackets>
           </button>
         </div>
       )}

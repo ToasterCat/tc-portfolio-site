@@ -26,7 +26,7 @@ export default function Homepage() {
       <HeroSection
         classPrefix={'hero1'}
         quote={{
-          content: `"If it works, it wasn't that crazy."`,
+          content: `"If an idea works, it can't be that crazy."`,
           src: `— ToasterCat Studios`,
           sub: ``
         }}
@@ -56,11 +56,11 @@ export default function Homepage() {
           <p>
             ToasterCat Studios is a free-range, ethically-sourced research center,
             makerspace, recording studio, and mad science laboratory based out of
-            the American Pacific Northwest. ToasterCat was founded in 2020 to provide
+            the American Pacific Northwest. Our team at ToasterCat provides
             engineering and logistical resources to local makers and artists alike.
           </p>
           <p>
-            The shop runs a printer fleet, a live room, and whatever hardware the
+            Our shop runs a 3D printer fleet, a live room, and whatever hardware the
             current project demands. Software, hardware, and audio all come out of
             the same building &mdash; which is the whole point. If the vision is mad
             enough, we want to talk shop. Still taking work.

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MediaItem } from '../../../types/project.model';
-import { resolveMedia, youtubeEmbedUrl } from '../../../media';
+import { bandcampEmbedUrl, bandcampPlayerHeight, resolveMedia, youtubeEmbedUrl } from '../../../media';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 import './MediaFrame.scss';
 
@@ -82,11 +82,54 @@ export default function MediaFrame(props: MediaFrameProps) {
       );
 
     case 'embed':
+      if (item.provider === 'bandcamp') {
+        // (thumb mode never happens: the data tests keep audio out of galleries)
+        return <BandcampEmbed id={item.id} title={item.title} tracks={item.tracks} poster={item.poster} />;
+      }
       if (mode === 'thumb') {
         return <PosterThumb poster={item.poster} label={item.title} width={16} height={9} />;
       }
       return <YouTubeEmbed id={item.id} title={item.title} poster={item.poster} />;
   }
+}
+
+/**
+ * Bandcamp album player, no click gate: the iframe lazy-loads as it nears
+ * the viewport, while a stand-in laid out like the player's own header
+ * (album art top-left, title beside it) holds its exact footprint and fades
+ * away once the player has loaded. One click to play.
+ */
+function BandcampEmbed(props: { id: string; title: string; tracks: number; poster?: string }) {
+  const [loaded, setLoaded] = useState(false);
+  const url = bandcampEmbedUrl(props.id);
+  const poster = props.poster ? resolveMedia(props.poster) : undefined;
+
+  if (!url) {
+    return null; // the data tests reject bad ids; never build a frame from one
+  }
+
+  return (
+    <div
+      className={`media-bandcamp ${loaded ? 'is-loaded' : ''}`}
+      style={{ height: bandcampPlayerHeight(props.tracks) }}
+    >
+      <iframe
+        src={url}
+        title={`${props.title} (Bandcamp player)`}
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+        referrerPolicy="strict-origin-when-cross-origin"
+        onLoad={() => setLoaded(true)}
+      />
+      <div className="media-bandcamp-standin" aria-hidden="true">
+        {poster ? <img src={poster} alt="" decoding="async" /> : <span className="media-bandcamp-art" />}
+        <span className="media-bandcamp-label">
+          <span className="media-bandcamp-title">{props.title}</span>
+          <span className="meta meta-dim">Loading player…</span>
+        </span>
+      </div>
+    </div>
+  );
 }
 
 /** Poster still + play badge, for video/embed previews. */

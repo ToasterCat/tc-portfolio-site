@@ -91,3 +91,88 @@
   font-weight: base.$weight-subhead;
   color: base.$color-light;
 }
+
+/* ---- Bandcamp ---------------------------------------------------------- */
+
+/* Footprint is set inline from the track count; the stand-in matches the
+ * player's dark theme (#333) and header layout so the swap is a soft fade. */
+.media-bandcamp {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  border-radius: base.$radius;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.media-bandcamp-standin {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: base.$space-4;
+  padding: 0;
+  /* faint tracklist rows under the 120px header, at the player's 33px pitch */
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 32px, rgba(255, 255, 255, 0.06) 32px 33px)
+      0 120px / 100% calc(100% - 120px) no-repeat,
+    #333;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+
+  img,
+  .media-bandcamp-art {
+    flex: none;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background-color: base.$color-black;
+  }
+}
+
+.media-bandcamp.is-loaded .media-bandcamp-standin {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.media-bandcamp-label {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-1;
+  padding-top: base.$space-4;
+}
+
+.media-bandcamp-title {
+  font-family: base.$font-heading;
+  font-weight: base.$weight-subhead;
+  color: base.$color-signal;
+}
+
+/* Phones: Bandcamp's own player drops the artwork when narrow, so the
+ * stand-in stops mimicking its header and becomes the album cover itself,
+ * dimmed, with the title over it. */
+@media all and (max-width: base.$bp) {
+  .media-bandcamp-standin {
+    background: #333;
+
+    img,
+    .media-bandcamp-art {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.35;
+    }
+  }
+
+  .media-bandcamp-label {
+    position: relative;
+    padding: base.$space-4;
+  }
+}

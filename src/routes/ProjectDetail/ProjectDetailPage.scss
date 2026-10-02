@@ -217,6 +217,11 @@ $spec-w: 18rem;
     overflow: hidden;
   }
 
+  .media-bandcamp {
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+
   figcaption {
     margin-top: base.$space-2;
   }

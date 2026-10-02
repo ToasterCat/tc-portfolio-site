@@ -58,11 +58,11 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
-          src: 'blackout-punk-detail',
-          alt: 'BLACK0UT.PUNK Gameplay',
-          width: 2343,
-          height: 958,
+          type: 'embed',
+          provider: 'youtube',
+          id: 'xMeRWH3r48A',
+          title: 'Caliban Gameplay Sample - Bot Arena',
+          poster: 'blackout-punk-detail',
         },
         gallery: [
           { type: 'image', src: 'blackout-punk-detail', alt: 'BLACK0UT.PUNK Gameplay', width: 2343, height: 958 },
@@ -222,11 +222,12 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
-          src: 'oas-site-title',
-          alt: 'OAS Band Title',
-          width: 417,
-          height: 500,
+          type: 'embed',
+          provider: 'bandcamp',
+          id: '2915178295',
+          title: 'Outside Agitators',
+          tracks: 8,
+          poster: 'oas-outside-agitators',
         },
         gallery: [
           { type: 'image', src: 'oas-site-title', alt: 'OAS Band Title', width: 417, height: 500 },
@@ -748,11 +749,12 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
-          src: 'uma-redacted',
-          alt: 'UMA [redacted]',
-          width: 1080,
-          height: 608,
+          type: 'embed',
+          provider: 'bandcamp',
+          id: '270867931',
+          title: 'Of Man and Nature',
+          tracks: 7,
+          poster: 'uma-logo',
         },
         gallery: [
           { type: 'image', src: 'uma-redacted', alt: 'UMA [redacted]', width: 1080, height: 608 },

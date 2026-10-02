@@ -1,6 +1,6 @@
 import PROJECTS, { PROJECT_CATEGORIES, PROJECT_LIST, getProjectByAlias } from './PROJECTS';
 import { ASSET_MANIFEST } from './assets/AssetMap';
-import { resolveMedia, youtubeEmbedUrl } from './media';
+import { bandcampEmbedUrl, resolveMedia, youtubeEmbedUrl } from './media';
 import { MediaItem } from './types/project.model';
 import { skillIconMap } from './components/UI/ProjectSkills/ProjectSkills';
 
@@ -75,7 +75,11 @@ describe('media (featured + gallery)', () => {
     mediaOf(d).forEach((m, i) => {
       const at = `#${i} (${m.type})`;
       if (m.type === 'embed') {
-        if (!youtubeEmbedUrl(m.id)) problems.push(`${at}: not a YouTube id "${m.id}"`);
+        if (m.provider === 'youtube' && !youtubeEmbedUrl(m.id)) problems.push(`${at}: not a YouTube id "${m.id}"`);
+        if (m.provider === 'bandcamp') {
+          if (!bandcampEmbedUrl(m.id)) problems.push(`${at}: not a Bandcamp album id "${m.id}"`);
+          if (!(Number.isInteger(m.tracks) && m.tracks > 0)) problems.push(`${at}: tracks must be a positive integer`);
+        }
         if (!m.title.trim()) problems.push(`${at}: needs a title`);
         if (m.poster && !resolveMedia(m.poster)) problems.push(`${at}: poster does not resolve`);
         return;
@@ -89,6 +93,12 @@ describe('media (featured + gallery)', () => {
       if (!label.trim()) problems.push(`${at}: needs ${m.type === 'video' ? 'a title' : 'alt text'}`);
     });
     expect(problems).toEqual([]);
+  });
+
+  // Audio stops when the gallery viewer moves on or closes; keep it featured.
+  test.each(withMedia.map((d) => [d.alias, d]))('%s: no audio players in the gallery', (_alias, d) => {
+    const audio = (d.media?.gallery ?? []).filter((m) => m.type === 'embed' && m.provider === 'bandcamp');
+    expect(audio).toEqual([]);
   });
 });
 

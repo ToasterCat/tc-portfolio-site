@@ -34,7 +34,14 @@ export type MediaItem =
   /** A real video with controls; never autoplays. */
   | (SizedMedia & { type: 'video'; src: MediaRef; poster: MediaRef; title: string })
   /** A YouTube video, built from its id (never a pasted URL), click-to-load. */
-  | { type: 'embed'; provider: 'youtube'; id: string; title: string; poster?: MediaRef; caption?: string };
+  | { type: 'embed'; provider: 'youtube'; id: string; title: string; poster?: MediaRef; caption?: string }
+  /**
+   * A Bandcamp album player, built from the numeric album id (never a pasted
+   * URL). Loads when scrolled near, with `poster` (album art) as a fading
+   * stand-in. `tracks` sizes the tracklist so nothing jumps on load.
+   * Audio: featured slot only - it'd stop playing inside the gallery viewer.
+   */
+  | { type: 'embed'; provider: 'bandcamp'; id: string; title: string; tracks: number; poster?: MediaRef; caption?: string };
 
 export interface ProjectMedia {
   /** Shown large, directly under the page hero. */
