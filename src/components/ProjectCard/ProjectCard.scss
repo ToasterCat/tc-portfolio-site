@@ -203,8 +203,87 @@
   transform: translateX(4px);
 }
 
+/* ---- Feature: a service's flagship ------------------------------------ */
+
+.project-card--feature {
+  .project-card-brief {
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* ---- Row: the rest of a service's evidence ---------------------------- */
+
+.project-card--row {
+  flex-direction: row;
+  align-items: center;
+  gap: base.$space-4;
+  height: auto;
+  padding: base.$space-3 base.$space-4;
+
+  .project-card-title {
+    font-size: base.$type-body-m;
+  }
+
+  .project-card-kind {
+    padding: 0;
+    background: none;
+  }
+
+  .project-card-arrow {
+    margin-left: 0;
+  }
+}
+
+.project-card-row-logo {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.2rem;
+  object-fit: contain;
+  background-color: base.$color-black;
+  border: 1px solid rgba(base.$site-color-gray, 0.14);
+  border-radius: base.$radius-sm;
+}
+
+.project-card-row-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
 @media all and (min-width: base.$bp) {
   .project-card-title {
     font-size: base.$type-h4;
+  }
+
+  /* Flagship: cover left, text right. */
+  .project-card--feature {
+    flex-direction: row;
+
+    .project-card-cover {
+      flex: 0 0 55%;
+      aspect-ratio: auto;
+      min-height: 18rem;
+    }
+
+    .project-card-cover::after {
+      inset: 0 0 0 50%;
+      background: linear-gradient(to right, transparent, rgba(base.$site-color-dark-alt, 0.85));
+    }
+
+    .project-card-body {
+      padding: base.$space-6;
+      justify-content: center;
+    }
+
+    .project-card-title {
+      font-size: base.$type-h3;
+    }
+  }
+
+  .project-card--row .project-card-title {
+    font-size: base.$type-body;
   }
 }

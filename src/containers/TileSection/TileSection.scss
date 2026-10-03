@@ -1,13 +1,5 @@
 @use '../../base';
 
-.tile {
-  font-family: base.$font-mono;
-  color: base.$color-light;
-  border: 1px solid base.$site-color-dark-alt;
-  border-radius: base.$radius;
-  background-color: base.$color-black;
-}
-
 /**
  * MOBILE / VERTICAL
  */
@@ -37,21 +29,6 @@
     width: 100%;
   }
 
-  .tile {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    max-width: 16rem;
-    height: 3rem;
-
-    p {
-      margin: 0;
-    }
-  }
 }
 
 /**
@@ -83,28 +60,4 @@
     gap: base.$space-2 base.$space-6;
   }
 
-  .tile {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.4s ease;
-    text-decoration: none;
-    width: 12rem;
-    height: 3.5rem;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  .tile:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
-    background-color: base.$color-signal-fill;
-    border-color: base.$color-signal;
-    color: base.$color-light;
-    transition: all 0.4s ease; /* zoom in */
-    cursor: pointer;
-  }
 }

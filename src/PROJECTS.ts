@@ -916,20 +916,82 @@ const PROJECTS: Record<string, Project> = {
  * adding a project is a data change only.
  * ------------------------------------------------------------------------*/
 
+/**
+ * A service we sell, and the /portfolio section that proves it. Reads like a
+ * resume entry: the pitch, the best piece of work (flagship), the rest of
+ * the evidence, then the ask (cta).
+ */
 export interface CategoryInfo {
   key: ProjectCategory;
+  /** Plain-language name: section title, jump-bar label and the #tag. */
   label: string;
-  /** Section anchor id on /portfolio (old /projects#anchor links redirect here). */
+  /** Section id on /portfolio (/portfolio#websites). */
   anchor: string;
+  /** Old /projects#proj-* anchors, redirected to `anchor`. */
+  legacyAnchor: string;
+  /** One line: what you'd hire us for. */
+  pitch: string;
+  /** Alias of the project shown large as this service's best proof. */
+  flagship: string;
+  /** Primary call-to-action label closing the section (goes to /contact). */
+  cta: string;
+  /** Optional nod to NDA / unshipped work, so quiet periods read as
+   *  discretion rather than gaps. */
+  confidentialNote?: string;
 }
 
-/** Categories in display order. */
+/**
+ * Services in display order. Pitches and notes are first drafts: rewrite
+ * freely in the content pass.
+ */
 export const PROJECT_CATEGORIES: CategoryInfo[] = [
-  { key: 'game', label: 'Game Development', anchor: 'proj-game' },
-  { key: 'web', label: 'Web Development', anchor: 'proj-web' },
-  { key: 'consult', label: 'Client Consultation', anchor: 'proj-consult' },
-  { key: 'audio', label: 'Audio Production', anchor: 'proj-audio' },
-  { key: 'proto', label: 'Rapid Prototyping', anchor: 'proj-proto' },
+  {
+    key: 'web',
+    label: 'Websites',
+    anchor: 'websites',
+    legacyAnchor: 'proj-web',
+    pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
+    flagship: 'oas-website',
+    cta: 'Build a website'
+  },
+  {
+    key: 'game',
+    label: 'Games',
+    anchor: 'games',
+    legacyAnchor: 'proj-game',
+    pitch: 'Whole titles, or the pieces your team needs: systems, tools, levels, and art.',
+    flagship: 'blackout-punk',
+    cta: 'Bring us your game',
+  },
+  {
+    key: 'audio',
+    label: 'Audio',
+    anchor: 'audio',
+    legacyAnchor: 'proj-audio',
+    pitch: 'Tracking, mixing, and mastering, from a single session to a finished LP.',
+    flagship: 'outside-agitators',
+    cta: 'Start an audio project',
+  },
+  {
+    key: 'proto',
+    label: 'Prototyping',
+    anchor: 'prototyping',
+    legacyAnchor: 'proj-proto',
+    pitch: 'From napkin sketch to a part in your hand: modelling, printing, iterating.',
+    flagship: 'moxel',
+    cta: 'Start a prototype',
+    confidentialNote: 'More parts and products made under NDA. Ask us about them.',
+  },
+  {
+    key: 'consult',
+    label: 'Consulting',
+    anchor: 'consulting',
+    legacyAnchor: 'proj-consult',
+    pitch: 'Technical research and architecture before you commit to building.',
+    flagship: 'clicktune',
+    cta: 'Book a consultation',
+    confidentialNote: 'More engagements we can\'t name publicly. Ask us about them.',
+  },
 ];
 
 /** Every project, sorted by `order`. */
@@ -939,6 +1001,13 @@ export const PROJECT_LIST: Project[] = Object.values(PROJECTS).sort(
 
 export function projectsInCategory(category: ProjectCategory): Project[] {
   return PROJECT_LIST.filter((p) => p.projectDetails.category === category);
+}
+
+/** A service section's evidence: its flagship, then everything else in order. */
+export function sectionProjects(category: CategoryInfo): { flagship?: Project; rest: Project[] } {
+  const all = projectsInCategory(category.key);
+  const flagship = all.find((p) => p.projectDetails.alias === category.flagship);
+  return { flagship, rest: all.filter((p) => p !== flagship) };
 }
 
 /** Homepage selection: projects flagged `featured`, in `order`. */

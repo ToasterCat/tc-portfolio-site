@@ -12,7 +12,9 @@ const HEADER_OFFSET = 72;
 function scrollToAnchor(target: HTMLElement, behavior: ScrollBehavior) {
   const sticky = getComputedStyle(target).position === 'sticky';
   const measured = sticky && target.parentElement ? target.parentElement : target;
-  const top = measured.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  // A target can declare its own clearance (e.g. header + a sticky sub-bar).
+  const margin = parseFloat(getComputedStyle(measured).scrollMarginTop) || HEADER_OFFSET;
+  const top = measured.getBoundingClientRect().top + window.scrollY - margin;
   window.scrollTo({ top, behavior });
 }
 

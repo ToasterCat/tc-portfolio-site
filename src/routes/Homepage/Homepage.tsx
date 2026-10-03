@@ -71,13 +71,12 @@ export default function Homepage() {
 
       {/* ==== CLIENT SERVICES ===== */}
       <TileSection
-        areLinks
         heading={'Client Services'}
         tiles={[
-          { label: 'Web Design', url: '/portfolio#proj-web' },
-          { label: 'Audio Production', url: '/portfolio#proj-audio' },
-          { label: 'Consultation', url: '/portfolio#proj-consult' },
-          { label: 'Prototyping', url: '/portfolio#proj-proto' }
+          { label: 'Web Design', url: '/portfolio#websites' },
+          { label: 'Audio Production', url: '/portfolio#audio' },
+          { label: 'Consultation', url: '/portfolio#consulting' },
+          { label: 'Prototyping', url: '/portfolio#prototyping' }
         ]}
       />
 
@@ -97,7 +96,7 @@ export default function Homepage() {
               and custom &mdash; one client's site runs on $0.12/month of AWS.
               No template tax.
             </p>
-            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-web">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#websites">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
             </Link>
@@ -110,7 +109,7 @@ export default function Homepage() {
               Chick Magnet ran custom physics and destructible environments with
               a team of nine. Both made expo finals.
             </p>
-            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-game">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#games">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
             </Link>
@@ -122,7 +121,7 @@ export default function Homepage() {
               ergonomic croquet hooks, a working Nerf-compatible blaster, licensed
               products for retail. Design, slice, print, iterate, ship.
             </p>
-            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-proto">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#prototyping">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
             </Link>
@@ -135,7 +134,7 @@ export default function Homepage() {
               Experimental techniques, heavy overlays, and a record cut across four
               locations when it called for it.
             </p>
-            <Link className="btn btn--secondary btn--sm" to="/portfolio#proj-audio">
+            <Link className="btn btn--secondary btn--sm" to="/portfolio#audio">
               See the Work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
             </Link>

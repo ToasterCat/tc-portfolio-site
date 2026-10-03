@@ -1,9 +1,10 @@
-import SectionHeading from '../SectionHeading/SectionHeading';
+import { ASSET_MANIFEST } from './assets/AssetMap';
 
-import { ASSET_MANIFEST } from '../../../assets/AssetMap';
-
-import './ProjectSkills.scss';
-
+/**
+ * Display data for a project's `skills` entries: icon + human label.
+ * Unknown skills fall back to the "ToasterCat" placeholder (the data tests
+ * flag those; the project page shows the raw name instead).
+ */
 export function skillIconMap(skillName: string) {
   switch (skillName) {
     case "AdSense":
@@ -139,38 +140,4 @@ export function skillIconMap(skillName: string) {
         label: "ToasterCat"
       };
   }
-}
-
-interface ProjectSkillsProps {
-  skills: string[];
-  styleClass?: string;
-}
-
-export default function ProjectSkills(props: ProjectSkillsProps) {
-  const getSkillsIcons = () => {
-    if (props.skills.length < 1) {
-      return null;
-    }
-    let icons = props.skills.map((skill) => {
-      let s = skillIconMap(skill);
-      return (
-        <div className="skill-icon">
-          <img key={skill} src={s.icon} alt={s.label} />
-          <h5>{s.label}</h5>
-        </div>
-      );
-    });
-    return icons;
-  };
-
-  let icons = getSkillsIcons();
-  return (
-    <div className={props.styleClass ? props.styleClass : 'project-skills'}>
-      <SectionHeading
-        heading={'Core Technologies'}
-        styleClass={'project-skills-heading'}
-      />
-      <div className="project-tech-icons">{icons}</div>
-    </div>
-  );
 }

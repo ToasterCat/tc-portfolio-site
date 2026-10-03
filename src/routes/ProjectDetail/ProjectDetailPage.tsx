@@ -7,7 +7,7 @@ import Ticker from '../../components/UI/Ticker/Ticker';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalLinkButton';
 import RichText, { InlineText } from '../../components/UI/RichText/RichText';
-import { skillIconMap } from '../../components/UI/ProjectSkills/ProjectSkills';
+import { skillIconMap } from '../../skills';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import { categoryLabel, getProjectByAlias } from '../../PROJECTS';

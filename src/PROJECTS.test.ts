@@ -2,7 +2,7 @@ import PROJECTS, { PROJECT_CATEGORIES, PROJECT_LIST, getProjectByAlias } from '.
 import { ASSET_MANIFEST } from './assets/AssetMap';
 import { bandcampEmbedUrl, resolveMedia, youtubeEmbedUrl } from './media';
 import { MediaItem } from './types/project.model';
-import { skillIconMap } from './components/UI/ProjectSkills/ProjectSkills';
+import { skillIconMap } from './skills';
 
 /**
  * Data contract for the portfolio. Each project gets a page at
@@ -26,6 +26,26 @@ describe('aliases (become /portfolio/<alias> URLs)', () => {
 
   test('resolve back to their project', () => {
     details.forEach((d) => expect(getProjectByAlias(d.alias)?.projectDetails).toBe(d));
+  });
+});
+
+describe('service sections (/portfolio)', () => {
+  test.each(PROJECT_CATEGORIES.map((c) => [c.label, c]))('%s: flagship exists and belongs here', (_label, c) => {
+    const flagship = getProjectByAlias(c.flagship);
+    expect(flagship?.projectDetails.category).toBe(c.key);
+  });
+
+  test('section anchors are unique and URL-safe', () => {
+    const anchors = PROJECT_CATEGORIES.map((c) => c.anchor);
+    expect(new Set(anchors).size).toBe(anchors.length);
+    anchors.forEach((a) => expect(a).toMatch(URL_SAFE));
+  });
+
+  test('every section has a pitch and a call to action', () => {
+    PROJECT_CATEGORIES.forEach((c) => {
+      expect(c.pitch.trim()).not.toBe('');
+      expect(c.cta.trim()).not.toBe('');
+    });
   });
 });
 

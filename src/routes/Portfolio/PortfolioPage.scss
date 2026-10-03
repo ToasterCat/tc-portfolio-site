@@ -1,0 +1,229 @@
+@use '../../base';
+
+/**
+ * PORTFOLIO - the company resume. One 64rem rail (same as the project
+ * pages); a sticky jump bar of plain-language [ SERVICE ] commands; then one
+ * section per service.
+ */
+
+$rail: 64rem;
+$jump-h: 3rem;
+
+%rail {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $rail;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: base.$space-4;
+  padding-right: base.$space-4;
+}
+
+.portfolio-head {
+  @extend %rail;
+  padding-top: base.$space-7;
+  padding-bottom: base.$space-4;
+}
+
+.portfolio-title {
+  margin: 0 0 base.$space-2 0;
+  font-size: base.$type-h2-m;
+}
+
+.portfolio-sub {
+  margin: 0;
+  color: base.$site-color-gray;
+}
+
+/* ---- Jump bar --------------------------------------------------------- */
+
+.portfolio-jump {
+  position: sticky;
+  top: base.$header-h-m;
+  z-index: 10;
+  background-color: rgba(base.$site-color-dark, 0.92);
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.5);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .portfolio-jump {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* One line; swipe sideways on phones (static - no ticker). */
+.portfolio-jump-list {
+  @extend %rail;
+  display: flex;
+  gap: base.$space-4;
+  height: $jump-h;
+  margin: 0 auto;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    display: flex;
+    flex: none;
+    align-items: center;
+  }
+
+  /* Overflowing flex rows ignore their end padding when scrolled; a spacer
+   * lets the last label scroll fully into view. */
+  &::after {
+    content: '';
+    flex: 0 0 base.$space-2;
+  }
+
+  .btn--tertiary {
+    min-height: 0;
+  }
+}
+
+/* ---- A service section ------------------------------------------------ */
+
+.portfolio-service {
+  @extend %rail;
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-5;
+  min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
+  padding-top: base.$space-7;
+  padding-bottom: base.$space-7;
+  border-bottom: 1px solid rgba(base.$site-color-gray, 0.08);
+
+  /* Land jump links below the header + jump bar (read by ScrollManager). */
+  scroll-margin-top: calc(#{base.$header-h-m} + #{$jump-h});
+}
+
+.portfolio-service-head {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+}
+
+.portfolio-service-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  margin: 0;
+  font-size: base.$type-h2-m;
+}
+
+.portfolio-service-prompt {
+  position: relative;
+  top: -0.28em;
+  font-size: 0.6em;
+  letter-spacing: 0;
+}
+
+.portfolio-service-pitch {
+  max-width: 40rem;
+  margin: 0;
+  color: base.$site-color-gray;
+  text-wrap: pretty;
+}
+
+.portfolio-service-more {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-3;
+}
+
+.portfolio-service-more-label {
+  margin: 0;
+  padding-bottom: base.$space-2;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.45);
+}
+
+.portfolio-service-rows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: base.$space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* "Work we can't show": a redacted row, same footprint as a project row. */
+.portfolio-service-confidential {
+  display: flex;
+  align-items: center;
+  gap: base.$space-4;
+  padding: base.$space-3 base.$space-4;
+  color: base.$site-color-gray;
+  border: 1px dashed rgba(base.$site-color-gray, 0.25);
+  border-radius: base.$radius;
+}
+
+.portfolio-service-confidential-mark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.3em;
+  color: base.$color-meta-dim;
+  letter-spacing: 0;
+}
+
+/* Same lift as the other bracket labels: PT Mono's [ ] sit low beside caps. */
+.portfolio-service-confidential-bracket {
+  position: relative;
+  top: -0.08em;
+}
+
+.portfolio-service-confidential-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: base.$color-meta;
+}
+
+.portfolio-service-cta {
+  display: flex;
+}
+
+/**
+ * Desktop / Horizontal
+ */
+@media all and (min-width: base.$bp) {
+  .portfolio-head,
+  .portfolio-jump-list,
+  .portfolio-service {
+    padding-left: base.$space-6;
+    padding-right: base.$space-6;
+  }
+
+  .portfolio-head {
+    padding-top: base.$space-8;
+  }
+
+  .portfolio-title {
+    font-size: base.$type-h2;
+  }
+
+  .portfolio-jump {
+    top: base.$header-h;
+  }
+
+  .portfolio-service {
+    padding-top: base.$space-8;
+    padding-bottom: base.$space-8;
+    scroll-margin-top: calc(#{base.$header-h} + #{$jump-h});
+  }
+
+  .portfolio-service-title {
+    font-size: base.$type-h2;
+  }
+
+  /* Evidence rows side by side on desktop. */
+  .portfolio-service-rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
