@@ -1,0 +1,80 @@
+@use '../../base';
+
+/* Sits under the form on the same 32rem column, closing the page quietly. */
+.contact-notes {
+  padding: 0 base.$space-4 base.$section-pad-y-m base.$space-4;
+}
+
+.contact-notes-inner {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-4;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding-top: base.$space-6;
+  border-top: 1px solid rgba(base.$color-meta-dim, 0.45);
+}
+
+.contact-notes-label {
+  margin: 0;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-notes-list {
+  margin: 0;
+  padding-left: base.$space-5;
+  color: base.$site-color-gray;
+
+  li {
+    margin-bottom: base.$space-1;
+  }
+
+  li::marker {
+    color: base.$color-meta;
+  }
+}
+
+.contact-notes-alt {
+  margin: 0;
+  color: base.$site-color-gray;
+
+  a,
+  a:visited {
+    color: base.$color-light;
+    text-decoration-color: base.$color-meta-dim;
+    text-underline-offset: 0.2em;
+    transition: color base.$hover;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+  }
+}
+
+.contact-notes-status {
+  display: flex;
+  align-items: center;
+  gap: base.$space-2;
+  margin: 0;
+  color: base.$color-meta-dim;
+
+  &.is-open {
+    color: base.$color-meta;
+  }
+}
+
+.contact-notes-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+@media all and (min-width: base.$bp) {
+  .contact-notes {
+    padding-bottom: base.$section-pad-y;
+  }
+}

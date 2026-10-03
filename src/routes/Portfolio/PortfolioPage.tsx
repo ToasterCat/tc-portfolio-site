@@ -73,45 +73,47 @@ function ServiceSection(props: { category: CategoryInfo }) {
 
   return (
     <section id={c.anchor} className="portfolio-service" aria-labelledby={headingId}>
-      <div className="portfolio-service-head">
-        <h2 id={headingId} className="portfolio-service-title">
-          <span className="meta meta-dim portfolio-service-prompt" aria-hidden="true">{'\\>'}</span>
-          {c.label}
-        </h2>
-        <p className="portfolio-service-pitch">{c.pitch}</p>
-      </div>
-
-      {flagship && (
-        <ProjectCard project={flagship} variant="feature" showYear={false} headingLevel="h3" />
-      )}
-
-      {(rest.length > 0 || c.confidentialNote) && (
-        <div className="portfolio-service-more">
-          <h3 className="meta meta-dim portfolio-service-more-label">More {c.label.toLowerCase()}</h3>
-          <ul className="portfolio-service-rows">
-            {rest.map((p) => (
-              <li key={p.projectDetails.alias}>
-                <ProjectCard project={p} variant="row" headingLevel="h4" />
-              </li>
-            ))}
-            {c.confidentialNote && (
-              <li className="portfolio-service-confidential">
-                <span className="meta portfolio-service-confidential-mark" aria-hidden="true">
-                  <span className="portfolio-service-confidential-bracket">[</span>
-                  <HiddenIcon />
-                  <span className="portfolio-service-confidential-bracket">]</span>
-                </span>
-                <span>{c.confidentialNote}</span>
-              </li>
-            )}
-          </ul>
+      <div className="portfolio-service-inner">
+        <div className="portfolio-service-head">
+          <h2 id={headingId} className="portfolio-service-title">
+            <span className="meta meta-dim portfolio-service-prompt" aria-hidden="true">{'\\>'}</span>
+            {c.label}
+          </h2>
+          <p className="portfolio-service-pitch">{c.pitch}</p>
         </div>
-      )}
 
-      <div className="portfolio-service-cta">
-        <Link to="/contact" className="btn btn--primary">
-          {c.cta}
-        </Link>
+        {flagship && (
+          <ProjectCard project={flagship} variant="feature" showYear={false} headingLevel="h3" />
+        )}
+
+        {(rest.length > 0 || c.confidentialNote) && (
+          <div className="portfolio-service-more">
+            <h3 className="meta meta-dim portfolio-service-more-label">More {c.label.toLowerCase()}</h3>
+            <ul className="portfolio-service-rows">
+              {rest.map((p) => (
+                <li key={p.projectDetails.alias}>
+                  <ProjectCard project={p} variant="row" headingLevel="h4" />
+                </li>
+              ))}
+              {c.confidentialNote && (
+                <li className="portfolio-service-confidential">
+                  <span className="meta portfolio-service-confidential-mark" aria-hidden="true">
+                    <span className="portfolio-service-confidential-bracket">[</span>
+                    <HiddenIcon />
+                    <span className="portfolio-service-confidential-bracket">]</span>
+                  </span>
+                  <span>{c.confidentialNote}</span>
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
+
+        <div className="portfolio-service-cta">
+          <Link to="/contact" className="btn btn--primary">
+            {c.cta}
+          </Link>
+        </div>
       </div>
     </section>
   );

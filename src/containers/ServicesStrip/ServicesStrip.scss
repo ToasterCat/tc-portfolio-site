@@ -1,0 +1,143 @@
+@use '../../base';
+
+/**
+ * SERVICES STRIP - five tiles, cover over name. Five across on desktop;
+ * two-up on phones with the odd tile spanning the row.
+ */
+.services-strip {
+  background-color: base.$site-color-dark;
+}
+
+.services-strip-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: base.$space-3;
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  /* The spanning tile keeps the row height: twice as wide, same height. */
+  > li:last-child:nth-child(odd) .services-strip-cover {
+    aspect-ratio: 32 / 10;
+  }
+}
+
+.services-strip-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  color: base.$color-light;
+  text-decoration: none;
+  background-color: base.$site-color-dark-alt;
+  border: 1px solid rgba(base.$site-color-gray, 0.14);
+  border-radius: base.$radius;
+  transition: border-color base.$hover;
+
+  &:visited {
+    color: base.$color-light;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: base.$color-signal;
+  }
+}
+
+.services-strip-cover {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: base.$color-black;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(35%);
+    opacity: 0.8;
+    transition: transform 0.4s ease, filter base.$hover, opacity base.$hover;
+  }
+}
+
+.services-strip-cover--pattern {
+  background:
+    radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px) 0 0 / 14px 14px,
+    base.$color-black;
+}
+
+/* Colour comes up and the cover leans in on hover: the tile "wakes". */
+.services-strip-tile:hover .services-strip-cover img,
+.services-strip-tile:focus-visible .services-strip-cover img {
+  transform: scale(1.05);
+  filter: none;
+  opacity: 1;
+}
+
+.services-strip-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  padding: base.$space-3 base.$space-4;
+
+  font-family: base.$font-heading;
+  font-size: base.$type-body-m;
+  font-weight: base.$weight-heading;
+  letter-spacing: base.$tracking-heading;
+}
+
+.services-strip-prompt {
+  position: relative;
+  top: -0.15em;
+  font-size: 0.8em;
+  letter-spacing: 0;
+}
+
+.services-strip-arrow {
+  margin-left: auto;
+  color: base.$color-meta-dim;
+  transition: transform base.$hover, color base.$hover;
+}
+
+.services-strip-tile:hover,
+.services-strip-tile:focus-visible {
+  .services-strip-label {
+    color: base.$color-signal;
+  }
+
+  .services-strip-arrow {
+    color: base.$color-signal;
+    transform: translateX(3px);
+  }
+}
+
+@media all and (min-width: base.$bp) {
+  .services-strip-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: base.$space-4;
+
+    > li:last-child:nth-child(odd) {
+      grid-column: auto;
+    }
+
+    > li:last-child:nth-child(odd) .services-strip-cover {
+      aspect-ratio: 4 / 5;
+    }
+  }
+
+  .services-strip-cover {
+    aspect-ratio: 4 / 5;
+  }
+
+  .services-strip-label {
+    font-size: base.$type-body;
+  }
+}

@@ -87,18 +87,28 @@ $jump-h: 3rem;
 
 /* ---- A service section ------------------------------------------------ */
 
+/* Full-bleed band per service, alternating the homepage's two band shades
+ * (odd: the lighter Recent Works tone; even: the page base) so neighbouring
+ * services read as separate blocks. Content sits on the rail inside. */
 .portfolio-service {
+  min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
+  background-color: base.$site-color-dark;
+
+  &:nth-of-type(odd) {
+    background-color: base.$color-almost-black;
+  }
+
+  /* Land jump links below the header + jump bar (read by ScrollManager). */
+  scroll-margin-top: calc(#{base.$header-h-m} + #{$jump-h});
+}
+
+.portfolio-service-inner {
   @extend %rail;
   display: flex;
   flex-direction: column;
   gap: base.$space-5;
-  min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
   padding-top: base.$space-7;
   padding-bottom: base.$space-7;
-  border-bottom: 1px solid rgba(base.$site-color-gray, 0.08);
-
-  /* Land jump links below the header + jump bar (read by ScrollManager). */
-  scroll-margin-top: calc(#{base.$header-h-m} + #{$jump-h});
 }
 
 .portfolio-service-head {
@@ -195,7 +205,7 @@ $jump-h: 3rem;
 @media all and (min-width: base.$bp) {
   .portfolio-head,
   .portfolio-jump-list,
-  .portfolio-service {
+  .portfolio-service-inner {
     padding-left: base.$space-6;
     padding-right: base.$space-6;
   }
@@ -213,9 +223,12 @@ $jump-h: 3rem;
   }
 
   .portfolio-service {
+    scroll-margin-top: calc(#{base.$header-h} + #{$jump-h});
+  }
+
+  .portfolio-service-inner {
     padding-top: base.$space-8;
     padding-bottom: base.$space-8;
-    scroll-margin-top: calc(#{base.$header-h} + #{$jump-h});
   }
 
   .portfolio-service-title {

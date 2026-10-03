@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 import './HeroSection.scss';
 
@@ -22,6 +22,8 @@ interface HeroSectionProps {
     alt: string;
     position: 'left' | 'right';
   };
+  /** Calls to action under the detail line (e.g. primary + secondary buttons). */
+  actions?: ReactNode;
 }
 
 export default function HeroSection(props: HeroSectionProps) {
@@ -41,6 +43,9 @@ export default function HeroSection(props: HeroSectionProps) {
 
         <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
         <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
+        {props.actions && (
+          <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-actions`}>{props.actions}</div>
+        )}
       </div>
     </>
   );
@@ -57,6 +62,9 @@ export default function HeroSection(props: HeroSectionProps) {
         
         <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
         <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
+        {props.actions && (
+          <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-actions`}>{props.actions}</div>
+        )}
       </div>
       
       <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>

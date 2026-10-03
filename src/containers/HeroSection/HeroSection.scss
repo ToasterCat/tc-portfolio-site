@@ -59,6 +59,13 @@
     margin: 0;
     text-wrap: pretty;
   }
+
+  .hero1-actions {
+    display: flex;
+    flex-flow: row wrap;
+    gap: base.$space-3;
+    margin-top: base.$space-6;
+  }
 }
 
 .hero1-image {

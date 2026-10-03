@@ -11,10 +11,13 @@ export interface SiteLink {
 export const NAV_LINKS: SiteLink[] = [
   { label: 'Home', to: '/' },
   { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Contact', to: '/contact' },
 ];
 
+/* The header's only route to /contact: the primary button, not a nav link. */
 export const CTA_LINK: SiteLink = { label: 'Hire Us', to: '/contact' };
+
+/** Footer "Site" column: the nav plus Contact, which the header carries as Hire Us. */
+export const FOOTER_LINKS: SiteLink[] = [...NAV_LINKS, { label: 'Contact', to: '/contact' }];
 
 export const SOCIAL_LINKS: SiteLink[] = [
   { label: 'LinkedIn', to: 'https://www.linkedin.com/company/110969321' },
@@ -26,7 +29,7 @@ export const SOCIAL_LINKS: SiteLink[] = [
 
 export const CONTACT_EMAIL = 'contact@toastercat.tech';
 
-export const LOCATIONS = ['Seattle', 'Portland', 'Vancouver'];
+export const LOCATIONS = ['Seattle, WA.'];
 
 /* Shown in the footer as "● taking-commissions". Flip when the shop is full. */
 export const AVAILABILITY = {

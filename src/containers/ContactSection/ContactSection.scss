@@ -67,8 +67,3 @@
     font-size: base.$large-p;
   }
 }
-
-/* On the contact page the CTA is suppressed; don't leave its gap behind. */
-.contact-blurb:last-child {
-  margin-bottom: 0;
-}
