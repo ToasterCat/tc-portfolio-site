@@ -61,6 +61,7 @@
 .footer-email,
 .footer-email:visited {
   color: base.$color-light;
+  transition: color base.$hover;
   text-decoration-color: base.$color-meta-dim;
   text-underline-offset: 0.2em;
 }
@@ -85,6 +86,7 @@
 .footer-col a:visited {
   color: base.$color-light;
   text-decoration: none;
+  transition: color base.$hover;
 }
 
 .footer-email:hover,

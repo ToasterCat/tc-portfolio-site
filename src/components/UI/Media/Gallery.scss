@@ -41,7 +41,7 @@
   background-color: base.$color-black;
   border: 1px solid rgba(base.$site-color-gray, 0.14);
   border-radius: base.$radius;
-  transition: border-color 0.2s ease;
+  transition: border-color base.$hover;
 
   /* Tiles fill their box exactly (cropping is ~0 since the box has the
    * media's own ratio); the viewer shows the full uncropped media. */

@@ -71,6 +71,7 @@
   letter-spacing: base.$tracking-heading;
   color: base.$color-light;
   text-decoration: none;
+  transition: color base.$hover;
 }
 
 .mobile-menu-link:visited {
@@ -122,6 +123,7 @@
   a {
     color: base.$color-meta;
     text-decoration: none;
+    transition: color base.$hover;
   }
 
   a:hover,

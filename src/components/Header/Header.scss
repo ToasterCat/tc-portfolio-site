@@ -61,7 +61,7 @@
   font-weight: base.$weight-heading;
   letter-spacing: base.$tracking-heading;
   white-space: nowrap;
-  transition: color base.$transition-duration ease;
+  transition: color base.$hover;
 }
 
 /* Same prompt as the project title bars, sized off the name. */
@@ -91,7 +91,7 @@
 
   color: base.$color-light;
   text-decoration: none;
-  transition: color base.$transition-duration ease;
+  transition: color base.$hover;
 }
 
 .header-nav-link:visited {
@@ -108,7 +108,7 @@
 .header-nav-link .header-nav-bar {
   font-size: 1em; /* full link height; .meta alone would shrink it to a tick */
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity base.$hover;
 }
 
 .header-nav-bar:first-child {

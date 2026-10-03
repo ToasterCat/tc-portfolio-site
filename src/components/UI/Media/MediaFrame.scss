@@ -42,7 +42,7 @@
   background-color: rgba(base.$color-black, 0.7);
   border: 1px solid base.$color-signal;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  transition: background-color base.$hover;
 }
 
 .media-embed,

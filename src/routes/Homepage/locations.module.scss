@@ -79,7 +79,7 @@
   border: 1px solid base.$color-meta-dim;
   border-radius: base.$radius;
 
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: border-color base.$hover, color base.$hover;
 }
 
 .locationsList li:hover {

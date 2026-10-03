@@ -43,10 +43,10 @@
   border-radius: base.$radius;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    gap 0.2s ease;
+    background-color base.$hover,
+    border-color base.$hover,
+    color base.$hover,
+    gap base.$hover;
 }
 
 .btn:visited {
@@ -134,7 +134,7 @@
 
 /* Trailing arrow nudges forward on hover. */
 .btn-icon--trailing {
-  transition: transform 0.2s ease;
+  transition: transform base.$hover;
 }
 
 .btn--secondary:hover .btn-icon--trailing,

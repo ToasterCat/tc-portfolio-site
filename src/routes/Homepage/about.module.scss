@@ -108,7 +108,7 @@
   background-color: base.$site-color-light;
 
   text-align: left;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: border-color base.$hover, transform base.$hover;
 
   h3 {
     margin: 0 0 base.$space-3 0;

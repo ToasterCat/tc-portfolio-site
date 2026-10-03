@@ -52,7 +52,7 @@
     background-color: base.$color-black-light-transparent;
     border: 1px solid rgba(base.$site-color-gray, 0.22);
     border-radius: base.$radius;
-    transition: border-color 0.2s ease;
+    transition: border-color base.$hover;
   }
 
   input::placeholder,

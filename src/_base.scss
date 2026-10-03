@@ -180,8 +180,13 @@ $mobile-large-p: $type-body-m;
 $mobile-small-p: $type-meta-m;
 $mobile-min-section-width: 15rem;
 
-/* ANIMATION */
-$transition-duration: 500ms;
+/* ANIMATION
+ * $hover: the one speed for interaction feedback (colour, border, fill)
+ * on every link and button. Image zooms run slower on purpose - they're
+ * motion, not feedback. */
+$hover-duration: 0.2s;
+$hover: $hover-duration ease;
+$transition-duration: $hover-duration; /* legacy alias */
 
 @mixin animation-mixin($name, $start, $end) {
   @keyframes #{$name} {

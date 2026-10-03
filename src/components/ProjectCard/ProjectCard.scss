@@ -16,7 +16,7 @@
   background-color: base.$site-color-dark-alt;
   border: 1px solid rgba(base.$site-color-gray, 0.14);
   border-radius: base.$radius;
-  transition: border-color 0.2s ease;
+  transition: border-color base.$hover;
 
   &:hover,
   &:focus-within {
@@ -195,7 +195,7 @@
   margin-left: auto;
   font-family: base.$font-heading;
   color: base.$color-meta-dim;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform base.$hover, color base.$hover;
 }
 
 .project-card:hover .project-card-arrow {
