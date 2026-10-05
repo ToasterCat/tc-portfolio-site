@@ -6,7 +6,7 @@ import {
   AVAILABILITY,
   CONTACT_EMAIL,
   LOCATIONS,
-  NAV_LINKS,
+  FOOTER_LINKS,
   SOCIAL_LINKS,
 } from '../../SITE';
 import './Footer.scss';
@@ -36,7 +36,7 @@ export default function Footer() {
         <nav className="footer-col" aria-label="Footer">
           <h2 className="meta meta-dim footer-col-heading">Site</h2>
           <ul>
-            {NAV_LINKS.map((link) => (
+            {FOOTER_LINKS.map((link) => (
               <li key={link.to}>
                 <Link to={link.to}>{link.label}</Link>
               </li>

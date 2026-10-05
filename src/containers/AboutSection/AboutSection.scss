@@ -1,0 +1,89 @@
+@use '../../base';
+
+/**
+ * ABOUT - near-black band with the site's dot grid and olive hairlines; the
+ * story left, a monospace studio spec sheet right (stacked on phones).
+ */
+.about-section {
+  background:
+    radial-gradient(rgba(base.$color-meta, 0.1) 1px, transparent 1.6px) 0 0 / 16px 16px,
+    base.$color-black;
+  border-top: 1px solid base.$color-meta-dim;
+  border-bottom: 1px solid base.$color-meta-dim;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: base.$space-6;
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto;
+}
+
+.about-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  margin: 0 0 base.$space-4 0;
+}
+
+.about-prompt {
+  position: relative;
+  top: -0.28em;
+  font-size: 0.6em;
+  letter-spacing: 0;
+}
+
+.about-story p {
+  max-width: base.$measure;
+  margin: 0 0 base.$space-4 0;
+  color: base.$site-color-gray;
+  text-wrap: pretty;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Same treatment as the project page's spec sheet. */
+.about-facts {
+  align-self: start;
+  margin: 0;
+  padding: base.$space-2 base.$space-5;
+  background-color: rgba(base.$site-color-dark-alt, 0.85);
+  border: 1px solid rgba(base.$site-color-gray, 0.16);
+  border-radius: base.$radius;
+}
+
+.about-fact {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: base.$space-3;
+  padding: base.$space-3 0;
+  border-bottom: 1px solid rgba(base.$site-color-gray, 0.1);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    font-size: base.$type-meta-sm;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 0.15em;
+  }
+
+  dd {
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+@media all and (min-width: base.$bp) {
+  .about-inner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: base.$space-8;
+    align-items: center;
+  }
+}

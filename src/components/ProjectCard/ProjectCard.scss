@@ -261,11 +261,26 @@
   /* Flagship: cover left, text right. */
   .project-card--feature {
     flex-direction: row;
+    /* One height for every flagship (fits the longest current text down to
+     * ~1000px wide); a much longer brief grows its card rather than clip. */
+    min-height: 21rem;
 
     .project-card-cover {
       flex: 0 0 55%;
       aspect-ratio: auto;
-      min-height: 18rem;
+
+      /* Narrow desktops: give the text more room so it doesn't outgrow the
+       * shared height. */
+      @media (max-width: 68rem) {
+        flex-basis: 42%;
+      }
+    }
+
+    /* The cover fills its half without sizing the card - a square album
+     * cover and a wide screenshot give the same card height. */
+    .project-card-cover > img:first-child:not(.project-card-logo) {
+      position: absolute;
+      inset: 0;
     }
 
     .project-card-cover::after {

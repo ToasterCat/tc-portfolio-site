@@ -6,7 +6,6 @@ import Homepage from '../../routes/Homepage/Homepage';
 import PortfolioPage from '../../routes/Portfolio/PortfolioPage';
 import ProjectDetailPage from '../../routes/ProjectDetail/ProjectDetailPage';
 import ContactPage from '../../routes/Contact/ContactPage';
-import ComingSoon from '../../routes/ComingSoon/ComingSoon';
 import NotFound from '../../routes/Error/404';
 import { PROJECT_CATEGORIES } from '../../PROJECTS';
 
@@ -29,8 +28,6 @@ function App() {
           <Route exact path="/portfolio" component={PortfolioPage} />
           <Route exact path="/portfolio/:alias" component={ProjectDetailPage} />
           <Route exact path="/contact" component={ContactPage} />
-          <Route exact path="/blog" component={ComingSoon} />
-          <Route exact path="/store" component={ComingSoon} />
 
           {/* Old URLs: /projects, and #proj-* anchors on either path, land on
               the matching service section. */}
