@@ -2,6 +2,9 @@
   "name": "toastercat-portfolio-ts",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^12.20.7",
