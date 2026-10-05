@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import { AVAILABILITY, CONTACT_EMAIL } from '../../SITE';
@@ -22,6 +23,11 @@ export default function ContactPage() {
 
           <p className="contact-notes-alt">
             Prefer email? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </p>
+
+          <p className="contact-notes-alt">
+            We only use your details to reply, and don&apos;t keep them past that first
+            conversation. <Link to="/privacy">Privacy policy</Link>
           </p>
 
           <p className={`meta contact-notes-status ${AVAILABILITY.open ? 'is-open' : ''}`}>
