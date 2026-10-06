@@ -1,0 +1,90 @@
+@use '../../base';
+
+/**
+ * POLICY DOCUMENT - one readable column, headings in the site face, links
+ * styled like the contact page's inline links.
+ */
+.policy {
+  box-sizing: border-box; /* the side padding sits inside the column */
+  width: 100%;
+  max-width: calc(#{base.$measure} + 2 * #{base.$space-4});
+  margin: 0 auto;
+  padding: base.$section-pad-y-m base.$space-4;
+}
+
+.policy-head {
+  margin-bottom: base.$space-6;
+  padding-bottom: base.$space-5;
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.45);
+}
+
+.policy-title {
+  margin-bottom: base.$space-3;
+  font-size: base.$type-h2-m;
+}
+
+.policy-updated {
+  margin: 0;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.policy-body {
+  h2 {
+    margin: base.$space-6 0 base.$space-3 0;
+    font-size: base.$type-h4-m;
+  }
+
+  p,
+  ul {
+    margin: 0 0 base.$space-4 0;
+    color: base.$site-color-gray;
+    text-wrap: pretty;
+  }
+
+  ul {
+    padding-left: base.$space-5;
+  }
+
+  li {
+    margin-bottom: base.$space-1;
+  }
+
+  li::marker {
+    color: base.$color-meta;
+  }
+
+  strong {
+    color: base.$color-light;
+    font-weight: base.$weight-subhead;
+  }
+
+  a,
+  a:visited {
+    color: base.$color-light;
+    text-decoration-color: base.$color-meta-dim;
+    text-underline-offset: 0.2em;
+    transition: color base.$hover;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+  }
+}
+
+@media all and (min-width: base.$bp) {
+  .policy {
+    max-width: calc(#{base.$measure} + 2 * #{base.$space-6});
+    padding: base.$section-pad-y base.$space-6;
+  }
+
+  .policy-title {
+    font-size: base.$type-h2;
+  }
+
+  .policy-body h2 {
+    font-size: base.$type-h4;
+  }
+}

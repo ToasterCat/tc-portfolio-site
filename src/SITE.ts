@@ -16,8 +16,15 @@ export const NAV_LINKS: SiteLink[] = [
 /* The header's only route to /contact: the primary button, not a nav link. */
 export const CTA_LINK: SiteLink = { label: 'Hire Us', to: '/contact' };
 
-/** Footer "Site" column: the nav plus Contact, which the header carries as Hire Us. */
-export const FOOTER_LINKS: SiteLink[] = [...NAV_LINKS, { label: 'Contact', to: '/contact' }];
+/**
+ * Footer "Site" column: the nav plus Contact, which the header carries as
+ * Hire Us, and the policy pages, which live only down here.
+ */
+export const FOOTER_LINKS: SiteLink[] = [
+  ...NAV_LINKS,
+  { label: 'Contact', to: '/contact' },
+  { label: 'Privacy', to: '/privacy' },
+];
 
 export const SOCIAL_LINKS: SiteLink[] = [
   { label: 'LinkedIn', to: 'https://www.linkedin.com/company/110969321' },
