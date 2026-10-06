@@ -1,0 +1,123 @@
+@use '../../../base';
+
+/**
+ * POST CARD - a personal note embedded in a company page. A social post's
+ * anatomy (avatar, name, role, body) in the site's own materials, with
+ * smaller type than the page around it so it reads as a separate voice.
+ */
+.post-card {
+  margin: base.$space-6 0;
+  padding: base.$space-4 base.$space-5;
+  background-color: base.$site-color-dark-alt;
+  border: 1px solid rgba(base.$site-color-gray, 0.16);
+  border-radius: base.$radius-lg;
+}
+
+.post-card-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: base.$space-3;
+  margin-bottom: base.$space-4;
+}
+
+/* Initials on an olive disc: no photo needed, still reads as "a person". */
+.post-card-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(base.$color-meta, 0.18);
+  color: base.$color-meta;
+  font-family: base.$font-heading;
+  font-size: base.$type-meta;
+  font-weight: base.$weight-heading;
+  letter-spacing: 0.02em;
+}
+
+.post-card-who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.post-card-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  color: base.$color-light;
+  font-family: base.$font-heading;
+  font-weight: base.$weight-subhead;
+}
+
+.post-card-prompt {
+  position: relative;
+  top: -0.1em;
+  letter-spacing: 0;
+}
+
+.post-card-role {
+  font-size: base.$type-meta-sm;
+}
+
+.post-card-tag {
+  align-self: start;
+  padding: 0.1em 0.5em;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: base.$radius-sm;
+  background-color: rgba(base.$color-meta, 0.12);
+}
+
+/* Smaller than the page's body copy: a post, not the policy. */
+.post-card-body {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  p {
+    margin: 0 0 base.$space-3 0;
+    font-size: base.$type-meta;
+    line-height: 1.65;
+    color: base.$color-light;
+    text-wrap: pretty;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Collapsed: fade the last lines into the card. */
+.post-card-body.is-collapsed::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  background: linear-gradient(transparent, base.$site-color-dark-alt);
+  pointer-events: none;
+}
+
+.post-card-toggle {
+  margin-top: base.$space-2;
+  margin-left: calc(-1 * #{base.$space-1}); /* align the bracket with the text */
+}
+
+/* Phones: the tag drops under the name rather than squeezing it. */
+@media all and (max-width: base.$bp) {
+  .post-card-head {
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: base.$space-2;
+  }
+
+  .post-card-tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

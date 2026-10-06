@@ -2,8 +2,12 @@
 
 /**
  * POLICY DOCUMENT - one readable column, headings in the site face, links
- * styled like the contact page's inline links.
+ * styled like the contact page's inline links. With a directory, wide
+ * screens get a sticky side column; narrower ones list it above the body.
  */
+
+$directory-w: 12rem;
+$directory-bp: 64rem; /* room for the column beside a full measure */
 .policy {
   box-sizing: border-box; /* the side padding sits inside the column */
   width: 100%;
@@ -30,10 +34,134 @@
   text-transform: uppercase;
 }
 
+/* DIRECTORY */
+.policy-directory {
+  margin-bottom: base.$space-6;
+  padding: base.$space-4 base.$space-5;
+  background-color: base.$site-color-dark-alt;
+  border: 1px solid rgba(base.$site-color-gray, 0.14);
+  border-radius: base.$radius;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: policy-directory;
+  }
+
+  li {
+    counter-increment: policy-directory;
+  }
+
+  /* Sub-sections: indented under their parent, a dash where the number was. */
+  .policy-directory-sub {
+    counter-increment: none;
+    padding-left: base.$space-5;
+    font-size: base.$type-meta;
+
+    a::before {
+      content: '\2013'; /* – */
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  /* Numbered in the monospace device: "01  A note from Dirk". */
+  a {
+    display: flex;
+    gap: base.$space-3;
+    padding: base.$space-1 0;
+    color: base.$site-color-gray;
+    text-decoration: none;
+    transition: color base.$hover;
+
+    &::before {
+      content: counter(policy-directory, decimal-leading-zero);
+      font-family: base.$font-mono;
+      font-size: base.$type-meta-sm;
+      line-height: 1.9;
+      color: base.$color-meta-dim;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: base.$color-signal;
+    }
+  }
+}
+
+.policy-directory-label {
+  margin: 0 0 base.$space-2 0;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .policy-body {
+  /* Jump targets clear the sticky header. */
+  [id] {
+    scroll-margin-top: calc(#{base.$header-h-m} + #{base.$space-5});
+  }
+
   h2 {
     margin: base.$space-6 0 base.$space-3 0;
     font-size: base.$type-h4-m;
+  }
+
+  h3 {
+    margin: base.$space-6 0 base.$space-2 0;
+    font-size: base.$type-body;
+  }
+
+  /* THE DIVISION - where framing stops and the policy starts: a heavy
+     double rule, then a title-sized heading wearing the \\> prompt. */
+  .policy-divider {
+    height: 0;
+    margin: base.$space-8 0 base.$space-6 0;
+    border: 0;
+    border-top: 3px double rgba(base.$color-meta, 0.6);
+  }
+
+  .policy-division {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35em;
+    margin: 0 0 base.$space-2 0;
+    font-size: base.$type-h3-m;
+  }
+
+  .policy-division-prompt {
+    position: relative;
+    top: -0.2em;
+    font-size: 0.6em;
+    letter-spacing: 0;
+  }
+
+  .policy-division-lede {
+    margin-bottom: base.$space-5;
+    color: base.$color-light;
+  }
+
+  /* A major one-line statement: the \\> prompt marks it, as on the headings. */
+  .policy-statement {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin: base.$space-5 0;
+    font-family: base.$font-heading;
+    font-size: base.$type-h4-m;
+    font-weight: base.$weight-heading;
+    letter-spacing: base.$tracking-heading;
+    line-height: 1.35;
+    color: base.$color-light;
+  }
+
+  .policy-statement-prompt {
+    flex: none;
+    position: relative;
+    top: -0.15em;
+    font-size: 0.75em;
+    letter-spacing: 0;
   }
 
   p,
@@ -60,16 +188,208 @@
     font-weight: base.$weight-subhead;
   }
 
-  a,
-  a:visited {
+  /* CONTRAST - robot vs human: a question, the answer as the punchline, then
+     what that covers. Robot rows are marked with '>'; human rows with an olive
+     dot. */
+  .policy-contrast {
+    display: grid;
+    gap: base.$space-3;
+    margin: 0 0 base.$space-4 0;
+  }
+
+  .policy-contrast-row {
+    padding: base.$space-4 base.$space-5;
+    border: 1px solid rgba(base.$site-color-gray, 0.14);
+    border-radius: base.$radius;
+    background-color: base.$site-color-dark-alt;
+
+    dt {
+      color: base.$site-color-gray;
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    .policy-contrast-answer {
+      margin: base.$space-1 0 base.$space-3 0;
+      font-family: base.$font-heading;
+      font-size: base.$type-h4-m;
+      font-weight: base.$weight-heading;
+      letter-spacing: base.$tracking-heading;
+      color: base.$color-light;
+    }
+
+    ul {
+      margin: 0;
+      padding: base.$space-3 0 0 0;
+      list-style: none;
+      border-top: 1px solid rgba(base.$color-meta-dim, 0.45);
+    }
+
+    li {
+      position: relative;
+      padding-left: base.$space-6;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li::before {
+      position: absolute;
+      left: 0;
+      font-family: base.$font-mono;
+      font-size: base.$type-meta;
+      line-height: 1.9;
+    }
+  }
+
+  .policy-contrast-row--robot li::before {
+    content: '>';
+    color: base.$color-meta-dim;
+  }
+
+  .policy-contrast-row--human {
+    border-color: rgba(base.$color-meta, 0.35);
+    background-color: rgba(base.$color-meta, 0.06);
+
+    /* A drawn dot, centred on the first line rather than on a glyph's baseline. */
+    li::before {
+      content: '';
+      font-size: inherit; /* so 0.8em is half the li's 1.6 line height */
+      top: calc(0.8em - 0.1875rem);
+      left: 0.1rem;
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 50%;
+      background-color: base.$color-meta;
+    }
+  }
+
+  /* SOURCES - a compact citation list under a claim: title, then publisher. */
+  .policy-sources {
+    margin: 0 0 base.$space-4 0;
+    padding: base.$space-3 base.$space-4;
+    border-left: 2px solid rgba(base.$color-meta-dim, 0.6);
+
+    ol {
+      margin: 0;
+      padding-left: base.$space-5;
+      font-size: base.$type-meta;
+    }
+
+    li {
+      margin-bottom: base.$space-2;
+      color: base.$site-color-gray;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li::marker {
+      font-family: base.$font-mono;
+      color: base.$color-meta-dim;
+    }
+
+    .meta {
+      display: block;
+      font-size: base.$type-meta-sm;
+    }
+  }
+
+  .policy-sources-label {
+    margin: 0 0 base.$space-2 0;
+    font-size: base.$type-meta-sm;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* DO / DON'T - two labelled panels; the label and marker carry the meaning. */
+  .policy-rules {
+    display: grid;
+    gap: base.$space-3;
+    margin-bottom: base.$space-4;
+  }
+
+  .policy-rule {
+    padding: base.$space-4 base.$space-5;
+    border: 1px solid rgba(base.$site-color-gray, 0.14);
+    border-radius: base.$radius;
+    background-color: base.$site-color-dark-alt;
+
+    ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: base.$space-5;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li::before {
+      position: absolute;
+      left: 0;
+      font-family: base.$font-mono;
+    }
+  }
+
+  .policy-rule-label {
+    display: inline-block;
+    margin: 0 0 base.$space-3 0;
+    padding: 0.1em 0.6em;
+    font-size: base.$type-meta-sm;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: base.$radius-sm;
+  }
+
+  .policy-rule--do {
+    border-top: 2px solid base.$color-meta;
+
+    .policy-rule-label {
+      color: base.$color-meta;
+      background-color: rgba(base.$color-meta, 0.14);
+    }
+
+    li::before {
+      content: '+';
+      color: base.$color-meta;
+    }
+  }
+
+  .policy-rule--dont {
+    border-top: 2px solid base.$color-signal;
+
+    .policy-rule-label {
+      color: base.$color-signal;
+      background-color: rgba(base.$color-signal, 0.12);
+    }
+
+    li::before {
+      content: '\00d7'; /* × */
+      color: base.$color-signal;
+    }
+  }
+
+  /* Inline links only: the [ Skip ] button keeps its own tertiary look. */
+  a:not(.btn),
+  a:not(.btn):visited {
     color: base.$color-light;
     text-decoration-color: base.$color-meta-dim;
     text-underline-offset: 0.2em;
     transition: color base.$hover;
   }
 
-  a:hover,
-  a:focus-visible {
+  a:not(.btn):hover,
+  a:not(.btn):focus-visible {
     color: base.$color-signal;
   }
 }
@@ -86,5 +406,45 @@
 
   .policy-body h2 {
     font-size: base.$type-h4;
+  }
+
+  .policy-body .policy-division {
+    font-size: base.$type-h3;
+  }
+
+  .policy-body [id] {
+    scroll-margin-top: calc(#{base.$header-h} + #{base.$space-5});
+  }
+}
+
+/* Wide screens: the directory moves into a sticky column left of the body. */
+@media all and (min-width: $directory-bp) {
+  .policy--directory {
+    display: grid;
+    grid-template-columns: $directory-w minmax(0, base.$measure);
+    grid-template-areas:
+      '.         head'
+      'directory body';
+    column-gap: base.$space-8;
+    max-width: calc(#{$directory-w} + #{base.$space-8} + #{base.$measure} + 2 * #{base.$space-6});
+  }
+
+  .policy--directory .policy-head {
+    grid-area: head;
+  }
+
+  .policy--directory .policy-body {
+    grid-area: body;
+  }
+
+  .policy--directory .policy-directory {
+    grid-area: directory;
+    align-self: start;
+    position: sticky;
+    top: calc(#{base.$header-h} + #{base.$space-6});
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
   }
 }
