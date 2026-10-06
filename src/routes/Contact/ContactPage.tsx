@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ContactForm from '../../components/ContactForm/ContactForm';
-import { AVAILABILITY, CONTACT_EMAIL } from '../../SITE';
+import { CONTACT_EMAIL } from '../../SITE';
 import './ContactPage.scss';
 
 export default function ContactPage() {
@@ -22,17 +22,12 @@ export default function ContactPage() {
           </ul>
 
           <p className="contact-notes-alt">
-            Prefer email? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            Prefer email? Reach out to us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
 
           <p className="contact-notes-alt">
-            We only use your details to reply, and don&apos;t keep them past that first
-            conversation. <Link to="/privacy">Privacy policy</Link>
-          </p>
-
-          <p className={`meta contact-notes-status ${AVAILABILITY.open ? 'is-open' : ''}`}>
-            <span className="contact-notes-dot" aria-hidden="true" />
-            {AVAILABILITY.open ? AVAILABILITY.label : AVAILABILITY.closedLabel}
+            We only use your details to reply, and never share them with anyone else.{' '}
+            <Link to="/privacy">Privacy policy</Link>
           </p>
         </div>
       </aside>

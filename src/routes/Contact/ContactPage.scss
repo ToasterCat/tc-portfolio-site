@@ -54,25 +54,6 @@
   }
 }
 
-.contact-notes-status {
-  display: flex;
-  align-items: center;
-  gap: base.$space-2;
-  margin: 0;
-  color: base.$color-meta-dim;
-
-  &.is-open {
-    color: base.$color-meta;
-  }
-}
-
-.contact-notes-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: currentColor;
-}
-
 @media all and (min-width: base.$bp) {
   .contact-notes {
     padding-bottom: base.$section-pad-y;

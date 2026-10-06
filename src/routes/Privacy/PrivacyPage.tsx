@@ -24,18 +24,45 @@ export default function PrivacyPage() {
         and we don&apos;t use your information for marketing.
       </p>
 
-      <h2>Sharing and retention</h2>
+      <h2>Sharing</h2>
+      <p>
+        <strong>We don&apos;t share your information with anyone else.</strong> We don&apos;t
+        sell it, rent it, or pass it along to other companies.
+      </p>
+
+      <h2>Services we use</h2>
+      <p>
+        Two outside services see some data in the course of running this site. Each handles
+        it under its own privacy policy.
+      </p>
       <ul>
-        <li>We do not sell, rent, or share your information with anyone.</li>
         <li>
-          We do not keep it past initial contact. Once that first conversation has run its
-          course, we delete it.
+          <strong>Formspree</strong> delivers the contact form. Your submission passes through
+          Formspree on its way to our inbox. See{' '}
+          <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+            Formspree&apos;s privacy policy
+          </a>
+          .
+        </li>
+        <li>
+          <strong>Google Analytics</strong> tells us how our own pages are doing: which ones get
+          visited, how often, and where visitors arrive from. We use it to understand traffic to
+          this site, not to track you or your browsing history. Google sets cookies to do this;
+          see{' '}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            Google&apos;s privacy policy
+          </a>
+          , or opt out with Google&apos;s{' '}
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+            browser add-on
+          </a>
+          .
         </li>
       </ul>
 
       <h2>Your choices</h2>
       <p>
-        You can ask what we hold about you, or ask us to delete it sooner, at any time:{' '}
+        You can ask what we hold about you, or ask us to delete it, at any time:{' '}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
 

@@ -34,13 +34,14 @@ export default function ContactForm() {
             />
           </div>
           <div className="contact-form-field">
-            <label htmlFor="location-1">Phone:</label>
+            <label htmlFor="location-1">
+              Phone: <span className="contact-form-optional">(optional)</span>
+            </label>
             <input
               id="location-1"
               type="tel"
               placeholder="555-555-5555"
               name="phone"
-              required
             />
           </div>
           <div className="contact-form-field-text-area">

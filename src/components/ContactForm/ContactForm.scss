@@ -41,6 +41,13 @@
     font-weight: base.$weight-subhead;
   }
 
+  /* Quieter than the label it follows. */
+  .contact-form-optional {
+    font-family: base.$font-body;
+    font-weight: normal;
+    color: base.$site-color-gray;
+  }
+
   input,
   textarea {
     width: 100%;
