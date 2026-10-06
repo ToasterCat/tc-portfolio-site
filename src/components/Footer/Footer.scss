@@ -96,7 +96,10 @@
   color: base.$color-signal;
 }
 
-/* "● taking-commissions" - the dot pulses gently while the shop is open. */
+/**
+ * "● taking-commissions" - one modifier per STUDIO_STATUS (SITE.ts). Olive
+ * while we can take work, dim once we can't; only "open" pulses.
+ */
 .footer-status-line {
   display: flex;
   align-items: center;
@@ -105,15 +108,22 @@
   color: base.$color-meta-dim;
 }
 
-.footer-status-line.is-open {
+.footer-status-line--open,
+.footer-status-line--limited {
   color: base.$color-meta;
 }
 
 .footer-status-dot {
+  box-sizing: border-box;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
   background-color: currentColor;
+}
+
+.footer-status-line--away .footer-status-dot {
+  background-color: transparent;
+  border: 1px solid currentColor;
 }
 
 @keyframes footer-status-pulse {
@@ -121,7 +131,7 @@
   50%      { box-shadow: 0 0 0 0.3rem rgba(base.$color-meta, 0); }
 }
 
-.footer-status-line.is-open .footer-status-dot {
+.footer-status-line--open .footer-status-dot {
   animation: footer-status-pulse 2.4s ease-in-out infinite;
 }
 

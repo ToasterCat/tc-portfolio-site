@@ -3,11 +3,12 @@ import BrandMark from '../UI/BrandMark/BrandMark';
 import TcMark from '../UI/TcMark/TcMark';
 import Brackets from '../UI/Brackets/Brackets';
 import {
-  AVAILABILITY,
   CONTACT_EMAIL,
   LOCATIONS,
   FOOTER_LINKS,
   SOCIAL_LINKS,
+  STUDIO_STATUS,
+  STUDIO_STATUS_LABELS,
 } from '../../SITE';
 import './Footer.scss';
 
@@ -59,9 +60,9 @@ export default function Footer() {
 
         <div className="footer-col footer-status">
           <h2 className="meta meta-dim footer-col-heading">Status</h2>
-          <p className={`meta footer-status-line ${AVAILABILITY.open ? 'is-open' : ''}`}>
+          <p className={`meta footer-status-line footer-status-line--${STUDIO_STATUS}`}>
             <span className="footer-status-dot" aria-hidden="true" />
-            {AVAILABILITY.open ? AVAILABILITY.label : AVAILABILITY.closedLabel}
+            {STUDIO_STATUS_LABELS[STUDIO_STATUS]}
           </p>
         </div>
       </div>

@@ -38,9 +38,17 @@ export const CONTACT_EMAIL = 'contact@toastercat.tech';
 
 export const LOCATIONS = ['Seattle, WA.'];
 
-/* Shown in the footer as "● taking-commissions". Flip when the shop is full. */
-export const AVAILABILITY = {
-  open: true,
-  label: 'taking-commissions',
-  closedLabel: 'booked-up',
+/**
+ * The footer's "Status" line. To change it, set STUDIO_STATUS to one of the
+ * keys below; each key has its own label and dot treatment in Footer.scss.
+ */
+export type StudioStatus = 'open' | 'limited' | 'booked' | 'away';
+
+export const STUDIO_STATUS_LABELS: Record<StudioStatus, string> = {
+  open: 'taking-commissions', // olive, pulsing dot - actively looking for work
+  limited: 'build-in-progress', // olive, steady dot - busy, but ask
+  booked: 'booked-up', // dim, steady dot - full for now
+  away: 'on-hiatus', // dim, hollow dot - not working at the moment
 };
+
+export const STUDIO_STATUS: StudioStatus = 'limited';
