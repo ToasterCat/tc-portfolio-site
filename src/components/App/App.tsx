@@ -7,6 +7,7 @@ import PortfolioPage from '../../routes/Portfolio/PortfolioPage';
 import ProjectDetailPage from '../../routes/ProjectDetail/ProjectDetailPage';
 import ContactPage from '../../routes/Contact/ContactPage';
 import PrivacyPage from '../../routes/Privacy/PrivacyPage';
+import AiPolicyPage from '../../routes/AiPolicy/AiPolicyPage';
 import NotFound from '../../routes/Error/404';
 import { PROJECT_CATEGORIES } from '../../PROJECTS';
 
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/portfolio/:alias" component={ProjectDetailPage} />
           <Route exact path="/contact" component={ContactPage} />
           <Route exact path="/privacy" component={PrivacyPage} />
+          <Route exact path="/ai-policy" component={AiPolicyPage} />
 
           {/* Old URLs: /projects, and #proj-* anchors on either path, land on
               the matching service section. */}

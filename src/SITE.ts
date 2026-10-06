@@ -24,6 +24,7 @@ export const FOOTER_LINKS: SiteLink[] = [
   ...NAV_LINKS,
   { label: 'Contact', to: '/contact' },
   { label: 'Privacy', to: '/privacy' },
+  { label: 'AI Policy', to: '/ai-policy' },
 ];
 
 export const SOCIAL_LINKS: SiteLink[] = [

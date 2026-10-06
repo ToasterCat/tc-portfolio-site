@@ -11,13 +11,13 @@ export default function PrivacyPage() {
         for one thing.
       </p>
 
-      <h2>What we collect</h2>
+      <h2>What We Collect</h2>
       <p>
         When you fill out the <Link to="/contact">contact form</Link> or email us, we receive
         what you provide: your name, email address, phone number, and message.
       </p>
 
-      <h2>How we use it</h2>
+      <h2>How We Use It</h2>
       <p>
         <strong>Only to start a conversation with you.</strong> We use your contact details to
         reply to your inquiry, and for nothing else. We don&apos;t add you to a mailing list,
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
         sell it, rent it, or pass it along to other companies.
       </p>
 
-      <h2>Services we use</h2>
+      <h2>Services We Use</h2>
       <p>
         Two outside services see some data in the course of running this site. Each handles
         it under its own privacy policy.
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>Your choices</h2>
+      <h2>Your Choices</h2>
       <p>
         You can ask what we hold about you, or ask us to delete it, at any time:{' '}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
