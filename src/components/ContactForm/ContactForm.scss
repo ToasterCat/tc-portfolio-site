@@ -21,6 +21,38 @@
   text-align: center;
 }
 
+/* Small print above the fields: centred under the heading, quieter than it. */
+.contact-form-preamble {
+  max-width: 32rem;
+  margin: calc(-1 * #{base.$space-3}) 0 base.$space-6 0;
+  color: base.$site-color-gray;
+  font-size: base.$type-meta;
+  line-height: 1.55;
+  text-align: center;
+
+  p {
+    margin: 0 0 base.$space-2 0;
+    text-wrap: pretty;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a,
+  a:visited {
+    color: base.$color-light;
+    text-decoration-color: base.$color-meta-dim;
+    text-underline-offset: 0.2em;
+    transition: color base.$hover;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: base.$color-signal;
+  }
+}
+
 .form-group {
   display: flex;
   flex-direction: column;

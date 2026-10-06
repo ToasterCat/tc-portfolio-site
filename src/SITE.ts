@@ -39,16 +39,45 @@ export const CONTACT_EMAIL = 'contact@toastercat.tech';
 export const LOCATIONS = ['Seattle, WA.'];
 
 /**
- * The footer's "Status" line. To change it, set STUDIO_STATUS to one of the
- * keys below; each key has its own label and dot treatment in Footer.scss.
+ * The studio's availability: shown in the footer, and explained in the status
+ * guide on /contact. To change it, set STUDIO_STATUS to one of the keys below.
+ * Each key has its own dot treatment (StatusLine.scss); labels and summaries
+ * can be reworded freely.
  */
 export type StudioStatus = 'open' | 'limited' | 'booked' | 'away';
 
-export const STUDIO_STATUS_LABELS: Record<StudioStatus, string> = {
-  open: 'taking-commissions', // olive, pulsing dot - actively looking for work
-  limited: 'build-in-progress', // olive, steady dot - busy, but ask
-  booked: 'booked-up', // dim, steady dot - full for now
-  away: 'on-hiatus', // dim, hollow dot - not working at the moment
+export interface StudioStatusInfo {
+  /** The monospace tag, e.g. "taking-commissions". */
+  label: string;
+  /** What this status means for someone about to get in touch. */
+  summary: string;
+}
+
+/* In display order for the status guide. */
+export const STUDIO_STATUSES: Record<StudioStatus, StudioStatusInfo> = {
+  // olive, pulsing dot - actively looking for work
+  open: {
+    label: 'taking-commissions',
+    summary:
+      'We have room for new work. Expect a call within the week, and we can get started as soon as the estimate is agreed.',
+  },
+  // olive, steady dot - busy, but ask
+  limited: {
+    label: 'limited-availability',
+    summary:
+      "We're mid-project, but still taking calls. Expect a call within the week and an initial estimate within the month. Small jobs and long-term proposals are considered case by case.",
+  },
+  // dim, steady dot - full for now
+  booked: {
+    label: 'booked-up',
+    summary:
+      "Our schedule is full for now. We'll still reply, and new projects start as current work wraps up.",
+  },
+  // dim, hollow dot - not working at the moment
+  away: {
+    label: 'on-hiatus',
+    summary: "We're not taking new work at the moment. Messages are answered when we're back.",
+  },
 };
 
 export const STUDIO_STATUS: StudioStatus = 'limited';

@@ -36,26 +36,72 @@
   }
 }
 
-.contact-notes-alt {
+/* STATUS GUIDE - the current status sits on a tinted plate, tagged "now". */
+.contact-status {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-3;
+  scroll-margin-top: calc(#{base.$header-h-m} + #{base.$space-5});
+}
+
+.contact-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-1;
+  margin: 0;
+}
+
+.contact-status-item {
+  padding: base.$space-3 base.$space-4;
+  border: 1px solid transparent;
+  border-radius: base.$radius;
+
+  dt {
+    display: flex;
+    align-items: center;
+    gap: base.$space-3;
+    margin-bottom: base.$space-1;
+  }
+
+  dd {
+    margin: 0;
+    color: base.$site-color-gray;
+    font-size: base.$type-meta;
+    line-height: 1.55;
+  }
+
+  &.is-current {
+    background-color: rgba(base.$color-meta, 0.07);
+    border-color: rgba(base.$color-meta, 0.3);
+  }
+
+  &:not(.is-current) dd {
+    color: rgba(base.$site-color-gray, 0.75);
+  }
+}
+
+.contact-status-now {
+  padding: 0.1em 0.5em;
+  font-size: base.$type-meta-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: base.$radius-sm;
+  background-color: rgba(base.$color-meta, 0.14);
+}
+
+.contact-status-footnote {
   margin: 0;
   color: base.$site-color-gray;
-
-  a,
-  a:visited {
-    color: base.$color-light;
-    text-decoration-color: base.$color-meta-dim;
-    text-underline-offset: 0.2em;
-    transition: color base.$hover;
-  }
-
-  a:hover,
-  a:focus-visible {
-    color: base.$color-signal;
-  }
+  font-size: base.$type-meta;
+  font-style: italic;
 }
 
 @media all and (min-width: base.$bp) {
   .contact-notes {
     padding-bottom: base.$section-pad-y;
+  }
+
+  .contact-status {
+    scroll-margin-top: calc(#{base.$header-h} + #{base.$space-5});
   }
 }

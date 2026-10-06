@@ -1,0 +1,40 @@
+@use '../../../base';
+
+/**
+ * Olive while we can take work, dim once we can't; hollow while away. Only
+ * the live "open" status pulses.
+ */
+.status-line {
+  display: inline-flex;
+  align-items: center;
+  gap: base.$space-2;
+  color: base.$color-meta-dim;
+}
+
+.status-line--open,
+.status-line--limited {
+  color: base.$color-meta;
+}
+
+.status-line-dot {
+  flex: none;
+  box-sizing: border-box;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.status-line--away .status-line-dot {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+@keyframes status-line-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(base.$color-meta, 0.5); }
+  50%      { box-shadow: 0 0 0 0.3rem rgba(base.$color-meta, 0); }
+}
+
+.status-line--open.status-line--live .status-line-dot {
+  animation: status-line-pulse 2.4s ease-in-out infinite;
+}
