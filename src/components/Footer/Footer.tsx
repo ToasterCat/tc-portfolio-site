@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import BrandMark from '../UI/BrandMark/BrandMark';
 import TcMark from '../UI/TcMark/TcMark';
 import Brackets from '../UI/Brackets/Brackets';
+import StatusLine from '../UI/StatusLine/StatusLine';
 import {
   CONTACT_EMAIL,
   LOCATIONS,
   FOOTER_LINKS,
   SOCIAL_LINKS,
   STUDIO_STATUS,
-  STUDIO_STATUS_LABELS,
 } from '../../SITE';
 import './Footer.scss';
 
@@ -60,10 +60,10 @@ export default function Footer() {
 
         <div className="footer-col footer-status">
           <h2 className="meta meta-dim footer-col-heading">Status</h2>
-          <p className={`meta footer-status-line footer-status-line--${STUDIO_STATUS}`}>
-            <span className="footer-status-dot" aria-hidden="true" />
-            {STUDIO_STATUS_LABELS[STUDIO_STATUS]}
-          </p>
+          {/* Links to the guide on /contact that explains each status. */}
+          <Link to="/contact#status" className="footer-status-link">
+            <StatusLine status={STUDIO_STATUS} live />
+          </Link>
         </div>
       </div>
 

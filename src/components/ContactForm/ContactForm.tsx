@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Brackets from '../UI/Brackets/Brackets';
+import { CONTACT_EMAIL } from '../../SITE';
 import './ContactForm.scss';
 
 export default function ContactForm() {
@@ -7,6 +9,22 @@ export default function ContactForm() {
     <React.Fragment>
       <section className="contact-form-section">
         <h1 className="contact-form-heading">Contact ToasterCat</h1>
+
+        {/* How the form travels, and the way around it, before anyone types. */}
+        <div className="contact-form-preamble">
+          <p>
+            This form is delivered to our inbox by{' '}
+            <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">
+              Formspree
+            </a>
+            . We only use your details to reply, and never share them with anyone else (
+            <Link to="/privacy">privacy policy</Link>).
+          </p>
+          <p>
+            Prefer to email us directly? Reach out to us at{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          </p>
+        </div>
 
         <form
           className="form-group"
