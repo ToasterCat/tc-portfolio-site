@@ -4,11 +4,11 @@ import PostCard from '../../components/UI/PostCard/PostCard';
 import { CONTACT_EMAIL } from '../../SITE';
 
 const SECTIONS: PolicySection[] = [
-  { id: 'note', label: 'A Note from Dirk' },
+  { id: 'note', label: 'A Note' },
   { id: 'pragmatic', label: 'Morality and Pragmatism' },
   { id: 'consent', label: 'Consent', sub: true },
-  { id: 'ownership', label: 'Copyright', sub: true },
-  { id: 'process', label: 'Owning the Process', sub: true },
+  { id: 'ownership', label: 'Ownership', sub: true },
+  { id: 'process', label: 'Reliability', sub: true },
   { id: 'bottom-line', label: 'The Bottom Line' },
   { id: 'policy', label: 'Our Policy' },
   { id: 'in-house', label: 'In-House Projects', sub: true },
@@ -16,17 +16,23 @@ const SECTIONS: PolicySection[] = [
   { id: 'questions', label: 'Questions' },
 ];
 
-
+/**
+ * AI usage policy, in two halves. Above the divider: why we hold the position
+ * we do (Dirk's note, then the moral, legal, and practical case). Below it:
+ * the policy itself, plainly stated. "Skip to our policy" jumps the gap.
+ */
 export default function AiPolicyPage() {
   return (
-    <PolicyDocument title="AI Usage Policy" updated="2026-10-05" sections={SECTIONS}>
-      {/* TODO: preamble - keep it to two or three sentences. */}
+    <PolicyDocument title="AI Usage Policy" updated="2026-10-06" sections={SECTIONS}>
       <p>
-        AI tools are used in nearly every corner of tech these days. If you&apos;re trusting us with your
-        project, you have a right to know if we use them, exactly how we use them, and where we never will.
+        AI tools are in nearly every corner of tech now. If you’re trusting us with your
+        project, you have a right to know whether we use them, exactly how, and where we never
+        will.
       </p>
       <p>
-        The short version: <strong>AI is a tool we use to engineer. Creative work is made by people.</strong>
+        The short version: AI is a tool we use to empower ourselves at the individual
+        level—but we’re not letting ourselves get carried away. <strong> Creative works
+        are best when made by creative people.</strong>
       </p>
       {/* For the skimmers: straight to the punchline. */}
       <p>
@@ -42,64 +48,71 @@ export default function AiPolicyPage() {
         role="Founder & Sr. Engineer @ ToasterCat Studios"
         tag="Personal note"
       >
-        {/* TODO: your statement, in your own words. */}
-        <p>I hate the term "AI".</p>
-        
         <p>
-          CPU SRC: I use AI every day as an engineering tool. It helped refactor the site you&apos;re
-          reading right now. But art, animation, music, and the worlds we build come from
-          people, and I won&apos;t build on generative tools trained on other creators&apos;
-          work without their consent.
-        </p>
-
-        <p>
-          I hate the term "AI". What we're seeing today isn't new, and it's certainly not intelligent.
-          It's an extension of large-scale data correlation techniques we've been employing for decades, just made accessible by throwing more GPUs, datacenters, and money at the problem.
+          I hate the term “AI”.
         </p>
         <p>
-          The modern Large Learning Model [LLM] came about in 2017 when 
+          There’s nothing particularly intelligent about it. I say that as someone who was building “AI” systems back when we called these statistical average machines Machine Learning [ML] and Natural Language Processing [NLP]. The architectures and mathematics have improved enormously, but today’s Large Language Models [LLMs] are still fundamentally prediction machines: extraordinarily optimized offspring of “Hot dog; Not hot dog” and “next word predictors”—finally fed enough data, GPUs, datacenters, and money to talk back.
         </p>
-
         <p>
-          When you hire us, you should own what we make for you, outright.
+          But damn, is it a useful hot dog machine.
         </p>
-
-        {/* TODO: keep or cut this example. */}
         <p>
-          AI-produced output isn't "slop" just because a bot was used. It's slop because its creator didn't
-          even bother to care about what they're making to begin with.
+          I’ve spent more late evenings than I care to remember hunting linker errors, memory leaks, build failures, dependency conflicts, and deployment problems. These issues aren’t necessarily difficult; they’re tedious, inconsistent, and often teach you very little once solved. LLM-based coding assistants are excellent at this work, along with boilerplate code, test cases, dependency upgrades, documentation, and other well-scoped engineering chores. <strong>Let the bots have it</strong>; I’m not becoming a better engineer by discovering an obscured dependency update pulled in a conflicting version of a node library on a specific flavor of a docker environment.
         </p>
-
+        <p>
+          The same goes for status reports, emails, and corporate “synergy-ese”. I’m perfectly happy to let a bot turn an engineer’s bullet points into a respectable public statement.
+        </p>
+        <p>
+          The problem of “AI brain rot” starts when the tool stops assisting and starts thinking for you. Let an LLM design an entire codebase and sooner or later you’ll end up making something horrific: a system nobody actually understands; instant legacy software that can only be maintained by inefficiently feeding it back through another model. Vibe-coded apps are impressive until somebody has to change, debug, secure, or operate them six months later. Take it from an AWS DevOps veteran: the engineers responsible for maintaining a system always need to understand it inside and out or you’re going to have a very bad and expensive day.
+        </p>
+        <p>
+          That gives us a fairly simple engineering rule: <strong>use AI for the short game</strong>. Use it to eliminate frustration, investigate bugs, generate boilerplate, summarize information, and accelerate mundane work for a knowledgeable human to evaluate, coach, and approve. Do not outsource architecture, technical ownership, product judgment, or understanding to what is ultimately just an intern-bot.
+        </p>
+        <p>
+          Generative art is a harder sell. As a musician and a certified soul-bearing human, I have yet to see or hear any generative AI output that moves me. That is a meager reward for technology built amid legitimate controversy over the use of artists’ work as training material, often without their knowledge or meaningful consent. And after all of that, the output only really remains most useful for soulless corporate clip art, stock imagery, concepts, and placeholders.
+        </p>
+        <p>
+          What we actually hire artists for is taste, intent, authorship, and a coherent point of view. We hire engineers who can provide novel, out-of-the-box solutions to hard problems and a vision for scale. Those are simply not things a statistical average hot dog machine can provide. No one wants to look at art drawn by a statistical mean or play a game designed by a next word predictor—or at least I certainly don’t.
+        </p>
+        <p>
+          So my policy is not “AI bad” or “AI good”. My policy is to use AI as a simple tool to clear our schedules of mundane bullsh*t. Use it where speed matters more than authorship and where an informed human remains accountable for the result. Do not use it as a substitute for engineering judgment, product design, artistic direction, or creative ownership.
+        </p>
+        <p>
+          AI output isn’t “slop” just because a bot was involved. It’s slop because nobody cared enough to make something good.
+        </p>
+        {/* Signature, mirroring email sign-off. */}
+        <p className="meta post-card-signature">
+          Regards;
+          <br />
+          <br />
+          <span aria-hidden="true">{'\\>'}</span> Dirk
+          <br />
+          <span aria-hidden="true">|-</span> Founder &amp; Sr. Engineer @ ToasterCat Studios
+        </p>
       </PostCard>
 
       {/* The reasoning, before the rules it leads to. */}
       <h2 id="pragmatic">Morality and Pragmatism</h2>
       <p>
-        This isn&apos;t only an ethical stance. A large language model works by predicting the
-        most likely output from what it has already seen, so by design it hands you an average,
-        derivative result. It gets there through a process that&apos;s non-deterministic and
-        can&apos;t be repeated exactly. If you ask an LLM bot the same question twice, you'll
-        get two different answers.
-      </p>
-      <p>
-        Fast pattern-matching across everything it has seen is an excellent tool when
-        you&apos;re chasing down a bug. An average, unrepeatable result is exactly what you
-        don&apos;t want in work that&apos;s meant to stand out, or to be yours.
+        Our position isn’t anti-technology, and it isn’t hype. It rests on three
+        things: what’s fair to the people whose work these tools learned from, what you can
+        legally own, and what actually holds up once a product ships.
       </p>
 
-
-      {/* ================== CONSENT ================ */}
-      <h2 id="consent">Why: Consent and Derivative Work</h2>
+      <h3 id="consent">Consent: Art Comes from Artists</h3>
       <p>
-        First and foremost: <strong>We do not use generative AI to create work derived from other people&apos;s art,
-        music, or writing without their consent.</strong>.
+        <strong>
+          We do not use generative AI to create work derived from other people’s art,
+          music, or writing without their consent.
+        </strong>
       </p>
       <p>
-        Many of the best-known image, music, and voice generators were trained on creators&apos;
-        work collected without their permission, and several now face lawsuits over it. The US
-        Copyright Office has found that training on copyrighted work qualifies as fair use in
-        some cases but not others, and the courts are still sorting out which. We won&apos;t
-        build on that, for ourselves or for clients.
+        Most major image, music, and voice generators were trained on creators’ work—passion
+        projects scraped from the internet with neither their permission, knowledge nor consent—
+        and several now face lawsuits over it. The US Copyright Office has found that training on
+        copyrighted work qualifies as fair use in some cases but not others, and the courts are still
+        sorting it all out. We won’t build on that, for ourselves or for clients.
       </p>
       <div className="policy-sources">
         <p className="meta meta-dim policy-sources-label">Sources</p>
@@ -112,19 +125,17 @@ export default function AiPolicyPage() {
           </li>
           <li>
             <a href="https://itsartlaw.org/art-law/artificial-intelligence-and-artists-intellectual-property-unpacking-copyright-infringement-allegations-in-andersen-v-stability-ai-ltd/" target="_blank" rel="noopener noreferrer">
-              AI and Artists&apos; IP: Andersen v. Stability AI
+              AI and Artists’ IP: Andersen v. Stability AI
             </a>
             <span className="meta meta-dim">Center for Art Law</span>
           </li>
         </ol>
       </div>
 
-
-      {/* ================== COPYRIGHT ================ */}
-      <h2 id="ownership">Why: Ownership and Copyright</h2>
+      <h3 id="ownership">Ownership: You Should Own What You Pay For</h3>
       {/* TODO: confirm wording with counsel before launch. */}
       <p>
-        US copyright requires a human author. The Copyright Office won&apos;t register material
+        US copyright requires a human author. The Copyright Office won’t register material
         generated by AI without meaningful human authorship, and the courts have upheld that.
         Mixed into a larger work, the AI-generated parts have to be disclosed and excluded when
         the work is registered, and they stay unprotected: gaps in what you actually own.
@@ -161,40 +172,41 @@ export default function AiPolicyPage() {
         </ol>
       </div>
 
-
-      {/* ========= OWN THE PROCESS ================ */}
-      <h2 id="process">Why: Owning the Process</h2>
+      <h3 id="process">Reliability: Know Your Own Tools</h3>
       <p>
-        Engineers and creators need to own the process at every stage to craft their vision.
-        Using AI at the more ephemeral layers (grunt code, test cases, bug hunting,
-        Photoshop&apos;s tools, cleaning up 3D topology) unlocks real productivity
-        without taking away the creator&apos;s vision, ownership, or agency.
+        Engineers and creators need to own the process at every stage. Used at the ephemeral
+        layers (boilerplate code, test cases, bug hunts, Photoshop’s tools, cleaning up 3D
+        topology), AI unlocks real productivity without taking away anyone’s vision,
+        ownership, or agency.
       </p>
       <p>
-        When you hand an AI coding suite an entire app, website, or game, you end up with
-        something nobody on the team actually understands. You can&apos;t edit an experience
-        you don&apos;t understand, so every change goes back through the tool, slower and less
+        Let an LLM-based coding suite govern an entire project, though, and you get something
+        horrifying: a technical behemoth that nobody on the team understands and now has to maintain.
+        LLMs are non-deterministic (ask the same question twice, get two different answers), and their
+        accuracy measurably degrades as the context they’re given grows, which is exactly what
+        happens as a project expands in scope and complexity. This can condemn projects to a fate where every
+        future change requires another round through the big expensive machine, running slower and less
         safely each time.
       </p>
       <p>
-        We&apos;ve already seen how that ends. An AI agent on Replit wiped a company&apos;s live
-        database during a code freeze, then faked records to cover it. Amazon&apos;s own AI
+        We’ve already seen how that ends. An AI agent on Replit wiped a company’s live
+        database during a code freeze, then faked records to cover it. Amazon’s own AI
         coding tool reportedly took an AWS service down for 13 hours. Experienced developers
         using AI tools measured 19% slower while believing they were faster. Automation nobody
-        understands doesn&apos;t make a product stronger. It makes it fragile.
+        understands doesn’t make a product stronger. It makes it fragile.
       </p>
       <div className="policy-sources">
         <p className="meta meta-dim policy-sources-label">Sources</p>
         <ol>
           <li>
             <a href="https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/" target="_blank" rel="noopener noreferrer">
-              Vibe coding service Replit deleted user&apos;s production database
+              Vibe coding service Replit deleted user’s production database
             </a>
             <span className="meta meta-dim">The Register, July 2025</span>
           </li>
           <li>
             <a href="https://www.engadget.com/ai/13-hour-aws-outage-reportedly-caused-by-amazons-own-ai-tools-170930190.html" target="_blank" rel="noopener noreferrer">
-              13-hour AWS outage reportedly caused by Amazon&apos;s own AI tools
+              13-hour AWS outage reportedly caused by Amazon’s own AI tools
             </a>
             <span className="meta meta-dim">Engadget, reporting the Financial Times, February 2026</span>
           </li>
@@ -205,26 +217,39 @@ export default function AiPolicyPage() {
             <span className="meta meta-dim">METR, July 2025</span>
           </li>
           <li>
-            <a href="https://www.crowdstrike.com/wp-content/uploads/2024/08/Channel-File-291-Incident-Root-Cause-Analysis-08.06.2024.pdf" target="_blank" rel="noopener noreferrer">
-              Channel File 291 Incident: Root Cause Analysis
+            <a href="https://www.trychroma.com/research/context-rot" target="_blank" rel="noopener noreferrer">
+              Context Rot: How Increasing Input Tokens Impacts LLM Performance
             </a>
-            <span className="meta meta-dim">CrowdStrike, August 2024</span>
+            <span className="meta meta-dim">Chroma Research, July 2025</span>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer">
+              Lost in the Middle: How Language Models Use Long Contexts
+            </a>
+            <span className="meta meta-dim">Liu et al., Transactions of the ACL, 2024</span>
           </li>
         </ol>
       </div>
 
       <h2 id="bottom-line">The Bottom Line</h2>
+      <p>
+        We use the best tools available, where they pay off: faster debugging, broader test
+        coverage, and to help us sound like professionals on the internet. We don’t bet our
+        products on these tools, nor do we see them as replacements for talented human beings.
+      </p>
+      <p>
+        That keeps what we build maintainable, defensible, and fully yours. You should get what
+        you pay for.
+      </p>
       <dl className="policy-contrast">
         <div className="policy-contrast-row policy-contrast-row--robot">
-          <dt>Need to find a bug, fast?</dt>
-          <dt>Need a suite of monotonous tests?</dt>
+          <dt>Need a bug found or something mundane created fast?</dt>
           <dd>
-            <p className="policy-contrast-answer">Use a robot.</p>
+            <p className="policy-contrast-answer">We’ll use a robot.</p>
             <ul>
               <li>Low-level execution of well-defined tasks</li>
-              <li>Untangling dependency graphs</li>
-              <li>Tracing linker errors</li>
-              <li>Writing test cases</li>
+              <li>Un-tangling dependency graphs</li>
+              <li>Tracing linker errors and build, environment, or platform-level issues</li>
               <li>Tracking security, accessibility, and legal compliance</li>
               <li>Writing soulless &ldquo;corporate synergy-ese&rdquo;</li>
             </ul>
@@ -233,12 +258,12 @@ export default function AiPolicyPage() {
         <div className="policy-contrast-row policy-contrast-row--human">
           <dt>Need something extraordinary, creative, or original?</dt>
           <dd>
-            <p className="policy-contrast-answer">You need a gifted human.</p>
+            <p className="policy-contrast-answer">We’ll put a soul-bearing human on it.</p>
             <ul>
-              <li>Adding a soul</li>
-              <li>Creating art: illustration, animation, music, and sound</li>
-              <li>High-level project anatomy and paradigms</li>
-              <li>Anything else we&apos;d be proud to call &ldquo;art&rdquo;</li>
+              <li>Finding new solutions to old problems</li>
+              <li>High-level technical and product design</li>
+              <li>Illustration, animation, music, and sound</li>
+              <li>Anything else we’d be proud to call &ldquo;art&rdquo;</li>
             </ul>
           </dd>
         </div>
@@ -253,11 +278,17 @@ export default function AiPolicyPage() {
         </span>
         Our Policy
       </h2>
-      {/* TODO: keep or cut this example. */}
+      <p className="policy-division-lede">
+        Here’s where we draw the line.
+      </p>
       <p>
-        This site is a working example of our approach. Our AI coding assistant (Claude Opus-5.5) didn&apos;t design it - we did.
-        Claude merely it extended a structure we had already hand-built in React, following patterns we set and can still
-        read, change, and maintain by hand.
+        Bots get the “short game”. Humans manage them, and build everything else
+        that needs soul, originality, or character.
+      </p>
+      <p>
+        This site is a working example. An AI coding assistant helped us refactor, stylize, and extend it,
+        but the robot didn’t design it: it extended a structure we’d already hand-built in React,
+        following patterns we set years ago and still actively read, change, and maintain ourselves.
       </p>
 
       <h3 id="in-house">In-House Projects</h3>
@@ -266,15 +297,16 @@ export default function AiPolicyPage() {
           <p className="meta policy-rule-label">Do</p>
           <ul>
             <li>Use AI coding assistants to write, review, refactor, and debug code.</li>
-            <li>Use it for research, reading documentation, and talking through technical problems.</li>
-            <li>Review and test every AI-assisted change before it ships.</li>
+            <li>Use them for research, documentation, and talking through technical problems.</li>
+            <li>Use them to draft status reports, emails, and other business correspondence.</li>
+            <li>Have a person review and test every AI-assisted change before it ships.</li>
           </ul>
         </div>
         <div className="policy-rule policy-rule--dont">
-          <p className="meta policy-rule-label">Don&apos;t</p>
+          <p className="meta policy-rule-label">Don’t</p>
           <ul>
             <li>Generate art, animation, music, sound, or voices for our projects.</li>
-            <li>Prompt AI to imitate another creator&apos;s style or work.</li>
+            <li>Prompt AI to imitate another creator’s style or work.</li>
             <li>Pass off AI output as hand-made.</li>
           </ul>
         </div>
@@ -285,13 +317,17 @@ export default function AiPolicyPage() {
         <div className="policy-rule policy-rule--do">
           <p className="meta policy-rule-label">Do</p>
           <ul>
+            <li>
+              Use AI where it makes your project faster and sturdier: debugging, test coverage,
+              and compliance checks.
+            </li>
             <li>Tell you up front where AI tools are part of our technical workflow.</li>
             <li>Have an engineer review, test, and take responsibility for every line we deliver.</li>
             <li>Keep AI tools off your project entirely, if you ask.</li>
           </ul>
         </div>
         <div className="policy-rule policy-rule--dont">
-          <p className="meta policy-rule-label">Don&apos;t</p>
+          <p className="meta policy-rule-label">Don’t</p>
           <ul>
             <li>
               Use generative AI for creative deliverables: artwork, animation, music, characters,
@@ -308,7 +344,7 @@ export default function AiPolicyPage() {
 
       <h2 id="questions">Questions</h2>
       <p>
-        If you want to know how AI was or wasn&apos;t used on something we made, just ask:{' '}
+        Want to know how AI was or wasn’t used on something we made? Just ask:{' '}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
     </PolicyDocument>
