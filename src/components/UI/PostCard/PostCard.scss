@@ -104,6 +104,13 @@
   pointer-events: none;
 }
 
+/* A closing signature: same size and tone as the header's role line. */
+.post-card-body .post-card-signature {
+  font-size: base.$type-meta-sm;
+  line-height: 1.5;
+  color: base.$color-meta-dim;
+}
+
 .post-card-toggle {
   margin-top: base.$space-2;
   margin-left: calc(-1 * #{base.$space-1}); /* align the bracket with the text */
