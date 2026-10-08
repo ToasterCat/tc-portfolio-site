@@ -19,13 +19,21 @@ import genericWebsiteLogo from './logos/external/www-logo-small.png';
 import mayaLogo from './logos/external/maya-logo-medium.png';
 import fusionLogo from './logos/external/fusion360-logo-small.png';
 import curaLogo from './logos/external/cura-logo-small.png';
-import gameliftLogo from './logos/external/gamelift-logo-small.png';
-import s3Logo from './logos/external/s3-logo-small.png';
-import route53Logo from './logos/external/route-53-logo-small.png';
+import gameliftLogo from './logos/external/aws/aws-gamelift.png';
+import s3Logo from './logos/external/aws/aws-s3.png';
+import route53Logo from './logos/external/aws/aws-route53.png';
 import html5Logo from './logos/external/html5-logo-small.png';
 import css3Logo from './logos/external/css3-logo-small.png';
-import cloudfrontLogo from './logos/external/cloudfront-logo-small.png';
-import lightsailLogo from './logos/external/lightsail-logo-small.png';
+import cloudfrontLogo from './logos/external/aws/aws-cloudfront.png';
+import lightsailLogo from './logos/external/aws/aws-lightsail.png';
+// AWS service icons: official AWS Architecture Icons (July 2026 package).
+import dynamodbLogo from './logos/external/aws/aws-dynamodb.png';
+import cloudformationLogo from './logos/external/aws/aws-cloudformation.png';
+import stepFunctionsLogo from './logos/external/aws/aws-step-functions.png';
+// Simple Icons (CC0), recoloured for the dark theme. iOS uses the Apple mark
+// (the iOS icon is a wordmark, which would read "iOS iOS" beside the label).
+import blenderLogo from './logos/external/blender-logo.svg';
+import iosLogo from './logos/external/ios-logo.svg';
 import shopifyLogo from './logos/external/shopify-logo-small.png';
 import photoshopLogo from './logos/external/photoshop-logo-small.png';
 import premiereLogo from './logos/external/premiere-logo-small.png';
@@ -77,6 +85,8 @@ import chickMagnetLogo from './gallery/ChickMagnet/logo-clipart-medium.png';
 
 import lizzieProfile from './gallery/Lizzie/LizzieHand_scaled.jpg';
 import lizzieTinker from './gallery/Lizzie/LizzieTinker.jpg';
+import lizzieTinker1600 from './gallery/Lizzie/LizzieTinker_1600.webp';
+import lizzieTinker800 from './gallery/Lizzie/LizzieTinker_800.webp';
 
 import fossArmoryBackground from './gallery/FOSS/TargetRange.png';
 import tcStudioBackground from './gallery/TC-Recording/StudioGuitars_scaled.jpg';
@@ -123,6 +133,11 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["logo-css", css3Logo],
     ["logo-cloudfront", cloudfrontLogo],
     ["logo-lightsail", lightsailLogo],
+    ["logo-dynamodb", dynamodbLogo],
+    ["logo-cloudformation", cloudformationLogo],
+    ["logo-step-functions", stepFunctionsLogo],
+    ["logo-blender", blenderLogo],
+    ["logo-ios", iosLogo],
     ["logo-shopify", shopifyLogo],
     ["logo-photoshop", photoshopLogo],
     ["logo-premiere", premiereLogo],
@@ -171,6 +186,8 @@ let ASSET_MANIFEST = new Map<string, string> ([
 
     ["lizzie-profile", lizzieProfile],
     ["lizzie-tinker", lizzieTinker],
+    ["lizzie-tinker-1600", lizzieTinker1600],
+    ["lizzie-tinker-800", lizzieTinker800],
 
     ["moxel-background", moxelBackground],
     ["moxel-logo", moxelLogo],

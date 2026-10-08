@@ -5,7 +5,17 @@ export interface Project {
 /** How we came to the work: our own, hired for it, or one team among several. */
 export type ProjectOrigin = 'in-house' | 'client' | 'contributor';
 
-export type ProjectStatus = 'in-development' | 'live' | 'shipped' | 'archived' | 'unreleased';
+/**
+ * `delivered` is for consulting and scoping engagements: our deliverable landed,
+ * whatever the client then decided to do with the product (that goes in `outcome`).
+ */
+export type ProjectStatus =
+  | 'in-development'
+  | 'live'
+  | 'shipped'
+  | 'delivered'
+  | 'archived'
+  | 'unreleased';
 
 /** Directory bucket - drives grouping today and the /portfolio filters next. */
 export type ProjectCategory = 'game' | 'web' | 'consult' | 'audio' | 'proto';

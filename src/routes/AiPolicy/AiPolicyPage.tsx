@@ -445,7 +445,7 @@ export default function AiPolicyPage() {
       <h3 id="in-house">In-House Projects</h3>
       <div className="policy-rules">
         <div className="policy-rule policy-rule--do">
-          <p className="meta policy-rule-label">Do</p>
+          <p className="tag policy-rule-label">Do</p>
           <ul>
             <li>Use AI coding assistants to write, review, refactor, and debug code.</li>
             <li>Use AI to assist research, documentation, and talking through technical problems.</li>
@@ -465,7 +465,7 @@ export default function AiPolicyPage() {
           </ul>
         </div>
         <div className="policy-rule policy-rule--dont">
-          <p className="meta policy-rule-label">Don’t</p>
+          <p className="tag tag--signal policy-rule-label">Don’t</p>
           <ul>
             <li>
               Ship generated art, animation, music, sound, voices, or narrative writing in a
@@ -484,7 +484,7 @@ export default function AiPolicyPage() {
       <h3 id="client">Client Projects</h3>
       <div className="policy-rules">
         <div className="policy-rule policy-rule--do">
-          <p className="meta policy-rule-label">Do</p>
+          <p className="tag policy-rule-label">Do</p>
           <ul>
             <li>
               Use AI where it makes your project faster and sturdier: debugging, test coverage,
@@ -498,8 +498,8 @@ export default function AiPolicyPage() {
               Draft project paperwork, reviewed and approved by a person before it reaches you.
             </li>
             <li>
-              Hand-write the parts of your project you’ll own as IP, in sandboxed, AI-free areas
-              with a clear record of who wrote what.
+              Where ownership matters to you, hand-write the parts of your project you’ll own as
+              IP in sandboxed, AI-free areas, written into your agreement and definition of done.
             </li>
             <li>Tell you up front where AI tools are part of our workflow.</li>
             <li>Have an engineer review, test, and take responsibility for every line we deliver.</li>
@@ -507,7 +507,7 @@ export default function AiPolicyPage() {
           </ul>
         </div>
         <div className="policy-rule policy-rule--dont">
-          <p className="meta policy-rule-label">Don’t</p>
+          <p className="tag tag--signal policy-rule-label">Don’t</p>
           <ul>
             <li>
               Sell you generated art or media. None of it ships in a final revision: not

@@ -132,11 +132,7 @@ function ProjectHero(props: { details: ProjectDetails }) {
         {/* Eyebrow across the full width, so any length of kind fits and
             the logo and title below can centre on each other. */}
         {d.kind && (
-          <p className="meta project-hero-kind">
-            <span className="meta-dim project-hero-bracket" aria-hidden="true">[</span>
-            {d.kind}
-            <span className="meta-dim project-hero-bracket" aria-hidden="true">]</span>
-          </p>
+          <p className="tag tag--quiet project-hero-kind">{d.kind}</p>
         )}
 
         {thumbnail && (

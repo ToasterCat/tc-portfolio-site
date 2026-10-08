@@ -9,6 +9,7 @@ import './AboutSection.scss';
  */
 export default function AboutSection() {
   const facts: [string, string][] = [
+    ['Est.', '2020 · building since 2011'],
     ['Based', LOCATIONS.join(' · ')],
     ['Shop', '3d printer fleet · live room'],
     ['Builds', PROJECT_CATEGORIES.map((c) => c.label.toLowerCase()).join(' · ')],
@@ -27,6 +28,10 @@ export default function AboutSection() {
             makerspace, recording studio, and mad science laboratory based out of
             the American Pacific Northwest. Our team provides engineering and
             logistical resources to makers and artists alike.
+          </p>
+          <p>
+            What started as side projects in 2011 became ToasterCat Studios LLC in
+            2020, and a full-time studio in 2021.
           </p>
           <p>
             Software, hardware, and audio all come out of the same building

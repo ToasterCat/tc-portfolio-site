@@ -34,7 +34,7 @@ export default function ContactPage() {
                   <div className={`contact-status-item ${current ? 'is-current' : ''}`} key={status}>
                     <dt>
                       <StatusLine status={status} live={current} />
-                      {current && <span className="meta contact-status-now">now</span>}
+                      {current && <span className="tag contact-status-now">now</span>}
                     </dt>
                     <dd>{STUDIO_STATUSES[status].summary}</dd>
                   </div>

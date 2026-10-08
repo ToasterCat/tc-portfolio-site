@@ -53,21 +53,42 @@ export function skillIconMap(skillName: string) {
         icon: ASSET_MANIFEST.get('logo-route53'),
         label: "AWS Route 53"
       };
+    case "AWS-DynamoDB":
+      return {
+        icon: ASSET_MANIFEST.get('logo-dynamodb'),
+        label: "AWS DynamoDB"
+      };
+    case "AWS-CloudFormation":
+      return {
+        icon: ASSET_MANIFEST.get('logo-cloudformation'),
+        label: "AWS CloudFormation"
+      };
+    case "AWS-StepFunctions":
+      return {
+        icon: ASSET_MANIFEST.get('logo-step-functions'),
+        label: "AWS Step Functions"
+      };
+
+    case "Blender":
+      return {
+        icon: ASSET_MANIFEST.get('logo-blender'),
+        label: "Blender"
+      };
 
     case "CSS":
       return {
         icon: ASSET_MANIFEST.get('logo-css'),
-        label: "CSS 3"
+        label: "CSS3"
       };
     case "Cura":
       return {
         icon: ASSET_MANIFEST.get('logo-cura'),
-        label: "Cura Slicer"
+        label: "Cura"
       };
     case "Ebay":
       return {
         icon: ASSET_MANIFEST.get('logo-ebay'),
-        label: "Ebay Seller"
+        label: "eBay Seller"
       };
     case "Fusion360":
       return {
@@ -82,12 +103,17 @@ export function skillIconMap(skillName: string) {
     case "GSuite":
       return {
         icon: ASSET_MANIFEST.get('logo-gsuite'),
-        label: "Google GSuite"
+        label: "Google Workspace"
       };
     case "HTML":
       return {
         icon: ASSET_MANIFEST.get('logo-html'),
-        label: "HTML 5"
+        label: "HTML5"
+      };
+    case "iOS":
+      return {
+        icon: ASSET_MANIFEST.get('logo-ios'),
+        label: "iOS"
       };
     case "Maya":
       return {
@@ -102,12 +128,12 @@ export function skillIconMap(skillName: string) {
     case "Premiere":
       return {
         icon: ASSET_MANIFEST.get('logo-premiere'),
-        label: "Adobe Premiere"
+        label: "Adobe Premiere Pro"
       };
     case "Reaper":
       return {
         icon: ASSET_MANIFEST.get('logo-reaper'),
-        label: "Reaper"
+        label: "REAPER"
       };
     case "Shopify":
       return {

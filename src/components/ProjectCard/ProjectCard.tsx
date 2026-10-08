@@ -42,11 +42,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   const showYear = (props.showYear ?? true) && !!d.year;
 
   const kind = d.kind && (
-    <p className="meta project-card-kind">
-      <span className="meta-dim project-card-bracket" aria-hidden="true">[</span>
-      {d.kind}
-      <span className="meta-dim project-card-bracket" aria-hidden="true">]</span>
-    </p>
+    <p className="tag tag--quiet project-card-kind">{d.kind}</p>
   );
 
   const title = (

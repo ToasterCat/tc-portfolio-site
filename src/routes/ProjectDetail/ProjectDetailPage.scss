@@ -116,6 +116,13 @@ $spec-w: 18rem;
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* No logo: everything stacks in the one column. Without this, the column-2
+ * rules above open a phantom second column and the kind overlaps the title.
+ * (Doubled class to outrank them, no !important; desktop repeats it below.) */
+.project-hero-inner.project-hero-inner--no-thumb > * {
+  grid-column: 1;
+}
+
 .project-hero-thumb {
   align-self: center; /* centred on the title, however many lines it wraps */
   width: 3rem;
@@ -123,21 +130,10 @@ $spec-w: 18rem;
   object-fit: contain;
 }
 
-/* [KIND] on a tinted plate - same treatment as the portfolio title bars. */
+/* The kind is a .tag (index.scss); this only places it. */
 .project-hero-kind {
   justify-self: start;
   margin: 0;
-  padding: 0.1em 0.4em;
-  font-size: base.$type-meta-sm;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: base.$radius-sm;
-  background-color: rgba(base.$color-meta, 0.14);
-}
-
-.project-hero-bracket {
-  position: relative;
-  top: -0.08em;
 }
 
 .project-hero-title {

@@ -92,6 +92,40 @@ h1, h2, h3, h4 {
 }
 
 /**
+ * TAG - a bordered label for kinds, statuses, and media types. Never
+ * clickable: [ BRACKETS ] are reserved for commands (.btn--tertiary).
+ * Colour varies by modifier; the shape stays the same everywhere.
+ */
+.tag {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  font-family: base.$font-mono;
+  font-size: base.$type-meta-sm;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: base.$color-meta;
+  background-color: rgba(base.$color-black, 0.35);
+  border: 1px solid base.$color-meta-dim;
+  border-radius: base.$radius-sm;
+}
+
+.tag--signal {
+  color: base.$color-signal;
+  border-color: rgba(base.$color-signal, 0.55);
+}
+
+/* Quiet: same shape, stepped back, for labels that sit beside a title
+ * (project kinds), so the title stays what the eye lands on. */
+.tag--quiet {
+  color: base.$color-meta-dim;
+  background-color: transparent;
+  border-color: rgba(base.$color-meta-dim, 0.5);
+}
+
+/**
  * SECTION RHYTHM
  *
  * A shared band + heading treatment. Section headings were previously sized

@@ -80,16 +80,17 @@ const PROJECTS: Record<string, Project> = {
       category: 'consult',
       order: 100,
       featured: true,
-      name: '"MusiMojii" - ClickTune LLC',
+      name: '“MusiMojii” — ClickTune LLC',
       kind: `Client Consultation`,
       origin: 'client',
-      status: 'shipped',
+      status: 'delivered',
       role: 'Back-End Architecture Design, Research, and Technical Advisory',
       year: '2025',
-      outcome: 'shipped',
-      brief: `Research, Development, and Back-End System Design for ClickTune LLC.`,
+      outcome: 'Patent granted: US 12,671,666 includes our engineering flow diagrams for the back-end service ClickTune chose to build.',
+      brief: `Technical research and back-end design for shareable musical “GIFs”, now part of a granted US patent.`,
       body: [
-        'ClickTune LLC is building an aspiring social media experience where users can share audio clips attached to text messages [US Patent # 12,671,666]. Provided preliminary technical research, rapid prototyping, and back-end design required for patent acceptance.',
+        `ClickTune came to us with an idea for shareable musical “GIFs”: short audio clips attached to text messages. We researched the problem and delivered three distinct technical approaches, each with its own back-end design.`,
+        `Alongside them, we provided rough development timelines, team requirements, and infrastructure estimates for the build and for several tiers of user adoption and scale. ClickTune pursued one of the three, and our engineering flow diagrams for its back-end service are part of the granted patent.`,
       ],
       skills: [
         "AWS-S3",
@@ -101,8 +102,8 @@ const PROJECTS: Record<string, Project> = {
       ],
       links: [
         {
-          label: 'US Patent Office',
-          target: 'https://ppubs.uspto.gov/',
+          label: 'US Patent 12,671,666',
+          target: 'https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12671666',
           icon: 'logo-website'
         }
       ],
@@ -131,13 +132,13 @@ const PROJECTS: Record<string, Project> = {
       alias: 'jukedec',
       category: 'consult',
       order: 110,
-      name: '"JukeDec" - Frigging Glorious LLC',
+      name: '“JukeDec” — Frigging Glorious LLC',
       kind: `Research & Development`,
       origin: 'client',
-      status: 'shipped',
+      status: 'delivered',
       role: 'Research and Technical Product Design - Back-End and App Integration.',
       year: '2021',
-      outcome: 'Abandoned by client after provided total technical scope.',
+      outcome: 'Delivered the full technical scope and build estimate. The findings showed the product was far larger than the client’s runway, and they chose not to build before spending on development.',
       brief: `A multi-faceted content distribution and networking platform for musicians, producers, and digital artists.`,
       body: [
         "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
@@ -157,7 +158,7 @@ const PROJECTS: Record<string, Project> = {
       ],
       skills: [
         "AWS-S3",
-        "AWS-SWF",
+        "AWS-StepFunctions",
         "AWS-DynamoDB",
         "AWS-CloudFormation",
         "AWS-CloudFront",
@@ -179,7 +180,7 @@ const PROJECTS: Record<string, Project> = {
       category: 'audio',
       order: 120,
       featured: true,
-      name: '"Outside Agitators" - Octopus Attacks Shark!!',
+      name: '“Outside Agitators” — Octopus Attacks Shark!!',
       kind: `Album`,
       origin: 'contributor',
       status: 'shipped',
@@ -243,7 +244,6 @@ const PROJECTS: Record<string, Project> = {
       alias: 'foss-armory',
       category: 'game',
       order: 20,
-      featured: true,
       name: 'FOSS Armory',
       kind: `PC Game`,
       origin: 'contributor',
@@ -266,10 +266,6 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-github'
         }
       ],
-      thumbnailImage: {
-        source: 'logo-defense-distributed',
-        alt: 'Defense Distributed Logo'
-      },
       backgroundImage: {
         source: 'foss-background',
         alt: 'FOSS Armory'
@@ -284,7 +280,6 @@ const PROJECTS: Record<string, Project> = {
         },
         gallery: [
           { type: 'image', src: 'foss-background', alt: 'FOSS Armory', width: 1471, height: 983 },
-          { type: 'image', src: 'logo-defense-distributed', alt: 'Defense Distributed Logo', width: 340, height: 340 },
         ],
       },
     }
@@ -414,7 +409,7 @@ const PROJECTS: Record<string, Project> = {
       role: 'Front-End Design and Hosting',
       year: '2022',
       outcome: 'Site shipped and maintained to promote ticket sales and album release.',
-      brief: `E-Commerce font-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
+      brief: `E-Commerce front-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
       body: [
         `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
       ],
@@ -500,10 +495,10 @@ const PROJECTS: Record<string, Project> = {
       status: 'live',
       role: 'Front-End Design and Hosting',
       year: '2021',
-      outcome: 'Site shipped and maintained to promote live events and merchandizing sales.',
+      outcome: 'Site shipped and maintained to promote live events and merchandising sales.',
       brief: `Custom portfolio site and brand press pack for local post-metal act - "Ugliest Man Alive" [U.M.A]`,
       body: [
-        `Web prescence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
+        `Web presence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
       ],
       skills: [
         "Squarespace",
@@ -555,9 +550,9 @@ const PROJECTS: Record<string, Project> = {
       role: 'Custom Graphics and User Haptics Engine. Additional custom audio and soundtrack recording.',
       year: '2013',
       outcome: 'Project shipped and available for purchase on Amazon AppStore.',
-      brief: `A rogue-like bullet hell game for Android using custom motion controlls and procedural enemy generation.`,
+      brief: `A rogue-like bullet hell game for Android using custom motion controls and procedural enemy generation.`,
       body: [
-        `ToasterCat Studios' mobile debut. Developed entirely in native Android using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
+        `A mobile game developed entirely in native Android, using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
       ],
       skills: [
         "Android",
@@ -658,9 +653,9 @@ const PROJECTS: Record<string, Project> = {
       role: 'Level Design and Gameplay Engineering',
       year: '2014',
       outcome: 'Project shipped and reviewed as a featured finalist at VT Game Expo 2014',
-      brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a delapidated toy factory using physics, magnetism, and wit.`,
+      brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a dilapidated toy factory using physics, magnetism, and wit.`,
       body: [
-        `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructable environment assets. Featured finalist at VT Game Expo 2014.`,
+        `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructible environment assets. Featured finalist at VT Game Expo 2014.`,
       ],
       media: {
         gallery: [
@@ -699,7 +694,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'uma-album',
       category: 'audio',
       order: 130,
-      name: '"Of Man and Nature" - Ugliest Man Alive',
+      name: '“Of Man and Nature” — Ugliest Man Alive',
       kind: `Album`,
       origin: 'client',
       status: 'live',
@@ -769,7 +764,7 @@ const PROJECTS: Record<string, Project> = {
       role: '3D Modeling and Industrial Manufacturing',
       year: '2022',
       outcome: 'Prototype models and manufacturing files delivered to client for sale on their private sales platform.',
-      brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic croquet hooks for long-term use.`,
+      brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic crochet hooks for long-term use.`,
       body: [],
       skills: [
         "FDM",
@@ -809,24 +804,24 @@ const PROJECTS: Record<string, Project> = {
       alias: 'lizzie',
       category: 'proto',
       order: 150,
-      name: 'Product Prototype: "The Lizzie"',
+      name: '“The Lizzie”',
       kind: `Prototype`,
       origin: 'client',
       status: 'shipped',
       role: 'Custom Modeling and Industrial Manufacturing and Assembly',
       year: '2021',
-      outcome: '',
-      brief: `Custom operational Nerf(TM) blaster comissioned compatible with Worker(TM) magazines and darts.`,
-      body: [],
+      outcome: 'Delivered the cosplay build plus a half-dozen custom variants, each compatible with Worker™ magazines and darts.',
+      brief: `A commissioned, fully working Nerf™ blaster for a Cyberpunk 2077 cosplay, compatible with Worker™ magazines and darts.`,
+      body: [
+        `A client assembling a Cyberpunk 2077 cosplay wanted Lizzie’s pistol, and wanted it to actually fire. We built it from [Ehdrien’s Gecko](https://github.com/Ehdrien/Gecko-blaster-instructions), a 3D-printable design that only works with real hardware: springs, aluminum, brass, and steel tubing, machine screws, heat-set inserts, rubber seals, and the right lubrication.`,
+        `Alongside the main build, we delivered a half-dozen variants with our own custom 3D modeling: Picatinny rails and M-LOK slots for real-world attachments, plus custom colors and personal touches.`,
+        `The design is Ehdrien’s, and the review video in the gallery is Out of Darts’, not ours: it puts the Gecko through its paces.`,
+      ],
       skills: [
         "FDM",
         "Cura",
         "Fusion360"
       ],
-      thumbnailImage: {
-        source: 'logo-nerf',
-        alt: 'TC Logo'
-      },
       backgroundImage: {
         source: 'lizzie-profile',
         alt: 'Lizzie Assembly'
@@ -834,15 +829,22 @@ const PROJECTS: Record<string, Project> = {
       media: {
         featured: {
           type: 'image',
-          src: 'lizzie-tinker',
+          src: 'lizzie-tinker-1600',
           alt: 'Lizzie Model',
-          width: 5000,
-          height: 3333,
+          width: 1600,
+          height: 1067,
         },
         gallery: [
-          { type: 'image', src: 'lizzie-tinker', alt: 'Lizzie Model', width: 5000, height: 3333 },
+          { type: 'image', src: 'lizzie-tinker-1600', alt: 'Lizzie Model', width: 1600, height: 1067 },
           { type: 'image', src: 'lizzie-profile', alt: 'Lizzie Assembly', width: 1350, height: 900 },
-          { type: 'image', src: 'logo-nerf', alt: 'TC Logo', width: 570, height: 291 },
+          {
+            type: 'embed',
+            provider: 'youtube',
+            id: 'keaaMZi7fcs',
+            title: 'REVIEW: Gecko by Ehdrien',
+            poster: 'lizzie-tinker-1600',
+            caption: 'Review by Out of Darts, not ToasterCat media. The Gecko design is by Ehdrien.',
+          },
         ],
       },
     }
@@ -851,19 +853,21 @@ const PROJECTS: Record<string, Project> = {
 
   tcPrints: {
     projectDetails: {
-      alias: 'tc-print-pistol',
+      alias: 'rail-bridges',
       category: 'proto',
       order: 160,
-      name: 'Custom Pistol Sight Adapters',
+      name: 'Custom-Fit Rail Bridges',
       kind: `Product`,
       origin: 'in-house',
-      status: 'live',
+      status: 'shipped',
       role: 'End-to-End Product Design, Manufacturing, and Sales',
       year: '2022',
-      outcome: '400 units sold in first year to 98% positive customer reviews.',
-      brief: `Custom sight adapters printed for common pistol models.`,
+      outcome: '400 units sold in the first year, with 98% positive customer reviews.',
+      brief: `3D-printed rail bridges that add a red-dot optic mount to handguns built without one, including a made-to-measure option.`,
       body: [
-        `TODO: Bar Code #`,
+        `Plenty of popular handguns, especially older and classic models, have no way to mount a red-dot optic or other attachments. Our rail bridges add a Picatinny rail to them, so a standard optic can be fitted.`,
+        `We released two fixed designs, for the Sig Sauer P226/P320 family and the classic M1911, each registered with its own retail GTIN. Behind them sat a parametric model: customers sent in a few measurements, and we produced a bridge fitted to their handgun, covering nearly any standard semi-automatic pistol.`,
+        `A third design, for Glock models with M-LOK slots, was ready for production when we stopped selling. The product line was taking time away from our other projects, so we retired it while its reviews were still strong.`,
       ],
       skills: [
         "FDM",
@@ -872,18 +876,6 @@ const PROJECTS: Record<string, Project> = {
         "Shopify",
         "Ebay",
         "Amazon"
-      ],
-      links: [
-        {
-          label: 'Store',
-          target: '#',
-          icon: 'logo-website'
-        },
-        {
-          label: 'Ebay',
-          target: '#',
-          icon: 'logo-ebay'
-        }
       ],
       thumbnailImage: {
         source: 'tc-logo',
@@ -897,12 +889,12 @@ const PROJECTS: Record<string, Project> = {
         featured: {
           type: 'image',
           src: 'tcprint-product',
-          alt: 'TC Print Product Rotation',
+          alt: 'Rail bridge, rotating product view',
           width: 5000,
           height: 3333,
         },
         gallery: [
-          { type: 'image', src: 'tcprint-product', alt: 'TC Print Product Rotation', width: 5000, height: 3333 },
+          { type: 'image', src: 'tcprint-product', alt: 'Rail bridge, rotating product view', width: 5000, height: 3333 },
           { type: 'image', src: 'tcprint-background', alt: 'TC Print Shop', width: 1350, height: 900 },
           { type: 'image', src: 'tc-logo', alt: 'TC Logo', width: 501, height: 500 },
         ],
@@ -915,6 +907,14 @@ const PROJECTS: Record<string, Project> = {
  * Lookups. Pages should ask these rather than hard-code project keys, so
  * adding a project is a data change only.
  * ------------------------------------------------------------------------*/
+
+/**
+ * Old project aliases -> current ones. Renamed projects keep their old
+ * /portfolio/<alias> links working through a redirect (see App).
+ */
+export const RENAMED_ALIASES: Record<string, string> = {
+  'tc-print-pistol': 'rail-bridges',
+};
 
 /**
  * A service we sell, and the /portfolio section that proves it. Reads like a
@@ -987,7 +987,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     label: 'Consulting',
     anchor: 'consulting',
     legacyAnchor: 'proj-consult',
-    pitch: 'Technical research and architecture before you commit to building.',
+    pitch: 'Technical research and architecture before you commit to building. Sometimes the most valuable outcome is a confident “not yet”.',
     flagship: 'clicktune',
     cta: 'Book a consultation',
     confidentialNote: 'More engagements we can\'t name publicly. Ask us about them.',

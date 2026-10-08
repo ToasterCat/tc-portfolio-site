@@ -133,12 +133,22 @@ function BandcampEmbed(props: { id: string; title: string; tracks: number; poste
 }
 
 /** Poster still + play badge, for video/embed previews. */
+/**
+ * Gallery tile for a video or embed: the poster dimmed, a [VIDEO] tag and the
+ * title over it, so a video never passes for a still that happens to share
+ * the same photo.
+ */
 function PosterThumb(props: { poster?: string; label: string; width: number; height: number }) {
   const src = props.poster ? resolveMedia(props.poster) : undefined;
   return (
-    <span className="media-poster" style={{ aspectRatio: `${props.width} / ${props.height}` }}>
+    <span
+      className="media-poster media-poster--video"
+      style={{ aspectRatio: `${props.width} / ${props.height}` }}
+    >
       {src && <img src={src} alt="" loading="lazy" decoding="async" />}
+      <span className="tag media-poster-kind" aria-hidden="true">Video</span>
       <span className="media-play-badge" aria-hidden="true">▶</span>
+      <span className="media-poster-title" aria-hidden="true">{props.label}</span>
       <span className="visually-hidden">Video: {props.label}</span>
     </span>
   );

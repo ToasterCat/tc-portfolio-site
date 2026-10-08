@@ -58,7 +58,7 @@ export default function PostCard({ id, name, role, tag, children }: PostCardProp
           </span>
           <span className="meta meta-dim post-card-role">{role}</span>
         </span>
-        {tag && <span className="meta post-card-tag">{tag}</span>}
+        {tag && <span className="tag post-card-tag">{tag}</span>}
       </figcaption>
 
       <blockquote

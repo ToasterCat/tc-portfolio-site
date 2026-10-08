@@ -78,6 +78,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - `btn--primary`: red outline that fills on hover.
   - `btn--secondary`: neutral outline plus an icon or glyph.
   - `btn--tertiary`: PT Mono caps inside `<Brackets>`, for interface commands only (menu, reset, back to top, section jumps).
+- **Tags vs. commands:** `[ BRACKETS ]` always mean a clickable command. Non-clickable labels (project kinds, VIDEO, NOW, PERSONAL NOTE, DO/DON'T, the NDA mark) use the bordered `.tag` class in `index.scss`, with no brackets. Colours vary by modifier (`.tag--signal`; `.tag--quiet` for project kinds, so titles stay dominant), but the shape never does.
 - **Motion:** `$hover` (0.2s ease) is the one speed for all hover and focus feedback. Every animation must hold still under `prefers-reduced-motion`.
 - **The `\>` prompt** is reserved for headings and titles: the brand, section headings, "\> Our Policy", and sign-off names. Never use it on pull-out statements or as a list marker. Lists use `>` (robot and human lists), `+` and `×` (do and don't panels), or dots.
 - **Brand marks:** the TC mark goes in professional spots. The pixel toastercat appears only beside the footer copyright and, animated, on the 404 page. Render pixel art only at whole-number scales.
@@ -96,6 +97,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **Real dashes or recast sentences:** use an em dash (—), a colon, or a semicolon. Never a spaced hyphen ( - ) as a dash.
 - **American spelling** ("judgment", not "judgement").
 - **Product names capitalized:** Node, Docker, GitHub.
+- **Tool and skill names:** use the name people recognize, without a vendor prefix: "Fusion 360", "Maya", "Cura". AWS services are always "AWS …" (AWS S3, AWS DynamoDB, AWS Step Functions), never "Amazon …", whatever AWS's own naming says. Skill icons for AWS come from the official AWS Architecture Icons package; other icons come from Simple Icons, recoloured for the dark theme.
 
 ### Voice
 

@@ -323,23 +323,19 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
     }
   }
 
+  /* A .tag (index.scss); Don't adds .tag--signal. The body's paragraph
+     colour would otherwise win over the tag's. */
   .policy-rule-label {
-    display: inline-block;
     margin: 0 0 base.$space-3 0;
-    padding: 0.1em 0.6em;
-    font-size: base.$type-meta-sm;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: base.$radius-sm;
+    color: base.$color-meta;
+  }
+
+  .policy-rule-label.tag--signal {
+    color: base.$color-signal;
   }
 
   .policy-rule--do {
     border-top: 2px solid base.$color-meta;
-
-    .policy-rule-label {
-      color: base.$color-meta;
-      background-color: rgba(base.$color-meta, 0.14);
-    }
 
     li::before {
       content: '+';
@@ -349,11 +345,6 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
 
   .policy-rule--dont {
     border-top: 2px solid base.$color-signal;
-
-    .policy-rule-label {
-      color: base.$color-signal;
-      background-color: rgba(base.$color-signal, 0.12);
-    }
 
     li::before {
       content: '\00d7'; /* × */

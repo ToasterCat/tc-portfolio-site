@@ -87,17 +87,6 @@
 .project-card-kind {
   align-self: flex-start;
   margin: 0;
-  padding: 0.1em 0.4em;
-  font-size: base.$type-meta-sm;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: base.$radius-sm;
-  background-color: rgba(base.$color-meta, 0.14);
-}
-
-.project-card-bracket {
-  position: relative;
-  top: -0.08em;
 }
 
 .project-card-title {
@@ -222,11 +211,6 @@
 
   .project-card-title {
     font-size: base.$type-body-m;
-  }
-
-  .project-card-kind {
-    padding: 0;
-    background: none;
   }
 
   .project-card-arrow {

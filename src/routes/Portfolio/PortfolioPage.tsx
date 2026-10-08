@@ -97,10 +97,8 @@ function ServiceSection(props: { category: CategoryInfo }) {
               ))}
               {c.confidentialNote && (
                 <li className="portfolio-service-confidential">
-                  <span className="meta portfolio-service-confidential-mark" aria-hidden="true">
-                    <span className="portfolio-service-confidential-bracket">[</span>
+                  <span className="tag portfolio-service-confidential-mark" aria-hidden="true">
                     <HiddenIcon />
-                    <span className="portfolio-service-confidential-bracket">]</span>
                   </span>
                   <span>{c.confidentialNote}</span>
                 </li>
