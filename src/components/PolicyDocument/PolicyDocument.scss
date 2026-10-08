@@ -142,11 +142,8 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
     color: base.$color-light;
   }
 
-  /* A major one-line statement: the \\> prompt marks it, as on the headings. */
+  /* A major one-line statement, set larger than body copy. */
   .policy-statement {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5em;
     margin: base.$space-5 0;
     font-family: base.$font-heading;
     font-size: base.$type-h4-m;
@@ -154,14 +151,6 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
     letter-spacing: base.$tracking-heading;
     line-height: 1.35;
     color: base.$color-light;
-  }
-
-  .policy-statement-prompt {
-    flex: none;
-    position: relative;
-    top: -0.15em;
-    font-size: 0.75em;
-    letter-spacing: 0;
   }
 
   p,
@@ -189,8 +178,8 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
   }
 
   /* CONTRAST - robot vs human: a question, the answer as the punchline, then
-     what that covers. Robot rows are marked with '>'; human rows with an olive
-     dot. */
+     what that covers. Both lists are marked with '>': dim for the robot,
+     olive for the human. */
   .policy-contrast {
     display: grid;
     gap: base.$space-3;
@@ -254,16 +243,9 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
     border-color: rgba(base.$color-meta, 0.35);
     background-color: rgba(base.$color-meta, 0.06);
 
-    /* A drawn dot, centred on the first line rather than on a glyph's baseline. */
     li::before {
-      content: '';
-      font-size: inherit; /* so 0.8em is half the li's 1.6 line height */
-      top: calc(0.8em - 0.1875rem);
-      left: 0.1rem;
-      width: 0.375rem;
-      height: 0.375rem;
-      border-radius: 50%;
-      background-color: base.$color-meta;
+      content: '>';
+      color: base.$color-meta;
     }
   }
 
