@@ -9,6 +9,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 - **Deploy:** the Vercel Git integration builds on every push.
   - `vercel.json` sets the Vite framework, `npm run build`, and the `build/` output.
   - It also adds the **SPA rewrite to `/index.html`**. Without it, deep links like `/portfolio/<alias>` return a 404 on refresh.
+  - It caches `/assets/*` for a year as `immutable`. The files are content-hashed, so this is safe, and Vercel's Vite preset doesn't set it on its own (CRA's preset did).
   - Node comes from `"engines": { "node": "24.x" }`, which meets Vite's minimum of 20.19 or 22.12.
   - The `vercel` CLI was removed on purpose.
 - **Commands:**
