@@ -105,7 +105,7 @@ import blackoutPunkBackground from './gallery/BlackoutPunk/BP-GridBackground.jpg
 import blackoutPunkDetail from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkScreenshot from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 
-let ASSET_MANIFEST = new Map<string, string> ([
+const ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
 
     //- TC brand

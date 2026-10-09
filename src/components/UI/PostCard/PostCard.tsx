@@ -20,7 +20,7 @@ interface PostCardProps {
  * toggle once it runs long.
  */
 export default function PostCard({ id, name, role, tag, children }: PostCardProps) {
-  const bodyRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLQuoteElement>(null);
   const [long, setLong] = useState(false);
   const [expanded, setExpanded] = useState(false);
 

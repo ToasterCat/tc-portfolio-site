@@ -3,7 +3,7 @@ import { MediaRef } from './types/project.model';
 
 /**
  * Media server base URL. Project data stores paths under it, never full URLs,
- * so moving hosts is a one-line change here (or REACT_APP_MEDIA_BASE in .env).
+ * so moving hosts is a one-line change here (or VITE_MEDIA_BASE in .env).
  *
  * Defaults to the CloudFront distribution. Switch to the custom domain
  * (https://media.toastercat-studios.com/assets/tc-home/) once CloudFront has
@@ -11,7 +11,7 @@ import { MediaRef } from './types/project.model';
  * 2026-10-01 HTTPS on that name fails with a certificate mismatch.
  */
 export const MEDIA_BASE = withTrailingSlash(
-  process.env.REACT_APP_MEDIA_BASE || 'https://dw7warrfe0txv.cloudfront.net/assets/tc-home/'
+  import.meta.env.VITE_MEDIA_BASE || 'https://dw7warrfe0txv.cloudfront.net/assets/tc-home/'
 );
 
 function withTrailingSlash(url: string) {

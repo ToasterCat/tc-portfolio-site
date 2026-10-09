@@ -4,23 +4,41 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 
 ## Project
 
-- **What it is:** the marketing and portfolio site for ToasterCat Studios, a studio offering software, games, audio, prototyping, and consulting. It is live at toastercat-studios.com.
-- **Stack:** Create React App (react-scripts 5), React 17, React Router 5 (`Switch`/`Route`), TypeScript 4, and Sass (dart-sass, `@use` modules).
-- **Deploy:** the Vercel Git integration builds on every push, and the Node version comes from `"engines": { "node": "24.x" }`. The `vercel` CLI was removed on purpose. Vercel already serves `index.html` for deep paths, so no `vercel.json` is needed.
+- **What it is:** the marketing and portfolio site for ToasterCat Studios, a studio offering games, websites, audio, prototyping, and consulting. It is live at toastercat-studios.com.
+- **Stack:** Vite 8, React 18, React Router 5 (`Switch`/`Route`), TypeScript 5, Sass (`@use` modules), Vitest, and ESLint 10 (flat config in `eslint.config.js`). The site moved from Create React App on 2026-10-08.
+- **Deploy:** the Vercel Git integration builds on every push.
+  - `vercel.json` sets the Vite framework, `npm run build`, and the `build/` output.
+  - It also adds the **SPA rewrite to `/index.html`**. Without it, deep links like `/portfolio/<alias>` return a 404 on refresh.
+  - Node comes from `"engines": { "node": "24.x" }`, which meets Vite's minimum of 20.19 or 22.12.
+  - The `vercel` CLI was removed on purpose.
 - **Commands:**
-  - `npm start`: dev server on :3000.
-  - `npm run build`: production build.
-  - `npm test -- PROJECTS`: data validation tests.
-  - Type-check with `npx tsc --noEmit`.
-- **Known test failures:** a handful of data tests fail on purpose while content is being filled in: missing skill icons, and `tc-print-pistol`'s TODO body and `#` links. Don't "fix" them by weakening the tests.
+  - `npm start` (alias `npm run dev`): Vite dev server on :3000, with hot reload.
+  - `npm run build`: type-check, then build into `build/`.
+  - `npm run preview`: serve the production build on :3000.
+  - `npm test`: Vitest run (`npm run test:watch` to watch).
+  - `npm run lint`: ESLint.
+  - `npm run typecheck`: `tsc --noEmit`.
+- **Entry points:**
+  - `index.html` lives at the repo root, not in `public/`, and loads `/src/index.tsx`.
+  - `public/` holds files served as-is (icons, the og-card, and the manifest).
+  - Use plain `/` paths in `index.html` (no `%PUBLIC_URL%`).
+- **Environment variables:**
+  - Only `VITE_`-prefixed variables reach the app, read via `import.meta.env` (types in `src/vite-env.d.ts`). `VITE_MEDIA_BASE` overrides the media CDN.
+  - Never put secrets in `.env`: anything that reaches the app is visible in the browser.
+- **Tests:** all 144 data tests pass. Keep it that way: add content rather than weakening a test.
 
 ### Environment gotchas (Windows + WSL)
 
 - Node and npm are the Windows binaries, so call them via `cmd.exe /c "..."` from WSL.
-- Env vars only reach Windows binaries through `WSLENV`. For example, build to a scratch dir with `BUILD_PATH="<windows path>" WSLENV=BUILD_PATH/w`. Without it, builds write into the repo's `build/`.
-- A dev server started in the background outlives its task and can turn into a zombie on :3000. Before starting another, find the PID with `netstat -ano | findstr :3000` and run `taskkill /PID <pid> /T /F`.
-- When the dev server has a compile error, it covers the page with `#webpack-dev-server-client-overlay`. Check for it before trusting any click or visual test.
-- For mobile checks, use headless Chrome with DevTools-protocol device emulation (the repo's `node_modules/ws` from Windows node). `chrome --window-size` misreports overflow. Check at 390 and 1440 wide, with no horizontal overflow.
+- Build somewhere other than `build/` with `npx vite build --outDir <windows path>`.
+- A dev server started in the background outlives its task and can turn into a zombie on :3000.
+  - `strictPort` makes a second `npm start` fail rather than move to another port.
+  - Free the port first: find the PID with `netstat -ano | findstr :3000`, then run `taskkill /PID <pid> /T /F`.
+- Vite reports compile errors in a `<vite-error-overlay>` element. Check for it before trusting any click or visual test.
+- For mobile checks, use headless Chrome with DevTools-protocol device emulation.
+  - Node 24's built-in `WebSocket` drives it; no `ws` package is needed.
+  - `chrome --window-size` misreports overflow.
+  - Check at 390 and 1440 wide, with no horizontal overflow.
 
 ### Media and brand assets
 
@@ -28,14 +46,13 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - Stills become WebP (`*_1600.webp`, `*_800.webp`); GIFs become MP4 `clip`s with a `*_poster.webp`.
   - `AssetMap.ts` points the asset key at the optimized file, and the full-size original stays as the source.
   - Conversion uses Pillow plus a portable ffmpeg (`imageio-ffmpeg`).
-- **`.env` sets `IMAGE_INLINE_SIZE_LIMIT=1024`.** CRA's 10 KB default baked every skill icon into `main.js`.
+- **`build.assetsInlineLimit: 1024`** in `vite.config.ts` means only tiny images are inlined into the JS. Bigger images load as files, only where they're used.
 - **Favicons, app icons, and the 1200×630 share card** (`public/og-card.png`) come from `scripts/build-brand-assets.py`. Re-run it (it needs Pillow) after any brand change.
 
 ### Dependencies
 
-- **Remaining Dependabot alerts:** about 70 remain, all inside `react-scripts` (build and dev only). Nothing in the runtime bundle is flagged. The real fix is migrating to Vite plus React 18.
-- **Never run `npm audit fix --force`.** It installs `react-scripts@0.0.0` and breaks the build.
-- **Sass is pinned to `~1.83.4`.** The pin was added for an older Node and can be lifted during the Vite move. Its "legacy JS API" deprecation warning comes from CRA's sass-loader and is harmless.
+- **`npm audit`:** 0 vulnerabilities since the Vite move. The ~70 Dependabot alerts all came from `react-scripts`, which is gone.
+- **Sass is unpinned:** it runs the latest version on its modern API. npm may warn that `@parcel/watcher` (an optional Sass dependency) has an unapproved install script. Vite doesn't need it, so leave it unapproved.
 
 ## Architecture map
 
@@ -136,6 +153,5 @@ The site makes public promises. Code and copy changes must stay consistent with 
   - Replace the default React favicon and og:image.
   - Compress heavy images (WebP; GIFs to MP4 clips).
   - Add a CloudFront alternate domain and certificate for `media.toastercat-studios.com`.
-  - Migrate from CRA to Vite (also clears the Dependabot alerts).
   - Contact form: give the message field a proper name and make it required, and stop Formspree redirecting away from the site.
   - Add component and end-to-end tests.
