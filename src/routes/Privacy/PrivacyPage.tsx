@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from '../../SITE';
 
 export default function PrivacyPage() {
   return (
-    <PolicyDocument title="Privacy Policy" updated="2026-10-05">
+    <PolicyDocument title="Privacy Policy" updated="2026-10-08">
       <p>
         ToasterCat Studios LLC (&ldquo;we&rdquo;, &ldquo;us&rdquo;) keeps this simple: the
         only personal information we ask for is what you choose to send us, and we use it
@@ -29,6 +29,11 @@ export default function PrivacyPage() {
         <strong>We don&apos;t share your information with anyone else.</strong> We don&apos;t
         sell it, rent it, or pass it along to other companies.
       </p>
+      <p>
+        On our side, your message lives in our email inbox: we don&apos;t copy your details into any
+        other system for long-term storage. We don&apos;t delete messages on a schedule, but
+        we&apos;ll remove yours whenever you ask.
+      </p>
 
       <h2>Services We Use</h2>
       <p>
@@ -38,7 +43,7 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Formspree</strong> delivers the contact form. Your submission passes through
-          Formspree on its way to our inbox. See{' '}
+          Formspree on its way to our inbox, and Formspree may keep its own copy. See{' '}
           <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
             Formspree&apos;s privacy policy
           </a>

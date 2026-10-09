@@ -6,8 +6,8 @@ import adSenseLogo from './logos/external/adsenseLogo-small.png';
 import androidLogo from './logos/external/androidLogo-small.png';
 import gSuiteLogo from './logos/external/gSuiteLogo.png';
 import reaperLogo from './logos/external/reaperLogo.png';
-import unityLogo from './logos/external/unityLogo.png';
-import unrealLogo from './logos/external/unrealLogo-small.png';
+import unityLogo from './logos/external/unity-logo.svg'; // Simple Icons mark (CC0), no wordmark
+import unrealLogo from './logos/external/unreal-logo.svg'; // Simple Icons mark (CC0), no wordmark
 import wordpressLogo from './logos/external/wordpressLogo-small.png';
 import githubLogo from './logos/external/githubLogo-small.png';
 import soundcloudLogo from './logos/external/soundcloudLogo-small.png';

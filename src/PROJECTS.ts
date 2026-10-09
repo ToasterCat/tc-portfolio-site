@@ -14,9 +14,9 @@ const PROJECTS: Record<string, Project> = {
       origin: 'in-house',
       status: 'in-development',
       role: 'Developer & Publishing',
-      year: '2024 - Present',
+      year: '2024–Present',
       outcome: '',
-      brief: `A "rave-flavored" tactical shooter/strategy experience.`,
+      brief: `A “rave-flavored” tactical shooter/strategy experience.`,
       body: [
         'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
       ],
@@ -61,7 +61,7 @@ const PROJECTS: Record<string, Project> = {
           type: 'embed',
           provider: 'youtube',
           id: 'xMeRWH3r48A',
-          title: 'Caliban Gameplay Sample - Bot Arena',
+          title: 'Caliban Gameplay Sample — Bot Arena',
           poster: 'blackout-punk-detail',
         },
         gallery: [
@@ -136,7 +136,7 @@ const PROJECTS: Record<string, Project> = {
       kind: `Research & Development`,
       origin: 'client',
       status: 'delivered',
-      role: 'Research and Technical Product Design - Back-End and App Integration.',
+      role: 'Research and Technical Product Design: Back-End and App Integration',
       year: '2021',
       outcome: 'Delivered the full technical scope and build estimate. The findings showed the product was far larger than the client’s runway, and they chose not to build before spending on development.',
       brief: `A multi-faceted content distribution and networking platform for musicians, producers, and digital artists.`,
@@ -184,10 +184,10 @@ const PROJECTS: Record<string, Project> = {
       kind: `Album`,
       origin: 'contributor',
       status: 'shipped',
-      role: 'Additional recordings and samples - guitar, vocals, and percussion.',
+      role: 'Additional recordings and samples: guitar, vocals, and percussion',
       year: '2023',
       outcome: 'Album released to all major streaming platforms.',
-      brief: `Debut LP by local Seattle act "Octopus Attacks Shark!!"`,
+      brief: `Debut LP by local Seattle act “Octopus Attacks Shark!!”`,
       body: [
         'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino.',
         '- Tracked guitars, vocals, and additional overlays\n- Mixed band-provided samples for interludes and layered vocals',
@@ -253,7 +253,7 @@ const PROJECTS: Record<string, Project> = {
       outcome: 'Project shelved by client pending additional legal review.',
       brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
       body: [
-        `Inspired by the Defense Distributed movement, the "Free and Open-Source Armory" serves as an interactive showroom for the creative works of DIY armourers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+        `Inspired by the Defense Distributed movement, the “Free and Open-Source Armory” serves as an interactive showroom for the creative works of DIY armorers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
       ],
       skills: [
         "Unity",
@@ -298,9 +298,9 @@ const PROJECTS: Record<string, Project> = {
       role: 'Cloud Services and Business Infrastructure',
       year: '2021',
       outcome: 'Site launched in 2021 to produce annual user growth and consistent AdSense impression revenue.',
-      brief: `"A Poorly Edited Editorial" - Multimedia pop culture blog powered by an SEO Ad Revenue model.`,
+      brief: `“A Poorly Edited Editorial”: a multimedia pop-culture blog powered by an SEO-driven ad revenue model.`,
       body: [
-        `"Crude Mirror Media" was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
+        `“Crude Mirror Media” was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
       ],
       skills: [
         "WordPress",
@@ -409,13 +409,13 @@ const PROJECTS: Record<string, Project> = {
       role: 'Front-End Design and Hosting',
       year: '2022',
       outcome: 'Site shipped and maintained to promote ticket sales and album release.',
-      brief: `E-Commerce front-end and music portfolio for local punk act - "Octopus Attacks Shark!!".`,
+      brief: `E-commerce front-end and music portfolio for local punk act “Octopus Attacks Shark!!”.`,
       body: [
         `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
       ],
       testimonials: [
         { 
-          quote: "Dirk's a rockstar!",
+          quote: "Dirk’s a rockstar!",
           name: "Coyote",
           title: "Vocals",
           org: "OAS"
@@ -496,9 +496,9 @@ const PROJECTS: Record<string, Project> = {
       role: 'Front-End Design and Hosting',
       year: '2021',
       outcome: 'Site shipped and maintained to promote live events and merchandising sales.',
-      brief: `Custom portfolio site and brand press pack for local post-metal act - "Ugliest Man Alive" [U.M.A]`,
+      brief: `Custom portfolio site and brand press pack for local post-metal act “Ugliest Man Alive” [U.M.A].`,
       body: [
-        `Web presence and branding designed exclusively by ToasterCat Studios. Re-launched using existing 3rd party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy client's desired look-and-feel.`,
+        `Web presence and branding designed exclusively by ToasterCat Studios. Relaunched using an existing third-party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy the client’s desired look and feel.`,
       ],
       skills: [
         "Squarespace",
@@ -606,13 +606,17 @@ const PROJECTS: Record<string, Project> = {
       kind: `PC Game`,
       origin: 'in-house',
       status: 'archived',
-      role: 'Lead Developer and Producer',
+      role: 'Solo Developer',
       year: '2014',
-      outcome: `Fan project halted after Disney's acquisition of Lucasfilm.`,
-      brief: `A fan remake of the classic "Star Wars: Rogue Squadron" flight system using modern engines and creative commons assets.`,
-      body: [],
+      outcome: `Shelved at a playable demo. Still archived and maintained, with a partial port to Unreal Engine as a back-burner project.`,
+      brief: `A fan remake of the classic “Star Wars: Rogue Squadron” flight experience, built with modern engines and Creative Commons assets.`,
+      body: [
+        `A solo fan project in Unity, built to recapture the flight of Rogue Squadron II and III. It reached a playable demo: you pilot a starfighter and dogfight simple enemy ships, with controls that mirror the originals exactly.`,
+        `Two things shelved it in 2014: a move to a full-time role in Amazon’s Digital Software & Video Games group, and Disney’s then-recent acquisition of Lucasfilm, which left the future of fan projects uncertain.`,
+      ],
       skills: [
         "Unity",
+        "Unreal",
         "Maya",
         "Fusion360"
       ],
@@ -701,7 +705,7 @@ const PROJECTS: Record<string, Project> = {
       role: 'Audio Engineering, Recording, and Production',
       year: '2017',
       outcome: 'Album released to streaming platforms',
-      brief: `Debut LP for local Seattle post-metal act "Ugliest Man Alive [U.M.A]".`,
+      brief: `Debut LP for local Seattle post-metal act “Ugliest Man Alive” [U.M.A].`,
       body: [
         `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
       ],
@@ -763,9 +767,12 @@ const PROJECTS: Record<string, Project> = {
       status: 'shipped',
       role: '3D Modeling and Industrial Manufacturing',
       year: '2022',
-      outcome: 'Prototype models and manufacturing files delivered to client for sale on their private sales platform.',
-      brief: `Custom client commission: 3D Modelling, Slicing, and Printing ergonomic crochet hooks for long-term use.`,
-      body: [],
+      outcome: 'Prototypes and manufacturing files delivered, plus a 100-unit trial run for the client’s friends and family.',
+      brief: `Ergonomic, custom-shaped crochet hooks for avid fiber artists, comfortable through long sessions.`,
+      body: [
+        `Our client, and the people the hooks were for, are avid fiber artists who spend hours at a time with a hook in hand. We designed a custom shape that stays comfortable through those long sessions, then finished it with a light Plasti Dip coating for grip, so the hand doesn’t have to clench to hold on.`,
+        `We modeled, sliced, and printed the prototypes, and delivered the manufacturing files with them. The client didn’t move on to large-scale manufacturing, but we produced a 100-unit trial run for their friends and family.`,
+      ],
       skills: [
         "FDM",
         "Cura",
@@ -977,7 +984,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     label: 'Prototyping',
     anchor: 'prototyping',
     legacyAnchor: 'proj-proto',
-    pitch: 'From napkin sketch to a part in your hand: modelling, printing, iterating.',
+    pitch: 'From napkin sketch to a part in your hand: modeling, printing, and iterating.',
     flagship: 'moxel',
     cta: 'Start a prototype',
     confidentialNote: 'More parts and products made under NDA. Ask us about them.',
@@ -990,7 +997,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     pitch: 'Technical research and architecture before you commit to building. Sometimes the most valuable outcome is a confident “not yet”.',
     flagship: 'clicktune',
     cta: 'Book a consultation',
-    confidentialNote: 'More engagements we can\'t name publicly. Ask us about them.',
+    confidentialNote: 'More engagements we can’t name publicly. Ask us about them.',
   },
 ];
 

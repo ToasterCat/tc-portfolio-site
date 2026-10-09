@@ -60,19 +60,19 @@ export const STUDIO_STATUSES: Record<StudioStatus, StudioStatusInfo> = {
   open: {
     label: 'taking-commissions',
     summary:
-      'We have room for new work. Expect a call within the week, and we can get started as soon as the estimate is agreed.',
+      'We have room for new work. Expect a reply within a week to set up a video meeting, an estimate within two weeks of it, and a start as soon as the estimate is agreed.',
   },
   // olive, steady dot - busy, but ask
   limited: {
     label: 'limited-availability',
     summary:
-      "We're mid-project, but still taking calls. Expect a call within the week and an initial estimate within the month. Small jobs and long-term proposals are considered case by case.",
+      "We're mid-project, but still taking on new work. Expect a reply within a week to set up a video meeting, and an estimate within two weeks of it. Small jobs and long-term proposals are considered case by case.",
   },
   // dim, steady dot - full for now
   booked: {
     label: 'booked-up',
     summary:
-      "Our schedule is full for now. We'll still reply, and new projects start as current work wraps up.",
+      "Our schedule is full for now. We'll still reply within a week, and new projects start as current work wraps up.",
   },
   // dim, hollow dot - not working at the moment
   away: {
