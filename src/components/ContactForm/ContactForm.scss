@@ -159,6 +159,16 @@
   color: base.$color-light;
 }
 
+/* Sent: the success green, same family as the "open" status. */
+.contact-form-status--sent {
+  border-color: rgba(base.$color-success, 0.5);
+  background-color: rgba(base.$color-success, 0.07);
+
+  .contact-form-status-title {
+    color: base.$color-success;
+  }
+}
+
 .contact-form-status--error {
   border-color: rgba(base.$color-signal, 0.55);
   background-color: rgba(base.$color-signal, 0.06);

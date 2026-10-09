@@ -153,6 +153,18 @@ $color-signal: #F05A3F;
 $color-signal-fill: #C0392B;
 $color-on-signal: #F2F0EB;
 
+/* STATUS - a traffic light for availability and outcomes. These mark state
+ * (open, sent, booked), never something to click, so they sit apart from
+ * signal's interaction role even where they share a hue.
+ *   $color-success       - open for work, message sent. A warm sage that
+ *                          sits beside the olive: 6.0:1+ on every dark bg.
+ *   $color-status-booked - booked up. Signal's red (the softer reds drift to
+ *                          salmon), on its own token so it can diverge.
+ * Limited availability stays olive ($color-meta); away stays dim. */
+$color-success: #7FB069;
+$color-status-open: $color-success;
+$color-status-booked: $color-signal;
+
 $site-color-section: $color-black-transparent;
 $site-filter-section: grayscale(50%) blur(5px);
 

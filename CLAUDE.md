@@ -100,6 +100,11 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - Warm, never pure white: text `$color-light #EDE8DF`, secondary text `$site-color-gray #C4BFB4`.
   - **Signal red** (a vermilion, not salmon): `$color-signal #F05A3F` for lines, hover text, and focus rings; `$color-signal-fill #C0392B` for fills, with `$color-on-signal #F2F0EB` text on them.
   - **Olive** for meta: `$color-meta #BAB55A` and `$color-meta-dim #7d7a3c`.
+  - **Status traffic light** (state, never interaction):
+    - `$color-success` / `$color-status-open` `#7FB069` (sage green) for open for work and message sent.
+    - Olive for limited availability.
+    - `$color-status-booked` (signal red) for booked up.
+    - Dim for away.
   - New colours must pass AA contrast.
 - **Buttons** (`src/_buttons.scss`), three tiers:
   - `btn--primary`: red outline that fills on hover.

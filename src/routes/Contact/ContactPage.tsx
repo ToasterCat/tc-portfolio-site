@@ -32,7 +32,10 @@ export default function ContactPage() {
               {(Object.keys(STUDIO_STATUSES) as StudioStatus[]).map((status) => {
                 const current = status === STUDIO_STATUS;
                 return (
-                  <div className={`contact-status-item ${current ? 'is-current' : ''}`} key={status}>
+                  <div
+                    className={`contact-status-item contact-status-item--${status} ${current ? 'is-current' : ''}`}
+                    key={status}
+                  >
                     <dt>
                       <StatusLine status={status} live={current} />
                       {current && <span className="tag contact-status-now">now</span>}

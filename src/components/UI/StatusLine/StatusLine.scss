@@ -1,8 +1,8 @@
 @use '../../../base';
 
 /**
- * Olive while we can take work, dim once we can't; hollow while away. Only
- * the live "open" status pulses.
+ * A traffic light: green while open, olive while limited, red once booked,
+ * dim and hollow while away. Only the live "open" status pulses.
  */
 .status-line {
   display: inline-flex;
@@ -11,9 +11,16 @@
   color: base.$color-meta-dim;
 }
 
-.status-line--open,
+.status-line--open {
+  color: base.$color-status-open;
+}
+
 .status-line--limited {
   color: base.$color-meta;
+}
+
+.status-line--booked {
+  color: base.$color-status-booked;
 }
 
 .status-line-dot {
@@ -31,8 +38,8 @@
 }
 
 @keyframes status-line-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(base.$color-meta, 0.5); }
-  50%      { box-shadow: 0 0 0 0.3rem rgba(base.$color-meta, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(base.$color-status-open, 0.5); }
+  50%      { box-shadow: 0 0 0 0.3rem rgba(base.$color-status-open, 0); }
 }
 
 .status-line--open.status-line--live .status-line-dot {

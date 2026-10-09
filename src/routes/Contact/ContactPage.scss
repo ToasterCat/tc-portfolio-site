@@ -70,9 +70,35 @@
     line-height: 1.55;
   }
 
+  /* The current status gets a plate in its own traffic-light colour. */
   &.is-current {
     background-color: rgba(base.$color-meta, 0.07);
     border-color: rgba(base.$color-meta, 0.3);
+  }
+
+  &.is-current.contact-status-item--open {
+    background-color: rgba(base.$color-status-open, 0.08);
+    border-color: rgba(base.$color-status-open, 0.4);
+
+    .contact-status-now {
+      color: base.$color-status-open;
+      border-color: rgba(base.$color-status-open, 0.6);
+    }
+  }
+
+  &.is-current.contact-status-item--booked {
+    background-color: rgba(base.$color-status-booked, 0.07);
+    border-color: rgba(base.$color-status-booked, 0.4);
+
+    .contact-status-now {
+      color: base.$color-status-booked;
+      border-color: rgba(base.$color-status-booked, 0.55);
+    }
+  }
+
+  &.is-current.contact-status-item--away {
+    background-color: rgba(base.$site-color-gray, 0.05);
+    border-color: rgba(base.$site-color-gray, 0.2);
   }
 
   &:not(.is-current) dd {
