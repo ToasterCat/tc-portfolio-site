@@ -22,6 +22,15 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 - When the dev server has a compile error, it covers the page with `#webpack-dev-server-client-overlay`. Check for it before trusting any click or visual test.
 - For mobile checks, use headless Chrome with DevTools-protocol device emulation (the repo's `node_modules/ws` from Windows node). `chrome --window-size` misreports overflow. Check at 390 and 1440 wide, with no horizontal overflow.
 
+### Media and brand assets
+
+- **Heavy media is optimized next to its original:**
+  - Stills become WebP (`*_1600.webp`, `*_800.webp`); GIFs become MP4 `clip`s with a `*_poster.webp`.
+  - `AssetMap.ts` points the asset key at the optimized file, and the full-size original stays as the source.
+  - Conversion uses Pillow plus a portable ffmpeg (`imageio-ffmpeg`).
+- **`.env` sets `IMAGE_INLINE_SIZE_LIMIT=1024`.** CRA's 10 KB default baked every skill icon into `main.js`.
+- **Favicons, app icons, and the 1200×630 share card** (`public/og-card.png`) come from `scripts/build-brand-assets.py`. Re-run it (it needs Pillow) after any brand change.
+
 ### Dependencies
 
 - **Remaining Dependabot alerts:** about 70 remain, all inside `react-scripts` (build and dev only). Nothing in the runtime bundle is flagged. The real fix is migrating to Vite plus React 18.

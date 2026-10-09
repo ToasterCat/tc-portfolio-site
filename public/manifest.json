@@ -1,10 +1,10 @@
 {
   "short_name": "ToasterCat",
-  "name": "ToasterCat Studios - Portfolio",
+  "name": "ToasterCat Studios — Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64 48x48 32x32 16x16",
       "type": "image/x-icon"
     },
     {
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#202124",
+  "background_color": "#202124"
 }

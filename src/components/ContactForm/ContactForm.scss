@@ -111,6 +111,59 @@
   }
 }
 
+/* Off-screen spam trap (Formspree's _gotcha); never visible or focusable. */
+.contact-form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* Sent / error message: replaces the form on success, sits above the
+ * buttons on error. Focused when it appears, so screen readers announce it. */
+.contact-form-status {
+  width: 100%;
+  max-width: 32rem;
+  box-sizing: border-box;
+  padding: base.$space-4 base.$space-5;
+  color: base.$site-color-gray;
+  border: 1px solid rgba(base.$color-meta, 0.4);
+  border-radius: base.$radius;
+  background-color: rgba(base.$color-meta, 0.06);
+
+  &:focus {
+    outline: none;
+  }
+
+  p {
+    margin: 0 0 base.$space-3 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a,
+  a:visited {
+    color: base.$color-light;
+    text-decoration-color: base.$color-meta-dim;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.contact-form-status-title {
+  font-family: base.$font-heading;
+  font-size: base.$type-h4-m;
+  font-weight: base.$weight-heading;
+  color: base.$color-light;
+}
+
+.contact-form-status--error {
+  border-color: rgba(base.$color-signal, 0.55);
+  background-color: rgba(base.$color-signal, 0.06);
+}
+
 /* Primary Submit leads; the tertiary [ RESET ] sits beside it, quieter. */
 .contact-form-buttons {
   display: flex;

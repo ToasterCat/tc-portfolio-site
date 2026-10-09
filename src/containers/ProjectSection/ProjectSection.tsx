@@ -9,7 +9,7 @@ export function ProjectSection() {
       <div className="section-head">
         <h2>Recent Works</h2>
         <p className="section-sub">
-          Half of this shouldn&apos;t exist. All of it works.
+          What have you been up to, lately?
         </p>
       </div>
 

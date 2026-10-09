@@ -59,11 +59,17 @@
   }
 
   .contact-blurb {
-    max-width: base.$desktop-min-section-width;
+    max-width: 40rem; /* wide enough for the first line to sit on one row */
     margin: 0rem 0rem 2rem 0rem;
     padding: 0% 3%;
 
     text-align: center;
     font-size: base.$large-p;
   }
+
+}
+
+/* "tell us what you're making" always gets its own row, at every width. */
+.contact-blurb-line {
+  display: block;
 }

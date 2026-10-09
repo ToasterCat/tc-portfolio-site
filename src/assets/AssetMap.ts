@@ -65,20 +65,24 @@ import pixhellScreenshot from './gallery/PixHell/Screenshot_Game0.png';
 import oasLogo from './gallery/OAS/OAS-logo.png';
 import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
 import oasBackground from './background/oas-fullband-red_scaled.png';
-import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.png';
+// Optimized copies (T3); the full-size originals stay beside them as sources.
+import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.webp';
 import oasSiteScreenshot from './gallery/OAS/oas-site-screenshot-medium.png';
 
 import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
-import umaMachineGod from './gallery/UMA/MGS1.gif';
-import umaRedacted from './gallery/UMA/redacted.gif';
+import umaMachineGod from './gallery/UMA/MGS1.mp4';
+import umaMachineGodPoster from './gallery/UMA/MGS1_poster.webp';
+import umaRedacted from './gallery/UMA/redacted.mp4';
+import umaRedactedPoster from './gallery/UMA/redacted_poster.webp';
 import umaSiteScreenshot from './gallery/UMA/uma-site-screenshot.png';
 
 import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
 import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
 
 import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
-import tcProductDetail from './gallery/TC-Print/TC-Product-Rotation.gif';
+import tcProductDetail from './gallery/TC-Print/TC-Product-Rotation_1600.mp4';
+import tcProductDetailPoster from './gallery/TC-Print/TC-Product-Rotation_poster.webp';
 
 import chickMagnetFlyer from './gallery/ChickMagnet/flyer_scaled.jpeg';
 import chickMagnetLogo from './gallery/ChickMagnet/logo-clipart-medium.png';
@@ -176,10 +180,13 @@ let ASSET_MANIFEST = new Map<string, string> ([
     ["uma-logo", umaBand],
     ["uma-background", umaBackground],
     ["uma-machine-god", umaMachineGod],
+    ["uma-machine-god-poster", umaMachineGodPoster],
     ["uma-redacted", umaRedacted],
+    ["uma-redacted-poster", umaRedactedPoster],
     ["uma-site-screenshot", umaSiteScreenshot],
 
     ["tcprint-product", tcProductDetail],
+    ["tcprint-product-poster", tcProductDetailPoster],
 
     ["chick-magnet-flyer", chickMagnetFlyer],
     ["chick-magnet-logo", chickMagnetLogo],

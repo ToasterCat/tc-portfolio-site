@@ -22,18 +22,18 @@ export default function Homepage() {
       <HeroSection
         classPrefix={'hero1'}
         quote={{
-          content: `"If an idea works, it can't be that crazy."`,
+          content: `“If an idea works, it can’t be that crazy.”`,
           src: `— ToasterCat Studios`,
           sub: ``
         }}
         heading={`Mad science, made real.`}
-        detail={`Games, websites, records, and hardware — designed, built, and finished under one roof in the Pacific Northwest. Bring us the project everyone else called impractical.`}
+        detail={`Games, websites, records, and hardware—designed, built, and finished under one roof in the Pacific Northwest. Bring us the project everyone else called impractical.`}
         backgroundImage={{
           source: heroBackground
         }}
         logoImage={{
           source: tcLogo,
-          alt: 'toaster-cat-logo',
+          alt: 'ToasterCat Studios TC mark',
           position: 'right',
         }}
         actions={

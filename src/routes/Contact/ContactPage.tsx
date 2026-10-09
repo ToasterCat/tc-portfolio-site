@@ -20,6 +20,7 @@ export default function ContactPage() {
             <li>What you&apos;re making, in a sentence or two</li>
             <li>Rough timeline, and any hard dates</li>
             <li>Links or references to anything similar</li>
+            <li>A budget range, if you have one</li>
           </ul>
 
           {/* What each footer status means for when a project can start. */}

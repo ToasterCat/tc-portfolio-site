@@ -522,14 +522,15 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
+          type: 'clip',
           src: 'uma-machine-god',
+          poster: 'uma-machine-god-poster',
           alt: 'UMA MachineGod//Suicide',
           width: 720,
           height: 405,
         },
         gallery: [
-          { type: 'image', src: 'uma-machine-god', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
+          { type: 'clip', src: 'uma-machine-god', poster: 'uma-machine-god-poster', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
           { type: 'image', src: 'uma-background', alt: 'UMA Band', width: 1910, height: 900 },
           { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
         ],
@@ -747,7 +748,7 @@ const PROJECTS: Record<string, Project> = {
           poster: 'uma-logo',
         },
         gallery: [
-          { type: 'image', src: 'uma-redacted', alt: 'UMA [redacted]', width: 1080, height: 608 },
+          { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
           { type: 'image', src: 'tcstudio-background', alt: 'UMA Band', width: 1350, height: 900 },
           { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
         ],
@@ -894,14 +895,15 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
+          type: 'clip',
           src: 'tcprint-product',
+          poster: 'tcprint-product-poster',
           alt: 'Rail bridge, rotating product view',
-          width: 5000,
-          height: 3333,
+          width: 1600,
+          height: 1066,
         },
         gallery: [
-          { type: 'image', src: 'tcprint-product', alt: 'Rail bridge, rotating product view', width: 5000, height: 3333 },
+          { type: 'clip', src: 'tcprint-product', poster: 'tcprint-product-poster', alt: 'Rail bridge, rotating product view', width: 1600, height: 1066 },
           { type: 'image', src: 'tcprint-background', alt: 'TC Print Shop', width: 1350, height: 900 },
           { type: 'image', src: 'tc-logo', alt: 'TC Logo', width: 501, height: 500 },
         ],
@@ -948,19 +950,9 @@ export interface CategoryInfo {
 }
 
 /**
- * Services in display order. Pitches and notes are first drafts: rewrite
- * freely in the content pass.
+ * Services in display order: games lead, as our most active line of work.
  */
 export const PROJECT_CATEGORIES: CategoryInfo[] = [
-  {
-    key: 'web',
-    label: 'Websites',
-    anchor: 'websites',
-    legacyAnchor: 'proj-web',
-    pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
-    flagship: 'oas-website',
-    cta: 'Build a website'
-  },
   {
     key: 'game',
     label: 'Games',
@@ -969,6 +961,17 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     pitch: 'Whole titles, or the pieces your team needs: systems, tools, levels, and art.',
     flagship: 'blackout-punk',
     cta: 'Bring us your game',
+    confidentialNote: 'Most of our game experience lives inside other studios’ titles, or behind an NDA. Ask us what we can share.',
+  },
+  {
+    key: 'web',
+    label: 'Websites',
+    anchor: 'websites',
+    legacyAnchor: 'proj-web',
+    pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
+    flagship: 'oas-website',
+    cta: 'Build a website',
+    confidentialNote: 'We’ve built far more sites than we can show here; most are under NDA. Ask us about them.',
   },
   {
     key: 'audio',

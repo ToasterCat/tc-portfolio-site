@@ -26,62 +26,46 @@ interface HeroSectionProps {
   actions?: ReactNode;
 }
 
+/**
+ * One layout for both logo positions: the content always comes first in the
+ * markup (so the h1 leads for screen readers and search), and CSS `order`
+ * moves the logo to the left when asked. The quote is a real <blockquote>,
+ * so it no longer puts headings above the page's h1.
+ */
 export default function HeroSection(props: HeroSectionProps) {
-  const imgLeftContent = (
-    <>
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>
-        <img src={props.logoImage.source} alt={props.logoImage.alt} />
-      </div>
-
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-content`}>
-
-        <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-quote`}>
-          <h2>{props.quote?.content}</h2>
-          <h3>{props.quote?.src}</h3>
-          <h4>{props.quote?.sub}</h4>
-        </div>
-
-        <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
-        <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
-        {props.actions && (
-          <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-actions`}>{props.actions}</div>
-        )}
-      </div>
-    </>
-  );
-
-  const imgRightContent = (
-    <>
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-content`}>
-
-        <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-quote`}>
-          <h2>{props.quote?.content}</h2>
-          <h3>{props.quote?.src}</h3>
-          <h4>{props.quote?.sub}</h4>
-        </div>
-        
-        <h1 className={`${props.classPrefix ? props.classPrefix : 'hero'}-headline`}>{props.heading}</h1>
-        <p className={`${props.classPrefix ? props.classPrefix : 'hero'}-detail`}>{props.detail}</p>
-        {props.actions && (
-          <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-actions`}>{props.actions}</div>
-        )}
-      </div>
-      
-      <div className={`${props.classPrefix ? props.classPrefix : 'hero'}-image`}>
-        <img src={props.logoImage.source} alt={props.logoImage.alt} />
-      </div>
-    </>
-  );
+  const p = props.classPrefix ?? 'hero';
 
   return (
-    <section className={`${props.classPrefix ? props.classPrefix : 'hero'}-section`}
+    <section
+      className={`${p}-section ${p}-section--logo-${props.logoImage.position}`}
       style={{
         backgroundImage: 'url(' + props.backgroundImage?.source + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
-      }}>
-      {props.logoImage.position === 'left' ? imgLeftContent : imgRightContent}
+      }}
+    >
+      <div className={`${p}-content`}>
+        {props.quote && (
+          <figure className={`${p}-quote`}>
+            <blockquote>
+              <p>{props.quote.content}</p>
+            </blockquote>
+            <figcaption>
+              {props.quote.src}
+              {props.quote.sub && <span className={`${p}-quote-sub`}>{props.quote.sub}</span>}
+            </figcaption>
+          </figure>
+        )}
+
+        <h1 className={`${p}-headline`}>{props.heading}</h1>
+        {props.detail && <p className={`${p}-detail`}>{props.detail}</p>}
+        {props.actions && <div className={`${p}-actions`}>{props.actions}</div>}
+      </div>
+
+      <div className={`${p}-image`}>
+        <img src={props.logoImage.source} alt={props.logoImage.alt} />
+      </div>
     </section>
   );
 }
