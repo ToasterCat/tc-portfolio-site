@@ -31,20 +31,24 @@ interface HeroSectionProps {
  * markup (so the h1 leads for screen readers and search), and CSS `order`
  * moves the logo to the left when asked. The quote is a real <blockquote>,
  * so it no longer puts headings above the page's h1.
+ *
+ * The background is its own layer, pinned to the viewport and clipped to the
+ * section (see HeroSection.scss), rather than `background-attachment: fixed`,
+ * which forced a repaint of the whole hero on every scroll frame.
  */
 export default function HeroSection(props: HeroSectionProps) {
   const p = props.classPrefix ?? 'hero';
 
   return (
-    <section
-      className={`${p}-section ${p}-section--logo-${props.logoImage.position}`}
-      style={{
-        backgroundImage: 'url(' + props.backgroundImage?.source + ')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <section className={`${p}-section ${p}-section--logo-${props.logoImage.position}`}>
+      {props.backgroundImage && (
+        <div
+          className={`${p}-bg`}
+          style={{ backgroundImage: `url(${props.backgroundImage.source})` }}
+          aria-hidden="true"
+        />
+      )}
+
       <div className={`${p}-content`}>
         {props.quote && (
           <figure className={`${p}-quote`}>

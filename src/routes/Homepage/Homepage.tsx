@@ -9,7 +9,8 @@ import AboutSection from '../../containers/AboutSection/AboutSection';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
 import tcLogo from '../../assets/tc-3d.png';
-import heroBackground from '../../assets/background/chess-alt_scaled.png';
+// 1920px WebP of chess-alt.png (the full-size original stays alongside it).
+import heroBackground from '../../assets/background/chess-alt_1920.webp';
 
 /**
  * Pitch -> what we do -> proof -> who we are -> the ask.

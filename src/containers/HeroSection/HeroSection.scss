@@ -15,6 +15,31 @@
   align-items: center;
   background-color: base.$site-color-dark;
   overflow: hidden;
+  /* Clips the pinned background layer to the section. (overflow alone
+   * doesn't clip fixed-position children; clip-path does.) */
+  clip-path: inset(0);
+}
+
+/**
+ * The "window" background: pinned to the viewport while the hero scrolls over
+ * it. As its own fixed layer the GPU just keeps it in place, with no
+ * repainting per scroll frame (unlike `background-attachment: fixed`).
+ */
+.hero1-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Touch devices and reduced motion: the background scrolls with the hero. */
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .hero1-bg {
+    position: absolute;
+  }
 }
 
 .hero1-section::after {
