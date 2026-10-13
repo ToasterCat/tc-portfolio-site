@@ -116,6 +116,8 @@ import blackoutPunkLogo from './gallery/BlackoutPunk/BlackoutPunk-Logo.png';
 import blackoutPunkBackground from './gallery/BlackoutPunk/BP-GridBackground.jpg';
 import blackoutPunkDetail from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkScreenshot from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
+import blackoutPunkHallway from './gallery/BlackoutPunk/BP-LitHallway_1920.webp';
+import blackoutPunkGunsUp from './gallery/BlackoutPunk/BP-GunsUp.jpg';
 
 const ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
@@ -229,6 +231,8 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["blackout-punk-background", blackoutPunkBackground],
     ["blackout-punk-detail", blackoutPunkDetail],
     ["blackout-punk-screenshot", blackoutPunkScreenshot],
+    ["blackout-punk-hallway", blackoutPunkHallway],
+    ["blackout-punk-guns-up", blackoutPunkGunsUp],
 
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],

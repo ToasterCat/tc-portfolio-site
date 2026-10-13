@@ -75,7 +75,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 - **Page-level layouts:**
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
   - `components/PolicyDocument`: the shared layout for policy pages, with an optional sticky directory (`sections`, with `sub` entries indented).
-- **Homepage:** Hero → ServicesStrip (five service tiles, names only) → Recent Works (featured cards) → AboutSection → CTA.
+- **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Recent Works (featured cards) → AboutSection → CTA.
 - **Contact page:** a Formspree form with a preamble, then "Helpful to include" notes and the studio-status guide (`#status`).
 
 ### Decisions not to revisit unless asked

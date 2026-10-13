@@ -15,9 +15,16 @@ const PROJECTS: Record<string, Project> = {
       role: 'Developer & Publishing',
       year: '2024–Present',
       outcome: '',
-      brief: `A “rave-flavored” tactical shooter/strategy experience.`,
+      brief: `A rave-flavored tactical shooter: command your squad, then jump into any unit and fight the battle yourself.`,
       body: [
-        'BLACKOUT.PUNK is a tactical third-person shooter where you give orders to your squad, jump into any unit under your command, and fight the battle yourself.',
+        `Blackout Punk is a tactical third-person shooter where you don’t play one soldier: you run the chain of command. Give orders to your fireteams, jump into any unit under your command, and fight the battle yourself.`,
+        `Most shooters treat a squad as backup that follows you around. Ours is made of fireteams that take orders and work objectives as a unit, set to loud club music and a lot of flashing lights. Think Tron meets John Wick on club night: laser tag on steroids.`,
+        '- **Command:** issue orders to every unit under your command.\n' +
+          '- **Control:** jump into any unit on the battlefield and see the fight from its eyes.\n' +
+          '- **Kill:** when all else fails, pull the trigger yourself.',
+        `**What we’re proving first:** that multi-unit, possession-driven combat is viable, scalable, and fun. The current build is a deliberately minimal testbed: a nightclub hub where you order your match at the bar, a ready room for picking your squad, and Elimination matches where the last squad standing wins.`,
+        `**Under the hood:** Unreal Engine 5, with AWS GameLift running the dedicated servers. Our performance bar is four full squads (48 characters) on screen on a Steam Deck at 30–60 FPS, with co-op sessions hosted peer-to-peer on the player’s own machine.`,
+        `**Where it stands:** the prototype was finished in late 2025, and playtests run from December through March. A small team of dedicated contractors covers level design, audio design, UI/UX, user-study proctoring, narrative, and character design. Sign up for the playtest at [blackout-punk.com](https://blackout-punk.com).`,
       ],
       skills: [
         "Unreal",
@@ -26,7 +33,7 @@ const PROJECTS: Record<string, Project> = {
         "Photoshop"
       ],
       heroLink: {
-        label: 'Official Website',
+        label: 'Join the Playtest List',
         target: 'https://blackout-punk.com',
         icon: 'blackout-punk-icon'
       },
@@ -64,9 +71,9 @@ const PROJECTS: Record<string, Project> = {
           poster: 'blackout-punk-detail',
         },
         gallery: [
-          { type: 'image', src: 'blackout-punk-detail', alt: 'BLACK0UT.PUNK Gameplay', width: 2343, height: 958 },
-          { type: 'image', src: 'blackout-punk-background', alt: 'BLACK0UT.PUNK Background Grid', width: 2887, height: 1176 },
-          { type: 'image', src: 'blackout-punk-icon', alt: 'BLACK0UT.PUNK Icon', width: 587, height: 587 },
+          { type: 'image', src: 'blackout-punk-hallway', alt: 'A red-team soldier holding a corner while the squad advances', width: 1920, height: 799 },
+          { type: 'image', src: 'blackout-punk-guns-up', alt: 'Over-the-shoulder view of a soldier aiming a rifle', width: 2335, height: 1136 },
+          { type: 'image', src: 'blackout-punk-background', alt: 'The emissive grid environment', width: 2887, height: 1176 },
         ],
       },
     }

@@ -1,0 +1,105 @@
+@use '../../base';
+
+/**
+ * FEATURE BANNER
+ *
+ * Full-bleed key art, darkened from the left so the copy reads on top of it
+ * and the subject stays visible on the right. On phones the art sits above the
+ * copy instead of behind it.
+ */
+.feature-banner {
+  position: relative;
+  overflow: hidden;
+  background-color: base.$color-black;
+  border-top: 1px solid rgba(base.$color-signal, 0.35);
+  border-bottom: 1px solid rgba(base.$color-signal, 0.35);
+}
+
+.feature-banner-art {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(base.$color-black, 0.95) 0%, rgba(base.$color-black, 0.8) 38%, rgba(base.$color-black, 0.1) 75%),
+    var(--art);
+  background-size: cover;
+  background-position: center right;
+}
+
+.feature-banner-inner {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: base.$space-4;
+}
+
+.feature-banner-title {
+  margin: 0;
+}
+
+.feature-banner-title--logo {
+  line-height: 0;
+
+  img {
+    display: block;
+    width: min(26rem, 100%);
+    height: auto;
+    // Logos drawn on near-black: screen drops that box into the art.
+    mix-blend-mode: screen;
+  }
+}
+
+.feature-banner-tagline {
+  margin: 0;
+  font-family: base.$font-heading;
+  font-weight: base.$weight-heading;
+  font-size: base.$type-h3;
+  letter-spacing: base.$tracking-heading;
+  color: base.$color-light;
+}
+
+.feature-banner-hook {
+  margin: 0;
+  max-width: 30rem;
+  color: base.$color-light;
+  text-wrap: pretty;
+}
+
+.feature-banner-meta {
+  margin: 0;
+  color: base.$color-meta;
+}
+
+.feature-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: base.$space-3;
+  margin-top: base.$space-2;
+}
+
+@media all and (min-width: base.$bp) {
+  .feature-banner-inner {
+    padding: base.$section-pad-y base.$section-pad-x;
+    min-height: 24rem;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: base.$bp) {
+  .feature-banner-art {
+    position: relative;
+    inset: auto;
+    aspect-ratio: 16 / 7;
+    background-image:
+      linear-gradient(180deg, rgba(base.$color-black, 0) 55%, base.$color-black 100%),
+      var(--art-small);
+  }
+
+  .feature-banner-inner {
+    padding: base.$space-4 base.$section-pad-x-m base.$section-pad-y-m;
+  }
+}

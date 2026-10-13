@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 import HeroSection from '../../containers/HeroSection/HeroSection';
+import FeatureBanner from '../../containers/FeatureBanner/FeatureBanner';
 import ServicesStrip from '../../containers/ServicesStrip/ServicesStrip';
 import { ProjectSection } from '../../containers/ProjectSection/ProjectSection';
 import AboutSection from '../../containers/AboutSection/AboutSection';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
+
+import { FEATURES } from '../../FEATURES';
 
 import tcLogo from '../../assets/tc-3d.png';
 // 1920px WebP of chess-alt.png (the full-size original stays alongside it).
 import heroBackground from '../../assets/background/chess-alt_1920.webp';
 
 /**
- * Pitch -> what we do -> proof -> who we are -> the ask.
+ * Pitch -> featured work -> what we do -> proof -> who we are -> the ask.
  */
 export default function Homepage() {
   useDocumentTitle();
@@ -49,6 +52,8 @@ export default function Homepage() {
           </>
         }
       />
+
+      {FEATURES[0] && <FeatureBanner feature={FEATURES[0]} />}
 
       <ServicesStrip />
 
