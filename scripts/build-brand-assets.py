@@ -36,7 +36,7 @@ fh=font('SpaceGrotesk-Variable.woff2',76,[700]); fb=font('DMSans-Variable.woff2'
 tx=500
 dr.text((tx,200),'\\>',font=font('PTMono-Regular.woff2',44),fill=OLIVE_DIM)
 dr.text((tx+70,186),'ToasterCat',font=fh,fill=LIGHT); dr.text((tx+70,268),'Studios',font=fh,fill=LIGHT)
-dr.text((tx,372),'Games, websites, hardware, and audio',font=fb,fill=GRAY)
+dr.text((tx,372),'Games, websites, hardware, and media',font=fb,fill=GRAY)
 dr.text((tx,416),'from one Seattle studio.',font=fb,fill=GRAY)
 url='toastercat-studios.com'
 dr.text((W-64,H-44),url,font=fm,fill=OLIVE,anchor='rs')

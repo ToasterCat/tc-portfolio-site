@@ -68,6 +68,18 @@ import oasBackground from './background/oas-fullband-red_scaled.png';
 // Optimized copies (T3); the full-size originals stay beside them as sources.
 import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.webp';
 import oasSiteScreenshot from './gallery/OAS/oas-site-screenshot-medium.png';
+import showGapingLotusFlyer from './gallery/LiveShows/2019-gaping-lotus-flyer_1600.webp';
+import showFearInoculum from './gallery/LiveShows/2019-fear-inoculum_1600.webp';
+import showFearInoculum800 from './gallery/LiveShows/2019-fear-inoculum_800.webp';
+import showFunhouseFlyer from './gallery/LiveShows/2022-funhouse-flyer.webp';
+import showFunhouseFullBand from './gallery/LiveShows/2022-funhouse-full-band_1600.webp';
+import showSolidarityFlyer from './gallery/LiveShows/2025-songs-for-solidarity-flyer_1600.webp';
+import showWacken2020 from './gallery/LiveShows/2020-wacken-metal-battle.webp';
+import showRumoursMarquee from './gallery/LiveShows/2021-rumours-marquee.webp';
+import showReactionFeed from './gallery/LiveShows/2021-reaction-feed_1600.webp';
+import showWacken2022 from './gallery/LiveShows/2022-wacken-metal-battle_1600.webp';
+import showModelSnake from './gallery/LiveShows/2022-model-snake_1600.webp';
+import showI90FiascoFlyer from './gallery/LiveShows/2025-i90-fiasco-flyer.webp';
 
 import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
@@ -176,6 +188,18 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["oas-background", oasBackground],
     ["oas-outside-agitators", oasOutsideAgitators],
     ["oas-site-screenshot", oasSiteScreenshot],
+    ["show-gaping-lotus-flyer", showGapingLotusFlyer],
+    ["show-fear-inoculum", showFearInoculum],
+    ["show-fear-inoculum-800", showFearInoculum800],
+    ["show-funhouse-flyer", showFunhouseFlyer],
+    ["show-funhouse-full-band", showFunhouseFullBand],
+    ["show-solidarity-flyer", showSolidarityFlyer],
+    ["show-wacken-2020", showWacken2020],
+    ["show-rumours-marquee", showRumoursMarquee],
+    ["show-reaction-feed", showReactionFeed],
+    ["show-wacken-2022", showWacken2022],
+    ["show-model-snake", showModelSnake],
+    ["show-i90-fiasco-flyer", showI90FiascoFlyer],
 
     ["uma-logo", umaBand],
     ["uma-background", umaBackground],

@@ -14,7 +14,7 @@ export default function ContactInfoBar() {
 
       <p className="contact-blurb">
         {/* Two lines on desktop, breaking after the colon for cadence. */}
-        <span className="contact-blurb-line">Games, software, hardware, or audio:</span>{' '}
+        <span className="contact-blurb-line">Games, software, hardware, or media:</span>{' '}
         <span className="contact-blurb-line">tell us what you&rsquo;re making.</span>
       </p>
 

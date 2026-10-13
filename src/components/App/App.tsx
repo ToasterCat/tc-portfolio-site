@@ -11,9 +11,9 @@ import AiPolicyPage from '../../routes/AiPolicy/AiPolicyPage';
 import NotFound from '../../routes/Error/404';
 import { PROJECT_CATEGORIES, RENAMED_ALIASES } from '../../PROJECTS';
 
-/** Old #proj-* section anchors -> the new service section ids. */
+/** Old section anchors (#proj-*, #audio) -> the current service section ids. */
 function modernHash(hash: string) {
-  const legacy = PROJECT_CATEGORIES.find((c) => `#${c.legacyAnchor}` === hash);
+  const legacy = PROJECT_CATEGORIES.find((c) => c.legacyAnchors.some((a) => `#${a}` === hash));
   return legacy ? `#${legacy.anchor}` : hash;
 }
 

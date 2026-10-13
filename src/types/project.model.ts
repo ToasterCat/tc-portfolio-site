@@ -18,7 +18,7 @@ export type ProjectStatus =
   | 'unreleased';
 
 /** Directory bucket - drives grouping today and the /portfolio filters next. */
-export type ProjectCategory = 'game' | 'web' | 'consult' | 'audio' | 'proto';
+export type ProjectCategory = 'game' | 'web' | 'consult' | 'media' | 'proto';
 
 /**
  * Where a piece of media lives: an ASSET_MANIFEST key ("lizzie-tinker") for

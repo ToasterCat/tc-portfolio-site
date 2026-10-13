@@ -28,7 +28,7 @@ export default function Homepage() {
           sub: ``
         }}
         heading={`Mad science, made real.`}
-        detail={`Games, websites, records, and hardware—designed, built, and finished under one roof in the Pacific Northwest. Bring us the project everyone else called impractical.`}
+        detail={`Games, websites, media, and hardware—designed, built, and finished under one roof in the Pacific Northwest. Bring us the project everyone else called impractical.`}
         backgroundImage={{
           source: heroBackground
         }}

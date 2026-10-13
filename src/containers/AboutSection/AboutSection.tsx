@@ -26,7 +26,7 @@ export default function AboutSection() {
           <p>
             ToasterCat Studios is a free-range, ethically sourced research center,
             makerspace, recording studio, and mad science laboratory in Seattle. We
-            engineer games, software, hardware, and audio for makers, artists, and
+            engineer games, software, hardware, and media for makers, artists, and
             the businesses that back them.
           </p>
           <p>
@@ -40,7 +40,7 @@ export default function AboutSection() {
             they fail, and how to avoid it.
           </p>
           <p>
-            Games, software, hardware, and audio all come out of the same
+            Games, software, hardware, and media all come out of the same
             building&mdash;which is the whole point. If the vision is mad enough, we want
             to talk shop.
           </p>

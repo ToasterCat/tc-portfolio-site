@@ -8,7 +8,6 @@ const PROJECTS: Record<string, Project> = {
       alias: 'blackout-punk',
       category: 'game',
       order: 10,
-      featured: true,
       name: 'BLACK0UT.PUNK',
       kind: `PC Game`,
       origin: 'in-house',
@@ -174,15 +173,86 @@ const PROJECTS: Record<string, Project> = {
   },
 
 
+  liveShows: {
+    projectDetails: {
+      alias: 'live-shows',
+      category: 'media',
+      order: 115,
+      name: 'Live Shows and Events',
+      kind: `Show Promotion`,
+      origin: 'in-house',
+      status: 'live',
+      role: 'Booking, Promotion, Flyer Design, and Production',
+      year: '2019–Present',
+      outcome: 'Seven shows produced since 2019, including a sold-out TOOL release party and a benefit that raised $1,894 for Point of Pride and the Washington Immigrant Solidarity Network.',
+      brief: `Flyers, banners, and promotion for our own live shows in Seattle, plus the booking and production behind them.`,
+      body: [
+        `We book, promote, and produce live shows for our own bands, [Octopus Attacks Shark!!](https://www.octopus-attacks-shark.com/) and [Ugliest Man Alive](https://ugliest-man-alive.com/): building the lineup, designing the flyers and banners, selling the tickets, and running the night itself.`,
+        `Since 2019 that’s meant seven shows across four venues, from TOOL tribute nights at Lucky Liquor to a sold-out release party at The Funhouse and a charity benefit at the Central Saloon.`,
+        '- **Jun 18, 2019 — “The Gaping Lotus Experience”:** TOOL covers at Lucky Liquor, Tukwila, with Triple 6 and [Kerr Ring](https://kerrring.bandcamp.com/).\n' +
+          '- **Jul 27, 2019 — “10,000 Days of Opiate”:** TOOL covers at Lucky Liquor, with Grand Moff and Ugliest Man Alive.\n' +
+          '- **Aug 30, 2019 — “Fear Inoculum” Unofficial Release Party:** TOOL covers at The Funhouse, Seattle, with Version 7.0 and [NAMEA](https://namea.bandcamp.com/). **Sold out.**\n' +
+          '- **Jul 6, 2022 — Octopus Attacks Shark!!:** The Funhouse, with [Anthrocene](https://anthrocene.bandcamp.com/), [Telomyras](https://telomyras.bandcamp.com/), and [Psionic Haze](https://psionichaze.bandcamp.com/).\n' +
+          '- **Apr 23, 2024 — “Outside Agitators” Album Release:** Central Saloon, with [Shards of Narsil](https://shardsofnarsil.bandcamp.com/), [Communal 40](https://communal40.bandcamp.com/), and [The Mourning Watch](https://themourningwatch.bandcamp.com/).\n' +
+          '- **Oct 8, 2024 — “Cats with Bowties”:** Tim’s Tavern, White Center, with Ugliest Man Alive and [Whisperite](https://whisperite.bandcamp.com/).\n' +
+          '- **Jun 6, 2025 — “Songs for Solidarity” Benefit:** Central Saloon, with [Dying Off](https://dyingoff.bandcamp.com/), [Telomyras](https://telomyras.bandcamp.com/), and [The Mourning Watch](https://themourningwatch.bandcamp.com/). **$1,894 raised** for [Point of Pride](https://www.pointofpride.org/) and the [Washington Immigrant Solidarity Network](https://waisn.org/).',
+        `**Also on stage:** Octopus Attacks Shark!! won “This is 2020: Columbia City”, a battle of the bands at the Columbia City Theater, in January 2020, and competed in the Wacken Open Air Metal Battle in 2020 and 2022. When we play someone else’s bill, we still help promote it; a few of those nights are in the gallery too.`,
+      ],
+      skills: [
+        "Photoshop",
+        "Premiere"
+      ],
+      links: [
+        {
+          label: 'Full Show History',
+          target: 'https://www.octopus-attacks-shark.com/pages/shows.html',
+          icon: 'oas-logo'
+        }
+      ],
+      cardImage: {
+        source: 'show-fear-inoculum-800',
+        alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse'
+      },
+      thumbnailImage: {
+        source: 'oas-logo',
+        alt: 'OAS Band Logo'
+      },
+      backgroundImage: {
+        source: 'show-fear-inoculum',
+        alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse'
+      },
+      media: {
+        featured: {
+          type: 'image',
+          src: 'show-fear-inoculum',
+          alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse',
+          caption: '“Fear Inoculum” Unofficial Release Party, The Funhouse, 2019. Sold out.',
+          width: 1600,
+          height: 1200,
+        },
+        gallery: [
+          { type: 'image', src: 'show-funhouse-flyer', alt: 'Flyer for Octopus Attacks Shark!!, Anthrocene, and Telomyras at The Funhouse', caption: 'Flyer, The Funhouse, July 2022.', width: 1280, height: 720 },
+          { type: 'image', src: 'show-gaping-lotus-flyer', alt: 'Flyer for a TOOL tribute night at Lucky Liquor with Grand Moff and Ugliest Man Alive', caption: 'Flyer, Lucky Liquor, 2019.', width: 1600, height: 2635 },
+          { type: 'image', src: 'show-solidarity-flyer', alt: 'Flyer for Songs for Solidarity, a benefit for Point of Pride and the Washington Immigrant Solidarity Network', caption: 'Flyer, Songs for Solidarity benefit, Central Saloon, 2025.', width: 1600, height: 2000 },
+          // Shows we played and helped promote, on other promoters' bills.
+          { type: 'image', src: 'show-rumours-marquee', alt: 'Roadside marquee listing The Maxwells, Tremor Cats, and Ugliest Man Alive', caption: 'Marquee, Rumours, Spanaway, August 2021.', width: 1440, height: 810 },
+          { type: 'image', src: 'show-wacken-2022', alt: 'Octopus Attacks Shark!! on stage at The Funhouse', caption: 'Wacken Open Air Metal Battle, The Funhouse, February 2022.', width: 1600, height: 900 },
+          { type: 'image', src: 'show-model-snake', alt: 'Octopus Attacks Shark!! on stage at Jules Maes Saloon', caption: '“Model Snake”, Jules Maes Saloon, October 2022.', width: 1600, height: 900 },
+          { type: 'image', src: 'show-i90-fiasco-flyer', alt: 'Flyer for I-90 Fiasco with Panic Grass and Octopus Attacks Shark!! at Jules Maes Saloon', caption: 'Flyer, “I-90 Fiasco”, Jules Maes Saloon, August 2025.', width: 1294, height: 2000 },
+        ],
+      },
+    }
+  },
+
+
   outsideAgitators: {
     projectDetails: {
       alias: 'outside-agitators',
-      category: 'audio',
+      category: 'media',
       order: 120,
-      featured: true,
       name: '“Outside Agitators” — Octopus Attacks Shark!!',
       kind: `Album`,
-      origin: 'contributor',
+      origin: 'in-house',
       status: 'shipped',
       role: 'Additional recordings and samples: guitar, vocals, and percussion',
       year: '2023',
@@ -346,6 +416,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'strongarm',
       category: 'web',
       order: 70,
+      featured: true,
       name: 'Strongarm Digital Marketing',
       kind: `Client Lead Site`,
       origin: 'client',
@@ -404,7 +475,7 @@ const PROJECTS: Record<string, Project> = {
       order: 80,
       name: 'Octopus Attacks Shark!!',
       kind: `Band Site`,
-      origin: 'client',
+      origin: 'in-house',
       status: 'live',
       role: 'Front-End Design and Hosting',
       year: '2022',
@@ -491,14 +562,14 @@ const PROJECTS: Record<string, Project> = {
       order: 90,
       name: 'Ugliest Man Alive [U.M.A]',
       kind: `Band Site`,
-      origin: 'client',
+      origin: 'in-house',
       status: 'live',
       role: 'Front-End Design and Hosting',
       year: '2021',
       outcome: 'Site shipped and maintained to promote live events and merchandising sales.',
       brief: `Custom portfolio site and brand press pack for local post-metal act “Ugliest Man Alive” [U.M.A].`,
       body: [
-        `Web presence and branding designed exclusively by ToasterCat Studios. Relaunched using an existing third-party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house to satisfy the client’s desired look and feel.`,
+        `Web presence and branding designed exclusively by ToasterCat Studios. Relaunched using an existing third-party platform to facilitate dynamic content management and e-commerce integration. All brand and multimedia assets created in-house.`,
       ],
       skills: [
         "Squarespace",
@@ -697,18 +768,18 @@ const PROJECTS: Record<string, Project> = {
   umaAlbum: {
     projectDetails: {
       alias: 'uma-album',
-      category: 'audio',
+      category: 'media',
       order: 130,
       name: '“Of Man and Nature” — Ugliest Man Alive',
       kind: `Album`,
-      origin: 'client',
+      origin: 'in-house',
       status: 'live',
       role: 'Audio Engineering, Recording, and Production',
       year: '2017',
       outcome: 'Album released to streaming platforms',
       brief: `Debut LP for local Seattle post-metal act “Ugliest Man Alive” [U.M.A].`,
       body: [
-        `End-to-end production, recording, mixing, and mastering provided to client requiring experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
+        `End-to-end production, recording, mixing, and mastering, with experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
       ],
       skills: [
         "Reaper"
@@ -762,6 +833,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'moxel',
       category: 'proto',
       order: 140,
+      featured: true,
       name: 'Moxel Hooks',
       kind: 'Prototype',
       origin: 'client',
@@ -936,8 +1008,8 @@ export interface CategoryInfo {
   label: string;
   /** Section id on /portfolio (/portfolio#websites). */
   anchor: string;
-  /** Old /projects#proj-* anchors, redirected to `anchor`. */
-  legacyAnchor: string;
+  /** Old anchors (/projects#proj-*, renamed sections), redirected to `anchor`. */
+  legacyAnchors: string[];
   /** One line: what you'd hire us for. */
   pitch: string;
   /** Alias of the project shown large as this service's best proof. */
@@ -957,7 +1029,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'game',
     label: 'Games',
     anchor: 'games',
-    legacyAnchor: 'proj-game',
+    legacyAnchors: ['proj-game'],
     pitch: 'Whole titles, or the pieces your team needs: systems, tools, levels, and art.',
     flagship: 'blackout-punk',
     cta: 'Bring us your game',
@@ -967,26 +1039,27 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'web',
     label: 'Websites',
     anchor: 'websites',
-    legacyAnchor: 'proj-web',
+    legacyAnchors: ['proj-web'],
     pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
     flagship: 'oas-website',
     cta: 'Build a website',
     confidentialNote: 'We’ve built far more sites than we can show here; most are under NDA. Ask us about them.',
   },
   {
-    key: 'audio',
-    label: 'Audio',
-    anchor: 'audio',
-    legacyAnchor: 'proj-audio',
-    pitch: 'Tracking, mixing, and mastering, from a single session to a finished LP.',
+    key: 'media',
+    label: 'Digital Media',
+    anchor: 'media',
+    // This section was "Audio" until 2026-10.
+    legacyAnchors: ['proj-audio', 'audio'],
+    pitch: 'Recording and mixing, plus the flyers, banners, and artwork that fill a room, proven at our own shows.',
     flagship: 'outside-agitators',
-    cta: 'Start an audio project',
+    cta: 'Start a media project',
   },
   {
     key: 'proto',
     label: 'Prototyping',
     anchor: 'prototyping',
-    legacyAnchor: 'proj-proto',
+    legacyAnchors: ['proj-proto'],
     pitch: 'From napkin sketch to a part in your hand: modeling, printing, and iterating.',
     flagship: 'moxel',
     cta: 'Start a prototype',
@@ -996,7 +1069,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'consult',
     label: 'Consulting',
     anchor: 'consulting',
-    legacyAnchor: 'proj-consult',
+    legacyAnchors: ['proj-consult'],
     pitch: 'Technical research and architecture before you commit to building. Sometimes the most valuable outcome is a confident “not yet”.',
     flagship: 'clicktune',
     cta: 'Book a consultation',

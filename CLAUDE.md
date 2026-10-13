@@ -4,7 +4,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 
 ## Project
 
-- **What it is:** the marketing and portfolio site for ToasterCat Studios, a studio offering games, websites, audio, prototyping, and consulting. It is live at toastercat-studios.com.
+- **What it is:** the marketing and portfolio site for ToasterCat Studios, a studio offering games, websites, digital media (recording, live shows, and print promotion), prototyping, and consulting. It is live at toastercat-studios.com.
 - **Stack:** Vite 8, React 18, React Router 5 (`Switch`/`Route`), TypeScript 5, Sass (`@use` modules), Vitest, and ESLint 10 (flat config in `eslint.config.js`). The site moved from Create React App on 2026-10-08.
 - **Deploy:** the Vercel Git integration builds on every push.
   - `vercel.json` sets the Vite framework, `npm run build`, and the `build/` output.

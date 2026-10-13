@@ -152,12 +152,12 @@ function useActiveSection(ids: string[]) {
   return active;
 }
 
-/** /portfolio#proj-web (pre-resume anchors) -> /portfolio#websites. */
+/** /portfolio#proj-web (pre-resume anchors) -> /portfolio#websites, #audio -> #media. */
 function useLegacyAnchorRedirect() {
   const { hash } = useLocation();
   const history = useHistory();
   useEffect(() => {
-    const legacy = PROJECT_CATEGORIES.find((c) => `#${c.legacyAnchor}` === hash);
+    const legacy = PROJECT_CATEGORIES.find((c) => c.legacyAnchors.some((a) => `#${a}` === hash));
     if (legacy) {
       history.replace({ hash: `#${legacy.anchor}` });
     }
