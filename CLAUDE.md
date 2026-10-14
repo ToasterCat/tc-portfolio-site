@@ -26,7 +26,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 - **Environment variables:**
   - Only `VITE_`-prefixed variables reach the app, read via `import.meta.env` (types in `src/vite-env.d.ts`). `VITE_MEDIA_BASE` overrides the media CDN.
   - Never put secrets in `.env`: anything that reaches the app is visible in the browser.
-- **Tests:** all 144 data tests pass. Keep it that way: add content rather than weakening a test.
+- **Tests:** all 180 data tests pass. Keep it that way: add content rather than weakening a test.
 
 ### Environment gotchas (Windows + WSL)
 
@@ -117,6 +117,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - **Flat** for working content: project cards and dossiers, long-form text (policy pages), and forms and status guides (`/contact`).
   - **Spacing:** at most one dotted band on screen at a time, and never two adjacent.
   - The dot grid comes only from the `base.dot-grid` mixin, in two strengths: `'texture'` for the bands above, and `'placeholder'` to stand in for a missing photo. Never hand-write the radial-gradient.
+- **Links in prose** use the `base.prose-link` mixin (RichText links carry the global `.prose-link` class): off-white with an olive underline, visited the same, signal red on hover and focus. Never leave an inline link to browser defaults.
 - **Motion:** `$hover` (0.2s ease) is the one speed for all hover and focus feedback. Every animation must hold still under `prefers-reduced-motion`.
 - **The `\>` prompt** is reserved for headings and titles: the brand, section headings, "\> Our Policy", and sign-off names. Never use it on pull-out statements or as a list marker. Lists use `>` (robot and human lists), `+` and `×` (do and don't panels), or dots.
 - **Project thumbnails** are the work's own mark (client logo, band or product mark, game icon). With no fitting mark, leave `thumbnailImage` out: cards and heroes show no badge, and rows fall back to a square crop of the cover. The TC stamp (`tc-logo`) only marks work that's ours and carries our name (a data test enforces it).
@@ -161,10 +162,9 @@ The site makes public promises. Code and copy changes must stay consistent with 
 
 ## Open work (summary)
 
-- **Content sweep** (deferred until templates settle): typos and ™ marks in `PROJECTS.ts`, empty project bodies, missing covers and skill icons, real gallery media on S3, and older content that predates the house style.
-- **Technical:**
-  - Replace the default React favicon and og:image.
-  - Compress heavy images (WebP; GIFs to MP4 clips).
-  - Add a CloudFront alternate domain and certificate for `media.toastercat-studios.com`.
-  - Contact form: give the message field a proper name and make it required, and stop Formspree redirecting away from the site.
-  - Add component and end-to-end tests.
+The full list lives in `TC-Home/PUNCHLIST.md` (outside the repo). In short:
+
+- **Content:** a homepage testimonials band with several quotes (waiting on ClickTune's; the current OAS stand-ins are gone), re-framing the two albums as our own records, and real gallery media where pages still repeat their hero or icon.
+- **Policy:** counsel review of the `/ai-policy` ownership and sandboxing wording, and the dedicated AI-policy pass.
+- **Technical:** component and end-to-end tests, and confirming publishing rights for client logos in this public repo.
+- **Deferred:** per-project link previews (pre-rendering), the Google Analytics consent banner, the CloudFront media domain (media is served from the site itself), and pruning unreferenced originals in `src/assets`.

@@ -353,17 +353,8 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
   }
 
   /* Inline links only: the [ Skip ] button keeps its own tertiary look. */
-  a:not(.btn),
-  a:not(.btn):visited {
-    color: base.$color-light;
-    text-decoration-color: base.$color-meta-dim;
-    text-underline-offset: 0.2em;
-    transition: color base.$hover;
-  }
-
-  a:not(.btn):hover,
-  a:not(.btn):focus-visible {
-    color: base.$color-signal;
+  a:not(.btn) {
+    @include base.prose-link;
   }
 }
 

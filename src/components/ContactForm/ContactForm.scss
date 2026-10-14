@@ -37,17 +37,8 @@
     margin-bottom: 0;
   }
 
-  a,
-  a:visited {
-    color: base.$color-light;
-    text-decoration-color: base.$color-meta-dim;
-    text-underline-offset: 0.2em;
-    transition: color base.$hover;
-  }
-
-  a:hover,
-  a:focus-visible {
-    color: base.$color-signal;
+  a {
+    @include base.prose-link;
   }
 }
 
@@ -142,11 +133,8 @@
     margin-bottom: 0;
   }
 
-  a,
-  a:visited {
-    color: base.$color-light;
-    text-decoration-color: base.$color-meta-dim;
-    text-underline-offset: 0.2em;
+  a {
+    @include base.prose-link;
   }
 }
 

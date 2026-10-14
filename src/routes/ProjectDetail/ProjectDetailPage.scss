@@ -282,22 +282,8 @@ $spec-w: 18rem;
   }
 }
 
-/* Links in project copy (body and quotes): off-white with an olive
- * underline at rest, signal red when engaged. */
-.project-page-body a,
-.project-quote a {
-  color: base.$color-light;
-  text-decoration-color: base.$color-meta-dim;
-  text-underline-offset: 0.2em;
-}
-
-.project-page-body a:hover,
-.project-page-body a:focus-visible,
-.project-quote a:hover,
-.project-quote a:focus-visible {
-  color: base.$color-signal;
-  text-decoration-color: currentColor;
-}
+/* Links in project copy (body, outcome, quotes) come from RichText with
+ * the global `.prose-link` style (base.prose-link). */
 
 /* The outcome closes the story in the body's own voice: stated plainly,
  * not as a pull-quote (a loud "shelved" undercuts the work itself). */

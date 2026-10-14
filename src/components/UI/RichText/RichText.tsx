@@ -29,10 +29,14 @@ function renderInline(text: string): ReactNode[] {
 
     if (label !== undefined && url !== undefined) {
       if (url.startsWith('/') && !url.startsWith('//')) {
-        out.push(<Link key={key++} to={url}>{renderInline(label)}</Link>);
+        out.push(
+          <Link key={key++} className="prose-link" to={url}>
+            {renderInline(label)}
+          </Link>
+        );
       } else if (/^https?:\/\//i.test(url)) {
         out.push(
-          <a key={key++} href={url} target="_blank" rel="noopener noreferrer">
+          <a key={key++} className="prose-link" href={url} target="_blank" rel="noopener noreferrer">
             {renderInline(label)}
           </a>
         );

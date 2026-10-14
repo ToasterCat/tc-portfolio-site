@@ -291,13 +291,13 @@ const PROJECTS: Record<string, Project> = {
       kind: `Album`,
       origin: 'in-house',
       status: 'shipped',
-      role: 'Additional recordings and samples: guitar, vocals, and percussion',
-      year: '2023',
-      outcome: 'Album released to all major streaming platforms.',
-      brief: `Debut LP by local Seattle act “Octopus Attacks Shark!!”`,
+      role: 'Additional Recording and Mixing',
+      year: '2024',
+      outcome: 'Released to all major streaming platforms, and launched with a [release show](/portfolio/live-shows) at the Central Saloon.',
+      brief: `Debut LP from Seattle punk act Octopus Attacks Shark!!`,
       body: [
-        'Recording and editing services provided in partnership with Soundhouse studios and veteran studio professionals Mike Sebring and Jack Endino.',
-        '- Tracked guitars, vocals, and additional overlays\n- Mixed band-provided samples for interludes and layered vocals',
+        `Recording and mixing in full collaboration with Soundhouse and veteran studio engineers Mike Sebring and Jack Endino.`,
+        '- Recorded additional guitars, vocals, and samples, including sessions we tracked in the University of Washington’s Odegaard Library\n- Mixed the sample tracks “Submerged”, “47degrees”, and “Hawking Radiation” end to end',
       ],
       skills: [
         "Reaper"
@@ -520,26 +520,6 @@ const PROJECTS: Record<string, Project> = {
       brief: `E-commerce front-end and music portfolio for local punk act “Octopus Attacks Shark!!”.`,
       body: [
         `Simple static website designed and developed from the ground-up by ToasterCat Studios. Portfolio website launched using minimal-cost architecture ($0.12/mo) and integrated with 3rd party e-commerce with custom CSS to provide a fluent look-and-feel across both sites.`,
-      ],
-      testimonials: [
-        { 
-          quote: "Dirk’s a rockstar!",
-          name: "Coyote",
-          title: "Vocals",
-          org: "OAS"
-        },
-        { 
-          quote: "Nice, man",
-          name: "Shiva Shrivastava",
-          title: "Drums",
-          org: "OAS"
-        },
-        { 
-          quote: "Groovy",
-          name: "Scott",
-          title: "Bass",
-          org: "OAS"
-        },
       ],
       skills: [
         "HTML",
@@ -812,12 +792,12 @@ const PROJECTS: Record<string, Project> = {
       kind: `Album`,
       origin: 'in-house',
       status: 'live',
-      role: 'Audio Engineering, Recording, and Production',
+      role: 'Recording and Mixing',
       year: '2017',
-      outcome: 'Album released to streaming platforms',
-      brief: `Debut LP for local Seattle post-metal act “Ugliest Man Alive” [U.M.A].`,
+      outcome: 'Released to streaming platforms.',
+      brief: `Debut LP from Seattle post-metal act Ugliest Man Alive [U.M.A].`,
       body: [
-        `End-to-end production, recording, mixing, and mastering, with experimental recording techniques and extensive overlays. Recorded in 4 different locations over an iterative creative process.`,
+        `Recorded and mixed end to end across four locations, using experimental recording techniques and dense layered overdubs over an iterative creative process.`,
       ],
       skills: [
         "Reaper"

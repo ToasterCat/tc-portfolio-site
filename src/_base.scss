@@ -200,6 +200,28 @@ $hover-duration: 0.2s;
 $hover: $hover-duration ease;
 $transition-duration: $hover-duration; /* legacy alias */
 
+/* PROSE LINK
+ * The one look for a link inside running text, anywhere on the site:
+ * warm off-white with an olive underline at rest (visited too: never the
+ * browser's purple), signal red on hover and focus. Include it on the link
+ * itself; RichText links also carry the global `.prose-link` class. */
+@mixin prose-link {
+  &,
+  &:visited {
+    color: $color-light;
+    text-decoration: underline;
+    text-decoration-color: $color-meta-dim;
+    text-underline-offset: 0.2em;
+    transition: color $hover, text-decoration-color $hover;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-signal;
+    text-decoration-color: currentColor;
+  }
+}
+
 /* DOT GRID
  * The site's one pattern, in two strengths that mean different things:
  *   'texture'      quiet surface for framing bands (About, What We Do, page heads).
