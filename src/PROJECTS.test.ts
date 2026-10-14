@@ -179,6 +179,10 @@ describe('media (featured + gallery)', () => {
         return;
       }
       if (!resolveMedia(m.src)) problems.push(`${at}: src "${m.src}" is a full URL or unknown`);
+      // A bare name (no folder) is an asset key, so it has to exist: a typo would silently become a CDN path.
+      [m.src, 'poster' in m ? m.poster : undefined].forEach((ref) => {
+        if (ref && !ref.includes('/') && !ASSET_MANIFEST.has(ref)) problems.push(`${at}: "${ref}" isn't in ASSET_MANIFEST`);
+      });
       if ('poster' in m && !resolveMedia(m.poster)) problems.push(`${at}: poster does not resolve`);
       if (!(Number.isInteger(m.width) && m.width > 0 && Number.isInteger(m.height) && m.height > 0)) {
         problems.push(`${at}: width/height must be positive integers`);
@@ -187,6 +191,13 @@ describe('media (featured + gallery)', () => {
       if (!label.trim()) problems.push(`${at}: needs ${m.type === 'video' ? 'a title' : 'alt text'}`);
     });
     expect(problems).toEqual([]);
+  });
+
+  // The gallery adds to the page: it never repeats the featured item or the thumbnail.
+  test.each(withMedia.map((d) => [d.alias, d]))('%s: the gallery doesn’t repeat the featured item or thumbnail', (_alias, d) => {
+    const ref = (m?: MediaItem) => (m ? (m.type === 'embed' ? m.id : m.src) : undefined);
+    const repeated = new Set([ref(d.media?.featured), d.thumbnailImage?.source].filter(Boolean));
+    expect((d.media?.gallery ?? []).map(ref).filter((r) => repeated.has(r))).toEqual([]);
   });
 
   // Audio stops when the gallery viewer moves on or closes; keep it featured.

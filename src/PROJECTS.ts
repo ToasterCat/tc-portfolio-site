@@ -337,9 +337,9 @@ const PROJECTS: Record<string, Project> = {
           poster: 'oas-outside-agitators',
         },
         gallery: [
-          { type: 'image', src: 'oas-site-title', alt: 'OAS Band Title', width: 417, height: 500 },
-          { type: 'image', src: 'oas-outside-agitators', alt: 'Outside Agitators Album Art', width: 1400, height: 1400 },
-          { type: 'image', src: 'oas-logo', alt: 'OAS Band Logo', width: 900, height: 900 },
+          { type: 'image', src: 'studio-mics', alt: 'A vocal microphone with a pop filter in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-guitar-amp', alt: 'Miked guitar amplifiers in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'oas-site-title', alt: 'Octopus Attacks Shark!! title art', width: 417, height: 500 },
         ],
       },
     }
@@ -387,7 +387,8 @@ const PROJECTS: Record<string, Project> = {
           height: 983,
         },
         gallery: [
-          { type: 'image', src: 'foss-background', alt: 'FOSS Armory', width: 1471, height: 983 },
+          { type: 'image', src: 'foss-showcase', alt: 'A blaster on display in the FOSS Armory showroom', width: 1600, height: 970 },
+          { type: 'image', src: 'foss-target-range', alt: 'The FOSS Armory target range', width: 1471, height: 983 },
         ],
       },
     }
@@ -440,9 +441,8 @@ const PROJECTS: Record<string, Project> = {
           height: 505,
         },
         gallery: [
-          { type: 'image', src: 'crude-mirror-site-screenshot', alt: 'Crude-Mirror Site', width: 761, height: 505 },
-          { type: 'image', src: 'crude-mirror-background', alt: 'Crude-Mirror Banner', width: 1024, height: 640 },
-          { type: 'image', src: 'crude-mirror-logo', alt: 'Crude-Mirror Logo', width: 500, height: 500 },
+          { type: 'image', src: 'crude-mirror-full', alt: 'Crude Mirror Media shattered-glass banner', width: 874, height: 437 },
+          { type: 'image', src: 'crude-mirror-background', alt: 'Crude Mirror Media banner', width: 1024, height: 640 },
         ],
       },
     }
@@ -496,9 +496,7 @@ const PROJECTS: Record<string, Project> = {
           height: 512,
         },
         gallery: [
-          { type: 'image', src: 'strongarm-site-screenshot', alt: 'Strongarm Site', width: 851, height: 512 },
-          { type: 'image', src: 'strongarm-background', alt: 'Strongarm Site', width: 1891, height: 900 },
-          { type: 'image', src: 'strongarm-logo', alt: 'Strongarm Logo', width: 483, height: 162 },
+          { type: 'image', src: 'strongarm-background', alt: 'Strongarm site hero image', width: 1891, height: 900 },
         ],
       },
     }
@@ -563,9 +561,7 @@ const PROJECTS: Record<string, Project> = {
           height: 512,
         },
         gallery: [
-          { type: 'image', src: 'oas-site-screenshot', alt: 'OAS Site', width: 755, height: 512 },
-          { type: 'image', src: 'oas-background', alt: 'OAS Band', width: 1600, height: 900 },
-          { type: 'image', src: 'oas-site-title', alt: 'OAS Logo', width: 417, height: 500 },
+          { type: 'image', src: 'oas-background', alt: 'Octopus Attacks Shark!! on stage', width: 1600, height: 900 },
         ],
       },
     }
@@ -618,9 +614,9 @@ const PROJECTS: Record<string, Project> = {
           height: 405,
         },
         gallery: [
-          { type: 'clip', src: 'uma-machine-god', poster: 'uma-machine-god-poster', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
-          { type: 'image', src: 'uma-background', alt: 'UMA Band', width: 1910, height: 900 },
-          { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
+          { type: 'image', src: 'uma-site-screenshot', alt: 'The Ugliest Man Alive website', width: 1041, height: 1035 },
+          { type: 'image', src: 'uma-baby-reverse', alt: 'Ugliest Man Alive press art', width: 1600, height: 754 },
+          { type: 'image', src: 'uma-nine-star', alt: 'The Ugliest Man Alive nine-pointed star mark', width: 1600, height: 1574 },
         ],
       },
     }
@@ -677,9 +673,8 @@ const PROJECTS: Record<string, Project> = {
           height: 500,
         },
         gallery: [
-          { type: 'image', src: 'pixhell-flyer', alt: 'PixHell', width: 1024, height: 500 },
-          { type: 'image', src: 'pixhell-background', alt: 'PixHell', width: 1200, height: 1920 },
-          { type: 'image', src: 'pixhell-logo', alt: 'PixHell Logo', width: 100, height: 100 },
+          { type: 'image', src: 'pixhell-screenshot', alt: 'PixHell gameplay on a phone', width: 1198, height: 1704 },
+          { type: 'image', src: 'pixhell-screenshot-2', alt: 'PixHell gameplay with enemies attacking', width: 1200, height: 1920 },
         ],
       },
     }
@@ -722,10 +717,10 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-github'
         }
       ],
-      // Our own in-engine capture, not the franchise insignia (wraith-logo, kept unused).
+      // The in-universe insignia, as the badge of a declared, non-commercial fan project.
       thumbnailImage: {
-        source: 'wraith-thumb',
-        alt: 'Starfighter in flight'
+        source: 'wraith-logo',
+        alt: 'Wraith Squadron insignia'
       },
       backgroundImage: {
         source: 'wraith-background',
@@ -753,8 +748,7 @@ const PROJECTS: Record<string, Project> = {
       ],
       media: {
         gallery: [
-          { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet Flyer', width: 450, height: 600 },
-          { type: 'image', src: 'chick-magnet-logo', alt: 'Chick Magnet Logo', width: 512, height: 512 },
+          { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet flyer', width: 450, height: 600 },
         ],
       },
       skills: [
@@ -838,8 +832,8 @@ const PROJECTS: Record<string, Project> = {
         },
         gallery: [
           { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
-          { type: 'image', src: 'tcstudio-background', alt: 'UMA Band', width: 1350, height: 900 },
-          { type: 'image', src: 'uma-logo', alt: 'UMA Logo', width: 508, height: 500 },
+          { type: 'image', src: 'studio-drum-mics', alt: 'A miked drum kit in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio', width: 1600, height: 1067 },
         ],
       },
     }
@@ -881,15 +875,13 @@ const PROJECTS: Record<string, Project> = {
       media: {
         featured: {
           type: 'image',
-          src: 'moxel-logo-text',
-          alt: 'Moxel LLC',
-          width: 738,
-          height: 176,
+          src: 'moxel-detail',
+          alt: 'Two green custom crochet hooks embossed “Gloria” on a stand',
+          width: 1600,
+          height: 1200,
         },
         gallery: [
-          { type: 'image', src: 'moxel-logo-text', alt: 'Moxel LLC', width: 738, height: 176 },
-          { type: 'image', src: 'moxel-background', alt: 'Moxel Hook Slicing Render', width: 1200, height: 900 },
-          { type: 'image', src: 'moxel-logo', alt: 'Moxel Logo', width: 183, height: 158 },
+          { type: 'image', src: 'moxel-background', alt: 'Moxel hook slicing render', width: 1200, height: 900 },
         ],
       },
     }
@@ -933,8 +925,8 @@ const PROJECTS: Record<string, Project> = {
           height: 1067,
         },
         gallery: [
-          { type: 'image', src: 'lizzie-tinker-1600', alt: 'Lizzie Model', width: 1600, height: 1067 },
-          { type: 'image', src: 'lizzie-profile', alt: 'Lizzie Assembly', width: 1350, height: 900 },
+          { type: 'image', src: 'lizzie-alt', alt: 'Fitting the blaster’s magazine on the workbench', width: 1600, height: 1067 },
+          { type: 'image', src: 'lizzie-profile', alt: 'Lizzie assembly', width: 1350, height: 900 },
           {
             type: 'embed',
             provider: 'youtube',
@@ -993,9 +985,9 @@ const PROJECTS: Record<string, Project> = {
           height: 1066,
         },
         gallery: [
-          { type: 'clip', src: 'tcprint-product', poster: 'tcprint-product-poster', alt: 'Rail bridge, rotating product view', width: 1600, height: 1066 },
-          { type: 'image', src: 'tcprint-background', alt: 'TC Print Shop', width: 1350, height: 900 },
-          { type: 'image', src: 'tc-logo', alt: 'TC Logo', width: 501, height: 500 },
+          { type: 'image', src: 'tcprint-printer-angle', alt: 'A rail bridge fresh off the print bed', width: 1600, height: 1067 },
+          { type: 'image', src: 'tcprint-printer', alt: 'A rail bridge printing', width: 1600, height: 1067 },
+          { type: 'image', src: 'tcprint-shop', alt: 'The print shop workbench', width: 1600, height: 1067 },
         ],
       },
     }

@@ -42,25 +42,38 @@ import fdmLogo from './logos/external/fdm-printing-logo-small.png';
 import amazonLogo from './logos/external/amazon-logo-small.png';
 import amazonCoinsLogo from './logos/external/amazon-coins-logo.png';
 import ebayLogo from './logos/external/ebay-logo-small.png';
-import nerfLogo from './logos/external/nerf-logo-medium.png';
-import defenseDistributedLogo from './logos/external/defense-distributed-logo-small.png';
 import itchioLogo from './logos/external/itch-io-logo-small.png';
 import patreonLogo from './logos/external/patreon-logo.png';
 import discordLogo from './logos/external/discord-logo.png';
 
 import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
-import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.png';
+import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.webp';
+// Gallery stills (WebP next to their originals).
+import studioMics from './gallery/TC-Recording/StudioMics_1600.webp';
+import studioDrumMics from './gallery/TC-Recording/StudioDrumMics_1600.webp';
+import studioGuitarAmp from './gallery/TC-Recording/StudioGuitarAmp_1600.webp';
+import studioKeys from './gallery/TC-Recording/StudioKeys_1600.webp';
+import tcPrinter from './gallery/TC-Print/Printer_1600.webp';
+import tcPrinterAngle from './gallery/TC-Print/PrinterAngle_1600.webp';
+import tcShopAngle from './gallery/TC-Print/TCShopAngle_1600.webp';
+import lizzieAlt from './gallery/Lizzie/LizzieAlt_1600.webp';
+import moxelDetail from './gallery/Moxel/moxel-gloria-detail_1600.webp';
+import fossShowcase from './gallery/FOSS/LizzieShowcase_1600.webp';
+import fossTargetRange from './gallery/FOSS/TargetRange.webp';
+import pixhellScreenshot2 from './gallery/PixHell/Screenshot_Game1.webp';
+import umaBabyReverse from './gallery/UMA/Baby-reverse_1600.webp';
+import umaNineStar from './gallery/UMA/9starShell_1600.webp';
 import crudeMirrorSiteScreenshot from './gallery/CrudeMirror/cm-site-screenshot-home-medium.png';
 
 import strongarmLogo from './gallery/StrongArm/logo-strongarm.png';
 import strongarmBackground from './gallery/StrongArm/hero_scaled.png';
 import strongarmSiteScreenshot from './gallery/StrongArm/site-screenshot-medium.png';
 
+import pixhellFlyer from './gallery/PixHell/Promotional.webp';
 import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
-import pixhellPromotional from './gallery/PixHell/Promotional.png';
-import pixhellScreenshot from './gallery/PixHell/Screenshot_Game0.png';
+import pixhellScreenshot from './gallery/PixHell/Screenshot_Game0.webp';
 
 import oasLogo from './gallery/OAS/OAS-logo.png';
 import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
@@ -87,7 +100,7 @@ import umaMachineGod from './gallery/UMA/MGS1.mp4';
 import umaMachineGodPoster from './gallery/UMA/MGS1_poster.webp';
 import umaRedacted from './gallery/UMA/redacted.mp4';
 import umaRedactedPoster from './gallery/UMA/redacted_poster.webp';
-import umaSiteScreenshot from './gallery/UMA/uma-site-screenshot.png';
+import umaSiteScreenshot from './gallery/UMA/uma-site-screenshot.webp';
 
 import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
 import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight_1600.webp';
@@ -178,8 +191,6 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["logo-amazon", amazonLogo],
     ["logo-amazon-coins", amazonCoinsLogo],
     ["logo-ebay", ebayLogo],
-    ["logo-nerf", nerfLogo],
-    ["logo-defense-distributed", defenseDistributedLogo],
     ["logo-itch-io", itchioLogo],
     ["logo-patreon", patreonLogo],
     ["logo-discord", discordLogo],
@@ -188,11 +199,25 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["crude-mirror-logo", crudeMirrorLogo],
     ["crude-mirror-background", crudeMirrorBackground],
     ["crude-mirror-full", crudeMirrorFull],
+    ["studio-mics", studioMics],
+    ["studio-drum-mics", studioDrumMics],
+    ["studio-guitar-amp", studioGuitarAmp],
+    ["studio-keys", studioKeys],
+    ["tcprint-printer", tcPrinter],
+    ["tcprint-printer-angle", tcPrinterAngle],
+    ["tcprint-shop", tcShopAngle],
+    ["lizzie-alt", lizzieAlt],
+    ["moxel-detail", moxelDetail],
+    ["foss-showcase", fossShowcase],
+    ["foss-target-range", fossTargetRange],
+    ["pixhell-screenshot-2", pixhellScreenshot2],
+    ["uma-baby-reverse", umaBabyReverse],
+    ["uma-nine-star", umaNineStar],
     ["crude-mirror-site-screenshot", crudeMirrorSiteScreenshot],
 
+    ["pixhell-flyer", pixhellFlyer],
     ["pixhell-logo", pixhellLogo],
     ["pixhell-background", pixhellBackground],
-    ["pixhell-flyer", pixhellPromotional],
     ["pixhell-screenshot", pixhellScreenshot],
 
     ["strongarm-logo", strongarmLogo],
