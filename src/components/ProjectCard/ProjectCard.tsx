@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../../types/project.model';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
-import { categoryLabel } from '../../PROJECTS';
+import { categoryLabel, shownOrigin } from '../../PROJECTS';
 import MetaTags from '../UI/MetaTags/MetaTags';
 import ExternalLinkButton from '../UI/ExternalLinkButton/ExternalLinkButton';
 import './ProjectCard.scss';
@@ -98,7 +98,7 @@ export default function ProjectCard(props: ProjectCardProps) {
         )}
 
         <div className="project-card-foot">
-          <MetaTags tags={[categoryLabel(d.category), d.origin, d.status]} />
+          <MetaTags tags={[categoryLabel(d.category), shownOrigin(d), d.status]} />
           {showYear && <span className="meta meta-dim project-card-year">{d.year}</span>}
           <span className="project-card-arrow" aria-hidden="true">→</span>
         </div>

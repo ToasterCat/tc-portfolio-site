@@ -76,6 +76,12 @@ export interface ProjectDetails {
   order: number;
   /** Show on the homepage's featured works. Order comes from `order`. */
   featured?: boolean;
+  /**
+   * `false` takes the project out of its service section, the homepage, and
+   * flagship slots, and lists it in the small Archive at the bottom of
+   * /portfolio instead. Its page still loads. Defaults to listed.
+   */
+  listed?: boolean;
   name: string;
   kind?: string;
   brief: string;

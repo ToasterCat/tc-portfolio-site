@@ -9,19 +9,55 @@ export default function ContactPage() {
 
   return (
     <>
-      
-      <ContactForm />
+      <ContactForm
+        intro={
+          /* What helps someone about to write in, read before the fields. */
+          <aside className="contact-brief" aria-labelledby="contact-brief-label">
+            <p className="contact-brief-sub">Tell us what you&apos;re making. <br/>Every message gets a reply from a real human being.</p>
+            <h2 id="contact-brief-label" className="meta meta-dim contact-notes-label">
+              Helpful to include
+            </h2>
+            <ul className="contact-notes-list">
+              <li>What you&apos;re making, in a sentence or two</li>
+              <li>Rough timeline, and any hard dates</li>
+              <li>Links or references to anything similar</li>
+              <li>A budget range, if you have one</li>
+            </ul>
+            <p className="contact-brief-collab">
+              <strong>
+                Work <em>with</em> us:
+              </strong>{' '}
+              artist, developer, or musician who wants to collaborate? Same form; tell us what you do.
+            </p>
+          </aside>
+        }
+      />
 
-      {/* What helps someone about to write in - not another call to action. */}
-      <aside className="contact-notes" aria-label="Before you write">
+      {/* What happens after sending, and when. */}
+      <aside className="contact-notes" aria-label="After you write">
         <div className="contact-notes-inner">
-          <h2 className="meta meta-dim contact-notes-label">Helpful to include</h2>
-          <ul className="contact-notes-list">
-            <li>What you&apos;re making, in a sentence or two</li>
-            <li>Rough timeline, and any hard dates</li>
-            <li>Links or references to anything similar</li>
-            <li>A budget range, if you have one</li>
-          </ul>
+          <section className="contact-process" aria-labelledby="contact-process-label">
+            <h2 id="contact-process-label" className="meta meta-dim contact-notes-label">
+              What to expect from us
+            </h2>
+            <ol className="contact-process-list">
+              <li>
+                <span className="contact-process-step">We reply within a week</span> to set up a video meeting.
+              </li>
+              <li>
+                <span className="contact-process-step">We meet over video</span> to dig into what you&apos;re making.
+              </li>
+              <li>
+                <span className="contact-process-step">You get an estimate</span> within two weeks of that meeting.
+              </li>
+              <li>
+                <span className="contact-process-step">Work starts</span> once the estimate is agreed.
+              </li>
+            </ol>
+            <p className="contact-status-footnote">
+              Timing follows the studio status below.
+            </p>
+          </section>
 
           {/* What each footer status means for when a project can start. */}
           <section className="contact-status" id="status" aria-labelledby="contact-status-label">
@@ -55,3 +91,4 @@ export default function ContactPage() {
     </>
   );
 }
+

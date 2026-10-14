@@ -1,4 +1,14 @@
-import PROJECTS, { PROJECT_CATEGORIES, PROJECT_LIST, getProjectByAlias } from './PROJECTS';
+import PROJECTS, {
+  ARCHIVED_PROJECTS,
+  FEATURED_PROJECTS,
+  PROJECT_CATEGORIES,
+  PROJECT_LIST,
+  getProjectByAlias,
+  isEarlyWork,
+  isListed,
+  shownOrigin,
+  sectionProjects,
+} from './PROJECTS';
 import { ASSET_MANIFEST } from './assets/AssetMap';
 import { bandcampEmbedUrl, resolveMedia, youtubeEmbedUrl } from './media';
 import { MediaItem } from './types/project.model';
@@ -47,6 +57,58 @@ describe('service sections (/portfolio)', () => {
       expect(c.cta.trim()).not.toBe('');
     });
   });
+});
+
+describe('unlisted projects (the /portfolio Archive)', () => {
+  test('are never a flagship', () => {
+    PROJECT_CATEGORIES.forEach((c) => {
+      const flagship = getProjectByAlias(c.flagship);
+      expect(flagship && isListed(flagship)).toBe(true);
+    });
+  });
+
+  test('are never featured on the homepage', () => {
+    expect(FEATURED_PROJECTS.filter((p) => !isListed(p))).toEqual([]);
+  });
+
+  test('stay out of every service section, but keep their pages', () => {
+    const shown = PROJECT_CATEGORIES.flatMap((c) => {
+      const { flagship, rest, early } = sectionProjects(c);
+      return [flagship, ...rest, ...early];
+    });
+    ARCHIVED_PROJECTS.forEach((p) => {
+      expect(shown).not.toContain(p);
+      expect(getProjectByAlias(p.projectDetails.alias)).toBe(p);
+    });
+  });
+
+  test('every listed project shows up exactly once on /portfolio', () => {
+    const shown = PROJECT_CATEGORIES.flatMap((c) => {
+      const { flagship, rest, early } = sectionProjects(c);
+      return [...(flagship ? [flagship] : []), ...rest, ...early];
+    });
+    expect(shown).toHaveLength(PROJECT_LIST.filter(isListed).length);
+  });
+});
+
+describe('early work (finished before the studio)', () => {
+  const at = (year: string) => isEarlyWork({ projectDetails: { ...details[0], year } });
+  test.each([
+    ['2013', true],
+    ['2014–2016', true],
+    ['2019–Present', false],
+    ['2021', false],
+    ['', false],
+  ])('year "%s" -> early: %s', (year, early) => {
+    expect(at(year)).toBe(early);
+  });
+});
+
+describe('origin tags', () => {
+  const at = (origin: 'in-house' | 'client', year: string) => shownOrigin({ ...details[0], origin, year });
+  test('in-house is hidden on current work', () => expect(at('in-house', '2024–Present')).toBeUndefined());
+  test('in-house shows on early work', () => expect(at('in-house', '2014')).toBe('in-house'));
+  test('client always shows', () => expect(at('client', '2025')).toBe('client'));
 });
 
 describe('homepage selection', () => {

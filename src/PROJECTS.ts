@@ -1,4 +1,4 @@
-import { Project, ProjectCategory } from './types/project.model';
+import { Project, ProjectCategory, ProjectDetails, ProjectOrigin } from './types/project.model';
 
 const PROJECTS: Record<string, Project> = {
 
@@ -339,6 +339,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'foss-armory',
       category: 'game',
       order: 20,
+      listed: false,
       name: 'FOSS Armory',
       kind: `PC Game`,
       origin: 'contributor',
@@ -698,17 +699,17 @@ const PROJECTS: Record<string, Project> = {
       alias: 'wraith-squadron',
       category: 'game',
       order: 40,
-      name: 'Star Wars: Wraith Squadron',
-      kind: `PC Game`,
+      name: 'Wraith Squadron',
+      kind: `Fan Project`,
       origin: 'in-house',
       status: 'archived',
       role: 'Solo Developer',
       year: '2014',
       outcome: `Shelved at a playable demo. Still archived and maintained, with a partial port to Unreal Engine as a back-burner project.`,
-      brief: `A fan remake of the classic “Star Wars: Rogue Squadron” flight experience, built with modern engines and Creative Commons assets.`,
+      brief: `A non-commercial fan remake of the classic “Star Wars: Rogue Squadron” flight experience, built with modern engines and Creative Commons assets.`,
       body: [
-        `A solo fan project in Unity, built to recapture the flight of Rogue Squadron II and III. It reached a playable demo: you pilot a starfighter and dogfight simple enemy ships, with controls that mirror the originals exactly.`,
-        `Two things shelved it in 2014: a move to a full-time role in Amazon’s Digital Software & Video Games group, and Disney’s then-recent acquisition of Lucasfilm, which left the future of fan projects uncertain.`,
+        `A solo, non-commercial fan project in Unity, built to recapture the flight of Rogue Squadron II and III. It reached a playable demo: you pilot a starfighter and dogfight simple enemy ships, with controls that mirror the originals exactly.`,
+        `It was shelved in 2014 when other work took over, and when Disney’s purchase of Lucasfilm made the future of fan projects uncertain.`,
       ],
       skills: [
         "Unity",
@@ -718,8 +719,8 @@ const PROJECTS: Record<string, Project> = {
       ],
       media: {
         gallery: [
-          { type: 'image', src: 'wraith-background', alt: 'Wraith Squadron', width: 1684, height: 1040 },
-          { type: 'image', src: 'wraith-logo', alt: 'Wraith Squadron Logo', width: 593, height: 602 },
+          { type: 'image', src: 'wraith-background', alt: 'Third-person view of a starfighter flying low over a canyon toward enemy ships', caption: 'Test flight in the playable demo.', width: 1684, height: 1040 },
+          { type: 'image', src: 'wraith-flight-alt', alt: 'A starfighter lining up its targeting reticle on a squadron of enemy ships', caption: 'Lining up a pass on enemy fighters.', width: 1571, height: 1054 },
         ],
       },
       links: [
@@ -729,9 +730,10 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-github'
         }
       ],
+      // Our own in-engine capture, not the franchise insignia (wraith-logo, kept unused).
       thumbnailImage: {
-        source: 'wraith-logo',
-        alt: 'Wraith Squadron Logo'
+        source: 'wraith-thumb',
+        alt: 'Starfighter in flight'
       },
       backgroundImage: {
         source: 'wraith-background',
@@ -1106,19 +1108,48 @@ export const PROJECT_LIST: Project[] = Object.values(PROJECTS).sort(
   (a, b) => a.projectDetails.order - b.projectDetails.order
 );
 
-export function projectsInCategory(category: ProjectCategory): Project[] {
-  return PROJECT_LIST.filter((p) => p.projectDetails.category === category);
+/** Listed unless explicitly `listed: false` (see ProjectDetails.listed). */
+export const isListed = (p: Project) => p.projectDetails.listed !== false;
+
+/** The year the studio became an LLC; work that ended before it is "early work". */
+export const STUDIO_FOUNDED = 2020;
+
+/** Finished before the studio existed: no "Present", and every year before 2020. */
+export function isEarlyWork(p: Project): boolean {
+  const year = p.projectDetails.year ?? '';
+  const years = (year.match(/\d{4}/g) ?? []).map(Number);
+  return !/present/i.test(year) && years.length > 0 && Math.max(...years) < STUDIO_FOUNDED;
 }
 
-/** A service section's evidence: its flagship, then everything else in order. */
-export function sectionProjects(category: CategoryInfo): { flagship?: Project; rest: Project[] } {
+export function projectsInCategory(category: ProjectCategory): Project[] {
+  return PROJECT_LIST.filter((p) => p.projectDetails.category === category && isListed(p));
+}
+
+/**
+ * A service section's evidence: its flagship, the rest of the current work,
+ * then early work (pre-studio), each in order. Unlisted projects never appear.
+ */
+export function sectionProjects(category: CategoryInfo): { flagship?: Project; rest: Project[]; early: Project[] } {
   const all = projectsInCategory(category.key);
   const flagship = all.find((p) => p.projectDetails.alias === category.flagship);
-  return { flagship, rest: all.filter((p) => p !== flagship) };
+  const others = all.filter((p) => p !== flagship);
+  return { flagship, rest: others.filter((p) => !isEarlyWork(p)), early: others.filter(isEarlyWork) };
 }
 
-/** Homepage selection: projects flagged `featured`, in `order`. */
-export const FEATURED_PROJECTS: Project[] = PROJECT_LIST.filter((p) => p.projectDetails.featured);
+/**
+ * The origin #tag to show, if any. `in-house` is hidden on current work (it
+ * "deflates our exhibition") but kept on early work, which really was made
+ * for ourselves. `client` and `contributor` always show.
+ */
+export function shownOrigin(d: ProjectDetails): ProjectOrigin | undefined {
+  return d.origin === 'in-house' && !isEarlyWork({ projectDetails: d }) ? undefined : d.origin;
+}
+
+/** Homepage selection: listed projects flagged `featured`, in `order`. */
+export const FEATURED_PROJECTS: Project[] = PROJECT_LIST.filter((p) => p.projectDetails.featured && isListed(p));
+
+/** The /portfolio Archive: unlisted projects, whose pages still load. */
+export const ARCHIVED_PROJECTS: Project[] = PROJECT_LIST.filter((p) => !isListed(p));
 
 /** Display label for a category key (also drives the #tag). */
 export function categoryLabel(category: ProjectCategory): string {

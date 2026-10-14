@@ -76,13 +76,13 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
   - `components/PolicyDocument`: the shared layout for policy pages, with an optional sticky directory (`sections`, with `sub` entries indented).
 - **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Selected Work (projects flagged `featured`: ClickTune and Lizzie, chosen for outside proof) → AboutSection → CTA.
-- **Contact page:** a Formspree form with a preamble, then "Helpful to include" notes and the studio-status guide (`#status`).
+- **Contact page:** heading → subtitle, "Helpful to include", and the "Work *with* us" collaborator line (the form's `intro` slot) → fields, including an optional "What's this about?" `topic` select → Formspree/email fine print → Submit; then "What to expect from us" (four steps, the one place the reply/estimate timing is promised) and the studio-status guide (`#status`), every status listed with the current one on a tinted plate. The page is meant to be evergreen: no project-specific routing (e.g. playtests) here.
 
 ### Decisions not to revisit unless asked
 
-- **`/portfolio` layout:** it's grouped by service (sticky jump bar, then each service's pitch, flagship, more rows, NDA row, and CTA). The user rejected a flat filter grid, a timeline, stats, and terminal-style navigation ("customers aren't nerds; we just wanna *look* nerdy"). No years or counts appear there.
+- **`/portfolio` layout:** it's grouped by service (sticky jump bar, then each service's pitch, flagship, more rows, NDA row, "Early work" rows for projects finished before 2020, and CTA). The founder's Amazon/AWS background lives only in the About bio, never as a résumé panel on /portfolio ("this site shouldn't be my LinkedIn"). Projects with `listed: false` (currently FOSS Armory; Dirk may add more) leave their section and sit in a small Archive after the last service; their pages still load. The user rejected a flat filter grid, a timeline, stats, and terminal-style navigation ("customers aren't nerds; we just wanna *look* nerdy"). No years or counts appear there.
 - **Project pages:** navigation is a breadcrumb back only, with no prev/next and no related-projects strip. The Outcome section is always last and quiet.
-- **In-house flags:** don't mark projects as in-house on cards or project pages (it "deflates our exhibition").
+- **In-house flags:** don't mark current projects as in-house on cards or project pages (it "deflates our exhibition"). Early work keeps `#in-house`, since it really was made for ourselves. `shownOrigin()` in `PROJECTS.ts` applies this everywhere.
 - **Header nav:** Home and Portfolio plus the Hire Us button. The current page is marked with plain `| Page |` bars (box-drawing variants were tried and rejected).
 - **Footer:** the studio-status line appears only in the footer, which links to the guide on `/contact#status`.
 - **Deferred:** per-project link previews (pre-rendering), and the Google Analytics consent banner (not targeting the EU or Canada yet).

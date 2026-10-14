@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, ReactNode, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Brackets from '../UI/Brackets/Brackets';
 import { CONTACT_EMAIL } from '../../SITE';
@@ -8,12 +8,20 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzbyrpnd';
 
 type SendState = 'idle' | 'sending' | 'sent' | 'error';
 
+interface ContactFormProps {
+  /** Shown between the heading and the fields (hidden once sent). */
+  intro?: ReactNode;
+}
+
 /**
  * Posts to Formspree in the background so visitors stay on the site and get
  * an in-page thank-you. Without JavaScript the plain form action still works
  * (Formspree then shows its own confirmation page).
+ *
+ * Order: heading -> intro (what to include) -> fields -> how the form
+ * travels, right where people decide to send -> buttons.
  */
-export default function ContactForm() {
+export default function ContactForm({ intro }: ContactFormProps) {
   const [state, setState] = useState<SendState>('idle');
   const statusRef = useRef<HTMLDivElement>(null);
 
@@ -41,21 +49,7 @@ export default function ContactForm() {
     <section className="contact-form-section">
       <h1 className="contact-form-heading">Contact ToasterCat</h1>
 
-      {/* How the form travels, and the way around it, before anyone types. */}
-      <div className="contact-form-preamble">
-        <p>
-          This form is delivered to our inbox by{' '}
-          <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">
-            Formspree
-          </a>
-          . We only use your details to reply, and never share them with anyone else (
-          <Link to="/privacy">privacy policy</Link>).
-        </p>
-        <p>
-          Prefer to email us directly? Reach out to us at{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
-        </p>
-      </div>
+      {state !== 'sent' && intro}
 
       {state === 'sent' ? (
         <div className="contact-form-status contact-form-status--sent" ref={statusRef} tabIndex={-1} role="status">
@@ -88,6 +82,18 @@ export default function ContactForm() {
             </label>
             <input id="contact-phone" type="tel" name="phone" autoComplete="tel" placeholder="555-555-5555" />
           </div>
+          <div className="contact-form-field">
+            <label htmlFor="contact-topic">
+              What&apos;s this about? <span className="contact-form-optional">(optional)</span>
+            </label>
+            <select id="contact-topic" name="topic" defaultValue="">
+              <option value="">Choose one</option>
+              <option>A project for us to build</option>
+              <option>Working with us (collaboration)</option>
+              <option>Investment or partnership</option>
+              <option>Something else</option>
+            </select>
+          </div>
           <div className="contact-form-field-text-area">
             <label htmlFor="contact-message">Your Message:</label>
             <textarea
@@ -97,6 +103,22 @@ export default function ContactForm() {
               placeholder="What are you making?"
               required
             />
+          </div>
+
+          {/* How the form travels, and the way around it, right before sending. */}
+          <div className="contact-form-fineprint">
+            <p>
+              This form is delivered to our inbox by{' '}
+              <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">
+                Formspree
+              </a>
+              . We only use your details to reply, and never share them with anyone else (
+              <Link to="/privacy">privacy policy</Link>).
+            </p>
+            <p>
+              Prefer to email us directly? Reach out to us at{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            </p>
           </div>
 
           {state === 'error' && (

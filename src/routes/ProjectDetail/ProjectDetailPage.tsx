@@ -10,7 +10,7 @@ import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../skills';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
-import { categoryLabel, getProjectByAlias } from '../../PROJECTS';
+import { categoryLabel, getProjectByAlias, shownOrigin } from '../../PROJECTS';
 import MediaFrame from '../../components/UI/Media/MediaFrame';
 import Gallery from '../../components/UI/Media/Gallery';
 import { MediaItem, ProjectDetails } from '../../types/project.model';
@@ -155,7 +155,7 @@ function ProjectHero(props: { details: ProjectDetails }) {
         {/* One line: drifts as a ticker only when it doesn't fit. (Year lives
             in the spec sheet.) */}
         <Ticker className="project-hero-meta">
-          <MetaTags tags={[categoryLabel(d.category), d.origin, d.status]} />
+          <MetaTags tags={[categoryLabel(d.category), shownOrigin(d), d.status]} />
         </Ticker>
       </div>
     </header>
@@ -201,7 +201,8 @@ function SpecSheet(props: { details: ProjectDetails }) {
   const rows: [string, ReactNode][] = [];
   if (d.role) rows.push(['Role', d.role]);
   if (d.year) rows.push(['Year', <span className="meta">{d.year}</span>]); // data, not a #tag
-  rows.push(['Origin', <span className="meta">#{d.origin}</span>]);
+  const origin = shownOrigin(d);
+  if (origin) rows.push(['Origin', <span className="meta">#{origin}</span>]);
   rows.push(['Status', <span className="meta">#{d.status}</span>]);
 
   const skills = d.skills ?? [];

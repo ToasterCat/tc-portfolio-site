@@ -4,7 +4,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
-import { CategoryInfo, PROJECT_CATEGORIES, sectionProjects } from '../../PROJECTS';
+import { ARCHIVED_PROJECTS, CategoryInfo, PROJECT_CATEGORIES, sectionProjects } from '../../PROJECTS';
 import './PortfolioPage.scss';
 
 /**
@@ -12,7 +12,9 @@ import './PortfolioPage.scss';
  *
  * One section per service we sell, each read top to bottom like a resume
  * entry: what you'd hire us for (pitch) -> our best proof (flagship) -> the
- * rest of the evidence (rows) -> work we can't show -> the ask (CTA).
+ * rest of the evidence (rows) -> work we can't show -> early work (before
+ * the studio) -> the ask (CTA).
+ * Unlisted projects sit in a small Archive after the last service.
  * No dates or counts at section level: quiet stretches and NDA work never
  * read as gaps.
  */
@@ -63,6 +65,24 @@ export default function PortfolioPage() {
         <ServiceSection key={c.key} category={c} />
       ))}
 
+      {ARCHIVED_PROJECTS.length > 0 && (
+        <section className="portfolio-archive" aria-labelledby="archive-heading">
+          <div className="portfolio-service-inner">
+            <div className="portfolio-service-more">
+              <h2 id="archive-heading" className="meta meta-dim portfolio-service-more-label">Archive</h2>
+              <p className="portfolio-archive-note">Shelved and retired projects, kept for the record.</p>
+              <ul className="portfolio-service-rows">
+                {ARCHIVED_PROJECTS.map((p) => (
+                  <li key={p.projectDetails.alias}>
+                    <ProjectCard project={p} variant="row" headingLevel="h3" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
       <ContactInfoBar />
     </div>
   );
@@ -70,7 +90,7 @@ export default function PortfolioPage() {
 
 function ServiceSection(props: { category: CategoryInfo }) {
   const c = props.category;
-  const { flagship, rest } = sectionProjects(c);
+  const { flagship, rest, early } = sectionProjects(c);
   const headingId = `${c.anchor}-heading`;
 
   return (
@@ -105,6 +125,19 @@ function ServiceSection(props: { category: CategoryInfo }) {
                   <span>{c.confidentialNote}</span>
                 </li>
               )}
+            </ul>
+          </div>
+        )}
+
+        {early.length > 0 && (
+          <div className="portfolio-service-more portfolio-service-more--early">
+            <h3 className="meta meta-dim portfolio-service-more-label">Early work</h3>
+            <ul className="portfolio-service-rows">
+              {early.map((p) => (
+                <li key={p.projectDetails.alias}>
+                  <ProjectCard project={p} variant="row" headingLevel="h4" />
+                </li>
+              ))}
             </ul>
           </div>
         )}

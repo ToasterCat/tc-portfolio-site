@@ -21,14 +21,12 @@
   text-align: center;
 }
 
-/* Small print above the fields: centred under the heading, quieter than it. */
-.contact-form-preamble {
-  max-width: 32rem;
-  margin: calc(-1 * #{base.$space-3}) 0 base.$space-6 0;
+/* Small print just above the buttons: how the form travels, and the email
+ * alternative, where people decide to send. Quieter than the fields. */
+.contact-form-fineprint {
   color: base.$site-color-gray;
   font-size: base.$type-meta;
   line-height: 1.55;
-  text-align: center;
 
   p {
     margin: 0 0 base.$space-2 0;
@@ -81,6 +79,7 @@
   }
 
   input,
+  select,
   textarea {
     width: 100%;
     box-sizing: border-box;
@@ -99,7 +98,33 @@
     color: rgba(base.$site-color-gray, 0.55);
   }
 
+  select {
+    appearance: none;
+    padding-right: base.$space-7;
+    /* A plain chevron in the meta colour, drawn as two gradients. */
+    background-image:
+      linear-gradient(45deg, transparent 50%, base.$color-meta 50%),
+      linear-gradient(135deg, base.$color-meta 50%, transparent 50%);
+    background-position:
+      calc(100% - 1.25rem) 55%,
+      calc(100% - 0.9rem) 55%;
+    background-size: 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  select:invalid,
+  select option[value=''] {
+    color: rgba(base.$site-color-gray, 0.55);
+  }
+
+  option {
+    color: base.$color-light;
+    background-color: base.$color-black;
+  }
+
   input:focus,
+  select:focus,
   textarea:focus {
     outline: none;
     border-color: base.$color-meta;

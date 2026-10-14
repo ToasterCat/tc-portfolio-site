@@ -170,6 +170,28 @@ $jump-h: 3rem;
 }
 
 /* "Work we can't show": a redacted row, same footprint as a project row. */
+/* EARLY WORK - same rows, stepped back: before the studio existed. */
+.portfolio-service-more--early .portfolio-service-rows {
+  opacity: 0.8;
+}
+
+/* ARCHIVE - after the last service: unlisted projects, quiet. */
+.portfolio-archive {
+  min-width: 0;
+  background-color: base.$site-color-dark;
+  border-top: 1px solid rgba(base.$color-meta-dim, 0.3);
+}
+
+.portfolio-archive-note {
+  margin: 0;
+  color: base.$site-color-gray;
+  font-size: base.$type-meta;
+}
+
+.portfolio-archive .portfolio-service-rows {
+  opacity: 0.8;
+}
+
 .portfolio-service-confidential {
   display: flex;
   align-items: center;

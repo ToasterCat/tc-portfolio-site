@@ -90,7 +90,9 @@ import umaRedactedPoster from './gallery/UMA/redacted_poster.webp';
 import umaSiteScreenshot from './gallery/UMA/uma-site-screenshot.png';
 
 import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
-import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight.png';
+import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight_1600.webp';
+import wraithSquadronFlightAlt from './gallery/WraithSquadron/TestFlight_Alt_1600.webp';
+import wraithSquadronThumb from './gallery/WraithSquadron/TestFlight_thumb.webp';
 
 import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
 import tcProductDetail from './gallery/TC-Print/TC-Product-Rotation_1600.mp4';
@@ -252,6 +254,8 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],
     ["wraith-background", wraithSquadronBackground],
+    ["wraith-flight-alt", wraithSquadronFlightAlt],
+    ["wraith-thumb", wraithSquadronThumb],
     ["tcprint-background", tcPrintBackground],
     ["tcstudio-background", tcStudioBackground],
 ]);

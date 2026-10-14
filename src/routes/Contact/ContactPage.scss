@@ -1,5 +1,63 @@
 @use '../../base';
 
+/* Above the fields, on the form's 32rem column: what to include. */
+.contact-brief {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-3;
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: base.$space-6;
+  padding-bottom: base.$space-5;
+  border-bottom: 1px solid rgba(base.$color-meta-dim, 0.45);
+}
+
+.contact-brief-sub {
+  margin: 0 0 base.$space-2 0;
+  color: base.$site-color-gray;
+  text-align: center;
+  text-wrap: pretty; /* full prose width, but no one-word last line */
+}
+
+.contact-brief-collab {
+  margin: 0;
+  color: base.$site-color-gray;
+  font-size: base.$type-meta;
+
+  strong {
+    color: base.$color-light;
+    font-weight: base.$weight-subhead;
+  }
+}
+
+/* HOW WORKING WITH US GOES - numbered in the olive meta colour. */
+.contact-process {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-3;
+  margin-bottom: base.$space-5;
+}
+
+.contact-process-list {
+  margin: 0;
+  padding-left: base.$space-5;
+  color: base.$site-color-gray;
+
+  li {
+    margin-bottom: base.$space-2;
+  }
+
+  li::marker {
+    font-family: base.$font-mono;
+    color: base.$color-meta;
+  }
+}
+
+.contact-process-step {
+  color: base.$color-light;
+  font-weight: base.$weight-subhead;
+}
+
 /* Sits under the form on the same 32rem column, closing the page quietly. */
 .contact-notes {
   padding: 0 base.$space-4 base.$section-pad-y-m base.$space-4;
