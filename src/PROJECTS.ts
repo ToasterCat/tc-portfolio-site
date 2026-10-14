@@ -1,4 +1,4 @@
-import { Project, ProjectCategory, ProjectDetails, ProjectOrigin } from './types/project.model';
+import { Project, ProjectCategory, ProjectDetails, ProjectOrigin, Testimonial } from './types/project.model';
 
 const PROJECTS: Record<string, Project> = {
 
@@ -99,6 +99,16 @@ const PROJECTS: Record<string, Project> = {
         `The research came first: could a song clip ride along in a text at all? We measured MP3s against GIFs, mapped what data and payloads SMS, MMS, and RCS protocols can support, and tested how existing platforms actually process audio files and content-rich links.`,
         `From there we designed a shared foundation (clip ingestion, lookup, and streaming) and three distinct approaches built on top of it, each with its own back-end design. Alongside them came rough development timelines, team requirements, and infrastructure costs modeled from a million to four billion requests a day.`,
         `ClickTune pursued Option A, and our engineering diagrams for its back-end service became part of the granted patent.`,
+      ],
+      testimonials: [
+        {
+          // PLACEHOLDER: waiting on the client's real quote. Dev builds only.
+          quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          name: 'Lorem Ipsum',
+          title: 'Founder',
+          org: 'ClickTune LLC',
+          placeholder: true,
+        }
       ],
       skills: [
         "AWS-S3",
@@ -1127,6 +1137,18 @@ export function sectionProjects(category: CategoryInfo): { flagship?: Project; r
  */
 export function shownOrigin(d: ProjectDetails): ProjectOrigin | undefined {
   return d.origin === 'in-house' && !isEarlyWork({ projectDetails: d }) ? undefined : d.origin;
+}
+
+/** A project's testimonials as the site should show them: placeholders only in dev builds. */
+export function visibleTestimonials(d: ProjectDetails, dev: boolean = import.meta.env.DEV): Testimonial[] {
+  return (d.testimonials ?? []).filter((t) => dev || !t.placeholder);
+}
+
+/** The homepage band: every visible testimonial from a listed project, in project order. */
+export function homepageTestimonials(dev: boolean = import.meta.env.DEV): { testimonial: Testimonial; project: Project }[] {
+  return PROJECT_LIST.filter(isListed).flatMap((project) =>
+    visibleTestimonials(project.projectDetails, dev).map((testimonial) => ({ testimonial, project }))
+  );
 }
 
 /** Homepage selection: listed projects flagged `featured`, in `order`. */

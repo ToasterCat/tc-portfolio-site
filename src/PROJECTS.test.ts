@@ -4,10 +4,12 @@ import PROJECTS, {
   PROJECT_CATEGORIES,
   PROJECT_LIST,
   getProjectByAlias,
+  homepageTestimonials,
   isEarlyWork,
   isListed,
   shownOrigin,
   sectionProjects,
+  visibleTestimonials,
 } from './PROJECTS';
 import { ASSET_MANIFEST } from './assets/AssetMap';
 import { bandcampEmbedUrl, resolveMedia, youtubeEmbedUrl } from './media';
@@ -115,6 +117,23 @@ describe('origin tags', () => {
   test('in-house is hidden on current work', () => expect(at('in-house', '2024–Present')).toBeUndefined());
   test('in-house shows on early work', () => expect(at('in-house', '2014')).toBe('in-house'));
   test('client always shows', () => expect(at('client', '2025')).toBe('client'));
+});
+
+describe('testimonials', () => {
+  test.each(details.map((d) => [d.alias, d]))('%s: stand-in text is flagged as a placeholder', (_alias, d) => {
+    (d.testimonials ?? []).forEach((t) => {
+      if (/lorem ipsum/i.test(`${t.quote} ${t.name}`)) expect(t.placeholder).toBe(true);
+    });
+  });
+
+  test('production builds never show a placeholder', () => {
+    details.forEach((d) => expect(visibleTestimonials(d, false).some((t) => t.placeholder)).toBe(false));
+    expect(homepageTestimonials(false).some(({ testimonial }) => testimonial.placeholder)).toBe(false);
+  });
+
+  test('the homepage band has at least one real quote', () => {
+    expect(homepageTestimonials(false).length).toBeGreaterThan(0);
+  });
 });
 
 describe('homepage selection', () => {

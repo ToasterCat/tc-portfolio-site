@@ -10,7 +10,7 @@ import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../skills';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
-import { categoryLabel, getProjectByAlias, shownOrigin } from '../../PROJECTS';
+import { categoryLabel, getProjectByAlias, shownOrigin, visibleTestimonials } from '../../PROJECTS';
 import MediaFrame from '../../components/UI/Media/MediaFrame';
 import Gallery from '../../components/UI/Media/Gallery';
 import { MediaItem, ProjectDetails } from '../../types/project.model';
@@ -84,9 +84,9 @@ export default function ProjectDetailPage() {
         </section>
       )}
 
-      {d.testimonials && d.testimonials.length > 0 && (
+      {visibleTestimonials(d).length > 0 && (
         <section className="project-page-testimonials" aria-label="Testimonials">
-          {d.testimonials.map((t, i) => (
+          {visibleTestimonials(d).map((t, i) => (
             <figure className="project-quote" key={i}>
               <blockquote>
                 <p>

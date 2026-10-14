@@ -6,6 +6,7 @@ import HeroSection from '../../containers/HeroSection/HeroSection';
 import FeatureBanner from '../../containers/FeatureBanner/FeatureBanner';
 import ServicesStrip from '../../containers/ServicesStrip/ServicesStrip';
 import { ProjectSection } from '../../containers/ProjectSection/ProjectSection';
+import TestimonialsBand from '../../containers/TestimonialsBand/TestimonialsBand';
 import AboutSection from '../../containers/AboutSection/AboutSection';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 
@@ -16,7 +17,7 @@ import tcLogo from '../../assets/tc-3d.png';
 import heroBackground from '../../assets/background/chess-alt_1920.webp';
 
 /**
- * Pitch -> featured work -> what we do -> proof -> who we are -> the ask.
+ * Pitch -> featured work -> what we do -> proof -> what clients say -> who we are -> the ask.
  */
 export default function Homepage() {
   useDocumentTitle();
@@ -58,6 +59,8 @@ export default function Homepage() {
       <ServicesStrip />
 
       <ProjectSection />
+
+      <TestimonialsBand />
 
       <AboutSection />
 

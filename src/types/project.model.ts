@@ -66,6 +66,11 @@ export interface Testimonial {
   name: string;
   title?: string;
   org?: string;
+  /**
+   * A stand-in awaiting the real quote. Shown in dev builds only, never in
+   * production (see visibleTestimonials), so it can't ship by accident.
+   */
+  placeholder?: boolean;
 }
 
 export interface ProjectDetails {
