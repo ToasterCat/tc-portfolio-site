@@ -348,8 +348,8 @@ const PROJECTS: Record<string, Project> = {
         },
         gallery: [
           { type: 'image', src: 'studio-mics', alt: 'A vocal microphone with a pop filter in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-guitar-amp', alt: 'Miked guitar amplifiers in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'oas-site-title', alt: 'Octopus Attacks Shark!! title art', width: 417, height: 500 },
+          { type: 'image', src: 'studio-cab-mic', alt: 'A microphone on a guitar cabinet in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-mixer', alt: 'The mixing desk in our studio', width: 1600, height: 1067 },
         ],
       },
     }
@@ -842,6 +842,7 @@ const PROJECTS: Record<string, Project> = {
         },
         gallery: [
           { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
+          { type: 'image', src: 'studio-drum-room', alt: 'The drum room in our studio', width: 1600, height: 1067 },
           { type: 'image', src: 'studio-drum-mics', alt: 'A miked drum kit in our studio', width: 1600, height: 1067 },
           { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio', width: 1600, height: 1067 },
         ],
@@ -935,6 +936,8 @@ const PROJECTS: Record<string, Project> = {
           height: 1067,
         },
         gallery: [
+          { type: 'image', src: 'lizzie-variants', alt: 'Custom blaster variants in teal, black, and pink, side by side', caption: 'A few of the custom variants.', width: 1600, height: 1067 },
+          { type: 'image', src: 'lizzie-variant-black', alt: 'A black-and-white variant with a red-dot optic', width: 1600, height: 1067 },
           { type: 'image', src: 'lizzie-alt', alt: 'Fitting the blaster’s magazine on the workbench', width: 1600, height: 1067 },
           { type: 'image', src: 'lizzie-profile', alt: 'Lizzie assembly', width: 1350, height: 900 },
           {
@@ -981,6 +984,10 @@ const PROJECTS: Record<string, Project> = {
         source: 'tc-logo',
         alt: 'TC Logo'
       },
+      cardImage: {
+        source: 'rail-bridges-colors-800',
+        alt: 'Rail bridges in black, olive drab, and grey'
+      },
       backgroundImage: {
         source: 'tcprint-background',
         alt: 'TC Print Shop'
@@ -995,9 +1002,11 @@ const PROJECTS: Record<string, Project> = {
           height: 1066,
         },
         gallery: [
-          { type: 'image', src: 'tcprint-printer-angle', alt: 'A rail bridge fresh off the print bed', width: 1600, height: 1067 },
-          { type: 'image', src: 'tcprint-printer', alt: 'A rail bridge printing', width: 1600, height: 1067 },
-          { type: 'image', src: 'tcprint-shop', alt: 'The print shop workbench', width: 1600, height: 1067 },
+          { type: 'clip', src: 'rail-bridges-printing', poster: 'rail-bridges-printing-poster', alt: 'A rail bridge printing on the bed of a Creality printer', width: 1280, height: 720 },
+          { type: 'image', src: 'rail-bridges-fresh-print', alt: 'An olive-drab rail bridge fresh off the print bed', width: 1600, height: 1067 },
+          { type: 'image', src: 'rail-bridges-mounted-od', alt: 'An olive-drab rail bridge carrying a red-dot optic on a pistol', width: 1600, height: 1067 },
+          { type: 'image', src: 'rail-bridges-mounted-grey', alt: 'A grey rail bridge carrying a red-dot optic on an airsoft pistol', width: 1600, height: 1067 },
+          { type: 'image', src: 'rail-bridges-lineup', alt: 'Rail bridges in grey and black, lined up', width: 1600, height: 1067 },
         ],
       },
     }

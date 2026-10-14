@@ -50,13 +50,24 @@ import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
 import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.webp';
 // Gallery stills (WebP next to their originals).
+// 2026-10 studio shoot (originals kept outside the repo, in Dirk's TC-Studio export).
+import railBridgesColors from './gallery/TC-Print/rail-bridges-colors_1600.webp';
+import railBridgesColorsSmall from './gallery/TC-Print/rail-bridges-colors_800.webp';
+import railBridgesLineup from './gallery/TC-Print/rail-bridges-lineup_1600.webp';
+import railBridgesMountedOd from './gallery/TC-Print/rail-bridges-mounted-od_1600.webp';
+import railBridgesMountedGrey from './gallery/TC-Print/rail-bridges-mounted-grey_1600.webp';
+import railBridgesFreshPrint from './gallery/TC-Print/rail-bridges-fresh-print_1600.webp';
+import railBridgesPrinting from './gallery/TC-Print/rail-bridges-printing_1280.mp4';
+import railBridgesPrintingPoster from './gallery/TC-Print/rail-bridges-printing_poster.webp';
+import lizzieVariants from './gallery/Lizzie/lizzie-variants_1600.webp';
+import lizzieVariantBlack from './gallery/Lizzie/lizzie-variant-black_1600.webp';
+import studioCabMic from './gallery/TC-Recording/studio-cab-mic_1600.webp';
+import studioMixer from './gallery/TC-Recording/studio-mixer_1600.webp';
+import studioDrumRoom from './gallery/TC-Recording/studio-drum-room_1600.webp';
 import studioMics from './gallery/TC-Recording/StudioMics_1600.webp';
 import studioDrumMics from './gallery/TC-Recording/StudioDrumMics_1600.webp';
 import studioGuitarAmp from './gallery/TC-Recording/StudioGuitarAmp_1600.webp';
 import studioKeys from './gallery/TC-Recording/StudioKeys_1600.webp';
-import tcPrinter from './gallery/TC-Print/Printer_1600.webp';
-import tcPrinterAngle from './gallery/TC-Print/PrinterAngle_1600.webp';
-import tcShopAngle from './gallery/TC-Print/TCShopAngle_1600.webp';
 import lizzieAlt from './gallery/Lizzie/LizzieAlt_1600.webp';
 import moxelDetail from './gallery/Moxel/moxel-gloria-detail_1600.webp';
 import fossShowcase from './gallery/FOSS/LizzieShowcase_1600.webp';
@@ -199,13 +210,23 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["crude-mirror-logo", crudeMirrorLogo],
     ["crude-mirror-background", crudeMirrorBackground],
     ["crude-mirror-full", crudeMirrorFull],
+    ["rail-bridges-colors", railBridgesColors],
+    ["rail-bridges-colors-800", railBridgesColorsSmall],
+    ["rail-bridges-lineup", railBridgesLineup],
+    ["rail-bridges-mounted-od", railBridgesMountedOd],
+    ["rail-bridges-mounted-grey", railBridgesMountedGrey],
+    ["rail-bridges-fresh-print", railBridgesFreshPrint],
+    ["rail-bridges-printing", railBridgesPrinting],
+    ["rail-bridges-printing-poster", railBridgesPrintingPoster],
+    ["lizzie-variants", lizzieVariants],
+    ["lizzie-variant-black", lizzieVariantBlack],
+    ["studio-cab-mic", studioCabMic],
+    ["studio-mixer", studioMixer],
+    ["studio-drum-room", studioDrumRoom],
     ["studio-mics", studioMics],
     ["studio-drum-mics", studioDrumMics],
     ["studio-guitar-amp", studioGuitarAmp],
     ["studio-keys", studioKeys],
-    ["tcprint-printer", tcPrinter],
-    ["tcprint-printer-angle", tcPrinterAngle],
-    ["tcprint-shop", tcShopAngle],
     ["lizzie-alt", lizzieAlt],
     ["moxel-detail", moxelDetail],
     ["foss-showcase", fossShowcase],
