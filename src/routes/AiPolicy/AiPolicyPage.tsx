@@ -67,18 +67,18 @@ export default function AiPolicyPage() {
           and money to talk back.
         </p>
         <p>
-          But damn, is it a useful hot dog machine.
+          But damn, are they useful hot dog machines.
         </p>
         <p>
           I’ve spent more late evenings than I care to remember hunting down memory leaks, build
           failures, dependency conflicts, linker errors, and deployment failures. These types of
           issues aren’t necessarily more difficult than stomping out any other bug, but they’re
           tedious, inconsistent, and won’t teach you anything useful once solved. LLM-based coding
-          assistants are excellent at this work, along with boilerplate code, test cases, dependency
+          assistants eat these bugs for breakfast &mdash; along with boilerplate code, test cases, dependency
           upgrades, documentation, and other well-scoped engineering chores. <strong>Let the bots
           have it</strong>; I won’t become a better engineer by discovering that a deployment failed
-          because an obscure dependency pulled in a conflicting version of Node on a specific flavor
-          of a Docker environment.
+          because an obscure dependency pulled in a version of Node that conflicts with a specific flavor
+          of Docker in our staging environment.
         </p>
         <p>
           The same goes for status reports, emails, and corporate “synergy-ese”. I’m perfectly happy
@@ -103,9 +103,9 @@ export default function AiPolicyPage() {
         <p>
           Generative art is a very different story. As a musician and a certified soul-bearing
           human, I have yet to see or hear any generative AI output that moves me. That is a meager
-          reward for technology built on top of legitimately arguable theft of artists’ work who did
-          not meaningfully consent to be used as training material. After all that, this generative
-          AI “art” only really remains useful as soulless corporate clip art, stock imagery,
+          reward for technology built on top of what can legitimately be argued as theft from artists
+          who did not meaningfully consent for their work to be used as training material. Even without
+          controversy, AI “art” only really remains useful for soulless corporate clip art, stock imagery,
           concepts, and placeholders.
         </p>
         <p>
@@ -116,11 +116,11 @@ export default function AiPolicyPage() {
           a next word predictor — or at least I certainly don’t.
         </p>
         <p>
-          So my policy is not “AI good” or “AI bad”. <strong>My policy is to use AI as a simple tool to
-          clear my schedule of mundane bullsh*t</strong>. I use it where speed matters more than authorship
-          and where I, an informed and accountable human, still own the result. I do not use it as a
-          substitute for engineering judgment, product design, artistic direction, or creative
-          ownership.
+          So my policy is not “AI good” or “AI bad”. My policy is to use AI like any other automation tool
+          &mdash; <strong>to clear my schedule of mundane bullsh*t</strong>. I'll use it where speed
+          beats elegance and where I, an informed and accountable human, still own the result. I do
+          not and will not use it as a substitute for engineering judgment, product design, artistic
+          direction, or creative ownership.
         </p>
         <p>
           Media doesn’t become “slop” just because a bot was involved. It’s slop because nobody
