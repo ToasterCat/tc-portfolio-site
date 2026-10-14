@@ -49,6 +49,20 @@ import discordLogo from './logos/external/discord-logo.png';
 import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
 import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.webp';
+// Live-site captures, 2026-10 (1440x900 desktop, 390px phone at 2x; PNGs alongside).
+import cm2026Home from './gallery/CrudeMirror/cm-2026-home.webp';
+import cm2026HomeSmall from './gallery/CrudeMirror/cm-2026-home_800.webp';
+import cm2026Article from './gallery/CrudeMirror/cm-2026-article.webp';
+import cm2026Mobile from './gallery/CrudeMirror/cm-2026-mobile.webp';
+import oas2026Home from './gallery/OAS/oas-2026-home.webp';
+import oas2026HomeSmall from './gallery/OAS/oas-2026-home_800.webp';
+import oas2026Music from './gallery/OAS/oas-2026-music.webp';
+import oas2026Shows from './gallery/OAS/oas-2026-shows.webp';
+import oas2026Mobile from './gallery/OAS/oas-2026-mobile.webp';
+import uma2026Home from './gallery/UMA/uma-2026-home.webp';
+import uma2026HomeSmall from './gallery/UMA/uma-2026-home_800.webp';
+import uma2026Player from './gallery/UMA/uma-2026-player.webp';
+import uma2026Mobile from './gallery/UMA/uma-2026-mobile.webp';
 // Gallery stills (WebP next to their originals).
 // 2026-10 studio shoot (originals kept outside the repo, in Dirk's TC-Studio export).
 import railBridgesColors from './gallery/TC-Print/rail-bridges-colors_1600.webp';
@@ -210,6 +224,19 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["crude-mirror-logo", crudeMirrorLogo],
     ["crude-mirror-background", crudeMirrorBackground],
     ["crude-mirror-full", crudeMirrorFull],
+    ["cm-2026-home", cm2026Home],
+    ["cm-2026-home-800", cm2026HomeSmall],
+    ["cm-2026-article", cm2026Article],
+    ["cm-2026-mobile", cm2026Mobile],
+    ["oas-2026-home", oas2026Home],
+    ["oas-2026-home-800", oas2026HomeSmall],
+    ["oas-2026-music", oas2026Music],
+    ["oas-2026-shows", oas2026Shows],
+    ["oas-2026-mobile", oas2026Mobile],
+    ["uma-2026-home", uma2026Home],
+    ["uma-2026-home-800", uma2026HomeSmall],
+    ["uma-2026-player", uma2026Player],
+    ["uma-2026-mobile", uma2026Mobile],
     ["rail-bridges-colors", railBridgesColors],
     ["rail-bridges-colors-800", railBridgesColorsSmall],
     ["rail-bridges-lineup", railBridgesLineup],

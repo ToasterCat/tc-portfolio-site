@@ -434,6 +434,10 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-website'
         },
       ],
+      cardImage: {
+        source: 'cm-2026-home-800',
+        alt: 'Homepage of the live site'
+      },
       thumbnailImage: {
         source: 'crude-mirror-logo',
         alt: 'Crude-Mirror Logo'
@@ -445,14 +449,15 @@ const PROJECTS: Record<string, Project> = {
       media: {
         featured: {
           type: 'image',
-          src: 'crude-mirror-site-screenshot',
-          alt: 'Crude-Mirror Site',
-          width: 761,
-          height: 505,
+          src: 'cm-2026-home',
+          alt: 'The Crude Mirror Media homepage: masthead, trending ticker, and featured articles',
+          width: 1424,
+          height: 890,
         },
         gallery: [
+          { type: 'image', src: 'cm-2026-article', alt: 'A Crude Mirror Media article listing with the review sidebar', width: 1424, height: 890 },
+          { type: 'image', src: 'cm-2026-mobile', alt: 'The Crude Mirror Media homepage on a phone', width: 600, height: 1298 },
           { type: 'image', src: 'crude-mirror-full', alt: 'Crude Mirror Media shattered-glass banner', width: 874, height: 437 },
-          { type: 'image', src: 'crude-mirror-background', alt: 'Crude Mirror Media banner', width: 1024, height: 640 },
         ],
       },
     }
@@ -554,6 +559,10 @@ const PROJECTS: Record<string, Project> = {
           icon: 'oas-logo'
         }
       ],
+      cardImage: {
+        source: 'oas-2026-home-800',
+        alt: 'Homepage of the live site'
+      },
       thumbnailImage: {
         source: 'oas-site-title',
         alt: 'OAS Logo'
@@ -565,12 +574,15 @@ const PROJECTS: Record<string, Project> = {
       media: {
         featured: {
           type: 'image',
-          src: 'oas-site-screenshot',
-          alt: 'OAS Site',
-          width: 755,
-          height: 512,
+          src: 'oas-2026-home',
+          alt: 'The Octopus Attacks Shark!! homepage: band crest over a live photo, with links to stream and see the band live',
+          width: 1424,
+          height: 890,
         },
         gallery: [
+          { type: 'image', src: 'oas-2026-music', alt: 'The music page: an embedded album player beside the album notes and credits', width: 1424, height: 890 },
+          { type: 'image', src: 'oas-2026-shows', alt: 'The shows page: past shows as cards with dates, venues, and flyers', width: 1424, height: 890 },
+          { type: 'image', src: 'oas-2026-mobile', alt: 'The Octopus Attacks Shark!! homepage on a phone', width: 600, height: 1298 },
           { type: 'image', src: 'oas-background', alt: 'Octopus Attacks Shark!! on stage', width: 1600, height: 900 },
         ],
       },
@@ -606,6 +618,10 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-website'
         }
       ],
+      cardImage: {
+        source: 'uma-2026-home-800',
+        alt: 'Homepage of the live site'
+      },
       thumbnailImage: {
         source: 'uma-logo',
         alt: 'UMA Logo'
@@ -616,17 +632,17 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'clip',
-          src: 'uma-machine-god',
-          poster: 'uma-machine-god-poster',
-          alt: 'UMA MachineGod//Suicide',
-          width: 720,
-          height: 405,
+          type: 'image',
+          src: 'uma-2026-home',
+          alt: 'The Ugliest Man Alive homepage: the [U]gliest [M]an [A]live wordmark in monospace over a dark photo',
+          width: 1424,
+          height: 890,
         },
         gallery: [
-          { type: 'image', src: 'uma-site-screenshot', alt: 'The Ugliest Man Alive website', width: 1041, height: 1035 },
-          { type: 'image', src: 'uma-baby-reverse', alt: 'Ugliest Man Alive press art', width: 1600, height: 754 },
-          { type: 'image', src: 'uma-nine-star', alt: 'The Ugliest Man Alive nine-pointed star mark', width: 1600, height: 1574 },
+          { type: 'image', src: 'uma-2026-player', alt: 'An embedded SoundCloud player over a full-screen band image', width: 1424, height: 890 },
+          { type: 'image', src: 'uma-2026-mobile', alt: 'The Ugliest Man Alive homepage on a phone', width: 600, height: 1298 },
+          { type: 'clip', src: 'uma-machine-god', poster: 'uma-machine-god-poster', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
+          { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
         ],
       },
     }
@@ -841,7 +857,6 @@ const PROJECTS: Record<string, Project> = {
           poster: 'uma-logo',
         },
         gallery: [
-          { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
           { type: 'image', src: 'studio-drum-room', alt: 'The drum room in our studio', width: 1600, height: 1067 },
           { type: 'image', src: 'studio-drum-mics', alt: 'A mic’d drum kit in our studio', width: 1600, height: 1067 },
           { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio', width: 1600, height: 1067 },
