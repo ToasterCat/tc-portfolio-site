@@ -73,6 +73,12 @@ export interface Testimonial {
   placeholder?: boolean;
 }
 
+/** A named collaborator on a project, shown in the spec sheet's Team row. */
+export interface Credit {
+  name: string;
+  role: string;
+}
+
 export interface ProjectDetails {
   /** URL slug for /portfolio/<alias>: lowercase words joined by hyphens. */
   alias: string;
@@ -92,7 +98,10 @@ export interface ProjectDetails {
   brief: string;
   origin: ProjectOrigin;
   status: ProjectStatus;
-  role?: string;
+  /** What we did, one entry per role. The spec sheet says "Role" or "Roles" by count, and hides the row when empty. */
+  roles?: string[];
+  /** Named collaborators beyond the studio (contractors, partners). */
+  credits?: Credit[];
   year?: string;
   outcome?: string;
   /**

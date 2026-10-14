@@ -106,6 +106,25 @@ describe('early work (finished before the studio)', () => {
   });
 });
 
+describe('roles', () => {
+  test.each(details.map((d) => [d.alias, d]))('%s: roles are non-blank and listed once each', (_alias, d) => {
+    const roles = d.roles ?? [];
+    roles.forEach((r) => expect(r.trim()).not.toBe(''));
+    expect(new Set(roles).size).toBe(roles.length);
+  });
+});
+
+describe('credits', () => {
+  test.each(details.map((d) => [d.alias, d]))('%s: every credit has a name and a role, once each', (_alias, d) => {
+    const credits = d.credits ?? [];
+    credits.forEach((c) => {
+      expect(c.name.trim()).not.toBe('');
+      expect(c.role.trim()).not.toBe('');
+    });
+    expect(new Set(credits.map((c) => c.name)).size).toBe(credits.length);
+  });
+});
+
 describe('thumbnails', () => {
   test.each(details.map((d) => [d.alias, d]))('%s: the TC stamp only marks our own work', (_alias, d) => {
     if (d.thumbnailImage?.source === 'tc-logo') expect(d.origin).toBe('in-house');
@@ -242,7 +261,7 @@ describe('body text', () => {
   });
 
   test.each(details.map((d) => [d.alias, d]))('%s: no placeholder text ships', (_alias, d) => {
-    const texts = [d.brief, d.role, d.outcome, ...d.body].filter((t): t is string => !!t);
+    const texts = [d.brief, ...(d.roles ?? []), d.outcome, ...d.body].filter((t): t is string => !!t);
     expect(texts.filter((t) => /\bTODO\b|\bTBD\b|lorem ipsum/i.test(t))).toEqual([]);
   });
 });

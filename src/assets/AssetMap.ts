@@ -118,6 +118,7 @@ import showReactionFeed from './gallery/LiveShows/2021-reaction-feed_1600.webp';
 import showWacken2022 from './gallery/LiveShows/2022-wacken-metal-battle_1600.webp';
 import showModelSnake from './gallery/LiveShows/2022-model-snake_1600.webp';
 import showI90FiascoFlyer from './gallery/LiveShows/2025-i90-fiasco-flyer.webp';
+import showPedalboard from './background/pedalboard_scaled.jpg';
 
 import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
@@ -289,6 +290,7 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["show-wacken-2022", showWacken2022],
     ["show-model-snake", showModelSnake],
     ["show-i90-fiasco-flyer", showI90FiascoFlyer],
+    ["show-pedalboard", showPedalboard],
 
     ["uma-logo", umaBand],
     ["uma-background", umaBackground],

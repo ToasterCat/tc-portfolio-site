@@ -342,6 +342,33 @@ $spec-w: 18rem;
   }
 }
 
+.project-spec-roles {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-spec-team {
+  display: flex;
+  flex-direction: column;
+  gap: base.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.project-spec-team-role {
+  font-size: base.$type-meta-sm;
+}
+
 .project-spec-tech {
   display: flex;
   flex-direction: column;

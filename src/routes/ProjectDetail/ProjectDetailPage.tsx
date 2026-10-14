@@ -199,7 +199,31 @@ function FeaturedMedia(props: { item: MediaItem }) {
 function SpecSheet(props: { details: ProjectDetails }) {
   const d = props.details;
   const rows: [string, ReactNode][] = [];
-  if (d.role) rows.push(['Role', d.role]);
+  const roles = d.roles ?? [];
+  if (roles.length === 1) rows.push(['Role', roles[0]]);
+  if (roles.length > 1) {
+    rows.push([
+      'Roles',
+      <ul className="project-spec-roles">
+        {roles.map((r) => (
+          <li key={r}>{r}</li>
+        ))}
+      </ul>,
+    ]);
+  }
+  if (d.credits?.length) {
+    rows.push([
+      'Team',
+      <ul className="project-spec-team">
+        {d.credits.map((c) => (
+          <li key={c.name}>
+            {c.name}
+            <span className="meta meta-dim project-spec-team-role">{c.role}</span>
+          </li>
+        ))}
+      </ul>,
+    ]);
+  }
   if (d.year) rows.push(['Year', <span className="meta">{d.year}</span>]); // data, not a #tag
   const origin = shownOrigin(d);
   if (origin) rows.push(['Origin', <span className="meta">#{origin}</span>]);
