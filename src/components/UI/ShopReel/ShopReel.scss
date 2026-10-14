@@ -1,0 +1,83 @@
+@use '../../../base';
+
+/* SHOP REEL - one 3:2 frame, photos stacked and crossfaded by opacity. */
+.shop-reel {
+  margin: 0;
+}
+
+.shop-reel-frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid rgba(base.$color-meta-dim, 0.6);
+  border-radius: base.$radius;
+  background-color: base.$color-black;
+}
+
+.shop-reel-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+
+  &.is-current {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-reel-photo {
+    transition: none;
+  }
+}
+
+.shop-reel-caption {
+  /* label | [ < ] | [ > ] | pause: the steppers stay centred whatever the label's length. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: base.$space-3;
+  margin-top: base.$space-2;
+
+  .shop-reel-label {
+    font-size: base.$type-meta-sm;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+/* The pause control is there for accessibility, not as a feature: keep it
+ * quiet (smaller, olive at 75%, still about 5:1 contrast) until someone
+ * reaches for it; then it lights up like any tertiary command. */
+.shop-reel-toggle.btn--tertiary {
+  font-size: base.$type-meta-sm;
+
+  &,
+  &:visited {
+    color: rgba(base.$color-meta, 0.75);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: base.$color-signal;
+  }
+}
+
+.shop-reel-steps {
+  display: inline-flex;
+  align-items: center;
+  gap: base.$space-1;
+}
+
+.shop-reel-step.btn--tertiary,
+.shop-reel-toggle.btn--tertiary {
+  justify-self: end;
+}
+
+.shop-reel-glyph {
+  margin-left: 0.5em;
+  font-size: 0.9em;
+}

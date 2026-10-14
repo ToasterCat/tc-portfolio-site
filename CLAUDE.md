@@ -72,6 +72,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - `Brackets` (tertiary button label), `TcMark` and `BrandMark` (logos), `NyanToaster` (404 sprite)
   - `Ticker` (tags that scroll only when they overflow), `Media/*` (MediaFrame, Gallery, Lightbox)
   - `RichText` (project body markup), `StatusLine`, `PostCard`
+  - `ShopReel`: one 3:2 frame that slowly crossfades through photos (About, under the spec sheet). Each shot's caption names the service it advertises (Live Recording, 3D Printing, Consulting…); shots can come from the shop or from project galleries. Holds still under reduced motion, pauses off-screen, on hover, and on focus, has `[ < ] | [ > ]` steppers (a manual step restarts the hold), and a dim `[ PAUSE ⏸ ]` / `[ PLAY ▶ ]` control (required: WCAG 2.2.2 for anything moving on its own over 5 seconds); it fetches each photo only when it's next. Shop photos show tech up close (printers, mics, desks), never the room's cabinets or walls.
   - `ScrollControls` (`[ < PREV ]` / `[ NEXT > ]`) with the `useHorizontalScroll` hook: the one way to build a sideways-scrolling row. Used by the testimonials band today; kept generic for Selected Work and the feature banner once there are more projects to feature
 - **Page-level layouts:**
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
@@ -111,7 +112,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - `btn--primary`: red outline that fills on hover.
   - `btn--secondary`: neutral outline plus an icon or glyph.
   - `btn--tertiary`: PT Mono caps inside `<Brackets>`, for interface commands and minor navigation (menu, reset, back to top, section jumps, prev/next, "See the project"). **Rule: every tertiary or nav button reads `[ TEXT ]`**, rendered with `<Brackets>`; never a bare text link with a trailing arrow.
-  - **Direction inside brackets:** paired prev/next and back commands carry ASCII direction marks: `[ < PREV ]`, `[ NEXT > ]`, `[ << BACK TO PORTFOLIO ]`. Every other bracket command is words only. (`[ SKIP TO OUR POLICY ↓ ]` is the one accepted legacy exception.)
+  - **Direction inside brackets:** paired prev/next and back commands carry ASCII direction marks: `[ < PREV ]`, `[ NEXT > ]`, `[ << BACK TO PORTFOLIO ]`. Media controls carry their glyph after the word: `[ PAUSE ⏸ ]` / `[ PLAY ▶ ]` (text-style, U+FE0E). Compact media steppers may be glyph-only, `[ < ] | [ > ]`, with an `aria-label` ("Previous photo"). Every other bracket command is words only. (`[ SKIP TO OUR POLICY ↓ ]` is the one accepted legacy exception.)
   - Arrows (`→`) belong to secondary buttons and to whole-card links (cards, rows, tiles), never inside brackets.
 - **Tags vs. commands:** `[ BRACKETS ]` always mean a clickable command. Non-clickable labels (project kinds, VIDEO, NOW, PERSONAL NOTE, DO/DON'T, the NDA mark) use the bordered `.tag` class in `index.scss`, with no brackets. Colours vary by modifier (`.tag--signal`; `.tag--quiet` for project kinds, so titles stay dominant), but the shape never does.
 - **Backgrounds:**
@@ -139,6 +140,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **Curly quotes and apostrophes** in rendered text (’ “ ”), never straight ones. Periods and commas go *outside* closing quotes (“AI”.), matching Dirk's style.
 - **Real dashes or recast sentences:** use an em dash (—), a colon, or a semicolon. Never a spaced hyphen ( - ) as a dash.
 - **American spelling** ("judgment", not "judgement").
+- **“Mic’d”**, not “miked”, for a microphone placed on a source (Dirk’s usage, and the common PNW studio shorthand).
 - **Product names capitalized:** Node, Docker, GitHub.
 - **Tool and skill names:** use the name people recognize, without a vendor prefix: "Fusion 360", "Maya", "Cura". AWS services are always "AWS …" (AWS S3, AWS DynamoDB, AWS Step Functions), never "Amazon …", whatever AWS's own naming says. Skill icons for AWS come from the official AWS Architecture Icons package; other icons come from Simple Icons, recoloured for the dark theme.
 

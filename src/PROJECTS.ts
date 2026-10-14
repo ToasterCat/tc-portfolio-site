@@ -843,7 +843,7 @@ const PROJECTS: Record<string, Project> = {
         gallery: [
           { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
           { type: 'image', src: 'studio-drum-room', alt: 'The drum room in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-drum-mics', alt: 'A miked drum kit in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-drum-mics', alt: 'A mic’d drum kit in our studio', width: 1600, height: 1067 },
           { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio', width: 1600, height: 1067 },
         ],
       },
