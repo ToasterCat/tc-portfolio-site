@@ -1,11 +1,11 @@
 @use '../../base';
 
 /**
- * SERVICES STRIP - five tiles, cover over name. Five across on desktop;
+ * SERVICES STRIP - five tiles, cover over name, on the dot-grid texture. Five across on desktop;
  * two-up on phones with the odd tile spanning the row.
  */
 .services-strip {
-  background-color: base.$site-color-dark;
+  @include base.dot-grid('texture', base.$site-color-dark);
 }
 
 .services-strip-list {
@@ -69,9 +69,7 @@
 }
 
 .services-strip-cover--pattern {
-  background:
-    radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px) 0 0 / 14px 14px,
-    base.$color-black;
+  @include base.dot-grid('placeholder', base.$color-black);
 }
 
 /* Colour comes up and the cover leans in on hover: the tile "wakes". */

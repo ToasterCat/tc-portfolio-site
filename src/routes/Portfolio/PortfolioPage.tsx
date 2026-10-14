@@ -34,12 +34,14 @@ export default function PortfolioPage() {
 
   return (
     <div className="portfolio">
-      <header className="portfolio-head">
-        <h1 className="portfolio-title">Portfolio</h1>
-        <p className="portfolio-sub">
-          Work we&apos;ve built for clients, and a few things nobody asked for.
-        </p>
-      </header>
+      <div className="portfolio-head-band">
+        <header className="portfolio-head">
+          <h1 className="portfolio-title">Portfolio</h1>
+          <p className="portfolio-sub">
+            Work we&apos;ve built for clients, and a few things nobody asked for.
+          </p>
+        </header>
+      </div>
 
       <nav className="portfolio-jump" aria-label="Services">
         <ul className="portfolio-jump-list" ref={jumpList}>

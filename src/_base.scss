@@ -72,7 +72,7 @@ $radius-lg: 8px;  /* large section panels only      */
 /* --------------------------------------------------------------------------
  * CARD GRID
  *
- * One card size drives both "Recent Works" and "What We've Built". Each holds
+ * One card size drives both "Selected Work" and "What We've Built". Each holds
  * exactly four items, so the desktop grid is a 2x2 and rows stretch to equal
  * height rather than each tile sizing to its own copy.
  * --------------------------------------------------------------------------*/
@@ -199,6 +199,31 @@ $mobile-min-section-width: 15rem;
 $hover-duration: 0.2s;
 $hover: $hover-duration ease;
 $transition-duration: $hover-duration; /* legacy alias */
+
+/* DOT GRID
+ * The site's one pattern, in two strengths that mean different things:
+ *   'texture'      quiet surface for framing bands (About, What We Do, page heads).
+ *                  At most one dotted band on screen at a time; never adjacent.
+ *   'placeholder'  a stronger grid that stands in for a missing photo (cards,
+ *                  service tiles, project heroes, video posters).
+ * With $base it sets the `background` shorthand (dots over a solid colour);
+ * without, only the image longhands, so an existing background colour stays. */
+@mixin dot-grid($kind: 'texture', $base: null) {
+  $alpha: 0.1;
+  $size: 16px;
+  @if $kind == 'placeholder' {
+    $alpha: 0.16;
+    $size: 14px;
+  }
+  $dots: radial-gradient(rgba($color-meta, $alpha) 1px, transparent 1.6px);
+  @if $base {
+    background: $dots 0 0 / #{$size} #{$size}, $base;
+  } @else {
+    background-image: $dots;
+    background-size: $size $size;
+    background-position: 0 0;
+  }
+}
 
 @mixin animation-mixin($name, $start, $end) {
   @keyframes #{$name} {

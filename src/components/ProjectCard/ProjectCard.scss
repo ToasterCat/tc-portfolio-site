@@ -50,9 +50,7 @@
 }
 
 .project-card-cover--pattern {
-  background:
-    radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px) 0 0 / 14px 14px,
-    base.$color-black;
+  @include base.dot-grid('placeholder', base.$color-black);
 }
 
 .project-card:hover .project-card-cover > img:first-child:not(.project-card-logo) {

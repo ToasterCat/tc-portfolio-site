@@ -75,7 +75,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
 - **Page-level layouts:**
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
   - `components/PolicyDocument`: the shared layout for policy pages, with an optional sticky directory (`sections`, with `sub` entries indented).
-- **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Recent Works (featured cards) → AboutSection → CTA.
+- **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Selected Work (projects flagged `featured`: ClickTune and Lizzie, chosen for outside proof) → AboutSection → CTA.
 - **Contact page:** a Formspree form with a preamble, then "Helpful to include" notes and the studio-status guide (`#status`).
 
 ### Decisions not to revisit unless asked
@@ -111,6 +111,12 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - `btn--secondary`: neutral outline plus an icon or glyph.
   - `btn--tertiary`: PT Mono caps inside `<Brackets>`, for interface commands only (menu, reset, back to top, section jumps).
 - **Tags vs. commands:** `[ BRACKETS ]` always mean a clickable command. Non-clickable labels (project kinds, VIDEO, NOW, PERSONAL NOTE, DO/DON'T, the NDA mark) use the bordered `.tag` class in `index.scss`, with no brackets. Colours vary by modifier (`.tag--signal`; `.tag--quiet` for project kinds, so titles stay dominant), but the shape never does.
+- **Backgrounds:**
+  - **Images** only where the section *is* the picture: the homepage hero, the feature banner, and project heroes.
+  - **Texture (dots)** for framing bands, the parts that say who we are or where you are: page title bands (`/portfolio`), What We Do (a navigation strip), and About (short brand copy plus the spec sheet).
+  - **Flat** for working content: project cards and dossiers, long-form text (policy pages), and forms and status guides (`/contact`).
+  - **Spacing:** at most one dotted band on screen at a time, and never two adjacent.
+  - The dot grid comes only from the `base.dot-grid` mixin, in two strengths: `'texture'` for the bands above, and `'placeholder'` to stand in for a missing photo. Never hand-write the radial-gradient.
 - **Motion:** `$hover` (0.2s ease) is the one speed for all hover and focus feedback. Every animation must hold still under `prefers-reduced-motion`.
 - **The `\>` prompt** is reserved for headings and titles: the brand, section headings, "\> Our Policy", and sign-off names. Never use it on pull-out statements or as a list marker. Lists use `>` (robot and human lists), `+` and `×` (do and don't panels), or dots.
 - **Brand marks:** the TC mark goes in professional spots. The pixel toastercat appears only beside the footer copyright and, animated, on the 404 page. Render pixel art only at whole-number scales.

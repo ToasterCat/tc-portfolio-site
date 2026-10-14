@@ -7,9 +7,9 @@ export function ProjectSection() {
   return (
     <section className="projects-section section-band">
       <div className="section-head">
-        <h2>Recent Works</h2>
+        <h2>Selected Work</h2>
         <p className="section-sub">
-          What have you been up to, lately?
+          What have you been up to lately?
         </p>
       </div>
 

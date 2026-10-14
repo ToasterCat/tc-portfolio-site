@@ -111,6 +111,14 @@ import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
 import moxelLogo from './gallery/Moxel/moxel-logo-small.png';
 import moxelLogoText from './gallery/Moxel/moxel-logo-medium.png';
 
+// Patent figure (recoloured for the dark theme) and handoff artifacts; sources sit alongside.
+import clicktuneFig2 from './gallery/ClickTune/clicktune-fig2_1600.webp';
+import clicktuneFig2Small from './gallery/ClickTune/clicktune-fig2_800.webp';
+import clicktuneFoundation from './gallery/ClickTune/clicktune-foundation_1600.webp';
+import clicktuneOptionA from './gallery/ClickTune/clicktune-option-a_1600.webp';
+import clicktuneMessagingTest from './gallery/ClickTune/clicktune-messaging-test_1600.webp';
+import clicktuneCostModel from './gallery/ClickTune/clicktune-cost-model_1600.webp';
+import clicktuneFileSize from './gallery/ClickTune/clicktune-file-size_1600.webp';
 import blackoutPunkIcon from './gallery/BlackoutPunk/BlackoutPunk-Icon_Square.png';
 import blackoutPunkLogo from './gallery/BlackoutPunk/BlackoutPunk-Logo.png';
 import blackoutPunkBackground from './gallery/BlackoutPunk/BP-GridBackground.jpg';
@@ -226,6 +234,13 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["moxel-logo", moxelLogo],
     ["moxel-logo-text", moxelLogoText],
 
+    ["clicktune-fig2", clicktuneFig2],
+    ["clicktune-fig2-800", clicktuneFig2Small],
+    ["clicktune-foundation", clicktuneFoundation],
+    ["clicktune-option-a", clicktuneOptionA],
+    ["clicktune-messaging-test", clicktuneMessagingTest],
+    ["clicktune-cost-model", clicktuneCostModel],
+    ["clicktune-file-size", clicktuneFileSize],
     ["blackout-punk-icon", blackoutPunkIcon],
     ["blackout-punk-logo", blackoutPunkLogo],
     ["blackout-punk-background", blackoutPunkBackground],

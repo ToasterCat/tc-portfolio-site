@@ -86,7 +86,7 @@ const PROJECTS: Record<string, Project> = {
       category: 'consult',
       order: 100,
       featured: true,
-      name: '“MusiMojii” — ClickTune LLC',
+      name: '“MusikMoji” — ClickTune LLC',
       kind: `Client Consultation`,
       origin: 'client',
       status: 'delivered',
@@ -95,8 +95,10 @@ const PROJECTS: Record<string, Project> = {
       outcome: 'Patent granted: US 12,671,666 includes our engineering flow diagrams for the back-end service ClickTune chose to build.',
       brief: `Technical research and back-end design for shareable musical “GIFs”, now part of a granted US patent.`,
       body: [
-        `ClickTune came to us with an idea for shareable musical “GIFs”: short audio clips attached to text messages. We researched the problem and delivered three distinct technical approaches, each with its own back-end design.`,
-        `Alongside them, we provided rough development timelines, team requirements, and infrastructure estimates for the build and for several tiers of user adoption and scale. ClickTune pursued one of the three, and our engineering flow diagrams for its back-end service are part of the granted patent.`,
+        `ClickTune came to us with an idea for shareable musical “GIFs”: short audio clips attached to text messages.`,
+        `The research came first: could a song clip ride along in a text at all? We measured MP3s against GIFs, mapped what data and payloads SMS, MMS, and RCS protocols can support, and tested how existing platforms actually process audio files and content-rich links.`,
+        `From there we designed a shared foundation (clip ingestion, lookup, and streaming) and three distinct approaches built on top of it, each with its own back-end design. Alongside them came rough development timelines, team requirements, and infrastructure costs modeled from a million to four billion requests a day.`,
+        `ClickTune pursued Option A, and our engineering diagrams for its back-end service became part of the granted patent.`,
       ],
       skills: [
         "AWS-S3",
@@ -113,20 +115,36 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-website'
         }
       ],
+      cardImage: {
+        source: 'clicktune-fig2-800',
+        alt: 'Back-end architecture diagram from US Patent 12,671,666'
+      },
       thumbnailImage: {
         source: 'tc-logo',
         alt: 'ToasterCat Icon'
       },
+      backgroundImage: {
+        source: 'clicktune-fig2',
+        alt: 'Back-end architecture diagram from US Patent 12,671,666'
+      },
       media: {
         featured: {
           type: 'image',
-          src: 'tc-logo',
-          alt: 'ToasterCat Icon',
-          width: 501,
-          height: 500,
+          src: 'clicktune-fig2',
+          alt: 'Architecture diagram: sender and recipient apps, search and content portals, and a control system and data system split by control and data planes',
+          caption: 'Fig. 2 of US Patent 12,671,666, drawn from the Option A architecture we delivered.',
+          width: 1600,
+          height: 1148,
         },
         gallery: [
-          { type: 'image', src: 'tc-logo', alt: 'ToasterCat Icon', width: 501, height: 500 },
+          // Our delivered diagrams first (the patent story), then research as an appendix.
+          // The research pages are generic: public AWS pricing math and public messaging-app behaviour,
+          // nothing from ClickTune's business, so showing them stays within the handoff terms.
+          { type: 'image', src: 'clicktune-foundation', alt: 'Architecture diagram: clip ingestion workflow, clip database, streaming service with caching CDN, and lookup service between sender and receiver', caption: 'The foundation every option shared: clip ingestion, lookup, and streaming.', width: 1600, height: 1187 },
+          { type: 'image', src: 'clicktune-option-a', alt: 'Architecture diagram: the foundation plus user registration, identity, and preference services, an ad network, and mobile web pages for recipients', caption: 'Option A, the approach ClickTune built: the foundation plus registration, identity, preferences, and a mobile web fallback.', width: 1600, height: 1250 },
+          { type: 'image', src: 'clicktune-cost-model', alt: 'Cost tables for S3 and DynamoDB throughput at one million to four billion requests a day', caption: 'Research: AWS storage costs modeled from a million to four billion requests a day; generic scaling math, not client data (circa Feb 2025).', width: 1331, height: 990 },
+          { type: 'image', src: 'clicktune-file-size', alt: 'Research notes comparing MP3 and GIF file sizes, with sample file listings and a flaming Elmo GIF', caption: 'Research: how big is a song clip next to a GIF? About the same.', width: 1331, height: 1491 },
+          { type: 'image', src: 'clicktune-messaging-test', alt: 'Three phone screenshots comparing how Android Messages, WhatsApp, and Signal display audio files and music links', caption: 'Research: how Android Messages, WhatsApp, and Signal actually show an audio file or link.', width: 1331, height: 1177 },
         ],
       },
     }
@@ -423,7 +441,6 @@ const PROJECTS: Record<string, Project> = {
       alias: 'strongarm',
       category: 'web',
       order: 70,
-      featured: true,
       name: 'Strongarm Digital Marketing',
       kind: `Client Lead Site`,
       origin: 'client',
@@ -840,7 +857,6 @@ const PROJECTS: Record<string, Project> = {
       alias: 'moxel',
       category: 'proto',
       order: 140,
-      featured: true,
       name: 'Moxel Hooks',
       kind: 'Prototype',
       origin: 'client',
@@ -891,6 +907,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'lizzie',
       category: 'proto',
       order: 150,
+      featured: true,
       name: '“The Lizzie”',
       kind: `Prototype`,
       origin: 'client',

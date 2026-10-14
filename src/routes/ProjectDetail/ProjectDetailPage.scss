@@ -79,9 +79,7 @@ $spec-w: 18rem;
 
 /* No photo: a deliberate dot grid instead of a stretched placeholder (N8). */
 .project-hero--pattern {
-  background-image: radial-gradient(rgba(base.$color-meta, 0.16) 1px, transparent 1.6px);
-  background-size: 14px 14px;
-  background-position: 0 0;
+  @include base.dot-grid('placeholder');
 }
 
 .project-hero--pattern::before {

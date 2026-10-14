@@ -19,6 +19,12 @@ $jump-h: 3rem;
   padding-right: base.$space-4;
 }
 
+/* The page's title band: dot-grid texture, full width. The sticky jump bar
+ * below stays solid (dots sliding under a fixed bar read as a glitch). */
+.portfolio-head-band {
+  @include base.dot-grid('texture');
+}
+
 .portfolio-head {
   @extend %rail;
   padding-top: base.$space-7;
@@ -88,7 +94,7 @@ $jump-h: 3rem;
 /* ---- A service section ------------------------------------------------ */
 
 /* Full-bleed band per service, alternating the homepage's two band shades
- * (odd: the lighter Recent Works tone; even: the page base) so neighbouring
+ * (odd: the lighter Selected Work tone; even: the page base) so neighbouring
  * services read as separate blocks. Content sits on the rail inside. */
 .portfolio-service {
   min-width: 0; /* beats the global desktop `section { min-width: 30rem }` */
