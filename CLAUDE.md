@@ -47,6 +47,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - Stills become WebP (`*_1600.webp`, `*_800.webp`); GIFs become MP4 `clip`s with a `*_poster.webp`.
   - `AssetMap.ts` points the asset key at the optimized file, and the full-size original stays as the source.
   - Conversion uses Pillow plus a portable ffmpeg (`imageio-ffmpeg`).
+- **Media dimensions are measured, not typed:** `vite-plugin-asset-sizes.ts` reads every imported image's pixel size at build time (via `image-size`) and registers it in `src/assets/assetSizes.ts`; `mediaSize()` in `media.ts` resolves an item's size (an image's own, a clip or video's poster). Leave `width`/`height` out of project media; set them only for files on the media server or to override. A data test fails if any item has no size. After installing a package, restart the dev server (a stale dependency cache leaves pages blank with 504s).
 - **`build.assetsInlineLimit: 1024`** in `vite.config.ts` means only tiny images are inlined into the JS. Bigger images load as files, only where they're used.
 - **Licensing:** the code is GPLv3 (`LICENSE`), but media, copy, brand marks, and client material are not (`NOTICE`). Keep `NOTICE` accurate when adding a new kind of third-party material (fonts, icon sets, client documents).
 - **Favicons, app icons, and the 1200×630 share card** (`public/og-card.png`) come from `scripts/build-brand-assets.py`. Re-run it (it needs Pillow) after any brand change.

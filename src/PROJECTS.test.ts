@@ -12,7 +12,7 @@ import PROJECTS, {
   visibleTestimonials,
 } from './PROJECTS';
 import { ASSET_MANIFEST } from './assets/AssetMap';
-import { bandcampEmbedUrl, resolveMedia, youtubeEmbedUrl } from './media';
+import { bandcampEmbedUrl, mediaSize, resolveMedia, youtubeEmbedUrl } from './media';
 import { MediaItem } from './types/project.model';
 import { skillIconMap } from './skills';
 
@@ -222,9 +222,12 @@ describe('media (featured + gallery)', () => {
         if (ref && !ref.includes('/') && !ASSET_MANIFEST.has(ref)) problems.push(`${at}: "${ref}" isn't in ASSET_MANIFEST`);
       });
       if ('poster' in m && !resolveMedia(m.poster)) problems.push(`${at}: poster does not resolve`);
-      if (!(Number.isInteger(m.width) && m.width > 0 && Number.isInteger(m.height) && m.height > 0)) {
-        problems.push(`${at}: width/height must be positive integers`);
+      // Bundled media is measured at build time; only server media needs explicit sizes.
+      const size = mediaSize(m);
+      if (!size || !(Number.isInteger(size.width) && size.width > 0 && Number.isInteger(size.height) && size.height > 0)) {
+        problems.push(`${at}: no size (bundled files are measured automatically; server media needs width/height)`);
       }
+      if ((m.width === undefined) !== (m.height === undefined)) problems.push(`${at}: set width and height together, or neither`);
       const label = m.type === 'video' ? m.title : m.alt;
       if (!label.trim()) problems.push(`${at}: needs ${m.type === 'video' ? 'a title' : 'alt text'}`);
     });

@@ -29,11 +29,14 @@ export type ProjectCategory = 'game' | 'web' | 'consult' | 'media' | 'proto';
 export type MediaRef = string;
 
 /** Fields every visual medium shares. Dimensions are the source's pixel size,
- *  used to reserve the right space (no layout jump) and lay out the gallery. */
+ *  used to reserve the right space (no layout jump) and lay out the gallery.
+ *  Leave them out for bundled media: they're read from the file itself (an
+ *  image's own size; a clip or video's poster). Set them only for files on the
+ *  media server, or to override. See mediaSize() in media.ts. */
 interface SizedMedia {
   caption?: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }
 
 export type MediaItem =

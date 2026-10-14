@@ -1,5 +1,6 @@
 import { ASSET_MANIFEST } from './assets/AssetMap';
-import { MediaRef } from './types/project.model';
+import { MediaItem, MediaRef } from './types/project.model';
+import { AssetSize, assetSize } from './assets/assetSizes';
 
 /**
  * Media server base URL. Project data stores paths under it, never full URLs,
@@ -36,6 +37,17 @@ export function resolveMedia(ref: MediaRef): string | undefined {
     return undefined;
   }
   return MEDIA_BASE + ref.replace(/^\/+/, '');
+}
+
+/**
+ * A sized item's pixel dimensions: explicit width/height when given, else the
+ * bundled file's own size (an image's; a clip or video's poster). Undefined
+ * for embeds, and for server media with no explicit size.
+ */
+export function mediaSize(m: MediaItem): AssetSize | undefined {
+  if (m.type === 'embed') return undefined;
+  if (m.width && m.height) return { width: m.width, height: m.height };
+  return assetSize(resolveMedia(m.type === 'image' ? m.src : m.poster));
 }
 
 /**

@@ -1,9 +1,10 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import assetSizes from './vite-plugin-asset-sizes';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), assetSizes()],
   server: {
     port: 3000, // same port as the old CRA dev server
     strictPort: true,

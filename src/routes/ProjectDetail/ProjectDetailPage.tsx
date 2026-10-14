@@ -8,6 +8,7 @@ import Brackets from '../../components/UI/Brackets/Brackets';
 import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalLinkButton';
 import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../skills';
+import { mediaSize } from '../../media';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import { categoryLabel, getProjectByAlias, shownOrigin, visibleTestimonials } from '../../PROJECTS';
@@ -184,11 +185,12 @@ function withDotBreaks(text: string) {
 /** The featured slot: any media type, full size, loaded eagerly. */
 function FeaturedMedia(props: { item: MediaItem }) {
   const m = props.item;
+  const size = mediaSize(m);
   return (
     <figure
       className="project-featured"
       /* never upscale small art past its own pixel size */
-      style={m.type === 'embed' ? undefined : ({ '--source-w': `${m.width}px` } as CSSProperties)}
+      style={size ? ({ '--source-w': `${size.width}px` } as CSSProperties) : undefined}
     >
       <MediaFrame item={m} mode="full" eager />
       {m.caption && <figcaption className="meta meta-dim">{m.caption}</figcaption>}

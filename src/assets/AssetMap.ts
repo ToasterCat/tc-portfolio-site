@@ -59,6 +59,9 @@ import oas2026HomeSmall from './gallery/OAS/oas-2026-home_800.webp';
 import oas2026Music from './gallery/OAS/oas-2026-music.webp';
 import oas2026Shows from './gallery/OAS/oas-2026-shows.webp';
 import oas2026Mobile from './gallery/OAS/oas-2026-mobile.webp';
+import oas2024Central from './gallery/LiveShows/2024-oas-central-saloon_1600.webp';
+import oas2024Crowd from './gallery/LiveShows/2024-oas-crowd-central_1600.webp';
+import oas2024CrowdSmall from './gallery/LiveShows/2024-oas-crowd-central_800.webp';
 import uma2026Home from './gallery/UMA/uma-2026-home.webp';
 import uma2026HomeSmall from './gallery/UMA/uma-2026-home_800.webp';
 import uma2026Player from './gallery/UMA/uma-2026-player.webp';
@@ -118,7 +121,9 @@ import showReactionFeed from './gallery/LiveShows/2021-reaction-feed_1600.webp';
 import showWacken2022 from './gallery/LiveShows/2022-wacken-metal-battle_1600.webp';
 import showModelSnake from './gallery/LiveShows/2022-model-snake_1600.webp';
 import showI90FiascoFlyer from './gallery/LiveShows/2025-i90-fiasco-flyer.webp';
-import showPedalboard from './background/pedalboard_scaled.jpg';
+import showPedalboard from './background/pedalboard_1600.webp';
+import showPedalboardSmall from './background/pedalboard_800.webp';
+import showFearInoculumFlyer from './gallery/LiveShows/2019-fear-inoculum-flyer.webp';
 
 import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
@@ -234,6 +239,9 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["oas-2026-music", oas2026Music],
     ["oas-2026-shows", oas2026Shows],
     ["oas-2026-mobile", oas2026Mobile],
+    ["oas-2024-central", oas2024Central],
+    ["oas-2024-crowd", oas2024Crowd],
+    ["oas-2024-crowd-800", oas2024CrowdSmall],
     ["uma-2026-home", uma2026Home],
     ["uma-2026-home-800", uma2026HomeSmall],
     ["uma-2026-player", uma2026Player],
@@ -291,6 +299,8 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["show-model-snake", showModelSnake],
     ["show-i90-fiasco-flyer", showI90FiascoFlyer],
     ["show-pedalboard", showPedalboard],
+    ["show-pedalboard-800", showPedalboardSmall],
+    ["show-fear-inoculum-flyer", showFearInoculumFlyer],
 
     ["uma-logo", umaBand],
     ["uma-background", umaBackground],

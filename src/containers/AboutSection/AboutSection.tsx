@@ -9,6 +9,7 @@ import reelAmpMic from '../../assets/gallery/TC-Studio/reel-amp-mic_960.webp';
 import reelSoldering from '../../assets/gallery/TC-Studio/reel-soldering_960.webp';
 import reelWebDev from '../../assets/gallery/TC-Studio/reel-web-dev_960.webp';
 import reelDrumMics from '../../assets/gallery/TC-Studio/reel-drum-mics_960.webp';
+import reelLiveEvents from '../../assets/gallery/TC-Studio/reel-live-events_960.webp';
 import reelPrintDetail from '../../assets/gallery/TC-Studio/reel-print-detail_960.webp';
 import './AboutSection.scss';
 
@@ -26,6 +27,7 @@ const SHOP_REEL: ReelPhoto[] = [
   { src: reelWebDev, label: 'Web Development', alt: 'The Octopus Attacks Shark!! band website' },
   { src: reelDrumMics, label: 'Live Tracking', alt: 'Mic’d snare and toms on the studio drum kit' },
   { src: reelPrintDetail, label: 'Product Design', alt: 'Close-up of a freshly printed part' },
+  { src: reelLiveEvents, label: 'Live Events', alt: 'A guitar pedalboard on stage at The Funhouse' },
 ];
 
 /**

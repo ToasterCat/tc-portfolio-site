@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MediaItem } from '../../../types/project.model';
-import { bandcampEmbedUrl, bandcampPlayerHeight, resolveMedia, youtubeEmbedUrl } from '../../../media';
+import { bandcampEmbedUrl, bandcampPlayerHeight, mediaSize, resolveMedia, youtubeEmbedUrl } from '../../../media';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 import './MediaFrame.scss';
 
@@ -28,6 +28,7 @@ export default function MediaFrame(props: MediaFrameProps) {
   const { item, mode = 'full', eager } = props;
   const reduceMotion = usePrefersReducedMotion();
   const loading = eager ? 'eager' : 'lazy';
+  const size = mediaSize(item);
 
   switch (item.type) {
     case 'image':
@@ -36,8 +37,8 @@ export default function MediaFrame(props: MediaFrameProps) {
           className="media-frame"
           src={resolveMedia(item.src)}
           alt={item.alt}
-          width={item.width}
-          height={item.height}
+          width={size?.width}
+          height={size?.height}
           loading={loading}
           decoding="async"
         />
@@ -51,8 +52,8 @@ export default function MediaFrame(props: MediaFrameProps) {
           className="media-frame"
           src={resolveMedia(item.src)}
           poster={resolveMedia(item.poster)}
-          width={item.width}
-          height={item.height}
+          width={size?.width}
+          height={size?.height}
           aria-label={item.alt}
           muted
           loop
@@ -65,15 +66,15 @@ export default function MediaFrame(props: MediaFrameProps) {
 
     case 'video':
       if (mode === 'thumb') {
-        return <PosterThumb poster={item.poster} label={item.title} width={item.width} height={item.height} />;
+        return <PosterThumb poster={item.poster} label={item.title} width={size?.width ?? 16} height={size?.height ?? 9} />;
       }
       return (
         <video
           className="media-frame"
           src={resolveMedia(item.src)}
           poster={resolveMedia(item.poster)}
-          width={item.width}
-          height={item.height}
+          width={size?.width}
+          height={size?.height}
           title={item.title}
           controls
           playsInline

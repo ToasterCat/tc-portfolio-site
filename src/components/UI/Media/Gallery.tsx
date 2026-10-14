@@ -1,5 +1,6 @@
 import { CSSProperties, useState } from 'react';
 import { MediaItem } from '../../../types/project.model';
+import { mediaSize } from '../../../media';
 import MediaFrame from './MediaFrame';
 import Lightbox, { describeMedia } from './Lightbox';
 import './Gallery.scss';
@@ -10,9 +11,10 @@ interface GalleryProps {
   label: string;
 }
 
-/** Width:height of an item; embeds are 16:9. */
+/** Width:height of an item; embeds (and anything unsized) are 16:9. */
 function ratioOf(m: MediaItem) {
-  return m.type === 'embed' ? 16 / 9 : m.width / m.height;
+  const size = mediaSize(m);
+  return size ? size.width / size.height : 16 / 9;
 }
 
 /**

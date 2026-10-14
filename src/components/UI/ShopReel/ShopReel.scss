@@ -46,6 +46,9 @@
     font-size: base.$type-meta-sm;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    /* One line, always: the hover animation on the controls next to it
+     * widens them slightly, which used to wrap long labels. */
+    white-space: nowrap;
   }
 }
 

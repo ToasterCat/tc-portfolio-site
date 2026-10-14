@@ -78,9 +78,9 @@ const PROJECTS: Record<string, Project> = {
           poster: 'blackout-punk-detail',
         },
         gallery: [
-          { type: 'image', src: 'blackout-punk-hallway', alt: 'A red-team soldier holding a corner while the squad advances', width: 1920, height: 799 },
-          { type: 'image', src: 'blackout-punk-guns-up', alt: 'Over-the-shoulder view of a soldier aiming a rifle', width: 2335, height: 1136 },
-          { type: 'image', src: 'blackout-punk-background', alt: 'The emissive grid environment', width: 2887, height: 1176 },
+          { type: 'image', src: 'blackout-punk-hallway', alt: 'A red-team soldier holding a corner while the squad advances' },
+          { type: 'image', src: 'blackout-punk-guns-up', alt: 'Over-the-shoulder view of a soldier aiming a rifle' },
+          { type: 'image', src: 'blackout-punk-background', alt: 'The emissive grid environment' },
         ],
       },
     }
@@ -146,18 +146,16 @@ const PROJECTS: Record<string, Project> = {
           src: 'clicktune-fig2',
           alt: 'Architecture diagram: sender and recipient apps, search and content portals, and a control system and data system split by control and data planes',
           caption: 'Fig. 2 of US Patent 12,671,666, drawn from the Option A architecture we delivered.',
-          width: 1600,
-          height: 1148,
         },
         gallery: [
           // Our delivered diagrams first (the patent story), then research as an appendix.
           // The research pages are generic: public AWS pricing math and public messaging-app behaviour,
           // nothing from ClickTune's business, so showing them stays within the handoff terms.
-          { type: 'image', src: 'clicktune-foundation', alt: 'Architecture diagram: clip ingestion workflow, clip database, streaming service with caching CDN, and lookup service between sender and receiver', caption: 'The foundation every option shared: clip ingestion, lookup, and streaming.', width: 1600, height: 1187 },
-          { type: 'image', src: 'clicktune-option-a', alt: 'Architecture diagram: the foundation plus user registration, identity, and preference services, an ad network, and mobile web pages for recipients', caption: 'Option A, the approach ClickTune built: the foundation plus registration, identity, preferences, and a mobile web fallback.', width: 1600, height: 1250 },
-          { type: 'image', src: 'clicktune-cost-model', alt: 'Cost tables for S3 and DynamoDB throughput at one million to four billion requests a day', caption: 'Research: AWS storage costs modeled from a million to four billion requests a day; generic scaling math, not client data (circa Feb 2025).', width: 1331, height: 990 },
-          { type: 'image', src: 'clicktune-file-size', alt: 'Research notes comparing MP3 and GIF file sizes, with sample file listings and a flaming Elmo GIF', caption: 'Research: how big is a song clip next to a GIF? About the same.', width: 1331, height: 1491 },
-          { type: 'image', src: 'clicktune-messaging-test', alt: 'Three phone screenshots comparing how Android Messages, WhatsApp, and Signal display audio files and music links', caption: 'Research: how Android Messages, WhatsApp, and Signal actually show an audio file or link.', width: 1331, height: 1177 },
+          { type: 'image', src: 'clicktune-foundation', alt: 'Architecture diagram: clip ingestion workflow, clip database, streaming service with caching CDN, and lookup service between sender and receiver', caption: 'The foundation every option shared: clip ingestion, lookup, and streaming.' },
+          { type: 'image', src: 'clicktune-option-a', alt: 'Architecture diagram: the foundation plus user registration, identity, and preference services, an ad network, and mobile web pages for recipients', caption: 'Option A, the approach ClickTune built: the foundation plus registration, identity, preferences, and a mobile web fallback.' },
+          { type: 'image', src: 'clicktune-cost-model', alt: 'Cost tables for S3 and DynamoDB throughput at one million to four billion requests a day', caption: 'Research: AWS storage costs modeled from a million to four billion requests a day; generic scaling math, not client data (circa Feb 2025).' },
+          { type: 'image', src: 'clicktune-file-size', alt: 'Research notes comparing MP3 and GIF file sizes, with sample file listings and a flaming Elmo GIF', caption: 'Research: how big is a song clip next to a GIF? About the same.' },
+          { type: 'image', src: 'clicktune-messaging-test', alt: 'Three phone screenshots comparing how Android Messages, WhatsApp, and Signal display audio files and music links', caption: 'Research: how Android Messages, WhatsApp, and Signal actually show an audio file or link.' },
         ],
       },
     }
@@ -213,13 +211,11 @@ const PROJECTS: Record<string, Project> = {
           src: 'jukedec-context',
           alt: 'Context diagram: artist portal and upload ingestion workflow on one side, the fan-facing Juke Portal, library, and order purchase workflow on the other, sharing auth, a catalog, and a source bucket',
           caption: 'The context diagram we delivered (recoloured for this site).',
-          width: 1185,
-          height: 701,
         },
         // The deliverables first; one sketch at the back as a nod to how it started.
         gallery: [
-          { type: 'image', src: 'jukedec-entities', alt: 'Entity diagram: artist, collection, track, offer, transaction, entitlement, library, and user', caption: 'The data model.', width: 862, height: 522 },
-          { type: 'image', src: 'jukedec-sketch-context', alt: 'Hand-drawn sketch of the whole system, split into control plane and data plane', caption: 'Where it started: the first pass on a legal pad.', width: 1400, height: 1735 },
+          { type: 'image', src: 'jukedec-entities', alt: 'Entity diagram: artist, collection, track, offer, transaction, entitlement, library, and user', caption: 'The data model.' },
+          { type: 'image', src: 'jukedec-sketch-context', alt: 'Hand-drawn sketch of the whole system, split into control plane and data plane', caption: 'Where it started: the first pass on a legal pad.' },
         ],
       },
       links: [ ],
@@ -256,44 +252,34 @@ const PROJECTS: Record<string, Project> = {
         "Photoshop",
         "Premiere"
       ],
-      links: [
-        {
-          label: 'Full Show History',
-          target: 'https://www.octopus-attacks-shark.com/pages/shows.html',
-          icon: 'oas-logo'
-        }
-      ],
       cardImage: {
-        source: 'show-fear-inoculum-800',
-        alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse'
+        source: 'oas-2024-crowd-800',
+        alt: 'A packed crowd at the Central Saloon'
       },
       thumbnailImage: {
         source: 'oas-logo',
         alt: 'OAS Band Logo'
       },
       backgroundImage: {
-        source: 'show-fear-inoculum',
-        alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse'
+        source: 'oas-2024-central',
+        alt: 'Octopus Attacks Shark!! on stage at the Central Saloon'
       },
       media: {
         featured: {
           type: 'image',
-          src: 'show-fear-inoculum',
-          alt: 'Octopus Attacks Shark!! on a red-lit stage at The Funhouse',
-          caption: '“Fear Inoculum” Unofficial Release Party, The Funhouse, 2019. Sold out.',
-          width: 1600,
-          height: 1200,
+          src: 'oas-2024-crowd',
+          alt: 'A packed crowd throwing horns toward the stage at the Central Saloon',
+          caption: 'The “Outside Agitators” album release crowd, Central Saloon, April 2024.',
         },
         gallery: [
-          { type: 'image', src: 'show-pedalboard', alt: 'Flyer for I-90 Fiasco with Panic Grass and Octopus Attacks Shark!! at Jules Maes Saloon', caption: 'Flyer, “I-90 Fiasco”, Jules Maes Saloon, August 2025.', width: 1294, height: 2000 },
-          { type: 'image', src: 'show-funhouse-flyer', alt: 'Flyer for Octopus Attacks Shark!!, Anthrocene, and Telomyras at The Funhouse', caption: 'Flyer, The Funhouse, July 2022.', width: 1280, height: 720 },
-          { type: 'image', src: 'show-gaping-lotus-flyer', alt: 'Flyer for a TOOL tribute night at Lucky Liquor with Grand Moff and Ugliest Man Alive', caption: 'Flyer, Lucky Liquor, 2019.', width: 1600, height: 2635 },
-          { type: 'image', src: 'show-solidarity-flyer', alt: 'Flyer for Songs for Solidarity, a benefit for Point of Pride and the Washington Immigrant Solidarity Network', caption: 'Flyer, Songs for Solidarity benefit, Central Saloon, 2025.', width: 1600, height: 2000 },
+          { type: 'image', src: 'show-fear-inoculum-flyer', alt: 'Flyer for the unofficial “Fear Inoculum” release party, with The Gaping Lotus Experience, Version 7.0, and NAMEA', caption: 'Flyer, “Fear Inoculum” Unofficial Release Party, The Funhouse, August 2019. Sold out.' },
+          { type: 'image', src: 'show-funhouse-flyer', alt: 'Flyer for Octopus Attacks Shark!!, Anthrocene, and Telomyras at The Funhouse', caption: 'Flyer, The Funhouse, July 2022.' },
+          { type: 'image', src: 'show-gaping-lotus-flyer', alt: 'Flyer for a TOOL tribute night at Lucky Liquor with Grand Moff and Ugliest Man Alive', caption: 'Flyer, Lucky Liquor, 2019.' },
+          { type: 'image', src: 'show-solidarity-flyer', alt: 'Flyer for Songs for Solidarity, a benefit for Point of Pride and the Washington Immigrant Solidarity Network', caption: 'Flyer, Songs for Solidarity benefit, Central Saloon, 2025.' },
           // Shows we played and helped promote, on other promoters' bills.
-          { type: 'image', src: 'show-rumours-marquee', alt: 'Roadside marquee listing The Maxwells, Tremor Cats, and Ugliest Man Alive', caption: 'Marquee, Rumours, Spanaway, August 2021.', width: 1440, height: 810 },
-          { type: 'image', src: 'show-wacken-2022', alt: 'Octopus Attacks Shark!! on stage at The Funhouse', caption: 'Wacken Open Air Metal Battle, The Funhouse, February 2022.', width: 1600, height: 900 },
-          { type: 'image', src: 'show-model-snake', alt: 'Octopus Attacks Shark!! on stage at Jules Maes Saloon', caption: '“Model Snake”, Jules Maes Saloon, October 2022.', width: 1600, height: 900 },
-          { type: 'image', src: 'show-i90-fiasco-flyer', alt: 'Flyer for I-90 Fiasco with Panic Grass and Octopus Attacks Shark!! at Jules Maes Saloon', caption: 'Flyer, “I-90 Fiasco”, Jules Maes Saloon, August 2025.', width: 1294, height: 2000 },
+          { type: 'image', src: 'show-rumours-marquee', alt: 'Roadside marquee listing The Maxwells, Tremor Cats, and Ugliest Man Alive', caption: 'Marquee, Rumours, Spanaway, August 2021.' },
+          { type: 'image', src: 'show-wacken-2022', alt: 'Octopus Attacks Shark!! on stage at The Funhouse', caption: 'Wacken Open Air Metal Battle, The Funhouse, February 2022.' },
+          { type: 'image', src: 'show-i90-fiasco-flyer', alt: 'Flyer for I-90 Fiasco with Panic Grass and Octopus Attacks Shark!! at Jules Maes Saloon', caption: 'Flyer, “I-90 Fiasco”, Jules Maes Saloon, August 2025.' },
         ],
       },
     }
@@ -355,9 +341,9 @@ const PROJECTS: Record<string, Project> = {
           poster: 'oas-outside-agitators',
         },
         gallery: [
-          { type: 'image', src: 'studio-mics', alt: 'A vocal microphone with a pop filter in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-cab-mic', alt: 'A microphone on a guitar cabinet in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-mixer', alt: 'The mixing desk in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-mics', alt: 'A vocal microphone with a pop filter in our studio' },
+          { type: 'image', src: 'studio-cab-mic', alt: 'A microphone on a guitar cabinet in our studio' },
+          { type: 'image', src: 'studio-mixer', alt: 'The mixing desk in our studio' },
         ],
       },
     }
@@ -401,12 +387,10 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'foss-background',
           alt: 'FOSS Armory',
-          width: 1471,
-          height: 983,
         },
         gallery: [
-          { type: 'image', src: 'foss-showcase', alt: 'A blaster on display in the FOSS Armory showroom', width: 1600, height: 970 },
-          { type: 'image', src: 'foss-target-range', alt: 'The FOSS Armory target range', width: 1471, height: 983 },
+          { type: 'image', src: 'foss-showcase', alt: 'A blaster on display in the FOSS Armory showroom' },
+          { type: 'image', src: 'foss-target-range', alt: 'The FOSS Armory target range' },
         ],
       },
     }
@@ -463,13 +447,11 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'cm-2026-home',
           alt: 'The Crude Mirror Media homepage: masthead, trending ticker, and featured articles',
-          width: 1424,
-          height: 890,
         },
         gallery: [
-          { type: 'image', src: 'cm-2026-article', alt: 'A Crude Mirror Media article listing with the review sidebar', width: 1424, height: 890 },
-          { type: 'image', src: 'cm-2026-mobile', alt: 'The Crude Mirror Media homepage on a phone', width: 600, height: 1298 },
-          { type: 'image', src: 'crude-mirror-full', alt: 'Crude Mirror Media shattered-glass banner', width: 874, height: 437 },
+          { type: 'image', src: 'cm-2026-article', alt: 'A Crude Mirror Media article listing with the review sidebar' },
+          { type: 'image', src: 'cm-2026-mobile', alt: 'The Crude Mirror Media homepage on a phone' },
+          { type: 'image', src: 'crude-mirror-full', alt: 'Crude Mirror Media shattered-glass banner' },
         ],
       },
     }
@@ -519,11 +501,9 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'strongarm-site-screenshot',
           alt: 'Strongarm Site',
-          width: 851,
-          height: 512,
         },
         gallery: [
-          { type: 'image', src: 'strongarm-background', alt: 'Strongarm site hero image', width: 1891, height: 900 },
+          { type: 'image', src: 'strongarm-background', alt: 'Strongarm site hero image' },
         ],
       },
     }
@@ -588,14 +568,12 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'oas-2026-home',
           alt: 'The Octopus Attacks Shark!! homepage: band crest over a live photo, with links to stream and see the band live',
-          width: 1424,
-          height: 890,
         },
         gallery: [
-          { type: 'image', src: 'oas-2026-music', alt: 'The music page: an embedded album player beside the album notes and credits', width: 1424, height: 890 },
-          { type: 'image', src: 'oas-2026-shows', alt: 'The shows page: past shows as cards with dates, venues, and flyers', width: 1424, height: 890 },
-          { type: 'image', src: 'oas-2026-mobile', alt: 'The Octopus Attacks Shark!! homepage on a phone', width: 600, height: 1298 },
-          { type: 'image', src: 'oas-background', alt: 'Octopus Attacks Shark!! on stage', width: 1600, height: 900 },
+          { type: 'image', src: 'oas-2026-music', alt: 'The music page: an embedded album player beside the album notes and credits' },
+          { type: 'image', src: 'oas-2026-shows', alt: 'The shows page: past shows as cards with dates, venues, and flyers' },
+          { type: 'image', src: 'oas-2026-mobile', alt: 'The Octopus Attacks Shark!! homepage on a phone' },
+          { type: 'image', src: 'oas-background', alt: 'Octopus Attacks Shark!! on stage' },
         ],
       },
     }
@@ -647,14 +625,12 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'uma-2026-home',
           alt: 'The Ugliest Man Alive homepage: the [U]gliest [M]an [A]live wordmark in monospace over a dark photo',
-          width: 1424,
-          height: 890,
         },
         gallery: [
-          { type: 'image', src: 'uma-2026-player', alt: 'An embedded SoundCloud player over a full-screen band image', width: 1424, height: 890 },
-          { type: 'image', src: 'uma-2026-mobile', alt: 'The Ugliest Man Alive homepage on a phone', width: 600, height: 1298 },
-          { type: 'clip', src: 'uma-machine-god', poster: 'uma-machine-god-poster', alt: 'UMA MachineGod//Suicide', width: 720, height: 405 },
-          { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]', width: 1080, height: 608 },
+          { type: 'image', src: 'uma-2026-player', alt: 'An embedded SoundCloud player over a full-screen band image' },
+          { type: 'image', src: 'uma-2026-mobile', alt: 'The Ugliest Man Alive homepage on a phone' },
+          { type: 'clip', src: 'uma-machine-god', poster: 'uma-machine-god-poster', alt: 'UMA MachineGod//Suicide' },
+          { type: 'clip', src: 'uma-redacted', poster: 'uma-redacted-poster', alt: 'UMA [redacted]' },
         ],
       },
     }
@@ -707,12 +683,10 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'pixhell-flyer',
           alt: 'PixHell',
-          width: 1024,
-          height: 500,
         },
         gallery: [
-          { type: 'image', src: 'pixhell-screenshot', alt: 'PixHell gameplay on a phone', width: 1198, height: 1704 },
-          { type: 'image', src: 'pixhell-screenshot-2', alt: 'PixHell gameplay with enemies attacking', width: 1200, height: 1920 },
+          { type: 'image', src: 'pixhell-screenshot', alt: 'PixHell gameplay on a phone' },
+          { type: 'image', src: 'pixhell-screenshot-2', alt: 'PixHell gameplay with enemies attacking' },
         ],
       },
     }
@@ -744,8 +718,8 @@ const PROJECTS: Record<string, Project> = {
       ],
       media: {
         gallery: [
-          { type: 'image', src: 'wraith-background', alt: 'Third-person view of a starfighter flying low over a canyon toward enemy ships', caption: 'Test flight in the playable demo.', width: 1684, height: 1040 },
-          { type: 'image', src: 'wraith-flight-alt', alt: 'A starfighter lining up its targeting reticle on a squadron of enemy ships', caption: 'Lining up a pass on enemy fighters.', width: 1571, height: 1054 },
+          { type: 'image', src: 'wraith-background', alt: 'Third-person view of a starfighter flying low over a canyon toward enemy ships', caption: 'Test flight in the playable demo.' },
+          { type: 'image', src: 'wraith-flight-alt', alt: 'A starfighter lining up its targeting reticle on a squadron of enemy ships', caption: 'Lining up a pass on enemy fighters.' },
         ],
       },
       links: [
@@ -786,7 +760,7 @@ const PROJECTS: Record<string, Project> = {
       ],
       media: {
         gallery: [
-          { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet flyer', width: 450, height: 600 },
+          { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet flyer' },
         ],
       },
       skills: [
@@ -869,9 +843,9 @@ const PROJECTS: Record<string, Project> = {
           poster: 'uma-logo',
         },
         gallery: [
-          { type: 'image', src: 'studio-drum-room', alt: 'The drum room in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-drum-mics', alt: 'A mic’d drum kit in our studio', width: 1600, height: 1067 },
-          { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio', width: 1600, height: 1067 },
+          { type: 'image', src: 'studio-drum-room', alt: 'The drum room in our studio' },
+          { type: 'image', src: 'studio-drum-mics', alt: 'A mic’d drum kit in our studio' },
+          { type: 'image', src: 'studio-keys', alt: 'Keyboards and the control desk in our studio' },
         ],
       },
     }
@@ -915,11 +889,9 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'moxel-detail',
           alt: 'Two green custom crochet hooks embossed “Gloria” on a stand',
-          width: 1600,
-          height: 1200,
         },
         gallery: [
-          { type: 'image', src: 'moxel-background', alt: 'Moxel hook slicing render', width: 1200, height: 900 },
+          { type: 'image', src: 'moxel-background', alt: 'Moxel hook slicing render' },
         ],
       },
     }
@@ -959,14 +931,12 @@ const PROJECTS: Record<string, Project> = {
           type: 'image',
           src: 'lizzie-tinker-1600',
           alt: 'Lizzie Model',
-          width: 1600,
-          height: 1067,
         },
         gallery: [
-          { type: 'image', src: 'lizzie-variants', alt: 'Custom blaster variants in teal, black, and pink, side by side', caption: 'A few of the custom variants.', width: 1600, height: 1067 },
-          { type: 'image', src: 'lizzie-variant-black', alt: 'A black-and-white variant with a red-dot optic', width: 1600, height: 1067 },
-          { type: 'image', src: 'lizzie-alt', alt: 'Fitting the blaster’s magazine on the workbench', width: 1600, height: 1067 },
-          { type: 'image', src: 'lizzie-profile', alt: 'Lizzie assembly', width: 1350, height: 900 },
+          { type: 'image', src: 'lizzie-variants', alt: 'Custom blaster variants in teal, black, and pink, side by side', caption: 'A few of the custom variants.' },
+          { type: 'image', src: 'lizzie-variant-black', alt: 'A black-and-white variant with a red-dot optic' },
+          { type: 'image', src: 'lizzie-alt', alt: 'Fitting the blaster’s magazine on the workbench' },
+          { type: 'image', src: 'lizzie-profile', alt: 'Lizzie assembly' },
           {
             type: 'embed',
             provider: 'youtube',
@@ -1025,15 +995,13 @@ const PROJECTS: Record<string, Project> = {
           src: 'tcprint-product',
           poster: 'tcprint-product-poster',
           alt: 'Rail bridge, rotating product view',
-          width: 1600,
-          height: 1066,
         },
         gallery: [
-          { type: 'clip', src: 'rail-bridges-printing', poster: 'rail-bridges-printing-poster', alt: 'A rail bridge printing on the bed of a Creality printer', width: 1280, height: 720 },
-          { type: 'image', src: 'rail-bridges-fresh-print', alt: 'An olive-drab rail bridge fresh off the print bed', width: 1600, height: 1067 },
-          { type: 'image', src: 'rail-bridges-mounted-od', alt: 'An olive-drab rail bridge carrying a red-dot optic on a pistol', width: 1600, height: 1067 },
-          { type: 'image', src: 'rail-bridges-mounted-grey', alt: 'A grey rail bridge carrying a red-dot optic on an airsoft pistol', width: 1600, height: 1067 },
-          { type: 'image', src: 'rail-bridges-lineup', alt: 'Rail bridges in grey and black, lined up', width: 1600, height: 1067 },
+          { type: 'clip', src: 'rail-bridges-printing', poster: 'rail-bridges-printing-poster', alt: 'A rail bridge printing on the bed of a Creality printer' },
+          { type: 'image', src: 'rail-bridges-fresh-print', alt: 'An olive-drab rail bridge fresh off the print bed' },
+          { type: 'image', src: 'rail-bridges-mounted-od', alt: 'An olive-drab rail bridge carrying a red-dot optic on a pistol' },
+          { type: 'image', src: 'rail-bridges-mounted-grey', alt: 'A grey rail bridge carrying a red-dot optic on an airsoft pistol' },
+          { type: 'image', src: 'rail-bridges-lineup', alt: 'Rail bridges in grey and black, lined up' },
         ],
       },
     }
