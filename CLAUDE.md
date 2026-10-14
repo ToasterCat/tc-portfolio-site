@@ -72,10 +72,11 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - `Brackets` (tertiary button label), `TcMark` and `BrandMark` (logos), `NyanToaster` (404 sprite)
   - `Ticker` (tags that scroll only when they overflow), `Media/*` (MediaFrame, Gallery, Lightbox)
   - `RichText` (project body markup), `StatusLine`, `PostCard`
+  - `ScrollControls` (`[ < PREV ]` / `[ NEXT > ]`) with the `useHorizontalScroll` hook: the one way to build a sideways-scrolling row. Used by the testimonials band today; kept generic for Selected Work and the feature banner once there are more projects to feature
 - **Page-level layouts:**
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
   - `components/PolicyDocument`: the shared layout for policy pages, with an optional sticky directory (`sections`, with `sub` entries indented).
-- **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Selected Work (projects flagged `featured`: ClickTune and Lizzie, chosen for outside proof) → In Their Words (TestimonialsBand: every project testimonial, linking to its project) → AboutSection → CTA. Testimonials marked `placeholder: true` render in dev builds only; a data test requires any lorem-ipsum quote to carry the flag.
+- **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Selected Work (projects flagged `featured`: ClickTune and Lizzie, chosen for outside proof; tiled at every width) → In Their Words (TestimonialsBand: every project testimonial, linking to its project; always one quote tall, in a single side-scrolling row with `[ < PREV ]` / `[ NEXT > ]` once quotes overflow) → AboutSection → CTA. Testimonials marked `placeholder: true` render in dev builds only; a data test requires any lorem-ipsum quote to carry the flag.
 - **Contact page:** heading → subtitle, "Helpful to include", and the "Work *with* us" collaborator line (the form's `intro` slot) → fields, including an optional free-text Subject (`subject`, which becomes the email's subject line via `_subject`) → Formspree/email fine print → Submit; then "What to expect from us" (four steps, the one place the reply/estimate timing is promised) and the studio-status guide (`#status`), every status listed with the current one on a tinted plate. The page is meant to be evergreen: no project-specific routing (e.g. playtests) here.
 
 ### Decisions not to revisit unless asked
@@ -109,7 +110,9 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **Buttons** (`src/_buttons.scss`), three tiers:
   - `btn--primary`: red outline that fills on hover.
   - `btn--secondary`: neutral outline plus an icon or glyph.
-  - `btn--tertiary`: PT Mono caps inside `<Brackets>`, for interface commands only (menu, reset, back to top, section jumps).
+  - `btn--tertiary`: PT Mono caps inside `<Brackets>`, for interface commands and minor navigation (menu, reset, back to top, section jumps, prev/next, "See the project"). **Rule: every tertiary or nav button reads `[ TEXT ]`**, rendered with `<Brackets>`; never a bare text link with a trailing arrow.
+  - **Direction inside brackets:** paired prev/next and back commands carry ASCII direction marks: `[ < PREV ]`, `[ NEXT > ]`, `[ << BACK TO PORTFOLIO ]`. Every other bracket command is words only. (`[ SKIP TO OUR POLICY ↓ ]` is the one accepted legacy exception.)
+  - Arrows (`→`) belong to secondary buttons and to whole-card links (cards, rows, tiles), never inside brackets.
 - **Tags vs. commands:** `[ BRACKETS ]` always mean a clickable command. Non-clickable labels (project kinds, VIDEO, NOW, PERSONAL NOTE, DO/DON'T, the NDA mark) use the bordered `.tag` class in `index.scss`, with no brackets. Colours vary by modifier (`.tag--signal`; `.tag--quiet` for project kinds, so titles stay dominant), but the shape never does.
 - **Backgrounds:**
   - **Images** only where the section *is* the picture: the homepage hero, the feature banner, and project heroes.

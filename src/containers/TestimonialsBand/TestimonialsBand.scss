@@ -8,16 +8,42 @@
   background-color: base.$site-color-dark;
 }
 
-.testimonials-list > li {
+/* One row, always one quote tall: overflow scrolls sideways and snaps to
+ * each card. Two cards across on desktop; one and a peek on phones. */
+.testimonials-track {
+  --gap: #{base.$space-5};
   display: flex;
+  gap: var(--gap);
+  width: 100%;
+  max-width: base.$grid-max;
+  margin: 0 auto;
+  padding: 0 0 base.$space-3 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(base.$color-meta, 0.4) transparent;
+
+  > li {
+    display: flex;
+    flex: 0 0 calc((100% - var(--gap)) / 2);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  &:focus-visible {
+    outline-offset: 6px;
+  }
 }
 
-/* A lone quote (production, until ClickTune's arrives) spans the row, at a readable width. */
-.testimonials-list > li:only-child {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: 100%;
-  max-width: 48rem;
+/* A lone quote (production, until ClickTune's arrives) sits centred, at a readable width. */
+.testimonials-track--single {
+  justify-content: center;
+
+  > li {
+    flex-basis: min(100%, 48rem);
+  }
 }
 
 .testimonial {
@@ -73,22 +99,22 @@
   opacity: 0.6;
 }
 
+/* The tertiary [ SEE THE PROJECT ] command, tucked under the attribution. */
 .testimonial-project {
   align-self: flex-start;
-  font-family: base.$font-mono;
-  font-size: base.$type-meta-sm;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
+}
 
-  &,
-  &:visited {
-    color: base.$color-meta;
+@media all and (max-width: base.$bp) {
+  .testimonials-track {
+    --gap: #{base.$space-3};
+
+    > li {
+      flex-basis: 85%;
+    }
   }
 
-  &:hover,
-  &:focus-visible {
-    color: base.$color-signal;
+  .testimonials-track--single > li {
+    flex-basis: 100%;
   }
 }
 

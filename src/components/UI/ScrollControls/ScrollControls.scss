@@ -1,0 +1,13 @@
+@use '../../../base';
+
+.scroll-controls {
+  display: flex;
+  justify-content: center;
+  gap: base.$space-4;
+  margin-top: base.$space-4;
+
+  .btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
