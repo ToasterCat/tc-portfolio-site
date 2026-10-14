@@ -48,6 +48,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - `AssetMap.ts` points the asset key at the optimized file, and the full-size original stays as the source.
   - Conversion uses Pillow plus a portable ffmpeg (`imageio-ffmpeg`).
 - **`build.assetsInlineLimit: 1024`** in `vite.config.ts` means only tiny images are inlined into the JS. Bigger images load as files, only where they're used.
+- **Licensing:** the code is GPLv3 (`LICENSE`), but media, copy, brand marks, and client material are not (`NOTICE`). Keep `NOTICE` accurate when adding a new kind of third-party material (fonts, icon sets, client documents).
 - **Favicons, app icons, and the 1200×630 share card** (`public/og-card.png`) come from `scripts/build-brand-assets.py`. Re-run it (it needs Pillow) after any brand change.
 
 ### Dependencies
@@ -164,12 +165,3 @@ The site makes public promises. Code and copy changes must stay consistent with 
   - **This site follows the policy:** an AI assistant helped refactor it within a hand-built structure, and much of its copy was AI-drafted, then edited and approved by people.
 - **Privacy (`/privacy`):** contact details are used only to reply and are never shared. The form goes through Formspree, and Google Analytics measures site traffic only. Keep the Privacy page accurate if either changes.
 - **Studio status:** change `STUDIO_STATUS` in `SITE.ts` (`open`, `limited`, `booked`, `away`). The footer and the `/contact` guide both update from it.
-
-## Open work (summary)
-
-The full list lives in `TC-Home/PUNCHLIST.md` (outside the repo). In short:
-
-- **Content:** a homepage testimonials band with several quotes (waiting on ClickTune's; the current OAS stand-ins are gone), re-framing the two albums as our own records, and real gallery media where pages still repeat their hero or icon.
-- **Policy:** counsel review of the `/ai-policy` ownership and sandboxing wording, and the dedicated AI-policy pass.
-- **Technical:** component and end-to-end tests, and confirming publishing rights for client logos in this public repo.
-- **Deferred:** per-project link previews (pre-rendering), the Google Analytics consent banner, the CloudFront media domain (media is served from the site itself), and pruning unreferenced originals in `src/assets`.

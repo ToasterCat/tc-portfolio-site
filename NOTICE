@@ -1,0 +1,32 @@
+ToasterCat Studios website
+Copyright (C) 2020-2026 ToasterCat Studios LLC
+
+WHAT THE GPL COVERS
+
+The source code in this repository (TypeScript, JavaScript, Sass/CSS, HTML,
+configuration, and build scripts) is licensed under the GNU General Public
+License, version 3. See LICENSE.
+
+WHAT IT DOES NOT COVER
+
+The GPL does not extend to the media and content in this repository. Unless a
+file says otherwise, the following are NOT licensed for reuse:
+
+  - ToasterCat Studios names, logos, wordmarks, and brand marks, including
+    the TC mark and the pixel toastercat. All rights reserved.
+  - Photographs, video, renders, screenshots, diagrams, and artwork made by
+    ToasterCat Studios. All rights reserved.
+  - Written content: project write-ups, policy pages, and site copy.
+    All rights reserved.
+  - Client and third-party material shown as portfolio work, including client
+    logos, band names and artwork, flyers, delivered diagrams, research
+    excerpts, and patent figures. These belong to their respective owners and
+    appear here with permission or as a record of work performed. They are not
+    licensed for reuse by this repository.
+  - Third-party trademarks and product names, which belong to their owners.
+
+Self-hosted fonts (Space Grotesk, DM Sans, PT Mono) are distributed under the
+SIL Open Font License 1.1. Skill icons come from Simple Icons (CC0) and the
+AWS Architecture Icons (used under AWS's terms for those icons).
+
+For permission to use any of the above, contact contact@toastercat.tech.

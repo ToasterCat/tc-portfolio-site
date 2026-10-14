@@ -24,7 +24,7 @@ const SHOP_REEL: ReelPhoto[] = [
   { src: reelAmpMic, label: 'Audio Engineering', alt: 'A microphone set against a Mesa speaker cabinet' },
   { src: reelSoldering, label: 'Prototyping', alt: 'Setting heat-set inserts into a custom blaster with a soldering iron' },
   { src: reelWebDev, label: 'Web Development', alt: 'The Octopus Attacks Shark!! band website' },
-  { src: reelDrumMics, label: 'Tracking & Mixing', alt: 'Mic’d snare and toms on the studio drum kit' },
+  { src: reelDrumMics, label: 'Live Tracking', alt: 'Mic’d snare and toms on the studio drum kit' },
   { src: reelPrintDetail, label: 'Product Design', alt: 'Close-up of a freshly printed part' },
 ];
 

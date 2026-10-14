@@ -16,7 +16,7 @@ Root Domain (No DNS) - https://tc-portfolio-site.vercel.app/
 
 ## License
 
-[GNU GPLv3](https://opensource.org/licenses/GPL-3.0)
+The code is licensed under [GNU GPLv3](https://opensource.org/licenses/GPL-3.0) (see `LICENSE`). Images, documents, brand marks, and client material are not: see `NOTICE`.
 
 # Project Details
 
