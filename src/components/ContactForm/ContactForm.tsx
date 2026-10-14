@@ -5,6 +5,7 @@ import { CONTACT_EMAIL } from '../../SITE';
 import './ContactForm.scss';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzbyrpnd';
+const DEFAULT_SUBJECT = 'New inquiry from toastercat-studios.com';
 
 type SendState = 'idle' | 'sending' | 'sent' | 'error';
 
@@ -33,7 +34,7 @@ export default function ContactForm({ intro }: ContactFormProps) {
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        body: new FormData(form),
+        body: withEmailSubject(new FormData(form)),
         headers: { Accept: 'application/json' },
       });
       if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
@@ -64,7 +65,8 @@ export default function ContactForm({ intro }: ContactFormProps) {
         </div>
       ) : (
         <form className="form-group" action={FORMSPREE_ENDPOINT} method="POST" onSubmit={handleSubmit}>
-          <input type="hidden" name="_subject" value="New inquiry from toastercat-studios.com" />
+          {/* Email subject when JavaScript is off; withEmailSubject() swaps in the visitor's own. */}
+          <input type="hidden" name="_subject" value={DEFAULT_SUBJECT} />
           {/* Spam trap: hidden from people, filled in by bots, discarded by Formspree. */}
           <input type="text" name="_gotcha" className="contact-form-trap" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
@@ -83,16 +85,10 @@ export default function ContactForm({ intro }: ContactFormProps) {
             <input id="contact-phone" type="tel" name="phone" autoComplete="tel" placeholder="555-555-5555" />
           </div>
           <div className="contact-form-field">
-            <label htmlFor="contact-topic">
-              What&apos;s this about? <span className="contact-form-optional">(optional)</span>
+            <label htmlFor="contact-subject">
+              Subject: <span className="contact-form-optional">(optional)</span>
             </label>
-            <select id="contact-topic" name="topic" defaultValue="">
-              <option value="">Choose one</option>
-              <option>A project for us to build</option>
-              <option>Working with us (collaboration)</option>
-              <option>Investment or partnership</option>
-              <option>Something else</option>
-            </select>
+            <input id="contact-subject" type="text" name="subject" placeholder="What’s this about?" />
           </div>
           <div className="contact-form-field-text-area">
             <label htmlFor="contact-message">Your Message:</label>
@@ -100,7 +96,7 @@ export default function ContactForm({ intro }: ContactFormProps) {
               id="contact-message"
               name="message"
               rows={10}
-              placeholder="What are you making?"
+              placeholder="What's on your mind?"
               required
             />
           </div>
@@ -142,4 +138,11 @@ export default function ContactForm({ intro }: ContactFormProps) {
       )}
     </section>
   );
+}
+
+/** Formspree uses `_subject` as the email's subject line: the visitor's Subject if given, else the default. */
+function withEmailSubject(data: FormData): FormData {
+  const subject = String(data.get('subject') ?? '').trim();
+  data.set('_subject', subject ? `${subject} (toastercat-studios.com)` : DEFAULT_SUBJECT);
+  return data;
 }

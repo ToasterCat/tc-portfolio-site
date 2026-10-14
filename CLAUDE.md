@@ -76,7 +76,7 @@ Working notes for AI assistants (and humans) on the ToasterCat Studios site. Thi
   - `components/ProjectCard`: variants `card`, `feature`, and `row`.
   - `components/PolicyDocument`: the shared layout for policy pages, with an optional sticky directory (`sections`, with `sub` entries indented).
 - **Homepage:** Hero → FeatureBanner (the first entry in `src/FEATURES.ts`: any highlighted work, currently BLACK0UT.PUNK; a list so it can become a rotating slider later) → ServicesStrip (five service tiles, names only) → Selected Work (projects flagged `featured`: ClickTune and Lizzie, chosen for outside proof) → AboutSection → CTA.
-- **Contact page:** heading → subtitle, "Helpful to include", and the "Work *with* us" collaborator line (the form's `intro` slot) → fields, including an optional "What's this about?" `topic` select → Formspree/email fine print → Submit; then "What to expect from us" (four steps, the one place the reply/estimate timing is promised) and the studio-status guide (`#status`), every status listed with the current one on a tinted plate. The page is meant to be evergreen: no project-specific routing (e.g. playtests) here.
+- **Contact page:** heading → subtitle, "Helpful to include", and the "Work *with* us" collaborator line (the form's `intro` slot) → fields, including an optional free-text Subject (`subject`, which becomes the email's subject line via `_subject`) → Formspree/email fine print → Submit; then "What to expect from us" (four steps, the one place the reply/estimate timing is promised) and the studio-status guide (`#status`), every status listed with the current one on a tinted plate. The page is meant to be evergreen: no project-specific routing (e.g. playtests) here.
 
 ### Decisions not to revisit unless asked
 
