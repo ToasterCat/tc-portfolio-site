@@ -227,6 +227,12 @@
   border-radius: base.$radius-sm;
 }
 
+/* Cover fallback: fill the square edge to edge (marks are contained). */
+.project-card-row-logo--cover {
+  padding: 0;
+  object-fit: cover;
+}
+
 .project-card-row-text {
   display: flex;
   flex: 1;

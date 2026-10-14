@@ -46,7 +46,7 @@ export const FEATURES: Feature[] = [
     meta: 'Playtests December–March · sign-ups open now',
     art: blackoutPunkArt,
     artSmall: blackoutPunkArtSmall,
-    primary: { label: 'Join the playtest list', href: 'https://blackout-punk.com' },
-    secondary: { label: 'See the project', href: '/portfolio/blackout-punk' },
+    primary: { label: 'Join the playtest', href: 'https://blackout-punk.com' },
+    secondary: { label: 'See more', href: '/portfolio/blackout-punk' },
   },
 ];

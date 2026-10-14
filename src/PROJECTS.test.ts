@@ -104,6 +104,12 @@ describe('early work (finished before the studio)', () => {
   });
 });
 
+describe('thumbnails', () => {
+  test.each(details.map((d) => [d.alias, d]))('%s: the TC stamp only marks our own work', (_alias, d) => {
+    if (d.thumbnailImage?.source === 'tc-logo') expect(d.origin).toBe('in-house');
+  });
+});
+
 describe('origin tags', () => {
   const at = (origin: 'in-house' | 'client', year: string) => shownOrigin({ ...details[0], origin, year });
   test('in-house is hidden on current work', () => expect(at('in-house', '2024–Present')).toBeUndefined());

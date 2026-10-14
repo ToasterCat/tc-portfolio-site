@@ -119,6 +119,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
   - The dot grid comes only from the `base.dot-grid` mixin, in two strengths: `'texture'` for the bands above, and `'placeholder'` to stand in for a missing photo. Never hand-write the radial-gradient.
 - **Motion:** `$hover` (0.2s ease) is the one speed for all hover and focus feedback. Every animation must hold still under `prefers-reduced-motion`.
 - **The `\>` prompt** is reserved for headings and titles: the brand, section headings, "\> Our Policy", and sign-off names. Never use it on pull-out statements or as a list marker. Lists use `>` (robot and human lists), `+` and `×` (do and don't panels), or dots.
+- **Project thumbnails** are the work's own mark (client logo, band or product mark, game icon). With no fitting mark, leave `thumbnailImage` out: cards and heroes show no badge, and rows fall back to a square crop of the cover. The TC stamp (`tc-logo`) only marks work that's ours and carries our name (a data test enforces it).
 - **Brand marks:** the TC mark goes in professional spots. The pixel toastercat appears only beside the footer copyright and, animated, on the 404 page. Render pixel art only at whole-number scales.
 - **Layout gotchas:**
   - On desktop, `index.scss` sets `section { min-width: 30rem }`, so a `<section>` inside a narrow column needs `min-width: 0`.

@@ -109,6 +109,12 @@ export interface ProjectDetails {
   /** Cover for cards (directory, homepage). Falls back to backgroundImage,
    *  then a pattern. Point it at a small image: cards load many at once. */
   cardImage?: ProjectImage;
+  /**
+   * The work's own identity mark (client logo, band or product mark, game
+   * icon). Leave it out when there isn't one: cards and heroes then show no
+   * badge, and rows fall back to a square crop of the cover. The TC stamp
+   * (`tc-logo`) is only for work that's ours and carries our name.
+   */
   thumbnailImage?: ProjectImage;
   backgroundImage?: ProjectImage;
 }

@@ -46,7 +46,7 @@ export default function Homepage() {
               Start a project
             </Link>
             <Link to="/portfolio" className="btn btn--secondary">
-              See the work
+              See our work
               <span className="btn-icon btn-icon--trailing" aria-hidden="true">→</span>
             </Link>
           </>

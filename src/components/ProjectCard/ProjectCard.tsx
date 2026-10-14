@@ -57,8 +57,18 @@ export default function ProjectCard(props: ProjectCardProps) {
   if (variant === 'row') {
     return (
       <article className="project-card project-card--row">
+        {/* The project's mark; else a square crop of its own cover; else the
+            "no photo yet" dot grid. Never a stand-in brand. */}
         {logoSrc ? (
           <img className="project-card-row-logo" src={logoSrc} alt="" loading="lazy" decoding="async" />
+        ) : coverSrc ? (
+          <img
+            className="project-card-row-logo project-card-row-logo--cover"
+            src={coverSrc}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <span className="project-card-row-logo project-card-cover--pattern" aria-hidden="true" />
         )}

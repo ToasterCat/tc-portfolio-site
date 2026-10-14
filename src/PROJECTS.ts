@@ -33,7 +33,7 @@ const PROJECTS: Record<string, Project> = {
         "Photoshop"
       ],
       heroLink: {
-        label: 'Join the Playtest List',
+        label: 'Join the Playtest',
         target: 'https://blackout-punk.com',
         icon: 'blackout-punk-icon'
       },
@@ -119,10 +119,6 @@ const PROJECTS: Record<string, Project> = {
         source: 'clicktune-fig2-800',
         alt: 'Back-end architecture diagram from US Patent 12,671,666'
       },
-      thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Icon'
-      },
       backgroundImage: {
         source: 'clicktune-fig2',
         alt: 'Back-end architecture diagram from US Patent 12,671,666'
@@ -167,11 +163,6 @@ const PROJECTS: Record<string, Project> = {
       body: [
         "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
       ],
-      media: {
-        gallery: [
-          { type: 'image', src: 'tc-logo', alt: 'ToasterCat Icon', width: 501, height: 500 },
-        ],
-      },
       testimonials: [
         {
           quote: "Dirk from ToasterCat Studios is professional and pragmatic. His systems approach in framing large-scale projects into actionable pathways is truly valuable.",
@@ -190,10 +181,6 @@ const PROJECTS: Record<string, Project> = {
         "iOS"
       ],
       links: [ ],
-      thumbnailImage: {
-        source: 'tc-logo',
-        alt: 'ToasterCat Icon'
-      }
     }
   },
 
