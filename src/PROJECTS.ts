@@ -162,6 +162,8 @@ const PROJECTS: Record<string, Project> = {
       brief: `A multi-faceted content distribution and networking platform for musicians, producers, and digital artists.`,
       body: [
         "An aspirational platform that aimed to unify music creators with their audience through continuous iteration and collaborative feedback throughout the entire production process. Artists would upload work in various states of completion that would be distributed to and evaluated by their audience, enabling peers to submit draft remixes and additional layers to the work.",
+        `The design split the platform in two: a control plane where artists and labels upload through their own portal into an ingestion workflow that checks, reformats, and accepts or rejects each release, and a data plane where fans browse a shared catalog of artists, collections, and tracks, buy through an order workflow that grants entitlements, then stream or download through signed links.`,
+        `We delivered a context diagram, a data model, and the technical scope and build estimate behind the outcome below.`,
       ],
       testimonials: [
         {
@@ -180,6 +182,29 @@ const PROJECTS: Record<string, Project> = {
         "Android",
         "iOS"
       ],
+      cardImage: {
+        source: 'jukedec-context',
+        alt: 'JukeDec context diagram'
+      },
+      backgroundImage: {
+        source: 'jukedec-context',
+        alt: 'JukeDec context diagram'
+      },
+      media: {
+        featured: {
+          type: 'image',
+          src: 'jukedec-context',
+          alt: 'Context diagram: artist portal and upload ingestion workflow on one side, the fan-facing Juke Portal, library, and order purchase workflow on the other, sharing auth, a catalog, and a source bucket',
+          caption: 'The context diagram we delivered (recoloured for this site).',
+          width: 1185,
+          height: 701,
+        },
+        // The deliverables first; one sketch at the back as a nod to how it started.
+        gallery: [
+          { type: 'image', src: 'jukedec-entities', alt: 'Entity diagram: artist, collection, track, offer, transaction, entitlement, library, and user', caption: 'The data model.', width: 862, height: 522 },
+          { type: 'image', src: 'jukedec-sketch-context', alt: 'Hand-drawn sketch of the whole system, split into control plane and data plane', caption: 'Where it started: the first pass on a legal pad.', width: 1400, height: 1735 },
+        ],
+      },
       links: [ ],
     }
   },

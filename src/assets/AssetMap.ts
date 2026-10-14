@@ -113,6 +113,10 @@ import moxelBackground from './gallery/Moxel/moxel-gloria_scaled.jpg';
 import moxelLogo from './gallery/Moxel/moxel-logo-small.png';
 import moxelLogoText from './gallery/Moxel/moxel-logo-medium.png';
 
+// JukeDec handoff: the clean diagrams recoloured dark, plus one legal-pad sketch (sources alongside).
+import jukedecContext from './gallery/JukeDec/jukedec-context_dark.webp';
+import jukedecEntities from './gallery/JukeDec/jukedec-entities_dark.webp';
+import jukedecSketchContext from './gallery/JukeDec/jukedec-sketch-context_1400.webp';
 // Patent figure (recoloured for the dark theme) and handoff artifacts; sources sit alongside.
 import clicktuneFig2 from './gallery/ClickTune/clicktune-fig2_1600.webp';
 import clicktuneFig2Small from './gallery/ClickTune/clicktune-fig2_800.webp';
@@ -236,6 +240,9 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["moxel-logo", moxelLogo],
     ["moxel-logo-text", moxelLogoText],
 
+    ["jukedec-context", jukedecContext],
+    ["jukedec-entities", jukedecEntities],
+    ["jukedec-sketch-context", jukedecSketchContext],
     ["clicktune-fig2", clicktuneFig2],
     ["clicktune-fig2-800", clicktuneFig2Small],
     ["clicktune-foundation", clicktuneFoundation],
