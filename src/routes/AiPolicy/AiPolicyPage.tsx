@@ -193,8 +193,7 @@ export default function AiPolicyPage() {
         material without meaningful human authorship, and the courts have upheld that. In a
         larger work, the AI-generated parts must be disclosed and excluded at registration, and
         they stay unprotected: gaps in what you actually own. Keeping generated art and media out
-        of creative deliverables keeps the work you pay for yours. The same goes for writing:
-        AI-drafted text ships only after a person has reviewed and approved it.
+        of creative deliverables keeps the work you pay for yours.
       </p>
       <div className="policy-sources">
         <p className="meta meta-dim policy-sources-label">Sources</p>
@@ -287,20 +286,6 @@ export default function AiPolicyPage() {
       <p>
         Principles only matter if they survive a real project. Here’s how ours work day to day.
       </p>
-      <p>
-        This site is a working example. Our engineers chose React and TypeScript, laid out its
-        files and directories, set its naming conventions and style, and chose to host it on
-        Vercel. The site was up and running before we brought in an AI coding assistant to help
-        refactor, restyle, and extend it along those established patterns. Much of our prose and
-        copy was initially drafted with the help of an agent, but it always falls to a human to
-        edit, approve, and own the result.
-      </p>
-      <p>
-        Watch us practice what we preach: this site’s source is public.
-      </p>
-      <p>
-        <ExternalLinkButton linkTo={SITE_REPO} text="ToasterCat/tc-portfolio-site" icon="logo-github" />
-      </p>
 
       <h3 id="roles">Know Your Role: Humans Lead, Agents Extend</h3>
       <p>
@@ -314,6 +299,17 @@ export default function AiPolicyPage() {
         works, an agent can extend it with features in established patterns, tests, and tooling.
         It never picks the stack, invents the structure, or sets the style, and a person reviews
         every change it makes.
+      </p>
+      <p>
+        This site is a working example. Our engineers chose React and TypeScript, laid out its
+        files and directories, set its naming conventions and style, and chose to host it on
+        Vercel. The site was up and running before we brought in an AI coding assistant to help
+        refactor, restyle, and extend it along those established patterns. Much of our prose and
+        copy was initially drafted with the help of an agent, but it always falls to a human to
+        edit, approve, and own the result.
+      </p>
+      <p>
+        <ExternalLinkButton linkTo={SITE_REPO} text="ToasterCat/tc-portfolio-site" icon="logo-github" />
       </p>
 
       <h3 id="placeholders">Placeholders, Not Product</h3>
