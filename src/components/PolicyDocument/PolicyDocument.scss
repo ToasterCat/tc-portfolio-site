@@ -142,6 +142,25 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
     color: base.$color-light;
   }
 
+  /* CORE TENETS - the policy in six numbered lines: mono olive numbers,
+   * each tenet's lead phrase in the light heading voice. */
+  .policy-tenets {
+    margin: 0 0 base.$space-6 0;
+    padding-left: base.$space-6;
+    color: base.$site-color-gray;
+
+    li {
+      margin-bottom: base.$space-3;
+      padding-left: base.$space-1;
+      text-wrap: pretty;
+    }
+
+    li::marker {
+      font-family: base.$font-mono;
+      color: base.$color-meta;
+    }
+  }
+
   /* A major one-line statement, set larger than body copy. */
   .policy-statement {
     margin: base.$space-5 0;
@@ -175,78 +194,6 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
   strong {
     color: base.$color-light;
     font-weight: base.$weight-subhead;
-  }
-
-  /* CONTRAST - robot vs human: a question, the answer as the punchline, then
-     what that covers. Both lists are marked with '>': dim for the robot,
-     olive for the human. */
-  .policy-contrast {
-    display: grid;
-    gap: base.$space-3;
-    margin: 0 0 base.$space-4 0;
-  }
-
-  .policy-contrast-row {
-    padding: base.$space-4 base.$space-5;
-    border: 1px solid rgba(base.$site-color-gray, 0.14);
-    border-radius: base.$radius;
-    background-color: base.$site-color-dark-alt;
-
-    dt {
-      color: base.$site-color-gray;
-    }
-
-    dd {
-      margin: 0;
-    }
-
-    .policy-contrast-answer {
-      margin: base.$space-1 0 base.$space-3 0;
-      font-family: base.$font-heading;
-      font-size: base.$type-h4-m;
-      font-weight: base.$weight-heading;
-      letter-spacing: base.$tracking-heading;
-      color: base.$color-light;
-    }
-
-    ul {
-      margin: 0;
-      padding: base.$space-3 0 0 0;
-      list-style: none;
-      border-top: 1px solid rgba(base.$color-meta-dim, 0.45);
-    }
-
-    li {
-      position: relative;
-      padding-left: base.$space-6;
-    }
-
-    li:last-child {
-      margin-bottom: 0;
-    }
-
-    li::before {
-      position: absolute;
-      left: 0;
-      font-family: base.$font-mono;
-      font-size: base.$type-meta;
-      line-height: 1.9;
-    }
-  }
-
-  .policy-contrast-row--robot li::before {
-    content: '>';
-    color: base.$color-meta-dim;
-  }
-
-  .policy-contrast-row--human {
-    border-color: rgba(base.$color-meta, 0.35);
-    background-color: rgba(base.$color-meta, 0.06);
-
-    li::before {
-      content: '>';
-      color: base.$color-meta;
-    }
   }
 
   /* SOURCES - a compact citation list under a claim: title, then publisher. */

@@ -146,6 +146,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **American spelling** ("judgment", not "judgement").
 - **“Mic’d”**, not “miked”, for a microphone placed on a source (Dirk’s usage, and the common PNW studio shorthand).
 - **Product names capitalized:** Node, Docker, GitHub.
+- **AI-policy terms:** “quarantined” means hand-coded, AI-free, IP-protected code; the “sandbox” is where AI is allowed (never the reverse). Generated stand-in art is a “placeholder”, never “scaffolding”.
 - **Tool and skill names:** use the name people recognize, without a vendor prefix: "Fusion 360", "Maya", "Cura". AWS services are always "AWS …" (AWS S3, AWS DynamoDB, AWS Step Functions), never "Amazon …", whatever AWS's own naming says. Skill icons for AWS come from the official AWS Architecture Icons package; other icons come from Simple Icons, recoloured for the dark theme.
 
 ### Voice
@@ -161,10 +162,12 @@ Direct, engineer-honest, a little irreverent. Plain words over marketing spiel (
 The site makes public promises. Code and copy changes must stay consistent with them.
 
 - **AI policy (`/ai-policy`):**
+  - **Core tenets** (top of “Our Policy”): the page summarized in six numbered lines. Anything added above the divider should map to one of them, and the do/don't lists apply them.
   - **Where AI is used:** AI handles the "short game": grunt code, debugging, testing, compliance checks, paperwork (contracts, briefs, grant applications), and drafts of our own correspondence.
   - **What never ships:** generated art and media, and narrative writing (stories, scripts, lyrics). Those are human-made.
-  - **Placeholders:** generated placeholders are the exception, not the rule. When used, they are tagged, tracked, and replaced before release.
-  - **Sandboxing:** code that defines proprietary IP lives in sandboxed, AI-free areas. AI may help diagnose bugs there, but a person writes the fix. Mechanical changes there are made with deterministic tools (formatters), never generated.
-  - **This site follows the policy:** an AI assistant helped refactor it within a hand-built structure, and much of its copy was AI-drafted, then edited and approved by people.
+  - **Placeholders:** generated placeholders are the exception, not the rule. When used, they are tagged, tracked, and replaced before release. Public playtest builds may still contain tagged placeholders, and we say so when they do.
+  - **Sandboxing and quarantine:** quarantined code and assets define proprietary IP and are hand-written, AI-free (deterministic tools only; AI may help test, document, and debug, but a person writes the fix). When most of a codebase counts as IP, the default flips: everything is quarantined, and AI-assisted work is sandboxed into clearly bounded non-IP sections. A legal peer reviewed this approach (2026-10) and agrees it's valid for copyright and IP protection until further precedent.
+  - **Who does what:** people hold the executive and senior roles (framework and language, architecture and design patterns, code organization, conventions and style); coding agents only extend established patterns, and every change is reviewed by a person.
+  - **This site follows the policy:** people chose React and TypeScript, the file layout, and the conventions, and the site ran before an AI assistant was brought in; the assistant extends that structure and drafts copy that people edit, approve, and own. The site isn't registrable IP, so it's all sandbox. `/ai-policy` links the public repo as proof; keep that true.
 - **Privacy (`/privacy`):** contact details are used only to reply and are never shared. The form goes through Formspree, and Google Analytics measures site traffic only. Keep the Privacy page accurate if either changes.
 - **Studio status:** change `STUDIO_STATUS` in `SITE.ts` (`open`, `limited`, `booked`, `away`). The footer and the `/contact` guide both update from it.
