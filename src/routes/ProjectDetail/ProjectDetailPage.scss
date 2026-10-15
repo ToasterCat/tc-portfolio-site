@@ -63,6 +63,18 @@ $spec-w: 18rem;
   border-bottom: 1px solid base.$color-meta-dim;
 }
 
+.project-hero {
+  overflow: hidden; /* clips the photo layer's blur at the edges */
+}
+
+.project-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2; /* under the scrim (::before, -1) */
+  background-size: cover;
+  background-position: center;
+}
+
 /* The scrim does the contrast work, so any photo can sit behind the type. */
 .project-hero::before {
   content: '';

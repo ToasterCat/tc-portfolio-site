@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import { PROJECT_CATEGORIES, getProjectByAlias } from '../../PROJECTS';
+import ProgressiveImg from '../../components/UI/ProgressiveImg/ProgressiveImg';
 import './ServicesStrip.scss';
 
 /**
@@ -28,7 +29,7 @@ export default function ServicesStrip() {
                   className={`services-strip-cover ${coverSrc ? '' : 'services-strip-cover--pattern'}`}
                   aria-hidden="true"
                 >
-                  {coverSrc && <img src={coverSrc} alt="" loading="lazy" decoding="async" />}
+                  {coverSrc && <ProgressiveImg src={coverSrc} alt="" loading="lazy" decoding="async" />}
                 </span>
                 <span className="services-strip-label">
                   <span className="meta meta-dim services-strip-prompt" aria-hidden="true">{'\\>'}</span>

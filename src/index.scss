@@ -190,6 +190,68 @@ h1, h2, h3, h4 {
   @include base.prose-link;
 }
 
+/* Blurred preview under an image until the real file paints over it
+ * (assetMeta.previewProps). The alt text stays hidden meanwhile; screen
+ * readers still get it. */
+img.has-preview,
+video.has-preview {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+/* PROGRESSIVE LOADING - everything fades in; photos then sharpen from their
+ * blurred preview as the real file arrives (ProgressiveImg, and the
+ * .progressive-bg layers). clip-path keeps the blur inside the image's box.
+ *
+ * Transitions only, never a CSS animation: an animation with a held end
+ * state (fill-mode) freezes opacity at whatever it was when it started, so
+ * an image that loaded mid-fade stayed dimmed. The entry fade comes from
+ * @starting-style (browsers without it simply skip the fade). Under reduced
+ * motion it's an instant swap. */
+.progressive {
+  clip-path: inset(0);
+  transition: filter 0.6s ease, opacity 0.4s ease;
+}
+
+.progressive.is-pending {
+  filter: blur(12px);
+}
+
+/* The featured image keeps its drop shadow (clip-path would cut it off);
+ * its blur glows softly past the edge while it sharpens instead. */
+.project-featured .progressive {
+  clip-path: none;
+}
+
+/* No preview to show (transparent logos): just fade in once loaded. */
+.progressive.is-pending:not(.has-preview) {
+  opacity: 0;
+}
+
+.progressive-bg {
+  transition: filter 0.8s ease, opacity 0.4s ease;
+}
+
+.progressive-bg.is-pending {
+  filter: blur(16px);
+}
+
+@starting-style {
+  .progressive,
+  .progressive-bg {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressive,
+  .progressive-bg {
+    transition: none;
+  }
+}
+
 /**
  * FOCUS
  *

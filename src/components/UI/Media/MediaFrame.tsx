@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { MediaItem } from '../../../types/project.model';
 import { bandcampEmbedUrl, bandcampPlayerHeight, mediaSize, resolveMedia, youtubeEmbedUrl } from '../../../media';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
+import { previewProps } from '../../../assets/assetMeta';
+import ProgressiveImg from '../ProgressiveImg/ProgressiveImg';
+import { useElementReady } from '../../../hooks/useImageReady';
 import './MediaFrame.scss';
 
 /**
@@ -29,11 +32,12 @@ export default function MediaFrame(props: MediaFrameProps) {
   const reduceMotion = usePrefersReducedMotion();
   const loading = eager ? 'eager' : 'lazy';
   const size = mediaSize(item);
+  const clip = useElementReady<HTMLVideoElement>(item.type === 'clip' ? resolveMedia(item.src) : undefined);
 
   switch (item.type) {
     case 'image':
       return (
-        <img
+        <ProgressiveImg
           className="media-frame"
           src={resolveMedia(item.src)}
           alt={item.alt}
@@ -49,7 +53,12 @@ export default function MediaFrame(props: MediaFrameProps) {
       // to start it) for anyone who's asked for less motion.
       return (
         <video
-          className="media-frame"
+          ref={clip.ref}
+          onLoadedData={clip.onReady}
+          {...withClass(
+            previewProps(resolveMedia(item.poster)),
+            `media-frame${reduceMotion ? '' : ` progressive${clip.ready ? '' : ' is-pending'}`}`
+          )}
           src={resolveMedia(item.src)}
           poster={resolveMedia(item.poster)}
           width={size?.width}
@@ -70,7 +79,7 @@ export default function MediaFrame(props: MediaFrameProps) {
       }
       return (
         <video
-          className="media-frame"
+          {...withClass(previewProps(resolveMedia(item.poster)), 'media-frame')}
           src={resolveMedia(item.src)}
           poster={resolveMedia(item.poster)}
           width={size?.width}
@@ -146,7 +155,7 @@ function PosterThumb(props: { poster?: string; label: string; width: number; hei
       className="media-poster media-poster--video"
       style={{ aspectRatio: `${props.width} / ${props.height}` }}
     >
-      {src && <img src={src} alt="" loading="lazy" decoding="async" />}
+      {src && <ProgressiveImg src={src} alt="" loading="lazy" decoding="async" />}
       <span className="tag media-poster-kind" aria-hidden="true">Video</span>
       <span className="media-play-badge" aria-hidden="true">▶</span>
       <span className="media-poster-title" aria-hidden="true">{props.label}</span>
@@ -194,4 +203,9 @@ function YouTubeEmbed(props: { id: string; title: string; poster?: string }) {
       />
     </div>
   );
+}
+
+/** Merge a base class into previewProps() output. */
+function withClass(props: ReturnType<typeof previewProps>, base: string) {
+  return { ...props, className: [base, props.className].filter(Boolean).join(' ') };
 }

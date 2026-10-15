@@ -1,6 +1,6 @@
 import { ASSET_MANIFEST } from './assets/AssetMap';
 import { MediaItem, MediaRef } from './types/project.model';
-import { AssetSize, assetSize } from './assets/assetSizes';
+import { AssetSize, assetSize } from './assets/assetMeta';
 
 /**
  * Media server base URL. Project data stores paths under it, never full URLs,

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Brackets from '../Brackets/Brackets';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
+import ProgressiveImg from '../ProgressiveImg/ProgressiveImg';
 import './ShopReel.scss';
 
 export interface ReelPhoto {
@@ -72,7 +73,7 @@ export default function ShopReel({ photos, hold = 6 }: ShopReelProps) {
     >
       <div className="shop-reel-frame" ref={frame}>
         {photos.map((photo, i) => (
-          <img
+          <ProgressiveImg
             key={photo.src}
             className={`shop-reel-photo${i === index ? ' is-current' : ''}`}
             src={loaded.has(i) ? photo.src : undefined}

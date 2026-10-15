@@ -9,6 +9,8 @@ import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalL
 import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../skills';
 import { mediaSize } from '../../media';
+import { progressiveBackground } from '../../assets/assetMeta';
+import { useBackgroundReady } from '../../hooks/useImageReady';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
 import { categoryLabel, getProjectByAlias, shownOrigin, visibleTestimonials } from '../../PROJECTS';
@@ -120,12 +122,18 @@ function ProjectHero(props: { details: ProjectDetails }) {
   const d = props.details;
   const background = d.backgroundImage ? ASSET_MANIFEST.get(d.backgroundImage.source) : undefined;
   const thumbnail = d.thumbnailImage ? ASSET_MANIFEST.get(d.thumbnailImage.source) : undefined;
+  const bgReady = useBackgroundReady(background);
 
   return (
-    <header
-      className={`project-hero ${background ? '' : 'project-hero--pattern'}`}
-      style={background ? { backgroundImage: `url(${background})` } : undefined}
-    >
+    <header className={`project-hero ${background ? '' : 'project-hero--pattern'}`}>
+      {/* Its own layer, so the photo can blur and sharpen without touching the text. */}
+      {background && (
+        <div
+          className={`project-hero-bg progressive-bg${bgReady ? '' : ' is-pending'}`}
+          style={{ backgroundImage: progressiveBackground(background, bgReady) }}
+          aria-hidden="true"
+        />
+      )}
       {/* A grid: [KIND] eyebrow on top at full width; then the logo centred
           on the title; brief, hero link and tags follow in the text column
           (the tag ticker runs full width on phones). */}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Project } from '../../types/project.model';
 import { ASSET_MANIFEST } from '../../assets/AssetMap';
+import ProgressiveImg from '../UI/ProgressiveImg/ProgressiveImg';
 import { categoryLabel, shownOrigin } from '../../PROJECTS';
 import MetaTags from '../UI/MetaTags/MetaTags';
 import ExternalLinkButton from '../UI/ExternalLinkButton/ExternalLinkButton';
@@ -84,7 +85,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   return (
     <article className={`project-card project-card--${variant}`}>
       <div className={`project-card-cover ${coverSrc ? '' : 'project-card-cover--pattern'}`}>
-        {coverSrc && <img src={coverSrc} alt="" loading="lazy" decoding="async" />}
+        {coverSrc && <ProgressiveImg src={coverSrc} alt="" loading="lazy" decoding="async" />}
         {logoSrc && (
           <img className="project-card-logo" src={logoSrc} alt="" loading="lazy" decoding="async" />
         )}

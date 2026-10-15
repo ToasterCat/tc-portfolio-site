@@ -2,6 +2,8 @@ import { CSSProperties, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Feature, FeatureAction } from '../../FEATURES';
+import { progressiveBackground } from '../../assets/assetMeta';
+import { useBackgroundReady } from '../../hooks/useImageReady';
 import './FeatureBanner.scss';
 
 interface FeatureBannerProps {
@@ -32,11 +34,16 @@ function Action({ action, className, children }: { action: FeatureAction; classN
  */
 export default function FeatureBanner({ feature: f }: FeatureBannerProps) {
   const titleId = `feature-${f.id}-title`;
-  const art = { '--art': `url(${f.art})`, '--art-small': `url(${f.artSmall ?? f.art})` } as CSSProperties;
+  const artReady = useBackgroundReady(f.art);
+  const smallReady = useBackgroundReady(f.artSmall ?? f.art);
+  const art = {
+    '--art': progressiveBackground(f.art, artReady) ?? 'none',
+    '--art-small': progressiveBackground(f.artSmall ?? f.art, smallReady) ?? 'none',
+  } as CSSProperties;
 
   return (
     <section className="feature-banner" aria-labelledby={titleId}>
-      <div className="feature-banner-art" style={art} aria-hidden="true" />
+      <div className={`feature-banner-art progressive-bg${artReady && smallReady ? '' : ' is-pending'}`} style={art} aria-hidden="true" />
 
       <div className="feature-banner-inner">
         <p className="tag tag--signal">{f.status}</p>

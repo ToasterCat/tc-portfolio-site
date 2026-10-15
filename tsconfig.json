@@ -14,7 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "vite.config.ts", "vite-plugin-asset-sizes.ts"]
+  "include": ["src", "vite.config.ts", "vite-plugin-asset-meta.ts"]
 }

@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { assetSize, progressiveBackground } from '../../assets/assetMeta';
+import { useBackgroundReady } from '../../hooks/useImageReady';
 import './HeroSection.scss';
 
 interface HeroQuote {
@@ -38,13 +40,14 @@ interface HeroSectionProps {
  */
 export default function HeroSection(props: HeroSectionProps) {
   const p = props.classPrefix ?? 'hero';
+  const bgReady = useBackgroundReady(props.backgroundImage?.source);
 
   return (
     <section className={`${p}-section ${p}-section--logo-${props.logoImage.position}`}>
       {props.backgroundImage && (
         <div
-          className={`${p}-bg`}
-          style={{ backgroundImage: `url(${props.backgroundImage.source})` }}
+          className={`${p}-bg progressive-bg${bgReady ? '' : ' is-pending'}`}
+          style={{ backgroundImage: progressiveBackground(props.backgroundImage.source, bgReady) }}
           aria-hidden="true"
         />
       )}
@@ -68,7 +71,13 @@ export default function HeroSection(props: HeroSectionProps) {
       </div>
 
       <div className={`${p}-image`}>
-        <img src={props.logoImage.source} alt={props.logoImage.alt} />
+        {/* Its own size, so the column is reserved before the file arrives (no text shift). */}
+        <img
+          src={props.logoImage.source}
+          alt={props.logoImage.alt}
+          width={assetSize(props.logoImage.source)?.width}
+          height={assetSize(props.logoImage.source)?.height}
+        />
       </div>
     </section>
   );
