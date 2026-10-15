@@ -18,7 +18,7 @@ import './TestimonialsBand.scss';
 export default function TestimonialsBand() {
   const quotes = homepageTestimonials();
   const track = useRef<HTMLUListElement>(null);
-  const { overflows, atStart, atEnd, page } = useHorizontalScroll(track);
+  const { overflows, atStart, atEnd, page, fadeProps } = useHorizontalScroll(track);
 
   if (quotes.length === 0) return null;
 
@@ -31,6 +31,7 @@ export default function TestimonialsBand() {
       <ul
         className={`testimonials-track${quotes.length === 1 ? ' testimonials-track--single' : ''}`}
         ref={track}
+        {...fadeProps}
         tabIndex={overflows ? 0 : undefined}
         aria-label={overflows ? 'Testimonials, scroll sideways for more' : undefined}
       >

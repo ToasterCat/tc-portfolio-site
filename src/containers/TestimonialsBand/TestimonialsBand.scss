@@ -11,6 +11,7 @@
 /* One row, always one quote tall: overflow scrolls sideways and snaps to
  * each card. Two cards across on desktop; one and a peek on phones. */
 .testimonials-track {
+  @include base.scroll-fade;
   --gap: #{base.$space-5};
   display: flex;
   gap: var(--gap);

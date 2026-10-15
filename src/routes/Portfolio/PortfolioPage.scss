@@ -58,9 +58,11 @@ $jump-h: 3rem;
   }
 }
 
-/* One line; swipe sideways on phones (static - no ticker). */
+/* One line; swipe sideways on phones (static - no ticker). The edge fade
+ * shows there's more past the screen edge. */
 .portfolio-jump-list {
   @extend %rail;
+  @include base.scroll-fade;
   display: flex;
   gap: base.$space-4;
   height: $jump-h;
@@ -86,8 +88,9 @@ $jump-h: 3rem;
     flex: 0 0 base.$space-2;
   }
 
+  /* Full-height tap targets (WCAG 2.5.8): the tertiary 44px fits the 48px bar. */
   .btn--tertiary {
-    min-height: 0;
+    min-height: 2.75rem;
   }
 }
 

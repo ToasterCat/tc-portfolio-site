@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import usePageMeta from '../../hooks/usePageMeta';
+import useHorizontalScroll from '../../hooks/useHorizontalScroll';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
@@ -26,6 +27,7 @@ export default function PortfolioPage() {
   useLegacyAnchorRedirect();
   const active = useActiveSection(PROJECT_CATEGORIES.map((c) => c.anchor));
   const jumpList = useRef<HTMLUListElement>(null);
+  const { fadeProps } = useHorizontalScroll(jumpList);
 
   // Phones: keep the current section's label visible in the swipeable bar.
   useEffect(() => {
@@ -33,7 +35,8 @@ export default function PortfolioPage() {
     const item = list?.querySelector<HTMLElement>('.is-active')?.parentElement;
     if (list && item) {
       const target = item.offsetLeft - (list.clientWidth - item.offsetWidth) / 2;
-      list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      list.scrollTo({ left: Math.max(0, target), behavior: reduce ? 'auto' : 'smooth' });
     }
   }, [active]);
 
@@ -49,7 +52,7 @@ export default function PortfolioPage() {
       </div>
 
       <nav className="portfolio-jump" aria-label="Services">
-        <ul className="portfolio-jump-list" ref={jumpList}>
+        <ul className="portfolio-jump-list" ref={jumpList} {...fadeProps}>
           {PROJECT_CATEGORIES.map((c) => (
             <li key={c.key}>
               <Link

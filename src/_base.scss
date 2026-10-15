@@ -247,6 +247,41 @@ $transition-duration: $hover-duration; /* legacy alias */
   }
 }
 
+/* SCROLL FADE
+ * The one way to show that a sideways-scrolling row has more: its edge fades
+ * out wherever content is hidden past it. Put it on the scrolling element and
+ * spread useHorizontalScroll's `fadeProps` on it, which set data-fade-start /
+ * data-fade-end from the scroll position (neither = no fade). A mask, not an
+ * overlay, so it works over any background. Nothing animates (reduced-motion
+ * safe). The mask would also clip the element's own focus ring, so it drops
+ * while the row itself has keyboard focus. */
+@mixin scroll-fade($length: $space-7) {
+  --fade-start: 0px;
+  --fade-end: 0px;
+  $mask: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-start),
+    #000 calc(100% - var(--fade-end)),
+    transparent 100%
+  );
+  -webkit-mask-image: $mask;
+  mask-image: $mask;
+
+  &[data-fade-start] {
+    --fade-start: #{$length};
+  }
+
+  &[data-fade-end] {
+    --fade-end: #{$length};
+  }
+
+  &:focus-visible {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
 @mixin animation-mixin($name, $start, $end) {
   @keyframes #{$name} {
     0% {
