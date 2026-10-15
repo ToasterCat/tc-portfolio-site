@@ -31,6 +31,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
   - Only `VITE_`-prefixed variables reach the app, read via `import.meta.env` (types in `src/vite-env.d.ts`). `VITE_MEDIA_BASE` overrides the media CDN.
   - Never put secrets in `.env`: anything that reaches the app is visible in the browser.
 - **Tests:** all 180 data tests pass. Keep it that way: add content rather than weakening a test.
+- **Commits for Jira tasks:** start the subject with the issue key and the task's ID, then a short description. A related fix gets its own short sentence. Write it in the past tense, like `[HOME-86]-[D5] Added side scrolling fades to mobile /portfolio nav and homepage testimonials.` Keep it short; put details in the body only if they're needed.
 
 ### Environment gotchas (Windows + WSL)
 
