@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 import './PolicyDocument.scss';
 
 export interface PolicySection {
@@ -12,6 +12,8 @@ export interface PolicySection {
 
 interface PolicyDocumentProps {
   title: string;
+  /** Search snippet and share description for the page. */
+  description: string;
   /** ISO date (YYYY-MM-DD) of the last substantive change. */
   updated: string;
   /** Optional quick-reference directory: a sticky side column on wide screens. */
@@ -23,8 +25,8 @@ interface PolicyDocumentProps {
  * Shared layout for the site's policy pages (privacy, AI usage): a plain
  * reading column with a dated header. Content is the page's own markup.
  */
-export default function PolicyDocument({ title, updated, sections, children }: PolicyDocumentProps) {
-  useDocumentTitle(title);
+export default function PolicyDocument({ title, description, updated, sections, children }: PolicyDocumentProps) {
+  usePageMeta({ title, description });
 
   return (
     <article className={`policy ${sections ? 'policy--directory' : ''}`}>

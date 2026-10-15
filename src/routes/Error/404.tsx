@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 import NyanToaster from '../../components/UI/NyanToaster/NyanToaster';
 import './404.scss';
 
@@ -9,7 +9,7 @@ import './404.scss';
  * is a spot with room for some character.
  */
 export default function NotFound() {
-  useDocumentTitle('Not Found');
+  usePageMeta({ title: 'Not Found', noindex: true });
 
   return (
     <section className="not-found">

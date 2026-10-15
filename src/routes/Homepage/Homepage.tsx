@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 
 import HeroSection from '../../containers/HeroSection/HeroSection';
 import FeatureBanner from '../../containers/FeatureBanner/FeatureBanner';
@@ -20,7 +20,7 @@ import heroBackground from '../../assets/background/chess-alt_1920.webp';
  * Pitch -> featured work -> what we do -> proof -> what clients say -> who we are -> the ask.
  */
 export default function Homepage() {
-  useDocumentTitle();
+  usePageMeta(); // the site defaults from index.html
 
   return (
     <>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import ContactInfoBar from '../../containers/ContactSection/ContactSection';
@@ -19,7 +19,10 @@ import './PortfolioPage.scss';
  * read as gaps.
  */
 export default function PortfolioPage() {
-  useDocumentTitle('Portfolio');
+  usePageMeta({
+    title: 'Portfolio',
+    description: 'Games, websites, digital media, prototypes, and consulting work from ToasterCat Studios, a Seattle studio, grouped by service.',
+  });
   useLegacyAnchorRedirect();
   const active = useActiveSection(PROJECT_CATEGORIES.map((c) => c.anchor));
   const jumpList = useRef<HTMLUListElement>(null);

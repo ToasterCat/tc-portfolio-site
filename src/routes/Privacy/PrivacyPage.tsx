@@ -4,7 +4,11 @@ import { CONTACT_EMAIL } from '../../SITE';
 
 export default function PrivacyPage() {
   return (
-    <PolicyDocument title="Privacy Policy" updated="2026-10-08">
+    <PolicyDocument
+      title="Privacy Policy"
+      description="How ToasterCat Studios handles the details you send us and what our site analytics measure."
+      updated="2026-10-08"
+    >
       <p>
         ToasterCat Studios LLC (&ldquo;we&rdquo;, &ldquo;us&rdquo;) keeps this simple: the
         only personal information we ask for is what you choose to send us, and we use it

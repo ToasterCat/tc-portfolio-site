@@ -17,5 +17,5 @@
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "vite.config.ts", "vite-plugin-asset-meta.ts"]
+  "include": ["src", "vite.config.ts", "vite-plugin-asset-meta.ts", "vite-plugin-sitemap.ts"]
 }

@@ -1,3 +1,6 @@
+/** The live site's canonical origin (no trailing slash): canonical URLs, sitemap, share tags. */
+export const SITE_URL = 'https://www.toastercat-studios.com';
+
 /**
  * Site-wide chrome content, shared by the header, mobile menu, and footer so
  * the three can't drift apart (e.g. "Projects" vs "Portfolio").

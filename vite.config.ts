@@ -2,9 +2,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import assetMeta from './vite-plugin-asset-meta.ts';
+import sitemap from './vite-plugin-sitemap.ts';
 
 export default defineConfig({
-  plugins: [react(), assetMeta()],
+  plugins: [react(), assetMeta(), sitemap()],
   server: {
     port: 3000, // same port as the old CRA dev server
     strictPort: true,

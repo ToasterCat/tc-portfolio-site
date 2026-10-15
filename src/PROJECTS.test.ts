@@ -15,6 +15,8 @@ import { ASSET_MANIFEST } from './assets/AssetMap';
 import { bandcampEmbedUrl, mediaSize, resolveMedia, youtubeEmbedUrl } from './media';
 import { MediaItem } from './types/project.model';
 import { skillIconMap } from './skills';
+import { readFileSync } from 'node:fs';
+import { listedAliases } from '../vite-plugin-sitemap.ts';
 
 /**
  * Data contract for the portfolio. Each project gets a page at
@@ -103,6 +105,18 @@ describe('early work (finished before the studio)', () => {
     ['', false],
   ])('year "%s" -> early: %s', (year, early) => {
     expect(at(year)).toBe(early);
+  });
+});
+
+describe('sitemap', () => {
+  test('lists exactly the listed projects', () => {
+    const fromSource = listedAliases(readFileSync('src/PROJECTS.ts', 'utf-8'));
+    expect(fromSource).toEqual(PROJECT_LIST.filter(isListed).map((p) => p.projectDetails.alias).sort((a, b) => fromSource.indexOf(a) - fromSource.indexOf(b)));
+    expect(new Set(fromSource)).toEqual(new Set(PROJECT_LIST.filter(isListed).map((p) => p.projectDetails.alias)));
+  });
+
+  test('every project has a brief to use as its page description', () => {
+    details.forEach((d) => expect(d.brief.trim().length).toBeGreaterThan(20));
   });
 });
 

@@ -1,6 +1,6 @@
 import { CSSProperties, Fragment, ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 import NotFound from '../Error/404';
 import MetaTags from '../../components/UI/MetaTags/MetaTags';
 import Ticker from '../../components/UI/Ticker/Ticker';
@@ -33,7 +33,11 @@ export default function ProjectDetailPage() {
   const { alias } = useParams<{ alias: string }>();
   const project = getProjectByAlias(alias);
 
-  useDocumentTitle(project ? project.projectDetails.name : 'Not Found');
+  usePageMeta({
+    title: project ? project.projectDetails.name : 'Not Found',
+    description: project?.projectDetails.brief,
+    noindex: !project,
+  });
 
   if (!project) {
     return <NotFound />;

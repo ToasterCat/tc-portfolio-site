@@ -1,11 +1,14 @@
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import usePageMeta from '../../hooks/usePageMeta';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import StatusLine from '../../components/UI/StatusLine/StatusLine';
 import { STUDIO_STATUS, STUDIO_STATUSES, StudioStatus } from '../../SITE';
 import './ContactPage.scss';
 
 export default function ContactPage() {
-  useDocumentTitle('Contact');
+  usePageMeta({
+    title: 'Contact',
+    description: 'Tell ToasterCat Studios what you’re making: games, websites, media, hardware, or consulting. Every message gets a reply from a person.',
+  });
 
   return (
     <>

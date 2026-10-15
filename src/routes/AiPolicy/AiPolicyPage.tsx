@@ -33,7 +33,12 @@ const SECTIONS: PolicySection[] = [
  */
 export default function AiPolicyPage() {
   return (
-    <PolicyDocument title="AI Usage Policy" updated="2026-10-14" sections={SECTIONS}>
+    <PolicyDocument
+      title="AI Usage Policy"
+      description="Where ToasterCat Studios uses AI, where it never does, and how we keep creative work and your IP human-made."
+      updated="2026-10-14"
+      sections={SECTIONS}
+    >
       <p>
         AI tools are in nearly every corner of tech now. If you’re trusting us with your
         project, you have a right to know whether we use them, how, and where we never will.
