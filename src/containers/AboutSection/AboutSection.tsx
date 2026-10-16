@@ -1,4 +1,5 @@
-import { LOCATIONS } from '../../SITE';
+import { ReactNode } from 'react';
+import { FOUNDER, LOCATIONS, PATREON } from '../../SITE';
 import { PROJECT_CATEGORIES } from '../../PROJECTS';
 import ShopReel, { ReelPhoto } from '../../components/UI/ShopReel/ShopReel';
 import reelGameDev from '../../assets/gallery/TC-Studio/reel-game-dev_960.webp';
@@ -36,11 +37,20 @@ const SHOP_REEL: ReelPhoto[] = [
  * separate "Where We Work" band. Under the sheet, a slow reel of the shop.
  */
 export default function AboutSection() {
-  const facts: [string, string][] = [
+  /* Read top to bottom as a story: when and where, who, what, with what, and
+   * how it's funded. One-word labels; values are short `·` lists. */
+  const facts: [string, ReactNode][] = [
     ['Est.', '2020 · building since 2011'],
     ['Based', LOCATIONS.join(' · ')],
-    ['Shop', '3D printer fleet · live room'],
+    ['Founder', <a className="prose-link" href={FOUNDER.to} target="_blank" rel="noopener noreferrer">{FOUNDER.label}</a>],
+    ['Team', 'specialist network'],
     ['Builds', PROJECT_CATEGORIES.map((c) => c.label.toLowerCase()).join(' · ')],
+    ['Shop', '3D printer fleet · live room'],
+    ['Cloud', 'hosting · build pipeline'],
+    [
+      'Funding',
+      <>client work · <a className="prose-link" href={PATREON.to} target="_blank" rel="noopener noreferrer">Patreon</a></>,
+    ],
   ];
 
   return (
@@ -59,18 +69,17 @@ export default function AboutSection() {
           </p>
           <p>
             What started as side projects in 2011 became ToasterCat Studios LLC in
-            2020, and a full-time studio in 2021. Before going independent, our
-            founder spent the better part of a decade building game technologies across
-            Amazon and AWS; from mobile game SDKs to digital storefronts
-            and payments, and from predictive analytics to the servers, logins, and
-            real-time networking behind hundreds of games&mdash;Ubisoft titles among
-            them. We know firsthand how large products ship and, more importantly, how
-            they fail, and how to avoid it.
+            2020, and a full-time studio in 2021. Before that, founder {FOUNDER.label} spent
+            the better part of a decade building game technology at Amazon and AWS,
+            from mobile SDKs and storefronts to the servers behind hundreds of live
+            games. We know firsthand how large products ship and, more importantly,
+            how they fail.
           </p>
           <p>
-            Games, software, hardware, and media all come out of the same
-            building&mdash;which is the whole point. If the vision is mad enough, we want
-            to talk shop.
+            With every discipline under one roof, we take projects end to end, from
+            first sketch to launch. Client work and our Patreon backers fund our
+            original projects, like BLACK0UT.PUNK. If the vision is mad enough, we
+            want to talk shop.
           </p>
         </div>
 

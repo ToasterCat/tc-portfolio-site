@@ -30,15 +30,24 @@ export const FOOTER_LINKS: SiteLink[] = [
   { label: 'AI Policy', to: '/ai-policy' },
 ];
 
+/* Also linked from the About copy (how the studio is funded). */
+export const PATREON: SiteLink = { label: 'Patreon', to: 'https://www.patreon.com/cw/ToasterCatStudios' };
+
 export const SOCIAL_LINKS: SiteLink[] = [
   { label: 'LinkedIn', to: 'https://www.linkedin.com/company/110969321' },
   { label: 'GitHub', to: 'https://github.com/ToasterCat' },
   { label: 'Discord', to: 'https://discord.gg/VENmWr635t' },
-  { label: 'Patreon', to: 'https://www.patreon.com/cw/ToasterCatStudios' },
+  PATREON,
   { label: 'Facebook', to: 'https://www.facebook.com/ToasterCat.Studios' },
 ];
 
 export const CONTACT_EMAIL = 'contact@toastercat.tech';
+
+/* The founder, named in About. His personal LinkedIn; SOCIAL_LINKS is the company's. */
+export const FOUNDER: SiteLink = {
+  label: 'Dirk Hortensius',
+  to: 'https://www.linkedin.com/in/dirk-hortensius/',
+};
 
 export const LOCATIONS = ['Seattle, WA.'];
 

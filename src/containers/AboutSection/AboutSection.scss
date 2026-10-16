@@ -90,6 +90,6 @@
   .about-inner {
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: base.$space-8;
-    align-items: center;
+    align-items: start; /* the story's heading lines up with the top of the spec sheet */
   }
 }

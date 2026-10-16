@@ -58,6 +58,10 @@ export default function ContactPage() {
               </li>
             </ol>
             <p className="contact-status-footnote">
+              If part of your project calls for a specialist outside our core team, we
+              may bring in a trusted peer. You&rsquo;ll still work with us directly.
+            </p>
+            <p className="contact-status-footnote">
               Timing follows the studio status below.
             </p>
           </section>
