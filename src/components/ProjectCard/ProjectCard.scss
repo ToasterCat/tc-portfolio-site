@@ -72,6 +72,19 @@
   border-radius: base.$radius;
 }
 
+/* Initials in the logo's spot: same place and size, the monogram's own face.
+ * (Doubled class to outrank both rule sets, no !important.) */
+.project-card-logo.project-card-monogram {
+  --size: 2.75rem;
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  background:
+    linear-gradient(rgba(base.$color-meta, 0.18), rgba(base.$color-meta, 0.18)),
+    base.$color-black;
+  border-color: rgba(base.$color-meta, 0.35);
+}
+
 /* ---- Body ------------------------------------------------------------ */
 
 .project-card-body {

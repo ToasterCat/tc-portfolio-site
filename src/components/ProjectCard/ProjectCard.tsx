@@ -5,6 +5,7 @@ import ProgressiveImg from '../UI/ProgressiveImg/ProgressiveImg';
 import { categoryLabel, shownOrigin } from '../../PROJECTS';
 import MetaTags from '../UI/MetaTags/MetaTags';
 import ExternalLinkButton from '../UI/ExternalLinkButton/ExternalLinkButton';
+import Monogram from '../UI/Monogram/Monogram';
 import './ProjectCard.scss';
 
 interface ProjectCardProps {
@@ -58,10 +59,12 @@ export default function ProjectCard(props: ProjectCardProps) {
   if (variant === 'row') {
     return (
       <article className="project-card project-card--row">
-        {/* The project's mark; else a square crop of its own cover; else the
-            "no photo yet" dot grid. Never a stand-in brand. */}
+        {/* The project's mark; else its initials; else a square crop of its
+            own cover; else the "no photo yet" dot grid. Never a stand-in brand. */}
         {logoSrc ? (
           <img className="project-card-row-logo" src={logoSrc} alt="" loading="lazy" decoding="async" />
+        ) : d.initials ? (
+          <Monogram text={d.initials} className="project-card-row-monogram" />
         ) : coverSrc ? (
           <img
             className="project-card-row-logo project-card-row-logo--cover"
@@ -86,8 +89,10 @@ export default function ProjectCard(props: ProjectCardProps) {
     <article className={`project-card project-card--${variant}`}>
       <div className={`project-card-cover ${coverSrc ? '' : 'project-card-cover--pattern'}`}>
         {coverSrc && <ProgressiveImg src={coverSrc} alt="" loading="lazy" decoding="async" />}
-        {logoSrc && (
+        {logoSrc ? (
           <img className="project-card-logo" src={logoSrc} alt="" loading="lazy" decoding="async" />
+        ) : d.initials && (
+          <Monogram text={d.initials} className="project-card-logo project-card-monogram" />
         )}
       </div>
 

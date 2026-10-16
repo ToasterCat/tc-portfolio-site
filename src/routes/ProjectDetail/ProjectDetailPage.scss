@@ -140,6 +140,11 @@ $spec-w: 18rem;
   object-fit: contain;
 }
 
+/* Initials in the mark's slot: --size keeps the box and letters in step. */
+.project-hero-monogram {
+  --size: 3rem;
+}
+
 /* The kind is a .tag (index.scss); this only places it. */
 .project-hero-kind {
   justify-self: start;
@@ -522,6 +527,10 @@ $spec-w: 18rem;
   .project-hero-thumb {
     width: 4.5rem;
     height: 4.5rem;
+  }
+
+  .project-hero-monogram {
+    --size: 4.5rem;
   }
 
   .project-hero-title {

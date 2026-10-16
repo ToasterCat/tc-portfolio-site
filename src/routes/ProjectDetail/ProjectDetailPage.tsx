@@ -6,6 +6,7 @@ import MetaTags from '../../components/UI/MetaTags/MetaTags';
 import Ticker from '../../components/UI/Ticker/Ticker';
 import Brackets from '../../components/UI/Brackets/Brackets';
 import ExternalLinkButton from '../../components/UI/ExternalLinkButton/ExternalLinkButton';
+import Monogram from '../../components/UI/Monogram/Monogram';
 import RichText, { InlineText } from '../../components/UI/RichText/RichText';
 import { skillIconMap } from '../../skills';
 import { mediaSize } from '../../media';
@@ -141,15 +142,17 @@ function ProjectHero(props: { details: ProjectDetails }) {
       {/* A grid: [KIND] eyebrow on top at full width; then the logo centred
           on the title; brief, hero link and tags follow in the text column
           (the tag ticker runs full width on phones). */}
-      <div className={`project-hero-inner ${thumbnail ? '' : 'project-hero-inner--no-thumb'}`}>
+      <div className={`project-hero-inner ${thumbnail || d.initials ? '' : 'project-hero-inner--no-thumb'}`}>
         {/* Eyebrow across the full width, so any length of kind fits and
             the logo and title below can centre on each other. */}
         {d.kind && (
           <p className="tag tag--quiet project-hero-kind">{d.kind}</p>
         )}
 
-        {thumbnail && (
+        {thumbnail ? (
           <img className="project-hero-thumb" src={thumbnail} alt={d.thumbnailImage?.alt ?? ''} />
+        ) : d.initials && (
+          <Monogram text={d.initials} className="project-hero-thumb project-hero-monogram" />
         )}
 
         <h1 className="project-hero-title">

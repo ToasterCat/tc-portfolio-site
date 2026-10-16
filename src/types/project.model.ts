@@ -133,6 +133,12 @@ export interface ProjectDetails {
    * (`tc-logo`) is only for work that's ours and carries our name.
    */
   thumbnailImage?: ProjectImage;
+  /**
+   * Two or three letters ("CT", "UNE") shown as a square badge wherever the
+   * thumbnail would go, for work with no mark of its own (consulting, mostly).
+   * Only for projects without a thumbnailImage; a real mark always wins.
+   */
+  initials?: string;
   backgroundImage?: ProjectImage;
 }
 

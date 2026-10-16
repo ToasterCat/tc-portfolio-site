@@ -1,0 +1,32 @@
+@use '../../../base';
+
+/* Initials in a square: the PostCard avatar's lettering and olive tint, on a
+ * solid base so it reads the same over a photo (card badges) or the page.
+ * Where it's placed sets --size; the letters scale with the box. */
+.monogram {
+  --size: 2.5rem;
+  box-sizing: border-box;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  background:
+    linear-gradient(rgba(base.$color-meta, 0.18), rgba(base.$color-meta, 0.18)),
+    base.$color-black;
+  border: 1px solid rgba(base.$color-meta, 0.35);
+  border-radius: base.$radius-sm;
+  color: base.$color-meta;
+  font-family: base.$font-heading;
+  font-size: calc(var(--size) * 0.36);
+  font-weight: base.$weight-heading;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Three letters in the same square: a step smaller, no extra tracking. */
+.monogram--long {
+  font-size: calc(var(--size) * 0.31);
+  letter-spacing: 0;
+}

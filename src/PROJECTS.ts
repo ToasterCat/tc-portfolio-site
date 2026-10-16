@@ -94,6 +94,7 @@ const PROJECTS: Record<string, Project> = {
       order: 100,
       featured: true,
       name: '“MusikMoji” — ClickTune LLC',
+      initials: 'CT',
       kind: `Client Consultation`,
       origin: 'client',
       status: 'delivered',
@@ -167,7 +168,8 @@ const PROJECTS: Record<string, Project> = {
       alias: 'jukedec',
       category: 'consult',
       order: 110,
-      name: '“JukeDec” — frigginGlorious',
+      name: '“JukeDec” — FrigginGlorio.us',
+      initials: 'JD',
       kind: `Research & Development`,
       origin: 'client',
       status: 'delivered',
@@ -223,12 +225,43 @@ const PROJECTS: Record<string, Project> = {
   },
 
 
+  une: {
+    projectDetails: {
+      alias: 'une',
+      category: 'consult',
+      order: 112,
+      // No media on purpose: the wireframes and business case are the client's
+      // material (handed over without terms), and the founders stay unnamed.
+      name: 'Ultimate Nightlife App',
+      initials: 'UNE',
+      kind: `Client Consultation`,
+      origin: 'client',
+      status: 'delivered',
+      roles: ['Feasibility Review', 'MVP Scoping', 'Technical Advisory'],
+      year: '2015',
+      outcome: 'Delivered the review and a recommended first release. After weighing the scope and the legal risk of sharing users’ live locations, the founders chose not to build.',
+      brief: `A feasibility and scoping review for a live nightlife app: real-time bar rankings, automatic check-ins, and social feeds.`,
+      body: [
+        `Two Indiana University founders brought us UNE, the “Ultimate Nightlife Experience”: an app showing which bars nearby are busiest right now, with automatic check-ins, live photo and video feeds for each venue, and leaderboards that rewarded posting.`,
+        `We broke the pitch down into the engineering it would take: native iOS and Android apps, a custom camera and media pipeline, always-on location tracking and its cost in battery and privacy, map integrations, a friends graph with linked social accounts, area-wide leaderboards, venue data intake, and the back end and support operations to run it all.`,
+        `The review recommended a much smaller first release: sign-in and friends through Facebook only, no custom camera, links out to existing map apps instead of an in-app map, and venue data entered by hand. It also flagged the risk at the heart of the idea: broadcasting where people are in real time invites harassment and liability, and if users switch automatic check-in off, it becomes just another check-in app.`,
+        `We presented the findings over email and video.`,
+      ],
+      skills: [
+        "Android",
+        "iOS"
+      ],
+    }
+  },
+
+
   liveShows: {
     projectDetails: {
       alias: 'live-shows',
       category: 'media',
       order: 115,
       name: 'Live Shows and Events',
+      initials: "LIVE",
       kind: `Show Promotion`,
       origin: 'in-house',
       status: 'live',
@@ -255,10 +288,6 @@ const PROJECTS: Record<string, Project> = {
       cardImage: {
         source: 'oas-2024-crowd-800',
         alt: 'A packed crowd at the Central Saloon'
-      },
-      thumbnailImage: {
-        source: 'oas-logo',
-        alt: 'OAS Band Logo'
       },
       backgroundImage: {
         source: 'oas-2024-central',
