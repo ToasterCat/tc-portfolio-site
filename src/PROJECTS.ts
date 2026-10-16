@@ -934,6 +934,7 @@ const PROJECTS: Record<string, Project> = {
       order: 150,
       featured: true,
       name: '“The Lizzie”',
+      initials: "2077",
       kind: `Prototype`,
       origin: 'client',
       status: 'shipped',
