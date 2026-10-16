@@ -167,7 +167,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'jukedec',
       category: 'consult',
       order: 110,
-      name: '“JukeDec” — Frigging Glorious LLC',
+      name: '“JukeDec” — frigginGlorious',
       kind: `Research & Development`,
       origin: 'client',
       status: 'delivered',
@@ -184,8 +184,8 @@ const PROJECTS: Record<string, Project> = {
         {
           quote: "Dirk from ToasterCat Studios is professional and pragmatic. His systems approach in framing large-scale projects into actionable pathways is truly valuable.",
           name: "Daniel Kraft",
-          title: "Web Developer, Open Sourcerer",
-          org: "friggingglorio.us"
+          title: "Founder, Developer",
+          org: "frigginglorio.us"
         }
       ],
       skills: [
