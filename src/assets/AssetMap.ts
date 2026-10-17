@@ -48,12 +48,13 @@ import discordLogo from './logos/external/discord-logo.png';
 
 import crudeMirrorLogo from './gallery/CrudeMirror/cm-logo-medium.png';
 import crudeMirrorBackground from './gallery/CrudeMirror/CM-Background.jpg';
-import crudeMirrorFull from './gallery/CrudeMirror/CMM-Glass.webp';
 // Live-site captures, 2026-10 (1440x900 desktop, 390px phone at 2x; PNGs alongside).
-import cm2026Home from './gallery/CrudeMirror/cm-2026-home.webp';
-import cm2026HomeSmall from './gallery/CrudeMirror/cm-2026-home_800.webp';
 import cm2026Article from './gallery/CrudeMirror/cm-2026-article.webp';
-import cm2026Mobile from './gallery/CrudeMirror/cm-2026-mobile.webp';
+// The refined 2022–2024 site, captured from the Wayback Machine (empty archived ad slots hidden).
+import cm2022Home from './gallery/CrudeMirror/cm-2022-home.webp';
+import cm2022HomeSmall from './gallery/CrudeMirror/cm-2022-home_800.webp';
+import cm2023Review from './gallery/CrudeMirror/cm-2023-review.webp';
+import cm2023Category from './gallery/CrudeMirror/cm-2023-category.webp';
 import oas2026Home from './gallery/OAS/oas-2026-home.webp';
 import oas2026HomeSmall from './gallery/OAS/oas-2026-home_800.webp';
 import oas2026Music from './gallery/OAS/oas-2026-music.webp';
@@ -92,7 +93,6 @@ import fossTargetRange from './gallery/FOSS/TargetRange.webp';
 import pixhellScreenshot2 from './gallery/PixHell/Screenshot_Game1.webp';
 import umaBabyReverse from './gallery/UMA/Baby-reverse_1600.webp';
 import umaNineStar from './gallery/UMA/9starShell_1600.webp';
-import crudeMirrorSiteScreenshot from './gallery/CrudeMirror/cm-site-screenshot-home-medium.png';
 
 import strongarmLogo from './gallery/StrongArm/logo-strongarm.png';
 import strongarmBackground from './gallery/StrongArm/hero_scaled.png';
@@ -229,11 +229,11 @@ const ASSET_MANIFEST = new Map<string, string> ([
     //- project-specific
     ["crude-mirror-logo", crudeMirrorLogo],
     ["crude-mirror-background", crudeMirrorBackground],
-    ["crude-mirror-full", crudeMirrorFull],
-    ["cm-2026-home", cm2026Home],
-    ["cm-2026-home-800", cm2026HomeSmall],
     ["cm-2026-article", cm2026Article],
-    ["cm-2026-mobile", cm2026Mobile],
+    ["cm-2022-home", cm2022Home],
+    ["cm-2022-home-800", cm2022HomeSmall],
+    ["cm-2023-review", cm2023Review],
+    ["cm-2023-category", cm2023Category],
     ["oas-2026-home", oas2026Home],
     ["oas-2026-home-800", oas2026HomeSmall],
     ["oas-2026-music", oas2026Music],
@@ -270,7 +270,6 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["pixhell-screenshot-2", pixhellScreenshot2],
     ["uma-baby-reverse", umaBabyReverse],
     ["uma-nine-star", umaNineStar],
-    ["crude-mirror-site-screenshot", crudeMirrorSiteScreenshot],
 
     ["pixhell-flyer", pixhellFlyer],
     ["pixhell-logo", pixhellLogo],

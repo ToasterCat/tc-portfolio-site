@@ -435,17 +435,18 @@ const PROJECTS: Record<string, Project> = {
       kind: `Media Blog`,
       origin: 'in-house',
       status: 'live',
-      roles: ['Cloud Services', 'Business Infrastructure'],
+      roles: ['Cloud Hosting', 'Front-End Design', 'Analytics', 'Ad Monetization'],
       credits: [
         { name: 'Peter Hortensius', role: 'Head Writer' },
       ],
-      year: '2021',
-      outcome: 'Site launched in 2021 to produce annual user growth and consistent AdSense impression revenue.',
-      brief: `“A Poorly Edited Editorial”: a multimedia pop-culture blog powered by an SEO-driven ad revenue model.`,
+      year: '2021–Present',
+      brief: `“A Poorly Edited Editorial”: a pop-culture publication we launched, host, and tune, paid for by its own ad revenue.`,
       body: [
-        `“Crude Mirror Media” was launched by ToasterCat Studios in April 2021 alongside a complete suite of analytics and revenue tracking tools.`,
-        `We run the platform, hosting, and revenue infrastructure; editorial is subcontracted to head writer Peter Hortensius, who writes and owns the content.`,
+        `ToasterCat launched “Crude Mirror Media” in April 2021: a pop-culture publication of reviews, editorials, and “Dreamcasts”, casting and pitch proposals for the films and shows that should exist.`,
+        `The site is WordPress on AWS Lightsail, chosen for low, predictable hosting costs over the long haul. Google Analytics tracks readership, and AdSense placements are managed through the Advanced Ads plugin, so the revenue side can be tuned without touching the content.`,
+        `We tuned the design for the audience it writes for: a magazine layout with a trending ticker, a feature mosaic, big stills, and bold category tags under a shattered-screen masthead. Custom CSS keeps headlines, tags, and cards consistent across every column, from the front page to the sidebars.`,
       ],
+      outcome: 'Steady reader growth across multiple countries since launch, with particular success in Latin and South America. AdSense revenue keeping the site in the black.',
       skills: [
         "WordPress",
         "AdSense",
@@ -460,8 +461,8 @@ const PROJECTS: Record<string, Project> = {
         },
       ],
       cardImage: {
-        source: 'cm-2026-home-800',
-        alt: 'Homepage of the live site'
+        source: 'cm-2022-home-800',
+        alt: 'The Crude Mirror Media homepage in 2022'
       },
       thumbnailImage: {
         source: 'crude-mirror-logo',
@@ -474,13 +475,14 @@ const PROJECTS: Record<string, Project> = {
       media: {
         featured: {
           type: 'image',
-          src: 'cm-2026-home',
-          alt: 'The Crude Mirror Media homepage: masthead, trending ticker, and featured articles',
+          src: 'cm-2022-home',
+          alt: 'The Crude Mirror Media homepage: masthead, menu, trending ticker, and a mosaic of featured Star Wars articles',
+          caption: 'The homepage in mid-2022: trending ticker, feature mosaic, and category tags.',
         },
         gallery: [
+          { type: 'image', src: 'cm-2023-review', alt: 'A Rings of Power review with breadcrumbs, category tags, a byline, a pull quote, and the Dreamcast and Review sidebars', caption: 'A review page, 2023: breadcrumbs, byline, and a styled pull quote.' },
+          { type: 'image', src: 'cm-2023-category', alt: 'The Star Wars category page with a featured Bad Batch review and the Dreamcast and Review sidebars', caption: 'A category page, 2023.' },
           { type: 'image', src: 'cm-2026-article', alt: 'A Crude Mirror Media article listing with the review sidebar' },
-          { type: 'image', src: 'cm-2026-mobile', alt: 'The Crude Mirror Media homepage on a phone' },
-          { type: 'image', src: 'crude-mirror-full', alt: 'Crude Mirror Media shattered-glass banner' },
         ],
       },
     }
@@ -1095,7 +1097,7 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     anchor: 'websites',
     legacyAnchors: ['proj-web'],
     pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
-    flagship: 'oas-website',
+    flagship: 'crude-mirror',
     cta: 'Build a website',
     confidentialNote: 'We’ve built far more sites than we can show here; most are under NDA. Ask us about them.',
   },
