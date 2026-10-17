@@ -82,7 +82,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
   - `/privacy`
   - `/ai-policy`
   - a catch-all 404
-  - `/projects` and old `#proj-*` anchors redirect to `/portfolio`.
+  - `/projects` (the old portfolio URL) redirects to `/portfolio`: a permanent 301 in `vercel.json` in production, plus a client-side `<Redirect>` for dev. There's no other legacy-link handling (old `#proj-*` anchors and renamed-alias redirects were removed 2026-10-16); add a `vercel.json` redirect if a URL ever changes after it's been shared.
 - **Reusable UI** in `src/components/UI`:
   - `Brackets` (tertiary button label), `TcMark` and `BrandMark` (logos), `NyanToaster` (404 sprite)
   - `Ticker` (tags that scroll only when they overflow), `Media/*` (MediaFrame, Gallery, Lightbox)

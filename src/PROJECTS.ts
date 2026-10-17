@@ -1046,14 +1046,6 @@ const PROJECTS: Record<string, Project> = {
  * ------------------------------------------------------------------------*/
 
 /**
- * Old project aliases -> current ones. Renamed projects keep their old
- * /portfolio/<alias> links working through a redirect (see App).
- */
-export const RENAMED_ALIASES: Record<string, string> = {
-  'tc-print-pistol': 'rail-bridges',
-};
-
-/**
  * A service we sell, and the /portfolio section that proves it. Reads like a
  * resume entry: the pitch, the best piece of work (flagship), the rest of
  * the evidence, then the ask (cta).
@@ -1064,8 +1056,6 @@ export interface CategoryInfo {
   label: string;
   /** Section id on /portfolio (/portfolio#websites). */
   anchor: string;
-  /** Old anchors (/projects#proj-*, renamed sections), redirected to `anchor`. */
-  legacyAnchors: string[];
   /** One line: what you'd hire us for. */
   pitch: string;
   /** Alias of the project shown large as this service's best proof. */
@@ -1085,7 +1075,6 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'game',
     label: 'Games',
     anchor: 'games',
-    legacyAnchors: ['proj-game'],
     pitch: 'Whole titles, or the pieces your team needs: systems, tools, levels, and art.',
     flagship: 'blackout-punk',
     cta: 'Bring us your game',
@@ -1095,7 +1084,6 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'web',
     label: 'Websites',
     anchor: 'websites',
-    legacyAnchors: ['proj-web'],
     pitch: 'Fast, custom sites built lean and cheaper than Squarespace.',
     flagship: 'crude-mirror',
     cta: 'Build a website',
@@ -1105,8 +1093,6 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'media',
     label: 'Digital Media',
     anchor: 'media',
-    // This section was "Audio" until 2026-10.
-    legacyAnchors: ['proj-audio', 'audio'],
     pitch: 'Recording and mixing, plus the flyers, banners, and artwork that fill a room, proven at our own shows.',
     flagship: 'outside-agitators',
     cta: 'Start a media project',
@@ -1115,7 +1101,6 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'proto',
     label: 'Prototyping',
     anchor: 'prototyping',
-    legacyAnchors: ['proj-proto'],
     pitch: 'From napkin sketch to a part in your hand: modeling, printing, and iterating.',
     flagship: 'moxel',
     cta: 'Start a prototype',
@@ -1125,7 +1110,6 @@ export const PROJECT_CATEGORIES: CategoryInfo[] = [
     key: 'consult',
     label: 'Consulting',
     anchor: 'consulting',
-    legacyAnchors: ['proj-consult'],
     pitch: 'Technical research and architecture before you commit to building. Sometimes the most valuable outcome is a confident “not yet”.',
     flagship: 'clicktune',
     cta: 'Book a consultation',

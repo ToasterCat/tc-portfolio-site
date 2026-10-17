@@ -11,6 +11,10 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/projects", "destination": "/portfolio", "permanent": true },
+    { "source": "/projects/", "destination": "/portfolio", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

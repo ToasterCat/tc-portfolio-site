@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import usePageMeta from '../../hooks/usePageMeta';
 import useHorizontalScroll from '../../hooks/useHorizontalScroll';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
@@ -24,7 +24,6 @@ export default function PortfolioPage() {
     title: 'Portfolio',
     description: 'Games, websites, digital media, prototypes, and consulting work from ToasterCat Studios, a Seattle studio, grouped by service.',
   });
-  useLegacyAnchorRedirect();
   const active = useActiveSection(PROJECT_CATEGORIES.map((c) => c.anchor));
   const jumpList = useRef<HTMLUListElement>(null);
   const { fadeProps } = useHorizontalScroll(jumpList);
@@ -191,18 +190,6 @@ function useActiveSection(ids: string[]) {
   }, [key]);
 
   return active;
-}
-
-/** /portfolio#proj-web (pre-resume anchors) -> /portfolio#websites, #audio -> #media. */
-function useLegacyAnchorRedirect() {
-  const { hash } = useLocation();
-  const history = useHistory();
-  useEffect(() => {
-    const legacy = PROJECT_CATEGORIES.find((c) => c.legacyAnchors.some((a) => `#${a}` === hash));
-    if (legacy) {
-      history.replace({ hash: `#${legacy.anchor}` });
-    }
-  }, [hash, history]);
 }
 
 /** Crossed-out eye ("hidden"), stroked in currentColor to sit in the meta palette. */
