@@ -806,7 +806,19 @@ const PROJECTS: Record<string, Project> = {
         `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructible environment assets. Featured finalist at VT Game Expo 2014.`,
       ],
       media: {
+        featured: {
+          type: 'clip',
+          src: 'cm-lego',
+          poster: 'cm-lego-poster',
+          alt: 'Chick Magnet’s Lego level: a boulder smashes through a red brick wall, boulders burst green walls into yellow bricks, a blue Lego structure shatters, the chick crashes through a green wall into a blue room, then a glass floor lined with minifigs collapses and the chick falls down a shaft through the bricks',
+          caption: 'Fully destructible Lego that comes apart brick by brick, right down to the floor beneath you.',
+        },
         gallery: [
+          { type: 'clip', src: 'cm-magnets', poster: 'cm-magnets-poster', alt: 'The chick’s magnet beams push a metal trunk away, then turn red and pull it back; in a dark room, the chick lifts a dice cube overhead with its magnet and throws it up and out of the shot', caption: 'Two magnets. Push it, pull it, grab it, throw it.' },
+          { type: 'clip', src: 'cm-launch', poster: 'cm-launch-poster', alt: 'The chick pushes against a fire truck with its magnets and slides backward, pulls itself back to the truck, then pushes down on it and launches into the air', caption: 'Can’t move it? Push off it and fly.' },
+          { type: 'clip', src: 'cm-furby', poster: 'cm-furby-poster', alt: 'In a dark room, the chick walks up to a green Furby, which lights up with wide eyes; the chick turns, runs off the end of the shelf, and drops into the dark, leaving the Furby staring', caption: 'Some toys are better left in the dark.' },
+          { type: 'clip', src: 'cm-troll', poster: 'cm-troll-poster', alt: 'A troll doll with cyan hair creeps toward the camera; the chick runs from it along a ledge and jumps a lava pit; the troll walks into the lava and climbs out the other side', caption: 'Lava won’t stop it. Run.' },
+          { type: 'image', src: 'cm-still-minifigs', alt: 'The chick on a studded Lego floor with minifigs ahead', caption: 'The minifig hall.' },
           { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet flyer' },
         ],
       },

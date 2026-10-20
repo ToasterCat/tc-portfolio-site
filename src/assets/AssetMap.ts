@@ -183,6 +183,21 @@ import tcProductDetailPoster from './gallery/TC-Print/TC-Product-Rotation_poster
 
 import chickMagnetFlyer from './gallery/ChickMagnet/flyer_scaled.jpeg';
 import chickMagnetLogo from './gallery/ChickMagnet/logo-clipart-medium.png';
+// Captured in 2026 from the original Unity 4 project, ported to Unity 2022 and played by a
+// capture-only driver (Workspace/ChickMagnet/tools): a bot that runs right and uses the
+// magnets when stuck, or a scripted control plan, some with a fixed camera. The game's
+// own physics and destruction, cut clear of checkpoint resets.
+import cmLego from './gallery/ChickMagnet/cm-lego.mp4';
+import cmLegoPoster from './gallery/ChickMagnet/cm-lego_poster.webp';
+import cmMagnets from './gallery/ChickMagnet/cm-magnets.mp4';
+import cmMagnetsPoster from './gallery/ChickMagnet/cm-magnets_poster.webp';
+import cmLaunch from './gallery/ChickMagnet/cm-launch.mp4';
+import cmLaunchPoster from './gallery/ChickMagnet/cm-launch_poster.webp';
+import cmFurby from './gallery/ChickMagnet/cm-furby.mp4';
+import cmFurbyPoster from './gallery/ChickMagnet/cm-furby_poster.webp';
+import cmTroll from './gallery/ChickMagnet/cm-troll.mp4';
+import cmTrollPoster from './gallery/ChickMagnet/cm-troll_poster.webp';
+import cmStillMinifigs from './gallery/ChickMagnet/cm-still-minifigs.webp';
 
 import lizzieProfile from './gallery/Lizzie/LizzieHand_scaled.jpg';
 import lizzieTinker from './gallery/Lizzie/LizzieTinker.jpg';
@@ -362,6 +377,17 @@ const ASSET_MANIFEST = new Map<string, string> ([
 
     ["chick-magnet-flyer", chickMagnetFlyer],
     ["chick-magnet-logo", chickMagnetLogo],
+    ["cm-lego", cmLego],
+    ["cm-lego-poster", cmLegoPoster],
+    ["cm-magnets", cmMagnets],
+    ["cm-magnets-poster", cmMagnetsPoster],
+    ["cm-launch", cmLaunch],
+    ["cm-launch-poster", cmLaunchPoster],
+    ["cm-furby", cmFurby],
+    ["cm-furby-poster", cmFurbyPoster],
+    ["cm-troll", cmTroll],
+    ["cm-troll-poster", cmTrollPoster],
+    ["cm-still-minifigs", cmStillMinifigs],
 
     ["lizzie-profile", lizzieProfile],
     ["lizzie-tinker", lizzieTinker],
