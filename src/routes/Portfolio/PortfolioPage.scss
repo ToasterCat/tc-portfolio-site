@@ -195,27 +195,24 @@ $jump-h: 3rem;
   opacity: 0.8;
 }
 
+/* NDA footnote: plain secondary text with a small icon. No box, border, or hover
+ * (it isn't a project, so it mustn't look like a row). */
 .portfolio-service-confidential {
   display: flex;
-  align-items: center;
-  gap: base.$space-4;
-  padding: base.$space-3 base.$space-4;
+  align-items: flex-start;
+  gap: base.$space-2;
+  margin: 0;
+  font-size: base.$type-meta;
+  line-height: 1.5;
   color: base.$site-color-gray;
-  border: 1px dashed rgba(base.$site-color-gray, 0.25);
-  border-radius: base.$radius;
-}
-
-.portfolio-service-confidential-mark {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  padding: 0.2em 0.45em;
 }
 
 .portfolio-service-confidential-icon {
-  width: 1.1rem;
-  height: 1.1rem;
-  color: base.$color-meta;
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.2em; /* centered on the first line */
+  color: base.$color-meta-dim-text;
 }
 
 .portfolio-service-cta {

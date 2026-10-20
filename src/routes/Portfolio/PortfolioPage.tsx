@@ -113,7 +113,7 @@ function ServiceSection(props: { category: CategoryInfo }) {
           <ProjectCard project={flagship} variant="feature" showYear={false} headingLevel="h3" />
         )}
 
-        {(rest.length > 0 || c.confidentialNote) && (
+        {rest.length > 0 && (
           <div className="portfolio-service-more">
             <h3 className="meta meta-dim portfolio-service-more-label">More {c.label.toLowerCase()}</h3>
             <ul className="portfolio-service-rows">
@@ -122,16 +122,16 @@ function ServiceSection(props: { category: CategoryInfo }) {
                   <ProjectCard project={p} variant="row" headingLevel="h4" />
                 </li>
               ))}
-              {c.confidentialNote && (
-                <li className="portfolio-service-confidential">
-                  <span className="tag portfolio-service-confidential-mark" aria-hidden="true">
-                    <HiddenIcon />
-                  </span>
-                  <span>{c.confidentialNote}</span>
-                </li>
-              )}
             </ul>
           </div>
+        )}
+
+        {/* A footnote, not a row: no box and no hover, so it doesn't read as clickable. */}
+        {c.confidentialNote && (
+          <p className="portfolio-service-confidential">
+            <HiddenIcon />
+            <span>{c.confidentialNote}</span>
+          </p>
         )}
 
         {early.length > 0 && (
@@ -197,6 +197,7 @@ function HiddenIcon() {
   return (
     <svg
       className="portfolio-service-confidential-icon"
+      aria-hidden="true"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
