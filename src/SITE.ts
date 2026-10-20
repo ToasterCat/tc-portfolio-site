@@ -46,7 +46,7 @@ export const CONTACT_EMAIL = 'contact@toastercat.tech';
 /* The founder, named in About. His personal LinkedIn; SOCIAL_LINKS is the company's. */
 export const FOUNDER: SiteLink = {
   label: 'Dirk Hortensius',
-  to: 'https://www.linkedin.com/in/dirk-hortensius/',
+  to: 'https://dirk-hortensi.us',
 };
 
 export const LOCATIONS = ['Seattle, WA.'];
