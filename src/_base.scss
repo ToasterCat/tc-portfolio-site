@@ -149,6 +149,10 @@ $site-color-light: #2c2f33;
 
 $color-meta: $color-olive-green;
 $color-meta-dim: #7d7a3c;
+/* Dim olive for text. The shade above is for lines (borders, hairlines, underlines);
+ * as text it's only 3.0-4.3:1. This one clears AA (4.5:1) on every surface it sits on:
+ * 5.5:1 on the page (#202124), 4.6:1 on cards (#2c2f33), 6.5:1 on the bars (#111). */
+$color-meta-dim-text: #9e9a4c;
 $color-signal: #F05A3F;
 $color-signal-fill: #C0392B;
 $color-on-signal: #F2F0EB;

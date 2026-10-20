@@ -82,8 +82,14 @@
   list-style: none;
 }
 
+/* Taller tap targets (30 px, up from 18; WCAG 2.5.8): the padding grows the hit
+ * area and the matching negative margin keeps the list's spacing. Half the list gap
+ * each way, so neighboring targets meet without overlapping. */
 .footer-col a,
 .footer-col a:visited {
+  display: inline-block;
+  padding: calc(#{base.$space-2} / 2) 0;
+  margin: calc(-1 * #{base.$space-2} / 2) 0;
   color: base.$color-light;
   text-decoration: none;
   transition: color base.$hover;

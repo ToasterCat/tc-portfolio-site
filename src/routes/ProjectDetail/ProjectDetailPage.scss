@@ -36,7 +36,13 @@ $spec-w: 18rem;
   padding-top: base.$space-4;
   padding-bottom: base.$space-4;
 
+  /* The only way onward from a project page, so a full-size tap target (WCAG 2.5.8):
+   * the padding grows the hit area and the matching negative margin keeps the
+   * crumb exactly where it was. */
   a {
+    display: inline-block;
+    padding: base.$space-2;
+    margin: calc(-1 * #{base.$space-2});
     color: base.$color-meta;
     text-decoration: none;
   }
@@ -263,7 +269,7 @@ $spec-w: 18rem;
   font-size: base.$type-meta-sm;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: base.$color-meta-dim;
+  color: base.$color-meta-dim-text;
   border-bottom: 1px solid rgba(base.$color-meta-dim, 0.45);
 }
 

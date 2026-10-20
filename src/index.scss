@@ -88,7 +88,7 @@ h1, h2, h3, h4 {
 }
 
 .meta-dim {
-  color: base.$color-meta-dim;
+  color: base.$color-meta-dim-text;
 }
 
 /**
@@ -120,7 +120,7 @@ h1, h2, h3, h4 {
 /* Quiet: same shape, stepped back, for labels that sit beside a title
  * (project kinds), so the title stays what the eye lands on. */
 .tag--quiet {
-  color: base.$color-meta-dim;
+  color: base.$color-meta-dim-text;
   background-color: transparent;
   border-color: rgba(base.$color-meta-dim, 0.5);
 }

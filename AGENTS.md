@@ -102,7 +102,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
 - **Roles:** `roles` is always a list of short, parallel entries ("Recording", "Mixing"), never a sentence. The spec sheet labels it "Role" or "Roles" by count and hides the row when empty.
 - **Credits:** named collaborators go in a project's `credits` (name and role), shown as a Team row in the spec sheet. Student and pre-studio projects (PixHell, Chick Magnet) don't list names.
 - **In-house flags:** don't mark current projects as in-house on cards or project pages (it "deflates our exhibition"). Early work keeps `#in-house`, since it really was made for ourselves. `shownOrigin()` in `PROJECTS.ts` applies this everywhere.
-- **Header nav:** Home and Portfolio plus the Hire Us button. The current page is marked with plain `| Page |` bars (box-drawing variants were tried and rejected).
+- **Header nav:** Home and Portfolio plus the Hire Us button. The current page is marked with plain `| Page |` bars (box-drawing variants were tried and rejected). Hire Us gets no current-page state on `/contact`: a filled red button there was tried and rejected as confusing (2026-10-20).
 - **Footer:** the studio-status line appears only in the footer, which links to the guide on `/contact#status`.
 - **Founder and team on the site:** About names the founder in the prose. The spec sheet carries the facts, and it holds the only links: Founder → his LinkedIn, Funding → Patreon. There are no links in the About prose. There's no founder photo on the site (a deliberate choice; the photo is for the pitch deck). The spec sheet reads as a story, in this order: Est., Based, Founder, Team ("specialist network"), Builds, Shop, Cloud (vendor-neutral: "hosting · build pipeline"), Funding. Labels are one word; values are short `·` lists. Public funding copy states current sources only (client work, Patreon); expansion plans and any raise stay off the site. BLACK0UT.PUNK partners who aren't on payroll are never named or alluded to (non-compete constraints).
 - **Not doing:** per-project link previews (build-time pages and share images; too much machinery for the payoff).
@@ -120,7 +120,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **Colour:**
   - Warm, never pure white: text `$color-light #EDE8DF`, secondary text `$site-color-gray #C4BFB4`.
   - **Signal red** (a vermilion, not salmon): `$color-signal #F05A3F` for lines, hover text, and focus rings; `$color-signal-fill #C0392B` for fills, with `$color-on-signal #F2F0EB` text on them.
-  - **Olive** for meta: `$color-meta #BAB55A` and `$color-meta-dim #7d7a3c`.
+  - **Olive** for meta: `$color-meta #BAB55A`, and two dim shades: `$color-meta-dim-text #9e9a4c` for dim text (AA on every surface) and `$color-meta-dim #7d7a3c` for lines only (borders, hairlines, underlines; too dark for text).
   - **Status traffic light** (state, never interaction):
     - `$color-success` / `$color-status-open` `#7FB069` (sage green) for open for work and message sent.
     - Olive for limited availability.

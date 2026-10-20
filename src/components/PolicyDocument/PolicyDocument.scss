@@ -80,7 +80,7 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
       font-family: base.$font-mono;
       font-size: base.$type-meta-sm;
       line-height: 1.9;
-      color: base.$color-meta-dim;
+      color: base.$color-meta-dim-text;
     }
 
     &:hover,
@@ -219,7 +219,7 @@ $directory-bp: 64rem; /* room for the column beside a full measure */
 
     li::marker {
       font-family: base.$font-mono;
-      color: base.$color-meta-dim;
+      color: base.$color-meta-dim-text;
     }
 
     .meta {
