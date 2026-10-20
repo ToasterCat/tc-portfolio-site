@@ -97,7 +97,6 @@ import lizzieAlt from './gallery/Lizzie/LizzieAlt_1600.webp';
 import moxelDetail from './gallery/Moxel/moxel-gloria-detail_1600.webp';
 import fossShowcase from './gallery/FOSS/LizzieShowcase_1600.webp';
 import fossTargetRange from './gallery/FOSS/TargetRange.webp';
-import pixhellScreenshot2 from './gallery/PixHell/Screenshot_Game1.webp';
 import umaBabyReverse from './gallery/UMA/Baby-reverse_1600.webp';
 import umaNineStar from './gallery/UMA/9starShell_1600.webp';
 
@@ -109,6 +108,15 @@ import pixhellFlyer from './gallery/PixHell/Promotional.webp';
 import pixhellLogo from './gallery/PixHell/Player.png';
 import pixhellBackground from './gallery/PixHell/Background.png';
 import pixhellScreenshot from './gallery/PixHell/Screenshot_Game0.webp';
+// Captured in 2026 by running the game's own gameplay and drawing code on the desktop
+// (Workspace/PixHell/tools): a bot steers by feeding tilt readings to the game's sensor
+// listener; the ship fires on its own, as in the game. Uncut, real time.
+import phGameplay from './gallery/PixHell/ph-gameplay.mp4';
+import phGameplayPoster from './gallery/PixHell/ph-gameplay_poster.webp';
+import phTriblaster from './gallery/PixHell/ph-triblaster.mp4';
+import phTriblasterPoster from './gallery/PixHell/ph-triblaster_poster.webp';
+import phDodge from './gallery/PixHell/ph-dodge.mp4';
+import phDodgePoster from './gallery/PixHell/ph-dodge_poster.webp';
 
 import oasLogo from './gallery/OAS/OAS-logo.png';
 import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
@@ -330,7 +338,6 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["moxel-detail", moxelDetail],
     ["foss-showcase", fossShowcase],
     ["foss-target-range", fossTargetRange],
-    ["pixhell-screenshot-2", pixhellScreenshot2],
     ["uma-baby-reverse", umaBabyReverse],
     ["uma-nine-star", umaNineStar],
 
@@ -338,6 +345,12 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["pixhell-logo", pixhellLogo],
     ["pixhell-background", pixhellBackground],
     ["pixhell-screenshot", pixhellScreenshot],
+    ["ph-gameplay", phGameplay],
+    ["ph-gameplay-poster", phGameplayPoster],
+    ["ph-triblaster", phTriblaster],
+    ["ph-triblaster-poster", phTriblasterPoster],
+    ["ph-dodge", phDodge],
+    ["ph-dodge-poster", phDodgePoster],
 
     ["strongarm-logo", strongarmLogo],
     ["strongarm-background", strongarmBackground],

@@ -682,7 +682,9 @@ const PROJECTS: Record<string, Project> = {
       outcome: 'Project shipped and available for purchase on Amazon AppStore.',
       brief: `A rogue-like bullet hell game for Android using custom motion controls and procedural enemy generation.`,
       body: [
-        `A mobile game developed entirely in native Android, using custom rendering and peripheral interpolation. All audio and multimedia assets generated in-house. Featured finalist at Irvine Mobile Game Jam 2013.`,
+        `PixHell is a bullet hell you play by tilting. Lean the tablet and the ship slides across the starfield while it fires on its own, so the whole game is reading the incoming fire and finding the gap. Every wave sends more enemies, faster and tougher than the last, and each one flies its own randomly generated path: a straight dive, a drunken wander, or a zigzag across the screen. Downed enemies either explode for points or drop coins to chase.`,
+        `**Under the hood:** native Android with no engine. A fixed-rate game thread steps the simulation every 16 milliseconds, and the view draws every sprite straight onto the screen canvas. Tilt comes from the raw accelerometer, sorted into speed bands with a dead zone and an adjustable sensitivity, so a steady hand holds the ship still and a hard lean sends it across the screen. Weapons are modular launchers with their own cooldowns and shot patterns (bullets, missiles, and a three-way tri-blaster), swappable mid-run from the pause menu. The in-game store and A/B tests ran on Amazon’s SDKs; one test started players on the tri-blaster to see how it changed their play.`,
+        `All of the art, sound effects, and soundtrack were made in-house. A featured finalist at Irvine Mobile Game Jam 2013, and later released on the Amazon Appstore.`,
       ],
       skills: [
         "Android",
@@ -711,13 +713,17 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
-          src: 'pixhell-flyer',
-          alt: 'PixHell',
+          type: 'clip',
+          src: 'ph-gameplay',
+          poster: 'ph-gameplay-poster',
+          alt: 'PixHell gameplay in portrait: waves of pixel-art enemy ships fly down a starfield firing pink shots while the green player ship weaves between them, firing missiles that blow enemies apart and leave gold coins falling',
+          caption: 'Tilt to dodge. The ship does the shooting.',
         },
         gallery: [
+          { type: 'image', src: 'pixhell-flyer', alt: 'PixHell' },
+          { type: 'clip', src: 'ph-triblaster', poster: 'ph-triblaster-poster', alt: 'The player ship fires three-way shots up at waves of enemy ships, dodging their pink fire as destroyed enemies drop gold coins', caption: 'Triple the firepower.' },
           { type: 'image', src: 'pixhell-screenshot', alt: 'PixHell gameplay on a phone' },
-          { type: 'image', src: 'pixhell-screenshot-2', alt: 'PixHell gameplay with enemies attacking' },
+          { type: 'clip', src: 'ph-dodge', poster: 'ph-dodge-poster', alt: 'A close, wide view of the player ship weaving side to side through streams of pink enemy shots as enemy ships pass by', caption: 'Threading the needle, one tilt at a time.' },
         ],
       },
     }
@@ -736,15 +742,15 @@ const PROJECTS: Record<string, Project> = {
       status: 'archived',
       roles: ['Solo Developer'],
       year: '2014',
-      outcome: `Shelved at a playable demo. Still archived and maintained, with a partial port to Unreal Engine as a back-burner project.`,
-      brief: `A non-commercial fan remake of the classic “Star Wars: Rogue Squadron” flight experience, built with modern engines and Creative Commons assets.`,
+      outcome: `Shelved at a playable demo, and still archived and maintained.`,
+      brief: `A non-commercial fan remake of the classic “Star Wars: Rogue Squadron” flight experience, built in Unity with Creative Commons assets.`,
       body: [
         `A solo, non-commercial fan project in Unity, built to recapture the flight of Rogue Squadron II and III. It reached a playable demo: you pilot a starfighter and dogfight simple enemy ships, with controls that mirror the originals exactly.`,
+        `**Under the hood:** every craft is assembled from the same interchangeable parts. A ship has a primary and a secondary weapon slot, and any weapon fits either one: a single laser cannon, or a linked system that chains any number of cannons and fires them in turn at a set rate, the way an X-Wing alternates its guns. Controls sit apart from the ship itself, so the player’s fighter and every other craft in the fleet share one flight model. That model runs in MGLT, the speed unit from Star Wars ship specs, with acceleration, braking, and a throttle that settles back to cruise, and turn assist banks the ship into its turns the way the originals did. When a hull gives out, the ship doesn’t just vanish: it loses control and tumbles out of the sky on its own momentum.`,
         `It was shelved in 2014 when other work took over, and when Disney’s purchase of Lucasfilm made the future of fan projects uncertain.`,
       ],
       skills: [
         "Unity",
-        "Unreal",
         "Maya",
         "Fusion360"
       ],
@@ -803,7 +809,9 @@ const PROJECTS: Record<string, Project> = {
       outcome: 'Project shipped and reviewed as a featured finalist at VT Game Expo 2014',
       brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a dilapidated toy factory using physics, magnetism, and wit.`,
       body: [
-        `Developed by a team of 9 over a rapid development cycle of 4 months. Implemented using custom physics, rigging deformations, and destructible environment assets. Featured finalist at VT Game Expo 2014.`,
+        `Chick Magnet is a 2.5-D platformer about a lost toy chick with a magnet in each hand. Each magnet aims on its own stick and flips between push and pull, and physics decides who moves: anything lighter than the chick gets shoved or dragged, while anything heavier, or bolted down, moves the chick instead. That one rule makes the magnets do everything. They clear blocks, haul the chick toward anchored objects, and launch it off a parked fire truck. Pull something small up close and it locks to the magnet, ready to carry and throw.`,
+        `**Our part:** level design and gameplay engineering, including the Lego level and its destruction system. Every Lego wall knows its size in studs and how rigid that makes it. When a boulder, a toy, or the chick hits it hard enough, it breaks at the point of impact into loose bricks, and the sections on either side come away as tumbling debris. The level is built around it: an opening boulder smashes the first wall, the chick rams boulders through caution walls with its magnets, and a glass floor gives way under a bridge of minifigs to drop the chick down a shaft.`,
+        `**Under the hood:** Unity, with every magnetic object deciding for itself how it answers a magnet, so a fire-truck ladder, a nail that sets off an avalanche, and an ordinary crate all share one system. Trigger zones retune the camera and the chick’s movement from area to area, so each set piece frames itself. Built by a student team over a four-month cycle, and a featured finalist at VT Game Expo 2014.`,
       ],
       media: {
         featured: {
