@@ -42,6 +42,12 @@ export default function Header() {
 
   return (
     <>
+      {/* First stop for keyboard users: jump past the header (WCAG 2.4.1).
+          Hidden until it has focus. */}
+      <a className="btn btn--tertiary skip-link" href="#main">
+        <Brackets>Skip to content</Brackets>
+      </a>
+
       <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
         <Link to="/" className="header-brand">
           <TcMark className="header-brand-mark" />

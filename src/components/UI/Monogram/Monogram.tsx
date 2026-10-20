@@ -1,7 +1,7 @@
 import './Monogram.scss';
 
 interface MonogramProps {
-  /** Two or three letters, e.g. "CT" or "UNE". */
+  /** Two to four capitals or digits, e.g. "CT", "UNE", or "LIVE". */
   text: string;
   className?: string;
 }

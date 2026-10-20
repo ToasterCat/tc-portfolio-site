@@ -17,7 +17,8 @@ function App() {
 
       <Header />
 
-      <main>
+      {/* The target of the header's skip link (focusable so focus moves here). */}
+      <main id="main" tabIndex={-1}>
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/portfolio" component={PortfolioPage} />

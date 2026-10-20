@@ -134,7 +134,7 @@ export interface ProjectDetails {
    */
   thumbnailImage?: ProjectImage;
   /**
-   * Two or three letters ("CT", "UNE") shown as a square badge wherever the
+   * Two to four capitals or digits ("CT", "UNE", "LIVE") shown as a square badge wherever the
    * thumbnail would go, for work with no mark of its own (consulting, mostly).
    * Only for projects without a thumbnailImage; a real mark always wins.
    */

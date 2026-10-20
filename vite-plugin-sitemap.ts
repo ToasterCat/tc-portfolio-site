@@ -24,9 +24,13 @@ export function sitemapRoutes(projectsSource: string): string[] {
   return [...STATIC_ROUTES, ...listedAliases(projectsSource).map((a) => `/portfolio/${a}`)];
 }
 
-export function sitemapXml(routes: string[], lastmod: string): string {
+/**
+ * No <lastmod>: a build-date stamp changes on every deploy, so crawlers learn to ignore it,
+ * and Vercel's shallow clone can't give real per-page dates. The field is optional.
+ */
+export function sitemapXml(routes: string[]): string {
   const urls = routes
-    .map((r) => `  <url>\n    <loc>${SITE_URL}${r}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`)
+    .map((r) => `  <url>\n    <loc>${SITE_URL}${r}</loc>\n  </url>`)
     .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
@@ -34,11 +38,7 @@ export function sitemapXml(routes: string[], lastmod: string): string {
 /** Writes /sitemap.xml into the build, and serves the same file from the dev server. */
 export default function sitemap(): Plugin {
   let root = '';
-  const xml = () =>
-    sitemapXml(
-      sitemapRoutes(fs.readFileSync(path.join(root, 'src/PROJECTS.ts'), 'utf-8')),
-      new Date().toISOString().slice(0, 10)
-    );
+  const xml = () => sitemapXml(sitemapRoutes(fs.readFileSync(path.join(root, 'src/PROJECTS.ts'), 'utf-8')));
   return {
     name: 'tc-sitemap',
     configResolved(config) {

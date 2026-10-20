@@ -30,7 +30,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
 - **Environment variables:**
   - Only `VITE_`-prefixed variables reach the app, read via `import.meta.env` (types in `src/vite-env.d.ts`). `VITE_MEDIA_BASE` overrides the media CDN.
   - Never put secrets in `.env`: anything that reaches the app is visible in the browser.
-- **Tests:** all 180 data tests pass. Keep it that way: add content rather than weakening a test.
+- **Tests:** all data tests pass. Keep it that way: add content rather than weakening a test.
 
 ### Jira and Git workflow
 
@@ -143,7 +143,7 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 - **Links in prose** use the `base.prose-link` mixin (RichText links carry the global `.prose-link` class): off-white with an olive underline, visited the same, signal red on hover and focus. Never leave an inline link to browser defaults.
 - **Motion:** `$hover` (0.2s ease) is the one speed for all hover and focus feedback. Every animation must hold still under `prefers-reduced-motion`.
 - **The `\>` prompt** is reserved for headings and titles: the brand, section headings, "\> Our Policy", and sign-off names. Never use it on pull-out statements or as a list marker. Lists use `>` (robot and human lists), `+` and `×` (do and don't panels), or dots.
-- **Project thumbnails** are the work's own mark (client logo, band or product mark, game icon). With no fitting mark, leave `thumbnailImage` out. If the work has no mark at all (consulting, mostly), set `initials` (two or three capitals: "CT", "JD", "UNE"): the `Monogram` component draws them as a square olive badge, with the PostCard avatar's lettering in a square so it reads as a badge, not a person. It goes wherever the mark would (row thumbnail, card badge, project hero). With neither, cards and heroes show no badge, and rows fall back to a square crop of the cover. The TC stamp (`tc-logo`) only marks work that's ours and carries our name (a data test enforces it).
+- **Project thumbnails** are the work's own mark (client logo, band or product mark, game icon). With no fitting mark, leave `thumbnailImage` out. If the work has no mark at all (consulting, mostly), set `initials` (two to four capitals or digits: "CT", "UNE", "LIVE", "2077"): the `Monogram` component draws them as a square olive badge, with the PostCard avatar's lettering in a square so it reads as a badge, not a person. It goes wherever the mark would (row thumbnail, card badge, project hero). With neither, cards and heroes show no badge, and rows fall back to a square crop of the cover. The TC stamp (`tc-logo`) only marks work that's ours and carries our name (a data test enforces it).
 - **Brand marks:** the TC mark goes in professional spots. The pixel toastercat appears only beside the footer copyright and, animated, on the 404 page. Render pixel art only at whole-number scales.
 - **Layout gotchas:**
   - On desktop, `index.scss` sets `section { min-width: 30rem }`, so a `<section>` inside a narrow column needs `min-width: 0`.
@@ -186,5 +186,6 @@ The site makes public promises. Code and copy changes must stay consistent with 
   - **Sandboxing and quarantine:** quarantined code and assets define proprietary IP and are hand-written, AI-free (deterministic tools only; AI may help test, document, and debug, but a person writes the fix). When most of a codebase counts as IP, the default flips: everything is quarantined, and AI-assisted work is sandboxed into clearly bounded non-IP sections. A legal peer reviewed this approach (2026-10) and agrees it's valid for copyright and IP protection until further precedent.
   - **Who does what:** people hold the executive and senior roles (framework and language, architecture and design patterns, code organization, conventions and style); coding agents only extend established patterns, and every change is reviewed by a person.
   - **This site follows the policy:** people chose React and TypeScript, the file layout, and the conventions, and the site ran before an AI assistant was brought in; the assistant extends that structure and drafts copy that people edit, approve, and own. The site isn't registrable IP, so it's all sandbox. `/ai-policy` links the public repo as proof; keep that true.
+- **Policy dates:** `/privacy` and `/ai-policy` show a "Last updated" date. `src/policyDates.test.ts` fingerprints both pages, so any edit fails the tests until you confirm the date (bump it for content changes, keep it for code or formatting) and paste in the new fingerprint the failure prints.
 - **Privacy (`/privacy`):** contact details are used only to reply and are never shared. The form goes through Formspree, and Google Analytics measures site traffic only. Keep the Privacy page accurate if either changes.
 - **Studio status:** change `STUDIO_STATUS` in `SITE.ts` (`open`, `limited`, `booked`, `away`). The footer and the `/contact` guide both update from it.

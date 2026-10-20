@@ -146,7 +146,7 @@ describe('thumbnails', () => {
 
   // Initials stand in for a missing mark: two or three capitals or digits, never alongside a real one.
   test.each(details.filter((d) => d.initials !== undefined).map((d) => [d.alias, d]))('%s: initials are a short badge, only without a thumbnail', (_alias, d) => {
-    expect(d.initials).toMatch(/^[A-Z0-9]{2,3}$/);
+    expect(d.initials).toMatch(/^[A-Z0-9]{2,4}$/);
     expect(d.thumbnailImage).toBeUndefined();
   });
 });

@@ -27,6 +27,37 @@
   transition: background-color 0.3s ease;
 }
 
+/* ---- Skip link -------------------------------------------------------- */
+
+/* Off-screen until a keyboard user tabs to it, then pinned over the header. */
+.skip-link {
+  position: fixed;
+  top: base.$space-2;
+  left: base.$space-2;
+  z-index: 30;
+  padding: base.$space-2 base.$space-3;
+  background-color: base.$color-black;
+  border: 1px solid base.$color-signal;
+  transform: translateY(-200%);
+
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+/* The skip link's target lands just below the sticky header. */
+main:focus {
+  outline: none;
+}
+
+#main {
+  scroll-margin-top: base.$header-h-m;
+
+  @media all and (min-width: base.$bp) {
+    scroll-margin-top: base.$header-h;
+  }
+}
+
 /* Once content scrolls underneath, let a hint of it through. */
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .header.is-scrolled {
