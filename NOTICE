@@ -27,6 +27,8 @@ file says otherwise, the following are NOT licensed for reuse:
 
 Self-hosted fonts (Space Grotesk, DM Sans, PT Mono) are distributed under the
 SIL Open Font License 1.1. Skill icons come from Simple Icons (CC0) and the
-AWS Architecture Icons (used under AWS's terms for those icons).
+AWS Architecture Icons (used under AWS's terms for those icons). The C# icon
+comes from Devicon, Copyright (c) 2015 konpa, used under the MIT License
+(https://github.com/devicons/devicon/blob/master/LICENSE).
 
 For permission to use any of the above, contact contact@toastercat.tech.

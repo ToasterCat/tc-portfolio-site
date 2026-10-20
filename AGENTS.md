@@ -97,7 +97,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
 
 ### Decisions not to revisit unless asked
 
-- **`/portfolio` layout:** it's grouped by service (sticky jump bar, then each service's pitch, flagship, more rows, NDA row, "Early work" rows for projects finished before 2020, and CTA). The founder's Amazon/AWS background lives only in the About bio, never as a résumé panel on /portfolio ("this site shouldn't be my LinkedIn"). Projects with `listed: false` (currently FOSS Armory; Dirk may add more) leave their section and sit in a small Archive after the last service; their pages still load. The user rejected a flat filter grid, a timeline, stats, and terminal-style navigation ("customers aren't nerds; we just wanna *look* nerdy"). No years or counts appear there.
+- **`/portfolio` layout:** it's grouped by service (sticky jump bar, then each service's pitch, flagship, more rows, NDA row, "Early work" rows for projects finished before 2020, and CTA). The founder's Amazon/AWS background lives only in the About bio, never as a résumé panel on /portfolio ("this site shouldn't be my LinkedIn"). Projects with `listed: false` (currently FOSS Armory, Wraith Squadron, and Early Games and Engines: shelved work, or pre-studio work without outside proof) leave their section and sit in a small Archive after the last service; their pages still load. The user rejected a flat filter grid, a timeline, stats, and terminal-style navigation ("customers aren't nerds; we just wanna *look* nerdy"). No years or counts appear there.
 - **Project pages:** navigation is a breadcrumb back only, with no prev/next and no related-projects strip. The Outcome section is always last and quiet.
 - **Roles:** `roles` is always a list of short, parallel entries ("Recording", "Mixing"), never a sentence. The spec sheet labels it "Role" or "Roles" by count and hides the row when empty.
 - **Credits:** named collaborators go in a project's `credits` (name and role), shown as a Team row in the spec sheet. Student and pre-studio projects (PixHell, Chick Magnet) don't list names.
@@ -167,6 +167,8 @@ All tokens live in `src/_base.scss`. Use them instead of hard-coded values.
 ### Voice
 
 Direct, engineer-honest, a little irreverent. Plain words over marketing spiel ("descriptive sentences, not marketing spiel"). Light profanity is acceptable in Dirk's personal voice. The company voice stays calmer and more authoritative. Any factual claim on a policy page needs a verified, linked source, and the wording must not claim more than the source supports.
+
+**No output counts in project copy.** Don't quantify the studio's output or size: no "seven shows", "four venues", "team of three", or "hundreds of sites". We have more work than the site can show, and next to bigger shops, counts make the output look thin. Describe the work instead ("shows across Seattle-area venues", "a team project"). Technical specs (frame rates, character counts, board sizes) and a project's own outcomes are fine.
 
 ### Locked content
 

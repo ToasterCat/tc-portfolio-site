@@ -75,6 +75,16 @@ export function skillIconMap(skillName: string) {
         label: "Blender"
       };
 
+    case "CPlusPlus":
+      return {
+        icon: ASSET_MANIFEST.get('logo-cplusplus'),
+        label: "C++"
+      };
+    case "CSharp":
+      return {
+        icon: ASSET_MANIFEST.get('logo-csharp'),
+        label: "C#"
+      };
     case "CSS":
       return {
         icon: ASSET_MANIFEST.get('logo-css'),
@@ -115,6 +125,11 @@ export function skillIconMap(skillName: string) {
         icon: ASSET_MANIFEST.get('logo-ios'),
         label: "iOS"
       };
+    case "Java":
+      return {
+        icon: ASSET_MANIFEST.get('logo-java'),
+        label: "Java"
+      };
     case "Maya":
       return {
         icon: ASSET_MANIFEST.get('logo-maya'),
@@ -129,6 +144,11 @@ export function skillIconMap(skillName: string) {
       return {
         icon: ASSET_MANIFEST.get('logo-premiere'),
         label: "Adobe Premiere Pro"
+      };
+    case "Python":
+      return {
+        icon: ASSET_MANIFEST.get('logo-python'),
+        label: "Python"
       };
     case "Reaper":
       return {

@@ -267,11 +267,11 @@ const PROJECTS: Record<string, Project> = {
       status: 'live',
       roles: ['Booking', 'Promotion', 'Flyer Design', 'Production'],
       year: '2019–Present',
-      outcome: 'Seven shows produced since 2019, including a sold-out TOOL release party and a benefit that raised $1,894 for Point of Pride and the Washington Immigrant Solidarity Network.',
+      outcome: 'Shows produced since 2019, including a sold-out TOOL release party and a benefit for Point of Pride and the Washington Immigrant Solidarity Network.',
       brief: `Flyers, banners, and promotion for our own live shows in Seattle, plus the booking and production behind them.`,
       body: [
         `We book, promote, and produce live shows for our own bands, [Octopus Attacks Shark!!](https://www.octopus-attacks-shark.com/) and [Ugliest Man Alive](https://ugliest-man-alive.com/): building the lineup, designing the flyers and banners, selling the tickets, and running the night itself.`,
-        `Since 2019 that’s meant seven shows across four venues, from TOOL tribute nights at Lucky Liquor to a sold-out release party at The Funhouse and a charity benefit at the Central Saloon.`,
+        `Since 2019 that’s meant shows across Seattle-area venues, from TOOL tribute nights at Lucky Liquor to a sold-out release party at The Funhouse and a charity benefit at the Central Saloon.`,
         '- **Jun 18, 2019 — “The Gaping Lotus Experience”:** TOOL covers at Lucky Liquor, Tukwila, with Triple 6 and [Kerr Ring](https://kerrring.bandcamp.com/).\n' +
           '- **Jul 27, 2019 — “10,000 Days of Opiate”:** TOOL covers at Lucky Liquor, with Grand Moff and Ugliest Man Alive.\n' +
           '- **Aug 30, 2019 — “Fear Inoculum” Unofficial Release Party:** TOOL covers at The Funhouse, Seattle, with Version 7.0 and [NAMEA](https://namea.bandcamp.com/). **Sold out.**\n' +
@@ -729,6 +729,7 @@ const PROJECTS: Record<string, Project> = {
       alias: 'wraith-squadron',
       category: 'game',
       order: 40,
+      listed: false,
       name: 'Wraith Squadron',
       kind: `Fan Project`,
       origin: 'in-house',
@@ -748,9 +749,24 @@ const PROJECTS: Record<string, Project> = {
         "Fusion360"
       ],
       media: {
+        featured: {
+          type: 'clip',
+          src: 'wraith-montage',
+          poster: 'wraith-montage-poster',
+          alt: 'One run through a rebel fleet, cut between four fighters and four skies: a Y-Wing in red and blue starlight, an X-Wing at midday, an A-Wing firing between frigates under an orange nebula, and a TIE Interceptor at dusk; each accelerates on the straights and brakes into the turns',
+          caption: 'One run through the fleet in four ships and four skies.',
+        },
         gallery: [
-          { type: 'image', src: 'wraith-background', alt: 'Third-person view of a starfighter flying low over a canyon toward enemy ships', caption: 'Test flight in the playable demo.' },
-          { type: 'image', src: 'wraith-flight-alt', alt: 'A starfighter lining up its targeting reticle on a squadron of enemy ships', caption: 'Lining up a pass on enemy fighters.' },
+          { type: 'clip', src: 'wraith-flight', poster: 'wraith-flight-poster', alt: 'Third-person view of a starfighter banking over jagged mountains under an orange nebula, firing red lasers as it flies toward a fleet of capital ships and transports and passes beneath a frigate', caption: 'A run through the playable demo, recorded from the original project.' },
+          { type: 'clip', src: 'wraith-dogfight', poster: 'wraith-dogfight-poster', alt: 'An A-Wing closes on two TIE Interceptors over blue mountains, fires red lasers, and each Interceptor tumbles away after the hits', caption: 'Shooting down two TIE Interceptors.' },
+          { type: 'clip', src: 'wraith-wingmen', poster: 'wraith-wingmen-poster', alt: 'An A-Wing and its wingmen fly in formation over orange-lit mountains, firing as they pass the transports and frigates of a rebel fleet', caption: 'Flying with two wingmen through the rebel fleet.' },
+          { type: 'image', src: 'wraith-glamour-awing', alt: 'An A-Wing banks hard over jagged orange-lit mountains, a rebel frigate in the distance', caption: 'A-Wing.' },
+          { type: 'image', src: 'wraith-glamour-xwing', alt: 'An X-Wing in profile against an orange nebula, a rebel frigate beyond', caption: 'X-Wing.' },
+          { type: 'image', src: 'wraith-glamour-ywing', alt: 'A Y-Wing seen from above and behind, running at a Nebulon-B frigate over the mountains', caption: 'Y-Wing.' },
+          { type: 'image', src: 'wraith-glamour-interceptor', alt: 'A TIE Interceptor nearly head-on against a blue sky and grey-blue mountains', caption: 'TIE Interceptor.' },
+          { type: 'image', src: 'wraith-glamour-squadron', alt: 'Three A-Wings in a V formation over the mountains, heading toward frigates and transports', caption: 'A-Wing squadron inbound on the fleet.' },
+          { type: 'image', src: 'wraith-glamour-frigate', alt: 'Looking up at a Nebulon-B frigate against an orange nebula as an A-Wing sweeps past its hull', caption: 'Nebulon-B frigate.' },
+          { type: 'image', src: 'wraith-glamour-dogfight', alt: 'An A-Wing on a TIE Interceptor’s tail over blue mountains, a red laser bolt between them', caption: 'Dogfight.' },
         ],
       },
       links: [
@@ -766,7 +782,7 @@ const PROJECTS: Record<string, Project> = {
         alt: 'Wraith Squadron insignia'
       },
       backgroundImage: {
-        source: 'wraith-background',
+        source: 'wraith-glamour-frigate',
         alt: 'Wraith Squadron'
       }
     }
@@ -816,6 +832,100 @@ const PROJECTS: Record<string, Project> = {
         source: 'chick-magnet-flyer',
         alt: 'Chick Magnet Flyer'
       }
+    }
+  },
+
+
+  earlyGames: {
+    projectDetails: {
+      alias: 'early-games',
+      category: 'game',
+      order: 55,
+      listed: false,
+      name: 'Early Games and Engines',
+      initials: 'EG',
+      kind: `Game Collection`,
+      origin: 'in-house',
+      status: 'archived',
+      roles: ['Engine Programming', 'Gameplay Programming', 'Networking'],
+      year: '2013–2017',
+      brief: `College and post-college games, most running on engines built from scratch in Python, Java, C++, and C#.`,
+      body: [
+        `Before the studio, the games came first. Most of these skip the off-the-shelf engine entirely: physics, game loops, input, rendering, and networking written by hand, in whatever language the platform called for.`,
+          '- **Icarus** (2013, Python): steer a ship through 2D gravitational fields, on a custom physics and vector-math engine.\n' +
+          '- **Compound Chemistry** (2013, Pygame): a chemical-equation balancing game for students. Lead programmer in a team of three.\n' +
+          '- **Ground War** (2013, Pygame): four-player Stratego inside a home-built games browser (classic Stratego, chess, and checkers) with player accounts and a networking prototype.\n' +
+          '- **Nyan Cat Attack** (2013, Native Android): a custom Android game loop, with unit tests. Its tagline, “Nyan Cat’s demise, and the rise of Toaster Cat!”, is where the studio’s mascot began. Art and programming lead in a team of 3.\n' +
+          '- **Chess++** (2015, C and C++): networked chess in the terminal, planned in milestones from single-player to peer-to-peer.\n' +
+          '- **Xander’s Quest** (2016, Native Android): an Android game on a hand-rolled engine, with its own game model, actors, and input layer.\n' +
+          '- **NPC Universe** (2016–2017, Unity): a town-economy simulation of bakeries, foundries, farms, and a guild hall, with units working their routes between them. A team project.',
+        `None of these shipped commercially. They’re kept here as honest history: the habit of building the engine, not just the game, started here.`,
+      ],
+      skills: [
+        "Python",
+        "Java",
+        "Android",
+        "CPlusPlus",
+        "CSharp",
+        "Unity"
+      ],
+      media: {
+        // Captured in 2026 from the original source: Ground War runs headless on a
+        // modern Python and pygame with scripted input, and Nyan Cat Attack in the
+        // Android emulator from a teammate's Gradle build. Capture-only changes: debug
+        // overlays off; Ground War fast-forwarded to mid-game with its own move and
+        // combat rules, and its turn doors (which hide each player's view on a shared
+        // screen) skipped; Nyan Cat's spawn moved over the first platform. Everything
+        // else is as shipped. Kept to the two strongest stories: the most complete
+        // home-built system (Ground War) and the studio mascot's origin (Nyan Cat).
+        featured: {
+          type: 'image',
+          src: 'eg-groundwar-armies',
+          alt: 'Ground War: four armies deployed around a cross-shaped board, the active player’s ranked pieces face up and the other three hidden behind crates',
+          caption: 'Ground War: four-player Stratego, each army deployed and hidden from the others.',
+        },
+        gallery: [
+          { type: 'clip', src: 'eg-groundwar-midgame', poster: 'eg-groundwar-midgame-poster', alt: 'Ground War mid-game: all four armies have pushed into the center of the board, pieces revealed by earlier fights; over two rounds each player drags a piece forward, its legal moves shaded, and the board switches to the next player’s view', caption: 'Mid-game: two rounds of four-player moves, ending in a fight at the center.' },
+          { type: 'clip', src: 'eg-nyancat-run', poster: 'eg-nyancat-run-poster', alt: 'Nyan Cat Attack: the Nyan Cat runs along platforms across a pixel-star sky, hops, and dashes forward onto a higher platform', caption: 'Nyan Cat Attack in the Android emulator: jump on the left, dash on the right.' },
+        ],
+      },
+      links: [
+        {
+          label: 'Icarus',
+          target: 'https://github.com/Dirker27/Icarus',
+          icon: 'logo-github'
+        },
+        {
+          label: 'Compound Chemistry',
+          target: 'https://github.com/Dirker27/CompoundChemistry',
+          icon: 'logo-github'
+        },
+        {
+          label: 'Ground War (Games Browser)',
+          target: 'https://github.com/Dirker27/GamesBrowser',
+          icon: 'logo-github'
+        },
+        {
+          label: 'Nyan Cat Attack',
+          target: 'https://github.com/Dirker27/NyanCatAttack',
+          icon: 'logo-github'
+        },
+        {
+          label: 'Chess++',
+          target: 'https://github.com/Dirker27/ChessPlusPlus',
+          icon: 'logo-github'
+        },
+        {
+          label: 'Xander’s Quest',
+          target: 'https://github.com/Dirker27/XandersQuest',
+          icon: 'logo-github'
+        },
+        {
+          label: 'NPC Universe',
+          target: 'https://github.com/Dirker27/NPCUniverse',
+          icon: 'logo-github'
+        },
+      ],
     }
   },
 

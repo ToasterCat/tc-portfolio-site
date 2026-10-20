@@ -34,6 +34,13 @@ import stepFunctionsLogo from './logos/external/aws/aws-step-functions.png';
 // (the iOS icon is a wordmark, which would read "iOS iOS" beside the label).
 import blenderLogo from './logos/external/blender-logo.svg';
 import iosLogo from './logos/external/ios-logo.svg';
+// Languages. Simple Icons dropped the Java and C# marks at the trademark
+// holders' request: Java uses Simple Icons' OpenJDK mark, and C# comes from
+// Devicon (MIT, see NOTICE), recoloured to match.
+import pythonLogo from './logos/external/python-logo.svg';
+import javaLogo from './logos/external/java-openjdk-logo.svg';
+import cplusplusLogo from './logos/external/cplusplus-logo.svg';
+import csharpLogo from './logos/external/csharp-logo.svg';
 import shopifyLogo from './logos/external/shopify-logo-small.png';
 import photoshopLogo from './logos/external/photoshop-logo-small.png';
 import premiereLogo from './logos/external/premiere-logo-small.png';
@@ -127,6 +134,15 @@ import showFearInoculumFlyer from './gallery/LiveShows/2019-fear-inoculum-flyer.
 
 import umaBand from './gallery/UMA/uma-logo-medium.png';
 import umaBackground from './gallery/UMA/Baby-reverse_scaled.png';
+// Early games (2013): Ground War, captured from the original Python source running headless.
+import egGroundWarArmies from './gallery/EarlyGames/eg-groundwar-armies.webp';
+import egGroundWarMidgame from './gallery/EarlyGames/eg-groundwar-midgame.mp4';
+import egGroundWarMidgamePoster from './gallery/EarlyGames/eg-groundwar-midgame_poster.webp';
+// Nyan Cat Attack: the teammate's Gradle build, run in the Android emulator at 1280×720,
+// debug overlay off and the cat's spawn moved above the first platform (at this screen
+// height the original spawn falls through it).
+import egNyanCatRun from './gallery/EarlyGames/eg-nyancat-run.mp4';
+import egNyanCatRunPoster from './gallery/EarlyGames/eg-nyancat-run_poster.webp';
 import umaMachineGod from './gallery/UMA/MGS1.mp4';
 import umaMachineGodPoster from './gallery/UMA/MGS1_poster.webp';
 import umaRedacted from './gallery/UMA/redacted.mp4';
@@ -134,9 +150,32 @@ import umaRedactedPoster from './gallery/UMA/redacted_poster.webp';
 import umaSiteScreenshot from './gallery/UMA/uma-site-screenshot.webp';
 
 import wraithSquadronLogo from './gallery/WraithSquadron/WraithLogo.png';
-import wraithSquadronBackground from './gallery/WraithSquadron/TestFlight_1600.webp';
-import wraithSquadronFlightAlt from './gallery/WraithSquadron/TestFlight_Alt_1600.webp';
-import wraithSquadronThumb from './gallery/WraithSquadron/TestFlight_thumb.webp';
+// Captured in 2026 from the original Unity 5 project, opened in Unity 2022 and flown by a
+// capture-only autopilot. The 2014 screenshots' own sky (OrangeNebula) and terrain
+// (HardMountains) were switched back in; the last commit had left placeholders.
+import wraithFlight from './gallery/WraithSquadron/wraith-flight.mp4';
+import wraithFlightPoster from './gallery/WraithSquadron/wraith-flight_poster.webp';
+// More runs from the same build (Workspace/WraithSquadron/tools). Capture-only additions:
+// the montage cuts one scripted run through the fleet between four ships and four
+// skies, and rigs the project's X-Wing model like its other fighters (it never had an
+// X-Wing ship); the wingmen are copies of the player's A-Wing on the player's
+// controls, and the dogfight spawns two TIE Interceptors ahead of the player.
+import wraithWingmen from './gallery/WraithSquadron/wraith-wingmen.mp4';
+import wraithWingmenPoster from './gallery/WraithSquadron/wraith-wingmen_poster.webp';
+import wraithDogfight from './gallery/WraithSquadron/wraith-dogfight.mp4';
+import wraithDogfightPoster from './gallery/WraithSquadron/wraith-dogfight_poster.webp';
+import wraithMontage from './gallery/WraithSquadron/wraith-montage.mp4';
+import wraithMontagePoster from './gallery/WraithSquadron/wraith-montage_poster.webp';
+// Staged stills from the same build, with the camera detached from the ships
+// (Workspace/WraithSquadron/tools/glamour.sh). Ships are posed, not flown; the X-Wing is
+// the project's model rigged for the capture.
+import wraithGlamourAwing from './gallery/WraithSquadron/wraith-glamour-awing.webp';
+import wraithGlamourXwing from './gallery/WraithSquadron/wraith-glamour-xwing.webp';
+import wraithGlamourYwing from './gallery/WraithSquadron/wraith-glamour-ywing.webp';
+import wraithGlamourInterceptor from './gallery/WraithSquadron/wraith-glamour-interceptor.webp';
+import wraithGlamourSquadron from './gallery/WraithSquadron/wraith-glamour-squadron.webp';
+import wraithGlamourFrigate from './gallery/WraithSquadron/wraith-glamour-frigate.webp';
+import wraithGlamourDogfight from './gallery/WraithSquadron/wraith-glamour-dogfight.webp';
 
 import tcPrintBackground from './gallery/TC-Print/PrinterAngle_scaled.jpg';
 import tcProductDetail from './gallery/TC-Print/TC-Product-Rotation_1600.mp4';
@@ -191,6 +230,15 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["logo-gsuite", gSuiteLogo],
     ["logo-reaper", reaperLogo],
     ["logo-unity", unityLogo],
+    ["eg-groundwar-armies", egGroundWarArmies],
+    ["eg-groundwar-midgame", egGroundWarMidgame],
+    ["eg-groundwar-midgame-poster", egGroundWarMidgamePoster],
+    ["eg-nyancat-run", egNyanCatRun],
+    ["eg-nyancat-run-poster", egNyanCatRunPoster],
+    ["logo-python", pythonLogo],
+    ["logo-java", javaLogo],
+    ["logo-cplusplus", cplusplusLogo],
+    ["logo-csharp", csharpLogo],
     ["logo-unreal", unrealLogo],
     ["logo-wordpress", wordpressLogo],
     ["logo-github", githubLogo],
@@ -344,9 +392,21 @@ const ASSET_MANIFEST = new Map<string, string> ([
 
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],
-    ["wraith-background", wraithSquadronBackground],
-    ["wraith-flight-alt", wraithSquadronFlightAlt],
-    ["wraith-thumb", wraithSquadronThumb],
+    ["wraith-flight", wraithFlight],
+    ["wraith-flight-poster", wraithFlightPoster],
+    ["wraith-wingmen", wraithWingmen],
+    ["wraith-wingmen-poster", wraithWingmenPoster],
+    ["wraith-dogfight", wraithDogfight],
+    ["wraith-dogfight-poster", wraithDogfightPoster],
+    ["wraith-montage", wraithMontage],
+    ["wraith-montage-poster", wraithMontagePoster],
+    ["wraith-glamour-awing", wraithGlamourAwing],
+    ["wraith-glamour-xwing", wraithGlamourXwing],
+    ["wraith-glamour-ywing", wraithGlamourYwing],
+    ["wraith-glamour-interceptor", wraithGlamourInterceptor],
+    ["wraith-glamour-squadron", wraithGlamourSquadron],
+    ["wraith-glamour-frigate", wraithGlamourFrigate],
+    ["wraith-glamour-dogfight", wraithGlamourDogfight],
     ["tcprint-background", tcPrintBackground],
     ["tcstudio-background", tcStudioBackground],
 ]);
