@@ -95,8 +95,15 @@ import studioGuitarAmp from './gallery/TC-Recording/StudioGuitarAmp_1600.webp';
 import studioKeys from './gallery/TC-Recording/StudioKeys_1600.webp';
 import lizzieAlt from './gallery/Lizzie/LizzieAlt_1600.webp';
 import moxelDetail from './gallery/Moxel/moxel-gloria-detail_1600.webp';
-import fossShowcase from './gallery/FOSS/LizzieShowcase_1600.webp';
-import fossTargetRange from './gallery/FOSS/TargetRange.webp';
+// Captured in 2026 from the Unity project (Workspace/FOSSArmory/tools): turntables in the light
+// room's display spot, the player shooting the range through the game's own weapon code, and
+// posed clones of the player mannequin.
+import fossArmory from './gallery/FOSS/foss-armory.mp4';
+import fossArmoryPoster from './gallery/FOSS/foss-armory_poster.webp';
+import fossRange from './gallery/FOSS/foss-range.mp4';
+import fossRangePoster from './gallery/FOSS/foss-range_poster.webp';
+import fossMannequins from './gallery/FOSS/foss-mannequins.webp';
+import fossRangeLanes from './gallery/FOSS/foss-range-lanes.webp';
 import umaBabyReverse from './gallery/UMA/Baby-reverse_1600.webp';
 import umaNineStar from './gallery/UMA/9starShell_1600.webp';
 
@@ -151,6 +158,16 @@ import egGroundWarMidgamePoster from './gallery/EarlyGames/eg-groundwar-midgame_
 // height the original spawn falls through it).
 import egNyanCatRun from './gallery/EarlyGames/eg-nyancat-run.mp4';
 import egNyanCatRunPoster from './gallery/EarlyGames/eg-nyancat-run_poster.webp';
+// Captured in 2026 from a Unity 2022 build (Workspace/NPCUniverse/tools).
+import npcuLedger from './gallery/NPCUniverse/npcu-ledger.mp4';
+import npcuLedgerPoster from './gallery/NPCUniverse/npcu-ledger_poster.webp';
+import npcuRts from './gallery/NPCUniverse/npcu-rts.mp4';
+import npcuRtsPoster from './gallery/NPCUniverse/npcu-rts_poster.webp';
+import npcuTown from './gallery/NPCUniverse/npcu-town.mp4';
+import npcuTownPoster from './gallery/NPCUniverse/npcu-town_poster.webp';
+import npcuGrunt from './gallery/NPCUniverse/npcu-grunt.webp';
+import npcuBattlehut from './gallery/NPCUniverse/npcu-battlehut.webp';
+import npcuVista from './gallery/NPCUniverse/npcu-vista.webp';
 import umaMachineGod from './gallery/UMA/MGS1.mp4';
 import umaMachineGodPoster from './gallery/UMA/MGS1_poster.webp';
 import umaRedacted from './gallery/UMA/redacted.mp4';
@@ -258,6 +275,15 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["eg-groundwar-midgame-poster", egGroundWarMidgamePoster],
     ["eg-nyancat-run", egNyanCatRun],
     ["eg-nyancat-run-poster", egNyanCatRunPoster],
+    ["npcu-ledger", npcuLedger],
+    ["npcu-ledger-poster", npcuLedgerPoster],
+    ["npcu-rts", npcuRts],
+    ["npcu-rts-poster", npcuRtsPoster],
+    ["npcu-town", npcuTown],
+    ["npcu-town-poster", npcuTownPoster],
+    ["npcu-grunt", npcuGrunt],
+    ["npcu-battlehut", npcuBattlehut],
+    ["npcu-vista", npcuVista],
     ["logo-python", pythonLogo],
     ["logo-java", javaLogo],
     ["logo-cplusplus", cplusplusLogo],
@@ -336,8 +362,12 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["studio-keys", studioKeys],
     ["lizzie-alt", lizzieAlt],
     ["moxel-detail", moxelDetail],
-    ["foss-showcase", fossShowcase],
-    ["foss-target-range", fossTargetRange],
+    ["foss-armory", fossArmory],
+    ["foss-armory-poster", fossArmoryPoster],
+    ["foss-range", fossRange],
+    ["foss-range-poster", fossRangePoster],
+    ["foss-mannequins", fossMannequins],
+    ["foss-range-lanes", fossRangeLanes],
     ["uma-baby-reverse", umaBabyReverse],
     ["uma-nine-star", umaNineStar],
 

@@ -384,21 +384,26 @@ const PROJECTS: Record<string, Project> = {
       alias: 'foss-armory',
       category: 'game',
       order: 20,
-      listed: false,
       name: 'FOSS Armory',
+      initials: 'FOSS',
       kind: `PC Game`,
-      origin: 'contributor',
-      status: 'archived',
-      roles: ['Research', '3D Modeling', 'Gameplay Integration'],
+      origin: 'client',
+      status: 'delivered',
+      roles: ['Research', 'Asset Pipeline', 'Animation', 'Gameplay Engineering'],
       year: '2022',
-      outcome: 'Project shelved by client pending additional legal review.',
-      brief: `Third-person shooter and showcase for the open-source works of the PY2A community.`,
+      outcome: 'Proof of concept delivered and its milestones met; the client chose not to take the pipeline further.',
+      brief: `A showroom and firing range built for a client to promote the open-source designs of the PY2A community, with CAD files converted into game-ready, animated, configurable weapons.`,
       body: [
-        `Inspired by the Defense Distributed movement, the “Free and Open-Source Armory” serves as an interactive showroom for the creative works of DIY armorers JStark1809, IvanTTroll, AreWeCoolYet?, Booligan Airsoft, and the ever-growing list of open-source PY2A contributors. It provides a safe and free environment for their works to be compared, analyzed, and tested without navigating the hassles of local restrictions and extensive expensive builds. Developed and tested in-house at ToasterCat Studios and released under the Creative Commons license for all to consume and re-distribute.`,
+        `A client set out to build a “Free and Open-Source Armory”: a game to promote and share the designs of the growing PY2A community, the makers who publish 3D-printable firearm designs for anyone to build. Those designs ship as printable parts, one STEP or STL file per piece, made for a slicer rather than a game engine. So the first milestone was a proof of concept: take the files as released and bring them into Unity as weapons you can inspect, configure, and fire.`,
+        `**Under the hood:** every printed part became its own game mesh, so each model assembles the way the real build does and moves the way it does: the action cycles on every shot, and the FGC-9 Mk II runs its own arming animation. On top of the geometry sits one shared weapon framework, with fire-mode settings, mount points for optics, underbarrel gear, and lasers, and loadout slots for a primary, a secondary, and a rifle slung on the back. Rounds are physical projectiles that carry their impact energy into destructible targets and barricades, so the range tests what a design does, not just how it looks.`,
+        `We dog-fooded the pipeline on our own home turf first: NERF-style blasters like Ehdrien’s Gecko are CAD-built designs too, often with more moving parts than most printed firearms, which made them a tougher first test. The flagships were the FGC-9 (by JStark1809) and the FGC-9 Mk II (by JStark1809 and IvanTTroll), modeled in full for their popularity with the community. Both are released under Creative Commons.`,
+        `The client asked for a vaporwave look, so the showroom and range are dark rooms lit by neon teal and amber light panels, and you play as a glossy chrome mannequin. The designs belong to their makers; our work was the pipeline and the game around them.`,
+        `The milestones were met, and the client chose to stop there. With the tools of the time, getting from CAD to a shippable asset still meant hand-built levels of detail from an artist, and that cost more than the thesis (CAD in, game-ready FBX out, with little hand work) set out to spend.`,
       ],
       skills: [
         "Unity",
-        "Fusion360"
+        "Fusion360",
+        "Blender"
       ],
       links: [
         {
@@ -413,13 +418,16 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'image',
-          src: 'foss-background',
-          alt: 'FOSS Armory',
+          type: 'clip',
+          src: 'foss-armory',
+          poster: 'foss-armory-poster',
+          alt: 'In a dark room lit by a glowing yellow wall panel, a floating display spins a pistol; at each cut the display swaps in another design (the FGC-9 rifle, the WSPR, the FGC-9 Mk II) without breaking the turn',
+          caption: 'Open-source designs, modeled part for part and put on display.',
         },
         gallery: [
-          { type: 'image', src: 'foss-showcase', alt: 'A blaster on display in the FOSS Armory showroom' },
-          { type: 'image', src: 'foss-target-range', alt: 'The FOSS Armory target range' },
+          { type: 'clip', src: 'foss-range', poster: 'foss-range-poster', alt: 'Over the shoulder of a glossy mannequin, the player fires down a hazy, neon-lit indoor range; red targets burst into tumbling debris, seen up close from beside the lane against teal and amber light', caption: 'Test-fire any build on a live range: physics-driven rounds, destructible targets.' },
+          { type: 'image', src: 'foss-mannequins', alt: 'Three glossy mannequins holding rifles stand in a dark room, their armor catching amber and mint reflections from a glowing yellow wall panel' },
+          { type: 'image', src: 'foss-range-lanes', alt: 'Looking down the hazy indoor range: teal and amber light strips glow through the fog and converge toward red targets on dark lanes' },
         ],
       },
     }
@@ -717,13 +725,13 @@ const PROJECTS: Record<string, Project> = {
           src: 'ph-gameplay',
           poster: 'ph-gameplay-poster',
           alt: 'PixHell gameplay in portrait: waves of pixel-art enemy ships fly down a starfield firing pink shots while the green player ship weaves between them, firing missiles that blow enemies apart and leave gold coins falling',
-          caption: 'Tilt to dodge. The ship does the shooting.',
+          caption: 'Tilt to steer, auto-fire to survive, and every wave hits harder than the last.',
         },
         gallery: [
           { type: 'image', src: 'pixhell-flyer', alt: 'PixHell' },
-          { type: 'clip', src: 'ph-triblaster', poster: 'ph-triblaster-poster', alt: 'The player ship fires three-way shots up at waves of enemy ships, dodging their pink fire as destroyed enemies drop gold coins', caption: 'Triple the firepower.' },
+          { type: 'clip', src: 'ph-triblaster', poster: 'ph-triblaster-poster', alt: 'The player ship fires three-way shots up at waves of enemy ships, dodging their pink fire as destroyed enemies drop gold coins', caption: 'Swap weapons mid-run, from missiles to the three-way tri-blaster.' },
           { type: 'image', src: 'pixhell-screenshot', alt: 'PixHell gameplay on a phone' },
-          { type: 'clip', src: 'ph-dodge', poster: 'ph-dodge-poster', alt: 'A close, wide view of the player ship weaving side to side through streams of pink enemy shots as enemy ships pass by', caption: 'Threading the needle, one tilt at a time.' },
+          { type: 'clip', src: 'ph-dodge', poster: 'ph-dodge-poster', alt: 'A close, wide view of the player ship weaving side to side through streams of pink enemy shots as enemy ships pass by', caption: 'Precision motion controls: hold steady to hover, lean hard to dodge.' },
         ],
       },
     }
@@ -760,19 +768,19 @@ const PROJECTS: Record<string, Project> = {
           src: 'wraith-montage',
           poster: 'wraith-montage-poster',
           alt: 'One run through a rebel fleet, cut between four fighters and four skies: a Y-Wing in red and blue starlight, an X-Wing at midday, an A-Wing firing between frigates under an orange nebula, and a TIE Interceptor at dusk; each accelerates on the straights and brakes into the turns',
-          caption: 'One run through the fleet in four ships and four skies.',
+          caption: 'Classic starfighters, all flying on one shared flight model.',
         },
         gallery: [
-          { type: 'clip', src: 'wraith-flight', poster: 'wraith-flight-poster', alt: 'Third-person view of a starfighter banking over jagged mountains under an orange nebula, firing red lasers as it flies toward a fleet of capital ships and transports and passes beneath a frigate', caption: 'A run through the playable demo, recorded from the original project.' },
-          { type: 'clip', src: 'wraith-dogfight', poster: 'wraith-dogfight-poster', alt: 'An A-Wing closes on two TIE Interceptors over blue mountains, fires red lasers, and each Interceptor tumbles away after the hits', caption: 'Shooting down two TIE Interceptors.' },
-          { type: 'clip', src: 'wraith-wingmen', poster: 'wraith-wingmen-poster', alt: 'An A-Wing and its wingmen fly in formation over orange-lit mountains, firing as they pass the transports and frigates of a rebel fleet', caption: 'Flying with two wingmen through the rebel fleet.' },
-          { type: 'image', src: 'wraith-glamour-awing', alt: 'An A-Wing banks hard over jagged orange-lit mountains, a rebel frigate in the distance', caption: 'A-Wing.' },
-          { type: 'image', src: 'wraith-glamour-xwing', alt: 'An X-Wing in profile against an orange nebula, a rebel frigate beyond', caption: 'X-Wing.' },
-          { type: 'image', src: 'wraith-glamour-ywing', alt: 'A Y-Wing seen from above and behind, running at a Nebulon-B frigate over the mountains', caption: 'Y-Wing.' },
-          { type: 'image', src: 'wraith-glamour-interceptor', alt: 'A TIE Interceptor nearly head-on against a blue sky and grey-blue mountains', caption: 'TIE Interceptor.' },
-          { type: 'image', src: 'wraith-glamour-squadron', alt: 'Three A-Wings in a V formation over the mountains, heading toward frigates and transports', caption: 'A-Wing squadron inbound on the fleet.' },
-          { type: 'image', src: 'wraith-glamour-frigate', alt: 'Looking up at a Nebulon-B frigate against an orange nebula as an A-Wing sweeps past its hull', caption: 'Nebulon-B frigate.' },
-          { type: 'image', src: 'wraith-glamour-dogfight', alt: 'An A-Wing on a TIE Interceptor’s tail over blue mountains, a red laser bolt between them', caption: 'Dogfight.' },
+          { type: 'clip', src: 'wraith-flight', poster: 'wraith-flight-poster', alt: 'Third-person view of a starfighter banking over jagged mountains under an orange nebula, firing red lasers as it flies toward a fleet of capital ships and transports and passes beneath a frigate', caption: 'Rogue Squadron’s controls, mirrored exactly.' },
+          { type: 'clip', src: 'wraith-dogfight', poster: 'wraith-dogfight-poster', alt: 'An A-Wing closes on two TIE Interceptors over blue mountains, fires red lasers, and each Interceptor tumbles away after the hits', caption: 'Downed fighters don’t vanish: they lose control and tumble out of the sky.' },
+          { type: 'clip', src: 'wraith-wingmen', poster: 'wraith-wingmen-poster', alt: 'An A-Wing and its wingmen fly in formation over orange-lit mountains, firing as they pass the transports and frigates of a rebel fleet', caption: 'Squadron-scale battles over a full rebel fleet.' },
+          { type: 'image', src: 'wraith-glamour-awing', alt: 'An A-Wing banks hard over jagged orange-lit mountains, a rebel frigate in the distance', caption: 'Rogue Squadron flight, rebuilt from scratch in Unity.' },
+          { type: 'image', src: 'wraith-glamour-xwing', alt: 'An X-Wing in profile against an orange nebula, a rebel frigate beyond', caption: 'Every craft built from the same interchangeable parts.' },
+          { type: 'image', src: 'wraith-glamour-ywing', alt: 'A Y-Wing seen from above and behind, running at a Nebulon-B frigate over the mountains', caption: 'Primary and secondary weapon slots, and any weapon fits either one.' },
+          { type: 'image', src: 'wraith-glamour-interceptor', alt: 'A TIE Interceptor nearly head-on against a blue sky and grey-blue mountains', caption: 'Enemies fly by the same rules you do.' },
+          { type: 'image', src: 'wraith-glamour-squadron', alt: 'Three A-Wings in a V formation over the mountains, heading toward frigates and transports', caption: 'Speeds tuned in MGLT, straight from the Star Wars ship specs.' },
+          { type: 'image', src: 'wraith-glamour-frigate', alt: 'Looking up at a Nebulon-B frigate against an orange nebula as an A-Wing sweeps past its hull', caption: 'Capital ships that set the scale of the fight.' },
+          { type: 'image', src: 'wraith-glamour-dogfight', alt: 'An A-Wing on a TIE Interceptor’s tail over blue mountains, a red laser bolt between them', caption: 'Close-quarters dogfighting, throttle and all.' },
         ],
       },
       links: [
@@ -826,7 +834,7 @@ const PROJECTS: Record<string, Project> = {
           { type: 'clip', src: 'cm-launch', poster: 'cm-launch-poster', alt: 'The chick pushes against a fire truck with its magnets and slides backward, pulls itself back to the truck, then pushes down on it and launches into the air', caption: 'Can’t move it? Push off it and fly.' },
           { type: 'clip', src: 'cm-furby', poster: 'cm-furby-poster', alt: 'In a dark room, the chick walks up to a green Furby, which lights up with wide eyes; the chick turns, runs off the end of the shelf, and drops into the dark, leaving the Furby staring', caption: 'Some toys are better left in the dark.' },
           { type: 'clip', src: 'cm-troll', poster: 'cm-troll-poster', alt: 'A troll doll with cyan hair creeps toward the camera; the chick runs from it along a ledge and jumps a lava pit; the troll walks into the lava and climbs out the other side', caption: 'Lava won’t stop it. Run.' },
-          { type: 'image', src: 'cm-still-minifigs', alt: 'The chick on a studded Lego floor with minifigs ahead', caption: 'The minifig hall.' },
+          { type: 'image', src: 'cm-still-minifigs', alt: 'The chick on a studded Lego floor with minifigs ahead', caption: 'A whole toy factory to escape, one playset at a time.' },
           { type: 'image', src: 'chick-magnet-flyer', alt: 'Chick Magnet flyer' },
         ],
       },
@@ -868,17 +876,17 @@ const PROJECTS: Record<string, Project> = {
       origin: 'in-house',
       status: 'archived',
       roles: ['Engine Programming', 'Gameplay Programming', 'Networking'],
-      year: '2013–2017',
+      year: '2010–2017',
       brief: `College and post-college games, most running on engines built from scratch in Python, Java, C++, and C#.`,
       body: [
         `Before the studio, the games came first. Most of these skip the off-the-shelf engine entirely: physics, game loops, input, rendering, and networking written by hand, in whatever language the platform called for.`,
           '- **Icarus** (2013, Python): steer a ship through 2D gravitational fields, on a custom physics and vector-math engine.\n' +
-          '- **Compound Chemistry** (2013, Pygame): a chemical-equation balancing game for students. Lead programmer in a team of three.\n' +
-          '- **Ground War** (2013, Pygame): four-player Stratego inside a home-built games browser (classic Stratego, chess, and checkers) with player accounts and a networking prototype.\n' +
-          '- **Nyan Cat Attack** (2013, Native Android): a custom Android game loop, with unit tests. Its tagline, “Nyan Cat’s demise, and the rise of Toaster Cat!”, is where the studio’s mascot began. Art and programming lead in a team of 3.\n' +
+          '- **Compound Chemistry** (2010, Pygame): a chemical-equation balancing game for students. Lead programmer in a team of three.\n' +
+          '- **Ground War** (2010, Pygame): four-player Stratego inside a home-built games browser (classic Stratego, chess, and checkers) with player accounts and a networking prototype.\n' +
+          '- **Nyan Cat Attack** (2011, Native Android): a custom Android game loop, with unit tests. Its tagline, “Nyan Cat’s demise, and the rise of Toaster Cat!”, is where the studio’s mascot began. Art and programming lead in a team of 3.\n' +
           '- **Chess++** (2015, C and C++): networked chess in the terminal, planned in milestones from single-player to peer-to-peer.\n' +
           '- **Xander’s Quest** (2016, Native Android): an Android game on a hand-rolled engine, with its own game model, actors, and input layer.\n' +
-          '- **NPC Universe** (2016–2017, Unity): a town-economy simulation of bakeries, foundries, farms, and a guild hall, with units working their routes between them. A team project.',
+          '- **NPC Universe** (2016–2017, Unity): a world and economic simulation with RTS controls, built by two developers. It has [its own page](/portfolio/npc-universe).',
         `None of these shipped commercially. They’re kept here as honest history: the habit of building the engine, not just the game, started here.`,
       ],
       skills: [
@@ -898,15 +906,16 @@ const PROJECTS: Record<string, Project> = {
         // screen) skipped; Nyan Cat's spawn moved over the first platform. Everything
         // else is as shipped. Kept to the two strongest stories: the most complete
         // home-built system (Ground War) and the studio mascot's origin (Nyan Cat).
-        featured: {
-          type: 'image',
-          src: 'eg-groundwar-armies',
-          alt: 'Ground War: four armies deployed around a cross-shaped board, the active player’s ranked pieces face up and the other three hidden behind crates',
-          caption: 'Ground War: four-player Stratego, each army deployed and hidden from the others.',
-        },
+        featured: { type: 'clip', src: 'eg-groundwar-midgame', poster: 'eg-groundwar-midgame-poster', alt: 'Ground War mid-game: all four armies have pushed into the center of the board, pieces revealed by earlier fights; over two rounds each player drags a piece forward, its legal moves shaded, and the board switches to the next player’s view', caption: 'Pass-and-play on one screen, with every legal move highlighted.' },
+
         gallery: [
-          { type: 'clip', src: 'eg-groundwar-midgame', poster: 'eg-groundwar-midgame-poster', alt: 'Ground War mid-game: all four armies have pushed into the center of the board, pieces revealed by earlier fights; over two rounds each player drags a piece forward, its legal moves shaded, and the board switches to the next player’s view', caption: 'Mid-game: two rounds of four-player moves, ending in a fight at the center.' },
-          { type: 'clip', src: 'eg-nyancat-run', poster: 'eg-nyancat-run-poster', alt: 'Nyan Cat Attack: the Nyan Cat runs along platforms across a pixel-star sky, hops, and dashes forward onto a higher platform', caption: 'Nyan Cat Attack in the Android emulator: jump on the left, dash on the right.' },
+          {
+            type: 'image',
+            src: 'eg-groundwar-armies',
+            alt: 'Ground War: four armies deployed around a cross-shaped board, the active player’s ranked pieces face up and the other three hidden behind crates',
+            caption: 'Stratego for four: deploy in secret, then fight for the center.',
+          },
+          { type: 'clip', src: 'eg-nyancat-run', poster: 'eg-nyancat-run-poster', alt: 'Nyan Cat Attack: the Nyan Cat runs along platforms across a pixel-star sky, hops, and dashes forward onto a higher platform', caption: 'Two-thumb controls: jump on the left, dash on the right.' },
         ],
       },
       links: [
@@ -946,6 +955,55 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-github'
         },
       ],
+    }
+  },
+
+
+  npcUniverse: {
+    projectDetails: {
+      alias: 'npc-universe',
+      category: 'game',
+      order: 57,
+      listed: false,
+      name: 'NPC Universe',
+      initials: 'NPC',
+      kind: `PC Game`,
+      origin: 'in-house',
+      status: 'archived',
+      roles: ['Architecture', 'RTS Controls', 'Level Design'],
+      year: '2016–2017',
+      outcome: `Mothballed in 2017, when both developers moved on to new jobs.`,
+      brief: `A two-developer passion project: a large-scale world and economic simulation where towns build themselves and every NPC works a job, with RTS controls on top.`,
+      body: [
+        `NPC Universe was a passion project between two developers: a world and economic simulation meant to run whole regions, where every NPC has a job, a home town, and a place in the supply chain. Towns raise their own buildings and fill them with workers. Farmers, miners, millers, and smiths turn raw goods into finished ones, and traders run between towns chasing the best margin each market will pay.`,
+        `**Under the hood:** the simulation runs on “oracles”, one per job, that decide each worker’s next move from the state of its town: what’s in stock, which recipes its buildings support, and which positions are open. Characters and buildings could persist to a PostgreSQL database. The architecture we were building toward was a hybrid stack: the Universe in C++, running as an independent process, with Unity as its 3D front end over an interop layer. The prototype shown here runs the simulation in C# inside Unity.`,
+        `On top of the simulation sat the player: RTS controls on Elchea, a hand-sculpted map, with an edge-scrolling camera, click-to-select, and right-click orders that send soldiers across the terrain on navigation meshes. The long game was a strategy title where the economy *is* the game: an “oops, all economy” take on Civilization.`,
+        `It was mothballed when both of us found work elsewhere - AWS Game Technologies and Red Storm Entertainment, respectively.`,
+      ],
+      skills: [
+        "Unity",
+        "CSharp"
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          target: 'https://github.com/Dirker27/NPCUniverse',
+          icon: 'logo-github'
+        }
+      ],
+      media: {
+        // Captured in 2026 from a Unity 2022 build of the repo (see Workspace/NPCUniverse).
+        // Capture-only staging: the RTS input is a scripted cursor driving the game's own
+        // selection, orders, and edge scroll, with the camera rig started closer (22 m) than
+        // the scene's 40 m; the town sim is time-lapsed (15x), its workers are tinted by job
+        // (the game draws them white), and the ledger is a readout of the sim's own numbers.
+        featured: { type: 'clip', src: 'npcu-ledger', poster: 'npcu-ledger-poster', alt: 'A time-lapse from above of NPC Universe’s region: five towns of white cylinder buildings appear one after another and fill with capsule-shaped workers, tinted by job for the capture, while a ledger panel counts towns, buildings, and NPCs, tabulates each town’s population and goods, lists goods in store by type, and breaks down the job mix', caption: 'Every town keeps its books: people, jobs, and goods, live.' },
+        gallery: [
+          { type: 'clip', src: 'npcu-rts', poster: 'npcu-rts-poster', alt: 'NPC Universe’s RTS controls: from a top-down camera over a walled fort, a cursor clicks one grunt at a time and right-clicks a spot to the north; a green marker drops, each grunt walks to it, and the camera scrolls north after them as the HUD lists the selected unit and its objective', caption: 'Click to select, right-click to deploy, and push the screen’s edge to scroll.' },
+          { type: 'image', src: 'npcu-grunt', alt: 'A camouflaged grunt stands in its cyan selection ring on a tiled plain, two more soldiers behind it and jagged peaks beyond the fort wall' },
+          { type: 'clip', src: 'npcu-town', poster: 'npcu-town-poster', alt: 'A slow pass through one NPC Universe town: dozens of capsule-shaped workers, tinted by job for the capture, commute between white cylinder buildings around the town center', caption: 'Every worker has a job, a workplace, and somewhere to be.' },
+        ],
+      },
     }
   },
 
