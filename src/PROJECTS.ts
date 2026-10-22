@@ -326,7 +326,7 @@ const PROJECTS: Record<string, Project> = {
       status: 'shipped',
       roles: ['Additional Recording', 'Mixing'],
       year: '2024',
-      outcome: 'Released to all major streaming platforms, and launched with a [release show](/portfolio/live-shows) at the Central Saloon.',
+      outcome: 'Released to all major streaming platforms and pressed to 12″ vinyl by GottaGroove, then launched with a [release show](/portfolio/live-shows) at the Central Saloon.',
       brief: `Debut LP from Seattle punk act Octopus Attacks Shark!!`,
       body: [
         `Recording and mixing in full collaboration with Soundhouse and veteran studio engineers Mike Sebring and Jack Endino.`,
@@ -370,9 +370,10 @@ const PROJECTS: Record<string, Project> = {
           poster: 'oas-outside-agitators',
         },
         gallery: [
-          { type: 'image', src: 'studio-mics', alt: 'A vocal microphone with a pop filter in our studio' },
-          { type: 'image', src: 'studio-cab-mic', alt: 'A microphone on a guitar cabinet in our studio' },
-          { type: 'image', src: 'studio-mixer', alt: 'The mixing desk in our studio' },
+          { type: 'image', src: 'oas-outside-agitators-title', alt: 'The “Outside Agitators” title art: the band’s octopus-and-shark crest over the hooded cover figure, with the album title in blackletter', caption: '“Outside Agitators” title art, with the band crest.' },
+          { type: 'image', src: 'show-wacken-2022', alt: 'Octopus Attacks Shark!! on stage at The Funhouse, lit in red and blue: the singer in a denim jacket between the bassist and guitarist', caption: 'Octopus Attacks Shark!! at The Funhouse, February 2022.' },
+          { type: 'image', src: 'studio-mics-portrait', alt: 'A vocal microphone with a pop filter in our studio', caption: 'Additional vocals and guitars, tracked in our studio.' },
+          { type: 'image', src: 'oas-2024-central-pano', alt: 'Octopus Attacks Shark!! on stage at the Central Saloon: the singer mid-shout with a megaphone under purple and white lights, a guitarist and bassist on either side', caption: 'Release show, Central Saloon, April 2024.' },
         ],
       },
     }

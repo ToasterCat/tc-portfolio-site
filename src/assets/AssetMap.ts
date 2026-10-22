@@ -68,6 +68,8 @@ import oas2026Music from './gallery/OAS/oas-2026-music.webp';
 import oas2026Shows from './gallery/OAS/oas-2026-shows.webp';
 import oas2026Mobile from './gallery/OAS/oas-2026-mobile.webp';
 import oas2024Central from './gallery/LiveShows/2024-oas-central-saloon_1600.webp';
+// A 4:1 band strip from the same photo, to close a gallery's last row.
+import oas2024CentralPano from './gallery/LiveShows/2024-oas-central-saloon-pano_1600.webp';
 import oas2024Crowd from './gallery/LiveShows/2024-oas-crowd-central_1600.webp';
 import oas2024CrowdSmall from './gallery/LiveShows/2024-oas-crowd-central_800.webp';
 import uma2026Home from './gallery/UMA/uma-2026-home.webp';
@@ -90,6 +92,7 @@ import studioCabMic from './gallery/TC-Recording/studio-cab-mic_1600.webp';
 import studioMixer from './gallery/TC-Recording/studio-mixer_1600.webp';
 import studioDrumRoom from './gallery/TC-Recording/studio-drum-room_1600.webp';
 import studioMics from './gallery/TC-Recording/StudioMics_1600.webp';
+import studioMicsPortrait from './gallery/TC-Recording/StudioMics-portrait_1200.webp';
 import studioDrumMics from './gallery/TC-Recording/StudioDrumMics_1600.webp';
 import studioGuitarAmp from './gallery/TC-Recording/StudioGuitarAmp_1600.webp';
 import studioKeys from './gallery/TC-Recording/StudioKeys_1600.webp';
@@ -130,6 +133,7 @@ import oasSiteTitle from './gallery/OAS/OAS-title-art-medium.png';
 import oasBackground from './background/oas-fullband-red_scaled.png';
 // Optimized copies (T3); the full-size originals stay beside them as sources.
 import oasOutsideAgitators from './gallery/OAS/OAS-OutsideAgitators.webp';
+import oasOutsideAgitatorsTitle from './gallery/OAS/OAS-OutsideAgitators-title.webp';
 import oasSiteScreenshot from './gallery/OAS/oas-site-screenshot-medium.png';
 import showGapingLotusFlyer from './gallery/LiveShows/2019-gaping-lotus-flyer_1600.webp';
 import showFearInoculum from './gallery/LiveShows/2019-fear-inoculum_1600.webp';
@@ -353,6 +357,7 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["oas-2026-shows", oas2026Shows],
     ["oas-2026-mobile", oas2026Mobile],
     ["oas-2024-central", oas2024Central],
+    ["oas-2024-central-pano", oas2024CentralPano],
     ["oas-2024-crowd", oas2024Crowd],
     ["oas-2024-crowd-800", oas2024CrowdSmall],
     ["uma-2026-home", uma2026Home],
@@ -373,6 +378,7 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["studio-mixer", studioMixer],
     ["studio-drum-room", studioDrumRoom],
     ["studio-mics", studioMics],
+    ["studio-mics-portrait", studioMicsPortrait],
     ["studio-drum-mics", studioDrumMics],
     ["studio-guitar-amp", studioGuitarAmp],
     ["studio-keys", studioKeys],
@@ -406,6 +412,7 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["oas-site-title", oasSiteTitle],
     ["oas-background", oasBackground],
     ["oas-outside-agitators", oasOutsideAgitators],
+    ["oas-outside-agitators-title", oasOutsideAgitatorsTitle],
     ["oas-site-screenshot", oasSiteScreenshot],
     ["show-gaping-lotus-flyer", showGapingLotusFlyer],
     ["show-fear-inoculum", showFearInoculum],
