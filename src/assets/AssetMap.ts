@@ -267,6 +267,22 @@ import blackoutPunkDetail from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkScreenshot from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkHallway from './gallery/BlackoutPunk/BP-LitHallway_1920.webp';
 import blackoutPunkGunsUp from './gallery/BlackoutPunk/BP-GunsUp.jpg';
+import bpMontage from './gallery/BlackoutPunk/bp-montage.mp4';
+import bpMontagePoster from './gallery/BlackoutPunk/bp-montage_poster.webp';
+import bpPossession from './gallery/BlackoutPunk/bp-possession.mp4';
+import bpPossessionPoster from './gallery/BlackoutPunk/bp-possession_poster.webp';
+import bpFirefight from './gallery/BlackoutPunk/bp-firefight.mp4';
+import bpFirefightPoster from './gallery/BlackoutPunk/bp-firefight_poster.webp';
+import bpBluePortrait from './gallery/BlackoutPunk/bp-blue-portrait.webp';
+import bpHallVolley from './gallery/BlackoutPunk/bp-hall-volley.webp';
+import bpFortress from './gallery/BlackoutPunk/bp-fortress.webp';
+import bpSynthCube from './gallery/BlackoutPunk/bp-synth-cube.mp4';
+import bpSynthCubePoster from './gallery/BlackoutPunk/bp-synth-cube_poster.webp';
+import bpSquadLineup from './gallery/BlackoutPunk/bp-squad-lineup.webp';
+import bpCubeHero from './gallery/BlackoutPunk/bp-cube-hero.webp';
+import bpLoadoutBlasterShotgun from './gallery/BlackoutPunk/bp-loadout-blaster-shotgun.webp';
+import bpLoadoutBlasterRifle from './gallery/BlackoutPunk/bp-loadout-blaster-rifle.webp';
+import bpSquadroomBlue from './gallery/BlackoutPunk/bp-squadroom-blue.webp';
 
 const ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
@@ -481,6 +497,22 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["blackout-punk-screenshot", blackoutPunkScreenshot],
     ["blackout-punk-hallway", blackoutPunkHallway],
     ["blackout-punk-guns-up", blackoutPunkGunsUp],
+    ["bp-montage", bpMontage],
+    ["bp-montage-poster", bpMontagePoster],
+    ["bp-possession", bpPossession],
+    ["bp-possession-poster", bpPossessionPoster],
+    ["bp-firefight", bpFirefight],
+    ["bp-firefight-poster", bpFirefightPoster],
+    ["bp-blue-portrait", bpBluePortrait],
+    ["bp-hall-volley", bpHallVolley],
+    ["bp-fortress", bpFortress],
+    ["bp-synth-cube", bpSynthCube],
+    ["bp-synth-cube-poster", bpSynthCubePoster],
+    ["bp-squad-lineup", bpSquadLineup],
+    ["bp-cube-hero", bpCubeHero],
+    ["bp-loadout-blaster-shotgun", bpLoadoutBlasterShotgun],
+    ["bp-loadout-blaster-rifle", bpLoadoutBlasterRifle],
+    ["bp-squadroom-blue", bpSquadroomBlue],
 
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],
