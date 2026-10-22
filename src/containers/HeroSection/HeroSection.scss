@@ -140,7 +140,11 @@
   .hero1-section {
     flex-direction: column;
     justify-content: center;
-    min-height: 32rem;
+    box-sizing: border-box;
+    /* The first screen, minus a peek of the feature banner's art: the hero
+     * stays the loudest thing on the page, and the peek says "keep going".
+     * svh, so the address bar showing or hiding doesn't move the fold. */
+    min-height: max(28rem, calc(100svh - #{base.$header-h-m} - #{base.$hero-peek-m}));
     padding: base.$space-8 base.$space-5;
 
     img {
@@ -180,8 +184,12 @@
     justify-content: center;
     gap: base.$space-6;
 
-    min-height: 44rem;
-    padding: base.$space-9 base.$space-7;
+    box-sizing: border-box;
+    /* Same idea as mobile: the screen minus the header and a peek of the
+     * feature banner (it used to be 44rem plus padding, which pushed the
+     * banner fully below the fold at 1440x900). */
+    min-height: max(36rem, calc(100svh - #{base.$header-h} - #{base.$hero-peek}));
+    padding: clamp(#{base.$space-7}, 8svh, #{base.$space-9}) base.$space-7;
   }
 
   /**
@@ -215,5 +223,29 @@
     max-width: 16rem;
     max-height: 16rem;
     opacity: 0.9;
+  }
+}
+
+/**
+ * Hero -> feature handoff. As the page scrolls, the hero copy recedes (dims
+ * and lifts) over the first screen while the feature banner rides up over the
+ * pinned background. Scroll-driven, so there's no scroll listener and no
+ * scroll-jacking; browsers without scroll timelines, and anyone who prefers
+ * reduced motion, get the still layout.
+ */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero1-content {
+      animation: hero1-recede linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 80svh;
+    }
+  }
+}
+
+@keyframes hero1-recede {
+  to {
+    opacity: 0.15;
+    transform: translateY(-3rem);
   }
 }

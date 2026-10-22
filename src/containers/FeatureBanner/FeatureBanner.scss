@@ -82,9 +82,12 @@
 }
 
 @media all and (min-width: base.$bp) {
+  /* A second scene, not a strip: nearly a full screen under the header, so
+   * it holds its own against the hero above it. */
   .feature-banner-inner {
+    box-sizing: border-box;
     padding: base.$section-pad-y base.$section-pad-x;
-    min-height: 24rem;
+    min-height: max(32rem, calc(100svh - #{base.$header-h}));
     justify-content: center;
   }
 }
@@ -101,5 +104,45 @@
 
   .feature-banner-inner {
     padding: base.$space-4 base.$section-pad-x-m base.$section-pad-y-m;
+  }
+}
+
+/**
+ * Entrance, driven by the banner's own scroll position: the art settles from
+ * a slight zoom as the banner rises over the hero, and the copy lifts in. The
+ * end state is the normal layout, so a fully scrolled-in banner always reads.
+ * Still under reduced motion, and in browsers without view timelines.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .feature-banner {
+      view-timeline: --feature-banner block;
+    }
+
+    .feature-banner-art {
+      animation: feature-banner-settle linear both;
+      animation-timeline: --feature-banner;
+      animation-range: entry 0% entry 100%;
+    }
+
+    .feature-banner-inner {
+      animation: feature-banner-rise linear both;
+      animation-timeline: --feature-banner;
+      animation-range: entry 25% entry 90%;
+    }
+  }
+}
+
+@keyframes feature-banner-settle {
+  from {
+    transform: scale(1.08);
+    filter: brightness(0.55);
+  }
+}
+
+@keyframes feature-banner-rise {
+  from {
+    opacity: 0.3;
+    transform: translateY(2.5rem);
   }
 }

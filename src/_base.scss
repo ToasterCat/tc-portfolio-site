@@ -98,6 +98,9 @@ $bp: 50rem;
  * anchors) offset by these, so the bar can change size in one place. */
 $header-h:   4.5rem;
 $header-h-m: 3rem;
+// How much of the feature banner shows under the homepage hero on the first screen.
+$hero-peek:   6rem;
+$hero-peek-m: 4.5rem;
 
 /* COLORS */
 $color-dark: #333;
