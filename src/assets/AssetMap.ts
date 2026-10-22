@@ -158,6 +158,14 @@ import egGroundWarMidgamePoster from './gallery/EarlyGames/eg-groundwar-midgame_
 // height the original spawn falls through it).
 import egNyanCatRun from './gallery/EarlyGames/eg-nyancat-run.mp4';
 import egNyanCatRunPoster from './gallery/EarlyGames/eg-nyancat-run_poster.webp';
+import egMontage from './gallery/EarlyGames/eg-montage.mp4';
+import egMontagePoster from './gallery/EarlyGames/eg-montage_poster.webp';
+import egNyanCatToaster from './gallery/EarlyGames/eg-nyancat-toaster.mp4';
+import egNyanCatToasterPoster from './gallery/EarlyGames/eg-nyancat-toaster_poster.webp';
+import egCheckers from './gallery/EarlyGames/eg-checkers.mp4';
+import egCheckersPoster from './gallery/EarlyGames/eg-checkers_poster.webp';
+import egChemistryHcl from './gallery/EarlyGames/eg-chemistry-hcl.mp4';
+import egChemistryHclPoster from './gallery/EarlyGames/eg-chemistry-hcl_poster.webp';
 // Captured in 2026 from a Unity 2022 build (Workspace/NPCUniverse/tools).
 import npcuLedger from './gallery/NPCUniverse/npcu-ledger.mp4';
 import npcuLedgerPoster from './gallery/NPCUniverse/npcu-ledger_poster.webp';
@@ -275,6 +283,14 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["eg-groundwar-midgame-poster", egGroundWarMidgamePoster],
     ["eg-nyancat-run", egNyanCatRun],
     ["eg-nyancat-run-poster", egNyanCatRunPoster],
+    ["eg-montage", egMontage],
+    ["eg-montage-poster", egMontagePoster],
+    ["eg-nyancat-toaster", egNyanCatToaster],
+    ["eg-nyancat-toaster-poster", egNyanCatToasterPoster],
+    ["eg-checkers", egCheckers],
+    ["eg-checkers-poster", egCheckersPoster],
+    ["eg-chemistry-hcl", egChemistryHcl],
+    ["eg-chemistry-hcl-poster", egChemistryHclPoster],
     ["npcu-ledger", npcuLedger],
     ["npcu-ledger-poster", npcuLedgerPoster],
     ["npcu-rts", npcuRts],

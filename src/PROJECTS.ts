@@ -812,7 +812,7 @@ const PROJECTS: Record<string, Project> = {
       kind: `PC Game`,
       origin: 'contributor',
       status: 'shipped',
-      roles: ['Level Design', 'Gameplay Engineering'],
+      roles: ['Level Design', 'Gameplay Engineering', 'Team Management'],
       year: '2014',
       outcome: 'Project shipped and reviewed as a featured finalist at VT Game Expo 2014',
       brief: `2.5-D Action-platformer starring a lost little toy chick trying to escape a dilapidated toy factory using physics, magnetism, and wit.`,
@@ -870,23 +870,22 @@ const PROJECTS: Record<string, Project> = {
       category: 'game',
       order: 55,
       listed: false,
-      name: 'Early Games and Engines',
+      name: 'Early Games and Custom Engines',
       initials: 'EG',
       kind: `Game Collection`,
       origin: 'in-house',
       status: 'archived',
-      roles: ['Engine Programming', 'Gameplay Programming', 'Networking'],
+      roles: ['Engine Programming', 'Game Design', 'Gameplay Engineering', 'Team Management'],
       year: '2010–2017',
       brief: `College and post-college games, most running on engines built from scratch in Python, Java, C++, and C#.`,
       body: [
         `Before the studio, the games came first. Most of these skip the off-the-shelf engine entirely: physics, game loops, input, rendering, and networking written by hand, in whatever language the platform called for.`,
-          '- **Icarus** (2013, Python): steer a ship through 2D gravitational fields, on a custom physics and vector-math engine.\n' +
-          '- **Compound Chemistry** (2010, Pygame): a chemical-equation balancing game for students. Lead programmer in a team of three.\n' +
-          '- **Ground War** (2010, Pygame): four-player Stratego inside a home-built games browser (classic Stratego, chess, and checkers) with player accounts and a networking prototype.\n' +
-          '- **Nyan Cat Attack** (2011, Native Android): a custom Android game loop, with unit tests. Its tagline, “Nyan Cat’s demise, and the rise of Toaster Cat!”, is where the studio’s mascot began. Art and programming lead in a team of 3.\n' +
-          '- **Chess++** (2015, C and C++): networked chess in the terminal, planned in milestones from single-player to peer-to-peer.\n' +
-          '- **Xander’s Quest** (2016, Native Android): an Android game on a hand-rolled engine, with its own game model, actors, and input layer.\n' +
-          '- **NPC Universe** (2016–2017, Unity): a world and economic simulation with RTS controls, built by two developers. It has [its own page](/portfolio/npc-universe).',
+        '- **Compound Chemistry** (2010, Pygame): a chemical-equation balancing game for students. Lead programmer in a team of three.',
+        '- **Ground War** (2010, Pygame): four-player Stratego inside a home-built games browser (classic Stratego and checkers) with player accounts and a networking prototype.',
+        '- **Nyan Cat Attack** (2011, Native Android): a custom Android game loop, with unit tests. Its tagline, “Nyan Cat’s demise, and the rise of Toaster Cat!”, is where the studio’s mascot began. Art and programming lead in a team of 3. In 2026 we ported it to modern Android and paid off that tagline with a bonus speed-run level, where Toaster Cat finally gives chase.',
+        '- **Icarus** (2013, Python): steer a ship through 2D gravitational fields, on a custom physics and vector-math engine.',
+        '- **Chess++** (2015, C and C++): networked chess in the terminal, planned in milestones from single-player to peer-to-peer.',
+        '- **Xander’s Quest** (2016, Native Android): an Android game on a hand-rolled engine, with its own game model, actors, and input layer.',
         `None of these shipped commercially. They’re kept here as honest history: the habit of building the engine, not just the game, started here.`,
       ],
       skills: [
@@ -898,32 +897,15 @@ const PROJECTS: Record<string, Project> = {
         "Unity"
       ],
       media: {
-        // Captured in 2026 from the original source: Ground War runs headless on a
-        // modern Python and pygame with scripted input, and Nyan Cat Attack in the
-        // Android emulator from a teammate's Gradle build. Capture-only changes: debug
-        // overlays off; Ground War fast-forwarded to mid-game with its own move and
-        // combat rules, and its turn doors (which hide each player's view on a shared
-        // screen) skipped; Nyan Cat's spawn moved over the first platform. Everything
-        // else is as shipped. Kept to the two strongest stories: the most complete
-        // home-built system (Ground War) and the studio mascot's origin (Nyan Cat).
-        featured: { type: 'clip', src: 'eg-groundwar-midgame', poster: 'eg-groundwar-midgame-poster', alt: 'Ground War mid-game: all four armies have pushed into the center of the board, pieces revealed by earlier fights; over two rounds each player drags a piece forward, its legal moves shaded, and the board switches to the next player’s view', caption: 'Pass-and-play on one screen, with every legal move highlighted.' },
-
+        featured: { type: 'clip', src: 'eg-montage', poster: 'eg-montage-poster', alt: 'A montage of the early games: a four-player Ground War move on its cross-shaped board, a classic Stratego piece dragged onto a highlighted square, a Checkers move on a red and black board, Compound Chemistry balancing hydrogen and chlorine into “You win!”, and Icarus’s toaster-cat ship skimming the gravity wells of three planets', caption: 'Board games, a chemistry puzzle, and a gravity sim, every one on an engine we built ourselves.' },
         gallery: [
-          {
-            type: 'image',
-            src: 'eg-groundwar-armies',
-            alt: 'Ground War: four armies deployed around a cross-shaped board, the active player’s ranked pieces face up and the other three hidden behind crates',
-            caption: 'Stratego for four: deploy in secret, then fight for the center.',
-          },
-          { type: 'clip', src: 'eg-nyancat-run', poster: 'eg-nyancat-run-poster', alt: 'Nyan Cat Attack: the Nyan Cat runs along platforms across a pixel-star sky, hops, and dashes forward onto a higher platform', caption: 'Two-thumb controls: jump on the left, dash on the right.' },
+          { type: 'clip', src: 'eg-groundwar-midgame', poster: 'eg-groundwar-midgame-poster', alt: 'Ground War mid-game: all four armies have pushed into the center of the board, pieces revealed by earlier fights; over two rounds each player drags a piece forward, its legal moves shaded, and the board switches to the next player’s view', caption: 'Pass-and-play on one screen, with every legal move highlighted.' },
+          { type: 'clip', src: 'eg-checkers', poster: 'eg-checkers-poster', alt: 'Checkers in the Games Browser: blue and red pieces trade diagonal moves across a red and black board, the highlighted piece moving each turn', caption: 'Classic checkers, a second game on the same home-built board engine.' },
+          { type: 'clip', src: 'eg-chemistry-hcl', poster: 'eg-chemistry-hcl-poster', alt: 'Compound Chemistry: the player drags hydrogen and chlorine atom tiles into place to balance H₂ + Cl₂ into hydrogen chloride, and a “You win!” banner appears', caption: 'Balance the equation, atom by atom.' },
+          { type: 'clip', src: 'eg-nyancat-toaster', poster: 'eg-nyancat-toaster-poster', alt: 'Nyan Cat Attack’s 2026 bonus level, a strip that follows the cat: Nyan Cat trails a rainbow up a staircase of platforms, down an island chain, and along upper and lower lanes as comets streak past, with Toaster Cat right behind it trailing a dark, glitching rainbow', caption: 'The rise of Toaster Cat: run, Nyan, run.' },
         ],
       },
       links: [
-        {
-          label: 'Icarus',
-          target: 'https://github.com/Dirker27/Icarus',
-          icon: 'logo-github'
-        },
         {
           label: 'Compound Chemistry',
           target: 'https://github.com/Dirker27/CompoundChemistry',
@@ -935,23 +917,18 @@ const PROJECTS: Record<string, Project> = {
           icon: 'logo-github'
         },
         {
+          label: 'Icarus',
+          target: 'https://github.com/Dirker27/Icarus',
+          icon: 'logo-github'
+        },
+        {
           label: 'Nyan Cat Attack',
           target: 'https://github.com/Dirker27/NyanCatAttack',
           icon: 'logo-github'
         },
         {
-          label: 'Chess++',
-          target: 'https://github.com/Dirker27/ChessPlusPlus',
-          icon: 'logo-github'
-        },
-        {
           label: 'Xander’s Quest',
           target: 'https://github.com/Dirker27/XandersQuest',
-          icon: 'logo-github'
-        },
-        {
-          label: 'NPC Universe',
-          target: 'https://github.com/Dirker27/NPCUniverse',
           icon: 'logo-github'
         },
       ],
@@ -972,13 +949,12 @@ const PROJECTS: Record<string, Project> = {
       status: 'archived',
       roles: ['Architecture', 'RTS Controls', 'Level Design'],
       year: '2016–2017',
-      outcome: `Mothballed in 2017, when both developers moved on to new jobs.`,
+      outcome: `Mothballed in 2017, when both developers moved on to new jobs - AWS Game Technologies and Red Storm Entertainment, respectively..`,
       brief: `A two-developer passion project: a large-scale world and economic simulation where towns build themselves and every NPC works a job, with RTS controls on top.`,
       body: [
         `NPC Universe was a passion project between two developers: a world and economic simulation meant to run whole regions, where every NPC has a job, a home town, and a place in the supply chain. Towns raise their own buildings and fill them with workers. Farmers, miners, millers, and smiths turn raw goods into finished ones, and traders run between towns chasing the best margin each market will pay.`,
         `**Under the hood:** the simulation runs on “oracles”, one per job, that decide each worker’s next move from the state of its town: what’s in stock, which recipes its buildings support, and which positions are open. Characters and buildings could persist to a PostgreSQL database. The architecture we were building toward was a hybrid stack: the Universe in C++, running as an independent process, with Unity as its 3D front end over an interop layer. The prototype shown here runs the simulation in C# inside Unity.`,
         `On top of the simulation sat the player: RTS controls on Elchea, a hand-sculpted map, with an edge-scrolling camera, click-to-select, and right-click orders that send soldiers across the terrain on navigation meshes. The long game was a strategy title where the economy *is* the game: an “oops, all economy” take on Civilization.`,
-        `It was mothballed when both of us found work elsewhere - AWS Game Technologies and Red Storm Entertainment, respectively.`,
       ],
       skills: [
         "Unity",
@@ -992,11 +968,6 @@ const PROJECTS: Record<string, Project> = {
         }
       ],
       media: {
-        // Captured in 2026 from a Unity 2022 build of the repo (see Workspace/NPCUniverse).
-        // Capture-only staging: the RTS input is a scripted cursor driving the game's own
-        // selection, orders, and edge scroll, with the camera rig started closer (22 m) than
-        // the scene's 40 m; the town sim is time-lapsed (15x), its workers are tinted by job
-        // (the game draws them white), and the ledger is a readout of the sim's own numbers.
         featured: { type: 'clip', src: 'npcu-ledger', poster: 'npcu-ledger-poster', alt: 'A time-lapse from above of NPC Universe’s region: five towns of white cylinder buildings appear one after another and fill with capsule-shaped workers, tinted by job for the capture, while a ledger panel counts towns, buildings, and NPCs, tabulates each town’s population and goods, lists goods in store by type, and breaks down the job mix', caption: 'Every town keeps its books: people, jobs, and goods, live.' },
         gallery: [
           { type: 'clip', src: 'npcu-rts', poster: 'npcu-rts-poster', alt: 'NPC Universe’s RTS controls: from a top-down camera over a walled fort, a cursor clicks one grunt at a time and right-clicks a spot to the north; a green marker drops, each grunt walks to it, and the camera scrolls north after them as the HUD lists the selected unit and its objective', caption: 'Click to select, right-click to deploy, and push the screen’s edge to scroll.' },
