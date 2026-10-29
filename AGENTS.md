@@ -37,6 +37,7 @@ Open work is tracked in Jira (project **HOME**, toastercatstudios.atlassian.net)
 - **Git belongs to the human authors.** Agents edit the working tree and leave committing, amending, branching, and pushing to people. Only do Git work when someone explicitly asks you to author a commit, and only for that request.
 - **Always ask before moving a Jira task** to any status, including In Progress and Done. Creating tasks and adding comments are fine when asked; changing status needs a yes each time.
 - **Jira tasks are mostly immutable.** Once filed, don't rewrite a task's summary or description. Log progress, partial updates, and decisions as comments. Edit the description only to fix a real discovery or ambiguity, and say so in a comment.
+- **"Blocks" links are for hard blockers only:** the task literally cannot start until the blocker is done. Suggested ordering (design before build, plan before run) goes in sprint placement or a "Relates" link, never "Blocks".
 - **One Jira task, many commits.** A task usually takes a handful of commits, so a commit landing on the remote doesn't mean the task is done. A person decides when it's done.
 - **Commit messages for Jira tasks:** start the subject with the issue key and the task's ID, then a short description. A related fix gets its own short sentence. Write it in the past tense, like `[HOME-86]-[D5] Added side scrolling fades to mobile /portfolio nav and homepage testimonials.` Keep it short; put details in the body only if they're needed.
 
