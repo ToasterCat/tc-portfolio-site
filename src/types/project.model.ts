@@ -151,4 +151,7 @@ export interface ProjectLinks {
 export interface ProjectImage {
   source: string;
   alt?: string;
+  /** Cards only: 'mark' shows a cardImage that is itself the work's logo whole
+   *  (never cropped, no fade), and drops the logo badge that would repeat it. */
+  fit?: 'mark';
 }

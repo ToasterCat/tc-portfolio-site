@@ -261,12 +261,19 @@ import clicktuneMessagingTest from './gallery/ClickTune/clicktune-messaging-test
 import clicktuneCostModel from './gallery/ClickTune/clicktune-cost-model_1600.webp';
 import clicktuneFileSize from './gallery/ClickTune/clicktune-file-size_1600.webp';
 import blackoutPunkIcon from './gallery/BlackoutPunk/BlackoutPunk-Icon_Square.png';
+import blackoutPunkWordmark from './gallery/BlackoutPunk/BlackoutPunk-Icon.png';
+import blackoutPunkFavicon from './gallery/BlackoutPunk/BlackoutPunk-favicon.png';
 import blackoutPunkLogo from './gallery/BlackoutPunk/BlackoutPunk-Logo.png';
 import blackoutPunkBackground from './gallery/BlackoutPunk/BP-GridBackground.jpg';
 import blackoutPunkDetail from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkScreenshot from './gallery/BlackoutPunk/BP-LitHallway-Teams.jpg';
 import blackoutPunkHallway from './gallery/BlackoutPunk/BP-LitHallway_1920.webp';
 import blackoutPunkGunsUp from './gallery/BlackoutPunk/BP-GunsUp.jpg';
+import bpPossession from './gallery/BlackoutPunk/bp-possession.mp4';
+import bpPossessionPoster from './gallery/BlackoutPunk/bp-possession_poster.webp';
+import bpBluePortrait from './gallery/BlackoutPunk/bp-blue-portrait.webp';
+import bpLoadoutBlasterShotgun from './gallery/BlackoutPunk/bp-loadout-blaster-shotgun.webp';
+import bpMultiplayerPoster from './gallery/BlackoutPunk/bp-multiplayer_poster.webp';
 
 const ASSET_MANIFEST = new Map<string, string> ([
     ['default', toasterCatCropped],
@@ -475,12 +482,19 @@ const ASSET_MANIFEST = new Map<string, string> ([
     ["clicktune-cost-model", clicktuneCostModel],
     ["clicktune-file-size", clicktuneFileSize],
     ["blackout-punk-icon", blackoutPunkIcon],
+    ["blackout-punk-wordmark", blackoutPunkWordmark],
+    ["blackout-punk-favicon", blackoutPunkFavicon],
     ["blackout-punk-logo", blackoutPunkLogo],
     ["blackout-punk-background", blackoutPunkBackground],
     ["blackout-punk-detail", blackoutPunkDetail],
     ["blackout-punk-screenshot", blackoutPunkScreenshot],
     ["blackout-punk-hallway", blackoutPunkHallway],
     ["blackout-punk-guns-up", blackoutPunkGunsUp],
+    ["bp-possession", bpPossession],
+    ["bp-possession-poster", bpPossessionPoster],
+    ["bp-blue-portrait", bpBluePortrait],
+    ["bp-loadout-blaster-shotgun", bpLoadoutBlasterShotgun],
+    ["bp-multiplayer-poster", bpMultiplayerPoster],
 
     ["foss-background", fossArmoryBackground],
     ["wraith-logo", wraithSquadronLogo],

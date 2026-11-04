@@ -42,13 +42,13 @@ const PROJECTS: Record<string, Project> = {
       heroLink: {
         label: 'Join the Playtest',
         target: 'https://blackout-punk.com',
-        icon: 'blackout-punk-icon'
+        icon: 'blackout-punk-favicon'
       },
       links: [
         {
           label: 'Official Website',
           target: 'https://blackout-punk.com',
-          icon: 'blackout-punk-icon'
+          icon: 'blackout-punk-favicon'
         },
         {
           label: 'Discord',
@@ -71,16 +71,26 @@ const PROJECTS: Record<string, Project> = {
       },
       media: {
         featured: {
-          type: 'embed',
-          provider: 'youtube',
-          id: 'xMeRWH3r48A',
-          title: 'Caliban Gameplay Sample — Bot Arena',
-          poster: 'blackout-punk-detail',
-        },
+            type: 'embed',
+            provider: 'youtube',
+            id: 'xMeRWH3r48A',
+            title: 'Gameplay Sample: Simple Bot AI',
+            poster: 'blackout-punk-detail',
+            caption: 'Pre-alpha: a bot match running on the game’s simple combat AI.',
+          },
         gallery: [
-          { type: 'image', src: 'blackout-punk-hallway', alt: 'A red-team soldier holding a corner while the squad advances' },
-          { type: 'image', src: 'blackout-punk-guns-up', alt: 'Over-the-shoulder view of a soldier aiming a rifle' },
-          { type: 'image', src: 'blackout-punk-background', alt: 'The emissive grid environment' },
+          { type: 'clip', src: 'bp-possession', poster: 'bp-possession-poster', alt: 'Over the shoulder of a blue-team soldier on a sunset rooftop: the camera turns to a teammate across the roof and jumps into them, twice, then boosts off with the squad', caption: 'Possession: jump into any unit on your side, mid-battle.' },
+          { type: 'image', src: 'blackout-punk-guns-up', alt: 'A soldier silhouetted in glowing pink-white holds a glossy red rifle across their chest in a dark room traced with teal lines, a pixel-art cat patch on the vest' },
+          { type: 'image', src: 'bp-blue-portrait', alt: 'Close portrait of a blue-team soldier in a dark room, the white helmet and chest emblem glowing against slanted amber light strips' },
+          { type: 'image', src: 'bp-loadout-blaster-shotgun', alt: 'A soldier with a glowing white suit and backwards cap shoulders a blaster shotgun in a dark room traced with teal light lines' },
+          {
+            type: 'embed',
+            provider: 'youtube',
+            id: 'hakHHEVS-9I',
+            title: 'Gameplay Sample: Replicated Multiplayer',
+            poster: 'bp-multiplayer-poster',
+            caption: 'Pre-alpha: four networked views of one match. Movement, shotgun pellets, and kills land the same on every screen.',
+          },
         ],
       },
     }
