@@ -39,6 +39,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   const Heading = props.headingLevel ?? 'h3';
   const cover = d.cardImage ?? d.backgroundImage;
   const coverSrc = cover ? ASSET_MANIFEST.get(cover.source) : undefined;
+  const coverIsMark = d.cardImage?.fit === 'mark';
   const logoSrc = d.thumbnailImage ? ASSET_MANIFEST.get(d.thumbnailImage.source) : undefined;
   const heroLink = variant !== 'row' && (props.showHeroLink ?? true) ? d.heroLink : undefined;
   const showYear = (props.showYear ?? true) && !!d.year;
@@ -87,9 +88,9 @@ export default function ProjectCard(props: ProjectCardProps) {
 
   return (
     <article className={`project-card project-card--${variant}`}>
-      <div className={`project-card-cover ${coverSrc ? '' : 'project-card-cover--pattern'}`}>
+      <div className={`project-card-cover ${coverSrc ? '' : 'project-card-cover--pattern'} ${coverIsMark ? 'project-card-cover--mark' : ''}`}>
         {coverSrc && <ProgressiveImg src={coverSrc} alt="" loading="lazy" decoding="async" />}
-        {logoSrc ? (
+        {coverIsMark ? null : logoSrc ? (
           <img className="project-card-logo" src={logoSrc} alt="" loading="lazy" decoding="async" />
         ) : d.initials && (
           <Monogram text={d.initials} className="project-card-logo project-card-monogram" />

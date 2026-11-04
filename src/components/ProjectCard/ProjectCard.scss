@@ -53,6 +53,21 @@
   @include base.dot-grid('placeholder', base.$color-black);
 }
 
+/* The cover is the work's logo: show all of it, with no fade over it. */
+.project-card .project-card-cover--mark {
+  > img:first-child:not(.project-card-logo) {
+    box-sizing: border-box;
+    padding: base.$space-6;
+    object-fit: contain;
+    /* A dark logo plate melts into the cover instead of showing as a box. */
+    mix-blend-mode: lighten;
+  }
+
+  &::after {
+    content: none;
+  }
+}
+
 .project-card:hover .project-card-cover > img:first-child:not(.project-card-logo) {
   transform: scale(1.04);
 }
